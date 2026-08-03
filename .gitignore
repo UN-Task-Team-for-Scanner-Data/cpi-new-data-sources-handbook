@@ -1,0 +1,8 @@
+_site/
+.quarto/
+/.jupyter_cache/
+*_files/
+
+/.quarto/
+**/*.quarto_ipynb
+scripts/_debug/

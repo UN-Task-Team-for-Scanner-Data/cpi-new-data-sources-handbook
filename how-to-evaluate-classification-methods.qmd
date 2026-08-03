@@ -1,0 +1,285 @@
+---
+title: "How to evaluate classification methods"
+---
+
+There are numerous metrics that can be tracked and applied when evaluating how well a classifier performs. This chapter provides an overview of common approaches using a Machine Learning (ML) classifier (i.e. [Method 4](337281185.html) and [in some cases Method 3](337281184.html)) as the use case throughout due to their applicability and popularity with ML. These metrics however, could also be applied on classifiers created with other methods (such as [Method 2](337281183.html)) as long as there is a representative test dataset on which to evaluate classifier performance.
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2025-04-28                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication                                                                        |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281196) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+# Approaches to evaluation {#Howtoevaluateclassificationmethods-Approachestoevaluation}
+
+When supervised machine learning is used for classification, the data it is trained on is separated into three parts: training data on which the model is trained; validation data on which hyperparameters are selected; and a test set on which the model is evaluated. The test data set has never been seen by the model during training and parameterisation, so it is used for the final evaluation of the model. The idea is to evaluate the model on the same distribution the model was trained on but have that test dataset represent \'out-of-sample\' performance, simulating how generalizable the learning has been. The risk of not doing this is that the model could be overfitted to its\' training data. In the case of overfitting, the model would virtually learn the data by heart instead of recognizing the patterns behind it. There are different ways to select the test data, which typically includes a somewhat more complex procedure for splitting the data set multiple times and training the models, which is called cross-validation. In cross-validation the data is split into k parts, one part of the data is used as a test data set and the other k-1 parts for training the model, this division is repeated several times. In this way, different models can be compared.
+
+Since the method is supervised, the test dataset contains the actual (intended) classes and the predicted classes by the model being tested. There are numerous metrics that are used to evaluate machine learning models by comparing these predicted and actual categories. These are usually built on a confusion matrix, which provides an overview of which items have been correctly or incorrectly classified.
+
+## Binary classification {#Howtoevaluateclassificationmethods-Binaryclassification}
+
+For simplicity, we start with a binary case with two classes.
+
+Table 1: A two by two confusion matrix
+
++---------------------+------------------------+-----------------------+
+| \                   | Predicted positive     | Predicted negative    |
++---------------------+------------------------+-----------------------+
+| Actual positive     | True Positive (TP)     | False Negative (FN)   |
++---------------------+------------------------+-----------------------+
+| Actual negative     | False Positive (FP)    | True Negative (TN)    |
++---------------------+------------------------+-----------------------+
+
+Several metrics can be calculated from this:
+
+- **Accuracy** is the proportion of correct predictions out of all predictions made. Accuracy is also an indicator of the overall classification task (i.e. summarizes the situation for both positive and negative classes as one metric).
+
+$\text{Accuracy} = \frac{\text{correct predictions}}{\text{all predictions}}= \frac{tp + tn}{tp+tn+fp+fn}$
+
+- **Precision** is the proportion of correct predictions out of all predictions estimated as positive. It is calculated individually for each class.
+
+$\text{Precision} = \frac{tp}{tp+fp}$
+
+- **Recall** (also called sensitivity) is the proportion of true positives out of all positive observations. Similar to precision, it is calculated for each class.
+
+$\text{Recall} = \frac{tp}{tp+fn}$
+
+Ideally, we want a high precision and a high recall. Precision and recall do not necessarily both increase, they can also behave in opposite ways. Both can be combined through an F1 score:
+
+- **F1 score** is the harmonic mean of precision and recall. The F1 score shows how precise the model is, as well as how robust it is. If one of the two metrics is much lower than the other, then the F1 score is lower than the arithmetic mean of the two scores.
+
+$\text{F1} = \frac{2tp}{ (2tp+fp+fn)} = 2\frac{\text{precision}* \text{recall}}{\text{precision} + \text{recall}}$
+
+Accuracy and F1 score are very commonly used scores to evaluate a classifier. Accuracy is very easy to interpret, but it also has weaknesses especially with heterogeneous distributed class sizes (or imbalanced data). Suppose you have one class with 99 observations and a second class with one observation. If the classifier always estimates the first class, it will have an accuracy of 99%, however it will always miss the second class, which is undesirable. 
+
+***Example 1:*** Suppose we have 10 items to be classified, 2 milk and 8 yogurts. If the classifier classifies one milk item correctly and the other milk as a yogurt and all yogurts correctly, we get the following scores. 
+
+- Accuracy = 9 / 10 = 0.9 or 90% correct
+- F1 for Milk = (2\*1)/(2\*1+ 0 + 1)= 2/3 = 0,5 = 66,7%
+- F1 for Yoghurt = (2\*8)/(2\*8+1+0) = 16/17 = 94.1%
+
+In this example with unequal class distribution, accuracy is less suitable. F1 metrics also tell different stories depending on the class you calculate them for. 
+
+## Multi-dimensional case {#Howtoevaluateclassificationmethods-Multi-dimensionalcase .auto-cursor-target}
+
+Let us now consider the multidimensional case, as most applications will typically involve a classifier predicting to one of multiple classes, not simply 2. We have n classes: C1, C2, \..., Cn. $N_{i,j}$ is the number of observations belonging to class Ci and classified in class Cj (Table 2). For each individual class Ci, the metrics introduced above can now be calculated by creating a one-vs-rest matrix, i.e. all observations that do not belong to class Ci are summed up (Table 3).
+
+Table 2: A comprehensive overview of the confusion matrix for n cases
+
++------------+-------+:--------------:+:--------------:+:--------------:+:--------------:+:--------------:+
+| \          | \     | predicted                                                                          |
++------------+-------+----------------+----------------+----------------+----------------+----------------+
+| \          | \     | $C_1$          | $C_2$          | $C_3$          | \...           | $C_n$          |
++------------+-------+----------------+----------------+----------------+----------------+----------------+
+| \          | $C_1$ | $N_{1,1}$      | $N_{1,2}$      | $N_{1,3}$      | \...           | $N_{1,n}$      |
+|            |       |                |                |                |                |                |
+| \          |       |                |                |                |                |                |
+|            |       |                |                |                |                |                |
+| \          |       |                |                |                |                |                |
+|            |       |                |                |                |                |                |
+| **actual** |       |                |                |                |                |                |
+|            |       |                |                |                |                |                |
+| \          |       |                |                |                |                |                |
+|            |       |                |                |                |                |                |
+| \          |       |                |                |                |                |                |
+|            +-------+----------------+----------------+----------------+----------------+----------------+
+|            | $C_2$ | $N_{2,1}$      | $N_{2,2}$      | $N_{2,3}$      | \...           | $N_{2,n}$      |
+|            +-------+----------------+----------------+----------------+----------------+----------------+
+|            | $C_3$ | $N_{3,1}$      | $N_{3,2}$      | $N_{3,3}$      | \...           | $N_{3,n}$      |
+|            +-------+----------------+----------------+----------------+----------------+----------------+
+|            | \...  | \...           | \...           | \...           | \...           | \              |
+|            +-------+----------------+----------------+----------------+----------------+----------------+
+|            | $C_n$ | $N_{n,1}$      | $N_{n,2}$      | $N_{n,3}$      | \              | $N_{n,n}$      |
++------------+-------+----------------+----------------+----------------+----------------+----------------+
+
+Table 3: A One-vs-Rest confusion matrix
+
++--------+:---------------:+:-------------------------:+:-------------------------:+
+| \      | \               | predicted                                             |
++--------+-----------------+---------------------------+---------------------------+
+| \      | \               | $C_i$                     | $C_\text{rest}$           |
++--------+-----------------+---------------------------+---------------------------+
+| \      | $C_i$           | $N_{i,i}$                 | $\sum_{j \ne i}{N_{i,j}}$ |
+|        |                 |                           |                           |
+| actual |                 |                           |                           |
+|        +-----------------+---------------------------+---------------------------+
+|        | $C_\text{rest}$ | $\sum_{j \ne i}{N_{j,i}}$ | $\sum_{j \ne i}{N_{j,j}}$ |
++--------+-----------------+---------------------------+---------------------------+
+
+$\text{precision}_i = \frac{tp}{tp+fp}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{j,i}}}]$
+
+$\text{recall}_i = \frac{tp}{tp+fn}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{i,j}}}$
+
+$\text{F1}_i = 2\frac{\text{precision}_i* \text{recall}_i}{\text{precision}_i + \text{recall}_i}$
+
+To consider the performance of a model as a whole for all classes, instead of individually on a class-by-class basis, two ways to calcuate are common - **micro scores** or **macro scores**. For the micro scores, the true positives, true negatives, false positives and false negatives of all classes are added together and then the scores are calculated according to the above formula. The macro scores are calculated from the arithmetic mean of the scores of the individual classes.
+
+$\text{macro precision} = \frac{1}{n} \sum_{i=1}^n{\text{precision}_i}$
+
+$\text{macro recall} = \frac{1}{n} \sum_{i=1}^n{\text{recall}_i}$
+
+$\text{macro F1} = \frac{1}{n} \sum_{i=1}^n{\text{f1}_i}$
+
+The macro F1 score considers large and small classes equally. As a result, observations from a large class have less influence on the score than observations from a small class. This effect is stronger the larger the imbalance in class sizes. It is relatively easy to recognize when any class has very poor scores. Whether this differential influence is desirable or not must be considered from a specialized point of view. An alternative would be to assign weights to each class and calculate a weighted average. Possible weights would be class size or, in the context of price statistics, turnover and weighing.
+
+***Example 2:*** For the sake of simplicity, we will consider an example with three relatively balanced classes
+
+Table 4: Overall confusion matrix
+
++----------------+----------------+-----------------+-----------------+-----------------+
+| \              | \              | \                                                   |
+|                |                | Predicted\                                          |
+|                |                | \                                                   |
++----------------+----------------+-----------------+-----------------+-----------------+
+| \              | \              | rice            | flour           | water           |
++----------------+----------------+-----------------+-----------------+-----------------+
+| \              | rice           | 2               | 1               | 0               |
+| **Actual**\    |                |                 |                 |                 |
+| \              |                |                 |                 |                 |
+|                +----------------+-----------------+-----------------+-----------------+
+|                | flour          | 0               | 1               | 0               |
+|                +----------------+-----------------+-----------------+-----------------+
+|                | water          | 1               | 2               | 3               |
++----------------+----------------+-----------------+-----------------+-----------------+
+
+For each class we create a one-vs-rest matrix, as defined above.
+
+Table 5: One-vs-rest matrix for rice
+
++-------------+--------------------+----------+--------------------+
+| \           | \                  | \                             |
+|             |                    | Predicted\                    |
+|             |                    | \                             |
++-------------+--------------------+----------+--------------------+
+| \           | \                  | Rice     | Rest (flour+water) |
++-------------+--------------------+----------+--------------------+
+| \           | Rice               | 2        | 1                  |
+| **Actual**\ |                    |          |                    |
+| \           |                    |          |                    |
+|             +--------------------+----------+--------------------+
+|             | Rest (flour+water) | 1        | 4                  |
++-------------+--------------------+----------+--------------------+
+
+Table 6: One-vs-rest matrix for flour
+
++-------------+-------------------+----------+-------------------+
+| \           | \                 | \                            |
+|             |                   | Predicted\                   |
+|             |                   | \                            |
++-------------+-------------------+----------+-------------------+
+| \           | \                 | Flour    | Rest (rice+water) |
++-------------+-------------------+----------+-------------------+
+| \           | Flour             | 1        | 0                 |
+| **Actual**\ |                   |          |                   |
+| \           |                   |          |                   |
+|             +-------------------+----------+-------------------+
+|             | Rest (rice+water) | 3        | 5                 |
++-------------+-------------------+----------+-------------------+
+
+Table 7: One-vs-rest matrix for water
+
++-------------+-------------------+----------+-------------------+
+| \           | \                 | \                            |
+|             |                   | Predicted\                   |
+|             |                   | \                            |
++-------------+-------------------+----------+-------------------+
+| \           | \                 | Water    | Rest (rice+flour) |
++-------------+-------------------+----------+-------------------+
+| \           | Water             | 3        | 3                 |
+| **Actual**\ |                   |          |                   |
+| \           |                   |          |                   |
+|             +-------------------+----------+-------------------+
+|             | Rest (rice+flour) | 0        | 3                 |
++-------------+-------------------+----------+-------------------+
+
+From the confusion matrix we can get the true positives, false positives and false negatives. We insert these into the following table and calculate precision, recall and f1 score. If we want to calculate the f1 macro score, this is the average of the individual f1 scores.
+
+Table 8: Summary matrix by class
+
++--------------+--------------+--------------+--------------+--------------+----------------+---------------+-----------------------------------+-----------------------------+
+| \            | TP           | FP           | FN           | TN           | Precision      | Recall        | F1 score                          | F1 macro                    |
++--------------+--------------+--------------+--------------+--------------+----------------+---------------+-----------------------------------+-----------------------------+
+| Rice         | 2            | 1            | 1            | 4            | 2/(2+1) = 0.67 | 2/(2+1)= 0.67 | 2\*(0.67\*0.67)/(0.67+0.67)= 0.67 | (0.67+0.4+0.67)/3= **0.58** |
++--------------+--------------+--------------+--------------+--------------+----------------+---------------+-----------------------------------+                             |
+| Flour        | 1            | 3            | 0            | 5            | 1/(1+3) = 0.25 | 1/(1+0)= 1    | 2\*(0.25\*1)/(0.25+1)= 0.4        |                             |
++--------------+--------------+--------------+--------------+--------------+----------------+---------------+-----------------------------------+                             |
+| Water        | 3            | 0            | 3            | 3            | 3/(3+0) = 1    | 3/(3+3) = 0.5 | 2\*(1\*0.5)/(1+0.5)=0.67          |                             |
++--------------+--------------+--------------+--------------+--------------+----------------+---------------+-----------------------------------+-----------------------------+
+| \                                                                                                                                                                           |
++--------------+--------------+--------------+--------------+--------------+----------------+---------------+-----------------------------------+-----------------------------+
+| All          | 6            | 4            | 4            | 12           | 6/10=0.6       | 6/10 = 0.6    | **F1 micro**                      | \                           |
+|              |              |              |              |              |                |               |                                   |                             |
+|              |              |              |              |              |                |               | 2\*(0.6\*0.6)/(0.6+0.6)=**0.6**   |                             |
++--------------+--------------+--------------+--------------+--------------+----------------+---------------+-----------------------------------+-----------------------------+
+
+***Example 3:*** Consider a more complex scernario of unbalanced clases. The class water, with 26 items, is significantly larger than rice (3 items) and flour (2 items). In analogy to above, the F1 macros score and F1 micro score are now calculated.
+
+Table 9: Overall confusion matrix (imbalanced scenario)
+
++------------+-------+------+-------+-------+
+| \          | \     | predicted            |
++------------+-------+------+-------+-------+
+| \          | \     | rice | flour | water |
++------------+-------+------+-------+-------+
+| **actual** | rice  | 2    | 1     | 0     |
+|            +-------+------+-------+-------+
+|            | flour | 0    | 1     | 1     |
+|            +-------+------+-------+-------+
+|            | water | 1    | 5     | 20    |
++------------+-------+------+-------+-------+
+
+Table 10: Summary matrix by class (imbalanced scenario)
+
++--------------+--------------+--------------+--------------+--------------+------------------+------------------+--------------------------------------+------------------------------+
+| \            | TP           | FP           | FN           | TN           | Precision        | Recall           | F1 score                             | F1 macro                     |
++--------------+--------------+--------------+--------------+--------------+------------------+------------------+--------------------------------------+------------------------------+
+| Rice         | 2            | 1            | 1            | 21           | 2/(2+1) = 0.67   | 2/(2+1)= 0.67    | 2\*(0.67\*0.67)/(0.67+0.67)= 0.67    | (0.67+0.22+0.85)/3= **0.58** |
++--------------+--------------+--------------+--------------+--------------+------------------+------------------+--------------------------------------+                              |
+| Flour        | 1            | 6            | 1            | 22           | 1/(1+6) = 0.14   | 1/(1+1)= 0.5     | 2\*(0.14\*0.5)/(0.14+0.5)= 0.22      |                              |
++--------------+--------------+--------------+--------------+--------------+------------------+------------------+--------------------------------------+                              |
+| Water        | 20           | 1            | 6            | 3            | 20/(20+1) = 0.95 | 20/(20+6) = 0.77 | 2\*(0.95\*0.77)/(0.95+0.77)=0.85     |                              |
++--------------+--------------+--------------+--------------+--------------+------------------+------------------+--------------------------------------+------------------------------+
+| \                                                                                                                                                                                    |
++--------------+--------------+--------------+--------------+--------------+------------------+------------------+--------------------------------------+------------------------------+
+| All          | 23           | 8            | 8            | 46           | 23/31=0.74       | 23/31 = 0.74     | **F1 micro**                         | \                            |
+|              |              |              |              |              |                  |                  |                                      |                              |
+|              |              |              |              |              |                  |                  | 2\*(0.74\*0.74)/(0.74+0.74)=**0.74** |                              |
++--------------+--------------+--------------+--------------+--------------+------------------+------------------+--------------------------------------+------------------------------+
+
+Here one can clearly see that due to the unequal class distribution, the F1 micro and F1 macro differ significantly more from each other than was the case in the above example. If one calculates an index for individual COICOP classes, however, one cannot say that an index with a larger class size is more important than an index with a smaller class size.
+
+# \"Advanced methods\" {#Howtoevaluateclassificationmethods-Advancedmethods .auto-cursor-target}
+
+**F-beta**
+
+A more generalized version of the F1 score defined above is the F-beta score:
+
+$\text{f}_\beta = (1+ \beta^2)* \left( \frac{\text{precision}* \text{recall}}{\beta^2 * \text{precision} + \text{recall}}  \right)$
+
+Depending on the value for beta, precision or recall has a stronger influence on f-beta. A value smaller than one means, that there is more weight on precision. A value bigger than one means more weight on recall. 
+
+In the multidimensional case, there is another component that plays a role. We defined the F1 macro above, in which the individual F1 scores are determined using a simple average. An alternative here is to use a weighted average. In the case of our classification according to COICOP, for example, it makes sense to use the COICOP weighting scheme as the weight. In this way, more influential COICOPs are weighted higher, regardless of the class size. Precision has been seen as more important for the price statistics applications as it helps mitigate misclassification bias in the price index calculated after classification by making sure there are less false positives in the category (3, 5). 
+
+**ROC curve**
+
+Another option NSOs cold leverage is the [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). An ROC curve can be seen as a visual representation of the tradeoff between the costs of true positive and false positive (4). The isolines each represent different parameter combinations with the same accuracy. If the ROC curve is close to the diagonal, this indicates that the classifier is not better than one random guess. A classifier's ROC curve is optimal when it rises sharply along the true positive axis before increasing along the false positive axis. As ROC curves can be swept out by manipulating the balance of training samples for each class, NSOs can apply [sampling strategies](Working-with-class-imbalance_337281204.html) to try to select a desired classifier. ROC curves can be leveraged by NSOs on a multiclass use case by [applying one vs one or one vs rest evaluation approach](https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html). 
+
+------------------------------------------------------------------------
+
+# References {#Howtoevaluateclassificationmethods-References}
+
+\(1\) Rowland, E. (2019) Guidelines for selecting metrics to evaluate classification in price statistics production pipelines. Presented at May 17, 2019 Advistory Panel on Consumer Prices - Technical (UK Statistics Authority) <https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2019/08/APCP-T1910-Classification-metrics-guidelines.pdf>
+
+\(2\) Goussev, S., Spackman, W., (2021) Machine Learning Classifier Evaluation Criteria: application to price statistics. *Proceedings of Statistics Canada Symposium* 2021. <https://www150.statcan.gc.ca/n1/en/pub/11-522-x/2021001/article/00012-eng.pdf?st=76a0gpZx>
+
+\(3\) UK Statsitics Authority (2023) Clothing classification and Product Grouping. *Paper published as par of the October 27th 2023 Advisory Panel on Consumer Prices - Technical*. <https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2023/12/Redacted_APCP-T2310_Clothing_Classification_and_Product_Grouping.pdf>
+
+\(4\) Chawla, N. V., Bowyer, K. W., Hall, L. O., Kegelmeyer, W.P. (2002) SMOTE: Synthetic Minority Over-sampling Technique. *Journal of artificial intelligence research* 16 <https://www.jair.org/index.php/jair/article/view/10302>
+
+\(5\) Spackman, W., Goussev, S., Wall, M., DeVilliers, G., Chiumera, D. (2024) \"Machine Learning is (not!) all you need: Impact of classification-induced error on price indices using scanner data\" *Paper presented at the 18^th^ Meeting of the Ottawa Group.* <https://stats.unece.org/ottawagroup/download/Papers-session-8-pres-1-spackman-et-al-2024-misclassification-is-not-all-you-need.pdf>

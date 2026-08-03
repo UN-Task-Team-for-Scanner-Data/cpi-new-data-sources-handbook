@@ -1,0 +1,44 @@
+project:
+  type: website
+
+website:
+  title: "Handbook on utilising new data sources in the production of consumer price statistics"
+  # repo-url / repo-actions: add once the UN-Task-Team-for-Scanner-Data repo exists
+  bread-crumbs: true
+  page-navigation: true
+  back-to-top-navigation: true
+  search: true
+  navbar:
+    background: primary
+    search: true
+    title: "New data sources in consumer price statistics"
+    right:
+      - icon: globe
+        href: https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics
+      - icon: person-raised-hand
+        href: https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml
+    left:
+      - href: index.qmd
+        text: Home
+  sidebar:
+    style: "floating"
+    collapse-level: 2
+    align: left
+    contents:
+      - index.qmd
+      - "---"
+      - section: "Index number methods"
+        contents:
+          - multilateral-price-index-methods.qmd
+          - extension-methods.qmd
+      - section: "Classification"
+        contents:
+          - how-to-evaluate-classification-methods.qmd
+
+format:
+  html:
+    toc: true
+    theme:
+      light: flatly
+      dark: cyborg
+    css: styles.css

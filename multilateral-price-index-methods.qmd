@@ -1,0 +1,158 @@
+---
+title: "Multilateral price index methods"
+---
+
+This section presents the basic, commonly known formulas of multilateral price indices.Like the [Bilateral price index methods](Bilateral-price-index-methods_240910487.html) section, it does not include a broader discussion of the legitimacy of using individual indices. For more information on choosing an index method, see the [Choosing an index method](https://unstats.un.org/wiki/display/GWGSD/Choosing+an+index+method) section.
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v13                                                                                        |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2021-10-05                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910489) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Overview {#Multilateralpriceindexmethods-Overview}
+
+One of the common features of transaction data and web scraped data is the dynamics of product assortments. Although these dynamics may differ between the two data sources, both data sets are characterized by entering and disappearing products, the rates of which vary by type of product. Multilateral index methods have become a topic of research in many NSOs, and are already being used in the CPI of different NSOs for processing transaction data. One of the reasons for their increased interest is that these methods are able to capture product dynamics and associated consumer behavior, allowing the use of time-varying product weights and continuous inclusion of new products while preserving transitivity in its index series (on fixed time windows). 
+
+A multilateral index is compiled over a given time window composed of $T+1$ successive months (typically $T=12$, (i.e. the time window consists of periods: $0,1,2,...,T$). The multilateral price index formula takes as input all prices and quantities of the previously defined individual products, which are available in the given time window, i.e. in at least two of its periods.  
+
+Multilateral index methods originate in comparisons of price levels across countries or regions. These methods satisfy the condition of transitivity, which is a desirable property for spatial comparisons because the results are independent of which country is selected as the base country (region). By definition, transitivity eliminates the chain drift problem which may occur while using scanner data. [Chain drift](Example-of-chain-drift_240910488.html) can be formalized in terms of the violation of the multi period identity test. According to this test one can expect, that when all prices and quantities in a current period revert back to their values from the base period, then the index should indicate no price change and it equals 1. Thus, multilateral indices are free from chain drift within a given estimation time window $[0,T]$. In production, multilateral indices are chained over time using extension methods to avoid introducing revisions, and this could introduce the possibility of chain drift (see [extension methods](Extension-methods_240910490.html) section for more detail). 
+
+Commonly known multilateral methods are the Geary-Khamis (GK) method (Geary (1958), Khamis (1972)), the GEKS-Fisher (generally just referred to as the GEKS) method (see Gini (1931), Eltetö and Köves (1964), Szulc (1964)), the GEKS-Törnqvist method (also known as the CCDI Caves, Christensen and Diewert (1982), Inklaar and Diewert (2016)), the Time Product Dummy method (de Haan and Krsinich, 2014) and the Time Dummy Hedonic index (de Haan, 2015). The SPQ index (Diewert, 2020) is a relatively new multilateral method. 
+
+# The GEKS method {#Multilateralpriceindexmethods-TheGEKSmethod}
+
+The GEKS price index between months $0$ and $t$ is an unweighted geometric mean of $T+1$ ratios of bilateral price indices $P^{\tau, t}$ and $P^{\tau, 0}$, which are based on the same price index formula. In order for the GEKS price index method to be transitive, the bilateral price index formula used within GEKS should satisfy the time reversal test, i.e. it should satisfy the condition $P^{a,b} \cdot P^{b,a} = 1$.
+
+## The GEKS-Fisher method {#Multilateralpriceindexmethods-TheGEKS-Fishermethod}
+
+Typically, the GEKS method uses the superlative Fisher price index (and is commonly referred to as just the GEKS) resulting in the following formula:
+
+$P_{G E K S}^{0, t}=\prod_{\tau=0}^{T}\left(\frac{P_{F}^{\tau, t}}{P_{F}^{\tau, 0}}\right)^{\frac{1}{T+1}}$
+
+## The GEKS-Törnqvist method (also known as CCDI) {#Multilateralpriceindexmethods-TheGEKS-TrnqvistmethodalsoknownasCCDI}
+
+The GEKS idea was extended with the Törnqvist index as a base in the context of making quantity comparisons across production units (1), and subsequently as a method to make price comparisons across production units (16). Consequently, the the multilateral price comparison method involving the GEKS method based on the Törnqvist is now sometimes referred to as the Caves-Christensen-Diewert-Inklaar (or CCDI) (10). The corresponding price index can be expressed as follows:
+
+$P_{C C D I}^{0, t}=\prod_{\tau=0}^{T}\left(\frac{P_{T}^{\tau, t}}{P_{T}^{\tau, 0}}\right)^{\frac{1}{T+1}}$
+
+To note, the CCDI method is equivalent to the GEKS method with Törnqvist indices as bilateral indices. If prices are imputed when they are unavailable, for instance, because products were not sold in certain periods, then the CCDI method is referred to as \"imputed CCDI\". Examples and applications of the imputed CCDI method are described by de Haan and Daalmans (2019). 
+
+# The QU and the Geary-Khamis (GK) methods {#Multilateralpriceindexmethods-TheQUandtheGeary-KhamisGKmethods}
+
+Quality adjusted unit value method (QU) is a family of unit value based index methods, with the Geary-Khamis (GK) method as a special case (see Chessa (2015, or 2016) for more details). The GK method was first developed for international or interregional price comparisons (14), was extended for comparisons across time (19). According to the QU method, the price index $P_{QU}^{0,t}$, which compares period $t$ with base period $0$, is defined as follows:
+
+$P_{Q U}^{0, t}= \frac{ \sum\limits_{i \in G_{t}} p_{i}^{t} q_{i}^{t} / \sum\limits_{i \in G_{0}} p_{i}^{0} q_{i}^{0}}{ \sum\limits_{i \in G_{t}} v_{i} q_{i}^{t} / \sum\limits_{i \in G_{0}} v_{i} q_{i}^{0}}$
+
+where its numerator is the measure of the turnover (expenditure) change between the two compared periods and the denominator is a weighted quantity index. Please note that the quantity weights $v_i$ are the only unknown factors here and these factors convert sold quantities $q_i^0$ and $q_{i}^t$ of products that differ in quality into "common\" or comparable units $v_iq_i^0$ and $v_iq_i^t$. Prices of products, $p_i^0$ and $p_i^t$, are converted into "quality adjusted prices" $p_i^0 / v_i$ and $p_i^t / v_i$. Different choices of factors $v_i$ lead to different price index formulas.
+
+In the Geary-Khamis method, the weights $v_i$ are defined as follows: 
+
+$v_{i}=\sum_{z=0}^{T} \varphi_{i, G K}^{z} \frac{p_{i}^{z}}{P_{Q U}^{0, z}}$
+
+where
+
+$\varphi_{i, G K}^{z}=\frac{q_{i}^{z}}{\sum_{\tau=0}^{T} q_{i}^{\tau}}$
+
+Note that above formulas lead to a set of equations which should be solved simultaneously. This solution can be found iteratively (3) or as a solution to an eigenvalue problem (8). An interesting alternative method for obtaining this solution (which can reduce computer processing time) can be also found in Diewert and Fox (2018). The iterative procedure starts with an arbitrarily chosen set of price index values for each period in a time window. Next, these values are entered into the expression for the $v_i$ which in turn are substituted into the price index formula for the QU method. This procedure is repeated until a stop criterion for the accuracy of the index series is reached, which is set by the user. The iterative algorithm converges to a unique solution under \'mild\' conditions.
+
+It is worth noting that the use of \'quality adjustment\' in this context is debated in the literature. 
+
+# The Time Product Dummy method {#Multilateralpriceindexmethods-TheTimeProductDummymethod}
+
+The Time Product Dummy method (TPD) normally uses a regression approach to estimating price indices using all available data from a given time window. The econometric model for log prices of $N$ different items sold in one or more periods across the considered the time interval $[0,T]$ is as follows:
+
+$\ln p_{i}^{t}=\alpha+\sum_{t=1}^{T} \delta^{t} D_{i}^{t}+\sum_{j=1}^{N-1} \gamma_{j} D_{i,j}+\varepsilon_{i}^{t}$
+
+where $D_i^t$ is the dummy variable that has value 1 if the $i$-th product is available in period $t$ and $0$ otherwise, $\delta^t$ are the time dummy parameters, $D_{i,j}$ is a dummy variable with the value 1 if the $i$-th observation relates to the individual product $j$ and 0 otherwise, $\gamma_j$ represents the item fixed effects and $\epsilon_i^t$ denotes the corresponding random error term, which is assumed to be normally distributed with zero mean. The quality adjusted price of  a set of products $G_t$ in month $t$ can be written as:
+
+$\tilde{p}^{t}= \prod_{i \in G_{t}}\left(\frac{p_{i}^{t}}{v_{i}}\right)^{s_{t}^{t}}$
+
+Following Diewert (2004), one can assume that the above model is estimated by the Weighted Least Squares (WLS) method with expenditure shares used as weights (in fact, the WLS method follows from maximum likelihood estimation of the parameters with the variance of the error terms assumed to be inversely proportional to the expenditure shares). Where the price is adjusted using the item fixed effects, i.e. $v_i=\exp(\gamma_i)$, the TPD index can be expressed as follows:
+
+$P_{T P D}^{0, t}= \frac{\tilde{p}^{t}}{ \tilde{p}^{0}}= \frac{ \prod\limits_{i \in G_{t}}\left(\frac{p_{i}^{t}}{\exp \left(\hat{\gamma}_{i}\right)}\right)^{s_{i}^{t}}}{ \prod\limits_{i \in G_{0}}\left(\frac{p_{i}^{0}}{\exp \left(\hat{\gamma}_{i}\right)}\right)^{s_{i}^{0}}}$
+
+# The Time Dummy Hedonic method {#Multilateralpriceindexmethods-TheTimeDummyHedonicmethod}
+
+The Time Dummy Hedonic method (TDH) uses a regression approach to estimating price indices using all available data from a given time window including product characteristics. The econometric model for log prices of $N$ different items, which were sold in one or more periods across the considered time interval $[0,T]$ and were described by $K$ characteristics, is as follows:
+
+$\ln p_{i}^{t}=\alpha+\sum_{t=1}^{T} \delta^{t} D_{i}^{t}+\sum_{k=1}^{K} \beta_{k} z_{ik}+\varepsilon_{i}^{t}$
+
+where $D_i^t$ is the dummy variable that has value 1 if the $i$-th product is available in period $t$ and 0 otherwise, $\delta^t$ are the time dummy parameters, $z_{ik}$ denotes the $k$-th characteristic of item $i$ and $\beta_{k}$ is the corresponding parameter (fixed across time), $\epsilon_i^t$ denotes the corresponding random error term. Like in the TPD model described above, it is assumed that the errors are independently distributed with zero mean and variance inversely proportional to the items\' expenditure shares in the different periods.
+
+Following Diewert (2004), one can assume that the above model is estimated by the Weighted Least Squares (WLS) method with expenditure shares used as weights. As a consequence, the TDH index can be computed as follows:
+
+$P_{T D H}^{0, t}= \frac{\tilde{p}^{t}}{ \tilde{p}^{0}}= \frac{ \prod\limits_{i \in G_{t}}\left(\frac{p_{i}^{t}}{\exp {(\sum_{k=1}^{K} \hat\beta_{k} z_{ik}})}\right)^{s_{i}^{t}}}{ \prod\limits_{i \in G_{0}}\left(\frac{p_{i}^{0}}{\exp {(\sum_{k=1}^{K} \hat\beta_{k} z_{ik}})}\right)^{s_{i}^{0}}}.$
+
+For a comparison of the two model-based multilateral price indexes (TPD vs. TDH) see de Haan, Hendriks, and Scholz (2021).
+
+# The SPQ method {#Multilateralpriceindexmethods-TheSPQmethod}
+
+The idea of the SPQ multilateral price index is based on the relative price and quantity dissimilarity measure $\Delta_{SPQ}$, which was proposed by Diewert (2020). The relative price dissimilarity measure is used to link together bilateral Fisher indexes according to the following algorithm:
+
+\(1\) set $P_{SPQ}^{0,0}=1$ for the period $0$ (base month) and calculate $P_{SPQ}^{0,1}=P_{F}(p^0,p^1,q^0,q^1)$ for the period $1$;
+
+\(2\) For the period 2 define $P_{SPQ}^{0,2}=P_{F}(p^0,p^2,q^0,q^2) P_{SPQ}^{0,0}$ if $min\{\Delta_{SPQ}(p^0,p^2,q^0,q^2), \Delta_{SPQ}(p^1,p^2,q^1,q^2)\}$ is equal $\Delta_{SPQ}(p^0,p^2,q^0,q^2)$ or take $P_{SPQ}^{0,2}=P_{F}(p^1,p^2,q^1,q^2) P_{SPQ}^{0,1}$ otherwise;
+
+\(3\) Continue this procedure in the same manner, i.e. for period $t$, let $r^*$ be such a period that \
+$min_{r}\{\Delta_{SPQ}(p^r,p^t,q^r,q^t), r=1,2,...,t-1\}=\Delta_{SPQ}(p^{r^*},p^t,q^{r^*},q^t)$.
+
+For the considered period define $P_{SPQ}^{0,t}=P_{F}(p^{r^*},p^t,q^{r^*},q^t) P_{SPQ}^{0,r^*}$.
+
+Please note that the SPQ index does not require the information about the time window length.
+
+\
+
+------------------------------------------------------------------------
+
+# References {#Multilateralpriceindexmethods-References}
+
+\(1\) Caves D. W., Christensen, L. R. and Diewert, W. E. (1982). Multilateral comparisons of output, input, and productivity using superlative index numbers, *Economic Journal*, 92, 73-86. 
+
+\(2\) Chessa, A. G. (2015). Towards a generic price index method for scanner data in the Dutch CPI, *Paper presented at the 14^th^ Ottawa Group Meeting, Tokyo, Japan*. <https://stats.unece.org/ottawagroup/download/f412.pdf>
+
+\(3\) Chessa, A.G. (2016). A New Methodology for Processing Scanner Data in the Dutch CPI, *Eurona* 1/2016, 49-69. <https://ec.europa.eu/eurostat/documents/3217494/7556543/KS-GP-16-001-EN-N.pdf/70e246de-734c-42ba-bee2-bc0b3dd97faa?t=1468230194000>
+
+\(4\) de Haan, J., Krsinich, F. (2017). Time Dummy Hedonic and Quality-Adjusted Unit Value Indices: Do They Really Differ? *Review of Income and Wealth*. 64:4. 757-776.
+
+\(5\) de Haan J. (2015).  A Framework for Large Scale Use of Scanner Data in the Dutch CPI, *Paper presented at the 14^th^ Ottawa Group Meeting, Tokyo, Japan*. <https://stats.unece.org/ottawagroup/download/f440.pdf> 
+
+\(6\) de Haan, J., Daalmans, J. (2019). Scanner Data in the CPI: The Imputation CCDI Index Revisited. *Paper presented at the 16^th^ Ottawa Group Meeting, 8-10 May 2019, Rio de Janeiro, Brazil*. <https://stats.unece.org/ottawagroup/download/f532.pdf>
+
+(7) de Haan, J., Hendriks, R. and Scholz, M. (2021). Price measurement using scanner data: Time-product dummy versus time dummy hedonic indexes. *Review of Income and Wealth*, 67, 394--417. <https://onlinelibrary.wiley.com/doi/full/10.1111/roiw.12468>
+
+\(8\) Diewert, W. E. (1999). Axiomatic and economic approaches to international comparisons. International and interarea Comparisons of Income, Output, and Prices*,* 13--107. University of Chicago Press.
+
+\(9\) Diewert, W. E. (2004). On the Stochastic Approach to Linking the Regions in the ICP*.* Department of Economics, University of British Columbia.
+
+\(10\) Diewert, W. E., Fox, K. J. (2017). Substitution Bias in Multilateral Methods for CPI Construction using Scanner Data. *Discussion paper 17-02*, Vancouver School of Economics, The University of British Columbia, Vancouver, Canada.
+
+\(11\) Diewert,  W. E. (2020). The Chain Drift Problem and Multilateral Indexes, Technical report, *Discussion Paper 20-07*, Vancouver School of Economics.
+
+\(12\) Eltetö, Ö., Köves, P. (1964). On a Problem of Index Number Computation Relating to International Comparisons, (in Hungarian), Statisztikai Szemle, 42, 507-518.
+
+\(13\) Fisher, I. (1922). The making of index numbers: a study of their varieties, tests, and reliability*. *Houghton Mifflin.
+
+\(14\) Geary, R. G. (1958). A Note on Comparisons of Exchange Rates and Purchasing Power between Countries, *Journal of the Royal Statistical Society* Series A, 121, 97-99.
+
+\(15\) Gini, C. (1931). On the Circular Test of Index Numbers, Metron, 9(9), 3-24.
+
+\(16\) Inklaar, R., Diewert, W. E. (2016). Measuring Industry Productivity and Cross-Country Convergence, *Journal of Econometrics*, 191, 426-433.
+
+\(17\) Ivancic, L. W.E. Diewert and K.J. Fox (2009), "Scanner Data, Time Aggregation and the Construction of Price Indexes,\" *UBC Discussion paper 09-09*. <https://stats.unece.org/ottawagroup/download/f275.pdf>
+
+\(18\) Ivancic, L. W.E. Diewert and K.J. Fox (2011), "Scanner Data, Time Aggregation and the Construction of Price Indexes," *Journal of Econometrics* 161, 24--35. <https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/c/13885/files/2014/07/Ivancic2011_Scanner-data-time-aggregation-and-the-construction-of-price-indexes.pdf>
+
+\(19\) Khamis, S. H. (1972). A New System of Index Numbers for National and International Purposes, *Journal of the Royal Statistical Society* Series A, 135, 96-121.
+
+\(20\) Szulc, B. (1964). Indices for Multiregional Comparisons. (in Polish). *Przeglad Statystyczny* 3, 239-254.
+
+\(21\) Törnqvist, L. (1936). The Bank of Finland\'s Consumption Price Index, Bank of Finland Monthly Bulletin 10, 1-8.
