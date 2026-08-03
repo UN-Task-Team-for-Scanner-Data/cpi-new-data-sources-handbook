@@ -1,0 +1,71 @@
+---
+title: "Identifying unique products"
+---
+
+Data are usually disaggregated by various dimensions. This page contains information on how products can be defined from the given article codes.\
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2021-06-07                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910477) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Aggregating article codes {#Identifyinguniqueproducts-Aggregatingarticlecodes}
+
+After possibly aggregating across time and outlets (see [Aggregation across time and outlets](aggregation-across-time-and-outlets.qmd)), an average price by article code is available. In some cases, these article codes may be too detailed for price index calculation because of relaunches, or because article code churn is very high (see for example Ref. (4) for discussion on this by the Office for National Statistics (ONS).
+
+For example, let us suppose that a first article code has a price of 20 euros in period 1 and becomes unavailable from period 2 thereafter. A second article code of the same quality (a 'relaunch') has a price of 25 euros and is only available from period 2 onwards. A price index based on matching article codes would miss the price increase from 20 euros to 25 euros.
+
+In some product categories, such as clothing and footwear, the article codes frequently appear and disappear making it difficult to match them across time and therefore price changes are not adequately measured.
+
+There are different strategies to cope with new and disappearing article codes.
+
+1.  Linking - an outgoing article code is linked with an incoming article code so that their prices can be directly compared, possibly applying a quantity adjustment if package size has changed (see Ref. (1) for linking article codes for clothing and Ref. (4) for application of relaunch linking to groceries).
+2.  Grouping - different articles with similar characteristics are grouped together and the average prices for these groupings are followed over time. (see Ref. (3) for creating homogeneous products for sports equipment). There are trade-offs in creating groupings (homogenous products). If a grouping is too broad, this can lead to unit value bias (and high volatility) as the individual articles are not strictly comparable. On the other hand, defining the grouping too narrowly may lead to a lack of matching between outgoing and new or returning articles. The multivariate adaptive regression splines (MARS) method (see Ref. (2)) can be used as a tool for finding a compromise between these two objectives.
+3.  Quality adjustment and hedonics - the prices for the new and disappearing articles are imputed in the periods when they are not available with the help of a hedonic function. For additional detail, see the section on [Quality change and hedonic estimation](quality-change-and-hedonic-estimation.qmd).
+
+Table 1 below summarises some of the key advantages and disadvantages of using these strategies.
+
+Table 1: Key advantages and disadvantages of using linking, grouping and hedonics strategies.
+
++--------------+----------------------------------------+---------------------------------------------------------------+
+| Approach     | Advantages                             | Disadvantages                                                 |
++--------------+----------------------------------------+---------------------------------------------------------------+
+| **Linking**  | Captures relaunches                    | Identification of article codes to be linked can be difficult |
++--------------+----------------------------------------+---------------------------------------------------------------+
+| **Grouping** | Increases matching over time           | Unit value bias can occur                                     |
++--------------+----------------------------------------+---------------------------------------------------------------+
+| **Hedonics** | Explicitly adjusts for quality changes | Product characteristics are required                          |
++--------------+----------------------------------------+---------------------------------------------------------------+
+
+All three strategies require some kind of metadata on product characteristics. Such metadata can be obtained as follows:
+
+1.  Extract relevant information from the text strings (such as the brand).
+2.  Calculate distance measures between the text strings.
+3.  Use the metadata directly provided in the data (e.g. retailer classifications, structured product characteristics).
+4.  Use additional information on product characteristics provided by market research companies.
+5.  Scrape additional product characteristics on the web for the article codes included in scanner data.
+
+\
+
+------------------------------------------------------------------------
+
+# References {#Identifyinguniqueproducts-References}
+
+\(1\) Bertolotto, M. (2019). Online Price Index with Product Replacement: The Closest-Match Approach, paper presented at the 16th meeting of the Ottawa Group, Rio de Janeiro, Brazil. <https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/home/Meeting+16/$FILE/Online%20Price%20Index%20with%20Product%20Replacement%20paper.pdf>
+
+\(2\) Chessa, A. G. (2019). MARS: A method for defining products and linking barcodes of item relaunches, paper presented at the 16th meeting of the Ottawa Group, Rio de Janeiro, Brazil <https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/home/Meeting+16/$FILE/A%20method%20for%20defining%20products%20paper.pdf>
+
+\(3\) Nyborg Hov K., Johannessen R. (2018). Using scanner data for sports equipment. Paper written for the joint UNECE/ILOs Meeting of the Group of Experts on Consumer Price Indices, Geneva, Switzerland <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2018/Norway_-_session_1.pdf>
+
+\(4\) ONS (2021). Research into the use of scanner data for constructing UK consumer price statistics <https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06>
+
+\

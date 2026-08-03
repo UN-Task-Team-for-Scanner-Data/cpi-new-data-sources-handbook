@@ -1,0 +1,167 @@
+---
+title: "Overview of alternative data sources"
+---
+
+This page contains a general introduction to each of the alternative data sources used to compile consumer price indices. 
+
+Statistical agencies have traditionally relied on surveys to collect the price and expenditure information used in the production of consumer price indices (CPIs). These survey-based approaches typically involve the selection of a sample of retailers and items, with prices collected at discrete points in time. While well-established, such approaches can be resource intensive and may be slow to reflect changes in consumption patterns, particularly in markets characterised by rapid product turnover.
+
+Increasingly, National Statistical Offices (NSOs) are exploring the use of alternative data sources to complement or replace survey-based price collection. Alternative data sources differ from traditional surveys not simply in scale or timeliness, but in the way price information is generated, observed and accessed. From this perspective, alternative data sources can be usefully grouped according to whether prices are observed through realised transactions or through posted or administered prices. This distinction is important because it has direct implications for index compilation methods, weighting, and representativity, as discussed later in the Handbook.
+
+At a high level, alternative data sources relevant for consumer price statistics can therefore be characterised as follows:
+
+- Transaction data, where prices are observed as part of recorded economic transactions and are typically accompanied by quantities or expenditures; and
+- Non‑transaction data, where prices are observed as posted, listed or administered values, but where quantities, expenditures or confirmation that a transaction has occurred are generally not available.
+
+Most alternative data sources used in practice fall predominantly into one of these categories. Once data are acquired, many downstream processing steps, such as cleaning, classification, validation, and index compilation, are conceptually similar across sources. However, the availability (or absence) of quantity or expenditure information is often a key determinator in the choice of sampling, index number methods, and aggregation strategies.
+
+The main types of alternative data sources that can be considered within this framework are described below. 
+
+**Page information**
+
++---------------------+------------------------------------------------------------------------------------------------------+
+| Version             | v3                                                                                                   |
++---------------------+------------------------------------------------------------------------------------------------------+
+| Last updated on     | 2026-05-08                                                                                           |
++---------------------+------------------------------------------------------------------------------------------------------+
+| Summary of changes  | Expanded to include more examples of alternative data sources and specific strengths and limitations |
++---------------------+------------------------------------------------------------------------------------------------------+
+| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910451)           |
++---------------------+------------------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Transaction data {#Overviewofalternativedatasources-Transactiondata}
+
+Transaction data record actual purchases made by consumers and typically include information on turnover, quantities sold, and prices paid. Scanner data (transaction data recorded at retailer checkout points) are one of the most prominent examples of this data type. More broadly, transaction data may be collected through a variety of systems and are not limited to physical retail environments. For example, e-invoice data, administrative transaction data, and other electronic transaction records such as loyalty-scheme databases, receipt based data and IoT (\"Internet of Things\") enabled devices (such as smart appliances, connected home devices and wearables) are becoming increasingly explored and considered. 
+
+Transaction data may be provided at the level of individual transactions, but more commonly are supplied as aggregated totals of turnover and quantities sold for a given product over a specified period. Data may be provided directly by retailers or indirectly through third-party data aggregators that compile information across multiple companies.
+
+From a CPI perspective, transaction data offer several important advantages:
+
+- they often provide near-complete coverage of sales for participating retailers, reducing or eliminating sampling error
+
+- they include quantity or expenditure information, enabling the use of explicitly weighted index number methods at low levels of aggregation
+
+- they allow more timely incorporation of new products and changes in consumption patterns compared with traditional price surveys.
+
+However, transaction data also introduce new challenges that must be considered early in the process. These include managing large data volumes, handling frequent product entry and exit, ensuring consistent product identifiers over time, and addressing legal and contractual constraints on data use. While transaction data can significantly enhance representativeness, their successful use depends on careful data preparation and methodological choices, which are discussed in later sections of the handbook.
+
+Examples of transaction data include:
+
+## Scanner data {#Overviewofalternativedatasources-Scannerdata}
+
+Transaction‑level data, or data aggregated over short time intervals (for example, daily or weekly) or to defined units such as retail outlets or product identifiers (for example, GTINs), obtained from retailers' point‑of‑sale systems either directly or via third‑party providers. These data typically include product identifiers, prices, quantities and turnover and can cover large shares of household retail expenditure for some product groups.
+
+## E‑invoice data {#Overviewofalternativedatasources-Einvoicedata}
+
+Electronic records generated for administrative or tax purposes that document transactions between sellers and buyers. Depending on national systems, e‑invoice data may provide item‑level price information with varying levels of product detail, quantities or values. Where sufficiently detailed and accessible for statistical use, these data may support CPI compilation and related weighting or validation activities.
+
+## Administrative transaction data {#Overviewofalternativedatasources-Administrativetransactiondata}
+
+Transaction‑based data collected for regulatory or operational purposes, such as utility billing systems, regulated tariffs linked to consumption, or other administrative systems that record realised payments or charges experienced by households. While such data may follow administrative concepts, they can provide consistent and timely transaction prices where alignment with CPI pricing concepts is satisfactory.
+
+## Other electronic transaction records {#Overviewofalternativedatasources-Otherelectronictransactionrecords}
+
+Including, where appropriate, data derived from payment systems, loyalty‑scheme databases, digital platforms or other electronic transaction environments (including emerging data sources such as those from IoT enabled device data such as smart appliances, connected home devices and wearables), provided the data record actual purchases and meet CPI conceptual and quality requirements. The structure, coverage and accessibility of these data vary widely across countries and markets.
+
+# Non-transaction data {#Overviewofalternativedatasources-Non-transactiondata}
+
+Non‑transaction data provide information on posted or offered prices and product attributes but typically do not include quantities, expenditures or direct confirmation that a transaction has occurred. These data can expand price coverage and observation frequency but require careful design to avoid implicit weighting or representativity issues. Non‑transaction data may be obtained through automated tools, APIs (see below) or direct provision by data owners, depending on the legal and institutional context.
+
+Examples of non-transaction data include:
+
+## Web-scraped data {#Overviewofalternativedatasources-Web-scrapeddata}
+
+ Web scraping refers to the automated collection of prices and product information from online retailers and service providers. These data typically capture list prices rather than transaction prices and generally do not include quantity or expenditure information.
+
+Two broad approaches to web scraping are commonly distinguished:
+
+- **Targeted web scraping**, which collects prices for a predefined set of products or characteristics, often to replace or supplement existing survey collection; and
+- **Bulk web scraping**, which aims to extract large volumes of price data without prior selection of items, enabling broader coverage and exploratory analysis.
+
+Web-scraped data can substantially increase the number of price observations collected and allow for more frequent price measurement, often at lower marginal cost than manual collection. NSOs considering web scraping are strongly encouraged to engage with data providers where possible, as agreements with retailers can reduce the risk of access being blocked and improve data stability over time.
+
+## Application Programming Interfaces (APIs) {#Overviewofalternativedatasources-ApplicationProgrammingInterfacesAPIs end="5099" data-start="4889"}
+
+In some cases, online prices and product attributes are accessed through APIs provided by platforms or data providers rather than through direct web scraping. From a statistical perspective, API-based data access can be preferable to web scraping, as APIs are generally more stable, less sensitive to changes in website structure, and less burdensome for data providers. However, in terms of content, API data are often similar to web-scraped data, typically providing list prices and product attributes but not quantities or expenditures.
+
+The feasibility of API access depends heavily on institutional arrangements and agreements with data providers, and NSOs should assess both the technical and legal implications before adopting this approach.
+
+## Online listings and advertised price data {#Overviewofalternativedatasources-Onlinelistingsandadvertisedpricedata}
+
+Prices and product characteristics derived from listing platforms or classified advertisements, where goods or services are offered but transactions are completed outside the platform (for example, car sales or property rentals). These data may be collected automatically or provided directly by the platform. The listed price may differ from the final transaction price, and while indicators of market activity (such as listing duration or removal) may be available, they do not constitute direct measures of transactions.
+
+## Administrative non‑transaction data {#Overviewofalternativedatasources-Administrativenontransactiondata}
+
+Prices or tariffs set or published by administrative bodies, regulators or public authorities, such as regulated fees, charges or official price schedules. These data record prices as set rather than prices paid in individual transactions and typically lack information on quantities or expenditures. Their suitability for CPI compilation depends on the extent to which the administered price aligns with the price faced by households.
+
+\
+
+Caution: Use of bulk non-transaction data in CPI compilation
+
+Bulk non-transaction datasets often provide large volumes of price observations but typically lack reliable expenditure or quantity information. In the absence of such information, NSOs may be unable to apply weighted index methods or to construct a demonstrably representative product sample, which can introduce bias or instability in CPI estimates. In addition, the ongoing maintenance of web-scraping systems, changes to website structures, and legal or contractual constraints may affect data continuity and sustainability. NSOs should carefully assess these methodological, operational and legal considerations before adopting bulk non-transaction data for CPI production. Details of these constraints are provided in later sections of this handbook. 
+
+# Key features of alternative data sources {#Overviewofalternativedatasources-Keyfeaturesofalternativedatasources style="text-align: left;"}
+
+The features of these data sources are summarized in Table 1. More detailed examples of file structures for scanner data and web-scraped data are provided in the section [Example file structures for web scraped and scanner data](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910470/Example+file+structures+for+web+scraped+and+scanner+data). Emerging sources have not been included in this table as their features vary from source to source, if any of these emerging sources become prominent in use within consumer price statistics, they will be appended to the table accordingly. 
+
+Table 1: Features of new and existing data sources
+
++:--------------------------+:----------------------------------------------+:--------------------------------------------------------------------------------------------------------------------------+:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Data dimension**        | **Traditional data**                          | **Transaction data**                                                                                                      | **Non-transaction data**                                                                                                                                                        |
++---------------------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Data acquisition          | Manual mainly via software running on tablet  | Automated - acquired from retailers, government or other organisations collecting them primarily for non-statistical aims | Automated - data acquired directly from providers, web-scraped (although requires maintenance for website changes) or through APIs                                              |
+|                           |                                               |                                                                                                                           |                                                                                                                                                                                 |
+|                           |                                               |                                                                                                                           | \                                                                                                                                                                               |
++---------------------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Completeness/scope        | Sample items from sample of retailers         | All transactions (census) for participating retailers/companies                                                           | Bulk or targeted sample from online retailers (web/API), participants or data owners                                                                                            |
++---------------------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Metadata                  | Item description and NSO specified attributes | Item description and often limited attributes                                                                             | Item description and attributes as described on website or according to available attributes in other databases                                                                 |
++---------------------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Quantity data             | None (shelf space and other possible proxies) | Quantities sold                                                                                                           | None (although see Section [Deriving proxy weights for web scraped data](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910506/Deriving+proxy+weights+for+web+scraped+data)) |
++---------------------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Price data                | List price                                    | Transaction price                                                                                                         | List price                                                                                                                                                                      |
++---------------------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Time of data availability | Based on NSO processing speed                 | Scheduled file deliveries - may introduce some lag. Access to historic data generally available                           | For web or API: Near instantaneous if scraped or API, may be some lag if provider-delivered. Limited to no access to historic data.                                             |
+|                           |                                               |                                                                                                                           |                                                                                                                                                                                 |
+|                           |                                               |                                                                                                                           | For administrative non-transacted data / some online listings data: Scheduled file deliveries - may introduce some lag. Access to historic data generally available             |
++---------------------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Time coverage             | One point in time in collection period        | Complete coverage across month although can be aggregated to daily/weekly/monthly instead of individual transactions      | For web or API: High-frequency (depending on the purpose, different frequencies are possible eg scraping can happen hourly, daily, weekly or monthly)                           |
+|                           |                                               |                                                                                                                           |                                                                                                                                                                                 |
+|                           |                                               |                                                                                                                           | For administrative non transacted data: depends on the kind of sector and data set.                                                                                             |
++---------------------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+# Strengths, limitations and risks of alternative data sources {#Overviewofalternativedatasources-Strengthslimitationsandrisksofalternativedatasources}
+
+Alternative data sources offer important opportunities to enhance consumer price statistics, but their use also introduces a range of methodological, operational, and governance considerations. These considerations vary across data sources and across national contexts, and should be assessed carefully as part of an NSOs implementation strategy.
+
+## Coverage and representativeness {#Overviewofalternativedatasources-Coverageandrepresentativeness end="1124" data-start="1089"}
+
+Some alternative data sources, particularly transaction data, can provide detailed information on prices and quantities for a large share of consumer purchases within participating retailers. This can improve representativeness at detailed levels and support the use of explicit expenditure or quantity weighting.
+
+Non-transaction data sources, such as web-scraped or API-based price data and online listings data, typically provide extensive coverage of listed products and prices but may not include information on how frequently those products are purchased, this may disproportionately represent products that are frequently listed or heavily marketed online, regardless of how often they are actually purchased.
+
+When quantity or expenditure information is unavailable, price indices derived from these data implicitly treat all observed products as equally important. This can result in indices that over-represent niche, premium, or rarely purchased products and under-represent commonly purchased items. While proxy weighting approaches have been proposed, identifying robust and conceptually appropriate proxies remains challenging and is an active area of research.
+
+Administrative data may offer comprehensive or near-census coverage for specific services or regulated prices, but may be limited in scope or frequency and may not align perfectly with CPI concepts without adjustment.
+
+## Methodological implications {#Overviewofalternativedatasources-Methodologicalimplications end="2167" data-start="2136"}
+
+The characteristics of each data source influence the choice of data preparation methods, index number formulas, and aggregation strategies. The availability (or absence) of quantity or expenditure information is particularly important, as it affects whether weighted or unweighted methods can be used at the elementary aggregate level.
+
+Alternative data sources may also exhibit features such as high product turnover, frequent product relaunches, or changes in item definitions over time. These features can complicate [product identification, matching, and quality adjustment](identifying-unique-products.qmd), and place additional demands on data processing and index compilation systems regardless of the data source used.
+
+## Operational and sustainability considerations {#Overviewofalternativedatasources-Operationalandsustainabilityconsiderations end="2912" data-start="2863"}
+
+Compared with traditional survey-based collection, alternative data sources introduce different operational dependencies. Transaction data such as scanner data and administrative transaction data often rely on sustained cooperation with data providers or other public authorities, while non-transaction data such as web-scraping collection depends on stable technical access and clearly defined collection arrangements.
+
+The long-term availability and continuity of alternative data cannot always be guaranteed. Changes in business practices, data systems, legislation, or technical interfaces may affect data supply over time. NSOs should therefore consider sustainability, contingency planning, and the implications of data changes for index continuity and comparability. Web scraping relies on automated extraction from retailer websites, which may change without notice or restrict access over time. APIs and data-sharing agreements may provide greater stability but require sustained cooperation with data providers.
+
+When inserting the use of alternative data sources into production it is important and highly recommended that NSOs consider a feasible [fallback plan to mitigate possible data gaps](dealing-with-unexpected-data-gaps.qmd) in the acquisition process. 
+
+## Legal, ethical, and governance issues {#Overviewofalternativedatasources-Legalethicalandgovernanceissues end="3665" data-start="3624"}
+
+The use of alternative data sources raises legal and ethical considerations related to data access, confidentiality, intellectual property, and compliance with national and international regulations. These considerations apply across data sources, though the specific risks and mitigation strategies may differ.
+
+Clear governance arrangements, transparency about data use, and, where appropriate, formal data-sharing agreements are essential to ensure that alternative data are used responsibly and sustainably in official statistics. Further discussion on deriving a formal agreement for scanner data can be found in the section [Data sharing agreements](data-sharing-agreements.qmd) and in the training material for the module on data acquisition.

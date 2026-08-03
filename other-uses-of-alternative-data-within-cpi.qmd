@@ -1,0 +1,97 @@
+---
+title: "Other uses of alternative data within CPI"
+---
+
+While much of this handbook focuses on the use of alternative data sources for the calculation of price indices, these data may also support other aspects of CPI production.
+
+In some cases, alternative data can complement or enhance existing processes even where they are not used directly in index compilation.
+
+Recognising these additional uses may help NSOs extract greater value from data acquisition efforts and support more coherent CPI systems. 
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2026-05-12                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | New page - initial published version                                                       |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=443416705) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Supporting sub-national and regional CPI statistics {#OtherusesofalternativedatawithinCPI-Supportingsub-nationalandregionalCPIstatistics end="1026" data-start="988"}
+
+Alternative data sources often provide broader geographic coverage and higher observation density than traditional price surveys. Where conceptually appropriate, these data may support:
+
+- the production of regional or sub-national CPI indices
+
+- improved analysis of geographic price variation
+
+Even where national indices remain the primary output, alternative data can help assess regional representativeness and inform stratification decisions.
+
+# Supporting variants of CPI indices {#OtherusesofalternativedatawithinCPI-SupportingvariantsofCPIindices end="255" data-start="217"}
+
+Alternative data sources may support the production of different CPI variants, for example:
+
+- constant tax CPI indices, where price movements are analysed net of changes in indirect taxes
+
+- analytical CPI series that distinguish between market-driven price changes and policy-driven effects (such as tax or fee changes)
+
+- enhanced analysis of discounts, promotions, and fees, where these are treated differently across CPI variants
+
+Where such variants are envisaged, this may have implications for data acquisition, as access to VAT-exclusive prices or explicit tax or discount breakdowns may be required from data providers.
+
+# Informing expenditure weights and aggregation structures {#OtherusesofalternativedatawithinCPI-Informingexpenditureweightsandaggregationstructures end="1717" data-start="1657" style="text-align: left;"}
+
+Transaction data and other data sources containing quantity or expenditure information may also be used to:
+
+- inform elementary or higher-level expenditure weights
+
+- support more frequent updating of weights
+
+- validate weights derived from household or retail surveys
+
+These uses may be particularly valuable where survey-based expenditure data are infrequent, lagged, or subject to high sampling variability. 
+
+# Supporting product selection, classification, and sample design {#OtherusesofalternativedatawithinCPI-Supportingproductselectionclassificationandsampledesign end="2210" data-start="2143" style="text-align: left;"}
+
+Alternative data sources can also be used upstream of index calculation to:
+
+- identify emerging products and services
+
+- assess product turnover and life cycles
+
+- support sample maintenance and rotation strategies
+
+- improve classification to CPI structures
+
+In some cases, these data may be used as a sampling frame, even where index compilation continues to rely on traditional survey-based prices. 
+
+# Enhancing data validation and quality assurance {#OtherusesofalternativedatawithinCPI-Enhancingdatavalidationandqualityassurance end="2669" data-start="2623" style="text-align: left;"}
+
+High-frequency or high-volume data can provide additional signals for:
+
+- detecting unusual price movements
+
+- monitoring product availability and relaunches
+
+- validating survey-based prices or indices
+
+- conducting sensitivity analysis of methodological choices
+
+These uses may improve confidence in CPI outputs even where alternative data are not the primary source for index calculation. 
+
+# Supporting analysis and communication {#OtherusesofalternativedatawithinCPI-Supportinganalysisandcommunication end="3109" data-start="3068" style="text-align: left;"}
+
+Alternative data sources may also be used for analytical purposes, such as:
+
+- understanding drivers of inflation
+
+- analysing substitution behaviour
+
+- producing experimental or analytical outputs alongside official CPI releases
+
+Such uses can enhance transparency and help explain CPI movements to users.

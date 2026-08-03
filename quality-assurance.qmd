@@ -1,0 +1,87 @@
+---
+title: "Quality assurance"
+---
+
+The use of alternative data sources in CPI compilation requires robust quality assurance procedures. 
+
+While many of the quality principles applied to traditional price collection remain relevant, alternative data sources introduce new risks that must be managed carefully. These risks may arise from the scale and complexity of the datasets, the automated nature of processing pipelines, and the reliance on systems and processes that are outside the direct control of the National Statistical Office (NSO).
+
+Quality assurance should therefore be embedded throughout the CPI production process. Rather than being treated as a single stage of validation, quality considerations should inform the assessment of potential data sources, the design of processing systems, the compilation of indices and the ongoing monitoring of outputs. Quality assurance procedures should be proportionate to the scale and complexity of the data source and should evolve as experience with the data increases. NSOs are encouraged to develop quality assurance procedures tailored to their own data sources, compilation methods and operational environments.
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v4                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2026-05-12                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Expanded content and separated out into standalone section                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910452) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Quality frameworks {#Qualityassurance-Qualityframeworks end="2121" data-start="1641"}
+
+International statistical quality frameworks provide useful guidance for structuring this work. The United Nations (UN) has published the *United Nations National Quality Assurance Frameworks Manual for Official Statistics ([UN NQAF Manual](https://unstats.un.org/unsd/methodology/dataquality/))*, which provides guidance on establishing quality frameworks within national statistical systems. The manual includes specific guidance on quality assurance for statistics compiled using administrative or other non-statistical data sources.
+
+Frameworks generally include a set of quality dimensions that can help structure quality assurance activities. For example, the [Quality Assurance Framework of the European Statistical System](https://ec.europa.eu/eurostat/documents/64157/4392716/ESS-QAF-V1-2final.pdf/bbf5970c-1adf-46c8-afc3-58ce177a0646) identifies several principles relating to statistical outputs:
+
+1.  *Relevance *- The degree to which the statistical product meets user needs in both coverage and content.
+2.  *Accuracy & Reliability* - Accuracy is the proximity between an estimate and the unknown true value. Reliability is the closeness of early estimates to subsequent estimated values.
+3.  *Timeliness and Punctuality* - Timeliness refers to the time gap between publication and the reference period. Punctuality refers to the gap between planned and actual publication dates.
+4.  *Accessibility and Clarity* - Accessibility is the ease with which users are able to access the data, also reflecting the format in which the data are available and the availability of supporting information. Clarity refers to the quality and sufficiency of the metadata, illustrations and accompanying advice.
+5.  *Comparability and Coherence* - Comparability is the degree to which data can be compared over time and domain. Coherence is the degree to which data that are derived from different sources or methods, but refer to the same topic, are similar.
+
+With the advance of modern methods and systems, including the potential use of machine learning and AI in the production of Official Statistics, some other dimensions of quality are also being considered and proposed. For example, reproducibility has been a key consideration in recent years (see for example, [the Price Statistics Reproducibility Project](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/)), while explainability and robustnesses have also been proposed in the Machine Learning context (see [A Quality Concept for the Use of Machine Learning in Official Statistics](https://unece.org/sites/default/files/2023-05/ML2023_S2_Germany_Dumpert_Paper.pdf)). 
+
+All quality dimensions remain applicable when using alternative data sources for CPI production. In practice, however, their implementation requires particular attention to both the characteristics of the data source and the behaviour of the resulting statistical outputs. Quality assurance activities can therefore be considered across several stages of the CPI production process as described below. 
+
+# Source assessment {#Qualityassurance-Sourceassessment end="3782" section-id="ncy3v2" data-start="3762"}
+
+Before integrating a new data source into CPI compilation, NSOs should evaluate whether it is suitable for statistical use. This assessment should consider whether the data provide adequate coverage of the products, outlets or market segments represented in the CPI, and whether the concepts and definitions used in the data align with CPI requirements.
+
+Other important considerations include the stability of product identifiers and classifications, the availability of metadata, and the sustainability of access to the data source. Because alternative data sources are often supplied by external organisations, changes in provider systems, business practices or data delivery mechanisms may affect the structure or interpretation of the data.
+
+Exploratory analysis or pilot studies can be useful in assessing whether the data source provides sufficient coverage, stability and quality for CPI purposes.
+
+Where alternative data are obtained from external providers, formal data sharing agreements or contracts are typically required. These agreements should specify the data schema, transfer frequency, delivery method and responsibilities for maintaining the data supply. It is also good practice to include provisions requiring advance notification of planned changes to data structures, definitions or delivery processes so that NSOs can make any necessary adjustments in advance. Where possible, any validation checks carried out by the data supplier should be agreed and documented.
+
+More details of quality assurance at this stage of the process are provided in the [Data selection and acquisition](data-selection-and-acquisition.qmd) section. 
+
+# Data ingestion and integrity checks {#Qualityassurance-Dataingestionandintegritychecks end="5318" section-id="5imlhi" data-start="5280"}
+
+Once a data source has been established, quality assurance should begin with checks on the integrity of incoming data deliveries. These checks confirm that the data have been received as expected and that their structure remains consistent over time.
+
+Typical checks may include verifying the completeness of data deliveries, confirming that key variables and identifiers are present and correctly formatted, and monitoring the volume of observations received. Sudden changes in data volumes, missing variables or structural differences may indicate delivery errors or changes in provider systems that require investigation.
+
+At this stage it is often useful to [standardise](standardising-the-data.qmd) incoming data into a common internal schema used for CPI processing. For example, NSOs may adopt consistent naming conventions and variable definitions for key fields such as price, quantity, product identifiers or transaction dates. [Standardising](standardising-the-data.qmd) the data structure helps ensure consistency across different sources and simplifies downstream processing.
+
+Many NSOs implement automated validation pipelines or monitoring dashboards to track incoming data deliveries and flag anomalies. These tools can help detect missing data, structural changes or unusual shifts in data volumes as soon as the data are ingested.
+
+# Data preparation and processing {#Qualityassurance-Datapreparationandprocessing end="6649" section-id="94gjgs" data-start="6615"}
+
+Quality assurance during data preparation focuses on ensuring that the data have been correctly processed and classified for CPI use. This stage often involves mapping products to the CPI classification, identifying missing or duplicate observations, and detecting extreme or implausible price movements. 
+
+In the case of alternative data sources, particular attention may be required to manage product identifiers, product relaunches or changes in packaging and product characteristics. Because these datasets are typically large and require automated processing pipelines, reproducibility, documentation and version control are particularly important.
+
+The systems used to process alternative data sources should also be appropriately tested and supported by the NSO's IT infrastructure. Responsibilities for maintaining these systems, including the division of roles between statistical production teams and IT departments, should be clearly defined.
+
+# Index compilation and validation {#Qualityassurance-Indexcompilationandvalidation end="7645" section-id="1l5dzyq" data-start="7610"}
+
+After price indices have been compiled, quality assurance should focus on the behaviour of the resulting statistical outputs. This may involve analysing the volatility of indices, reviewing the contributions of individual products or retailers, and comparing results with indices produced using alternative methods or data sources.
+
+Unexpected movements or structural breaks in the index may indicate issues in the underlying data or processing procedures. For example, changes in product coverage, filtering rules or matching algorithms may affect index stability and should be investigated carefully.
+
+Before introducing indices derived from alternative data sources into live production, it is generally advisable to conduct impact analysis comparing the results with existing CPI series (see section on [Implementation](implementation.qmd)). Differences between the new and existing approaches should be understood and documented, and any methodological changes should be clearly explainable to users.
+
+Some NSOs also use formal governance arrangements when introducing new data sources or index methods, such as internal review panels or external advisory groups (see as an example the UK\'s [advisory panels for consumer prices - stakeholder and technical](https://uksa.statisticsauthority.gov.uk/the-authority-board/committees/national-statisticians-advisory-committees-and-panels/advisory-panels-for-consumer-price-statistics/)). These structures can provide additional scrutiny and help ensure that proposed methodological changes are robust and transparent.
+
+# Ongoing monitoring {#Qualityassurance-Ongoingmonitoring end="8919" section-id="1vaoxy8" data-start="8898"}
+
+The characteristics of alternative data sources may evolve over time as retailers update systems, websites change structure, or consumer purchasing behaviour shifts. Quality assurance should therefore include ongoing monitoring of both the underlying data and the resulting statistical outputs.
+
+Monitoring activities may include tracking changes in product coverage, retailer participation or identifier structures, reviewing the stability of data deliveries, and periodically reassessing the representativeness of the data source relative to the CPI universe.
+
+Where automated or machine learning approaches are used in data processing (for example in product classification or matching), additional monitoring may be required to ensure that model performance remains stable over time. Changes in product ranges or market behaviour may affect the accuracy of such models and periodic review may therefore be necessary. The section on [classification ](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910479/Classification)includes a discussion on monitoring the accuracy of any machine learning models used over time.

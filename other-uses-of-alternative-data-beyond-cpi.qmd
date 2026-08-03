@@ -1,0 +1,81 @@
+---
+title: "Other uses of alternative data beyond CPI"
+---
+
+Beyond CPI production, many of the data sources and processes described in this handbook may also support a range of other official statistical domains.
+
+In many cases, early consideration of cross-domain needs can help reduce duplication of data acquisition and processing efforts.
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2026-05-12                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | New page - initial published version                                                       |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=443416710) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Price statistics beyond CPI {#OtherusesofalternativedatabeyondCPI-PricestatisticsbeyondCPI end="1026" data-start="988"}
+
+Alternative data sources can support several price-related statistical outputs beyond the CPI, including:
+
+- Purchasing Power Parities (PPPs), where detailed price information for comparable products and services is required across countries
+
+- Producer Price Indices (PPIs) and other business price indices, particularly for retail, wholesale, and selected service activities
+
+- Export and Import Price Indices, where transaction-level or invoice-based data may be available
+
+- residential property and rental price statistics, where web-scraped listings and administrative records are increasingly used
+
+# National accounts and macroeconomic statistics {#OtherusesofalternativedatabeyondCPI-Nationalaccountsandmacroeconomicstatistics end="1424" data-start="1374" style="text-align: left;"}
+
+Transaction and administrative data can contribute to national accounts compilation, particularly where they provide detailed information on prices, quantities, or turnover. Relevant areas include:
+
+- household final consumption expenditure, including detailed product-level breakdowns
+
+- deflators used to derive volume measures in national accounts
+
+- supply-use tables, where consistent price and quantity information supports balancing
+
+- short-term indicators, such as monthly or quarterly estimates of consumption or turnover
+
+# Business and structural statistics {#OtherusesofalternativedatabeyondCPI-Businessandstructuralstatistics end="2014" data-start="1976" style="text-align: left;"}
+
+Alternative data sources may also support business-focused statistical domains, including:
+
+- retail and wholesale trade statistics, using turnover and quantity data
+
+- structural business statistics, where administrative or transaction data can supplement or replace surveys
+
+- business demography and firm dynamics, through transaction records and administrative datasets
+
+- service sector statistics, particularly for digitally delivered services and platforms
+
+# Household and distributional statistics {#OtherusesofalternativedatabeyondCPI-Householdanddistributionalstatistics end="2541" data-start="2498" style="text-align: left;"}
+
+Where access and legal frameworks permit, alternative data sources may support more granular analysis of household behaviour, including:
+
+- consumption patterns and expenditure distributions, when combined with other sources
+
+- experimental distributional measures, subject to confidentiality constraints
+
+- analysis of substitution behaviour and market dynamics, particularly during periods of rapid change
+
+# Emerging and cross-cutting statistical domains {#OtherusesofalternativedatabeyondCPI-Emergingandcross-cuttingstatisticaldomains end="3015" data-start="2965" style="text-align: left;"}
+
+In some cases, alternative data sources may support newer or cross-cutting statistical needs, such as:
+
+- digital economy and platform statistics, including e-commerce and digital services
+
+- environmental and sustainability statistics, where transaction data can support consumption-based analyses
+
+- experimental statistics and research outputs, particularly where timeliness or granularity is prioritised
+
+- nowcasting for Central Banks / other forecasting organisations
+
+While conceptual and methodological requirements can differ across statistical domains, many processing steps such as data cleaning, product identification, and temporal aggregation are common. Early consideration of potential reuse can therefore support more efficient and coherent use of alternative data across statistical systems.

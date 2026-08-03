@@ -1,0 +1,57 @@
+---
+title: "Standardising the data"
+---
+
+Data will need to be standardised before being used to calculate price indices.\
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2021-06-09                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910475) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Standardising the data {#Standardisingthedata-Standardisingthedata}
+
+After the data are received by the National Statistical Office (NSO), it will need to be standardised in order to be processed through the statistical pipeline. Standardisation can include:
+
+- renaming column names so that common attributes are called the same across different retailers
+- reformatting the data so that attributes are saved in the same data type (for example, all dates are saved in date/time format)
+- creating new variables that can help with future processing
+
+Scanner data sets typically do not contain a price variable. Instead, the price variable has to be calculated. An average price is obtained by dividing total turnover with the corresponding total number of units sold (the 'quantity' variable) for a given set of transactions.  Because this is an *average* price, it may be different from the price that would be observed by a price collector on a particular day, in a specific outlet for a specific product.
+
+Different articles usually have different package sizes, weights etc.. The price and quantity variables could be transformed into a common, standard, measurement unit.  Consider the example presented in Table 1:
+
+Table 1: deriving a standardised price
+
++--------------+----------+----------+-----------------+---------+-------------------+-----------------------+--------------------+
+| Article code | Turnover | Quantity | Price           | Unit    | Standardised unit | Standardised quantity | Standardised price |
+|              |          |          |                 |         |                   |                       |                    |
+|              | \(1\)    | \(2\)    | \(3\) = (1)/(2) | \(4\)   | \(5\)             |  (6) = (2) \* (4)/(5) | \(7\) = (1)/(6)    |
+|              |          |          |                 |         |                   |                       |                    |
+|              |          |          |                 |         |                   | \                     | \                  |
++--------------+----------+----------+-----------------+---------+-------------------+-----------------------+--------------------+
+|  XXXA        | 1536     | 720      | 1536/720 =      | 0.8 kg  | 1 kg              | 720\* (0.8/1)         | 1536/576           |
+|              |          |          |                 |         |                   |                       |                    |
+|              |          |          | 2.13            |         |                   | = 576                 | = 2.67             |
+|              |          |          |                 |         |                   |                       |                    |
+|              |          |          |                 |         |                   | \                     |                    |
++--------------+----------+----------+-----------------+---------+-------------------+-----------------------+--------------------+
+| XXXB         | 1432     | 620      | 1432/620 =      | 0.9 kg  | 1 kg              | 620 \* (0.9/1)        | 1432/558           |
+|              |          |          |                 |         |                   |                       |                    |
+|              |          |          | 2.31            |         |                   | = 558                 | = 2.57             |
++--------------+----------+----------+-----------------+---------+-------------------+-----------------------+--------------------+
+
+Standardising the price and quantity variable facilitates analysing the prices data. It is also useful when grouping together different article codes, or when linking an article code in a certain period with another article code in a previous period, although the different articles do not have, for example, the same weight. Note that most index formulas are invariant to changes in the units of measurements.
+
+Some articles, especially certain fruits or vegetables but also some cheese, meat and fish are sold by weight. For those articles, the quantity variable is typically not measured by the \'number of transactions\', but by the total weight sold (e.g. kilograms). In that case, the calculated average price is already standardised (for example an average price per kilogram). 
+
+A standardised price could also be calculated for web scraped data. For example, for clothing multipacks, the scraped price could be transformed into a \'price per unit\'.

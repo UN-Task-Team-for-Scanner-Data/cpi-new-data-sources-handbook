@@ -1,0 +1,81 @@
+---
+title: "Methods for when expenditure data are available"
+---
+
+This page summarizes potential criteria that could be used by an NSO to decide on an index method for when expenditure data are available.\
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v6                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2022-01-08                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910504) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Introduction {#Methodsforwhenexpendituredataareavailable-Introduction}
+
+In the case where a sample of products is chosen from the scanner or web scraped data (see Section [Product sampling for price index calculation](product-sampling-for-price-index-calculation.qmd)), an NSO can continue to use a standard bilateral index approach because the data will remain fairly stable over time, although there will now be scope to move to weighted indices due to the availability of weighting information at the product level.
+
+In this page, we focus on the situation where all scanner data or web scraped data are utilized by the NSO (the bulk approach of web scraping, subject to the web scraped data having [proxy expenditure weights](deriving-proxy-weights-for-web-scraped-data.qmd)). These data are called \"dynamic\" because they are characterized by a multitude of new and disappearing products and high product turnover. The standard bilateral indices compare prices from the current period with prices from an arbitrarily selected base period by using a matched sample approach. As the time distance of these two periods increases, the dynamics of these data will not be correctly reflected by these types of indexes. 
+
+Theoretically, one way to deal with this problem is to choose chained bilateral indices where the base period is updated frequently and the resulting bilateral indices are chain-linked. However, it can be shown that frequently chained weighted indices lead to chain drift bias. The chain drift problem can be defined as the violation of the multi period identity test. According to this test, one can expect that when all prices and quantities in a current period revert back to their values from the base period, then the index should indicate no price change and it equals one. Even chained superlative indices, like the chain Fisher or Törnqvist index, suffer from the chain drift problem due to the asymmetric nature of consumer behavior after promotional sales (demonstrated in this [Example of chain drift](example-of-chain-drift.qmd)). 
+
+Besides chained bilateral indices, another group of indexes that can be used for these data are multilateral price indices. Multilateral indices are transitive, which means in practice that the calculation of the price dynamics for any two moments in the time window does not depend on the choice of the base period. By definition, transitivity eliminates the chain drift problem which may occur within the window chosen. However in practice, the need to use [extension methods](extension-methods.qmd) alongside multilateral methods mean that chain drift can occur.
+
+Overall, weighted multilateral indexes seem to be the best choice for when expenditure data are available. Nevertheless, NSOs should carefully consider the advantages and disadvantages of multilateral indices. In particular, the choice of the final formula to implement may depend on the set of criteria used to define \'suitability\'. Theoretical and empirical points of view should be taken into account when choosing a final price index formula. Some NSOs have set out a framework based on these criteria that provides a method of identifying which index method is most suitable for a given countries particular circumstance (for example, see [ABS](https://www.abs.gov.au/ausstats/abs@.nsf/cat/6401.0.60.003), [ONS](https://www.ons.gov.uk/economy/inflationandpriceindices/articles/newindexnumbermethodsinconsumerpricestatistics/2020-09-01)). 
+
+In summary, due to the nature of this topic, it is not possible to recommend a specific method as \"best\". Each NSO should use the information below and their individual circumstances to choose an appropriate method.
+
+# Criteria for choosing a suitable index method {#Methodsforwhenexpendituredataareavailable-Criteriaforchoosingasuitableindexmethod}
+
+The most important criteria used by experts in the subject of these data and some recommendations of index formulas in their area are discussed below:
+
+## Axiomatic approach  {#Methodsforwhenexpendituredataareavailable-Axiomaticapproach}
+
+According to the axiomatic approach, desirable index properties (the so called "tests") are defined that a multilateral index may, or may not satisfy. The list of tests for multilateral indices can be found in [chapter 7](https://www.imf.org/~/media/Files/Data/CPI/companion-publication/chapter-6-chain-drift-problem-and-multilateral-indices.ashx?la=en) (5) of the latest version of \"Consumer Price Index Theory\". Interesting considerations concerning tests for price indices in the case of dynamic data sets can be found in Li-Chun Zhang et. al. (2019). 
+
+[Common multilateral index formulas (GK, GEKS, CCDI, TPD)](multilateral-price-index-methods.qmd) meet most of the requirements at the same time, such as transitivity, multi-period identity test, positivity and continuity, proportionality, homogeneity in prices, commensurability, symmetry in the treatment of time periods or symmetry in treatment of products. However, the discussed indexes differ in terms of the total set of tests they meet. For instance: the GEKS, CCDI and TPD indices do not satisfy the basket test, the Geary-Khamis and TPD indices do not satisfy the responsiveness test to imputed prices while the GEKS or CCDI can incorporate the imputed prices of missing products, the homogeneity in quantities does not hold in the case of the Geary-Khamis formula. Please also note that the SPQ index is the only multilateral index that satisfies the identity test, which is a stronger requirement than the lack of the chain drift.
+
+## Economic approach {#Methodsforwhenexpendituredataareavailable-Economicapproach}
+
+The economic approach to the price index theory assumes that the quantities are functions of prices. This approach assumes that households optimize their purchase by maximizing their utility under a budget constraint or by minimizing the cost of purchases for a given utility level. The multilateral methods involve different assumptions about the functional form of the utility function. For instance, the GEKS index is exact for a \"flexible\" functional form, i.e.  it expresses the price differences experienced by optimizing consumers without imposing restrictive assumptions about how they can substitute between products. In contrast, the GK is consistent only with linear utility functions, so it may suffer substitution bias if consumer preferences are more complex ([ABS](https://www.abs.gov.au/ausstats/abs@.nsf/cat/6401.0.60.003)). 
+
+Many authors consider and assume the CES (Constant Elasticity of Substitution) utility function. For instance, Diewert and Fox (2017) generated artificial data sets assuming different values of the parameter of the elasticity of substitution (which is constant in the CES model). They found that the CCDI index approximates CES preferences reasonably well. In the same work they showed that the GK indices are upward biased regardless of the selected elasticity parameter while the TPD index has also substantial upward bias for elasticity parameter of 2 or 4 (when the elasticity parameter equals 1, the TPD index is unbiased).
+
+## Stochastic approach {#Methodsforwhenexpendituredataareavailable-Stochasticapproach}
+
+The TPD index is based on the assumption that prices can be estimated via an econometric model. Since the weighted least squares (WLS) is a well-known statistical method, the use of the TPD is clearly understandable by users and that index is quite easy for implementation. Please note that the use of the TPD index is justified in situations where the individual products are closely related and thus their prices can be well approximated by the regression model. Note that the econometric model explaining price behavior can be modified with variables related to product characteristics (so-called hedonic models such as the TDH). This is particularly important if the dataset includes numerous new and disappearing products, and the standard multilateral method is based on a bilateral index that includes only matched products (like GEKS). When we want to estimate the prices of missing products, or when we simply want to estimate prices taking into account additional product characteristics, we can use hedonic methods. In particular, the CCDI index can be applied by using bilateral imputation Tornqvist index instead of \"classical\" matched Tornqvist formula, the TPD method can be replaced by the TDH method, while the standard Geary-Khamis index can be replaced by the explicitly quality adjusted unit value index, where adjustment coefficients are estimated by the econometric model using product characteristics. Some interesting comparison of the TPD and TDH indices can be found in de Haan et al. al. (2021), where the authors decompose the ratio of the two indexes in terms of average regression residuals of the new and disappearing items. The above-mentioned decomposition provides conditions under which the TPD index suffers from the quality-change bias.
+
+## Other criteria {#Methodsforwhenexpendituredataareavailable-Othercriteria}
+
+With the exception of the SPQ index, by default, the choice of a multilateral index entails the decision to choose the width of the time window and the splicing technique in order to avoid obtaining a revision of already published indexes. Some empirical works suggest that the TPD and GK indices are more sensitive to these choices comparing to other multilateral indices (GEKS, CCDI). On the other hand, the GEKS and CCDI indices seem to be more sensitive to the so called "dump prices" (dumping occurs when a product is sold at reduced prices before removing from the market). In addition, to the aforementioned index selection criterion, which could be called \"robustness\", some statisticians use additional criteria. Another possible consideration is the time required to calculate the index, such as in the case of the Geary-Khamis (GK) and TPD indices, which take more time compared to the GEKS or CCDI indices (2). Finally, another approach recently proposed takes into account a predetermined probabilistic distribution of prices and / or quantities. Specifically, knowing the theoretical stochastic processes that describe the price evolution of a homogeneous product group, we can determine the expected values ​​for a price change for such a product group in a given time period. The theoretical value of the price index determined in this way can then be compared with the bilateral and/or multilateral indices calculated on the basis of the generated artificial set of data (on the basis of assumed probability distributions). See Białek & Bobel, 2019 for more information.
+
+------------------------------------------------------------------------
+
+# References {#Methodsforwhenexpendituredataareavailable-References}
+
+\(1\) Białek, J., Bobel, A. (2019). \"Comparison of Price Index Methods for CPI Measurement using Scanner Data\"*,* *Paper presented at the 16^th^* *Meeting of the Ottawa Group on Price Indices, Rio de Janeiro, Brazil*.
+
+\(2\) Białek, J., Beręsewicz, M. (2021). \"Scanner data in inflation measurement: From raw data to price indices\", *Statistical Journal of the IAOS*, 37, 1315--1336.
+
+\(3\) Chessa, A. (2015). \"Towards a generic price index method for scanner data in the Dutch CPI\", *Paper presented at the 14th meeting of the Ottawa Group, Tokyo, Japan.* 
+
+\(4\) de Haan, J., Hendriks, R. and Scholz, M. (2021). \"Price measurement using scanner data: Time-product dummy versus time dummy hedonic indexes\", *Review of Income and Wealth*, 67, 394--417.
+
+\(5\) Diewert, W. E., Fox, K. J. (2017). \"Substitution Bias in Multilateral Methods for CPI Construction using Scanner Data\", *Discussion paper 17-02*, Vancouver School of Economics, The University of British Columbia, Vancouver, Canada.
+
+\(6\) Diewert,  W. E (2021). Chapter 7 (\"The chain drift problem and multilateral indexes\") In: *Consumer Price Index Theory* (draft). International Labour Organization, Statistical Office of the European Union (Eurostat), United Nations Economics Commission for Europe and Organisation for Economic Co-operation and Development, The World Bank.
+
+\(7\) Zhang, L. C., Johansen, I., Nygaard, R. (2019). \"Tests for Price Indices in a Dynamic Item Universe\", *Journal of Official Statistics*, 35(3), 683-697.
+
+\(8\) ABS: [https://www.abs.gov.au/ausstats/abs@.nsf/cat/6401.0.60.003](http://ABS)
+
+\(9\) ONS: <https://www.ons.gov.uk/economy/inflationandpriceindices/articles/newindexnumbermethodsinconsumerpricestatistics/2020-09-01>
+
+\

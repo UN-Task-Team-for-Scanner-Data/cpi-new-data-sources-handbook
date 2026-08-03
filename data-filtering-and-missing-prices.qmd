@@ -1,0 +1,49 @@
+---
+title: "Data filtering and missing prices"
+---
+
+This section covers some common methods used to filter the data before it is used to calculate indices, as well as a summary of how missing prices should be treated.\
+
+Section contents:
+
+- [Outlier filter](outlier-filter.qmd) --- Outlier filters aim at excluding or correcting extreme price increases or price decreases, typically compared to the previous period, from the price index calculation
+- [Dumping filter](dumping-filter.qmd) --- Dumping filters aim at eliminating the downward pressure of clearance prices on the index.
+- [Low sales filter](low-sales-filter.qmd) --- The low sales filter ensures that products with small expenditure shares do not unduly influence the index results.
+- [Current practice of data filtering](current-practice-of-data-filtering.qmd) --- This page contains a summary of how NSOs currently approach data filtering.
+- [Treatment of missing prices](treatment-of-missing-prices.qmd) --- This page contains information on how to treat missing prices through product-level imputation methods.
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2024-03-01                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910480) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Overview {#Datafilteringandmissingprices-Overview}
+
+The scale of these new data sources mean that new methods are required to automatically identify and remove erroneous observations, as the traditional manual scrutiny of flagged observations is not feasible. Traditional data filtering often focuses on removing observations that are thought to be the result of erroneous data collection or that have a large impact due to small sample sizes.
+
+New data sources tend to be much larger than conventionally collected surveys and reduce standard error due to sample size. Given the nature of scanner data, it is also less prone to ad hoc data collection errors compared with web scraped data, although some errors still can exist. Filters for non-survey data may be useful for addressing these issues with the dataset (for example, decimal point issues) and ensuring the reliability of the index results.
+
+When processing new data sources for consumer price indices, three types of data filters that are applied directly to the product level data have been established as best practice:
+
+- [outlier filter](outlier-filter.qmd)
+- [dumping filter](dumping-filter.qmd)
+- [low sales filter](low-sales-filter.qmd)
+
+The outlier filter focuses only on extreme price increases or decreases whereas the dumping filter and low sales filter additionally take the development of sales quantities into account. The settings of these data filters depend not only on the index formula that will be used but also on the type of data these filters are applied to. Typically, these data filters are used directly before the index calculation. Thereby, the order of filtering may have an impact on the index results. Usually, the outlier filter is applied first and then the dumping or low sales filter. For more detail on how these filters relate to the choice of index method and data source, please see the specific pages linked above. 
+
+For products identified as outliers it may be appropriate to consider [imputation](treatment-of-missing-prices.qmd). For those products filtered out by the dumping or low sales filter, these should not be imputed. 
+
+Since web scraping data comprise of information only on prices but not sales quantities, the dumping filter and low sales filter cannot be applied in the typical manner. However, there is currently ongoing research into methods to [estimate the expenditure shares of web scraped articles](https://unstats.un.org/wiki/display/GWGSD/Deriving+proxy+weights+for+web+scraped+data).
+
+Over time, it is important to monitor whether the applied data filters are set appropriately. For example, it should be checked periodically if the share of filtered products is too high or if some certain product groups are filtered out systematically and unjustifiably. In this case, the data filters should be adjusted or there should be an option implemented into the production system, which allows the data filter to be overruled.
+
+Data filtering is an area of active research and it is likely that different data sources and/or suppliers require different approaches to data filtering based on their own existing quality controls and circumstances. As such, National Statistical Offices (NSOs) are recommended to conduct their own empirical research using these approaches before deciding if any data filtering are required and if so which approach is most suitable.

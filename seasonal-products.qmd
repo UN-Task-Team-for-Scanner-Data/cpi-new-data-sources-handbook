@@ -1,0 +1,63 @@
+---
+title: "Seasonal products"
+---
+
+This page contains information on the treatment of seasonal products in the CPI and implications of using the new data sources\
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2021-07-20                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910514) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Traditional treatment of seasonal products in the CPI {#Seasonalproducts-TraditionaltreatmentofseasonalproductsintheCPI}
+
+Seasonal products are products that are either not continuously available on the market (strongly seasonal) or show regular fluctuations in quantities and prices linked to a season or time of the year (weakly seasonal). For example, fresh fruits and vegetables often have particular seasonal production and consumption patterns.
+
+Weakly seasonal products do not require direct intervention by the index compiler. However, large price fluctuations (for example, when the product is out of season) can increase the volatility of the price index. Measures of core inflation address such issues (see, for example, Chapters 12 and 14 of the [CPI Manual, Concepts and Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx), 2020). Strongly seasonal products pose a bigger problem as it is not possible to calculate price relatives when a price is available only in one of the two periods being compared.
+
+The CPI Manual, Concepts and Methods (2020) discusses two main approaches to overcome the difficulties for CPI compilation raised by strongly seasonal products: (i) the fixed-weight approach, and (ii) the seasonal-weight approach. For both methods, the in-season and out-of-season periods need to be determined. Also, a conservative approach is recommended for the start of the in-season period to avoid the use of influential abnormal (high) prices of items of low quantities and high demand (for example, for a fresh crop of summer fruits).
+
+In the fixed-weight approach, weights remain constant over all periods of the year, and prices are imputed when the item is out-of-season and thus not available for price collection. The main drawback is that annual fixed weights are not representative of monthly or quarterly consumption patterns and that artificial prices are introduced which do not exist in the market. However, the method is easy to implement and theoretically consistent with the concept of a fixed basket.
+
+In the seasonal-weight approach, a zero weight is given to an item out-of-season and the annual fixed weight when the product is in-season. This method is usually applied within a COICOP subclass for which the weight is considered to be constant and total expenditure is assumed to not vary between different times of the year but to switch between similar items only.  The advantage of this method is that price imputations are minimized. However, they cannot be completely avoided as, for example, unusual weather conditions could delay the start of the season such that no prices are observed even though a nonzero weight has been allocated to that period. Also, this method is inconsistent with a fixed-basket index and price changes do not only reflect changes in price relatives but also in weights.
+
+There are several other important issues related to seasonal products:
+
+1.  The geographical dimension, as seasonal availability may vary between different regions of a country, between rural and urban areas, or between market stalls and luxury outlet stores.
+2.  The lack of well-defined seasons, as seasonal products do not always appear and disappear in the same month every year. Also, the seasonal pattern can change over time.
+3.  The equivalence or comparability of imported products that replace/substitute domestic ones when the item is out-of-season.
+4.  The dependence on supply conditions (fruits and vegetables).
+5.  The changes of specifications or discounted end-of-season prices (clothing).
+
+# Treatment of seasonal products using new data sources {#Seasonalproducts-Treatmentofseasonalproductsusingnewdatasources}
+
+In the traditional treatment of seasonality, one has to define the in-season periods a priori and derive relevant weights from past periods. Weights are usually provided for a given year and not by month which makes it difficult to define the in-season periods. With alternative data sources, it is possible to select seasonal products and their seasons directly from the data. This information could be used, for example, to better design the traditional index. Note further that scanner data is very good in overcoming the problems 1 to 2 mentioned above as actual weights of each period can be used. To address issues 3 to 5 with scanner or web scraped data, usually, a lot of effort is needed for the [definition of the *individual product*](identifying-unique-products.qmd)*.* For example, the individual product *Apple* consists of several GTINs referring to different varieties of apples. Or for clothing, homogeneous products are created which are composed of different article codes.
+
+New data sources also open up the potential to use new [price index methods](price-index-methods.qmd), for example multilateral methods.
+
+Rolling window methods estimate multilateral indices on a rolling window with a fixed length which is shifted forward each period. However, the choice of the window length is a point of concern as well as the [extension method](extension-methods.qmd) used. Ivancic et al. (2011) propose a 13-month (or five-quarter) window as this is the shortest window that can deal with strongly seasonal goods. Calendar constellations (e.g. the dating of Easter), administrative measures (e.g. the dating of school holidays), or weather conditions (e.g. fluctuations in harvest periods) can cause seasonality such that the in-season periods may change from year to year and a larger window than the absolute minimum of 13-months is necessary. Chessa (2021) [Extension of multilateral index series over time: Analysis and comparison of methods](https://unece.org/sites/default/files/2021-05/Session_1_Netherlands_Paper.pdf) shows that indices can be significantly improved with a 25-month (or nine-quarter) window. Note further that not all splicing methods work equally well.
+
+Multilateral methods implicitly account for seasonality (as the chosen window includes several in-season periods) and a broader definition of the product class is recommended (e.g. a price index for fruit including strong seasonal goods like cherries). 
+
+It is also possible to construct weighted GEKS indices which consider the reliability of the bilateral price indices (Rao, 2001). Melser (2018) proposes a weighted GEKS method where the weights depend on the degree of matching of the items, for example, concerning expenditure shares. Here, the choice of window length is less important since bilateral indices with a lower degree of matching will be down-weighted.
+
+\
+
+------------------------------------------------------------------------
+
+# References {#Seasonalproducts-References}
+
+Ivancic, L., Diewert, E.W. and Fox, K.J. (2011). Scanner data, time aggregation and the construction of price indexes. *Journal of Econometrics*. Vol. 161(1), pages 24-35, March 2011. <https://doi.org/10.1016/j.jeconom.2010.09.003>
+
+Melser, D. (2018). Scanner Data Price Indexes: Addressing Some Unresolved Issues. *Journal of Business & Economic Statistics*, *36*(3), pages 516--522. <http://www.jstor.org/stable/44867994>
+
+Prasada Rao, D.S. (2001). Weighted EKS and Generalized CPD methods for Aggregation at Basic Heading Level and above Basic Heading Level. -- a paper for the Joint WB / OECD Seminar on PPPs (Washington, 30.01-02.02.2001).

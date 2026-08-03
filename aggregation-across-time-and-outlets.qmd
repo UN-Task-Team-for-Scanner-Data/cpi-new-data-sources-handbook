@@ -1,0 +1,57 @@
+---
+title: "Aggregation across time and outlets"
+---
+
+Data are usually disaggregated by various dimensions. This page contains information on how products can be aggregated across time and outlets.\
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2021-06-09                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910476) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Introduction {#Aggregationacrosstimeandoutlets-Introduction}
+
+Scanner data and web scraped data are usually disaggregated by article code, by time period and by outlet or retailer. The different units (lines) included in these data sets must therefore be further combined into new units that are meaningful for Consumer Price Index (CPI) compilation purposes. The below contents cover aggregation over time and outlets. Aggregation over article code is covered in the section [Identifying unique products](identifying-unique-products.qmd).
+
+# Aggregation across time {#Aggregationacrosstimeandoutlets-Aggregationacrosstime}
+
+A decision must be made on the temporal coverage (see Ref. 5). For example, if scanner data is disaggregated by week, then the weeks must be combined in order to obtain monthly data. An average monthly price is obtained by dividing the monthly sales by the monthly quantities. In general, it is appropriate to calculate a unit value over the entire reference period when an article is sold at different prices to different consumers at different times.
+
+Ideally, scanner data should cover as much as possible of the reference period. In Ref. (4), it is shown that aggregation over only one week of the month can be upward biased compared to aggregation over the full month. In practice, this also depends on the moment that the data is supplied, the time that is left before results are published and the temporal coverage and level of disaggregation of the supplied data. Very often, the data used for index compilation only covers part of the reference month (for example the three first full weeks of the month). Aggregation across the month can also be impacted by seasonal events such as Easter, which could fall in the first couple of weeks of the month in one year and the last week in the next year.
+
+Aggregation across time is also an issue with web scraped data. Very often, data are scraped more than once per month (e.g. daily). It is desirable to collect prices at a high frequency if they are known to fluctuate a lot within a month (see for example Ref. (2)). From a conceptual point of view, a unit value price would be the desired price target. However with web scraped data, expenditure weights are not available (see section [Deriving proxy weights for web scraped data](deriving-proxy-weights-for-web-scraped-data.qmd)). Therefore, the calculation of a true average price is not possible. The practical solution is to compile either an unweighted arithmetic or a geometric average of the scraped prices in a given month. Annex 5.5 in the [CPI Manual, Concepts and Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx) (2020) illustrates such calculations when integrating web-scraped data with field price collection.
+
+# Aggregation across outlets {#Aggregationacrosstimeandoutlets-Aggregationacrossoutlets}
+
+An average price for an article code could be calculated at the level of an outlet, which means that prices observed in different outlets are treated as different units (individual products). This is consistent with the approach used in field price collection. However, in some cases the data provider only supplies the data by chain such that calculating an average price at the outlet level is not possible. But also if the data are available at the outlet level, it may be reasonable to combine outlets of the same retail chain or brand and calculate average prices by retail chain. The prices in the outlets of the same retail chain may be relatively similar, at least within a specific region of a country. Also, aggregating across outlets and using average prices by retail chain decreases the size of the data sets used later for index compilation. The decision on aggregating across outlets or not  is an empirical matter that can be tested (see Ref. 6).
+
+An empirical study on the impact of the temporal coverage, and the impact of aggregating or not over outlets can be found in (3). Another example of the impact of aggregating over outlet type can be found in Subsection 6.5 of Ref. (1)
+
+\
+
+------------------------------------------------------------------------
+
+# References {#Aggregationacrosstimeandoutlets-References}
+
+(1) Białek, J and Berȩsewicz, M (2021). Scanner data in inflation measurement: From raw data to price indices <https://content.iospress.com/articles/statistical-journal-of-the-iaos/sji210816>
+
+\(2\) Blaudow, C., Burg, F. (2018). Dynamic pricing as a challenge for consumer price statistics. EURONA 2018/01. <https://ec.europa.eu/eurostat/cros/system/files/euronaissue1-2018-article4.pdf>
+
+\(3\) Chessa, A.G. et al. (2020).  Towards a Comprehensive Methodology for Index Calculation in the CPI with Transaction Data. Report written for Eurostat grant project IMCOPS 847540\--2018-NL-PRICE, Statistics Netherlands. (Uploaded on CIRCABC)
+
+\(4\) Diewert, W.E., Fox, K.J. and de Haan, J. (2016). A newly identified source of potential CPI bias: Weekly versus monthly unit value price indexes, Economics Letters. <https://doi.org/10.1016/j.econlet.2016.02.022>
+
+\(5\) Ivancic, L., Diewert, E.W. and Fox, K.J. (2011). Scanner data, time aggregation and the construction of price indexes. Journal of Econometrics. Vol. 161(1), pages 24-35, March 2011. <https://doi.org/10.1016/j.jeconom.2010.09.003>
+
+\(6\) Ivancic, L., and Fox, K. (2013). Understanding price variation across stores and supermarket chains: some implications for CPI aggregation methods. Review of Income and Wealth. Series 59, Number 4, December 2013 <http://www.roiw.org/2013/n4/629.pdf>
+
+\

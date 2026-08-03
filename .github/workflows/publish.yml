@@ -1,0 +1,28 @@
+# Render the Quarto site and publish it to GitHub Pages on every push to main.
+# Becomes active once this repo lives under UN-Task-Team-for-Scanner-Data.
+# One-time setup after the first push: run `quarto publish gh-pages` locally once
+# (creates the gh-pages branch), then set Pages -> deploy from gh-pages in repo
+# settings. Details in MIGRATION.md.
+name: Render and publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

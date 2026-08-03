@@ -1,0 +1,22 @@
+---
+title: "Other considerations"
+---
+
+This section contains information on how to treat seasonal products and quality change.\
+
+Section contents:
+
+- [Seasonal products](seasonal-products.qmd) --- This page contains information on the treatment of seasonal products in the CPI and implications of using the new data sources
+- [Quality change and hedonic estimation](quality-change-and-hedonic-estimation.qmd) --- This page contains information on accounting for quality change in the measurement of consumer prices
+
+**Page information**
+
++----------------------+--------------------------------------------------------------------------------------------+
+| Version              | v2                                                                                         |
++----------------------+--------------------------------------------------------------------------------------------+
+| Last updated on      | 2024-03-01                                                                                 |
++----------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes   | Initial publication version                                                                |
++----------------------+--------------------------------------------------------------------------------------------+
+| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910513) |
++----------------------+--------------------------------------------------------------------------------------------+

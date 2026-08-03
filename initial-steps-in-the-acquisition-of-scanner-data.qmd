@@ -1,0 +1,49 @@
+---
+title: "Initial steps in the acquisition of scanner data"
+---
+
+Recommendations on how an NSO can approach retailers to acquire scanner data\
+
+**Page information**
+
++----------------------+--------------------------------------------------------------------------------------------+
+| Version              | v4                                                                                         |
++----------------------+--------------------------------------------------------------------------------------------+
+| Last updated on      | 2021-05-13                                                                                 |
++----------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes   | Initial publication version                                                                |
++----------------------+--------------------------------------------------------------------------------------------+
+| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910459) |
++----------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Initial steps in the acquisition of scanner data {#Initialstepsintheacquisitionofscannerdata-Initialstepsintheacquisitionofscannerdata}
+
+Once the retailers that fit the [sample purposes of the Consumer Price Index (CPI) are identified](selection-of-retailers-for-alternative-data-sources.qmd), the National Statistical Office (NSO) needs to approach data owners to negotiate data acquisition. As stated in the reference guides Eurostat\'s HICP - [Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details) and the [CPI Manual, Concepts and Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx), 2020, the most recommended practice is to negotiate and get the data directly from the retailers. This approach encompasses advantages such as the possibility to negotiate a data supply at reduced costs (or even free), and to discuss with the retailers the data requirements desired in terms of data content that should be provided, and timetables that agree with CPI production routines.
+
+As scanner data contains valuable sensitive information of the retailers and the ongoing data supply involves extra costs as the implementation and maintenance of an IT structure, retailers might be reluctant to provide the information to the NSOs and can require funds for their extra costs (Ref. (1)). The existence of legislation that allows the NSO the right to get access to the data can support any access requests but discussions are still required to ensure the data provided meet the requirements of the NSO.
+
+Previous experiences show that negotiations with retailers to get scanner data can take several months. This can include the following steps:
+
+1.  Identifying suitable contacts within the retailer to take forward the request. Generally, you will need to work with the retailer\'s data team on the specific requirements and data access, but it is likely you will also need to gain approval from higher level decision makers within the retailer to progress the project, and the retailer\'s legal team may also need to sign off any data sharing agreements or contracts that are put in place.
+2.  Agreeing a data transfer method. There are many methods available, from using secure encryption email services to cloud sharing technologies such as Amazon S3 buckets.
+3.  Agreeing a data specification. This is likely to require a few iterations from receiving an initial test data set, resolving any outstanding queries or requirements and finalising the format and shape of the desired output.
+4.  Agreeing a frequency of delivery. This is likely to include the regular feeds but also any historic data that the retailer can provide.
+5.  Finalising these agreements in a data sharing agreement or contract.
+
+Some NSOs have a separate commercial data acquisition team that work on behalf of the whole office to acquire administrative data. It is helpful to have a clear point of contact within the NSO and maintain a high level of engagement to ensure negotiations remain on track. To identify suitable contacts within the retailer it is sometimes easier to target high-level company managers to ensure a suitable priority is given to this work. The discussions on data content are then generally delegated to a specific data team within the retailer. The retailers are also likely to have separate legal teams that will need to be involved when agreeing the terms of the data sharing agreements.  
+
+A key point for the success of the approach relies on the NSO building and maintaining a good relationship with the retailers ([Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details)). A clear argument for the statistical purpose of accessing the data and the relevance of the results produced for the society are important points to present. The benefits for the retailers should also be emphasized. The response burden is lowered by the adoption of scanner data since the staff of the retailers will no longer need to reply to the collectors\' questions nor be bothered by the collectors walking around in the stores every month. Some NSOs also provide opportunities for collaboration with the retailer (ensuring this does not lead to a specific competitive advantage), for example providing specific retailer prices indices back to the retailer. 
+
+In the training course 2 about data acquisition, in [module 2.1](https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.1:AcquiringscannerdataforCPI(inprogress):~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None) a general description of the process to arrive at obtaining scanner data is traced in the form of a decision three.
+
+Readers can also find a list of recommendations for obtaining scanner data in section 5 of Eurostat\'s [Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details).
+
+\
+
+------------------------------------------------------------------------
+
+# References {#Initialstepsintheacquisitionofscannerdata-References}
+
+\(1\) Moore, K. (2014). Transactions Data: From Theory to Practice. Paper presented at the UNECE Meeting of the Group of experts on Price Indices. <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2014/WS4/WS4_06_Transactions_Data_-_From_Theory_to_Practice.pdf>

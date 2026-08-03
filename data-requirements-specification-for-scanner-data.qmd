@@ -1,0 +1,91 @@
+---
+title: "Data requirements specification for scanner data"
+---
+
+Key variables to ask for when acquiring scanner data.\
+
+**Page information**
+
++----------------------+--------------------------------------------------------------------------------------------+
+| Version              | v2                                                                                         |
++----------------------+--------------------------------------------------------------------------------------------+
+| Last updated on      | 2021-08-13                                                                                 |
++----------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes   | Initial publication version                                                                |
++----------------------+--------------------------------------------------------------------------------------------+
+| Page history         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910460) |
++----------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Introduction {#Datarequirementsspecificationforscannerdata-Introduction}
+
+An important part of the negotiations with the retailers involves the specification of the variables from the data sets required by the National Statistical Office (NSO). In doing so, it is important to have in mind the whole cycle of production of the information from the data of interest. Key points in this cycle may include the definition of products whose prices are to be followed, the price indices methods to be adopted, the frequency of compilation of the indicators, the time required to process the data, and any other uses that the NSO intends with the data. Any system constraints (for example, data storage) should also be considered and aggregated data may be requested if required.
+
+The main requirements to derive the inputs necessary for the compilation of price indices are given by retailer identifiers, product identifiers, turnover/unit prices (unit prices can be derived via information on turnover and quantities of a given item), quantities and the reference time of the sales. It is important at this stage to gather deeper insight into the content and quality of the data available from the retailer. For example, when discussing product identifiers, it is important to understand the stability of the retailers system in terms of how long is it before retailer codes for discontinued products are recycled for new products entering the market. 
+
+# Key variables {#Datarequirementsspecificationforscannerdata-Keyvariables}
+
+The key definitions and variables related to the construction of such inputs are summarized below. 
+
+## Retailer/outlet identifiers {#Datarequirementsspecificationforscannerdata-Retaileroutletidentifiers}
+
+A retailer/outlet identifier is a unique code to identify each store of the retailer. This allows identification of each store at a more disaggregated level. Typically, the statistical office should aim at getting the scanner data at the most detailed level whenever possible, i.e., at the outlet location level. This ensures that price changes are estimated at the level at which they generally occur in the retail chain. It is also important that data from all outlets are included in the scanner data set of each retailer in each reference period, unless the retailer has reasons not to do so. When data are obtained for a sample of outlets only, additional data may be required for an appropriate weighting of the included outlets during the index aggregation. If results are to be aggregated for different regions or stores in the chain, a new code can be attributed relating to the aggregated stores[.](#_ftn1) For a discussion on the conditions on the use of aggregated data for different stores of a given retailer, see section 3 of Eurostat's guidelines "[Practical Guide on Multilateral Methods in the HICP](https://ec.europa.eu/eurostat/documents/3859598/14503841/KS-GQ-21-020-EN-N.pdf)".
+
+In order to perform the geographical aggregation, if available, use of geographical data such as zip codes and/or longitude and latitude coordinates of the stores are recommended as they allow an efficient and accurate way to aggregate similar stores in a given region. More discussions on aggregation of outlets can be found in the section [aggregation across time and outlets](aggregation-across-time-and-outlets.qmd)[.](selection-of-retailers-for-alternative-data-sources.qmd) Nowadays, a given retailer can also possess both an online and physical presence. In some cases the retailer can provide an additional variable distinguishing these characteristics.
+
+## Article identifier {#Datarequirementsspecificationforscannerdata-Articleidentifier}
+
+A unique code to identify an article. Different kinds of article codes might be necessary in this process. The Global Trade Item Number (GTIN) code is the most elementary level to identify an article sold by a store, in principle, this could provide such a key. However, as discussed in the section on [identifying unique products](identifying-unique-products.qmd), due to multiple factors of market dynamics such as data churn and product relaunches, several GTIN codes can correspond to the same article (see for instance Table 1 in Eurostat\'s [Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details)). Therefore, it may also be useful to ask for the retailer identification numbers (for example, SKUs, or Stock Keeping Units) which are generally defined at a higher level and can capture relaunches in product varieties. For a detailed discussion of each of these codes, see section 4 of the practical guide. 
+
+## Other retailer codes {#Datarequirementsspecificationforscannerdata-Otherretailercodes}
+
+Retailers generally have their own classification structures. Retailer hierarchies can provide useful information for the purpose of [classification](classification.qmd). 
+
+## Articles descriptions {#Datarequirementsspecificationforscannerdata-Articlesdescriptions}
+
+Text string describing the product associated to the article code, product characteristics (for example, in the context of groceries, this would include things such as package weight and unit of measurement like 500 grams), content of the package, tax rates and brand name. These variables can also be useful for applications such as CPI at constant tax rates and [quality adjustment](quality-change-and-hedonic-estimation.qmd) ([Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details)).
+
+It should be noted that services might not possess codes that identify the articles (for example, package holidays or railfares). In this case the NSOs need to construct such kind of key after classifying and aggregating different articles via the use of the articles descriptions available.
+
+## Turnover {#Datarequirementsspecificationforscannerdata-Turnover}
+
+For a given retailer and period, the turnover per article code is necessary to derive unit prices. With this information, more aggregated turnover for broader grouping of products can be derived if necessary.
+
+## Quantities {#Datarequirementsspecificationforscannerdata-Quantities}
+
+For a given retailer and period, the quantities sold per article code are necessary to derive unit prices and to be used to derive weights for the products. More aggregated information on quantities for homogeneous products can also be derived.  
+
+## Time period  {#Datarequirementsspecificationforscannerdata-Timeperiod}
+
+A time variable identifying the period to which the sales per article code refer. This will be related to the periodicity that data will be provided and the level of aggregation of the sales per article codes in the specified period. Ideally data should be sent from the retailers to the NSOs on a daily or weekly basis at most. Daily information is preferred since allows a more frequent control of data sent and the compilation of more refined monthly indices or even high frequency indices. However, this comes with an increase in IT costs for storage and processing due the larger amount of data involved. For practical purposes of compilation of monthly indices, weekly aggregated data can provide the desired information and this approach has been adopted in production by some NSOs. For more discussion on time aggregation, see the [aggregation across time and outlets](aggregation-across-time-and-outlets.qmd) section.
+
+# Other considerations {#Datarequirementsspecificationforscannerdata-Otherconsiderations}
+
+Besides the data necessary for the construction of the input variables, other important data requirements include:
+
+## Historical/back data  {#Datarequirementsspecificationforscannerdata-Historicalbackdata}
+
+Access to back data (at least from the previous year) is necessary to identify the article codes of interest for the CPI. Also, if multilateral methods are to be adopted, a longer series of back data is required to test the methods before implementation (see Eurostat\'s [Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details)). Back data can also be used for validation purposes of the data and methods as the results derived can be compared to the older CPI series derived via traditional approaches.
+
+## Other variables {#Datarequirementsspecificationforscannerdata-Othervariables}
+
+If available, data identifying transactions between the retailer and other business can be used to exclude transactions that do not belong to the scope of the CPI. Information on product returns can also be used to exclude such transactions and to identify whether they are relevant for price development. Information on discounts can also be useful to allow for comparisons with existing methods where the take up rates of discounts (for example, multibuys and staff discounts) may not be known. See [treatment of discounts and refunds](treatment-of-discounts-and-refunds.qmd) for further discussion on this topic.\
+
+Experience from NSOs (Ref. 1, 2 and 3) show that different formats of the variables may be provided. In the negotiations with the retailers it is then important to try to standardize the data formats to be received from different providers to optimize the data transfer and processing.  
+
+For more information, readers can find rich information on the data needs to deal with classification and aggregation of products in sections [identifying unique products](identifying-unique-products.qmd) and [classification](classification.qmd). For the data demands necessary to adopt multilateral methods a nice description is presented in section 1 of Eurostat\'s "[Practical Guide on Multilateral Methods in the HICP](https://ec.europa.eu/eurostat/documents/3859598/14503841/KS-GQ-21-020-EN-N.pdf)". A detailed account on the specification of scanner data variables for different uses can be found in Section 5 of Eurostat\'s [Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details)). Section [Example file structures for web scraped and scanner data](example-file-structures-for-web-scraped-and-scanner-data.qmd) of this wiki provides a comparison between what a typical file structure may look like for scanner data and web scraped data.
+
+\
+
+------------------------------------------------------------------------
+
+# References {#Datarequirementsspecificationforscannerdata-References}
+
+\(1\) Guðmundsdóttir, H. E. and Jónasdóttir, L. G. (2016). Scanner Data: Initial Data Testing. Paper presented at the UNECE Meeting of the Group of experts on Price Indices. <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2016/Session_1_Iceland_Initial_data_testing.pdf>
+
+\(2\) Jacobsen, T. H. (2014). Implementing scanner data in the Danish CPI. Paper presented at the UNECE Meeting of the Group of experts on Price Indices. <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2014/WS4/WS4_05_Implementing_scanner_data_in_the_Danish_CPI.pdf>
+
+\(3\) Moore, K. (2014). Transactions Data: From Theory to Practice. Paper presented at the UNECE Meeting of the Group of experts on Price Indices. <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2014/WS4/WS4_06_Transactions_Data_-_From_Theory_to_Practice.pdf>
+
+\

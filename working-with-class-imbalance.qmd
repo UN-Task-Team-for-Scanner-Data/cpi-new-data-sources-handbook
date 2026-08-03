@@ -1,0 +1,89 @@
+---
+title: "Working with class imbalance"
+---
+
+Datasets NSOs need to classify are typically not equally distributed, as some classes have many records (i.e. unique products) while others have only a few. This requires additional steps to be taken when designing and testing classifiers. Specitically, this represents a challenge for automated methods (such as [Method 4 or Machine Learning (ML)](method-4-machine-learning-classification-method.qmd)), as models could struggle when they don\'t have a lot of examples to learn from, thus typically misclassifying sparse categories. This chapter introduces approaches that NSOs could use to mitigate consequences that arise from such class imbalance problems.
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2025-04-28                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication                                                                        |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281204) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+# Overview of the problem {#Workingwithclassimbalance-Overviewoftheproblem}
+
+An imbalanced class distribution is a case where class sizes within a dataset vary significantly in size amongst each other. In the context of the alternative data training data sets, imbalanced data or (mulit)class imbalances means that there are some classes - the majority classes - for which we find plenty examples in the data (e. g. red wine) while other classes  - the minority classes - are represented by barely a few articles (e. g. bananas). This presents a challenge for supervised ML models, which typically work well when the number of samples in each class are about equal. This is because most algorithms are designed to optimize based on a cost function. However, if the data set is highly imbalanced, a model could minimize the cost function at the expense of minority classes. This implies an indirect weighting of the majority classes by overrepresentation. The model may also not learn to easily distinguish a class from another if there are not enough examples. As a result, some classes could be systematically misclassified while the overall score for the classifier with many classes could be relatively high ([for instance micro F1 scores](how-to-evaluate-classification-methods.qmd)). This is a challenge within price statistics as classification is a critical step prior to applying price index formulas on each [retailer, category, and geography combination in order to determine the sub-elementary aggregate index](aggregation.qmd). Misclassification may thus cause bias in the calculated index that may also impact the elementary aggregate this data is integrated into (1).
+
+# Distribution test {#Workingwithclassimbalance-Distributiontest}
+
+Prior to any actions to deal with class imbalance during model training (more on options below), the first thing NSOs could do to understand if the dataset is imbalanced, especially if it is not immediately obvious. A dataset is imbalanced when the classes are not approximately equally distributed. A test statistic can be adopted to check for the balance(dness) of a dataset. For this purpose the following null hypothesis is used:
+
+**H0:** The distribution of the underlying dataset follows a uniform distribution
+
+To test that hypothesis, the [Kolmogorov-Smirnov (KS) test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test) could be used. In general, the KS test checks whether two empirical distribution functions correspond to each other (2).
+
+In the present case, the procedure is as follows:
+
+1.  A hypothetical (reference) distribution function is considered. Corresponding to the null hypothesis, a uniform distribution is considered.
+2.  The frequency of each class (COICOP) is determined and assorted in an ascending order.
+3.  Then, the empirical distribution function is determined. This includes the distribution parameters - the support parameters (a,b) - which are necessary to create the hypothesized uniform distribution.
+4.  The empirical distribution function is then compared with the hypothetical distribution function. Here, the cumulative density function (CDF) is calculated in each case and the function value at arbitrary chosen points are compared.
+5.  If the CDFs are approximately equal, the H0 can\'t be rejected.
+
+Note, the KS test is applicable to test for any distribution.
+
+# Resampling techniques {#Workingwithclassimbalance-Resamplingtechniques}
+
+Several techniques are widely used to address class imbalance. One is to assign distinct costs to training examples, and the other resampling. Among resampling, two approaches are used: undersamping, where labels from the majority class in the dataset are removed in order to balance the data; and oversampling, where more examples are added to the minority classes of the data. Resampling approaches are summarized in more detail below.
+
+## Undersampling {#Workingwithclassimbalance-Undersampling}
+
+Undersampling techniques aim to balance class distributions by [minimizing]{.underline} majority class items. This can be done randomly or according to more sophisticated concepts. Tomek links for instance is one such commonly used sophisticated approach that finds and removes noisy and hard to classify observations to help find a more disrable decision boundary (see [imbalanced learn site for more guidance](https://imbalanced-learn.org/dev/under_sampling.html#tomek-s-links)). An undersampled dataset posses the advantage that it is more balanced among the classes/labels and that it may help to improve storage problems and runtime, especially when the training data set is huge. It has been proposed as good means of increasing the sensitivity of a classifier to the minority class. On the other hand, it is very likely that it discards potentially useful information in the data which can be important for building classifiers. In addition, the undersampled dataset can be biased in the sense that it is not an appropriate representative of the population.
+
+## Oversampling {#Workingwithclassimbalance-Oversampling}
+
+An alternative is to oversample minority classes, which may be more appropriate for NSOs. Specifically, as minority classes in alternative datasets may be mostly represented by just a few items, undersampling would be inappropriate as a balanced training dataset can only be achieved by a huge loss of data, and thus a resultant compromise in the quality of the ML classification. Oversampling techniques aim to balance class distributions by [adding]{.underline} items to the minority class. Thus, it is a good choice when the training data set does not possess enough data in each class. The minority classes are not necessarily supplemented by creating exact copies of the particular records in those classes, as more diverse synthetic samples can also be created by introducing small variations of the items. This rebalancing method has is advantageous in that no information is lost, however its overuse can increases the likelihood of an ML model overfitting through replication of parts of the minority class specific items. 
+
+Random Oversampling
+
+The simplest oversampling technique refers to random oversampling. It randomly selects examples from the minority class and adds them to the training data set until an approximately balanced set is achieved. This method is also applicable to the minority class\' feature space. As an example, if ngrams are used for text classification, one can randomly draw and combine ngrams from the minority class and add the result to the training data set. It worth mentioning, that this approach increases the likelihood of overfitting since examples or features are merely duplicated and the feature space is not increased. NSOs may need to regularize more heavily in this case to make sure models generalize out of sample.
+
+### SMOTE {#Workingwithclassimbalance-SMOTE}
+
+In contrast to random oversampling with replacement, which does not necessarily increase the recognition of the minority classes, Synthetic Minority Oversampling Technique (or SMOTE) tries to identify similar but more specific regions in the feature space for the minority classes. In other words, the minority classes are oversampled by synthetically creating new examples:
+
+- *First*, features of the minority class are chosen (green points in panel a of Figure 1).
+- *Second*, identify the *k* nearest neighbors (the black point in panel b of Figure 1 is a selected feature and whereas the yellow points represent its neighbors). One can determine the specific number of neighbors *k* arbitrarily or by using heuristics, such as the \"elbow method\".
+- *Third*, synthetic examples are generated. Intuitively, this is done by randomly placing a point between the selected samples and their neighbors (red point between the brown points in panel c of Figure 1). Technically, the difference of the minority class feature vector and its nearest neighbor is taken. Thereafter, the differences are multiplied by a random number between 0 and 1. The resulting vector of synthetic features is added to the minority class\' feature vector. In the multiclass case, this procedure is repeated for each minority class.
+
+Figure 1: How synthetic samples are generated with SMOTE. Each point represent a record in the feature space. See Schubach et al (2017) for more details.
+
+![](images/working-with-class-imbalance/337281208.png)
+
+Note, that SMOTE does not inherently consider feature relationships beyond simple interpolation. It assumes that linear interpolation within the minority class is safe and realistic, which may not always be the case. The method also assumes features are independent or loosely correlated, which is often not realistic in complex datasets. Thus, it is important to consider the nature of the relationship between features when generating synthetic data.
+
+# Blended Sampling {#Workingwithclassimbalance-BlendedSampling}
+
+NSOs can also apply a combination of oversampling the minority class and undersampling the majority class can be useful to handle strongly imbalanced data. 
+
+------------------------------------------------------------------------
+
+# References {#Workingwithclassimbalance-References}
+
+(1)  Spackman, W., Goussev, S., Wall, M., DeVilliers, G., Chiumera, D. (2024) \"Machine Learning is (not!) all you need: Impact of classification-induced error on price indices using scanner data\" *Paper presented at the 18^th^ Meeting of the Ottawa Group. *<https://stats.unece.org/ottawagroup/download/Papers-session-8-pres-1-spackman-et-al-2024-misclassification-is-not-all-you-need.pdf>
+
+\(2\) As an alternative, the Chi Square test can also be apllied to test the H0.
+
+\(3\) Schubach, M., Re, M., Robinson, P.N. *et al.* Imbalance-Aware Machine Learning for Predicting Rare and Common Disease-Associated Non-Coding Variants. *Sci Rep* **7**, 2959 (2017). <https://doi.org/10.1038/s41598-017-03011-5>
+
+\(4\) Chawla, N. V., Bowyer, K. W., Hall, L. O., Kegelmeyer, W.P. (2002) SMOTE: Synthetic Minority Over-sampling Technique. *Journal of artificial intelligence research* 16 <https://www.jair.org/index.php/jair/article/view/10302>
+
+\(5\) Rowland, Edward (2019) Guidelines for selecting metrics to evaluate classification in price statistics production pipelines. Presented at May 17, 2019 Advistory Panel on Consumer Prices - Technical (UK Statistics Authority) <https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2019/08/APCP-T1910-Classification-metrics-guidelines.pdf>
+
+\(6\) Luque, A., Carrasco, A., Martin, A., de las Heras, A. (2019) The impact of class imbalance in classification performance metrics based on the binary confusion matrix. *Pattern Recognition* 91. 216-231. <https://www.sciencedirect.com/science/article/pii/S0031320319300950>

@@ -6,4 +6,5 @@ _site/
 /.quarto/
 **/*.quarto_ipynb
 scripts/_debug/
+scripts/_generated_sidebar.yml
 __pycache__/

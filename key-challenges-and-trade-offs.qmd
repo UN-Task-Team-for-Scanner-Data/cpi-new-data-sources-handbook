@@ -1,0 +1,95 @@
+---
+title: "Key challenges and trade-offs"
+---
+
+Alternative data sources introduce a number of challenges and trade-offs that National Statistical Offices (NSOs) must actively manage.
+
+These considerations often cut across organisational boundaries and require balancing competing priorities rather than identifying a single "optimal" solution.
+
+Importantly, many of these challenges are not purely technical. Legal frameworks, governance arrangements, skills, and user expectations all influence how alternative data can be used in practice.
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2026-05-12                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | New page - initial published version                                                       |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=443416687) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Legal, ethical, and governance considerations {#Keychallengesandtradeoffs-Legalethicalandgovernanceconsiderations end="1026" data-start="988"}
+
+Access to alternative data is often governed by complex legal and contractual arrangements. Unlike survey data, where NSOs typically have well-established legal mandates, alternative data sources may involve:
+
+- Commercial data providers,
+
+- Third-party intermediaries, or
+
+- Data originally collected for non-statistical purposes.
+
+NSOs must assess whether [data access is legally sustainable](data-sharing-agreements.qmd) over time, whether terms of use permit statistical reuse, and how risks related to confidentiality, privacy, and ethical use are managed. These considerations may constrain methodological choices or limit how results can be published or shared.
+
+# Stability, continuity, and dependency risks {#Keychallengesandtradeoffs-Stabilitycontinuityanddependencyrisks end="1790" data-start="1743"}
+
+Alternative data sources may be subject to changes outside the control of the NSO. For example:
+
+- Retailers may change product identifiers or reporting practices,
+
+- Websites may alter structure or restrict automated access or even be discontinued,
+
+- Data providers may discontinue or modify data deliveries.
+
+These risks create a trade-off between innovation and robustness. Highly detailed or novel data sources may offer analytical benefits but increase vulnerability to supply disruptions, requiring contingency planning.
+
+# Methodological complexity versus transparency {#Keychallengesandtradeoffs-Methodologicalcomplexityversustransparency end="2366" data-start="2317"}
+
+Many alternative data sources enable the use of more sophisticated index methods. While these methods may offer desirable statistical properties, they can also:
+
+- Increase computational and system complexity,
+
+- Build the team skills to learn and use such methods;
+
+- Be harder to explain to non-technical users, and
+
+- Complicate internal validation and quality assurance processes.
+
+NSOs must balance methodological refinement with transparency, reproducibility, and the need to maintain trust in official statistics. In some cases, simpler methods may be preferred during early [implementation phases](implementation.qmd), even if more advanced approaches are planned longer term.
+
+# Timeliness versus revision policy {#Keychallengesandtradeoffs-Timelinessversusrevisionpolicy end="3010" data-start="2973"}
+
+Some alternative data based methods, particularly multilateral index approaches, may imply revisions when new data become available. This can conflict with established CPI revision policies or user expectations of non-revised headline indices.
+
+NSOs therefore face trade-offs between:
+
+- Using methods that make full use of available data, and
+
+- Maintaining stable, non-revised published series.
+
+Splicing, window design, and publication strategies become critical choices in managing this tension. These are discussed further in [Price index methods](price-index-methods.qmd). 
+
+# Resource constraints and skill requirements {#Keychallengesandtradeoffs-Resourceconstraintsandskillrequirements end="3556" data-start="3509"}
+
+Although alternative data sources have the potential to reduce long-term costs, their adoption typically requires upfront investment. This may include:
+
+- New IT infrastructure,
+
+- Data engineering and coding skills,
+
+- Methodological expertise in advanced index number theory, and
+
+- Ongoing maintenance capacity.
+
+NSOs must consider whether these resources are available internally, whether partnerships are required, and how knowledge is retained over time.
+
+# Organisational coordination and change management {#Keychallengesandtradeoffs-Organisationalcoordinationandchangemanagement end="4069" data-start="4016"}
+
+Introducing alternative data often affects multiple parts of the organisation simultaneously. For example, data acquisition, IT systems, methodology teams, and dissemination units may all need to adapt.
+
+A key trade-off is between incremental integration, where new data sources are phased in gradually, and more transformative approaches that redesign production systems end-to-end. Both approaches have merits, but they imply different risks, timelines, and management challenges.
+
+These challenges and trade-offs mean that adopting alternative data sources is not simply a technical exercise. NSOs must make a series of deliberate decisions about scope, methods, governance, and resourcing. 

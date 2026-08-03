@@ -5,7 +5,33 @@ sources in the production of consumer price statistics** from the UN Statistics
 Confluence wiki (space `GWGSD`) to this Quarto site, hosted on GitHub Pages under
 `UN-Task-Team-for-Scanner-Data`.
 
-## Pilot scope (current state)
+## Current state (2026-08-03, end of day)
+
+**The full handbook is converted**: all 72 pages from the export's `index.html` tree,
+with the sidebar mirroring the wiki hierarchy, cross-page links rewritten to local
+targets, and linked attachments (PDF/docx) copied under `files/`. The whole site
+passes `scripts/verify_site.py` with zero defects: every page's rendered formula and
+image counts match the Confluence source exactly, every internal link and image
+resolves, and no page has line-ending corruption. What remains is human review
+(reading the pages), org repo access, and deployment — see the issue list below.
+
+Batch tooling:
+
+```
+uv run scripts/convert_all.py --plan   # show the page tree, slugs, math/image stats
+uv run scripts/convert_all.py --run    # convert everything + rewrite links + sidebar YAML
+uv run scripts/verify_site.py          # after quarto render: parity + link check
+```
+
+## Deployment (ready, waiting on org repo)
+
+`.github/workflows/publish.yml` renders and publishes to GitHub Pages on every push
+to `main` (quarto-dev/quarto-actions). One-time setup once the repo exists under
+`UN-Task-Team-for-Scanner-Data`: push `main`, run `quarto publish gh-pages` locally
+once to create the `gh-pages` branch, then set repo Settings → Pages → deploy from
+`gh-pages`. After that, every merged change publishes automatically.
+
+## Pilot scope (how fidelity was established)
 
 As agreed by email (Jul–Aug 2026): convert **one or two example pages** that are
 heavy in both **LaTeX and images**, verify they render faithfully, then scale to
@@ -72,13 +98,11 @@ polish against Helen's `UNTT slide template.potx` is a later step.
    agree conversion fidelity is acceptable.
 2. **Site chrome** — logo/favicon, footer, announcement banner, repo-url/repo-actions
    once the repo URL is known; styling pass vs the UNTT slide template.
-3. **Bulk conversion, per section** — one issue per top-level handbook section
-   (Initial considerations; Data selection & acquisition; Web scraping; Scanner data;
-   Preparation of data; Classification; Data filtering; Index methods; Aggregation; …),
-   using `scripts/convert_page.py`; nav order from export `index.html`.
-4. **Internal link rewriting** — converted pages still contain relative links to
-   Confluence export filenames (`Page-Name_<id>.html`); rewrite to `.qmd` slugs once
-   the full page set exists (extend `convert_page.py` with a filename→slug map).
+3. **Content review, per section** — conversion is done; one issue per top-level
+   handbook section for a human read-through against the wiki original (layout
+   oddities, footnote-ish text, anything the automated parity checks can't judge).
+4. **External-image dependency** — one page (Method 4: ML classification) hot-links
+   an image from statcan.gc.ca, as the wiki did; decide whether to localize it.
 5. **References → BibTeX** — collect citations from handbook pages into
    `references.bib`; switch pages to Quarto citation syntax.
 6. **Unresolved Confluence comments** — the export carries inline review-comment

@@ -1,0 +1,39 @@
+---
+title: "Preparation of data"
+---
+
+This sections summarises the general steps required to prepare these new data sources for use in price index compilation.\
+
+Section contents:
+
+- [Product sampling for price index calculation](product-sampling-for-price-index-calculation.qmd) --- NSOs can either choose to use all available data from their new data source, or to use a sample of this data. 
+- [Standardising the data](standardising-the-data.qmd) --- Data will need to be standardised before being used to calculate price indices.
+- [Aggregation across time and outlets](aggregation-across-time-and-outlets.qmd) --- Data are usually disaggregated by various dimensions. This page contains information on how products can be aggregated across time and outlets.
+- [Identifying unique products](identifying-unique-products.qmd) --- Data are usually disaggregated by various dimensions. This page contains information on how products can be defined from the given article codes.
+- [Treatment of discounts and refunds](treatment-of-discounts-and-refunds.qmd) --- This page contains information on how discounts and refunds should be treated in the data.
+
+**Page information**
+
++----------------------+--------------------------------------------------------------------------------------------+
+| Version              | v2                                                                                         |
++----------------------+--------------------------------------------------------------------------------------------+
+| Last updated on      | 2024-03-01                                                                                 |
++----------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes   | Initial publication version                                                                |
++----------------------+--------------------------------------------------------------------------------------------+
+| Page history         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910473) |
++----------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Overview {#Preparationofdata-Overview}
+
+The main objective of this step is to prepare these new data sources for use in price index compilation.
+
+- The format of the files or the variables included in the data sets may not be exactly the same for all data providers and new variables must be derived (see [Standardising the data](standardising-the-data.qmd)).
+- These data are usually disaggregated by article code, by time period and by outlet or retailer. The different units (lines) included in these data sets must therefore be further combined and new units must be constructed. Three dimensions must be considered when specifying the individual products: the time and outlet dimensions (see [Aggregation across time and outlets](aggregation-across-time-and-outlets.qmd)), and the product dimension (see [Identifying unique products](https://unstats.un.org/wiki/display/GWGSD/Identifying+unique+products)).
+- Further adjustments may be needed to take into account for example, discounts or refunds (see [Treatment of discounts and refunds](treatment-of-discounts-and-refunds.qmd)).
+
+These steps may be applied to all the data, or only to a subset of the data that has been previously selected to be in scope of the index calculations (see [Product sampling for price index calculation](product-sampling-for-price-index-calculation.qmd)).
+
+The prices, weights and other information of these new units (called 'individual products') will then be the input of any further steps in the production process. Data preparation essentially corresponds to step '5.5. Derive new variables and units' in the [Generic Statistical Business Process Model](https://analysisfunction.civilservice.gov.uk/wp-content/uploads/2018/02/Generic-Statistical-Business-Process-Model.pdf).

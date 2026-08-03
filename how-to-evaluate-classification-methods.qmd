@@ -2,7 +2,7 @@
 title: "How to evaluate classification methods"
 ---
 
-There are numerous metrics that can be tracked and applied when evaluating how well a classifier performs. This chapter provides an overview of common approaches using a Machine Learning (ML) classifier (i.e. [Method 4](337281185.html) and [in some cases Method 3](337281184.html)) as the use case throughout due to their applicability and popularity with ML. These metrics however, could also be applied on classifiers created with other methods (such as [Method 2](337281183.html)) as long as there is a representative test dataset on which to evaluate classifier performance.
+There are numerous metrics that can be tracked and applied when evaluating how well a classifier performs. This chapter provides an overview of common approaches using a Machine Learning (ML) classifier (i.e. [Method 4](method-4-machine-learning-classification-method.qmd) and [in some cases Method 3](method-3-recommendation-machine-assisted-classification.qmd)) as the use case throughout due to their applicability and popularity with ML. These metrics however, could also be applied on classifiers created with other methods (such as [Method 2](method-2-pattern-matching-classification-method.qmd)) as long as there is a representative test dataset on which to evaluate classifier performance.
 
 **Page information**
 
@@ -268,7 +268,7 @@ In the multidimensional case, there is another component that plays a role. We d
 
 **ROC curve**
 
-Another option NSOs cold leverage is the [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). An ROC curve can be seen as a visual representation of the tradeoff between the costs of true positive and false positive (4). The isolines each represent different parameter combinations with the same accuracy. If the ROC curve is close to the diagonal, this indicates that the classifier is not better than one random guess. A classifier's ROC curve is optimal when it rises sharply along the true positive axis before increasing along the false positive axis. As ROC curves can be swept out by manipulating the balance of training samples for each class, NSOs can apply [sampling strategies](Working-with-class-imbalance_337281204.html) to try to select a desired classifier. ROC curves can be leveraged by NSOs on a multiclass use case by [applying one vs one or one vs rest evaluation approach](https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html). 
+Another option NSOs cold leverage is the [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic). An ROC curve can be seen as a visual representation of the tradeoff between the costs of true positive and false positive (4). The isolines each represent different parameter combinations with the same accuracy. If the ROC curve is close to the diagonal, this indicates that the classifier is not better than one random guess. A classifier's ROC curve is optimal when it rises sharply along the true positive axis before increasing along the false positive axis. As ROC curves can be swept out by manipulating the balance of training samples for each class, NSOs can apply [sampling strategies](working-with-class-imbalance.qmd) to try to select a desired classifier. ROC curves can be leveraged by NSOs on a multiclass use case by [applying one vs one or one vs rest evaluation approach](https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html). 
 
 ------------------------------------------------------------------------
 

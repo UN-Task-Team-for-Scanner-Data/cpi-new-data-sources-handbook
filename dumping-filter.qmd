@@ -1,0 +1,49 @@
+---
+title: "Dumping filter"
+---
+
+Dumping filters aim at eliminating the downward pressure of clearance prices on the index.\
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v2                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2021-08-04                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910482) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Introduction {#Dumpingfilter-Introduction}
+
+Dumping filters aim at eliminating the downward pressure of clearance prices on the index. This is an issue especially when the index calculation is conducted at the variety level such as, GTIN or any other unique product identifier. In this case, new products will affect the results of the majority of the relevant index formulas only poorly or even not at all in the period of appearance. However, especially in the case of relaunches, these products should have an immediate impact on the index, which then in theory should balance out the downward pressure of clearance prices. A dumping filter can therefore be of help in cases where products leaving the market and products entering the market cannot be linked appropriately.
+
+It has to be remarked that the efficiency of the dumping filter depends on the typical pricing strategy of the products for which the index is calculated. For example, a dumping filter will not prevent a downward bias of those products for which usually a price skimming strategy is applied (e.g. clothing or electronic devices which are often introduced at high initial prices and then dropped over time). For this situation, it is absolutely essential to build homogeneous products groups first (and not calculate on the GTIN level) (see section [Identifying unique products](identifying-unique-products.qmd)) in order to capture the price increasing effect of product relaunches and the entrance of new products in general.
+
+In general though, applying a dumping filter before the index compilation can be helpful even when items have been grouped together in a first step.
+
+# Dumping filter for scanner data {#Dumpingfilter-Dumpingfilterforscannerdata}
+
+Dumping filters are designed to detect and delete clearance sales which are characterised by both a sharp decrease in prices and sales quantities compared to the previous period. Scanner data provide the information required to apply the dumping filter. Similar to the outlier filter, a dumping filter should be set with caution. It has to be noted that if both an outlier filter and a dumping filter are used, the threshold value for the tolerated price decrease should be higher for the outlier filter than for the dumping filter. Otherwise, the dumping filter has no impact at all.
+
+The section on [current practice](current-practice-of-data-filtering.qmd) has some examples of values which countries have chosen for the dumping filter. Products identified by the dumping filter in a month should also be excluded in the following months if price and quantity remain similar.
+
+There is ongoing research into whether some indices suffer more from downward pressure from clearance prices than others (see section [Methods for when expenditure data are available](methods-for-when-expenditure-data-are-available.qmd)). Several analyses have revealed that especially the GEKS index reacts sensitive to product sell-offs (e.g. Chessa et al. (2017), and van Loon and Roels (2018)). However, while van Loon and Roels (2018) found only short-term deviations and similar long-term price trends, Chessa et al. (2017) found a longer lasting bias. This divergence in findings can possibly be explained by the fact that van Loon and Roels (2018) analysed the effect of clearance prices on multilateral methods without chaining (full window) whereas Chessa et al. (2017) applied the fixed base monthly expanding method to calculate the index series. Overall, the current evidence indicates that the impact of dumping filtering has stronger impacts on the GEKS index than on other multilateral indices such as Geary-Khamis (GK) or Weighted Time Product Dummy (WTPD).
+
+# Dumping filter for web scraped data {#Dumpingfilter-Dumpingfilterforwebscrapeddata}
+
+In contrast to scanner data, web scraped data do not contain information on the quantities sold for an observed price. Some research has been conducted in the recent years how clearance prices can be also detected when using web scraped data. In general, when [proxy weights are determined for web scraped data](https://unstats.un.org/wiki/display/GWGSD/Deriving+proxy+weights+for+web+scraped+data), a dumping filter for scanner data can be applied to web scraped data in a similar way. In the case of web scraped data, the proxy weights could replace the quantities in order to determine together with the price whether a product has reached the sell-off phase.
+
+\
+
+------------------------------------------------------------------------
+
+# References {#Dumpingfilter-References}
+
+Chessa A.G., Verburg, J. and Willenborg, L. (2017) A Comparison of Price Index Methods for Scanner Data. Paper presented at the 15th Ottawa Group meeting, 10-12 May 2017, Elville am Rhein, Germany. <https://stats.unece.org/ottawagroup/download/f460.pdf>
+
+Van Loon, K., and Roels, D. (2018). Integrating big data in the Belgian CPI. Paper presented at Meeting of the group of experts on Consumer Price Indices in Geneva, Switzerland 7-9 May. <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2018/Belgium.pdf> 

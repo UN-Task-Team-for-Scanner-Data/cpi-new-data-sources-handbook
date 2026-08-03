@@ -1,0 +1,45 @@
+---
+title: "Resource implications and organisational readiness"
+---
+
+The adoption of alternative data sources typically requires a different mix of resources and capabilities compared with traditional survey-based price collection.
+
+While long-term efficiency gains are often cited as a motivation, most NSOs experience an initial increase in resource demands during research and implementation phases.
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v3                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2026-05-12                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Added link to new systems page                                                             |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=443416697) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Staffing and skills {#Resourceimplicationsandorganisationalreadiness-Staffingandskills end="1026" data-start="988"}
+
+Alternative data sources often require new technical and methodological skills, particularly in areas such as data engineering, programming, database management, and advanced index number methods. NSOs may need to assess whether these skills are available internally, whether targeted training is required, or whether external expertise should be engaged during early phases.
+
+At the same time, institutional knowledge of CPI concepts and production processes remains essential. Successful implementation often depends on effective collaboration between methodologists, subject-matter experts, IT specialists, and dissemination teams, rather than on technical expertise alone.
+
+# Systems and infrastructure {#Resourceimplicationsandorganisationalreadiness-Systemsandinfrastructure end="1559" data-start="1529"}
+
+Working with large or high-frequency datasets may require new or adapted IT infrastructure. This can include secure data transfer mechanisms, storage solutions capable of handling large volumes of data, and processing environments that support automated workflows.
+
+NSOs should consider whether existing systems can be extended incrementally or whether new platforms are needed, particularly where multiple alternative data sources are being integrated simultaneously. Decisions on system design should also take account of maintainability and long-term support. More information can be found in the section [CPI production system requirements](cpi-production-system-requirements.qmd).
+
+# Time and implementation effort {#Resourceimplicationsandorganisationalreadiness-Timeandimplementationeffort end="2159" data-start="2125"}
+
+Implementing alternative data sources is rarely a rapid process. Research, testing, validation, and parallel running with existing systems can take considerable time, particularly where methods or systems are unfamiliar. NSOs should allow sufficient time for experimentation and learning, and avoid underestimating the effort required to move from pilot studies to live production.
+
+Phased implementation, starting with selected product groups or data sources, can help manage this transition and spread resource demands over time.
+
+# Partnerships and external dependencies {#Resourceimplicationsandorganisationalreadiness-Partnershipsandexternaldependencies end="2734" data-start="2692"}
+
+Many alternative data sources rely on cooperation with external data providers, aggregators, or other public authorities. Maintaining these relationships may require ongoing engagement, negotiation, and coordination, particularly where data access arrangements evolve over time.
+
+NSOs should consider how responsibilities for managing external relationships are allocated internally and how continuity is ensured if key contacts or agreements change.

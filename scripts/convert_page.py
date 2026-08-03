@@ -173,6 +173,25 @@ def find_quarto() -> str | None:
     return None
 
 
+def process_attachment_links(content, html_path: Path, slug: str) -> None:
+    """Copy non-image attachments (pdf, docx, ...) linked from the page and
+    rewrite their hrefs, mirroring process_images."""
+    src_dir = html_path.parent
+    dest_dir = REPO_ROOT / "files" / slug
+    for a in content.find_all("a", href=True):
+        href = a["href"]
+        if not href.startswith("attachments/"):
+            continue
+        filename = PurePosixPath(href).name
+        source_file = (src_dir / href).resolve()
+        if not source_file.is_file():
+            print(f"WARNING: linked attachment missing on disk, leaving href as-is: {source_file}", file=sys.stderr)
+            continue
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source_file, dest_dir / filename)
+        a["href"] = f"files/{slug}/{filename}"
+
+
 def run_pandoc(html_fragment: str) -> str:
     quarto_exe = find_quarto()
     if not quarto_exe:
@@ -230,6 +249,7 @@ def main() -> None:
 
     clean_content(content)
     process_images(content, html_path, slug)
+    process_attachment_links(content, html_path, slug)
 
     cleaned_html = content.decode_contents()
 

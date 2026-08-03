@@ -1,0 +1,69 @@
+---
+title: "Different approaches to accessing web scraped data"
+---
+
+Approaches for setting up a web scraping project\
+
+\
+
+**Page information**
+
++----------------------+--------------------------------------------------------------------------------------------+
+| Version              | v4                                                                                         |
++----------------------+--------------------------------------------------------------------------------------------+
+| Last updated on      | 2021-07-16                                                                                 |
++----------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes   | Initial publication version                                                                |
++----------------------+--------------------------------------------------------------------------------------------+
+| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910465) |
++----------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Initial considerations for setting a web scraping project {#Differentapproachestoaccessingwebscrapeddata-Initialconsiderationsforsettingawebscrapingproject}
+
+In the last decade, the interest in the use of the internet as a source for the development and improvement of price statistics by National Statistical Offices (NSOs) has grown substantially. This is conducted by a combination of the rise in the representativity of e-commerce practices by consumers, substantial increase in the number of online retailers, and the possibility of NSOs extracting large amount of valuable information from websites possibly at reduced costs.
+
+Behind the information that a browser displays for each web page lies a html-like structure that contains the information seen by users. Web scraping consists of building automatic tools that walk through the html and extracts information of interest buried in the html nodes and process them into a convenient structured format.
+
+Data collection from the internet and its subsequent processing for producing statistics can demand different levels of Information Technology (IT) skills. These range from basic understanding of how an html page is structured, to knowledge of cloud computing and machine learning techniques (more discussions can be found in section 3 of Ref. (1)). This will rely on the amount of information to be extracted from the websites and processing procedures to clean and classify the data for the purposes of the Consumer Price Index (CPI).
+
+A comprehensive and detailed description of the steps necessary for setting up web scraping for official statistics is presented in a reference framework proposed in the Eurostat \"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\". This framework relies on three main phases: the site analysis phase, the data analysis and design phase, and the production phase.
+
+In summary,
+
+- The site analysis relies on the identification and evaluation of the characteristics and data available at retailer's sites fit for use by CPI purposes, and selection of the appropriate web scraping mechanism to adopt.
+- Data analysis and design relate to building the tools to extract web data and analysis of the information retrieved.
+- The production phase relates to implementation and maintenance of the scrapers into CPI routines.
+
+Though data acquisition occurs in different phases, Ref. (1) suggests that it is crucial to decide at the beginning of the project who will be responsible for the scrapers in the long term at the production phase, since this is very demanding in human and financial resources. NSOs have taken a variety of approaches, from working with more centralised IT resources, to set up and maintain the scrapers, to having the web scraping team sit within the Prices production area.
+
+# Overview on approaches to be adopted {#Differentapproachestoaccessingwebscrapeddata-Overviewonapproachestobeadopted}
+
+NSOs interested in using web data can choose between (i) developing in-house expertise and structure necessary for data extraction and processing; or (ii) contracting third party services. The adoption of the best approach should consider the goals of the NSOs in respect to the use of web scraping for CPI, resources available and the complexity of all the steps involved to set up web scrapers for the compilation of CPIs.
+
+According to Ref. (1), to develop and maintain scraping by coding internally is usually the ideal option since this process is more flexible and allows to better handle data according to CPI needs. This approach also tends to be cheaper in the long run and the web scraping expertise developed by the internal personnel can be applied to produce official statistics in other areas beyond the CPI (Ref. 3).
+
+However, due the complexity and costs involved in the development and maintenance of the robots for data acquisition, some NSOs may find more suitable to adopt an alternative approach and contract third party services that provide the desired information (Ref. 4, 5).  In this approach usually the NSO specifies the product categories and retailers of interest and the frequency to which data should be collected and sent to the NSO. Important things to include in the contract refers to the possibility of refreshing the sample by the addition of new retailers and basket items across time and to require a good coverage of data.
+
+By the adoption of third party services, the NSO can also specify that the data is provided after cleaning and already classified according to the CPI needs. This means that according to the services adopted, the demands for internal infrastructure an NSO would have to create for the development, maintenance and processing of web data can be reduced.
+
+One of the challenges of using web scraped data are that a back series of data are less easily available (unlike scanner data). Some NSOs have contracted third party services in the short-term to ensure data can be collected for analysis and research purposes while the process of building up in-house web scraping capability takes place. Once the in-house team is set up, the third party contract can be terminated.  
+
+In the training course 2 about data acquisition, in [module 2.2](https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.2:Scrapingdatafromtheweb:~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None) a general description is given of the main issues to face and the plan to implement to access data via web scraping techniques.
+
+\
+
+------------------------------------------------------------------------
+
+# References {#Differentapproachestoaccessingwebscrapeddata-References}
+
+\(1\) Bentley and Krsinich (2017). Towards a big data CPI for New Zealand. Paper presented at the meeting of the Ottawa Group at Eltville, Germany. <https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/4a256353001af3ed4b2562bb00121564/1ab31c25da944ff5ca25822c00757f87/$FILE/Towards%20a%20big%20data%20CPI%20for%20New%20Zealand%20-Alan%20Bentley,%20Frances%20Krsinich%20-%20Paper.pdf>
+
+\(2\) Eurostat, (2020), Practical guidelines on web scraping for the HICP. <https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf>
+
+\(3\) ONS, (2019). Using alternative data sources in consumer price indices: May 2019. <https://www.ons.gov.uk/economy/inflationandpriceindices/articles/usingalternativedatasourcesinconsumerpriceindices/may2019>
+
+\(4\) Ten Bosch O, Windmeijer D, Van Delden A, and Van Den Heuvel G (2018). Web scraping meets survey design: combining forces. Paper presented at the BIGSURV18 CONFERENCE, BARCELONA, SPAIN. <https://www.bigsurv.org/bigsurv18/uploads/73/61/20180820_BigSurv_WebscrapingMeetsSurveyDesign.pdf>
+
+\(5\) Ten Bosch and Windmeijer (2016). On the use of internet data for the Dutch CPI. Paper presented at the UNECE Meeting of the Group of experts on Price Indices. <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2016/Session_2_Netherlands_On_the_use_of_internet_data_for_Dutch_CPI.pdf>

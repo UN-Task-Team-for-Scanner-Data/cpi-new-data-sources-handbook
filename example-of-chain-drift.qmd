@@ -1,0 +1,57 @@
+---
+title: "Example of chain drift"
+---
+
+Chain drift occurs when an index does not return to unity when prices in the current period return to their levels in the base period. The problem is mostly caused by sales (that is, highly discounted prices) of products. An example will illustrate the problem.
+
+This example is taken from the upcoming publication: Consumer Price Index Theory chapter 6, Ref. (1).
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v4                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2021-10-26                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910488) |
++---------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Example of chain drift {#Exampleofchaindrift-Exampleofchaindrift}
+
+Suppose that we are given the price and quantity data for two commodities for four periods. The data are listed in Table 1 below. 
+
+Table 1: Price and Quantity Data for Two Products for Four Periods 
+
+|          |         |         |         |         |
+|----------|---------|---------|---------|---------|
+| Period t | p~1~^t^ | p~2~^t^ | q~1~^t^ | q~2~^t^ |
+| 1        | 1.0     | 1.0     | 10      | 100     |
+| 2        | 0.5     | 1.0     | 5000    | 100     |
+| 3        | 1.0     | 1.0     | 1       | 100     |
+| 4        | 1.0     | 1.0     | 10      | 100     |
+
+The first commodity is subject to periodic sales (in period 2), when the price drops to half of its normal level. In period 1, we have "normal" off sale demand for commodity 1 which is equal to 10 units. In period 2, the sale takes place and demand explodes to 5000 units. In period 3, the commodity is off sale and the price is back to 1 but many shoppers have stocked up in the previous period so demand falls to only 1 unit. Finally in period 4, the commodity is off sale and we are back to the "normal" demand of 10 units. Commodity two is dull: its price is 1 in all periods and the quantity sold is 100 units in each period. Note that the only thing that has happened going from period 3 to 4 is that the demand for commodity one has picked up from 1 unit to the "normal" level of 10 units. Also note that, conveniently, the period 4 data are exactly equal to the period 1 data so that for Walsh's test to be satisfied, the product of the period to period chain links must equal one.
+
+Table 2 lists the fixed base Fisher, Laspeyres and Paasche price indexes, P~F(FB)~, P~L(FB)~ and P~P(FB)~ and as expected, they behave perfectly in period 4, returning to the period 1 level of 1. Then the chained Fisher, Törnqvist-Theil, Laspeyres and Paasche price indexes, P~F(CH)~, P~T(CH)~, P~L(CH)~ and P~P(CH)~ are listed. Obviously, the chained Laspeyres and Paasche indexes have chain drift bias that is extraordinary but what is interesting is that the chained Fisher has a 2% downward bias, and the chained Törnqvist has a close to 3% downward bias. 
+
+Table 2: Fixed Base and Chained Fisher, Törnqvist-Theil, Laspeyres and Paasche Indexes
+
+|        |          |          |          |          |          |          |          |
+|--------|----------|----------|----------|----------|----------|----------|----------|
+| Period | P~F(FB)~ | P~L(FB)~ | P~P(FB)~ | P~F(CH)~ | P~T(CH)~ | P~L(CH)~ | P~P(CH)~ |
+| 1      | 1.000    | 1.000    | 1.000    | 1.000    | 1.000    | 1.000    | 1.000    |
+| 2      | 0.698    | 0.955    | 0.510    | 0.698    | 0.694    | 0.955    | 0.510    |
+| 3      | 1.000    | 1.000    | 1.000    | 0.979    | 0.972    | 1.872    | 0.512    |
+| 4      | 1.000    | 1.000    | 1.000    | 0.979    | 0.972    | 1.872    | 0.512    |
+
+What explains the results in the above table? The problem is this: when commodity one comes off sale and goes back to its regular price in period 3, the corresponding quantity does not return to the level it had in period 1: the period 3 demand is only 1 unit whereas the "normal" period 1 demand for commodity 1 was 10 units. It is only in period 4, that demand for commodity one recovers to the period 1 level. However, since prices are the same in periods 3 and 4, all of the chain links show no change (even though quantities are changing) and this is what causes the difficulties. If demand for commodity one in period 3 had immediately recovered to its "normal" period 1 level of 10, then there would be no chain drift problem.
+
+------------------------------------------------------------------------
+
+# References {#Exampleofchaindrift-References}
+
+\(1\) Diewert, E., Becker-Vermeulen, C., De Haan, J., Gorajek, A., Hill, R., Johnson, R., Lamboray, C., Li, C., Reinsdorf, M., Rambaldi, A., Rao, P., Shimizu, C., Silver, M., Weselake-George, Z. and Yélou, C. (2021). \[online\] Available at: <https://www.imf.org/-/media/Files/Data/CPI/companion-publication/chapter-6-chain-drift-problem-and-multilateral-indices.ashx> 

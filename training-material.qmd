@@ -1,0 +1,250 @@
+---
+title: "Training material"
+---
+
+This page contains a summary of the planned training curriculum and links to available courses.\
+
+**Page information**
+
++---------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Version             | 3                                                                                                                          |
++---------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Last updated on     | 2026-05-03                                                                                                                 |
++---------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Summary of changes  | Added links to the published courses as of 1st May 2026. Tidied up table of contents and text for the unpublished courses. |
++---------------------+----------------------------------------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=243073098)                                 |
++---------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# **Introduction** {#Trainingmaterial-Introduction style="text-align: left;"}
+
+Each e-learning course and its modules are self-paced and have been developed by the Task Team on Scanner Data of the UN Committee of Experts on Big Data and Data Science for Official Statistics. Training will be published on the following website: <https://learning.officialstatistics.org/course/index.php?categoryid=15>. 
+
+You will need to create an account on the UN learning platform to log in but all quick and easy to do and once on you can click through the content.
+
+Each module has different durations and can be attended independently of each other. At the end of each module you must complete the Quiz section with a passing grade, as well as the feedback survey, to receive a course certificate.
+
+\
+
+## **1. Alternative Data Sources (ADS) to compile CPI: an overview** {#Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview}
+
+**Status: published - <https://learning.officialstatistics.org/course/view.php?id=123>**
+
+**Pre-requisite: none**
+
+**Level: Foundation**
+
+**Audiences: all (Economists, Statisticians, Project Managers, Data Analyst, Data Scientists, Data engineers, IT experts)**
+
+**Delivery style: Automated PowerPoint with voice over**
+
+**Time to complete: \~65 minutes + time for tests** **(in total \~90 minutes, considering 5 minutes for tests proposed for 5 out of 6 modules)**
+
+This **introductory** course aims to raise awareness of what these data sources are and to showcase how they can be applied at a National Statistical Organization (NSO)
+
+It is broken down by six modules:
+
+- Module 1.0: Introduction to Alternative Data Sources, where alternative data sources are introduced.
+- Module 1.1: Scanner data characteristics
+- Module 1.2: Web-scraped data characteristics
+- Module 1.3: Application Programming Interfaces data characteristics
+- Module 1.4: Administrative data characteristics
+- Module 1.5: Comparison among different ADS and features of an ADS project. This module compares the different Alternative Data Sources, described in the previous modules, and sketches the main features of a project for their use for CPI compilation.
+
+\
+
+## **2. Data acquisition** {#Trainingmaterial-2Dataacquisition style="text-align: left;"}
+
+**Status: published - <https://learning.officialstatistics.org/enrol/index.php?id=124>**
+
+**Pre-requisite: None**
+
+**Level: Foundation**
+
+**Audiences: all (Economists, Statisticians, Project Managers, Data Analyst, Data Scientists, Data engineers, IT experts)**
+
+**Delivery style: Automated PowerPoint with voice over**
+
+**Time to complete: \~72 minutes + time for tests (in total \~92 minutes, considering 5 minutes for tests proposed for 4 out of 6 modules)**
+
+This **second** course aims at illustrating how alternative data sources to compile Consumer Price Indices may be obtained by NSOs, noting that the process of acquiring each can be quite distinct.
+
+It is broken down by six modules:
+
+- Module 2.0: Introduction to ADS acquisition
+- Module 2.1: Acquiring scanner data for CPI 
+- Module 2.2: Scraping data from the web
+- Module 2.3: Scraping data via APIs
+- Module 2.4: Administrative data acquisition
+- Module 2.5: Conclusions 
+
+\
+
+## **3. Preparation of data** {#Trainingmaterial-3Preparationofdata style="text-align: left;"}
+
+**Status: forthcoming**
+
+**Pre-requisite: courses 1, 2**
+
+**Level: Intermediate**
+
+**Audience: Statisticians, Data Analysts, Data Scientists, IT experts**
+
+**Delivery style: Automated PowerPoint with voice over**
+
+**Time to complete: TBC**
+
+This **third** course is mainly focused on three of the ADS used for CPI compilation (scanner data, web scraped data and data obtained via API). Given the characteristics of these three sources are attributable to those of big data, the preparation of the data for their further treatment and elaboration is crucial. This course aims at illustrating the main processes necessary for the preparation of the data deriving from ADS.
+
+It is broken down by **two sections**: the first one more theoretical, the second one more practical.
+
+The **first section** is broken down by eight modules:
+
+- Module 3.0: Data Preparation for Alternative Data Sources - Concepts and Overview
+- Module 3.1: Ingesting and Exploring Raw Data
+- Module 3.2: Standardization
+- Module 3.3: Sampling and Data Cleaning
+- Module 3.4: Identifying Unique Products
+- Module 3.5: Aggregating Data Across Time and Outlets
+- Module 3.6: Treatment of Discounts and Refunds
+- Module 3.7: Deriving Proxy Weights for Web-Scraped Data
+
+\
+
+The **second** **section** is broken down by three modules:
+
+- Module 3.8: Introduction to R to prepare scanner data
+- Module 3.9: Introduction to Python to prepare web-scraped data
+- Module 3.10: Introduction to the use of R to prepare data coming from other ADS (administrative data)
+
+\
+
+## **4. Classification** {#Trainingmaterial-4Classification style="text-align: left;"}
+
+**Status: forthcoming**
+
+**Pre-requisite: courses 2, 3**
+
+**Level: Expert/Advanced Level**
+
+**Audience: Statisticians, Data Analysts, Data Scientists, IT experts**
+
+**Delivery style: Automated PowerPoint with voice over, short video or guidance sheet (informative). Guided hands on experience in R and Python**
+
+**Time to complete: TBC**
+
+This **fourth** course is mainly focused on three of the ADS used for CPI compilation (scanner data, web scraped data and data obtained via API). It aims at illustrating the different methods that can be used to classify these data and the overall implementation. The training builds on the material and code notebooks to be made available by the Task Team. 
+
+It is broken down by **two sections:** the first one more theoretical, the second one more practical**.**
+
+The **first section** is broken down by five modules:
+
+- Module 4.0: Pre-conditions to classification and issues about deciding on appropriate method to use
+- Module 4.1: The main methods used to classify big data sets are illustrated. The methods explained are: Method 0: Manual labelling or validation of predicted labels; Method 1: Attribute based classification method; Method 2: Pattern matching classification method; Method 3: Recommendation / Machine-assisted classification; Method 4: Machine Learning classification method
+- Module 4.2: Approaches to blending classification methods are explained
+- Module 4.3: Operational best practices to implementing classification
+- Module 4.4: Purchasing data classifications for scanner data from an external provider and other considerations
+
+The **second** **section** is broken down by two modules:
+
+- Module 4.5: How automatically classify products description in R
+- Module 4.6: How to apply appropriate machine learning methods in Python, specific to the price statistics and alternative data sources.
+
+\
+
+## **5. Data filtering and missing prices** {#Trainingmaterial-5Datafilteringandmissingprices style="text-align: left;"}
+
+**Status: forthcoming**
+
+**Pre-requisite: course 2, 3**
+
+**Level: Expert/Advanced Level**
+
+**Audience: Statisticians, Data Analysts, Data Scientists, IT experts**
+
+**Delivery style: Automated PowerPoint with voice over, short video or guidance sheet (informative). Guided hands on experience in R and Python**
+
+**Time to complete: TBC**
+
+This **fifth** course illustrates the common methods used to filter the data before the compilation of the indices and how to treat missing observations. 
+
+It is broken down by **two sections:** the first one more theoretical, the second one more practical**.**
+
+The **first section** is broken down by five modules:
+
+- Module 5.0: Introduction to the Main Issues of Data Filtering and Missing Prices for ADS
+- Module 5.1: Outlier Filter and Identifying Different Types of Outlier Filter Approaches
+- Module 5.2: Identifying Dumping Filter and Using for Different Types of ADS
+- Module 5.3: Identifying and Using Low Sales Filter for ADS
+- Module 5.4: Treatment of Missing Prices in the context of ADS
+
+The **second section** is broken down by two modules:
+
+- Module 5.5: Implementing checks and filters in R for scanner data
+- Module 5.6: Implementing checks and filters in Python for web-scraped data and data obtained through APIs 
+
+\
+
+## **6. Price index methods** {#Trainingmaterial-6Priceindexmethods style="text-align: left;"}
+
+**Status: forthcoming**
+
+**Pre-requisite: 2, 3, 4**
+
+**Level: Expert/Advanced Level**
+
+**Audience: Statisticians, Data Analysts, IT experts, Data Scientists**
+
+**Delivery style: Automated PowerPoint with voice over, short video or guidance sheet (informative). Guided hands on experience in R and Python**
+
+**Time to complete: TBC**
+
+This **sixth** course illustrates the most commonly used methods to compile the CPI with large data set, focusing on both bilateral and multilateral methods. 
+
+It is broken down by two sections: the first one more theoretical, the second one more practical.
+
+The **first section** is broken down by ten modules:
+
+- Module 6.0: Overview of the price index methods
+- Module 6.1: Bilateral indices with alternative data sources - Introduction and static approach
+- Module 6.2: Bilateral indices with alternative data sources - Dynamic and full sample approaches
+- Module 6.3: Multilateral indices (GEKS)
+- Module 6.4: Multilateral indices (Geary-Khamis)
+- Module 6.5: Multilateral indices (WTPD - TDH)
+- Module 6.6: Multilateral indices (Time windows)
+- Module 6.7: Multilateral indices (Extension Method - Splicing)
+- Module 6.8: Multilateral indices (Decompositions)
+- Module 6.9: (Choosing a method)
+
+The** second section **is broken down by two modules:
+
+- Module 6.10: (Practical application in R)
+- Module 6.11 (Practical application in Python)
+
+\
+
+## **7. Integration of Alternative data sources into the production system ** {#Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem style="text-align: left;"}
+
+**Status: forthcoming**
+
+**Pre-requisite: course 1, 3, 4, 5, 6**
+
+**Level: Expert/Advanced Level**
+
+**Audiences: Statisticians, Project Managers, Data Scientists, IT experts**
+
+**Delivery style: Automated PowerPoint with voice over**
+
+**Time to complete: \~75 minutes**
+
+This **seventh course** summarizes the previous ones and helps NSOs to deal with the issues of integrating, in the CPI production process, the data coming from the ADS including those coming from the traditional data collection.
+
+It is broken down by three modules:
+
+- Module 7.1: Aggregation issues in methodological terms
+- Module 7.2: Some practical instructions to set up a production system that considers all the different data sources and the impact of the ADS. It includes the assess of the impact of new methodology, and how to face communication issues and publication and linking index series of new methodology to old series
+- Module 7.3: Practical guidance about how to face with shocks in the availability of the alternative data sources. Main topics of this module: blocking access to web site to scrape the data, unilateral break of the agreement about scanner data provision, unexpected changes in the legal frame that do no longer make available suitable administrative data sources.
+
+\

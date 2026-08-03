@@ -1,0 +1,60 @@
+---
+title: "Acknowledgements"
+---
+
+The development of this handbook and associated training material is a testament to the hard work of many individuals who collaborated on drafting, reviewing and updating the content. Acknowledgements go to the following Task Team members for drafting and editing the content:
+
+- Antonio Chessa, CBS (Netherlands)
+- Benjamin Lojak, Destatis
+- Brendan Williams, BLS (US)
+- Caspian Nicholls, ABS (Australia)
+- Cem Baş, TurkStat
+- Claude Lamboray, Statistics Luxembourg
+- Clément Yélou, Statistics Canada
+- Federico Polidoro, World Bank
+- Frances Krsinich, Stats NZ
+- Florin Barb, CBS (Netherlands)
+- Ingolf Boettcher, Statistics Austria
+- Jacek Białek, Statistics Poland
+- Jens Mehrhoff, IMF
+- Karola Henn, Destatis
+- Keno Krewer, Destatis
+- Kjersti Nyborg Hov, Statistics Norway
+- Kristiina Nieminen, Statistics Finland
+- Liam Greenhough, ONS (UK)
+- Lincoln Teixeira da Silva, IBGE (Brazil)
+- Luigi Palumbo, Bank of Italy
+- Matthias Bieg, Destatis
+- Maria Chiara De Sando, World Bank
+- Michael Scholz, University of Graz
+- Rafael Posse, INEGI (Mexico)
+- Ragnhild Nygaard, Statistics Norway
+- Roman Höhn, Destatis
+- Oskar Eugster, BFS (Switzerland)
+- Serge Goussev, Statistics Canada
+- Tanya Flower, ONS (UK)
+- Thomas Hjorth Jacobsen, Statistics Denmark
+- Vanda-Maria Guerreiro, Eurostat
+- Vladimir Gonçalves Miranda, IBGE (Brazil)
+
+And the following contributors for their review and valuable feedback on the material:
+
+- Bert Balk
+- Ceri Regan, UN
+- Christophe Bontemps, UN
+- Helen Balshaw, ONS (UK)
+- Kevin Fox, UNSW (Australia)
+- Jayne White, ONS (UK)
+- Ralf Becker, UN
+
+**Page information**
+
++---------------------+--------------------------------------------------------------------------------------------+
+| Version             | v7                                                                                         |
++---------------------+--------------------------------------------------------------------------------------------+
+| Last updated on     | 2024-05-01                                                                                 |
++---------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes  | Initial publication version                                                                |
++---------------------+--------------------------------------------------------------------------------------------+
+| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910448) |
++---------------------+--------------------------------------------------------------------------------------------+

@@ -1,0 +1,38 @@
+---
+title: "Data sharing agreements"
+---
+
+Data sharing agreements can help provide structure to data flows between a supplier and NSO\
+
+**Page information**
+
++----------------------+--------------------------------------------------------------------------------------------+
+| Version              | v2                                                                                         |
++----------------------+--------------------------------------------------------------------------------------------+
+| Last updated on      | 2021-05-14                                                                                 |
++----------------------+--------------------------------------------------------------------------------------------+
+| Summary of changes   | Initial publication version                                                                |
++----------------------+--------------------------------------------------------------------------------------------+
+| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910461) |
++----------------------+--------------------------------------------------------------------------------------------+
+
+------------------------------------------------------------------------
+
+# Data sharing agreements {#Datasharingagreements-Datasharingagreements}
+
+Before setting up a data sharing agreement, it is important to assess any current legislation and/or the existence of any statistics acts. Some National Statistical Offices (NSOs) may acquire data for statistical purposes through the statistics act. 
+
+Nevertheless, due to the importance of the production of Consumer Price Indices and other official statistics from scanner data, it is recommended that the NSO establish a formal agreement of the data sharing terms with the retailers. To put these points into formal grounds is key to guarantee that there will be no undue interruption in the data supply and the stability of the content received. Some NSOs may have dedicated legal teams who can advise on the legal environment and the specific wording of any data sharing agreements or contracts.   
+
+The terms of the agreement shall contain information on:
+
+- the data content and reporting formats to be transferred
+- timetables for the transmissions
+- uses of the data by the NSO
+- confidentiality terms (including data storage and security)
+- delivery charge conditions
+- duration of the agreement
+- notification on delivery faults/changes in the data specification by the retailer etc
+- main contacts (in case of any issues with data supply for example)
+
+The Annex in Eurostat\'s HICP - [Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details) provides some examples of draft contracts employed by different NSOs

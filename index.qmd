@@ -2,24 +2,23 @@
 title: "Handbook on utilising new data sources in the production of consumer price statistics"
 ---
 
-::: {.callout-note title="Pilot migration in progress"}
-This site is a work-in-progress migration of the UN Task Team
+::: {.callout-note title="Migration in progress"}
+This site is a migration of the UN Task Team
 [handbook](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics)
 from the UN Statistics Confluence wiki to Quarto, so the handbook can be
-version-controlled and maintained on GitHub. Two example pages — chosen because
-they are heavy in both LaTeX formulas and images — have been converted first to
-validate rendering fidelity before the full migration.
+version-controlled and maintained on GitHub. All pages have been converted with
+automated tooling; review and sign-off by the Task Team is ongoing.
 :::
 
-## Pilot pages
+Start with the [introduction](introduction.qmd), or browse the full handbook
+from the sidebar.
 
-- [Extension methods](extension-methods.qmd) — extending multilateral price
-  indices (splicing methods); formula- and figure-heavy.
+Rendering fidelity was validated first on the most demanding pages:
+
+- [Extension methods](extension-methods.qmd) — figures and LaTeX formulas together
+- [Multilateral price index methods](multilateral-price-index-methods.qmd) — the
+  handbook's most formula-dense page
 - [How to evaluate classification methods](how-to-evaluate-classification-methods.qmd)
-  — evaluation metrics for product classification; formulas and figures.
 
-## Source
-
-Content originates from the Confluence space export of the GWGSD handbook.
-The remaining pages will be migrated with the same tooling (see `scripts/convert_page.py`)
-once the pilot rendering is signed off.
+Conversion tooling and migration status live in the repo (`MIGRATION.md`,
+`scripts/convert_page.py`, `scripts/convert_all.py`).
