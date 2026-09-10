@@ -25,22 +25,51 @@ uv run scripts/verify_site.py          # after quarto render: parity + link chec
 
 ## Deployment
 
+The site is live at
+<https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/>
+
 `.github/workflows/publish.yml` renders the site and publishes it to the `gh-pages`
 branch on every push to `main` (quarto-dev/quarto-actions).
 
-Two repo settings are required. The workflow fails without them.
+### One-time bootstrap (done 2026-09-10)
 
-1. Settings → Actions → General → Workflow permissions → **Read and write
-   permissions**. The default is read-only. That default caps the workflow token,
-   so the action cannot create `gh-pages`.
-2. Settings → Pages → Source → **Deploy from a branch** → `gh-pages` / `(root)`.
+The `gh-pages` branch must exist before the workflow or
+`quarto publish gh-pages --no-prompt` will run. Quarto creates the branch only when
+it can prompt for confirmation, so a non-interactive session must create it first.
+The error message is circular. It tells you to run the command you just ran.
 
-Published URL:
-<https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/>
+```
+git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m "Initialise gh-pages branch for Quarto publishing"
+git push origin gh-pages
+git checkout main
+quarto publish gh-pages --no-prompt --no-browser
+```
+
+Run this from a short local path, for example `C:\qp`. Windows applies a 260
+character path limit. Quarto builds a publish worktree under `.quarto/`, and the long
+image filenames in this project pass the limit under a deep directory. Also set
+`git config core.longpaths true`.
+
+Pushing `gh-pages` enabled GitHub Pages automatically. No Pages setting was needed.
+Quarto writes `.nojekyll` to the branch, so Jekyll does not process the site.
+
+`quarto publish gh-pages` writes no `_publish.yml`. That file records a site ID for
+the Quarto Pub and Netlify targets. The `gh-pages` target holds its state in the
+branch.
+
+### Workflow permissions
+
+Settings → Actions → General → Workflow permissions must be **Read and write
+permissions**. The default is read-only. It caps the workflow token, so the action
+cannot push to `gh-pages`.
+
+### Subpath
 
 The site serves from a subpath, not a domain root. `site-url` in `_quarto.yml` must
-match that URL exactly, or search and the sitemap point at the wrong host while every
-page still renders correctly.
+match the published URL exactly, or search and the sitemap point at the wrong host
+while every page still renders correctly.
 
 ## Pilot scope (how fidelity was established)
 
