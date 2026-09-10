@@ -923,11 +923,11 @@ window.Quarto = {
 <section id="Decomposition-Decompositionofbilateralindices" class="level1">
 <h1>Decomposition of bilateral indices</h1>
 <p>In most cases, the decomposition of bilateral indices is quite simple and often the additive or multiplicative decomposition of an index results almost directly from its definition. For instance, the Laspeyres price index can be written in the following additive form:</p>
-<p><span class="math inline">\(P_{La}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} s_{i}^{t_{1}} \frac{p_{i}^{t_{2}}} {p_{i}^{t_{1}}}\)</span></p>
+<p><span class="math display">\[P_{La}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} s_{i}^{t_{1}} \frac{p_{i}^{t_{2}}} {p_{i}^{t_{1}}}\]</span></p>
 <p>With the weights <span class="math inline">\(s_i^{t_1,t_2}\)</span> as the price updated weights of a previous year (i.e.&nbsp;for Laspeyres type method, which is commonly used by NSOs). The arithmetic index formula above is a fixed-base index, which means that the terms in this formula equal to the contributions of products or aggregates to the fixed-base index of a higher aggregate. Contributions to other types of indices, such as year on year indices, can be derived analytically (the <a href="https://ec.europa.eu/eurostat/documents/3859598/9479325/KS-GQ-17-015-EN-N.pdf/d5e63427-c588-479f-9b19-f4b4d698f2a2">HICP manual</a> provides an overview of the formula used to calculate contributions to the monthly and annual growth rate of inflation). There are numerous examples of other additive index formulas, such as Dutot, Paasche, Walsh, Marshall-Edgeworth and the bilateral Geary-Khamis index. The remarks with regard to product contributions that were made for the Laspeyres index also apply to these index formulas.</p>
 <p>It may be clear that product contributions do not simply sum to the overall index when an index formula is not additive. Approximate additive decomposition methods could be derived by a linearization of a non-additive index formula. This is an active topic of research.</p>
 <p>Multiplicative index formulas are examples of non-additive or non-linear index methods. Instead of finding linearizations, NSOs could alternatively exploit the readily available multiplicative decomposition of this class of index methods. For example, the Törnqvist price index has the following, natural multiplicative form:</p>
-<p><span class="math inline">\(P_{T}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \left(\frac{p_{i}^{t_{2}}}{p_{i}^{t_{1}}}\right)^{\frac{s_{i}^{t_{1}}+s_{i}^{t_{2}}}{2}}\)</span></p>
+<p><span class="math display">\[P_{T}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \left(\frac{p_{i}^{t_{2}}}{p_{i}^{t_{1}}}\right)^{\frac{s_{i}^{t_{1}}+s_{i}^{t_{2}}}{2}}\]</span></p>
 <p>A wide overview of additive and multiplicative decompositions of bilateral price index formulas can be found in publications by Vartia (1974, 1976), Diewert (2002) or Balk (2008).</p>
 </section>
 <section id="Decomposition-Decompositionofmultilateralindices" class="level1">
@@ -935,17 +935,17 @@ window.Quarto = {
 <p>The decomposition of multilateral indices is a bit more complicated, which results from the fact that when comparing two time periods <span class="math inline">\(t_{1}\)</span> and <span class="math inline">\(t_{2}\)</span>, multilateral indexes take into account the entire time window <span class="math inline">\([0,T]\)</span> anyway. In addition, products that occur in one of the two compared periods may not appear in the sample at all in the second of the compared periods.&nbsp;&nbsp;Below are example formulas of decompositions of three multilateral indices (CCDI, Geary-Khamis, TPD). See <a href="https://intapi.sciendo.com/pdf/10.2478/jos-2019-0020">Webster and Tarnow-Mordi (2019)</a> for more details on each.</p>
 <section id="Decomposition-MultiplicativedecompositionoftheGEKSindex" class="level2">
 <h2 class="anchored" data-anchor-id="Decomposition-MultiplicativedecompositionoftheGEKSindex">Multiplicative decomposition of the GEKS index</h2>
-<p><span class="math inline">\(P_{CCDI}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{w_{i}^{*, t_{2}}}}{(p_{i}^{t_{1}})^{w_{i}^{*, t_{1}}}} \prod_{t=0}^{T} (p_{i}^{t}) ^ \frac {w_{i}^{t,t_{1}}-w_{i}^{t,t_{2}}} {T+1}\)</span></p>
+<p><span class="math display">\[P_{CCDI}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{w_{i}^{*, t_{2}}}}{(p_{i}^{t_{1}})^{w_{i}^{*, t_{1}}}} \prod_{t=0}^{T} (p_{i}^{t}) ^ \frac {w_{i}^{t,t_{1}}-w_{i}^{t,t_{2}}} {T+1}\]</span></p>
 <p>where <span class="math inline">\(w_{i}^{t_{1}, t_{2}}=(\frac{p_{i}^{t_{1}} q_{i}^{t_{1}}} {\sum\limits_{j \in G_{t_{1}, t_{2}}}p_{j}^{t_{1}} q_{j}^{t_{1}}}+\frac{p_{i}^{t_{2}} q_{i}^{t_{2}}} {\sum\limits_{j \in G_{t_{1}, t_{2}}}p_{j}^{t_{2}} q_{j}^{t_{2}}})\)</span> and <span class="math inline">\(w_{i}^{*, t}=\frac{1}{T+1} \sum_{s=0}^{T} w_{t}^{s,t}\)</span>.</p>
 </section>
 <section id="Decomposition-AdditivedecompositionoftheGeary-Khamisindex" class="level2">
 <h2 class="anchored" data-anchor-id="Decomposition-AdditivedecompositionoftheGeary-Khamisindex">Additive decomposition of the Geary-Khamis index</h2>
-<p><span class="math inline">\(P_{GK}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} \frac {s_{i}^{t_{1}} \sigma_{i}^{t_{2}} p_{i}^{t_{2}}} {\sigma_{i}^{t_{1}} p_{i}^{t_{1}}} + \frac{1}{P_{GK}^{0, t_{1}}} \sum\limits_{i \in G_{t_{2}} / G_{t_{1}}} \frac {s_{i}^{t_{2}} p_{i}^{t_{2}}} {v_{i}}\)</span></p>
+<p><span class="math display">\[P_{GK}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} \frac {s_{i}^{t_{1}} \sigma_{i}^{t_{2}} p_{i}^{t_{2}}} {\sigma_{i}^{t_{1}} p_{i}^{t_{1}}} + \frac{1}{P_{GK}^{0, t_{1}}} \sum\limits_{i \in G_{t_{2}} / G_{t_{1}}} \frac {s_{i}^{t_{2}} p_{i}^{t_{2}}} {v_{i}}\]</span></p>
 <p>where <span class="math inline">\(\sigma_{i}^{t}=\frac {p_{i}^{t} v_{i}} {\sum\limits_{j \in G_{t}} p_{j}^{t} v_{j}}\)</span>.</p>
 </section>
 <section id="Decomposition-MultiplicativedecompositionoftheTimeProductDummyTPDindex" class="level2">
 <h2 class="anchored" data-anchor-id="Decomposition-MultiplicativedecompositionoftheTimeProductDummyTPDindex">Multiplicative decomposition of the Time Product Dummy (TPD) index</h2>
-<p><span class="math inline">\(P_{TPD}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{s_{i}^{ t_{2}}}}{(p_{i}^{t_{1}})^{s_{i}^{t_{1}}}} (\exp(\hat\delta+\hat\gamma_{i}))^{s_{i}^{t_{2}}-s_{i}^{t_{1}}}\)</span></p>
+<p><span class="math display">\[P_{TPD}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{s_{i}^{ t_{2}}}}{(p_{i}^{t_{1}})^{s_{i}^{t_{1}}}} (\exp(\hat\delta+\hat\gamma_{i}))^{s_{i}^{t_{2}}-s_{i}^{t_{1}}}\]</span></p>
 <p><br>
 </p>
 <hr>

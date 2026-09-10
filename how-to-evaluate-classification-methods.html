@@ -948,20 +948,20 @@ window.Quarto = {
 <ul>
 <li><strong>Accuracy</strong> is the proportion of correct predictions out of all predictions made. Accuracy is also an indicator of the overall classification task (i.e.&nbsp;summarizes the situation for both positive and negative classes as one metric).</li>
 </ul>
-<p><span class="math inline">\(\text{Accuracy} = \frac{\text{correct predictions}}{\text{all predictions}}= \frac{tp + tn}{tp+tn+fp+fn}\)</span></p>
+<p><span class="math display">\[\text{Accuracy} = \frac{\text{correct predictions}}{\text{all predictions}}= \frac{tp + tn}{tp+tn+fp+fn} \]</span></p>
 <ul>
 <li><strong>Precision</strong> is the proportion of correct predictions out of all predictions estimated as positive. It is calculated individually for each class.</li>
 </ul>
-<p><span class="math inline">\(\text{Precision} = \frac{tp}{tp+fp}\)</span></p>
+<p><span class="math display">\[\text{Precision} = \frac{tp}{tp+fp}\]</span></p>
 <ul>
 <li><strong>Recall</strong> (also called sensitivity) is the proportion of true positives out of all positive observations. Similar to precision, it is calculated for each class.</li>
 </ul>
-<p><span class="math inline">\(\text{Recall} = \frac{tp}{tp+fn}\)</span></p>
+<p><span class="math display">\[\text{Recall} = \frac{tp}{tp+fn}\]</span></p>
 <p>Ideally, we want a high precision and a high recall. Precision and recall do not necessarily both increase, they can also behave in opposite ways. Both can be combined through an F1 score:</p>
 <ul>
 <li><strong>F1 score</strong> is the harmonic mean of precision and recall. The F1 score shows how precise the model is, as well as how robust it is. If one of the two metrics is much lower than the other, then the F1 score is lower than the arithmetic mean of the two scores.</li>
 </ul>
-<p><span class="math inline">\(\text{F1} = \frac{2tp}{ (2tp+fp+fn)} = 2\frac{\text{precision}* \text{recall}}{\text{precision} + \text{recall}}\)</span></p>
+<p><span class="math display">\[\text{F1} = \frac{2tp}{ (2tp+fp+fn)} = 2\frac{\text{precision}* \text{recall}}{\text{precision} + \text{recall}}\]</span></p>
 <p>Accuracy and F1 score are very commonly used scores to evaluate a classifier. Accuracy is very easy to interpret, but it also has weaknesses especially with heterogeneous distributed class sizes (or imbalanced data). Suppose you have one class with 99 observations and a second class with one observation. If the classifier always estimates the first class, it will have an accuracy of 99%, however it will always miss the second class, which is undesirable.&nbsp;</p>
 <p><strong><em>Example 1:</em></strong> Suppose we have 10 items to be classified, 2 milk and 8 yogurts. If the classifier classifies one milk item correctly and the other milk as a yogurt and all yogurts correctly, we get the following scores.&nbsp;</p>
 <ul>
@@ -1098,13 +1098,13 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(\text{precision}_i = \frac{tp}{tp+fp}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{j,i}}}]\)</span></p>
-<p><span class="math inline">\(\text{recall}_i = \frac{tp}{tp+fn}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{i,j}}}\)</span></p>
-<p><span class="math inline">\(\text{F1}_i = 2\frac{\text{precision}_i* \text{recall}_i}{\text{precision}_i + \text{recall}_i}\)</span></p>
+<p><span class="math display">\[\text{precision}_i = \frac{tp}{tp+fp}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{j,i}}}]\]</span></p>
+<p><span class="math display">\[\text{recall}_i = \frac{tp}{tp+fn}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{i,j}}}\]</span></p>
+<p><span class="math display">\[\text{F1}_i = 2\frac{\text{precision}_i* \text{recall}_i}{\text{precision}_i + \text{recall}_i}\]</span></p>
 <p>To consider the performance of a model as a whole for all classes, instead of individually on a class-by-class basis, two ways to calcuate are common -&nbsp;<strong>micro scores</strong> or&nbsp;<strong>macro scores</strong>. For the micro scores, the true positives, true negatives, false positives and false negatives of all classes are added together and then the scores are calculated according to the above formula. The macro scores are calculated from the arithmetic mean of the scores of the individual classes.</p>
-<p><span class="math inline">\(\text{macro precision} = \frac{1}{n} \sum_{i=1}^n{\text{precision}_i}\)</span></p>
-<p><span class="math inline">\(\text{macro recall} = \frac{1}{n} \sum_{i=1}^n{\text{recall}_i}\)</span></p>
-<p><span class="math inline">\(\text{macro F1} = \frac{1}{n} \sum_{i=1}^n{\text{f1}_i}\)</span></p>
+<p><span class="math display">\[\text{macro precision} = \frac{1}{n} \sum_{i=1}^n{\text{precision}_i} \]</span></p>
+<p><span class="math display">\[\text{macro recall} = \frac{1}{n} \sum_{i=1}^n{\text{recall}_i} \]</span></p>
+<p><span class="math display">\[\text{macro F1} = \frac{1}{n} \sum_{i=1}^n{\text{f1}_i} \]</span></p>
 <p>The macro F1 score considers large and small classes equally. As a result, observations from a large class have less influence on the score than observations from a small class. This effect is stronger the larger the imbalance in class sizes. It is relatively easy to recognize when any class has very poor scores. Whether this differential influence is desirable or not must be considered from a specialized point of view. An alternative would be to assign weights to each class and calculate a weighted average. Possible weights would be class size or, in the context of price statistics, turnover and weighing.</p>
 <p><strong><em>Example 2:</em></strong> For the sake of simplicity, we will consider an example with three relatively balanced classes</p>
 <p>Table 4: Overall confusion matrix</p>
@@ -1498,7 +1498,7 @@ Predicted<br>
 <h1 class="auto-cursor-target">"Advanced methods"</h1>
 <p><strong>F-beta</strong></p>
 <p>A more generalized version of the F1 score defined above is the F-beta score:</p>
-<p><span class="math inline">\(\text{f}_\beta = (1+ \beta^2)* \left( \frac{\text{precision}* \text{recall}}{\beta^2 * \text{precision} + \text{recall}} &nbsp;\right)\)</span></p>
+<p><span class="math display">\[\text{f}_\beta = (1+ \beta^2)* \left( \frac{\text{precision}* \text{recall}}{\beta^2 * \text{precision} + \text{recall}} &nbsp;\right)\]</span></p>
 <p>Depending on the value for beta, precision or recall has a stronger influence on f-beta. A value smaller than one means, that there is more weight on precision. A value bigger than one means more weight on recall.&nbsp;</p>
 <p>In the multidimensional case, there is another component that plays a role. We defined the F1 macro above, in which the individual F1 scores are determined using a simple average. An alternative here is to use a weighted average. In the case of our classification according to COICOP, for example, it makes sense to use the COICOP weighting scheme as the weight. In this way, more influential COICOPs are weighted higher, regardless of the class size. Precision has been seen as more important for the price statistics applications as it helps mitigate misclassification bias in the price index calculated after classification by making sure there are less false positives in the category (3, 5).&nbsp;</p>
 <p><strong>ROC curve</strong></p>

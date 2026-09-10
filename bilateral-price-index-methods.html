@@ -915,41 +915,41 @@ window.Quarto = {
 <section id="Bilateralpriceindexmethods-Unweightedindices" class="level1">
 <h1>Unweighted indices</h1>
 <p>Three indices are commonly described – the Jevons, Dudot, and Carli. The Jevons&nbsp;can be written as follows:</p>
-<p><span class="math inline">\(P_{J}^{0, t}=\prod_{i \in G_{0, t}} \left(\frac{p_{i}^{t}}{p_{i}^{0}}\right)^{\frac{1}{N_{0, t}}}\)</span></p>
+<p><span class="math display">\[P_{J}^{0, t}=\prod_{i \in G_{0, t}} \left(\frac{p_{i}^{t}}{p_{i}^{0}}\right)^{\frac{1}{N_{0, t}}}\]</span></p>
 <p>where <span class="math inline">\(G_{0,t}\)</span> is a set of matched products in both months 0 and t, <span class="math inline">\(p_i^{\tau}\)</span> denotes the price of the i-th product at time <span class="math inline">\(\tau \in \{0,t\}\)</span> and <span class="math inline">\(N_{0,t}= \operatorname{card} G_{0,t}\)</span>.</p>
 <p>The Dutot price index can be written as:</p>
-<p><span class="math inline">\(P_{D}^{0, t}=\frac{\sum\limits_{i \in G_{0, t}} p_{i}^{t}}{\sum\limits_{i \in G_{0, t}} p_{i}^{0}}\)</span></p>
+<p><span class="math display">\[P_{D}^{0, t}=\frac{\sum\limits_{i \in G_{0, t}} p_{i}^{t}}{\sum\limits_{i \in G_{0, t}} p_{i}^{0}}\]</span></p>
 <p>And the Carli price index is an arithmetic mean of price relatives, i.e.</p>
-<p><span class="math inline">\(P_{C}^{0, t}=\frac{1}{N_{0, t}} \sum\limits_{i \in G_{0, t}} \frac{p_{i}^{t}}{p_{i}^{0}}\)</span></p>
+<p><span class="math display">\[P_{C}^{0, t}=\frac{1}{N_{0, t}} \sum\limits_{i \in G_{0, t}} \frac{p_{i}^{t}}{p_{i}^{0}}\]</span></p>
 <p>For a homogeneous group of products, a Dutot or a Carruthers-Sellwood-Ward-Dalen (a geometric mean of the Carli and the harmonic mean of price relatives (Lippe, 2007)) can be used. At the same time, the Carli formula overestimates real price change (CPI Manual, 2020), thus the Jevons is recommended by the European Commission when expenditure information is not available in a data set (Eurostat, 2018) and by the 1996 Boskin Commission in the USA, which recommended a shift rom a Carli-like index (Levell, 2015). Eurostat regulations do not allow the use of the Carli index in the construction of the members’ Harmonized Index of Consumer Prices (HICP). Furthermore, there has been a general trend of replacing the Carli index with the Jevons or Dudot formulas (Evans, 2012).</p>
 <p>A less common but worth noting unweighted price index formula is the Balk-Mehrhoff-Walsh (BMW) index (Eurostat, 2018), which can be expressed as follows:</p>
-<p><span class="math inline">\(P_{BMW}^{0, t}=\sum\limits_{i \in G_{0, t}} \frac{p_{i}^{t}}{p_{i}^{0}} \frac{\sqrt{\frac{p_{i}^{0}}{p_{i}^{t}}}}{\sum\limits_{k \in G_{0, t}} \sqrt{\frac{p_{k}^{0}}{p_{k}^{t}}}}\)</span></p>
+<p><span class="math display">\[P_{BMW}^{0, t}=\sum\limits_{i \in G_{0, t}} \frac{p_{i}^{t}}{p_{i}^{0}} \frac{\sqrt{\frac{p_{i}^{0}}{p_{i}^{t}}}}{\sum\limits_{k \in G_{0, t}} \sqrt{\frac{p_{k}^{0}}{p_{k}^{t}}}}\]</span></p>
 </section>
 <section id="Bilateralpriceindexmethods-Weightedindices" class="level1">
 <h1>Weighted indices</h1>
 <p>Since scanner data contain information about expenditures, which can have a big impact on a price index, quantities <span class="math inline">\(q_i^t\)</span> of sold products can be used to calculate weighted bilateral indices. Two weighted indices which figure prominently in the literature, are the Laspeyres (1871) and Paasche (1874), given respectively by</p>
-<p><span class="math inline">\(P_{La}^{0, t}=\frac{\sum\limits_{i \in G_{0, t}} q_{i}^{0} p_{i}^{t}}{\sum\limits_{i \in G_{0, t}} q_{i}^{0} p_{i}^{0}}\)</span></p>
+<p><span class="math display">\[P_{La}^{0, t}=\frac{\sum\limits_{i \in G_{0, t}} q_{i}^{0} p_{i}^{t}}{\sum\limits_{i \in G_{0, t}} q_{i}^{0} p_{i}^{0}}\]</span></p>
 <p>and&nbsp;</p>
-<p><span class="math inline">\(P_{Pa}^{0, t}=\frac{\sum\limits_{i \in G_{0, t}} q_{i}^{t} p_{i}^{t}}{\sum\limits_{i \in G_{0, t}} q_{i}^{t} p_{i}^{0}}\)</span></p>
+<p><span class="math display">\[P_{Pa}^{0, t}=\frac{\sum\limits_{i \in G_{0, t}} q_{i}^{t} p_{i}^{t}}{\sum\limits_{i \in G_{0, t}} q_{i}^{t} p_{i}^{0}}\]</span></p>
 <p>Superlative price indices are also very prominent. Superlative indices can be expected to approximate the Cost of Living Index (COLI), and are ‘exact’ for a flexible aggregator, which is a second-order approximation to an arbitrary production, cost, utility or distance function and they treat prices and quantities equally across periods. The Fisher, Törnqvist, and Walsh price indices are examples of of superlative indices. Superlatives are also commonly accepted as base formulas in the <a href="./multilateral-price-index-methods.html">multilateral</a> GEKS method (Diewert and Fox, 2017).&nbsp;</p>
 <p>The Fisher (1922) formula, which can be written as:</p>
-<p><span class="math inline">\(P_{F}^{0, t}=\sqrt{P_{La}^{0, t} \cdot P_{Pa}^{0, t}}\)</span></p>
+<p><span class="math display">\[P_{F}^{0, t}=\sqrt{P_{La}^{0, t} \cdot P_{Pa}^{0, t}}\]</span></p>
 <p>where <span class="math inline">\(P_{La}^{0, t}\)</span> and <span class="math inline">\(P_{Pa}^{0, t}\)</span> denote the Laspeyres and Paasche price index respectively. The Törnqvist can be written as</p>
-<p><span class="math inline">\(P_{T}^{0, t}=\prod\limits_{i \in G_{0, t}} \left(\frac{p_{i}^{t}}{p_{i}^{0}}\right)^{\frac{s_{i}^{0}+s_{i}^{t}}{2}}\)</span></p>
+<p><span class="math display">\[P_{T}^{0, t}=\prod\limits_{i \in G_{0, t}} \left(\frac{p_{i}^{t}}{p_{i}^{0}}\right)^{\frac{s_{i}^{0}+s_{i}^{t}}{2}}\]</span></p>
 <p>where <span class="math inline">\(s_i^0\)</span> and <span class="math inline">\(s_i^t\)</span> denote the expenditure shares of matched products in months 0 and t. Walsh can be written as</p>
-<p><span class="math inline">\(P_{W}^{0, t}=\frac{\sum\limits_{i \in G_{0, t}} \sqrt{q_{i}^{0} q_{i}^{t}} \cdot p_{i}^{t}}{\sum\limits_{i \in G_{0, t}} \sqrt{q_{i}^{0} q_{i}^{t}} \cdot p_{i}^{0}}\)</span></p>
+<p><span class="math display">\[P_{W}^{0, t}=\frac{\sum\limits_{i \in G_{0, t}} \sqrt{q_{i}^{0} q_{i}^{t}} \cdot p_{i}^{t}}{\sum\limits_{i \in G_{0, t}} \sqrt{q_{i}^{0} q_{i}^{t}} \cdot p_{i}^{0}}\]</span></p>
 <p>Some statisticians use the Sato-Vartia index (Sato 1976; Vartia 1976) for scanner data case due to its good axiomatic properties (Lippe 2007; Abe &amp; Prasada Rao 2019). Following Sato (1976), the log-change price index has the following generic form:</p>
-<p><span class="math inline">\(\ln P_{S V}^{0, t}=\sum_{i=1}^{N} \phi_{i}^{0, t} \ln \left(\frac{p_{i}^{t}}{p_{i}^{0}}\right)\)</span></p>
+<p><span class="math display">\[\ln P_{S V}^{0, t}=\sum_{i=1}^{N} \phi_{i}^{0, t} \ln \left(\frac{p_{i}^{t}}{p_{i}^{0}}\right)\]</span></p>
 <p>where&nbsp;</p>
-<p><span class="math inline">\(\phi_{i}^{0, t}=\frac{ \frac{s_{i}^{t}-s_{i}^{0}}{\ln \left(s_{i}^{t}\right)-\ln \left(s_{i}^{0}\right)}}{ \sum\limits_{k \in G_{0, t}} \frac{s_{k}^{t}-s_{k}^{0}}{\ln \left(s_{k}^{t}\right)-\ln \left(s_{k}^{0}\right)}}\)</span></p>
+<p><span class="math display">\[\phi_{i}^{0, t}=\frac{ \frac{s_{i}^{t}-s_{i}^{0}}{\ln \left(s_{i}^{t}\right)-\ln \left(s_{i}^{0}\right)}}{ \sum\limits_{k \in G_{0, t}} \frac{s_{k}^{t}-s_{k}^{0}}{\ln \left(s_{k}^{t}\right)-\ln \left(s_{k}^{0}\right)}}\]</span></p>
 <p>A wide range of price indices, including an overview of their properties and relationships between them, can be found in the CPI Manual (2020), <a href="https://www.imf.org/en/Data/Statistics/cpi-manual">Consumer Price Index Theory</a>, von der Lippe, P. (2007), and <a href="https://ec.europa.eu/eurostat/documents/3859598/9479325/KS-GQ-17-015-EN-N.pdf/d5e63427-c588-479f-9b19-f4b4d698f2a2">Eurostat (2018)</a>. Some less familiar and non-classical formulas of weighted price indices can be found, for example, in the works of Białek (2014) or Białek (2020).</p>
 </section>
 <section id="Bilateralpriceindexmethods-Chainingindices" class="level1">
 <h1>Chaining indices</h1>
 <p>In the "direct" approach, the resulting price index <span class="math inline">\(P^{0,t}\)</span> is not influenced by what happens to prices and quantities in the intermediate points in time: 1, 2, ... , t-1.&nbsp; The idea of chain indices is that a longer interval is partitioned into a subset of smaller intervals on which bilateral indices are calculated and subsequently combined (chained). In other words, a chain index provides a measure of the cumulative effect of successive steps from 0 to 1, 1 to 2, ..., t-1 to t (Lippe, 2007). In general, the chain index takes the following form:</p>
-<p><span class="math inline">\(P_{ch}^{0, t}=\prod_{s=1}^{t} P^{s-1, s}\)</span></p>
+<p><span class="math display">\[P_{ch}^{0, t}=\prod_{s=1}^{t} P^{s-1, s}\]</span></p>
 <p>where the linking formula <span class="math inline">\(P^{s-1, s}\)</span> is any bilateral price index. For instance, one can consider the chain Fisher price index defined as follows</p>
-<p><span class="math inline">\(P_{ch-F}^{0, t}=\prod_{s=1}^{t} P_{F}^{s-1, s}\)</span></p>
+<p><span class="math display">\[P_{ch-F}^{0, t}=\prod_{s=1}^{t} P_{F}^{s-1, s}\]</span></p>
 <hr>
 </section>
 <section id="Bilateralpriceindexmethods-References" class="level1">
