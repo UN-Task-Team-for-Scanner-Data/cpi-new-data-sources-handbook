@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-a3ad042fa44d12ca07b890c34e9cb5b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39845c38bfd5916a6fed96611e3151f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9497e554dfd1a53509c9211261bd3fcf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-39845c38bfd5916a6fed96611e3151f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -828,7 +828,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#handbook-migration-confluence-quarto" id="toc-handbook-migration-confluence-quarto" class="nav-link active" data-scroll-target="#handbook-migration-confluence-quarto">Handbook migration: Confluence → Quarto</a>
   <ul class="collapse">
   <li><a href="#current-state-2026-08-03-end-of-day" id="toc-current-state-2026-08-03-end-of-day" class="nav-link" data-scroll-target="#current-state-2026-08-03-end-of-day">Current state (2026-08-03, end of day)</a></li>
-  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a>
+  <ul class="collapse">
+  <li><a href="#one-time-bootstrap-done-2026-09-10" id="toc-one-time-bootstrap-done-2026-09-10" class="nav-link" data-scroll-target="#one-time-bootstrap-done-2026-09-10">One-time bootstrap (done 2026-09-10)</a></li>
+  <li><a href="#workflow-permissions" id="toc-workflow-permissions" class="nav-link" data-scroll-target="#workflow-permissions">Workflow permissions</a></li>
+  <li><a href="#subpath" id="toc-subpath" class="nav-link" data-scroll-target="#subpath">Subpath</a></li>
+  </ul></li>
   <li><a href="#pilot-scope-how-fidelity-was-established" id="toc-pilot-scope-how-fidelity-was-established" class="nav-link" data-scroll-target="#pilot-scope-how-fidelity-was-established">Pilot scope (how fidelity was established)</a></li>
   <li><a href="#how-to-convert-a-page" id="toc-how-to-convert-a-page" class="nav-link" data-scroll-target="#how-to-convert-a-page">How to convert a page</a></li>
   <li><a href="#local-preview" id="toc-local-preview" class="nav-link" data-scroll-target="#local-preview">Local preview</a></li>
@@ -860,14 +865,29 @@ uv run scripts/verify_site.py          # after quarto render: parity + link chec
 </section>
 <section id="deployment" class="level2">
 <h2 class="anchored" data-anchor-id="deployment">Deployment</h2>
+<p>The site is live at <a href="https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/" class="uri">https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/</a></p>
 <p><code>.github/workflows/publish.yml</code> renders the site and publishes it to the <code>gh-pages</code> branch on every push to <code>main</code> (quarto-dev/quarto-actions).</p>
-<p>Two repo settings are required. The workflow fails without them.</p>
-<ol type="1">
-<li>Settings → Actions → General → Workflow permissions → <strong>Read and write permissions</strong>. The default is read-only. That default caps the workflow token, so the action cannot create <code>gh-pages</code>.</li>
-<li>Settings → Pages → Source → <strong>Deploy from a branch</strong> → <code>gh-pages</code> / <code>(root)</code>.</li>
-</ol>
-<p>Published URL: <a href="https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/" class="uri">https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/</a></p>
-<p>The site serves from a subpath, not a domain root. <code>site-url</code> in <code>_quarto.yml</code> must match that URL exactly, or search and the sitemap point at the wrong host while every page still renders correctly.</p>
+<section id="one-time-bootstrap-done-2026-09-10" class="level3">
+<h3 class="anchored" data-anchor-id="one-time-bootstrap-done-2026-09-10">One-time bootstrap (done 2026-09-10)</h3>
+<p>The <code>gh-pages</code> branch must exist before the workflow or <code>quarto publish gh-pages --no-prompt</code> will run. Quarto creates the branch only when it can prompt for confirmation, so a non-interactive session must create it first. The error message is circular. It tells you to run the command you just ran.</p>
+<pre><code>git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m "Initialise gh-pages branch for Quarto publishing"
+git push origin gh-pages
+git checkout main
+quarto publish gh-pages --no-prompt --no-browser</code></pre>
+<p>Run this from a short local path, for example <code>C:\qp</code>. Windows applies a 260 character path limit. Quarto builds a publish worktree under <code>.quarto/</code>, and the long image filenames in this project pass the limit under a deep directory. Also set <code>git config core.longpaths true</code>.</p>
+<p>Pushing <code>gh-pages</code> enabled GitHub Pages automatically. No Pages setting was needed. Quarto writes <code>.nojekyll</code> to the branch, so Jekyll does not process the site.</p>
+<p><code>quarto publish gh-pages</code> writes no <code>_publish.yml</code>. That file records a site ID for the Quarto Pub and Netlify targets. The <code>gh-pages</code> target holds its state in the branch.</p>
+</section>
+<section id="workflow-permissions" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-permissions">Workflow permissions</h3>
+<p>Settings → Actions → General → Workflow permissions must be <strong>Read and write permissions</strong>. The default is read-only. It caps the workflow token, so the action cannot push to <code>gh-pages</code>.</p>
+</section>
+<section id="subpath" class="level3">
+<h3 class="anchored" data-anchor-id="subpath">Subpath</h3>
+<p>The site serves from a subpath, not a domain root. <code>site-url</code> in <code>_quarto.yml</code> must match the published URL exactly, or search and the sitemap point at the wrong host while every page still renders correctly.</p>
+</section>
 </section>
 <section id="pilot-scope-how-fidelity-was-established" class="level2">
 <h2 class="anchored" data-anchor-id="pilot-scope-how-fidelity-was-established">Pilot scope (how fidelity was established)</h2>
