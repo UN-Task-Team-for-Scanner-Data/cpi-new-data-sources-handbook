@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Overview of alternative data sources – Handbook on utilising new data sources in the production of consumer price statistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./why-use-alternative-data-sources-strategic-motivations.html" rel="next">
+<link href="./initial-considerations.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a3ad042fa44d12ca07b890c34e9cb5b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">New data sources in consumer price statistics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics"> <i class="bi bi-globe" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml"> <i class="bi bi-person-raised-hand" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./initial-considerations.html">Initial considerations</a></li><li class="breadcrumb-item"><a href="./overview-of-alternative-data-sources.html">Overview of alternative data sources</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handbook on utilising new data sources in the production of consumer price statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handbook on utilising new data sources in the production of consumer price statistics</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./initial-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial considerations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview-of-alternative-data-sources.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Overview of alternative data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./why-use-alternative-data-sources-strategic-motivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why use alternative data sources? Strategic motivations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./key-challenges-and-trade-offs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key challenges and trade-offs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./key-decision-points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key decision points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resource-implications-and-organisational-readiness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resource implications and organisational readiness</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cpi-production-system-requirements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CPI production system requirements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-assurance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality assurance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data-selection-and-acquisition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data selection and acquisition</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selection-of-categories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selection of categories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selection-of-retailers-for-alternative-data-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selection of retailers for alternative data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scanner data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./initial-steps-in-the-acquisition-of-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial steps in the acquisition of scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-requirements-specification-for-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data requirements specification for scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-sharing-agreements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data sharing agreements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./alternative-approaches-to-acquiring-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Alternative approaches to acquiring scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./monitoring-validation-and-plausibility-checks-for-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monitoring, validation and plausibility checks for scanner data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web scraping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./different-approaches-to-accessing-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Different approaches to accessing web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategies-available-for-in-house-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategies available for in-house web scraping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-requirements-specification-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data requirements specification for web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./monitoring-validation-and-plausibility-checks-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monitoring, validation and plausibility checks for web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common-technical-problems-for-in-house-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Common technical problems for in-house web scraping</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-file-structures-for-web-scraped-and-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example file structures for web scraped and scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./collection-of-data-via-apis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collection of data via APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dealing-with-unexpected-data-gaps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with unexpected data gaps</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./preparation-of-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparation of data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./product-sampling-for-price-index-calculation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product sampling for price index calculation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./standardising-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standardising the data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aggregation-across-time-and-outlets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aggregation across time and outlets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./identifying-unique-products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Identifying unique products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./treatment-of-discounts-and-refunds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treatment of discounts and refunds</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./pre-conditions-and-deciding-on-appropriate-classification-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-conditions and deciding on appropriate classification methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./note-on-variables-applicable-for-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Note on variables applicable for classification</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 0: Manual labelling or validation of predicted labels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-1-attribute-based-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 1: Attribute-based classification method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-2-pattern-matching-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 2: Pattern matching classification method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-3-recommendation-machine-assisted-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 3: Recommendation / Machine-assisted classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./method-4-machine-learning-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 4: Machine Learning classification method</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./how-to-evaluate-classification-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to evaluate classification methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./working-with-class-imbalance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with class imbalance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./operational-best-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Operational best practices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./designing-the-classification-step-operational-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Designing the classification step: operational considerations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data-filtering-and-missing-prices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data filtering and missing prices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./outlier-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Outlier filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dumping-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dumping filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./low-sales-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Low sales filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./current-practice-of-data-filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Current practice of data filtering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./treatment-of-missing-prices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treatment of missing prices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Price index methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./bilateral-price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bilateral price index methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-of-chain-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example of chain drift</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multilateral-price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multilateral price index methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./extension-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extension methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decomposition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./choosing-an-index-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing an index method</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods-for-when-expenditure-data-are-available.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for when expenditure data are available</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods-for-when-expenditure-data-are-not-available.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for when expenditure data are not available</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deriving-proxy-weights-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deriving proxy weights for web scraped data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aggregation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aggregation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./other-uses-of-alternative-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other-uses-of-alternative-data-beyond-cpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data beyond CPI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other-uses-of-alternative-data-within-cpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data within CPI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./other-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other considerations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./seasonal-products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Seasonal products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-change-and-hedonic-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality change and hedonic estimation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implementation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./training-material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training material</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#Overviewofalternativedatasources-Transactiondata" id="toc-Overviewofalternativedatasources-Transactiondata" class="nav-link active" data-scroll-target="#Overviewofalternativedatasources-Transactiondata">Transaction data</a>
+  <ul class="collapse">
+  <li><a href="#Overviewofalternativedatasources-Scannerdata" id="toc-Overviewofalternativedatasources-Scannerdata" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Scannerdata">Scanner data</a></li>
+  <li><a href="#Overviewofalternativedatasources-Einvoicedata" id="toc-Overviewofalternativedatasources-Einvoicedata" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Einvoicedata">E‑invoice data</a></li>
+  <li><a href="#Overviewofalternativedatasources-Administrativetransactiondata" id="toc-Overviewofalternativedatasources-Administrativetransactiondata" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Administrativetransactiondata">Administrative transaction data</a></li>
+  <li><a href="#Overviewofalternativedatasources-Otherelectronictransactionrecords" id="toc-Overviewofalternativedatasources-Otherelectronictransactionrecords" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Otherelectronictransactionrecords">Other electronic transaction records</a></li>
+  </ul></li>
+  <li><a href="#Overviewofalternativedatasources-Non-transactiondata" id="toc-Overviewofalternativedatasources-Non-transactiondata" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Non-transactiondata">Non-transaction data</a>
+  <ul class="collapse">
+  <li><a href="#Overviewofalternativedatasources-Web-scrapeddata" id="toc-Overviewofalternativedatasources-Web-scrapeddata" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Web-scrapeddata">Web-scraped data</a></li>
+  <li><a href="#Overviewofalternativedatasources-ApplicationProgrammingInterfacesAPIs" id="toc-Overviewofalternativedatasources-ApplicationProgrammingInterfacesAPIs" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-ApplicationProgrammingInterfacesAPIs">Application Programming Interfaces (APIs)</a></li>
+  <li><a href="#Overviewofalternativedatasources-Onlinelistingsandadvertisedpricedata" id="toc-Overviewofalternativedatasources-Onlinelistingsandadvertisedpricedata" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Onlinelistingsandadvertisedpricedata">Online listings and advertised price data</a></li>
+  <li><a href="#Overviewofalternativedatasources-Administrativenontransactiondata" id="toc-Overviewofalternativedatasources-Administrativenontransactiondata" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Administrativenontransactiondata">Administrative non‑transaction data</a></li>
+  </ul></li>
+  <li><a href="#Overviewofalternativedatasources-Keyfeaturesofalternativedatasources" id="toc-Overviewofalternativedatasources-Keyfeaturesofalternativedatasources" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Keyfeaturesofalternativedatasources">Key features of alternative data sources</a></li>
+  <li><a href="#Overviewofalternativedatasources-Strengthslimitationsandrisksofalternativedatasources" id="toc-Overviewofalternativedatasources-Strengthslimitationsandrisksofalternativedatasources" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Strengthslimitationsandrisksofalternativedatasources">Strengths, limitations and risks of alternative data sources</a>
+  <ul class="collapse">
+  <li><a href="#Overviewofalternativedatasources-Coverageandrepresentativeness" id="toc-Overviewofalternativedatasources-Coverageandrepresentativeness" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Coverageandrepresentativeness">Coverage and representativeness</a></li>
+  <li><a href="#Overviewofalternativedatasources-Methodologicalimplications" id="toc-Overviewofalternativedatasources-Methodologicalimplications" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Methodologicalimplications">Methodological implications</a></li>
+  <li><a href="#Overviewofalternativedatasources-Operationalandsustainabilityconsiderations" id="toc-Overviewofalternativedatasources-Operationalandsustainabilityconsiderations" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Operationalandsustainabilityconsiderations">Operational and sustainability considerations</a></li>
+  <li><a href="#Overviewofalternativedatasources-Legalethicalandgovernanceissues" id="toc-Overviewofalternativedatasources-Legalethicalandgovernanceissues" class="nav-link" data-scroll-target="#Overviewofalternativedatasources-Legalethicalandgovernanceissues">Legal, ethical, and governance issues</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/edit/main/overview-of-alternative-data-sources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./initial-considerations.html">Initial considerations</a></li><li class="breadcrumb-item"><a href="./overview-of-alternative-data-sources.html">Overview of alternative data sources</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Overview of alternative data sources</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This page contains a general introduction to each of the alternative data sources used to compile consumer price indices.&nbsp;</p>
+<p>Statistical agencies have traditionally relied on surveys to collect the price and expenditure information used in the production of consumer price indices (CPIs). These survey-based approaches typically involve the selection of a sample of retailers and items, with prices collected at discrete points in time. While well-established, such approaches can be resource intensive and may be slow to reflect changes in consumption patterns, particularly in markets characterised by rapid product turnover.</p>
+<p>Increasingly, National Statistical Offices (NSOs) are exploring the use of alternative data sources to complement or replace survey-based price collection. Alternative data sources differ from traditional surveys not simply in scale or timeliness, but in the way price information is generated, observed and accessed. From this perspective, alternative data sources can be usefully grouped according to whether prices are observed through realised transactions or through posted or administered prices. This distinction is important because it has direct implications for index compilation methods, weighting, and representativity, as discussed later in the Handbook.</p>
+<p>At a high level, alternative data sources relevant for consumer price statistics can therefore be characterised as follows:</p>
+<ul>
+<li>Transaction data, where prices are observed as part of recorded economic transactions and are typically accompanied by quantities or expenditures; and</li>
+<li>Non‑transaction data, where prices are observed as posted, listed or administered values, but where quantities, expenditures or confirmation that a transaction has occurred are generally not available.</li>
+</ul>
+<p>Most alternative data sources used in practice fall predominantly into one of these categories. Once data are acquired, many downstream processing steps, such as cleaning, classification, validation, and index compilation, are conceptually similar across sources. However, the availability (or absence) of quantity or expenditure information is often a key determinator in the choice of sampling, index number methods, and aggregation strategies.</p>
+<p>The main types of alternative data sources that can be considered within this framework are described below.&nbsp;</p>
+<p><strong>Page information</strong></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Version</td>
+<td>v3</td>
+</tr>
+<tr class="even">
+<td>Last updated on</td>
+<td>2026-05-08</td>
+</tr>
+<tr class="odd">
+<td>Summary of changes</td>
+<td>Expanded to include more examples of alternative data sources and specific strengths and limitations</td>
+</tr>
+<tr class="even">
+<td>Page history</td>
+<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910451">See here</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<section id="Overviewofalternativedatasources-Transactiondata" class="level1">
+<h1>Transaction data</h1>
+<p>Transaction data record actual purchases made by consumers and typically include information on turnover, quantities sold, and prices paid. Scanner data (transaction data recorded at retailer checkout points) are one of the most prominent examples of this data type. More broadly, transaction data may be collected through a variety of systems and are not limited to physical retail environments. For example, e-invoice data, administrative transaction data, and other electronic transaction records such as loyalty-scheme databases, receipt based data and IoT ("Internet of Things") enabled devices (such as smart appliances, connected home devices and wearables) are becoming increasingly explored and considered.&nbsp;</p>
+<p>Transaction data may be provided at the level of individual transactions, but more commonly are supplied as aggregated totals of turnover and quantities sold for a given product over a specified period. Data may be provided directly by retailers or indirectly through third-party data aggregators that compile information across multiple companies.</p>
+<p>From a CPI perspective, transaction data offer several important advantages:</p>
+<ul>
+<li><p>they often provide near-complete coverage of sales for participating retailers, reducing or eliminating sampling error</p></li>
+<li><p>they include quantity or expenditure information, enabling the use of explicitly weighted index number methods at low levels of aggregation</p></li>
+<li><p>they allow more timely incorporation of new products and changes in consumption patterns compared with traditional price surveys.</p></li>
+</ul>
+<p>However, transaction data also introduce new challenges that must be considered early in the process. These include managing large data volumes, handling frequent product entry and exit, ensuring consistent product identifiers over time, and addressing legal and contractual constraints on data use. While transaction data can significantly enhance representativeness, their successful use depends on careful data preparation and methodological choices, which are discussed in later sections of the handbook.</p>
+<p>Examples of transaction data include:</p>
+<section id="Overviewofalternativedatasources-Scannerdata" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Scannerdata">Scanner data</h2>
+<p>Transaction‑level data, or data aggregated over short time intervals (for example, daily or weekly) or to defined units such as retail outlets or product identifiers (for example, GTINs), obtained from retailers’ point‑of‑sale systems either directly or via third‑party providers. These data typically include product identifiers, prices, quantities and turnover and can cover large shares of household retail expenditure for some product groups.</p>
+</section>
+<section id="Overviewofalternativedatasources-Einvoicedata" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Einvoicedata">E‑invoice data</h2>
+<p>Electronic records generated for administrative or tax purposes that document transactions between sellers and buyers. Depending on national systems, e‑invoice data may provide item‑level price information with varying levels of product detail, quantities or values. Where sufficiently detailed and accessible for statistical use, these data may support CPI compilation and related weighting or validation activities.</p>
+</section>
+<section id="Overviewofalternativedatasources-Administrativetransactiondata" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Administrativetransactiondata">Administrative transaction data</h2>
+<p>Transaction‑based data collected for regulatory or operational purposes, such as utility billing systems, regulated tariffs linked to consumption, or other administrative systems that record realised payments or charges experienced by households. While such data may follow administrative concepts, they can provide consistent and timely transaction prices where alignment with CPI pricing concepts is satisfactory.</p>
+</section>
+<section id="Overviewofalternativedatasources-Otherelectronictransactionrecords" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Otherelectronictransactionrecords">Other electronic transaction records</h2>
+<p>Including, where appropriate, data derived from payment systems, loyalty‑scheme databases, digital platforms or other electronic transaction environments (including emerging data sources such as those from IoT enabled device data such as smart appliances, connected home devices and wearables), provided the data record actual purchases and meet CPI conceptual and quality requirements. The structure, coverage and accessibility of these data vary widely across countries and markets.</p>
+</section>
+</section>
+<section id="Overviewofalternativedatasources-Non-transactiondata" class="level1">
+<h1>Non-transaction data</h1>
+<p>Non‑transaction data provide information on posted or offered prices and product attributes but typically do not include quantities, expenditures or direct confirmation that a transaction has occurred. These data can expand price coverage and observation frequency but require careful design to avoid implicit weighting or representativity issues. Non‑transaction data may be obtained through automated tools, APIs (see below) or direct provision by data owners, depending on the legal and institutional context.</p>
+<p>Examples of non-transaction data include:</p>
+<section id="Overviewofalternativedatasources-Web-scrapeddata" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Web-scrapeddata">Web-scraped data</h2>
+<p>&nbsp;Web scraping refers to the automated collection of prices and product information from online retailers and service providers. These data typically capture list prices rather than transaction prices and generally do not include quantity or expenditure information.</p>
+<p>Two broad approaches to web scraping are commonly distinguished:</p>
+<ul>
+<li><strong>Targeted web scraping</strong>, which collects prices for a predefined set of products or characteristics, often to replace or supplement existing survey collection; and</li>
+<li><strong>Bulk web scraping</strong>, which aims to extract large volumes of price data without prior selection of items, enabling broader coverage and exploratory analysis.</li>
+</ul>
+<p>Web-scraped data can substantially increase the number of price observations collected and allow for more frequent price measurement, often at lower marginal cost than manual collection. NSOs considering web scraping are strongly encouraged to engage with data providers where possible, as agreements with retailers can reduce the risk of access being blocked and improve data stability over time.</p>
+</section>
+<section id="Overviewofalternativedatasources-ApplicationProgrammingInterfacesAPIs" class="level2" data-end="5099" data-start="4889">
+<h2 data-end="5099" data-start="4889" class="anchored" data-anchor-id="Overviewofalternativedatasources-ApplicationProgrammingInterfacesAPIs">Application Programming Interfaces (APIs)</h2>
+<p>In some cases, online prices and product attributes are accessed through APIs provided by platforms or data providers rather than through direct web scraping. From a statistical perspective, API-based data access can be preferable to web scraping, as APIs are generally more stable, less sensitive to changes in website structure, and less burdensome for data providers. However, in terms of content, API data are often similar to web-scraped data, typically providing list prices and product attributes but not quantities or expenditures.</p>
+<p>The feasibility of API access depends heavily on institutional arrangements and agreements with data providers, and NSOs should assess both the technical and legal implications before adopting this approach.</p>
+</section>
+<section id="Overviewofalternativedatasources-Onlinelistingsandadvertisedpricedata" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Onlinelistingsandadvertisedpricedata">Online listings and advertised price data</h2>
+<p>Prices and product characteristics derived from listing platforms or classified advertisements, where goods or services are offered but transactions are completed outside the platform (for example, car sales or property rentals). These data may be collected automatically or provided directly by the platform. The listed price may differ from the final transaction price, and while indicators of market activity (such as listing duration or removal) may be available, they do not constitute direct measures of transactions.</p>
+</section>
+<section id="Overviewofalternativedatasources-Administrativenontransactiondata" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Administrativenontransactiondata">Administrative non‑transaction data</h2>
+<p>Prices or tariffs set or published by administrative bodies, regulators or public authorities, such as regulated fees, charges or official price schedules. These data record prices as set rather than prices paid in individual transactions and typically lack information on quantities or expenditures. Their suitability for CPI compilation depends on the extent to which the administered price aligns with the price faced by households.</p>
+<p><br>
+</p>
+<p>Caution: Use of bulk non-transaction data in CPI compilation</p>
+<p>Bulk non-transaction datasets often provide large volumes of price observations but typically lack reliable expenditure or quantity information. In the absence of such information, NSOs may be unable to apply weighted index methods or to construct a demonstrably representative product sample, which can introduce bias or instability in CPI estimates. In addition, the ongoing maintenance of web-scraping systems, changes to website structures, and legal or contractual constraints may affect data continuity and sustainability. NSOs should carefully assess these methodological, operational and legal considerations before adopting bulk non-transaction data for CPI production. Details of these constraints are provided in later sections of this handbook.&nbsp;</p>
+</section>
+</section>
+<section id="Overviewofalternativedatasources-Keyfeaturesofalternativedatasources" class="level1" style="text-align: left;">
+<h1 style="text-align: left;">Key features of alternative data sources</h1>
+<p>The features of these data sources are summarized in Table 1. More detailed examples of file structures for scanner data and web-scraped data are provided in the section <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910470/Example+file+structures+for+web+scraped+and+scanner+data">Example file structures for web scraped and scanner data</a>. Emerging sources have not been included in this table as their features vary from source to source, if any of these emerging sources become prominent in use within consumer price statistics, they will be appended to the table accordingly.&nbsp;</p>
+<p>Table 1: Features of new and existing data sources</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Data dimension</strong></td>
+<td style="text-align: left;"><strong>Traditional data</strong></td>
+<td style="text-align: left;"><strong>Transaction data</strong></td>
+<td style="text-align: left;"><strong>Non-transaction data</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Data acquisition</td>
+<td style="text-align: left;">Manual mainly via software running on tablet</td>
+<td style="text-align: left;">Automated - acquired from retailers, government or other organisations collecting them primarily for non-statistical aims</td>
+<td style="text-align: left;"><p>Automated - data acquired directly from providers, web-scraped (although requires maintenance for website changes) or through APIs</p>
+<p><br>
+</p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Completeness/scope</td>
+<td style="text-align: left;">Sample items from&nbsp;sample of retailers</td>
+<td style="text-align: left;">All transactions (census) for participating retailers/companies</td>
+<td style="text-align: left;">Bulk or targeted sample from online retailers (web/API), participants&nbsp;or data owners</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Metadata</td>
+<td style="text-align: left;">Item description and NSO specified attributes</td>
+<td style="text-align: left;">Item description and often limited attributes</td>
+<td style="text-align: left;">Item description and attributes as described on website or according to available attributes in other databases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Quantity data</td>
+<td style="text-align: left;">None (shelf space and other possible proxies)</td>
+<td style="text-align: left;">Quantities&nbsp;sold</td>
+<td style="text-align: left;">None (although see Section&nbsp;<a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910506/Deriving+proxy+weights+for+web+scraped+data">Deriving proxy weights for web scraped data</a>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Price data</td>
+<td style="text-align: left;">List price</td>
+<td style="text-align: left;">Transaction price</td>
+<td style="text-align: left;">List price</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Time of data availability</td>
+<td style="text-align: left;">Based on NSO processing speed</td>
+<td style="text-align: left;">Scheduled file deliveries - may introduce some lag. Access to historic data generally available</td>
+<td style="text-align: left;"><p>For web or API: Near instantaneous if scraped or API, may be some lag if provider-delivered. Limited to no access to historic data.</p>
+<p>For administrative non-transacted data / some online listings data: Scheduled file deliveries - may introduce some lag. Access to historic data generally available</p></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Time coverage</td>
+<td style="text-align: left;">One point in time in collection period</td>
+<td style="text-align: left;">Complete coverage across month although can be aggregated to daily/weekly/monthly instead of individual transactions</td>
+<td style="text-align: left;"><p>For web or API: High-frequency (depending on the purpose, different frequencies are possible eg scraping can happen hourly, daily, weekly or monthly)</p>
+<p>For administrative non transacted data: depends on the kind of sector and data set.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="Overviewofalternativedatasources-Strengthslimitationsandrisksofalternativedatasources" class="level1">
+<h1>Strengths, limitations and risks of alternative data sources</h1>
+<p>Alternative data sources&nbsp;offer important opportunities to enhance consumer price statistics, but their use also introduces a range of methodological, operational, and governance considerations. These considerations vary across data sources and across national contexts, and should be assessed carefully as part of an NSOs implementation strategy.</p>
+<section id="Overviewofalternativedatasources-Coverageandrepresentativeness" class="level2" data-end="1124" data-start="1089">
+<h2 data-end="1124" data-start="1089" class="anchored" data-anchor-id="Overviewofalternativedatasources-Coverageandrepresentativeness">Coverage and representativeness</h2>
+<p>Some alternative data sources, particularly transaction data, can provide detailed information on prices and quantities for a large share of consumer purchases within participating retailers. This can improve representativeness at detailed levels and support the use of explicit expenditure or quantity weighting.</p>
+<p>Non-transaction data sources, such as web-scraped or API-based price data and online listings data, typically provide extensive coverage of listed products and prices but may not include information on how frequently those products are purchased, this may disproportionately represent products that are frequently listed or heavily marketed online, regardless of how often they are actually purchased.</p>
+<p>When quantity or expenditure information is unavailable, price indices derived from these data implicitly treat all observed products as equally important. This can result in indices that over-represent niche, premium, or rarely purchased products and under-represent commonly purchased items. While proxy weighting approaches have been proposed, identifying robust and conceptually appropriate proxies remains challenging and is an active area of research.</p>
+<p>Administrative data may offer comprehensive or near-census coverage for specific services or regulated prices, but may be limited in scope or frequency and may not align perfectly with CPI concepts without adjustment.</p>
+</section>
+<section id="Overviewofalternativedatasources-Methodologicalimplications" class="level2" data-end="2167" data-start="2136">
+<h2 data-end="2167" data-start="2136" class="anchored" data-anchor-id="Overviewofalternativedatasources-Methodologicalimplications">Methodological implications</h2>
+<p>The characteristics of each data source influence the choice of data preparation methods, index number formulas, and aggregation strategies. The availability (or absence) of quantity or expenditure information is particularly important, as it affects whether weighted or unweighted methods can be used at the elementary aggregate level.</p>
+<p>Alternative data sources may also exhibit features such as high product turnover, frequent product relaunches, or changes in item definitions over time. These features can complicate <a href="./identifying-unique-products.html">product identification, matching, and quality adjustment</a>, and place additional demands on data processing and index compilation systems regardless of the data source used.</p>
+</section>
+<section id="Overviewofalternativedatasources-Operationalandsustainabilityconsiderations" class="level2" data-end="2912" data-start="2863">
+<h2 data-end="2912" data-start="2863" class="anchored" data-anchor-id="Overviewofalternativedatasources-Operationalandsustainabilityconsiderations">Operational and sustainability considerations</h2>
+<p>Compared with traditional survey-based collection, alternative data sources introduce different operational dependencies. Transaction data such as scanner data and administrative transaction data often rely on sustained cooperation with data providers or other public authorities, while non-transaction data such as web-scraping collection depends on stable technical access and clearly defined collection arrangements.</p>
+<p>The long-term availability and continuity of alternative data cannot always be guaranteed. Changes in business practices, data systems, legislation, or technical interfaces may affect data supply over time. NSOs should therefore consider sustainability, contingency planning, and the implications of data changes for index continuity and comparability. Web scraping relies on automated extraction from retailer websites, which may change without notice or restrict access over time. APIs and data-sharing agreements may provide greater stability but require sustained cooperation with data providers.</p>
+<p>When inserting the use of alternative data sources into production it is important and highly recommended that NSOs consider a feasible <a href="./dealing-with-unexpected-data-gaps.html">fallback plan to mitigate possible data gaps</a> in the acquisition process.&nbsp;</p>
+</section>
+<section id="Overviewofalternativedatasources-Legalethicalandgovernanceissues" class="level2" data-end="3665" data-start="3624">
+<h2 data-end="3665" data-start="3624" class="anchored" data-anchor-id="Overviewofalternativedatasources-Legalethicalandgovernanceissues">Legal, ethical, and governance issues</h2>
+<p>The use of alternative data sources raises legal and ethical considerations related to data access, confidentiality, intellectual property, and compliance with national and international regulations. These considerations apply across data sources, though the specific risks and mitigation strategies may differ.</p>
+<p>Clear governance arrangements, transparency about data use, and, where appropriate, formal data-sharing agreements are essential to ensure that alternative data are used responsibly and sustainably in official statistics. Further discussion on deriving a formal agreement for scanner data can be found in the section <a href="./data-sharing-agreements.html">Data sharing agreements</a> and in the training material for the module on data acquisition.</p>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/un-task-team-for-scanner-data\.github\.io\/cpi-new-data-sources-handbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./initial-considerations.html" class="pagination-link" aria-label="Initial considerations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Initial considerations</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./why-use-alternative-data-sources-strategic-motivations.html" class="pagination-link" aria-label="Why use alternative data sources? Strategic motivations">
+        <span class="nav-page-text">Why use alternative data sources? Strategic motivations</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/edit/main/overview-of-alternative-data-sources.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

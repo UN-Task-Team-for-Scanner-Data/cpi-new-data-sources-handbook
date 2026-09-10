@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Multilateral price index methods – Handbook on utilising new data sources in the production of consumer price statistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./extension-methods.html" rel="next">
+<link href="./example-of-chain-drift.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a3ad042fa44d12ca07b890c34e9cb5b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">New data sources in consumer price statistics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics"> <i class="bi bi-globe" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml"> <i class="bi bi-person-raised-hand" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./price-index-methods.html">Price index methods</a></li><li class="breadcrumb-item"><a href="./multilateral-price-index-methods.html">Multilateral price index methods</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handbook on utilising new data sources in the production of consumer price statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handbook on utilising new data sources in the production of consumer price statistics</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./initial-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial considerations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview-of-alternative-data-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview of alternative data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./why-use-alternative-data-sources-strategic-motivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why use alternative data sources? Strategic motivations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./key-challenges-and-trade-offs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key challenges and trade-offs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./key-decision-points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key decision points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resource-implications-and-organisational-readiness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resource implications and organisational readiness</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cpi-production-system-requirements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CPI production system requirements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-assurance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality assurance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data-selection-and-acquisition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data selection and acquisition</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selection-of-categories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selection of categories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selection-of-retailers-for-alternative-data-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selection of retailers for alternative data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scanner data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./initial-steps-in-the-acquisition-of-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial steps in the acquisition of scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-requirements-specification-for-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data requirements specification for scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-sharing-agreements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data sharing agreements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./alternative-approaches-to-acquiring-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Alternative approaches to acquiring scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./monitoring-validation-and-plausibility-checks-for-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monitoring, validation and plausibility checks for scanner data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web scraping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./different-approaches-to-accessing-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Different approaches to accessing web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategies-available-for-in-house-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategies available for in-house web scraping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-requirements-specification-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data requirements specification for web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./monitoring-validation-and-plausibility-checks-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monitoring, validation and plausibility checks for web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common-technical-problems-for-in-house-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Common technical problems for in-house web scraping</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-file-structures-for-web-scraped-and-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example file structures for web scraped and scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./collection-of-data-via-apis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collection of data via APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dealing-with-unexpected-data-gaps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with unexpected data gaps</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./preparation-of-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparation of data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./product-sampling-for-price-index-calculation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product sampling for price index calculation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./standardising-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standardising the data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aggregation-across-time-and-outlets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aggregation across time and outlets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./identifying-unique-products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Identifying unique products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./treatment-of-discounts-and-refunds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treatment of discounts and refunds</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./pre-conditions-and-deciding-on-appropriate-classification-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-conditions and deciding on appropriate classification methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./note-on-variables-applicable-for-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Note on variables applicable for classification</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 0: Manual labelling or validation of predicted labels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-1-attribute-based-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 1: Attribute-based classification method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-2-pattern-matching-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 2: Pattern matching classification method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-3-recommendation-machine-assisted-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 3: Recommendation / Machine-assisted classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./method-4-machine-learning-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 4: Machine Learning classification method</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./how-to-evaluate-classification-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to evaluate classification methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./working-with-class-imbalance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with class imbalance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./operational-best-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Operational best practices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./designing-the-classification-step-operational-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Designing the classification step: operational considerations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data-filtering-and-missing-prices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data filtering and missing prices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./outlier-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Outlier filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dumping-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dumping filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./low-sales-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Low sales filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./current-practice-of-data-filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Current practice of data filtering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./treatment-of-missing-prices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treatment of missing prices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Price index methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./bilateral-price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bilateral price index methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-of-chain-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example of chain drift</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multilateral-price-index-methods.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Multilateral price index methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./extension-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extension methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decomposition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./choosing-an-index-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing an index method</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods-for-when-expenditure-data-are-available.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for when expenditure data are available</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods-for-when-expenditure-data-are-not-available.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for when expenditure data are not available</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deriving-proxy-weights-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deriving proxy weights for web scraped data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aggregation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aggregation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./other-uses-of-alternative-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other-uses-of-alternative-data-beyond-cpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data beyond CPI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other-uses-of-alternative-data-within-cpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data within CPI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./other-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other considerations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./seasonal-products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Seasonal products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-change-and-hedonic-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality change and hedonic estimation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implementation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./training-material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training material</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#Multilateralpriceindexmethods-Overview" id="toc-Multilateralpriceindexmethods-Overview" class="nav-link active" data-scroll-target="#Multilateralpriceindexmethods-Overview">Overview</a></li>
+  <li><a href="#Multilateralpriceindexmethods-TheGEKSmethod" id="toc-Multilateralpriceindexmethods-TheGEKSmethod" class="nav-link" data-scroll-target="#Multilateralpriceindexmethods-TheGEKSmethod">The GEKS method</a>
+  <ul class="collapse">
+  <li><a href="#Multilateralpriceindexmethods-TheGEKS-Fishermethod" id="toc-Multilateralpriceindexmethods-TheGEKS-Fishermethod" class="nav-link" data-scroll-target="#Multilateralpriceindexmethods-TheGEKS-Fishermethod">The GEKS-Fisher method</a></li>
+  <li><a href="#Multilateralpriceindexmethods-TheGEKS-TrnqvistmethodalsoknownasCCDI" id="toc-Multilateralpriceindexmethods-TheGEKS-TrnqvistmethodalsoknownasCCDI" class="nav-link" data-scroll-target="#Multilateralpriceindexmethods-TheGEKS-TrnqvistmethodalsoknownasCCDI">The GEKS-Törnqvist method (also known as CCDI)</a></li>
+  </ul></li>
+  <li><a href="#Multilateralpriceindexmethods-TheQUandtheGeary-KhamisGKmethods" id="toc-Multilateralpriceindexmethods-TheQUandtheGeary-KhamisGKmethods" class="nav-link" data-scroll-target="#Multilateralpriceindexmethods-TheQUandtheGeary-KhamisGKmethods">The QU and the Geary-Khamis (GK) methods</a></li>
+  <li><a href="#Multilateralpriceindexmethods-TheTimeProductDummymethod" id="toc-Multilateralpriceindexmethods-TheTimeProductDummymethod" class="nav-link" data-scroll-target="#Multilateralpriceindexmethods-TheTimeProductDummymethod">The Time Product Dummy method</a></li>
+  <li><a href="#Multilateralpriceindexmethods-TheTimeDummyHedonicmethod" id="toc-Multilateralpriceindexmethods-TheTimeDummyHedonicmethod" class="nav-link" data-scroll-target="#Multilateralpriceindexmethods-TheTimeDummyHedonicmethod">The Time Dummy Hedonic method</a></li>
+  <li><a href="#Multilateralpriceindexmethods-TheSPQmethod" id="toc-Multilateralpriceindexmethods-TheSPQmethod" class="nav-link" data-scroll-target="#Multilateralpriceindexmethods-TheSPQmethod">The SPQ method</a></li>
+  <li><a href="#Multilateralpriceindexmethods-References" id="toc-Multilateralpriceindexmethods-References" class="nav-link" data-scroll-target="#Multilateralpriceindexmethods-References">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/edit/main/multilateral-price-index-methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./price-index-methods.html">Price index methods</a></li><li class="breadcrumb-item"><a href="./multilateral-price-index-methods.html">Multilateral price index methods</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Multilateral price index methods</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This section presents the basic, commonly known formulas of multilateral price indices.Like the <a href="./bilateral-price-index-methods.html">Bilateral price index methods</a>&nbsp;section, it does not include a broader discussion of the legitimacy of using individual indices. For more information on choosing an index method, see the&nbsp;<a href="https://unstats.un.org/wiki/display/GWGSD/Choosing+an+index+method">Choosing an index method</a>&nbsp;section.</p>
+<p><strong>Page information</strong></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Version</td>
+<td>v13</td>
+</tr>
+<tr class="even">
+<td>Last updated on</td>
+<td>2021-10-05</td>
+</tr>
+<tr class="odd">
+<td>Summary of changes</td>
+<td>Initial publication version</td>
+</tr>
+<tr class="even">
+<td>Page History</td>
+<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910489">See here</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<section id="Multilateralpriceindexmethods-Overview" class="level1">
+<h1>Overview</h1>
+<p>One of the common features of transaction data and web scraped data is the dynamics of product assortments. Although these dynamics may differ between the two data sources, both data sets are characterized by entering and disappearing products, the rates of which vary by type of product. Multilateral index methods have become a topic of research in many NSOs, and are already being used in the CPI of different NSOs for processing transaction data. One of the reasons for their increased interest is that these methods are able to capture product dynamics and associated consumer behavior, allowing the use of time-varying product weights and continuous inclusion of new products while preserving transitivity in its index series (on fixed time windows).&nbsp;</p>
+<p>A multilateral index is compiled over a given time window composed of <span class="math inline">\(T+1\)</span> successive months (typically <span class="math inline">\(T=12\)</span>, (i.e.&nbsp;the time window consists of periods: <span class="math inline">\(0,1,2,...,T\)</span>). The multilateral price index formula takes as input all prices and quantities of the previously defined individual products, which are available in the given time window, i.e.&nbsp;in at least two of its periods.&nbsp;&nbsp;</p>
+<p>Multilateral index methods originate in comparisons of price levels across countries or regions. These methods satisfy the condition of transitivity, which is a desirable property for spatial comparisons because the results are independent of which country is selected as the base country (region). By definition, transitivity eliminates the chain drift problem which may occur while using scanner data. <a href="./example-of-chain-drift.html">Chain drift</a> can be formalized in terms of the violation of the multi period identity test. According to this test one can expect, that when all prices and quantities in a current period revert back to their values from the base period, then the index should indicate no price change and it equals 1. Thus, multilateral indices are free from chain drift within a given estimation time window <span class="math inline">\([0,T]\)</span>. In production, multilateral indices are chained over time using extension methods to avoid introducing revisions, and this could introduce the possibility of chain drift (see <a href="./extension-methods.html">extension methods</a> section for more detail).&nbsp;</p>
+<p>Commonly known multilateral methods are the Geary-Khamis (GK) method (Geary (1958), Khamis (1972)), the GEKS-Fisher (generally just referred to as the GEKS) method (see Gini (1931), Eltetö and Köves (1964), Szulc (1964)), the GEKS-Törnqvist method (also known as the CCDI Caves, Christensen and Diewert (1982), Inklaar and Diewert (2016)), the Time Product Dummy method (de Haan and Krsinich, 2014) and the Time Dummy Hedonic index (de Haan, 2015). The SPQ index (Diewert, 2020) is a relatively new multilateral method.&nbsp;</p>
+</section>
+<section id="Multilateralpriceindexmethods-TheGEKSmethod" class="level1">
+<h1>The GEKS method</h1>
+<p>The GEKS price index between months <span class="math inline">\(0\)</span> and <span class="math inline">\(t\)</span> is an unweighted geometric mean of <span class="math inline">\(T+1\)</span> ratios of bilateral price indices <span class="math inline">\(P^{\tau, t}\)</span> and <span class="math inline">\(P^{\tau, 0}\)</span>, which are based on the same price index formula. In order for the GEKS price index method to be transitive, the bilateral price index formula used within GEKS should satisfy the time reversal test, i.e.&nbsp;it should satisfy the condition <span class="math inline">\(P^{a,b} \cdot P^{b,a} = 1\)</span>.</p>
+<section id="Multilateralpriceindexmethods-TheGEKS-Fishermethod" class="level2">
+<h2 class="anchored" data-anchor-id="Multilateralpriceindexmethods-TheGEKS-Fishermethod">The GEKS-Fisher method</h2>
+<p>Typically, the GEKS method uses the superlative Fisher price index (and is commonly referred to as just the GEKS) resulting in the following formula:</p>
+<p><span class="math inline">\(P_{G E K S}^{0, t}=\prod_{\tau=0}^{T}\left(\frac{P_{F}^{\tau, t}}{P_{F}^{\tau, 0}}\right)^{\frac{1}{T+1}}\)</span></p>
+</section>
+<section id="Multilateralpriceindexmethods-TheGEKS-TrnqvistmethodalsoknownasCCDI" class="level2">
+<h2 class="anchored" data-anchor-id="Multilateralpriceindexmethods-TheGEKS-TrnqvistmethodalsoknownasCCDI">The GEKS-Törnqvist method (also known as CCDI)</h2>
+<p>The GEKS idea was extended with the Törnqvist index as a base in the context of making quantity comparisons across production units (1), and subsequently as a method to make price comparisons across production units (16). Consequently, the the multilateral price comparison method involving the GEKS method based on the Törnqvist is now sometimes referred to as the Caves-Christensen-Diewert-Inklaar (or CCDI) (10). The corresponding price index can be expressed as follows:</p>
+<p><span class="math inline">\(P_{C C D I}^{0, t}=\prod_{\tau=0}^{T}\left(\frac{P_{T}^{\tau, t}}{P_{T}^{\tau, 0}}\right)^{\frac{1}{T+1}}\)</span></p>
+<p>To note, the CCDI method is equivalent to the GEKS method with Törnqvist indices as bilateral indices. If prices are imputed when they are unavailable, for instance, because products were not sold in certain periods, then the CCDI method is referred to as "imputed CCDI". Examples and applications of the imputed CCDI method are described by de Haan and Daalmans (2019).&nbsp;</p>
+</section>
+</section>
+<section id="Multilateralpriceindexmethods-TheQUandtheGeary-KhamisGKmethods" class="level1">
+<h1>The QU and the Geary-Khamis (GK) methods</h1>
+<p>Quality adjusted unit value method (QU) is a family of unit value based index methods, with the Geary-Khamis (GK) method as a special case (see Chessa (2015, or 2016) for more details). The GK method was first developed for international or interregional price comparisons (14), was extended for comparisons across time (19). According to the QU method, the price index <span class="math inline">\(P_{QU}^{0,t}\)</span>, which compares period <span class="math inline">\(t\)</span> with base period <span class="math inline">\(0\)</span>, is defined as follows:</p>
+<p><span class="math inline">\(P_{Q U}^{0, t}= \frac{ \sum\limits_{i \in G_{t}} p_{i}^{t} q_{i}^{t} / \sum\limits_{i \in G_{0}} p_{i}^{0} q_{i}^{0}}{ \sum\limits_{i \in G_{t}} v_{i} q_{i}^{t} / \sum\limits_{i \in G_{0}} v_{i} q_{i}^{0}}\)</span></p>
+<p>where its numerator is the measure of the turnover (expenditure) change between the two compared periods and the denominator is a weighted quantity index. Please note that the quantity weights <span class="math inline">\(v_i\)</span> are the only unknown factors here and these factors convert sold quantities <span class="math inline">\(q_i^0\)</span> and <span class="math inline">\(q_{i}^t\)</span> of products that differ in quality into “common" or comparable units <span class="math inline">\(v_iq_i^0\)</span> and <span class="math inline">\(v_iq_i^t\)</span>. Prices of products, <span class="math inline">\(p_i^0\)</span> and <span class="math inline">\(p_i^t\)</span>, are converted into”quality adjusted prices” <span class="math inline">\(p_i^0 / v_i\)</span> and <span class="math inline">\(p_i^t / v_i\)</span>. Different choices of factors <span class="math inline">\(v_i\)</span> lead to different price index formulas.</p>
+<p>In the Geary-Khamis method, the weights <span class="math inline">\(v_i\)</span> are defined as follows:&nbsp;</p>
+<p><span class="math inline">\(v_{i}=\sum_{z=0}^{T} \varphi_{i, G K}^{z} \frac{p_{i}^{z}}{P_{Q U}^{0, z}}\)</span></p>
+<p>where</p>
+<p><span class="math inline">\(\varphi_{i, G K}^{z}=\frac{q_{i}^{z}}{\sum_{\tau=0}^{T} q_{i}^{\tau}}\)</span></p>
+<p>Note that above formulas lead to a set of equations which should be solved simultaneously. This solution can be found iteratively (3) or as a solution to an eigenvalue problem (8). An interesting alternative method for obtaining this solution (which can reduce computer processing time) can be also found in Diewert and Fox (2018). The iterative procedure starts with an arbitrarily chosen set of price index values for each period in a time window. Next, these values are entered into the expression for the <span class="math inline">\(v_i\)</span> which in turn are substituted into the price index formula for the QU method. This procedure is repeated until a stop criterion for the accuracy of the index series is reached, which is set by the user. The iterative algorithm converges to a unique solution under 'mild' conditions.</p>
+<p>It is worth noting that the use of 'quality adjustment' in this context is debated in the literature.&nbsp;</p>
+</section>
+<section id="Multilateralpriceindexmethods-TheTimeProductDummymethod" class="level1">
+<h1>The Time Product Dummy method</h1>
+<p>The Time Product Dummy method (TPD) normally uses a regression approach to estimating price indices using all available data from a given time window. The econometric model for log prices of <span class="math inline">\(N\)</span> different items sold in one or more periods across the considered the time interval <span class="math inline">\([0,T]\)</span> is as follows:</p>
+<p><span class="math inline">\(\ln p_{i}^{t}=\alpha+\sum_{t=1}^{T} \delta^{t} D_{i}^{t}+\sum_{j=1}^{N-1} \gamma_{j} D_{i,j}+\varepsilon_{i}^{t}\)</span></p>
+<p>where <span class="math inline">\(D_i^t\)</span> is the dummy variable that has value 1 if the <span class="math inline">\(i\)</span>-th product is available in period <span class="math inline">\(t\)</span> and <span class="math inline">\(0\)</span> otherwise, <span class="math inline">\(\delta^t\)</span> are the time dummy parameters, <span class="math inline">\(D_{i,j}\)</span> is a dummy variable with the value 1 if the <span class="math inline">\(i\)</span>-th observation relates to the individual product <span class="math inline">\(j\)</span> and 0 otherwise, <span class="math inline">\(\gamma_j\)</span> represents the item fixed effects and <span class="math inline">\(\epsilon_i^t\)</span> denotes the corresponding random error term, which is assumed to be normally distributed with zero mean. The quality adjusted price of&nbsp; a set of products <span class="math inline">\(G_t\)</span> in month <span class="math inline">\(t\)</span> can be written as:</p>
+<p><span class="math inline">\(\tilde{p}^{t}= \prod_{i \in G_{t}}\left(\frac{p_{i}^{t}}{v_{i}}\right)^{s_{t}^{t}}\)</span></p>
+<p>Following Diewert (2004), one can assume that the above model is estimated by the Weighted Least Squares (WLS) method with expenditure shares used as weights (in fact, the WLS method follows from maximum likelihood estimation of the parameters with the variance of the error terms assumed to be inversely proportional to the expenditure shares). Where the price is adjusted using the item fixed effects, i.e.&nbsp;<span class="math inline">\(v_i=\exp(\gamma_i)\)</span>, the TPD index can be expressed as follows:</p>
+<p><span class="math inline">\(P_{T P D}^{0, t}= \frac{\tilde{p}^{t}}{ \tilde{p}^{0}}= \frac{ \prod\limits_{i \in G_{t}}\left(\frac{p_{i}^{t}}{\exp \left(\hat{\gamma}_{i}\right)}\right)^{s_{i}^{t}}}{ \prod\limits_{i \in G_{0}}\left(\frac{p_{i}^{0}}{\exp \left(\hat{\gamma}_{i}\right)}\right)^{s_{i}^{0}}}\)</span></p>
+</section>
+<section id="Multilateralpriceindexmethods-TheTimeDummyHedonicmethod" class="level1">
+<h1>The Time Dummy Hedonic method</h1>
+<p>The Time Dummy Hedonic method (TDH) uses a regression approach to estimating price indices using all available data from a given time window including product characteristics. The econometric model for log prices of <span class="math inline">\(N\)</span> different items, which were sold in one or more periods across the considered time interval <span class="math inline">\([0,T]\)</span> and were described by <span class="math inline">\(K\)</span> characteristics, is as follows:</p>
+<p><span class="math inline">\(\ln p_{i}^{t}=\alpha+\sum_{t=1}^{T} \delta^{t} D_{i}^{t}+\sum_{k=1}^{K} \beta_{k} z_{ik}+\varepsilon_{i}^{t}\)</span></p>
+<p>where <span class="math inline">\(D_i^t\)</span> is the dummy variable that has value 1 if the <span class="math inline">\(i\)</span>-th product is available in period <span class="math inline">\(t\)</span> and 0 otherwise, <span class="math inline">\(\delta^t\)</span> are the time dummy parameters, <span class="math inline">\(z_{ik}\)</span> denotes the <span class="math inline">\(k\)</span>-th characteristic of item <span class="math inline">\(i\)</span> and <span class="math inline">\(\beta_{k}\)</span> is the corresponding parameter (fixed across time), <span class="math inline">\(\epsilon_i^t\)</span> denotes the corresponding random error term. Like in the TPD model described above, it is assumed that the errors are independently distributed with zero mean and variance inversely proportional to the items' expenditure shares in the different periods.</p>
+<p>Following Diewert (2004), one can assume that the above model is estimated by the Weighted Least Squares (WLS) method with expenditure shares used as weights. As a consequence, the TDH index can be computed as follows:</p>
+<p><span class="math inline">\(P_{T D H}^{0, t}= \frac{\tilde{p}^{t}}{ \tilde{p}^{0}}= \frac{ \prod\limits_{i \in G_{t}}\left(\frac{p_{i}^{t}}{\exp {(\sum_{k=1}^{K} \hat\beta_{k} z_{ik}})}\right)^{s_{i}^{t}}}{ \prod\limits_{i \in G_{0}}\left(\frac{p_{i}^{0}}{\exp {(\sum_{k=1}^{K} \hat\beta_{k} z_{ik}})}\right)^{s_{i}^{0}}}.\)</span></p>
+<p>For a comparison of the two model-based multilateral price indexes (TPD vs.&nbsp;TDH) see de Haan, Hendriks, and Scholz (2021).</p>
+</section>
+<section id="Multilateralpriceindexmethods-TheSPQmethod" class="level1">
+<h1>The SPQ method</h1>
+<p>The idea of the SPQ multilateral price index is based on the relative price and quantity&nbsp;dissimilarity measure <span class="math inline">\(\Delta_{SPQ}\)</span>, which was proposed by Diewert (2020). The relative price dissimilarity measure is used to link together bilateral Fisher indexes according to the following algorithm:</p>
+<p>(1) set <span class="math inline">\(P_{SPQ}^{0,0}=1\)</span> for the period <span class="math inline">\(0\)</span> (base month) and calculate <span class="math inline">\(P_{SPQ}^{0,1}=P_{F}(p^0,p^1,q^0,q^1)\)</span> for the period <span class="math inline">\(1\)</span>;</p>
+<p>(2) For the period 2 define <span class="math inline">\(P_{SPQ}^{0,2}=P_{F}(p^0,p^2,q^0,q^2) P_{SPQ}^{0,0}\)</span> if <span class="math inline">\(min\{\Delta_{SPQ}(p^0,p^2,q^0,q^2), \Delta_{SPQ}(p^1,p^2,q^1,q^2)\}\)</span> is equal <span class="math inline">\(\Delta_{SPQ}(p^0,p^2,q^0,q^2)\)</span> or take <span class="math inline">\(P_{SPQ}^{0,2}=P_{F}(p^1,p^2,q^1,q^2) P_{SPQ}^{0,1}\)</span> otherwise;</p>
+<p>(3) Continue this procedure in the same manner, i.e.&nbsp;for period <span class="math inline">\(t\)</span>, let <span class="math inline">\(r^*\)</span> be such a period that&nbsp;<br>
+<span class="math inline">\(min_{r}\{\Delta_{SPQ}(p^r,p^t,q^r,q^t), r=1,2,...,t-1\}=\Delta_{SPQ}(p^{r^*},p^t,q^{r^*},q^t)\)</span>.</p>
+<p>For the considered period define <span class="math inline">\(P_{SPQ}^{0,t}=P_{F}(p^{r^*},p^t,q^{r^*},q^t) P_{SPQ}^{0,r^*}\)</span>.</p>
+<p>Please note that the SPQ index does not require the information about the time window length.</p>
+<p><br>
+</p>
+<hr>
+</section>
+<section id="Multilateralpriceindexmethods-References" class="level1">
+<h1>References</h1>
+<p>(1) Caves D. W., Christensen, L. R. and Diewert, W. E. (1982). Multilateral comparisons of output, input, and productivity using superlative index numbers, <em>Economic Journal</em>, 92, 73-86.&nbsp;</p>
+<p>(2) Chessa, A. G. (2015). Towards a generic price index method for scanner data in the Dutch CPI, <em>Paper presented at the 14<sup>th</sup> Ottawa Group Meeting, Tokyo, Japan</em>. <a href="https://stats.unece.org/ottawagroup/download/f412.pdf" class="uri">https://stats.unece.org/ottawagroup/download/f412.pdf</a></p>
+<p>(3) Chessa, A.G. (2016). A New Methodology for Processing Scanner Data in the Dutch CPI, <em>Eurona</em> 1/2016, 49-69. <a href="https://ec.europa.eu/eurostat/documents/3217494/7556543/KS-GP-16-001-EN-N.pdf/70e246de-734c-42ba-bee2-bc0b3dd97faa?t=1468230194000" class="uri">https://ec.europa.eu/eurostat/documents/3217494/7556543/KS-GP-16-001-EN-N.pdf/70e246de-734c-42ba-bee2-bc0b3dd97faa?t=1468230194000</a></p>
+<p>(4) de Haan, J., Krsinich, F. (2017). Time Dummy Hedonic and Quality-Adjusted Unit Value Indices: Do They Really Differ? <em>Review of Income and Wealth</em>. 64:4. 757-776.</p>
+<p>(5) de Haan J. (2015).&nbsp; A Framework for Large Scale Use of Scanner Data in the Dutch CPI, <em>Paper presented at the 14<sup>th</sup> Ottawa Group Meeting, Tokyo, Japan</em>. <a href="https://stats.unece.org/ottawagroup/download/f440.pdf" class="uri">https://stats.unece.org/ottawagroup/download/f440.pdf</a>&nbsp;</p>
+<p>(6) de Haan, J., Daalmans, J. (2019). Scanner Data in the CPI: The Imputation CCDI Index Revisited. <em>Paper presented at the 16<sup>th</sup> Ottawa Group Meeting, 8-10 May 2019, Rio de Janeiro, Brazil</em>. <a href="https://stats.unece.org/ottawagroup/download/f532.pdf" class="uri">https://stats.unece.org/ottawagroup/download/f532.pdf</a></p>
+<p>(7)&nbsp;de Haan, J., Hendriks, R. and Scholz, M. (2021). Price measurement using scanner data:&nbsp;Time-product dummy versus time dummy hedonic indexes. <em>Review of Income and Wealth</em>, 67, 394–417. <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/roiw.12468" class="uri">https://onlinelibrary.wiley.com/doi/full/10.1111/roiw.12468</a></p>
+<p>(8) Diewert, W. E. (1999). Axiomatic and economic approaches to international comparisons. International and interarea Comparisons of Income, Output, and Prices<em>,</em> 13–107. University of Chicago Press.</p>
+<p>(9) Diewert, W. E. (2004). On the Stochastic Approach to Linking the Regions in the ICP<em>.</em> Department of Economics, University of British Columbia.</p>
+<p>(10) Diewert, W. E., Fox, K. J. (2017). Substitution Bias in Multilateral Methods for CPI Construction using Scanner Data. <em>Discussion paper 17-02</em>, Vancouver School of Economics, The University of British Columbia, Vancouver, Canada.</p>
+<p>(11) Diewert,&nbsp; W. E. (2020). The Chain Drift Problem and Multilateral Indexes, Technical report, <em>Discussion Paper 20-07</em>, Vancouver School of Economics.</p>
+<p>(12) Eltetö, Ö., Köves, P. (1964). On a Problem of Index Number Computation Relating to International Comparisons, (in Hungarian), Statisztikai Szemle, 42, 507-518.</p>
+<p>(13) Fisher, I. (1922). The making of index numbers: a study of their varieties, tests, and reliability<em>.&nbsp;</em>Houghton Mifflin.</p>
+<p>(14) Geary, R. G. (1958). A Note on Comparisons of Exchange Rates and Purchasing Power between Countries, <em>Journal of the Royal Statistical Society</em> Series A, 121, 97-99.</p>
+<p>(15) Gini, C. (1931). On the Circular Test of Index Numbers, Metron, 9(9), 3-24.</p>
+<p>(16) Inklaar, R., Diewert, W. E. (2016). Measuring Industry Productivity and Cross-Country Convergence, <em>Journal of Econometrics</em>, 191, 426-433.</p>
+<p>(17) Ivancic, L. W.E. Diewert and K.J. Fox (2009), “Scanner Data, Time Aggregation and the Construction of Price Indexes," <em>UBC Discussion paper 09-09</em>. <a href="https://stats.unece.org/ottawagroup/download/f275.pdf" class="uri">https://stats.unece.org/ottawagroup/download/f275.pdf</a></p>
+<p>(18) Ivancic, L. W.E. Diewert and K.J. Fox (2011), “Scanner Data, Time Aggregation and the Construction of Price Indexes,” <em>Journal of Econometrics</em> 161, 24–35. <a href="https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/c/13885/files/2014/07/Ivancic2011_Scanner-data-time-aggregation-and-the-construction-of-price-indexes.pdf" class="uri">https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/c/13885/files/2014/07/Ivancic2011_Scanner-data-time-aggregation-and-the-construction-of-price-indexes.pdf</a></p>
+<p>(19) Khamis, S. H. (1972). A New System of Index Numbers for National and International Purposes, <em>Journal of the Royal Statistical Society</em> Series A, 135, 96-121.</p>
+<p>(20) Szulc, B. (1964). Indices for Multiregional Comparisons. (in Polish). <em>Przeglad Statystyczny</em> 3, 239-254.</p>
+<p>(21) Törnqvist, L. (1936). The Bank of Finland's Consumption Price Index, Bank of Finland Monthly Bulletin 10, 1-8.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/un-task-team-for-scanner-data\.github\.io\/cpi-new-data-sources-handbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./example-of-chain-drift.html" class="pagination-link" aria-label="Example of chain drift">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Example of chain drift</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./extension-methods.html" class="pagination-link" aria-label="Extension methods">
+        <span class="nav-page-text">Extension methods</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/edit/main/multilateral-price-index-methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

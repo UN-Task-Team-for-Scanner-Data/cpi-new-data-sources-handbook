@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How to evaluate classification methods – Handbook on utilising new data sources in the production of consumer price statistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./working-with-class-imbalance.html" rel="next">
+<link href="./method-4-machine-learning-classification-method.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a3ad042fa44d12ca07b890c34e9cb5b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">New data sources in consumer price statistics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics"> <i class="bi bi-globe" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml"> <i class="bi bi-person-raised-hand" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./classification.html">Classification</a></li><li class="breadcrumb-item"><a href="./method-4-machine-learning-classification-method.html">Method 4: Machine Learning classification method</a></li><li class="breadcrumb-item"><a href="./how-to-evaluate-classification-methods.html">How to evaluate classification methods</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handbook on utilising new data sources in the production of consumer price statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handbook on utilising new data sources in the production of consumer price statistics</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./initial-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial considerations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview-of-alternative-data-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview of alternative data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./why-use-alternative-data-sources-strategic-motivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why use alternative data sources? Strategic motivations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./key-challenges-and-trade-offs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key challenges and trade-offs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./key-decision-points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key decision points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resource-implications-and-organisational-readiness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resource implications and organisational readiness</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cpi-production-system-requirements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CPI production system requirements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-assurance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality assurance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data-selection-and-acquisition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data selection and acquisition</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selection-of-categories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selection of categories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selection-of-retailers-for-alternative-data-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selection of retailers for alternative data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scanner data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./initial-steps-in-the-acquisition-of-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial steps in the acquisition of scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-requirements-specification-for-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data requirements specification for scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-sharing-agreements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data sharing agreements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./alternative-approaches-to-acquiring-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Alternative approaches to acquiring scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./monitoring-validation-and-plausibility-checks-for-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monitoring, validation and plausibility checks for scanner data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web scraping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./different-approaches-to-accessing-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Different approaches to accessing web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategies-available-for-in-house-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategies available for in-house web scraping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-requirements-specification-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data requirements specification for web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./monitoring-validation-and-plausibility-checks-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monitoring, validation and plausibility checks for web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common-technical-problems-for-in-house-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Common technical problems for in-house web scraping</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-file-structures-for-web-scraped-and-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example file structures for web scraped and scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./collection-of-data-via-apis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collection of data via APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dealing-with-unexpected-data-gaps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with unexpected data gaps</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./preparation-of-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparation of data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./product-sampling-for-price-index-calculation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product sampling for price index calculation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./standardising-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standardising the data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aggregation-across-time-and-outlets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aggregation across time and outlets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./identifying-unique-products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Identifying unique products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./treatment-of-discounts-and-refunds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treatment of discounts and refunds</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./pre-conditions-and-deciding-on-appropriate-classification-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-conditions and deciding on appropriate classification methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./note-on-variables-applicable-for-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Note on variables applicable for classification</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 0: Manual labelling or validation of predicted labels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-1-attribute-based-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 1: Attribute-based classification method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-2-pattern-matching-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 2: Pattern matching classification method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-3-recommendation-machine-assisted-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 3: Recommendation / Machine-assisted classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./method-4-machine-learning-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 4: Machine Learning classification method</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./how-to-evaluate-classification-methods.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">How to evaluate classification methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./working-with-class-imbalance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with class imbalance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./operational-best-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Operational best practices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./designing-the-classification-step-operational-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Designing the classification step: operational considerations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data-filtering-and-missing-prices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data filtering and missing prices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./outlier-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Outlier filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dumping-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dumping filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./low-sales-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Low sales filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./current-practice-of-data-filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Current practice of data filtering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./treatment-of-missing-prices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treatment of missing prices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Price index methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./bilateral-price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bilateral price index methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-of-chain-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example of chain drift</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multilateral-price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multilateral price index methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./extension-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extension methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decomposition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./choosing-an-index-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing an index method</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods-for-when-expenditure-data-are-available.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for when expenditure data are available</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods-for-when-expenditure-data-are-not-available.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for when expenditure data are not available</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deriving-proxy-weights-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deriving proxy weights for web scraped data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aggregation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aggregation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./other-uses-of-alternative-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other-uses-of-alternative-data-beyond-cpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data beyond CPI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other-uses-of-alternative-data-within-cpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data within CPI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./other-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other considerations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./seasonal-products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Seasonal products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-change-and-hedonic-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality change and hedonic estimation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implementation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./training-material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training material</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#Howtoevaluateclassificationmethods-Approachestoevaluation" id="toc-Howtoevaluateclassificationmethods-Approachestoevaluation" class="nav-link active" data-scroll-target="#Howtoevaluateclassificationmethods-Approachestoevaluation">Approaches to evaluation</a>
+  <ul class="collapse">
+  <li><a href="#Howtoevaluateclassificationmethods-Binaryclassification" id="toc-Howtoevaluateclassificationmethods-Binaryclassification" class="nav-link" data-scroll-target="#Howtoevaluateclassificationmethods-Binaryclassification">Binary classification</a></li>
+  <li><a href="#Howtoevaluateclassificationmethods-Multi-dimensionalcase" id="toc-Howtoevaluateclassificationmethods-Multi-dimensionalcase" class="nav-link" data-scroll-target="#Howtoevaluateclassificationmethods-Multi-dimensionalcase">Multi-dimensional case</a></li>
+  </ul></li>
+  <li><a href="#Howtoevaluateclassificationmethods-Advancedmethods" id="toc-Howtoevaluateclassificationmethods-Advancedmethods" class="nav-link" data-scroll-target="#Howtoevaluateclassificationmethods-Advancedmethods">"Advanced methods"</a></li>
+  <li><a href="#Howtoevaluateclassificationmethods-References" id="toc-Howtoevaluateclassificationmethods-References" class="nav-link" data-scroll-target="#Howtoevaluateclassificationmethods-References">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/edit/main/how-to-evaluate-classification-methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./classification.html">Classification</a></li><li class="breadcrumb-item"><a href="./method-4-machine-learning-classification-method.html">Method 4: Machine Learning classification method</a></li><li class="breadcrumb-item"><a href="./how-to-evaluate-classification-methods.html">How to evaluate classification methods</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">How to evaluate classification methods</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>There are numerous metrics that can be tracked and applied when evaluating how well a classifier performs.&nbsp;This chapter provides an overview of common approaches using a Machine Learning (ML) classifier (i.e.&nbsp;<a href="./method-4-machine-learning-classification-method.html">Method 4</a> and <a href="./method-3-recommendation-machine-assisted-classification.html">in some cases Method 3</a>) as the use case throughout due to their applicability and popularity with ML. These metrics however, could also be applied on classifiers created with other methods (such as <a href="./method-2-pattern-matching-classification-method.html">Method 2</a>) as long as there is a representative test dataset on which to evaluate classifier performance.</p>
+<p><strong>Page information</strong></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Version</td>
+<td>v2</td>
+</tr>
+<tr class="even">
+<td>Last updated on</td>
+<td>2025-04-28</td>
+</tr>
+<tr class="odd">
+<td>Summary of changes</td>
+<td>Initial publication</td>
+</tr>
+<tr class="even">
+<td>Page history</td>
+<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281196">See here</a></td>
+</tr>
+</tbody>
+</table>
+<section id="Howtoevaluateclassificationmethods-Approachestoevaluation" class="level1">
+<h1>Approaches to evaluation</h1>
+<p>When supervised machine learning is used for classification, the data it is trained on is separated into three parts: training data on which the model is trained; validation data on which hyperparameters are selected; and a test set on which the model is evaluated. The test data set has never been seen by the model during training and parameterisation, so it is used for the final evaluation of the model. The idea is to evaluate the model on the same distribution the model was trained on but have that test dataset represent 'out-of-sample' performance, simulating how generalizable the learning has been. The risk of not doing this is that the model could be overfitted to its' training data. In the case of overfitting, the model would virtually learn the data by heart instead of recognizing the patterns behind it. There are different ways to select the test data, which typically includes a somewhat more complex procedure for splitting the data set multiple times and training the models, which is called cross-validation. In cross-validation the data is split into k parts, one part of the data is used as a test data set and the other k-1 parts for training the model, this division is repeated several times. In this way, different models can be compared.</p>
+<p>Since the method is supervised, the test dataset contains the actual (intended) classes and the predicted classes by the model being tested. There are numerous metrics that are used to evaluate machine learning models by comparing these predicted and actual categories. These are usually built on a confusion matrix, which provides an overview of which items have been correctly or incorrectly classified.</p>
+<section id="Howtoevaluateclassificationmethods-Binaryclassification" class="level2">
+<h2 class="anchored" data-anchor-id="Howtoevaluateclassificationmethods-Binaryclassification">Binary classification</h2>
+<p>For simplicity, we start with a binary case with two classes.</p>
+<p>Table 1: A two by two confusion matrix</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 34%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td>Predicted positive</td>
+<td>Predicted negative</td>
+</tr>
+<tr class="even">
+<td>Actual positive</td>
+<td>True Positive (TP)</td>
+<td>False Negative (FN)</td>
+</tr>
+<tr class="odd">
+<td>Actual negative</td>
+<td>False Positive (FP)</td>
+<td>True Negative (TN)</td>
+</tr>
+</tbody>
+</table>
+<p>Several metrics can be calculated from this:</p>
+<ul>
+<li><strong>Accuracy</strong> is the proportion of correct predictions out of all predictions made. Accuracy is also an indicator of the overall classification task (i.e.&nbsp;summarizes the situation for both positive and negative classes as one metric).</li>
+</ul>
+<p><span class="math inline">\(\text{Accuracy} = \frac{\text{correct predictions}}{\text{all predictions}}= \frac{tp + tn}{tp+tn+fp+fn}\)</span></p>
+<ul>
+<li><strong>Precision</strong> is the proportion of correct predictions out of all predictions estimated as positive. It is calculated individually for each class.</li>
+</ul>
+<p><span class="math inline">\(\text{Precision} = \frac{tp}{tp+fp}\)</span></p>
+<ul>
+<li><strong>Recall</strong> (also called sensitivity) is the proportion of true positives out of all positive observations. Similar to precision, it is calculated for each class.</li>
+</ul>
+<p><span class="math inline">\(\text{Recall} = \frac{tp}{tp+fn}\)</span></p>
+<p>Ideally, we want a high precision and a high recall. Precision and recall do not necessarily both increase, they can also behave in opposite ways. Both can be combined through an F1 score:</p>
+<ul>
+<li><strong>F1 score</strong> is the harmonic mean of precision and recall. The F1 score shows how precise the model is, as well as how robust it is. If one of the two metrics is much lower than the other, then the F1 score is lower than the arithmetic mean of the two scores.</li>
+</ul>
+<p><span class="math inline">\(\text{F1} = \frac{2tp}{ (2tp+fp+fn)} = 2\frac{\text{precision}* \text{recall}}{\text{precision} + \text{recall}}\)</span></p>
+<p>Accuracy and F1 score are very commonly used scores to evaluate a classifier. Accuracy is very easy to interpret, but it also has weaknesses especially with heterogeneous distributed class sizes (or imbalanced data). Suppose you have one class with 99 observations and a second class with one observation. If the classifier always estimates the first class, it will have an accuracy of 99%, however it will always miss the second class, which is undesirable.&nbsp;</p>
+<p><strong><em>Example 1:</em></strong> Suppose we have 10 items to be classified, 2 milk and 8 yogurts. If the classifier classifies one milk item correctly and the other milk as a yogurt and all yogurts correctly, we get the following scores.&nbsp;</p>
+<ul>
+<li>Accuracy = 9 / 10 = 0.9 or 90% correct</li>
+<li>F1 for Milk = (2*1)/(2*1+ 0 + 1)= 2/3 = 0,5 = 66,7%</li>
+<li>F1 for Yoghurt = (2*8)/(2*8+1+0) = 16/17 = 94.1%</li>
+</ul>
+<p>In this example with unequal class distribution, accuracy is less suitable. F1 metrics also tell different stories depending on the class you calculate them for.&nbsp;</p>
+</section>
+<section id="Howtoevaluateclassificationmethods-Multi-dimensionalcase" class="level2 auto-cursor-target">
+<h2 class="auto-cursor-target anchored" data-anchor-id="Howtoevaluateclassificationmethods-Multi-dimensionalcase">Multi-dimensional case</h2>
+<p>Let us now consider the multidimensional case, as most applications will typically involve a classifier predicting to one of multiple classes, not simply 2. We have n classes: C1, C2, ..., Cn. <span class="math inline">\(N_{i,j}\)</span> is the number of observations belonging to class Ci and classified in class Cj (Table 2). For each individual class Ci, the metrics introduced above can now be calculated by creating a one-vs-rest matrix, i.e.&nbsp;all observations that do not belong to class Ci are summed up (Table 3).</p>
+<p>Table 2: A comprehensive overview of the confusion matrix for n cases</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td><br>
+</td>
+<td colspan="5" style="text-align: center;">predicted</td>
+</tr>
+<tr class="even">
+<td><br>
+</td>
+<td><br>
+</td>
+<td style="text-align: center;"><span class="math inline">\(C_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(C_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(C_3\)</span></td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"><span class="math inline">\(C_n\)</span></td>
+</tr>
+<tr class="odd">
+<td rowspan="5"><p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><strong>actual</strong></p>
+<p><br>
+</p>
+<p><br>
+</p></td>
+<td><span class="math inline">\(C_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{1,1}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{1,2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{1,3}\)</span></td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"><span class="math inline">\(N_{1,n}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(C_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{2,1}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{2,2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{2,3}\)</span></td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"><span class="math inline">\(N_{2,n}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(C_3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{3,1}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{3,2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{3,3}\)</span></td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"><span class="math inline">\(N_{3,n}\)</span></td>
+</tr>
+<tr class="even">
+<td>...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;"><br>
+</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(C_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{n,1}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{n,2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{n,3}\)</span></td>
+<td style="text-align: center;"><br>
+</td>
+<td style="text-align: center;"><span class="math inline">\(N_{n,n}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Table 3: A One-vs-Rest confusion matrix</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 21%">
+<col style="width: 32%">
+<col style="width: 32%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td style="text-align: center;"><br>
+</td>
+<td colspan="2" style="text-align: center;">predicted</td>
+</tr>
+<tr class="even">
+<td><br>
+</td>
+<td style="text-align: center;"><br>
+</td>
+<td style="text-align: center;"><span class="math inline">\(C_i\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(C_\text{rest}\)</span></td>
+</tr>
+<tr class="odd">
+<td rowspan="2"><p><br>
+</p>
+<p>actual</p></td>
+<td style="text-align: center;"><span class="math inline">\(C_i\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N_{i,i}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j \ne i}{N_{i,j}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(C_\text{rest}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j \ne i}{N_{j,i}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum_{j \ne i}{N_{j,j}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\text{precision}_i = \frac{tp}{tp+fp}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{j,i}}}]\)</span></p>
+<p><span class="math inline">\(\text{recall}_i = \frac{tp}{tp+fn}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{i,j}}}\)</span></p>
+<p><span class="math inline">\(\text{F1}_i = 2\frac{\text{precision}_i* \text{recall}_i}{\text{precision}_i + \text{recall}_i}\)</span></p>
+<p>To consider the performance of a model as a whole for all classes, instead of individually on a class-by-class basis, two ways to calcuate are common -&nbsp;<strong>micro scores</strong> or&nbsp;<strong>macro scores</strong>. For the micro scores, the true positives, true negatives, false positives and false negatives of all classes are added together and then the scores are calculated according to the above formula. The macro scores are calculated from the arithmetic mean of the scores of the individual classes.</p>
+<p><span class="math inline">\(\text{macro precision} = \frac{1}{n} \sum_{i=1}^n{\text{precision}_i}\)</span></p>
+<p><span class="math inline">\(\text{macro recall} = \frac{1}{n} \sum_{i=1}^n{\text{recall}_i}\)</span></p>
+<p><span class="math inline">\(\text{macro F1} = \frac{1}{n} \sum_{i=1}^n{\text{f1}_i}\)</span></p>
+<p>The macro F1 score considers large and small classes equally. As a result, observations from a large class have less influence on the score than observations from a small class. This effect is stronger the larger the imbalance in class sizes. It is relatively easy to recognize when any class has very poor scores. Whether this differential influence is desirable or not must be considered from a specialized point of view. An alternative would be to assign weights to each class and calculate a weighted average. Possible weights would be class size or, in the context of price statistics, turnover and weighing.</p>
+<p><strong><em>Example 2:</em></strong> For the sake of simplicity, we will consider an example with three relatively balanced classes</p>
+<p>Table 4: Overall confusion matrix</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td><br>
+</td>
+<td colspan="3"><br>
+Predicted<br>
+<br>
+</td>
+</tr>
+<tr class="even">
+<td><br>
+</td>
+<td><br>
+</td>
+<td>rice</td>
+<td>flour</td>
+<td>water</td>
+</tr>
+<tr class="odd">
+<td rowspan="3"><br>
+<strong>Actual</strong><br>
+<br>
+</td>
+<td>rice</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>flour</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>water</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>For each class we create a one-vs-rest matrix, as defined above.</p>
+<p>Table 5: One-vs-rest matrix for rice</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 29%">
+<col style="width: 15%">
+<col style="width: 29%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td><br>
+</td>
+<td colspan="2"><br>
+Predicted<br>
+<br>
+</td>
+</tr>
+<tr class="even">
+<td><br>
+</td>
+<td><br>
+</td>
+<td>Rice</td>
+<td>Rest (flour+water)</td>
+</tr>
+<tr class="odd">
+<td rowspan="2"><br>
+<strong>Actual</strong><br>
+<br>
+</td>
+<td>Rice</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Rest (flour+water)</td>
+<td>1</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Table 6: One-vs-rest matrix for flour</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 27%">
+<col style="width: 15%">
+<col style="width: 27%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td><br>
+</td>
+<td colspan="2"><br>
+Predicted<br>
+<br>
+</td>
+</tr>
+<tr class="even">
+<td><br>
+</td>
+<td><br>
+</td>
+<td>Flour</td>
+<td>Rest (rice+water)</td>
+</tr>
+<tr class="odd">
+<td rowspan="2"><br>
+<strong>Actual</strong><br>
+<br>
+</td>
+<td>Flour</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Rest (rice+water)</td>
+<td>3</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>Table 7: One-vs-rest matrix for water</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 27%">
+<col style="width: 15%">
+<col style="width: 27%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td><br>
+</td>
+<td colspan="2"><br>
+Predicted<br>
+<br>
+</td>
+</tr>
+<tr class="even">
+<td><br>
+</td>
+<td><br>
+</td>
+<td>Water</td>
+<td>Rest (rice+flour)</td>
+</tr>
+<tr class="odd">
+<td rowspan="2"><br>
+<strong>Actual</strong><br>
+<br>
+</td>
+<td>Water</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Rest (rice+flour)</td>
+<td>0</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>From the confusion matrix we can get the true positives, false positives and false negatives. We insert these into the following table and calculate precision, recall and f1 score. If we want to calculate the f1 macro score, this is the average of the individual f1 scores.</p>
+<p>Table 8: Summary matrix by class</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 19%">
+<col style="width: 16%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td>TP</td>
+<td>FP</td>
+<td>FN</td>
+<td>TN</td>
+<td>Precision</td>
+<td>Recall</td>
+<td>F1 score</td>
+<td>F1 macro</td>
+</tr>
+<tr class="even">
+<td>Rice</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>2/(2+1) = 0.67</td>
+<td>2/(2+1)= 0.67</td>
+<td>2*(0.67*0.67)/(0.67+0.67)= 0.67</td>
+<td rowspan="3">(0.67+0.4+0.67)/3= <strong>0.58</strong></td>
+</tr>
+<tr class="odd">
+<td>Flour</td>
+<td>1</td>
+<td>3</td>
+<td>0</td>
+<td>5</td>
+<td>1/(1+3) = 0.25</td>
+<td>1/(1+0)= 1</td>
+<td>2*(0.25*1)/(0.25+1)= 0.4</td>
+</tr>
+<tr class="even">
+<td>Water</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+<td>3/(3+0) = 1</td>
+<td>3/(3+3) = 0.5</td>
+<td>2*(1*0.5)/(1+0.5)=0.67</td>
+</tr>
+<tr class="odd">
+<td colspan="9"><br>
+</td>
+</tr>
+<tr class="even">
+<td>All</td>
+<td>6</td>
+<td>4</td>
+<td>4</td>
+<td>12</td>
+<td>6/10=0.6</td>
+<td>6/10 = 0.6</td>
+<td><p><strong>F1 micro</strong></p>
+<p>2*(0.6*0.6)/(0.6+0.6)=<strong>0.6</strong></p></td>
+<td><br>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Example 3:</em></strong> Consider a more complex scernario of unbalanced clases. The class water, with 26 items, is significantly larger than rice (3 items) and flour (2 items). In analogy to above, the F1 macros score and F1 micro score are now calculated.</p>
+<p>Table 9: Overall confusion matrix (imbalanced scenario)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td><br>
+</td>
+<td colspan="3">predicted</td>
+</tr>
+<tr class="even">
+<td><br>
+</td>
+<td><br>
+</td>
+<td>rice</td>
+<td>flour</td>
+<td>water</td>
+</tr>
+<tr class="odd">
+<td rowspan="3"><strong>actual</strong></td>
+<td>rice</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>flour</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>water</td>
+<td>1</td>
+<td>5</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<p>Table 10: Summary matrix by class (imbalanced scenario)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 20%">
+<col style="width: 16%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><br>
+</td>
+<td>TP</td>
+<td>FP</td>
+<td>FN</td>
+<td>TN</td>
+<td>Precision</td>
+<td>Recall</td>
+<td>F1 score</td>
+<td>F1 macro</td>
+</tr>
+<tr class="even">
+<td>Rice</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>21</td>
+<td>2/(2+1) = 0.67</td>
+<td>2/(2+1)= 0.67</td>
+<td>2*(0.67*0.67)/(0.67+0.67)= 0.67</td>
+<td rowspan="3">(0.67+0.22+0.85)/3= <strong>0.58</strong></td>
+</tr>
+<tr class="odd">
+<td>Flour</td>
+<td>1</td>
+<td>6</td>
+<td>1</td>
+<td>22</td>
+<td>1/(1+6) = 0.14</td>
+<td>1/(1+1)= 0.5</td>
+<td>2*(0.14*0.5)/(0.14+0.5)= 0.22</td>
+</tr>
+<tr class="even">
+<td>Water</td>
+<td>20</td>
+<td>1</td>
+<td>6</td>
+<td>3</td>
+<td>20/(20+1) = 0.95</td>
+<td>20/(20+6) = 0.77</td>
+<td>2*(0.95*0.77)/(0.95+0.77)=0.85</td>
+</tr>
+<tr class="odd">
+<td colspan="9"><br>
+</td>
+</tr>
+<tr class="even">
+<td>All</td>
+<td>23</td>
+<td>8</td>
+<td>8</td>
+<td>46</td>
+<td>23/31=0.74</td>
+<td>23/31 = 0.74</td>
+<td><p><strong>F1 micro</strong></p>
+<p>2*(0.74*0.74)/(0.74+0.74)=<strong>0.74</strong></p></td>
+<td><br>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Here one can clearly see that due to the unequal class distribution, the F1 micro and F1 macro differ significantly more from each other than was the case in the above example. If one calculates an index for individual COICOP classes, however, one cannot say that an index with a larger class size is more important than an index with a smaller class size.</p>
+</section>
+</section>
+<section id="Howtoevaluateclassificationmethods-Advancedmethods" class="level1 auto-cursor-target">
+<h1 class="auto-cursor-target">"Advanced methods"</h1>
+<p><strong>F-beta</strong></p>
+<p>A more generalized version of the F1 score defined above is the F-beta score:</p>
+<p><span class="math inline">\(\text{f}_\beta = (1+ \beta^2)* \left( \frac{\text{precision}* \text{recall}}{\beta^2 * \text{precision} + \text{recall}} &nbsp;\right)\)</span></p>
+<p>Depending on the value for beta, precision or recall has a stronger influence on f-beta. A value smaller than one means, that there is more weight on precision. A value bigger than one means more weight on recall.&nbsp;</p>
+<p>In the multidimensional case, there is another component that plays a role. We defined the F1 macro above, in which the individual F1 scores are determined using a simple average. An alternative here is to use a weighted average. In the case of our classification according to COICOP, for example, it makes sense to use the COICOP weighting scheme as the weight. In this way, more influential COICOPs are weighted higher, regardless of the class size. Precision has been seen as more important for the price statistics applications as it helps mitigate misclassification bias in the price index calculated after classification by making sure there are less false positives in the category (3, 5).&nbsp;</p>
+<p><strong>ROC curve</strong></p>
+<p>Another option NSOs cold leverage is the <a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">ROC curve</a>. An ROC curve can be seen as a visual representation of the tradeoff between the costs of true positive and false positive (4). The isolines each represent different parameter combinations with the same accuracy. If the ROC curve is close to the diagonal, this indicates that the classifier is not better than one random guess. A classifier’s ROC curve is optimal when it rises sharply along the true positive axis before increasing along the false positive axis. As ROC curves can be swept out by manipulating the balance of training samples for each class, NSOs can apply <a href="./working-with-class-imbalance.html">sampling strategies</a> to try to select a desired classifier. ROC curves can be leveraged by NSOs on a multiclass use case by&nbsp;<a href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html">applying one vs one or one vs rest evaluation approach</a>.&nbsp;</p>
+<hr>
+</section>
+<section id="Howtoevaluateclassificationmethods-References" class="level1">
+<h1>References</h1>
+<p>(1) Rowland, E. (2019) Guidelines for selecting metrics to evaluate classification in price statistics production pipelines. Presented at May 17, 2019 Advistory Panel on Consumer Prices - Technical (UK Statistics Authority) <a href="https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2019/08/APCP-T1910-Classification-metrics-guidelines.pdf" class="uri">https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2019/08/APCP-T1910-Classification-metrics-guidelines.pdf</a></p>
+<p>(2) Goussev, S., Spackman, W., (2021) Machine Learning Classifier Evaluation Criteria: application to price statistics. <em>Proceedings of Statistics Canada Symposium</em> 2021. <a href="https://www150.statcan.gc.ca/n1/en/pub/11-522-x/2021001/article/00012-eng.pdf?st=76a0gpZx" class="uri">https://www150.statcan.gc.ca/n1/en/pub/11-522-x/2021001/article/00012-eng.pdf?st=76a0gpZx</a></p>
+<p>(3) UK Statsitics Authority (2023) Clothing classification and Product Grouping. <em>Paper published as par of the October 27th 2023 Advisory Panel on Consumer Prices - Technical</em>. <a href="https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2023/12/Redacted_APCP-T2310_Clothing_Classification_and_Product_Grouping.pdf" class="uri">https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2023/12/Redacted_APCP-T2310_Clothing_Classification_and_Product_Grouping.pdf</a></p>
+<p>(4) Chawla, N. V., Bowyer, K. W., Hall, L. O., Kegelmeyer, W.P. (2002)&nbsp;SMOTE: Synthetic Minority Over-sampling Technique.&nbsp;<em>Journal of artificial intelligence research</em>&nbsp;16&nbsp;<a href="https://www.jair.org/index.php/jair/article/view/10302" class="uri">https://www.jair.org/index.php/jair/article/view/10302</a></p>
+<p>(5) Spackman, W., Goussev, S., Wall, M., DeVilliers, G., Chiumera, D. (2024)&nbsp;"Machine Learning is (not!) all you need: Impact of classification-induced error on price indices using scanner data" <em>Paper presented at the 18<sup>th</sup>&nbsp;Meeting of the Ottawa Group.</em> <a href="https://stats.unece.org/ottawagroup/download/Papers-session-8-pres-1-spackman-et-al-2024-misclassification-is-not-all-you-need.pdf" class="uri">https://stats.unece.org/ottawagroup/download/Papers-session-8-pres-1-spackman-et-al-2024-misclassification-is-not-all-you-need.pdf</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/un-task-team-for-scanner-data\.github\.io\/cpi-new-data-sources-handbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./method-4-machine-learning-classification-method.html" class="pagination-link" aria-label="Method 4: Machine Learning classification method">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Method 4: Machine Learning classification method</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./working-with-class-imbalance.html" class="pagination-link" aria-label="Working with class imbalance">
+        <span class="nav-page-text">Working with class imbalance</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/edit/main/how-to-evaluate-classification-methods.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

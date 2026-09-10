@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Method 4: Machine Learning classification method – Handbook on utilising new data sources in the production of consumer price statistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./how-to-evaluate-classification-methods.html" rel="next">
+<link href="./method-3-recommendation-machine-assisted-classification.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a3ad042fa44d12ca07b890c34e9cb5b6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-27b9f889d6e109d015426ac4f274b7e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">New data sources in consumer price statistics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics"> <i class="bi bi-globe" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml"> <i class="bi bi-person-raised-hand" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./classification.html">Classification</a></li><li class="breadcrumb-item"><a href="./method-4-machine-learning-classification-method.html">Method 4: Machine Learning classification method</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handbook on utilising new data sources in the production of consumer price statistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handbook on utilising new data sources in the production of consumer price statistics</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./initial-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial considerations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview-of-alternative-data-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview of alternative data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./why-use-alternative-data-sources-strategic-motivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why use alternative data sources? Strategic motivations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./key-challenges-and-trade-offs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key challenges and trade-offs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./key-decision-points.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key decision points</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resource-implications-and-organisational-readiness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resource implications and organisational readiness</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cpi-production-system-requirements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CPI production system requirements</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-assurance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality assurance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data-selection-and-acquisition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data selection and acquisition</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selection-of-categories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selection of categories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./selection-of-retailers-for-alternative-data-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Selection of retailers for alternative data sources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scanner data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./initial-steps-in-the-acquisition-of-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Initial steps in the acquisition of scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-requirements-specification-for-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data requirements specification for scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-sharing-agreements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data sharing agreements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./alternative-approaches-to-acquiring-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Alternative approaches to acquiring scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./monitoring-validation-and-plausibility-checks-for-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monitoring, validation and plausibility checks for scanner data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web scraping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./different-approaches-to-accessing-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Different approaches to accessing web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strategies-available-for-in-house-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategies available for in-house web scraping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-requirements-specification-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data requirements specification for web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./monitoring-validation-and-plausibility-checks-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monitoring, validation and plausibility checks for web scraped data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./common-technical-problems-for-in-house-web-scraping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Common technical problems for in-house web scraping</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-file-structures-for-web-scraped-and-scanner-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example file structures for web scraped and scanner data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./collection-of-data-via-apis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collection of data via APIs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dealing-with-unexpected-data-gaps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dealing with unexpected data gaps</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./preparation-of-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preparation of data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./product-sampling-for-price-index-calculation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product sampling for price index calculation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./standardising-the-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Standardising the data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aggregation-across-time-and-outlets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aggregation across time and outlets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./identifying-unique-products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Identifying unique products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./treatment-of-discounts-and-refunds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treatment of discounts and refunds</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./pre-conditions-and-deciding-on-appropriate-classification-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-conditions and deciding on appropriate classification methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./note-on-variables-applicable-for-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Note on variables applicable for classification</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 0: Manual labelling or validation of predicted labels</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-1-attribute-based-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 1: Attribute-based classification method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-2-pattern-matching-classification-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 2: Pattern matching classification method</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./method-3-recommendation-machine-assisted-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method 3: Recommendation / Machine-assisted classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./method-4-machine-learning-classification-method.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Method 4: Machine Learning classification method</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./how-to-evaluate-classification-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to evaluate classification methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./working-with-class-imbalance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with class imbalance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./operational-best-practices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Operational best practices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./designing-the-classification-step-operational-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Designing the classification step: operational considerations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./data-filtering-and-missing-prices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data filtering and missing prices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./outlier-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Outlier filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dumping-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dumping filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./low-sales-filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Low sales filter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./current-practice-of-data-filtering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Current practice of data filtering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./treatment-of-missing-prices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treatment of missing prices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Price index methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./bilateral-price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bilateral price index methods</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example-of-chain-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example of chain drift</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./multilateral-price-index-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multilateral price index methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./extension-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extension methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./decomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decomposition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./choosing-an-index-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing an index method</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods-for-when-expenditure-data-are-available.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for when expenditure data are available</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./methods-for-when-expenditure-data-are-not-available.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for when expenditure data are not available</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deriving-proxy-weights-for-web-scraped-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deriving proxy weights for web scraped data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aggregation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aggregation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./other-uses-of-alternative-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other-uses-of-alternative-data-beyond-cpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data beyond CPI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./other-uses-of-alternative-data-within-cpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other uses of alternative data within CPI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./other-considerations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other considerations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./seasonal-products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Seasonal products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-change-and-hedonic-estimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality change and hedonic estimation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implementation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./training-material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training material</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#Method4MachineLearningclassificationmethod-WhentouseMLforclassification" id="toc-Method4MachineLearningclassificationmethod-WhentouseMLforclassification" class="nav-link active" data-scroll-target="#Method4MachineLearningclassificationmethod-WhentouseMLforclassification">When to use ML for classification</a></li>
+  <li><a href="#Method4MachineLearningclassificationmethod-KeyaspectsindevelopingaMLclassifier" id="toc-Method4MachineLearningclassificationmethod-KeyaspectsindevelopingaMLclassifier" class="nav-link" data-scroll-target="#Method4MachineLearningclassificationmethod-KeyaspectsindevelopingaMLclassifier">Key aspects in developing a ML classifier</a>
+  <ul class="collapse">
+  <li><a href="#Method4MachineLearningclassificationmethod-Preparingthedata" id="toc-Method4MachineLearningclassificationmethod-Preparingthedata" class="nav-link" data-scroll-target="#Method4MachineLearningclassificationmethod-Preparingthedata">Preparing the data</a></li>
+  <li><a href="#Method4MachineLearningclassificationmethod-Datapreprocessing" id="toc-Method4MachineLearningclassificationmethod-Datapreprocessing" class="nav-link" data-scroll-target="#Method4MachineLearningclassificationmethod-Datapreprocessing">Data preprocessing</a></li>
+  <li><a href="#Method4MachineLearningclassificationmethod-Modelchoicemodelevaluationandwhatisgoodenough" id="toc-Method4MachineLearningclassificationmethod-Modelchoicemodelevaluationandwhatisgoodenough" class="nav-link" data-scroll-target="#Method4MachineLearningclassificationmethod-Modelchoicemodelevaluationandwhatisgoodenough">Model choice, model evaluation and what is good enough</a></li>
+  <li><a href="#Method4MachineLearningclassificationmethod-Designofthevalidationprocess" id="toc-Method4MachineLearningclassificationmethod-Designofthevalidationprocess" class="nav-link" data-scroll-target="#Method4MachineLearningclassificationmethod-Designofthevalidationprocess">Design of the validation process</a></li>
+  <li><a href="#Method4MachineLearningclassificationmethod-Retrainingmodelstodealwithmodeldecay" id="toc-Method4MachineLearningclassificationmethod-Retrainingmodelstodealwithmodeldecay" class="nav-link" data-scroll-target="#Method4MachineLearningclassificationmethod-Retrainingmodelstodealwithmodeldecay">Retraining models to deal with model decay</a></li>
+  <li><a href="#Method4MachineLearningclassificationmethod-OperationalizinganMLmodel" id="toc-Method4MachineLearningclassificationmethod-OperationalizinganMLmodel" class="nav-link" data-scroll-target="#Method4MachineLearningclassificationmethod-OperationalizinganMLmodel">Operationalizing an ML model</a></li>
+  </ul></li>
+  <li><a href="#Method4MachineLearningclassificationmethod-References" id="toc-Method4MachineLearningclassificationmethod-References" class="nav-link" data-scroll-target="#Method4MachineLearningclassificationmethod-References">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/edit/main/method-4-machine-learning-classification-method.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./classification.html">Classification</a></li><li class="breadcrumb-item"><a href="./method-4-machine-learning-classification-method.html">Method 4: Machine Learning classification method</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Method 4: Machine Learning classification method</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Machine Learning (ML) can be a stable solution for classifying unique products when an NSO starts to use new data sources at scale. NSOs typically use supervised ML methods whereby a manually annotated dataset is used to train a classifier to predict all new unique products as part of recurrent classification.&nbsp;ML models can make mistakes however, thus NSOs that apply ML at scale also need to set up a manual validation process where some of the new products are validated after the ML model classifies them in order to help track model performance, mitigate mistakes for price index methods downstream, as well as to create additional training datasets to retrain models to help keep their performance optimal. The complexity of setting all this up is not trivial, the technical skillset investments necessary to properly operationalize and maintain ML means that NSOs should apply ML when the scale and data quality requires it.</p>
+<p>Two articles are also included in this section:</p>
+<ul>
+<li><a href="./how-to-evaluate-classification-methods.html">How to evaluate classification methods</a> — There are numerous metrics that can be tracked and applied when evaluating how well a classifier performs.&nbsp;</li>
+<li><a href="./working-with-class-imbalance.html">Working with class imbalance</a> — Datasets NSOs need to classify are typically not equally distributed, as some classes have many records (i.e.&nbsp;unique products) while others have only a few. This requires additional steps to be taken when designing and testing classifiers.&nbsp;</li>
+</ul>
+<p><strong>Page information</strong></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Version</td>
+<td>v1</td>
+</tr>
+<tr class="even">
+<td>Last updated on</td>
+<td>2025-04-28</td>
+</tr>
+<tr class="odd">
+<td>Summary of changes</td>
+<td>Initial publication version</td>
+</tr>
+<tr class="even">
+<td>Page history</td>
+<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281185">See here</a></td>
+</tr>
+</tbody>
+</table>
+<section id="Method4MachineLearningclassificationmethod-WhentouseMLforclassification" class="level1">
+<h1>When to use ML for classification</h1>
+<p>When NSOs first approach classification (typically during <a href="./pre-conditions-and-deciding-on-appropriate-classification-methods.html">initial classification of a research dataset</a>), an assessment should be performed to understand the scale of the task at hand (as only new unique products need to be classified once a model is deployed) and the complexity of the data. Firstly, ML can be useful if the data is not highly structured.&nbsp;In contrast to traditional rule-based systems that can be developed and maintained with some manual effort (although with some challenge at scale), ML models learn patterns from data autonomously, allowing NSOs to classify data in more stable and scalable fashion. In other words, if the attributes in the data that are naturally structured (such as retailer categories) are not very stable and cannot be used without considerable effort (i.e.&nbsp;<a href="./method-1-attribute-based-classification-method.html">Methods 1</a> or <a href="./method-2-pattern-matching-classification-method.html">2</a> are not easily applicable), ML may be able to learn the patterns and classify more efficiently. Secondly, the scale of the classification task should be sufficiently high. If classification (especially on a recurrent basis or every month) can be done manually by annotators (i.e.&nbsp;<a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html">Methods 0</a> and <a href="./method-3-recommendation-machine-assisted-classification.html">3</a>), ML may not yet be an appropriate tool.</p>
+<p>There are operational considerations important to plan for if an NSO wishes to apply ML for classification. Notably, ML models still make mistakes, and their performance will not persist. While NSOs classify unique products, it is the price of the products every month that are used to feed price index methods. As ML models will not be perfect, it is crucial to ensure that misclassification that occurs is mitigated so that the prices integrated into a price index represent the correct category. Models also may degrade over time as they initially learn from a&nbsp;specific&nbsp;distribution of data, their performance will persist if the distribution does not shift. These, among other impacts require NSOs to invest in robust operational ML processes to validate some unique records after the ML model predicts what category each product is, retrain models periodically, as well as a host of other technical topics. This article covers how to approach these considerations in more detail below.</p>
+<p>NSOs should thus carefully consider the technical and operational complexity prior to adopting ML in production. For instance, the specialized and focused resources required for the task, as well as the technical infrastructure needed (for instance, GitLab/GitHub and other tools available for efficient ML production projects) should be assessed ahead of time. NSOs who do shift towards ML have done so gradually, with initial focus on a smaller use case that is slowly expanded and capabilities in operational best practices or staff skills are developed. NSOs should look to adopt ML as a <a href="./method-3-recommendation-machine-assisted-classification.html">recommendation method (i.e.&nbsp;method 3)</a> and thus maintain full manual validation as a first step before slowly transitioning to lower levels of validation thresholds and automated model monitoring and retraining. The trial for this phase and transition to less than full validation can be done at the appropriate pace, including the scale of classification necessary, the skills developed, and the maturity of the operational process.&nbsp;</p>
+</section>
+<section id="Method4MachineLearningclassificationmethod-KeyaspectsindevelopingaMLclassifier" class="level1">
+<h1>Key aspects in developing a ML classifier</h1>
+<p>The below sections outline key aspects specifically applicable to price statistics use case with alternative data sources (such as scanner and web scraped data). These aspects build on wider literature on ML and aim not to repeat them, simply summarize their application to classification in price statistics. See (1) for a list of useful resources.&nbsp;</p>
+<section id="Method4MachineLearningclassificationmethod-Preparingthedata" class="level2">
+<h2 class="anchored" data-anchor-id="Method4MachineLearningclassificationmethod-Preparingthedata">Preparing the data</h2>
+<p>The first step in training a supervised ML model is to assemble a representative dataset. This is sampled from the data that the NSO wishes to classify, such as a year worth of unique products of a scanner dataset. This includes creating a representative dataset that can be used to train (and tune through validation process) a model, as well a holdout test dataset on which to test that the classifier performs well. All datasets also need to have a correct label already provided, hence the NSO will need to manually annotate the data (i.e.&nbsp;using <a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html">Method 0</a>). Making sure that annotation is done to a high quality will pay dividends as mistakes in training or holdout datasets can impact model quality. If a dataset on which a model is being trained on (such as during initial classification) is large, a sample of all unique products can be taken and labelled. This sample should be representative of what the model will see in the out-of-sample data (i.e.&nbsp;in production). For instance, an NSO developing a price index method on an initial dataset of 13 months of data can sample the full 13 months, annotate all the records, assign the 13th month as the hold out dataset, and use the initial 12 months for training and validation. If the dataset is found to be imbalanced after annotation, <a href="./working-with-class-imbalance.html">approaches to mitigate class imbalance</a> may be applied on the training dataset.</p>
+<p>In terms of variables that are relevant for ML models, all variables <a href="./note-on-variables-applicable-for-classification.html">typically availible from alternative datasets</a> can be used. In practice however, the text data present in product descriptions (such as product name or its longer form description), retailer categories for the product, and product metadata (such as product size or brand) are most applicable. Depending on the quality of the text data in these variables, NSOs may wish to also mine information from unique product codes such as GTINs or UPCs. See Figure 1 for a visual on how a UPC can be mined to extract manufacturer and product information if product descriptions are imperfect.</p>
+<p>Figure 1: Overview of mining UPC to get information from a record in Dominik's Finer Foods dataset (example taken from (2), see (3) for more on the dataset).</p>
+<p><img src="images/method-4-machine-learning-classification-method/337281187.png" class="img-fluid"></p>
+</section>
+<section id="Method4MachineLearningclassificationmethod-Datapreprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="Method4MachineLearningclassificationmethod-Datapreprocessing">Data preprocessing</h2>
+<p>Upon selecting the dataset, and splitting it appropriately so as to not cause data leakage, NSOs need to preprocess data to convert it into numerical format necessary for ML models. Depending on the quality of the natural language present in the selected variables, this may leverage traditional Natural Language Processing (NLP) techniques or more nuanced feature engineering methods. For instance, if natural language is available for product descriptions (typical of web scraped data where fuller and more descriptive text descriptions may be captured) NLP approaches such as stop-word removal, stemming/lemmatisation, tokenization are commonly applied (see (4) for an overview). In this case, NSOs may concatenate all the selected variables together into one long string and apply these NLP techniques. All approaches will need to be tuned to select the preprocessing most applicable to the data. For instance, the stop-word step may need to be tuned to not drop keywords that are relevant for classification if they represent information relevant to classification. If natural language is limited (which can be typical of more traditional scanner data, as is visible in Dominick's finer food data), more nuanced techniques such as&nbsp;extracting manufacturers and products may be required (as shown in Figure 1 above). In either case, specific n-grams can be created from the input descriptions (for example whole words, letters, or a set of them together, such as "juice" can be converted into "juice" (whole word), "juic", "jui", "jce", "ju", "jc", etc).&nbsp;</p>
+<p>Following this preprocessing, the data needs to be vectorized to turn the data into a form ML models accept. Several approaches can be used, ranging from simpler methods such as bag-of-words or term-frequency inverse-document-frequency (TF-IDF), to pretrained embeddings such as Word2Vec, Glove or FastText. There is no consensus among NSO research on most appropriate approach, hence a method should be selected that is most applicable to the use case.&nbsp;</p>
+</section>
+<section id="Method4MachineLearningclassificationmethod-Modelchoicemodelevaluationandwhatisgoodenough" class="level2">
+<h2 class="anchored" data-anchor-id="Method4MachineLearningclassificationmethod-Modelchoicemodelevaluationandwhatisgoodenough">Model choice, model evaluation and what is good enough</h2>
+<p>Several supervised ML models can be used. Many NSOs have been able to obtain good performance with a simpler non-linear model types such as Support Vector Machines (5) and XGboost (6, 7), however there is no concensus on the topic and the decision should stay with the NSO depending on their specific case and the characteristics of the data being classified. NSOs can try other approaches if they see fit, for instanace, some research has also been done on semi-supervised methods (8). The main objective is to evaluate the model that is trained and tuned on a hold-out test set that represents an out-of-sample example once the model is running in production. NSOs typically use&nbsp;<a href="./how-to-evaluate-classification-methods.html">several evaluation metrics</a> to support their assessment.&nbsp;</p>
+<p>The key objective in training and selecting an appropriate ML model is to minimize the amount of misclassification. As ML models are typically used at scale and potentially for several datatasets at once, they typically classify products to one of several categories. While a few of these categories may not be used for production needs (such as for <a href="./designing-the-classification-step-operational-considerations.html">catch-all categories</a>), the majority of the categories will feed price indices. As misclassification has been shown to cause both bias and variance in price indices (9, 5, 6), the goal is thus to select a model that will minimize the amount of validation that is needed to correct these misclassifications. NSOs can also minimize the amount of validation necessary by training performant classifiers and optimizing them effectively (for instance prioritizing precision over recall in the evaluation of models, which has been found to be more applicable, see 9 and 10).</p>
+<p>MLOps: additional requirements when applying ML</p>
+<p>Developing a high performing ML classifier is the first step before designing the operational process to deploy and maintain ML in production. Originally raised by Sculley et al (2015), efficient operationalization of ML (also know as ML Operations or MLOps) requires a large number of additional aspects (see Figure 2 for visual). In a nutshell, MLOps is a set of best practices to build transparency, reproducibility, rigor, scalability and efficiency - when applying ML for production use cases. MLOps literature has grown and a large amount of guides are available to provide NSOs with training on the topic (see guides, such as by&nbsp;<a href="https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning">Google</a>, books on the topic (14), and courses (15), and a recent summary applying MLOps to price statistics by Ritter et al (2024)). The below sections outline the key aspects from a conceptual point of view, with additional technical considerations summarized in Desinging the classification step: technical and reproducibility considerations (forthcoming).</p>
+<p>Figure 2: Elements of ML operations systems, as summarized by <a href="https://www.statcan.gc.ca/en/data-science/network/high-level-mlops-practice">Ritter et al (2024)</a>.</p>
+<p><img src="https://www.statcan.gc.ca/sites/default/files/images/2024-05/dsn-high-level-mlops-practice-02-eng.png" class="img-fluid"></p>
+</section>
+<section id="Method4MachineLearningclassificationmethod-Designofthevalidationprocess" class="level2">
+<h2 class="anchored" data-anchor-id="Method4MachineLearningclassificationmethod-Designofthevalidationprocess">Design of the validation process</h2>
+<p>As ML models make mistakes and misclassification can cause both bias and variance in price index methods applied on the data, it is necessary to validate a proportion of the unique products once a model is deployed into production. If no validation were to happen, several consequences would occur over time. Firstly, NSOs would not know how much misclassfication bias or variance is entering their elementary price indices. Secondly, the NSOs would not know how performant their model was and if it was degrading over time and if it needed to be retrained (more on model retraining below). Thus it is key for ML methods specifically, to ensure that there is a validation process on a proportion of records after they are classified (see&nbsp;<a href="./designing-the-classification-step-operational-considerations.html">operational considerations section</a> for more detail on the overall design). NSOs can start with a strategy of validating all new classified products and scale down to lower proportions as the maturity of the operational process improves and measurement error is decreased. It is not recommended to ever eliminate validation due to inevitable data and concept drift in production settings.</p>
+<p>How NSOs should flag and validate (<a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html">manually</a>) a set of products is a topic of ongoing research. Notable methods include randomly (such as by stratified random sampling) in order to create a dataset that is representative and can objectively summarize ML model performance every single period. Other approaches are more effective for correcting measurement error in calculated indices. A notable method applicable to scanner data is focusing on&nbsp;the most economically important products in each category (such as by applying the cut-off-sample approach on turnover of the product) has been shown as applicable to scanner data by Spackman et al (2024), as is shown in Figure 3. Other notable methods include using confidence of the model to direct annotation resources to products the model is least confident in. This approach however is not perfect as the correlation between model confidence and true likelihood of being incorrect is not perfect (see Angelopoulos et al (2020) for more info). Overall, it is best to flag records both randomly to understand objectively what model performance is, as well as in a statistically biased fashion to minimize measurement error. Several methods were evaluated and an approach NSOs could evaluate was recently proposed by Spackman et al (2025).</p>
+<p>Figure 3: Demonstration of reduction of bias on 4 product categories by applying cut-off sampling based on sales on Dominiks Finer Foods scanner data. Taken from Spackman et al (2024).</p>
+<p><img src="images/method-4-machine-learning-classification-method/337281195.png" class="img-fluid"></p>
+</section>
+<section id="Method4MachineLearningclassificationmethod-Retrainingmodelstodealwithmodeldecay" class="level2">
+<h2 class="anchored" data-anchor-id="Method4MachineLearningclassificationmethod-Retrainingmodelstodealwithmodeldecay">Retraining models to deal with model decay</h2>
+<p>ML models are typically quite effective when applied out-of-sample, but rarely stay effective when they are used out-of-distribution. Thus if the distribution of data for new unique products a ML model is classifying shifts, then the model will no longer be as performant as originally. For instance, if the data distribution shifts and there is a change in the decision boundary between classes, models will become less accurate and there will likely be more misclassification between these classes.&nbsp; This has been shown to apply in the case of price statistics with alternative data (5, 12), however unlike simpler methods (such as <a href="./method-1-attribute-based-classification-method.html">attribute based methods</a>, which can fail very suddenly, such as if a retailer category changes), this can happen gradually, hence NSOs should set up processes to be vigilant of this risk. Several methods are availible for NSOs: an approach that preceeds regular classification and one that follows soon after. The former is to statistically evaluate whether there is a shift in the data distribution on each new dataset prior to classifying it, for instance with a <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence test</a>. The latter involves classifying new unique products and then evaluating model performance after a subset was validated (using the validation process outlined above). As production timelines are likely to be tight, performance monitoring provides NSOs considerable actionable information. On the one hand, it will show how well the ML model actually performed and how much manual validation may now be necessary. It will also result in a small subset of annotated data that can be used to tune the model (or allocate additional resources to more sampling). Statistical tests may also be valuable, depending on how the NSO designed its validation process. As most unique products are classified in the month they are first detected but they do not enter price index methods, NSOs may be validating them only in the subsequent month. Thus statistical tests may provide an early warning signal to allocate resources earlier than performance based approaches would.&nbsp;</p>
+<p>Once model decay is detected and enough new data is labelled, a ML model can be retrained and deployed to replace the degraded model. While some initial experiments have shown that retraining on a quarterly basis (every 3 months) is sufficient (see Figure 4 for a visual), NSOs should evaluate their data and the amount of decay they see in the design of their ML Operations (MLOps) system.&nbsp;&nbsp;</p>
+<p>Figure 4: Experiment showing quarterly retraining as quite efficient. Taken from Spackman et al (2023).</p>
+<p><img src="images/method-4-machine-learning-classification-method/337281186.png" class="img-fluid"></p>
+</section>
+<section id="Method4MachineLearningclassificationmethod-OperationalizinganMLmodel" class="level2">
+<h2 class="anchored" data-anchor-id="Method4MachineLearningclassificationmethod-OperationalizinganMLmodel">Operationalizing an ML model</h2>
+<p>Technically, ML models require resources to support them. Technically, it is recommended that they operationalized as <a href="https://nhsdigital.github.io/rap-community-of-practice/introduction_to_RAP/what_is_RAP/">Reproducible Analytical Pipelines (RAPs)</a>; however, compared to simpler methods such as Method 1 or 2, ML models introduce additional <a href="./designing-the-classification-step-operational-considerations.html">operational</a>&nbsp;and technical considerations (forthcoming), including the need for tools like MLflow to track provenance across datasets, models, and other artifacts. While some NSOs have developed cloud systems to operationalize their MLOps system (see 12 for an Azure MLOps system overview), NSOs can tune the design as appropriate for their use case.&nbsp;</p>
+<hr>
+</section>
+</section>
+<section id="Method4MachineLearningclassificationmethod-References" class="level1">
+<h1>References</h1>
+<p>(1) Notable resources include (but are not limited to):</p>
+<ul>
+<li>HLG-MOS (2020) Report on Classification and Coding: <a href="https://statswiki.unece.org/spaces/ML/pages/285216478/WP1+-+Theme+1+Coding+and+Classification+Report" class="uri">https://statswiki.unece.org/spaces/ML/pages/285216478/WP1+-+Theme+1+Coding+and+Classification+Report</a></li>
+<li>Google crash course on Classficaion: <a href="https://developers.google.com/machine-learning/crash-course/classification" class="uri">https://developers.google.com/machine-learning/crash-course/classification</a></li>
+<li>Google Guide on Text Classification: <a href="https://developers.google.com/machine-learning/guides/text-classification" class="uri">https://developers.google.com/machine-learning/guides/text-classification</a></li>
+<li>James et al (2013 and 2023) An Introduction to Staistical Learning: <a href="https://www.statlearning.com/" class="uri">https://www.statlearning.com/</a></li>
+<li>Goodfellow et al (2016) Deep Learning: <a href="https://www.deeplearningbook.org/" class="uri">https://www.deeplearningbook.org/</a></li>
+<li>Huyen (2022) Designing ML Systems: An iterative process for Production-ready applications: <a href="https://www.amazon.ca/Designing-Machine-Learning-Systems-Production-Ready/dp/1098107969" class="uri">https://www.amazon.ca/Designing-Machine-Learning-Systems-Production-Ready/dp/1098107969</a></li>
+</ul>
+<p>(2) UN Task Team, Workstream 2 (2023) Classifying Alternative data for consumer prices statistics. <em>Presented at 2023 Meeting of the Group of Experts on Consumer Price Indices</em>: <a href="https://unece.org/sites/default/files/2023-06/Workshop%20II%20Denmark.pdf" class="uri">https://unece.org/sites/default/files/2023-06/Workshop%20II%20Denmark.pdf</a></p>
+<p>(3) Mehrhoff, J. (2018) Promoting the use of a publicly availible scanner data set in price index research and for capacity building. Luxembourg: <a href="https://github.com/eurostat/dff" class="uri">https://github.com/eurostat/dff</a></p>
+<p>(4)&nbsp;HLG-MOS (2020) Report on Classification and Coding:&nbsp;<a href="https://statswiki.unece.org/spaces/ML/pages/285216478/WP1+-+Theme+1+Coding+and+Classification+Report" class="uri">https://statswiki.unece.org/spaces/ML/pages/285216478/WP1+-+Theme+1+Coding+and+Classification+Report</a></p>
+<p>(5) Spackman, W., DeVilliers, G., Ritter, C., Goussev, S. (2023)&nbsp; Identifying and mitigating misclassification: A case study of the Machine Learning lifecycle in price indices with web-scraped clothing. <em>Presented at the 2023 CPI Expert Group</em>. <a href="https://unece.org/sites/default/files/2023-05/2b.3%20Identifying%20and%20mitigating%20misclassification_Canada.pdf" class="uri">https://unece.org/sites/default/files/2023-05/2b.3%20Identifying%20and%20mitigating%20misclassification_Canada.pdf</a></p>
+<p>(6) Greenhough, Liam. 2022. "Modernising the measurement of clothing price indices using web-scraped data: classification and product grouping."&nbsp;<em>17th Meeting of the Ottawa Group.</em>&nbsp;Rome, Italy: <a href="https://stats.unece.org/ottawagroup/download/f645.pdf" class="uri">https://stats.unece.org/ottawagroup/download/f645.pdf</a></p>
+<p>(7) Harms, Alexander, and Siemen Spinder. 2019. "A comprehensive view of machine learning techniques for CPI production." Statistics Netherlands&nbsp;<a href="https://www.cbs.nl/-/media/_pdf/2019/47/machine-learning-for-cpi-production-2019.pdf" class="uri">https://www.cbs.nl/-/media/_pdf/2019/47/machine-learning-for-cpi-production-2019.pdf</a></p>
+<p>(8) Martindale, Hazel, Edward Rowland, Tanya Flower, and Gareth Clews. "Semi-supervised machine learning with word embedding for classification in price statistics."&nbsp;<em>Data &amp; Policy</em>&nbsp;2 (2020): e12.&nbsp;<a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F1FE2D347C28210B7C7D6C59B46D0C8F/S2632324920000139a.pdf/semi-supervised-machine-learning-with-word-embedding-for-classification-in-price-statistics.pdf" class="uri">https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F1FE2D347C28210B7C7D6C59B46D0C8F/S2632324920000139a.pdf/semi-supervised-machine-learning-with-word-embedding-for-classification-in-price-statistics.pdf</a></p>
+<p>(9) Spackman, W., Goussev, S., Wall, M., DeVilliers, G., Chiumera, D. (2024)&nbsp;"Machine Learning is (not!) all you need: Impact of classification-induced error on price indices using scanner data" <em>Paper presented at the 18<sup>th</sup>&nbsp;Meeting of the Ottawa Group.</em> <a href="https://stats.unece.org/ottawagroup/download/Papers-session-8-pres-1-spackman-et-al-2024-misclassification-is-not-all-you-need.pdf" class="uri">https://stats.unece.org/ottawagroup/download/Papers-session-8-pres-1-spackman-et-al-2024-misclassification-is-not-all-you-need.pdf</a></p>
+<p>(10) UK Statsitics Authority (2023) Clothing classification and Product Grouping.&nbsp;<em>Paper published as par of the October 27th 2023 Advisory Panel on Consumer Prices - Technical</em>.&nbsp;<a href="https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2023/12/Redacted_APCP-T2310_Clothing_Classification_and_Product_Grouping.pdf" class="uri">https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2023/12/Redacted_APCP-T2310_Clothing_Classification_and_Product_Grouping.pdf</a></p>
+<p>(11) Angelopoulos, A., Bates, S., Malik, J., &amp; Jordan, M. I. (2020). Uncertainty sets for image classifiers using conformal prediction.&nbsp;<em>arXiv preprint arXiv:2009.14193</em>. <a href="https://arxiv.org/pdf/2009.14193" class="uri">https://arxiv.org/pdf/2009.14193</a></p>
+<p>(12) Ritter et al (2024) Adopting a high Level MLOps Practice for the Production Applications of Machine Learning in the Canadian Consumer Prices Index. <em>Data Science Network for the Federal Public Service (DSNFPS)</em>: <a href="https://www.statcan.gc.ca/en/data-science/network/high-level-mlops-practice" class="uri">https://www.statcan.gc.ca/en/data-science/network/high-level-mlops-practice</a></p>
+<p>(13) Sculley et al (2015) Hidden technical debt in Machine learning systems.&nbsp;NIPS'15: Proceedings of the 29th International Conference on Neural Information Processing Systems - Volume 2: <a href="https://dl.acm.org/doi/10.5555/2969442.2969519" class="uri">https://dl.acm.org/doi/10.5555/2969442.2969519</a></p>
+<p>(14) Huyen (2022) Designing ML Systems: An iterative process for Production-ready applications: <a href="https://www.amazon.ca/Designing-Machine-Learning-Systems-Production-Ready/dp/1098107969" class="uri">https://www.amazon.ca/Designing-Machine-Learning-Systems-Production-Ready/dp/1098107969</a></p>
+<p>(15) Coursera: Machine Learning in prodution: <a href="https://www.coursera.org/learn/introduction-to-machine-learning-in-production" class="uri">https://www.coursera.org/learn/introduction-to-machine-learning-in-production</a></p>
+<p>(16) Spackman, W., Francis, J., Goussev, S. (2025) "Optimal use of machine learning at scale: Designing quality control of machine learning classification and mitigating misclassification error."&nbsp;<em>Presented at the 2025 CPI Expert Group</em>.&nbsp;<a href="https://unece.org/sites/default/files/2025-04/Spackman%20et%20al%20%282025%29%20-%20QC%20for%20mitigating%20misclassification%20bias%20-%20paper.pdf" class="uri">https://unece.org/sites/default/files/2025-04/Spackman%20et%20al%20%282025%29%20-%20QC%20for%20mitigating%20misclassification%20bias%20-%20paper.pdf</a></p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/un-task-team-for-scanner-data\.github\.io\/cpi-new-data-sources-handbook\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./method-3-recommendation-machine-assisted-classification.html" class="pagination-link" aria-label="Method 3: Recommendation / Machine-assisted classification">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Method 3: Recommendation / Machine-assisted classification</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./how-to-evaluate-classification-methods.html" class="pagination-link" aria-label="How to evaluate classification methods">
+        <span class="nav-page-text">How to evaluate classification methods</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/edit/main/method-4-machine-learning-classification-method.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
