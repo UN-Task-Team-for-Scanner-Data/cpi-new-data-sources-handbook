@@ -1,5 +1,9 @@
 project:
   type: website
+  # Render handbook pages only. MIGRATION.md is internal team notes and must not
+  # reach the public site.
+  render:
+    - "*.qmd"
 
 website:
   title: "Handbook on utilising new data sources in the production of consumer price statistics"
