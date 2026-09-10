@@ -885,6 +885,12 @@ window.Quarto = {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Last updated</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">5 October 2021</p>
+    </div>
+  </div>
     
   </div>
   
@@ -894,27 +900,6 @@ window.Quarto = {
 
 
 <p>This section presents the basic, commonly known formulas of multilateral price indices.Like the <a href="./bilateral-price-index-methods.html">Bilateral price index methods</a>&nbsp;section, it does not include a broader discussion of the legitimacy of using individual indices. For more information on choosing an index method, see the&nbsp;<a href="https://unstats.un.org/wiki/display/GWGSD/Choosing+an+index+method">Choosing an index method</a>&nbsp;section.</p>
-<p><strong>Page information</strong></p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Version</td>
-<td>v13</td>
-</tr>
-<tr class="even">
-<td>Last updated on</td>
-<td>2021-10-05</td>
-</tr>
-<tr class="odd">
-<td>Summary of changes</td>
-<td>Initial publication version</td>
-</tr>
-<tr class="even">
-<td>Page History</td>
-<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910489">See here</a></td>
-</tr>
-</tbody>
-</table>
 <hr>
 <section id="Multilateralpriceindexmethods-Overview" class="level1">
 <h1>Overview</h1>
@@ -956,7 +941,7 @@ window.Quarto = {
 <p><span class="math display">\[\ln p_{i}^{t}=\alpha+\sum_{t=1}^{T} \delta^{t} D_{i}^{t}+\sum_{j=1}^{N-1} \gamma_{j} D_{i,j}+\varepsilon_{i}^{t}\]</span></p>
 <p>where <span class="math inline">\(D_i^t\)</span> is the dummy variable that has value 1 if the <span class="math inline">\(i\)</span>-th product is available in period <span class="math inline">\(t\)</span> and <span class="math inline">\(0\)</span> otherwise, <span class="math inline">\(\delta^t\)</span> are the time dummy parameters, <span class="math inline">\(D_{i,j}\)</span> is a dummy variable with the value 1 if the <span class="math inline">\(i\)</span>-th observation relates to the individual product <span class="math inline">\(j\)</span> and 0 otherwise, <span class="math inline">\(\gamma_j\)</span> represents the item fixed effects and <span class="math inline">\(\epsilon_i^t\)</span> denotes the corresponding random error term, which is assumed to be normally distributed with zero mean. The quality adjusted price of&nbsp; a set of products <span class="math inline">\(G_t\)</span> in month <span class="math inline">\(t\)</span> can be written as:</p>
 <p><span class="math display">\[\tilde{p}^{t}= \prod_{i \in G_{t}}\left(\frac{p_{i}^{t}}{v_{i}}\right)^{s_{t}^{t}}\]</span></p>
-<p>Following Diewert (2004), one can assume that the above model is estimated by the Weighted Least Squares (WLS) method with expenditure shares used as weights (in fact, the WLS method follows from maximum likelihood estimation of the parameters with the variance of the error terms assumed to be inversely proportional to the expenditure shares). Where the price is adjusted using the item fixed effects, i.e.&nbsp;<span class="math inline">\(v_i=\exp(\gamma_i)\)</span>, the TPD index can be expressed as follows:</p>
+<p>Following Diewert (2004), one can assume that the above model is estimated by the Weighted Least Squares (WLS) method with expenditure shares used as weights (in fact, the WLS method follows from maximum likelihood estimation of the parameters with the variance of the error terms assumed to be inversely proportional to the expenditure shares). Where the price is adjusted using the item fixed effects, i.e. <span class="math inline">\(v_i=\exp(\gamma_i)\)</span>, the TPD index can be expressed as follows:</p>
 <p><span class="math display">\[P_{T P D}^{0, t}= \frac{\tilde{p}^{t}}{ \tilde{p}^{0}}= \frac{ \prod\limits_{i \in G_{t}}\left(\frac{p_{i}^{t}}{\exp \left(\hat{\gamma}_{i}\right)}\right)^{s_{i}^{t}}}{ \prod\limits_{i \in G_{0}}\left(\frac{p_{i}^{0}}{\exp \left(\hat{\gamma}_{i}\right)}\right)^{s_{i}^{0}}}\]</span></p>
 </section>
 <section id="Multilateralpriceindexmethods-TheTimeDummyHedonicmethod" class="level1">

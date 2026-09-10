@@ -881,6 +881,12 @@ window.Quarto = {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Last updated</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">28 April 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -890,27 +896,6 @@ window.Quarto = {
 
 
 <p>There are numerous metrics that can be tracked and applied when evaluating how well a classifier performs.&nbsp;This chapter provides an overview of common approaches using a Machine Learning (ML) classifier (i.e.&nbsp;<a href="./method-4-machine-learning-classification-method.html">Method 4</a> and <a href="./method-3-recommendation-machine-assisted-classification.html">in some cases Method 3</a>) as the use case throughout due to their applicability and popularity with ML. These metrics however, could also be applied on classifiers created with other methods (such as <a href="./method-2-pattern-matching-classification-method.html">Method 2</a>) as long as there is a representative test dataset on which to evaluate classifier performance.</p>
-<p><strong>Page information</strong></p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Version</td>
-<td>v2</td>
-</tr>
-<tr class="even">
-<td>Last updated on</td>
-<td>2025-04-28</td>
-</tr>
-<tr class="odd">
-<td>Summary of changes</td>
-<td>Initial publication</td>
-</tr>
-<tr class="even">
-<td>Page history</td>
-<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281196">See here</a></td>
-</tr>
-</tbody>
-</table>
 <section id="Howtoevaluateclassificationmethods-Approachestoevaluation" class="level1">
 <h1>Approaches to evaluation</h1>
 <p>When supervised machine learning is used for classification, the data it is trained on is separated into three parts: training data on which the model is trained; validation data on which hyperparameters are selected; and a test set on which the model is evaluated. The test data set has never been seen by the model during training and parameterisation, so it is used for the final evaluation of the model. The idea is to evaluate the model on the same distribution the model was trained on but have that test dataset represent 'out-of-sample' performance, simulating how generalizable the learning has been. The risk of not doing this is that the model could be overfitted to its' training data. In the case of overfitting, the model would virtually learn the data by heart instead of recognizing the patterns behind it. There are different ways to select the test data, which typically includes a somewhat more complex procedure for splitting the data set multiple times and training the models, which is called cross-validation. In cross-validation the data is split into k parts, one part of the data is used as a test data set and the other k-1 parts for training the model, this division is repeated several times. In this way, different models can be compared.</p>
@@ -1165,9 +1150,9 @@ Predicted<br>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 19%">
-<col style="width: 29%">
+<col style="width: 22%">
 <col style="width: 15%">
-<col style="width: 29%">
+<col style="width: 22%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1208,9 +1193,9 @@ Predicted<br>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 19%">
-<col style="width: 27%">
+<col style="width: 20%">
 <col style="width: 15%">
-<col style="width: 27%">
+<col style="width: 20%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1251,9 +1236,9 @@ Predicted<br>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 19%">
-<col style="width: 27%">
+<col style="width: 20%">
 <col style="width: 15%">
-<col style="width: 27%">
+<col style="width: 20%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1299,10 +1284,10 @@ Predicted<br>
 <col style="width: 8%">
 <col style="width: 8%">
 <col style="width: 8%">
-<col style="width: 9%">
 <col style="width: 8%">
-<col style="width: 19%">
-<col style="width: 16%">
+<col style="width: 8%">
+<col style="width: 20%">
+<col style="width: 12%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1418,15 +1403,15 @@ Predicted<br>
 <p>Table 10: Summary matrix by class (imbalanced scenario)</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 20%">
-<col style="width: 16%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 22%">
+<col style="width: 12%">
 </colgroup>
 <tbody>
 <tr class="odd">

@@ -856,6 +856,12 @@ ul.task-list li input[type="checkbox"] {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Last updated</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">28 April 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -870,27 +876,6 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="./how-to-evaluate-classification-methods.html">How to evaluate classification methods</a> — There are numerous metrics that can be tracked and applied when evaluating how well a classifier performs.&nbsp;</li>
 <li><a href="./working-with-class-imbalance.html">Working with class imbalance</a> — Datasets NSOs need to classify are typically not equally distributed, as some classes have many records (i.e.&nbsp;unique products) while others have only a few. This requires additional steps to be taken when designing and testing classifiers.&nbsp;</li>
 </ul>
-<p><strong>Page information</strong></p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Version</td>
-<td>v1</td>
-</tr>
-<tr class="even">
-<td>Last updated on</td>
-<td>2025-04-28</td>
-</tr>
-<tr class="odd">
-<td>Summary of changes</td>
-<td>Initial publication version</td>
-</tr>
-<tr class="even">
-<td>Page history</td>
-<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281185">See here</a></td>
-</tr>
-</tbody>
-</table>
 <section id="Method4MachineLearningclassificationmethod-WhentouseMLforclassification" class="level1">
 <h1>When to use ML for classification</h1>
 <p>When NSOs first approach classification (typically during <a href="./pre-conditions-and-deciding-on-appropriate-classification-methods.html">initial classification of a research dataset</a>), an assessment should be performed to understand the scale of the task at hand (as only new unique products need to be classified once a model is deployed) and the complexity of the data. Firstly, ML can be useful if the data is not highly structured.&nbsp;In contrast to traditional rule-based systems that can be developed and maintained with some manual effort (although with some challenge at scale), ML models learn patterns from data autonomously, allowing NSOs to classify data in more stable and scalable fashion. In other words, if the attributes in the data that are naturally structured (such as retailer categories) are not very stable and cannot be used without considerable effort (i.e.&nbsp;<a href="./method-1-attribute-based-classification-method.html">Methods 1</a> or <a href="./method-2-pattern-matching-classification-method.html">2</a> are not easily applicable), ML may be able to learn the patterns and classify more efficiently. Secondly, the scale of the classification task should be sufficiently high. If classification (especially on a recurrent basis or every month) can be done manually by annotators (i.e.&nbsp;<a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html">Methods 0</a> and <a href="./method-3-recommendation-machine-assisted-classification.html">3</a>), ML may not yet be an appropriate tool.</p>

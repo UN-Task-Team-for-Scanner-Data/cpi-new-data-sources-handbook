@@ -855,6 +855,12 @@ ul.task-list li input[type="checkbox"] {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Last updated</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">28 April 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -869,27 +875,6 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="./note-on-variables-applicable-for-classification.html">Note on variables applicable for classification</a> — Several variables obtained during the acquisition process &nbsp;are typically applicable for classification.&nbsp;</li>
 </ul>
-<p><strong>Page information</strong></p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Version</td>
-<td>v2</td>
-</tr>
-<tr class="even">
-<td>Last updated on</td>
-<td>2025-04-28</td>
-</tr>
-<tr class="odd">
-<td>Summary of changes</td>
-<td>Initial publication</td>
-</tr>
-<tr class="even">
-<td>Page history</td>
-<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281173">See here</a></td>
-</tr>
-</tbody>
-</table>
 <hr>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Considerationofclassificationcomplexity" class="level1">
 <h1>Consideration of classification complexity</h1>
@@ -981,10 +966,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Table 2: Aspects different between initial and recurrent classification</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 3%">
-<col style="width: 61%">
-<col style="width: 29%">
-<col style="width: 6%">
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 38%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1007,11 +992,20 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>The process usually applied to classify unique records</td>
-<td colspan="3">Typically, a representative time period that is necessary to study and decide on a price index applicable for production is first identified (commonly 12 months for bilateral or 13/25 months for multilateral methods). All unique products occurring during this backcast period are identified, and are prioritized for classification. Depending on the skills, complexity of the task, time to complete the project, or other factors - different methods may be chosen and for different segments of the data. For instance a more rule-based system may be used (such as <a href="./method-2-pattern-matching-classification-method.html">method 2</a>) as it can be designed slowly and iteratively. Or for instance to prepare for a high scale scenario, a sample of the unique products may be manually labelled (using <a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html">method 0</a>), and a Machine Learning model may be developed (<a href="./method-4-machine-learning-classification-method.html">method 4</a>) to predict the categories of all other products, which are then quality assured. This phase typically is an iterative research process as different methods are trialed and evaluated, and the most applicable method for production recurrent classification is developed. | The production classification method is developed beforehand, and applied on all new unique products. It is typically combined with quality assessment and quality control methods to evaluate how well the method works.</td>
+<td colspan="3">Typically, a | The production | representative time | classification method is | period that is necessary | developed beforehand, and | to study and decide on a | applied on all new unique | price index applicable | products. It is typically | for production is first | combined with quality | identified (commonly 12 | assessment and quality | months for bilateral or | control methods to | 13/25 months for | evaluate how well the | multilateral methods). | method works.&nbsp; | All unique products | | occurring during this | | backcast period are | | identified, and are | | prioritized for | | classification. Depending | | on the skills, complexity | | of the task, time to | | complete the project, or | | other factors - different | | methods may be chosen and | | for different segments of | | the data. For instance a | | more rule-based system | | may be used (such as | | <a href="./method-2-pattern-matching-classification-method.html">method | | 2</a>) as it | | can be designed slowly | | and iteratively. Or for | | instance to prepare for a | | high scale scenario, a | | sample of the unique | | products may be manually | | labelled (using <a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html">method | | 0</a>), and | a Machine Learning model | | may be developed (<a href="./method-4-machine-learning-classification-method.html">method | | 4</a>) to | | predict the categories of | | all other products, which | | are then quality assured. | | This phase typically is | | an iterative research | | process as different | | methods are trialed and | | evaluated, and the most | | applicable method for | | production recurrent | | classification is | | developed. | |</td>
+</tr>
+<tr class="odd">
+<td>How quality is maintained/checked</td>
+<td colspan="3">As classification is | Considerable investment | typically an iterative | is usually made to | approach in this phase, | maintain quality in | effort continues until a | production, balanced with | desired (or achievable) | the limited time and | quality level is reached. | resources available. If | Quality is usually tested | manual methods are used | with manual method | (i.e.&nbsp;<a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html">method | ([method | 0](method-0-manual-labelling-or-validation-of-predicted-labels.qmd)), then 0</a>) on a | usually subject matter sample of the data. Given | production experts are | sufficient resources, for | entrusted with this role. | this sample, method 0 | If automated methods are | labelling with robust | used, a sample (or all) | multi-labeler consistency | unique records may also | checks may be completed.&nbsp; | be manually | | checked/validated and | | performance statistics | | are calculated. Checks | | and contingency plans are | | usually put in place to | | evaluate when a method is | | failing and fix the | | problem quickly. |</td>
+</tr>
+<tr class="even">
+<td>Supporting processes needed</td>
+<td><br>
+</td>
+<td colspan="2">Additional processes may | need to be put in place, | especially for Machine | Learning methods, most | notably ML Operations or | MLOps. Notably, | statistics on the | performance of the | production method are | calculated by sampling | and manually validating | new products. This guides | whether data degradataion | has occured and model | retraining is necessary. | <a href="./method-4-machine-learning-classification-method.html">Method | 4</a> covers | this in more detail. |</td>
 </tr>
 </tbody>
 </table>
-<p>vailable. If manual methods are used (i.e.&nbsp;<a href="./method-0-manual-labelling-or-validation-of-predicted-labels.html">method 0</a>), then usually subject matter production experts are entrusted with this role. If automated methods are used, a sample (or all) unique records may also be manually checked/validated and performance statistics are calculated. Checks and contingency plans are usually put in place to evaluate when a method is failing and fix the problem quickly. | +——————————————————–+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————-+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————+ | Supporting processes needed | &nbsp; | Additional processes may need to be put in place, especially for Machine Learning methods, most notably ML Operations or MLOps. Notably, statistics on the performance of the production method are calculated by sampling and manually validating new products. This guides whether data degradataion has occured and model retraining is necessary. <a href="./method-4-machine-learning-classification-method.html">Method 4</a> covers this in more detail. | +——————————————————–+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————-+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————+</p>
 </section>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Determiningmethodsmostapplicabletothetask" class="level1">
 <h1>Determining methods most applicable to the task</h1>
@@ -1046,7 +1040,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Referencesandfootnotes" class="level1">
 <h1>References and footnotes</h1>
-<p>(1) In the past it may have been necessary for NSOs to be careful when using scanner data as GTINs could be recycled and the same code came back but for a different unique product, requiring careful monitoring and reclassification. For countries that leverage GTIN, this seems to no longer be the case (<a href="https://gs1ca.org/standards/gtin-non-reuse/" class="uri">https://gs1ca.org/standards/gtin-non-reuse/</a>), however it is important to still validate this for other codes (i.e.&nbsp;non-GTIN codes).</p>
+<p>(1) In the past it may have been necessary for NSOs to be careful when using scanner data as GTINs could be recycled and the same code came back but for a different unique product, requiring careful monitoring and reclassification. For countries that leverage GTIN, this seems to no longer be the case (<a href="https://gs1ca.org/standards/gtin-non-reuse/" class="uri">https://gs1ca.org/standards/gtin-non-reuse/</a>), however it is important to still validate this for other codes (i.e. non-GTIN codes).</p>
 <p>(2) Office for National Statistics. (2021). <em>Classification of new data in UK consumer price statistics.</em> Office for National Statistics. Retrieved from <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/articles/classificationofnewdatainukconsumerpricestatistics/2021-04-06" class="uri">https://www.ons.gov.uk/economy/inflationandpriceindices/articles/classificationofnewdatainukconsumerpricestatistics/2021-04-06</a>&nbsp;</p>
 <p>(3) Eurostat. (2017)&nbsp;<em>Practical Guide for Processing Supermarket Scanner Data.</em> Retrieved from <a href="https://circabc.europa.eu/sd/a/8e1333df-ca16-40fc-bc6a-1ce1be37247c/Practical-Guide-Supermarket-Scanner-Data-September-2017.pdf" class="uri">https://circabc.europa.eu/sd/a/8e1333df-ca16-40fc-bc6a-1ce1be37247c/Practical-Guide-Supermarket-Scanner-Data-September-2017.pdf</a></p>
 <p>(4) Spackman, W., Goussev, S., Wall, M., DeVilliers, G., Chiumera,&nbsp;D. (2024)&nbsp;"Machine Learning is (not!) all you need: Impact of classification-induced error on price indices using scanner data"&nbsp;<em>Paper presented at the 18<sup>th</sup>&nbsp;Meeting of the Ottawa Group.&nbsp;</em><a href="https://stats.unece.org/ottawagroup/download/Papers-session-8-pres-1-spackman-et-al-2024-misclassification-is-not-all-you-need.pdf" class="uri">https://stats.unece.org/ottawagroup/download/Papers-session-8-pres-1-spackman-et-al-2024-misclassification-is-not-all-you-need.pdf</a>&nbsp;</p>

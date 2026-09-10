@@ -840,6 +840,12 @@ ul.task-list li input[type="checkbox"] {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Last updated</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">28 April 2024</p>
+    </div>
+  </div>
     
   </div>
   
@@ -849,35 +855,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Several variables <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/101353236/ARCHIVE+Example+file+structures+for+web+scraped+and+scanner+data">obtained during the acquisition process</a> &nbsp;are typically applicable for classification.&nbsp;An important consideration is making sure that the appropriate variables are included when acquisition is being discussed, as it may be challenging to expand the set over time. The below table summarizes the variables commonly found useful, although this table should not mean that all variables are used. Studies should be done to make sure that only useful variables are used in the classification process (for example some variables may not be of much value to a classifier).</p>
-<p><strong>Page information</strong></p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Version</td>
-<td>v2</td>
-</tr>
-<tr class="even">
-<td>Last updated on</td>
-<td>2024-04-28</td>
-</tr>
-<tr class="odd">
-<td>Summary of changes</td>
-<td>Initial publication of the page</td>
-</tr>
-<tr class="even">
-<td>Page history</td>
-<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281178">See here</a></td>
-</tr>
-</tbody>
-</table>
 <p>Table 1: Summary of typical variables in alternative data and their application for classification</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 49%">
-<col style="width: 23%">
-<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 32%">
+<col style="width: 8%">
+<col style="width: 39%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -890,12 +875,12 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>High</td>
 <td>Product name</td>
-<td colspan="3">Actual product being sold. Useful for all but <a href="./method-1-attribute-based-classification-method.html">Method 1</a>. | This variable is usually available everywhere. Web scrape definitions of product names may be unstable as a retailer may modify the name over time (such as adding “SALE” at the end of the name). |</td>
+<td colspan="3">Actual product being sold. Useful for all but <a href="./method-1-attribute-based-classification-method.html">Method | This variable | 1</a>. | is usually | | available | | everywhere. | | Web scrape | | definitions of | | product names | | may be | | unstable as a | | retailer may | | modify the | | name over time | | (such as | | adding “SALE” | | at the end of | | the name). |</td>
 </tr>
 <tr class="odd">
 <td>High</td>
 <td>Retailer category / categories</td>
-<td colspan="3">The retailer specific category or set of hierarchical categories. Most useful for rule-based approaches (<a href="./method-1-attribute-based-classification-method.html">methods 1</a> and <a href="./method-2-pattern-matching-classification-method.html">2</a>). | Usually available as retailer categories in scanner, or captured as a “breadcrumb” navigation variable on web scrape data. |</td>
+<td colspan="3">The retailer specific category or set of hierarchical | Usually | categories. Most useful for rule-based approaches (<a href="./method-1-attribute-based-classification-method.html">methods | available as | 1</a> and <a href="./method-2-pattern-matching-classification-method.html">2</a>). | retailer | | categories in | | scanner, or | | captured as a | | “breadcrumb” | | navigation | | variable on | | web scrape | | data. |</td>
 </tr>
 <tr class="even">
 <td>High</td>
@@ -907,18 +892,17 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>Medium</td>
 <td>Description</td>
-<td colspan="3">Text description of the product. Useful for all but <a href="./method-1-attribute-based-classification-method.html">Method 1</a>. For automated methods such as <a href="./method-3-recommendation-machine-assisted-classification.html">methods 3</a> and <a href="./method-4-machine-learning-classification-method.html">4</a>, this is often the main variable that is used in the text processing pipeline to help predict the product class |<br>
-</td>
+<td colspan="3">Text description of the product. Useful for all but <a href="./method-1-attribute-based-classification-method.html">Method | &nbsp; | 1</a>. For automated methods such as <a href="./method-3-recommendation-machine-assisted-classification.html">methods | | 3</a> and <a href="./method-4-machine-learning-classification-method.html">4</a>, this is often the | main variable that is used in the text processing pipeline to | | help predict the product class | |</td>
 </tr>
 <tr class="even">
 <td>Medium</td>
 <td>Brand</td>
-<td colspan="3">Brand of the manufacturer. Usually used in concatenation, and may be used by all but <a href="./method-1-attribute-based-classification-method.html">method 1</a>. If GTIN is available, you can extract brand from there. | &nbsp; |</td>
+<td colspan="3">Brand of the manufacturer. Usually used in concatenation, and | &nbsp; | may be used by all but <a href="./method-1-attribute-based-classification-method.html">method 1</a>. If GTIN is | | available, you can extract brand from there. | |</td>
 </tr>
 <tr class="odd">
 <td>Low (but high for quality adjustment methods)</td>
 <td>Product characteristics (sometimes called features)</td>
-<td colspan="3">Materials or other attributes of the product. This may be useful if classification needs nuanced terms such as materials (e.g.&nbsp;clothing) and is usually only adopted when the process is highly automated (such as <a href="./method-3-recommendation-machine-assisted-classification.html">Methods 3</a> and <a href="./method-4-machine-learning-classification-method.html">4</a>). Methods that apply <a href="./quality-change-and-hedonic-estimation.html">quality adjustment (such as hedonics)</a> use this type of data heavily.&nbsp; | This variable is usually not provided in scanner data, but is available in web scrape and administrative data. |</td>
+<td colspan="3">Materials or other attributes of the product. This may be useful | This variable | if classification needs nuanced terms such as materials (e.g.&nbsp;| is usually not | clothing) and is usually only adopted when the process is highly | provided in | automated (such as <a href="./method-3-recommendation-machine-assisted-classification.html">Methods 3</a> and | scanner data, | <a href="./method-4-machine-learning-classification-method.html">4</a>). Methods that apply <a href="./quality-change-and-hedonic-estimation.html">quality adjustment | but is | (such as | available in | hedonics)</a> | web scrape and | use this type of data heavily.&nbsp; | administrative | | data. |</td>
 </tr>
 </tbody>
 </table>

@@ -857,6 +857,12 @@ ul.task-list li input[type="checkbox"] {
 
     
   
+    <div>
+    <div class="quarto-title-meta-heading">Last updated</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">28 April 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -866,27 +872,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Datasets NSOs need to classify are typically not equally distributed, as some classes have many records (i.e.&nbsp;unique products) while others have only a few. This requires additional steps to be taken when designing and testing classifiers.&nbsp;Specitically, this represents a challenge for automated methods (such as <a href="./method-4-machine-learning-classification-method.html">Method 4 or Machine Learning (ML)</a>), as models could struggle when they don't have a lot of examples to learn from, thus typically misclassifying sparse categories. This chapter introduces approaches that NSOs could use to mitigate consequences that arise from such class imbalance problems.</p>
-<p><strong>Page information</strong></p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Version</td>
-<td>v2</td>
-</tr>
-<tr class="even">
-<td>Last updated on</td>
-<td>2025-04-28</td>
-</tr>
-<tr class="odd">
-<td>Summary of changes</td>
-<td>Initial publication</td>
-</tr>
-<tr class="even">
-<td>Page history</td>
-<td><a href="https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281204">See here</a></td>
-</tr>
-</tbody>
-</table>
 <section id="Workingwithclassimbalance-Overviewoftheproblem" class="level1">
 <h1>Overview of the problem</h1>
 <p>An imbalanced class distribution is a case where class sizes within a dataset vary significantly in size amongst each other. In the context of the alternative data training data sets, imbalanced data or (mulit)class imbalances means that there are some classes - the majority classes - for which we find plenty examples in the data (e. g. red wine) while other classes&nbsp; - the minority classes - are represented by barely a few articles (e. g. bananas). This presents a challenge for supervised ML models, which typically work well when the number of samples in each class are about equal. This is because most algorithms are designed to optimize based on a cost function. However, if the data set is highly imbalanced, a model could minimize the cost function at the expense of minority classes. This implies an indirect weighting of the majority classes by overrepresentation. The model may also not learn to easily distinguish a class from another if there are not enough examples. As a result, some classes could be systematically misclassified while the overall score for the classifier with many classes could be relatively high (<a href="./how-to-evaluate-classification-methods.html">for instance micro F1 scores</a>). This is a challenge within price statistics as classification is a critical step prior to applying price index formulas on each <a href="./aggregation.html">retailer, category, and geography combination in order to determine the sub-elementary aggregate index</a>. Misclassification may thus cause bias in the calculated index that may also impact the elementary aggregate this data is integrated into (1).</p>
