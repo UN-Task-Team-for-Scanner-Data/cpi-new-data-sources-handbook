@@ -1,22 +1,22 @@
 ---
 title: "Other uses of alternative data"
+date-modified: "2026-05-12"
 ---
 
-This section briefly outlines additional uses of alternative data sources, both within CPI production and across other areas of official statistics, to help NSOs consider the broader value of data acquisition and integration efforts. 
+This section briefly outlines additional uses of alternative data
+sources, both within CPI production and across other areas of official
+statistics, to help NSOs consider the broader value of data acquisition
+and integration efforts. 
 
 Section contents:
 
-- [Other uses of alternative data beyond CPI](other-uses-of-alternative-data-beyond-cpi.qmd) --- Beyond CPI production, many of the data sources and processes described in this handbook may also support a range of other official statistical domains.
-- [Other uses of alternative data within CPI](other-uses-of-alternative-data-within-cpi.qmd) --- While much of this handbook focuses on the use of alternative data sources for the calculation of price indices, these data may also support other aspects of CPI production.
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v2                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2026-05-12                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | New section - initial publication version                                                  |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910450) |
-+----------------------+--------------------------------------------------------------------------------------------+
+- [Other uses of alternative data beyond
+  CPI](other-uses-of-alternative-data-beyond-cpi.qmd) ---
+  Beyond CPI production, many of the data sources and processes
+  described in this handbook may also support a range of other official
+  statistical domains.
+- [Other uses of alternative data within
+  CPI](other-uses-of-alternative-data-within-cpi.qmd) ---
+  While much of this handbook focuses on the use of alternative data
+  sources for the calculation of price indices, these data may also
+  support other aspects of CPI production.

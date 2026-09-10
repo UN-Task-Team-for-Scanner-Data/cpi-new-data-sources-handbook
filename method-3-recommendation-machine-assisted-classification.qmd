@@ -1,80 +1,172 @@
 ---
 title: "Method 3: Recommendation / Machine-assisted classification"
+date-modified: "2025-04-28"
 ---
 
-Machine-assisted classification is still a manual classification technique and therefore the ideas in the [manual classification chapter](method-0-manual-labelling-or-validation-of-predicted-labels.qmd) are still valid. The key difference is the addition of a recommendation system that supports labellers in identifying the most appropriate class. Every product is still manually scrutinised, but machine-assistance may improve efficiency and potentially quality by offering recommendations. For example, for a product sold in a supermarket, a labeller may be faced with hundreds of possible food and drink, pharmaceutical, household goods and clothing (amongst other) classes to choose from. The labeller may immediately recognise the appropriate class, then spend minutes navigating a complex hierarchical structure to choose it. The recommendation system used in machine-assisted manual classification provides a shortened list of options for the labeller to choose from, substantially improving the speed with which labellers can parse lists of classes to assign the most appropriate one.
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2025-04-28                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication                                                                        |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281184) |
-+---------------------+--------------------------------------------------------------------------------------------+
+Machine-assisted classification is still a manual classification
+technique and therefore the ideas in the [manual classification
+chapter](method-0-manual-labelling-or-validation-of-predicted-labels.qmd) are still valid. The key difference is the
+addition of a recommendation system that supports labellers in
+identifying the most appropriate class. Every product is still manually
+scrutinised, but machine-assistance may improve efficiency and
+potentially quality by offering recommendations. For example, for a
+product sold in a supermarket, a labeller may be faced with hundreds of
+possible food and drink, pharmaceutical, household goods and clothing
+(amongst other) classes to choose from. The labeller may immediately
+recognise the appropriate class, then spend minutes navigating a complex
+hierarchical structure to choose it. The recommendation system used in
+machine-assisted manual classification provides a shortened list of
+options for the labeller to choose from, substantially improving the
+speed with which labellers can parse lists of classes to assign the most
+appropriate one.
 
 # When to use machine-assisted manual classification {#Method3RecommendationMachineassistedclassification-Whentousemachine-assistedmanualclassification}
 
-Machine-assisted manual classification is most beneficial when the classification task is large enough that investing in machine-assistance techniques provides reasonable efficiency gains, but small enough that the associated manual work is still viable. This makes it a potentially good candidate for classification of supermarket data.
+Machine-assisted manual classification is most beneficial when the
+classification task is large enough that investing in machine-assistance
+techniques provides reasonable efficiency gains, but small enough that
+the associated manual work is still viable. This makes it a potentially
+good candidate for classification of supermarket data.
 
-Machine-assisted manual classification may give preferable classification performance to fully-automated supervised machine learning approaches. This is particularly the case early on. Since machine learning algorithms improve with larger training datasets, it may take a long time for an NSO to acquire enough labelled data to create a model of sufficient quality to be used in a production-setting. Machine-assisted manual classification may allow the NSO to enter production faster than they would be able to using machine learning, whilst investigating and potentially transitioning towards a more-automated machine learning approach.
+Machine-assisted manual classification may give preferable
+classification performance to fully-automated supervised machine
+learning approaches. This is particularly the case early on. Since
+machine learning algorithms improve with larger training datasets, it
+may take a long time for an NSO to acquire enough labelled data to
+create a model of sufficient quality to be used in a production-setting.
+Machine-assisted manual classification may allow the NSO to enter
+production faster than they would be able to using machine learning,
+whilst investigating and potentially transitioning towards a
+more-automated machine learning approach.
 
 # Approaches to the recommendation system {#Method3RecommendationMachineassistedclassification-Approachestotherecommendationsystem}
 
-There are multiple approaches to creating the recommendation system that underpins machine-assisted manual classification. Three approaches are given, ranging in complexity.
+There are multiple approaches to creating the recommendation system that
+underpins machine-assisted manual classification. Three approaches are
+given, ranging in complexity.
 
 ## Keyword-based recommender {#Method3RecommendationMachineassistedclassification-Keyword-basedrecommender}
 
-The first potential option is a keyword-based recommender. This approach uses words within the product name, description and hierarchy to identify potential classes, similar to [pattern based classification](method-2-pattern-matching-classification-method.qmd). For example, if the word "cola" appears in the product name or description, then the machine might recommend "fizzy drinks" and "pre-mixed spirits" as classes.
+The first potential option is a keyword-based recommender. This approach
+uses words within the product name, description and hierarchy to
+identify potential classes, similar to [pattern based
+classification](method-2-pattern-matching-classification-method.qmd). For example, if the word "cola" appears
+in the product name or description, then the machine might recommend
+"fizzy drinks" and "pre-mixed spirits" as classes.
 
 Table 1: Pros and cons of a keyword-based recommender
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Pros                                                                                                                                                                  | Cons                                                                                                                                                                                                            |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| - Relatively simple method to implement and understand.                                                                                                               | - The national statistical office will likely need to maintain substantial lists of keyword-to-class recommendations.                                                                                           |
-| - Can work reasonably well when products are marketed by general descriptor terms rather than brand names. "Blue t-shirt" works well; but "Pepsi 2L" works less well. | - It may be difficult to identify more-abstract classes with this method. "Lemon and pea risotto" may serve "lemons", "peas" and "rice" as recommendations, but not the potentially desired "ready meal" class. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+------------------------------------+
+| Pros                            | Cons                               |
++---------------------------------+------------------------------------+
+| - Relatively simple method to   | - The national statistical office  |
+|   implement and understand.     |   will likely need to maintain     |
+| - Can work reasonably well when |   substantial lists of             |
+|   products are marketed by      |   keyword-to-class                 |
+|   general descriptor terms      |   recommendations.                 |
+|   rather than brand names.      | - It may be difficult to identify  |
+|   "Blue t-shirt" works well;    |   more-abstract classes with this  |
+|   but "Pepsi 2L" works less     |   method. "Lemon and pea risotto"  |
+|   well.                         |   may serve "lemons", "peas" and   |
+|                                 |   "rice" as recommendations, but   |
+|                                 |   not the potentially desired      |
+|                                 |   "ready meal" class.              |
++---------------------------------+------------------------------------+
 
 ## Hierarchy mapping {#Method3RecommendationMachineassistedclassification-Hierarchymapping}
 
-Another option is to use hierarchy mappings. This approach recommends classes that fit a specific retailer hierarchy descriptor and is thus similar to [rule based classification](method-1-attribute-based-classification-method.qmd). For example, if the retailer hierarchy is "Bakery/Bread/Sliced loaves" then the machine might recommend "white bread loaves", "wholemeal bread loaves" and "seeded bread".
+Another option is to use hierarchy mappings. This approach recommends
+classes that fit a specific retailer hierarchy descriptor and is thus
+similar to [rule based classification](method-1-attribute-based-classification-method.qmd). For example, if
+the retailer hierarchy is "Bakery/Bread/Sliced loaves" then the machine
+might recommend "white bread loaves", "wholemeal bread loaves" and
+"seeded bread".
 
 Table 2: Pros and cons of a hierarchy mapping approach
 
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Pros                                                                           | Cons                                                                                                                                                                                 |
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| - Relatively simple method to implement and understand.                        | - Vague hierarchies (such as "Fresh/Dairy/Other") and all-encompassing hierarchies (such as "Food cupboard/Christmas food") may require a substantial number of recommended classes. |
-| - Will likely require fewer rules/lists and is thus requires little investment | - Hierarchy mappings need to be maintained with changes to the retailer's hierarchy. NSOs should consider stability of the retailer's hierarchy before pursuing this option.         |
-| - This approach can be relatively straightforward to maintain                  |                                                                                                                                                                                      |
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+------------------------------------+
+| Pros                            | Cons                               |
++---------------------------------+------------------------------------+
+| - Relatively simple method to   | - Vague hierarchies (such as       |
+|   implement and understand.     |   "Fresh/Dairy/Other") and         |
+| - Will likely require fewer     |   all-encompassing hierarchies     |
+|   rules/lists and is thus       |   (such as "Food                   |
+|   requires little investment    |   cupboard/Christmas food") may    |
+| - This approach can be          |   require a substantial number of  |
+|   relatively straightforward to |   recommended classes.             |
+|   maintain                      | - Hierarchy mappings need to be    |
+|                                 |   maintained with changes to the   |
+|                                 |   retailer's hierarchy. NSOs       |
+|                                 |   should consider stability of the |
+|                                 |   retailer's hierarchy before      |
+|                                 |   pursuing this option.            |
++---------------------------------+------------------------------------+
 
-Note that NSOs should choose an appropriate level of granularity with which to create these mappings. Mapping at a very high level is likely to result in the labeller still needing to work through a very large list of classes. By contrast, mapping at a very low level is likely to result in a lot of setup and maintenance work.
+Note that NSOs should choose an appropriate level of granularity with
+which to create these mappings. Mapping at a very high level is likely
+to result in the labeller still needing to work through a very large
+list of classes. By contrast, mapping at a very low level is likely to
+result in a lot of setup and maintenance work.
 
 ## Machine learning {#Method3RecommendationMachineassistedclassification-Machinelearning}
 
-A third option is to use supervised machine learning (thus a toned version of [method 4](method-4-machine-learning-classification-method.qmd)). This approach involves training a machine learning algorithm by using previously labelled data, then using this algorithm to make recommendations on future data. Labellers manually scrutinise each product, either choosing the appropriate label from a list of the machine's predictions or correcting the machine if the appropriate label isn't available.
+A third option is to use supervised machine learning (thus a toned
+version of [method 4](method-4-machine-learning-classification-method.qmd)). This approach involves training
+a machine learning algorithm by using previously labelled data, then
+using this algorithm to make recommendations on future data. Labellers
+manually scrutinise each product, either choosing the appropriate label
+from a list of the machine's predictions or correcting the machine if
+the appropriate label isn't available.
 
-If this approach is taken, it may be better to use a machine learning algorithm which can provide multiple predictions with associated probabilities (such as XGBoost and Logistic Regression) than an algorithm that can only provide a single prediction (such as Support Vector Machines). This allows labellers to observe several potential classes, rather than just the single class the algorithm considers to be the most likely. If NSOs choose to not review each unique product but only a sub-set and accept the ML model\'s recommendation, this can be considered [method 4.](method-4-machine-learning-classification-method.qmd)
+If this approach is taken, it may be better to use a machine learning
+algorithm which can provide multiple predictions with associated
+probabilities (such as XGBoost and Logistic Regression) than an
+algorithm that can only provide a single prediction (such as Support
+Vector Machines). This allows labellers to observe several potential
+classes, rather than just the single class the algorithm considers to be
+the most likely. If NSOs choose to not review each unique product but
+only a sub-set and accept the ML model\'s recommendation, this can be
+considered [method 4.](method-4-machine-learning-classification-method.qmd)
 
-Note, a potential variant of the machine learning approach to leverage most of the process but stop short of training ML models, instead comparing a new product to classes using similarity score in vector space. To do this, first levergage the preprocessing step (see [ML chapter](method-4-machine-learning-classification-method.qmd) for more details) to convert a product\'s text descriptions into a vector. Secondly, use similarity scores (such as cosine similarity), compare the vector of the new product with the average vector for the nearest categories. See Wall et al (2025) for an application of this for labelling (1).
+Note, a potential variant of the machine learning approach to leverage
+most of the process but stop short of training ML models, instead
+comparing a new product to classes using similarity score in vector
+space. To do this, first levergage the preprocessing step (see [ML
+chapter](method-4-machine-learning-classification-method.qmd) for more details) to convert a product\'s text
+descriptions into a vector. Secondly, use similarity scores (such as
+cosine similarity), compare the vector of the new product with the
+average vector for the nearest categories. See Wall et al (2025) for an
+application of this for labelling (1).
 
 Table 3: Pros and cons of a ML approach
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| Pros                                                                                                                                                                                                  | Cons                                                                                                                            |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| - Manual scrutiny provides a safeguard against erroneous machine predictions.                                                                                                                         | - Relatively complicated to implement and understand.                                                                           |
-| - Probabilities allows the machine recommendations to be sorted, with the likeliest classes appearing first, which may improve efficiency.                                                            | - It may be too resource intensive to both develop/maintain a machine learning algorithm and manually scrutinise every product. |
-| - Scrutinising and correcting the machine's predictions with regular retraining may allow substantial improvements in the predictive power of the algorithm over time as training data size improves. | - Requires some manual labelling work to have already been completed for training the first model.                              |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+------------------------------------+
+| Pros                            | Cons                               |
++---------------------------------+------------------------------------+
+| - Manual scrutiny provides a    | - Relatively complicated to        |
+|   safeguard against erroneous   |   implement and understand.        |
+|   machine predictions.          | - It may be too resource intensive |
+| - Probabilities allows the      |   to both develop/maintain a       |
+|   machine recommendations to be |   machine learning algorithm and   |
+|   sorted, with the likeliest    |   manually scrutinise every        |
+|   classes appearing first,      |   product.                         |
+|   which may improve efficiency. | - Requires some manual labelling   |
+| - Scrutinising and correcting   |   work to have already been        |
+|   the machine's predictions     |   completed for training the first |
+|   with regular retraining may   |   model.                           |
+|   allow substantial             |                                    |
+|   improvements in the           |                                    |
+|   predictive power of the       |                                    |
+|   algorithm over time as        |                                    |
+|   training data size improves.  |                                    |
++---------------------------------+------------------------------------+
 
 ------------------------------------------------------------------------
 
 # References {#Method3RecommendationMachineassistedclassification-References}
 
-\(1\) Wall, M., Chiumera,D., DeVilliers, G., Bajwa, K., Spackman, W., Goussev, S. (2025) \"Automating the detection of product relaunches: A supervised learning approach to shrinkflation and stretchflation\" *Presented at the 2025 CPI Expert Group. <https://unece.org/sites/default/files/2025-04/Wall-Chiumera%20et%20al%20%282025%29%20Automating%20the%20Detection%20of%20Product%20Relaunches%20-%20paper.pdf>*
+\(1\) Wall, M., Chiumera,D., DeVilliers, G., Bajwa, K., Spackman, W.,
+Goussev, S. (2025) \"Automating the detection of product relaunches: A
+supervised learning approach to shrinkflation and
+stretchflation\" *Presented at the 2025 CPI Expert Group.
+<https://unece.org/sites/default/files/2025-04/Wall-Chiumera%20et%20al%20%282025%29%20Automating%20the%20Detection%20of%20Product%20Relaunches%20-%20paper.pdf>*

@@ -1,8 +1,12 @@
 ---
 title: "Acknowledgements"
+date-modified: "2024-05-01"
 ---
 
-The development of this handbook and associated training material is a testament to the hard work of many individuals who collaborated on drafting, reviewing and updating the content. Acknowledgements go to the following Task Team members for drafting and editing the content:
+The development of this handbook and associated training material is a
+testament to the hard work of many individuals who collaborated on
+drafting, reviewing and updating the content. Acknowledgements go to the
+following Task Team members for drafting and editing the content:
 
 - Antonio Chessa, CBS (Netherlands)
 - Benjamin Lojak, Destatis
@@ -37,7 +41,8 @@ The development of this handbook and associated training material is a testament
 - Vanda-Maria Guerreiro, Eurostat
 - Vladimir Gonçalves Miranda, IBGE (Brazil)
 
-And the following contributors for their review and valuable feedback on the material:
+And the following contributors for their review and valuable feedback on
+the material:
 
 - Bert Balk
 - Ceri Regan, UN
@@ -46,15 +51,3 @@ And the following contributors for their review and valuable feedback on the mat
 - Kevin Fox, UNSW (Australia)
 - Jayne White, ONS (UK)
 - Ralf Becker, UN
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v7                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2024-05-01                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910448) |
-+---------------------+--------------------------------------------------------------------------------------------+

@@ -1,36 +1,77 @@
 ---
 title: "Method 2: Pattern matching classification method"
+date-modified: "2025-04-28"
 ---
 
-Pattern based classification involves mapping individual records to the taxonomy classes of interest according to patterns present in their descriptive attributes. For instance, patterns in the categories of the alternative data, patterns in the product name, or specific keywords in the product description - could all be used to classify a set of individual records. This approach is typically used when attribute based classification is not sufficiently detailed but it is not necessary to make the extra investment to develop or maintain more complex methods. This method can also be considered an attribute-based method (thus an alternative to [method 1](method-1-attribute-based-classification-method.qmd)) where specific patterns in the unique products\' characteristics need to be matched to classify, rather than a handful of structure attributes (such as product categories).
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2025-04-28                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication                                                                        |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281183) |
-+---------------------+--------------------------------------------------------------------------------------------+
+Pattern based classification involves mapping individual records to the
+taxonomy classes of interest according to patterns present in their
+descriptive attributes. For instance, patterns in the categories of the
+alternative data, patterns in the product name, or specific keywords in
+the product description - could all be used to classify a set of
+individual records. This approach is typically used when attribute based
+classification is not sufficiently detailed but it is not necessary to
+make the extra investment to develop or maintain more complex methods.
+This method can also be considered an attribute-based method (thus an
+alternative to [method 1](method-1-attribute-based-classification-method.qmd)) where specific patterns in
+the unique products\' characteristics need to be matched to classify,
+rather than a handful of structure attributes (such as product
+categories).
 
 ------------------------------------------------------------------------
 
 # Why and how to use pattern matching classification: {#Method2Patternmatchingclassificationmethod-Whyandhowtousepatternmatchingclassification}
 
-NSOs look into pattern matching when simpler methods (most notably attribute-based classification) prove insufficient. For instance, NSOs may find that a category in the alternative data is too large and cannot be cleanly mapped to smaller and more homogenous CPI categories. The NSO may then wish to map the alternative data category but not a certain subset of products, which will be classified to other categories. In more complex situations, the NSO may not use alternative data categories at all and may only use keywords or various other patterns to map all products to the classes of interest. Similar to the setting up a [rule based approach](method-1-attribute-based-classification-method.qmd) that depends on structured variables, it is natural for NSOs to explore this method when they are investigating initial classification. 
+NSOs look into pattern matching when simpler methods (most notably
+attribute-based classification) prove insufficient. For instance, NSOs
+may find that a category in the alternative data is too large and cannot
+be cleanly mapped to smaller and more homogenous CPI categories. The NSO
+may then wish to map the alternative data category but not a certain
+subset of products, which will be classified to other categories. In
+more complex situations, the NSO may not use alternative data categories
+at all and may only use keywords or various other patterns to map all
+products to the classes of interest. Similar to the setting up a [rule
+based approach](method-1-attribute-based-classification-method.qmd) that depends on structured variables, it
+is natural for NSOs to explore this method when they are investigating
+initial classification. 
 
-The method can prove effective if the distribution of the natural language that describes unique products (for example product id, names, descriptions, categories) are very stable and do not change over a long period of time. For instance, if a category variable in alternative data can be cleanly separated into two or more classes and the category does not look to change much, then this method can become quite useful. NSOs may find this out when they annotate a sample of products and find that some products do not cleanly match (as per the [rule-based approach](method-1-attribute-based-classification-method.qmd)) but keywords or specific patterns (such as via [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)) may be effective at classifying a whole set of products. Breaking down a product ID (such as its UPC) and mapping sub-parts of this code can be considered a form of pattern matching.
+The method can prove effective if the distribution of the natural
+language that describes unique products (for example product id, names,
+descriptions, categories) are very stable and do not change over a long
+period of time. For instance, if a category variable in alternative data
+can be cleanly separated into two or more classes and the category does
+not look to change much, then this method can become quite useful. NSOs
+may find this out when they annotate a sample of products and find that
+some products do not cleanly match (as per the [rule-based
+approach](method-1-attribute-based-classification-method.qmd)) but keywords or specific patterns (such as
+via [regular
+expressions](https://en.wikipedia.org/wiki/Regular_expression)) may be
+effective at classifying a whole set of products. Breaking down a
+product ID (such as its UPC) and mapping sub-parts of this code can be
+considered a form of pattern matching.
 
-Similar and even more critical than with attribute (or rule-based) classification, it is best not to have too many pattern-based rules that need to be maintained for recurrent classification. As keywords and patterns may shift over time (gradually or suddenly), this may cause many unique records to be misclassified, requiring a non-trivial validation and fix processes during tight production timelines. The NSO should be cognisant of the risk when developing pattern-based rules.
+Similar and even more critical than with attribute (or rule-based)
+classification, it is best not to have too many pattern-based rules that
+need to be maintained for recurrent classification. As keywords and
+patterns may shift over time (gradually or suddenly), this may cause
+many unique records to be misclassified, requiring a non-trivial
+validation and fix processes during tight production timelines. The NSO
+should be cognisant of the risk when developing pattern-based rules.
 
-Note that pattern-matching may be considered an extention (and thus used effectively in conjunction) of rule-based classification. NSOs can use pattern-matching to create boolean attributes determining whether key phrases are found in natural text, then use these attributes as part of a wider attribute-based classification system. Pattern-matching may also sometimes be used to impute null values found in attribute columns to enable better use of rule-based classification.
+Note that pattern-matching may be considered an extention (and thus used
+effectively in conjunction) of rule-based classification. NSOs can use
+pattern-matching to create boolean attributes determining whether key
+phrases are found in natural text, then use these attributes as part of
+a wider attribute-based classification system. Pattern-matching may also
+sometimes be used to impute null values found in attribute columns to
+enable better use of rule-based classification.
 
 ## Example of what pattern matching looks like {#Method2Patternmatchingclassificationmethod-Exampleofwhatpatternmatchinglookslike}
 
-To demonstrate the process, consider one category in an alternative data source that is not homogenous but needs to be mapped to two sub-classes (or COICOP-6 classes). This example is based on the visual diagram outlined in the [homogeneity of product considerations](https://unstats.un.org/wiki/display/GWGSD/Pre-conditions+and+deciding+on+appropriate+classification+methods#Preconditionsanddecidingonappropriateclassificationmethods-Homogeneityofthedesiredclassifications).
+To demonstrate the process, consider one category in an alternative data
+source that is not homogenous but needs to be mapped to two sub-classes
+(or COICOP-6 classes). This example is based on the visual diagram
+outlined in the [homogeneity of product
+considerations](https://unstats.un.org/wiki/display/GWGSD/Pre-conditions+and+deciding+on+appropriate+classification+methods#Preconditionsanddecidingonappropriateclassificationmethods-Homogeneityofthedesiredclassifications).
 
 Code 1: Example attribute based on text matching apples names
 
@@ -46,24 +87,64 @@ if alternative_data_category = 'Apples'
 
 # How to develop and apply pattern based classification: {#Method2Patternmatchingclassificationmethod-Howtodevelopandapplypatternbasedclassification}
 
-Similar to the rule based approach, there are two ways that pattern classification can be developed:
+Similar to the rule based approach, there are two ways that pattern
+classification can be developed:
 
-- **Iterative sampling approach** - The NSO can sample a small set of products to annotate, and observe which rules apply for simpler classification, and alternatively, which rules do not apply and require more complex patterns and keywords to map specific sets of products. The natural language of various unique products (or other patterns) can be explored to develop pattern-based rules for classification. After the intial sample, some products may not be classified or correctly classified and would require another sample and correction procedure to tune the patterns being developed. This iterative approach can be continued until no additional mistakes are found. 
-- **Category-by-category mapping approach** - an alternative is to start with the list of categories and go through the whole dataset to map all products. Specifically, there are two conceptual approaches:
-  - Start with the categories of the CPI and find products that should fit in it by finding the patterns that match these products consistently. The NSO may wish to limit the CPI categories to the one that are in scope for the data provider to limit time.
-  - Start with the categories in the alternative data source. In this case, the NSO can evaluate the homogeneity of this category and break it out until all products in it have been consistently classified to the CPI categories of interest.
+- **Iterative sampling approach** - The NSO can sample a small set of
+  products to annotate, and observe which rules apply for simpler
+  classification, and alternatively, which rules do not apply and
+  require more complex patterns and keywords to map specific sets of
+  products. The natural language of various unique products (or other
+  patterns) can be explored to develop pattern-based rules for
+  classification. After the intial sample, some products may not be
+  classified or correctly classified and would require another sample
+  and correction procedure to tune the patterns being developed. This
+  iterative approach can be continued until no additional mistakes are
+  found. 
+- **Category-by-category mapping approach** - an alternative is to start
+  with the list of categories and go through the whole dataset to map
+  all products. Specifically, there are two conceptual approaches:
+  - Start with the categories of the CPI and find products that should
+    fit in it by finding the patterns that match these products
+    consistently. The NSO may wish to limit the CPI categories to the
+    one that are in scope for the data provider to limit time.
+  - Start with the categories in the alternative data source. In this
+    case, the NSO can evaluate the homogeneity of this category and
+    break it out until all products in it have been consistently
+    classified to the CPI categories of interest.
 
-A clear understanding of what is in-scope and out-of-scope is necessary as specific sets of products need to be assigned to various CPI categories. 
+A clear understanding of what is in-scope and out-of-scope is necessary
+as specific sets of products need to be assigned to various CPI
+categories. 
 
 # Best practices and quality considerations: {#Method2Patternmatchingclassificationmethod-Bestpracticesandqualityconsiderations}
 
 Several approaches to maintaining quality is recommended:
 
-- **Develop robust implementation** - as keywords and patterns may shift over time, spreadsheet approaches may be too complex to be maintained effectively. Once several patterns start being used, more programmatic approaches and best practices similar to RAP are recommended. This way the NSO can have a standalone mapping dictionary that is version controlled and modified as keywords and patterns change. 
-- **Develop reports for potential breaks in the patterns or detection of new keywords** - as the patterns may be quite fragile and constantly require tuning, it is best to have ways to detect when a shift has occurred. For instance, the NSO can track the number of unique products by classified category tu understand how pattern-based rules worked each time and detect if suddenly some pattern-based rules no longer seem to apply to any products or apply to too many products. NSOs can also detect if there remain any unclassified products that existing pattern based-rules did not catch. It is best to review these pattern-based rules periodically even if no breaks are detected as patterns (i.e. the distribution of data being classified) may shift in unnoticed ways.
+- **Develop robust implementation** - as keywords and patterns may shift
+  over time, spreadsheet approaches may be too complex to be maintained
+  effectively. Once several patterns start being used, more programmatic
+  approaches and best practices similar to RAP are recommended. This way
+  the NSO can have a standalone mapping dictionary that is version
+  controlled and modified as keywords and patterns change. 
+- **Develop reports for potential breaks in the patterns or detection of
+  new keywords** - as the patterns may be quite fragile and constantly
+  require tuning, it is best to have ways to detect when a shift has
+  occurred. For instance, the NSO can track the number of unique
+  products by classified category tu understand how pattern-based rules
+  worked each time and detect if suddenly some pattern-based rules no
+  longer seem to apply to any products or apply to too many products.
+  NSOs can also detect if there remain any unclassified products that
+  existing pattern based-rules did not catch. It is best to review these
+  pattern-based rules periodically even if no breaks are detected as
+  patterns (i.e. the distribution of data being classified) may shift in
+  unnoticed ways.
 
 ------------------------------------------------------------------------
 
 # References {#Method2Patternmatchingclassificationmethod-References}
 
-\(1\) See Implementing scanner data in the Danish CPI, Denmark (2014) <https://unece.org/sites/default/files/2021-04/WS4_05_Implementing_scanner_data_in_the_Danish_CPI.pdf> for an example where keywords are used to classify once and then maintained going forward.
+\(1\) See Implementing scanner data in the Danish CPI,
+Denmark (2014) <https://unece.org/sites/default/files/2021-04/WS4_05_Implementing_scanner_data_in_the_Danish_CPI.pdf>
+for an example where keywords are used to classify once and then
+maintained going forward.

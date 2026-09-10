@@ -1,39 +1,75 @@
 ---
 title: "Initial considerations"
+date-modified: "2026-05-08"
 ---
 
-This section covers some initial considerations that NSOs are recommended to review before setting out to use alternative data sources in the production of consumer price statistics. 
+This section covers some initial considerations that NSOs are
+recommended to review before setting out to use alternative data sources
+in the production of consumer price statistics. 
 
 Section contents:
 
-- [Overview of alternative data sources](overview-of-alternative-data-sources.qmd) --- This page contains a general introduction to each of the alternative data sources used to compile consumer price indices. 
-- [Why use alternative data sources? Strategic motivations](why-use-alternative-data-sources-strategic-motivations.qmd) --- Common reasons shared by NSOs as a driver for using these new data sources.
-- [Key challenges and trade-offs](key-challenges-and-trade-offs.qmd) --- Alternative data sources introduce a number of challenges and trade-offs that National Statistical Offices (NSOs) must actively manage.
-- [Key decision points](key-decision-points.qmd) --- The adoption of alternative data sources involves a sequence of related decisions that shape both the technical and organisational direction of implementation.
-- [Resource implications and organisational readiness](resource-implications-and-organisational-readiness.qmd) --- The adoption of alternative data sources typically requires a different mix of resources and capabilities compared with traditional survey-based price collection.
-
-**Page information**
-
-+----------------------+---------------------------------------------------------------------------------------------------------------------+
-| Version              | v4                                                                                                                  |
-+----------------------+---------------------------------------------------------------------------------------------------------------------+
-| Last updated on      | 2026-05-08                                                                                                          |
-+----------------------+---------------------------------------------------------------------------------------------------------------------+
-| Summary of changes   | Section expanded to included additional content on trade-offs, risks and challenges of using these new data sources |
-+----------------------+---------------------------------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910450)                          |
-+----------------------+---------------------------------------------------------------------------------------------------------------------+
+- [Overview of alternative data
+  sources](overview-of-alternative-data-sources.qmd) --- This
+  page contains a general introduction to each of the alternative data
+  sources used to compile consumer price indices. 
+- [Why use alternative data sources? Strategic
+  motivations](why-use-alternative-data-sources-strategic-motivations.qmd) --- Common reasons shared by NSOs as a
+  driver for using these new data sources.
+- [Key challenges and
+  trade-offs](key-challenges-and-trade-offs.qmd) ---
+  Alternative data sources introduce a number of challenges and
+  trade-offs that National Statistical Offices (NSOs) must actively
+  manage.
+- [Key decision points](key-decision-points.qmd) --- The
+  adoption of alternative data sources involves a sequence of related
+  decisions that shape both the technical and organisational direction
+  of implementation.
+- [Resource implications and organisational
+  readiness](resource-implications-and-organisational-readiness.qmd)
+  --- The adoption of alternative data sources typically requires a
+  different mix of resources and capabilities compared with traditional
+  survey-based price collection.
 
 ------------------------------------------------------------------------
 
 # Overview {#Initialconsiderations-Overview}
 
-In this Handbook we define alternative data sources as ***data sources that differ from traditional price collection in how price information is generated, observed and accessed***.
+In this Handbook we define alternative data sources as ***data sources
+that differ from traditional price collection in how price information
+is generated, observed and accessed***.
 
-The use of alternative data sources has the potential to fundamentally change how consumer price statistics are produced. These include transaction data such as scanner data, e-invoice data and administrative transaction data where prices are associated with actual purchases and typically include information on quantities or expenditures, and non-transaction data such as web-scraped data and online advertisements data, where prices reflect posted or offered prices but typically do not include quantities, expenditures or confirmation that a transaction has occurred. Both types of data sources offer potential improvements in coverage, accuracy and efficiency. 
+The use of alternative data sources has the potential to fundamentally
+change how consumer price statistics are produced. These include
+transaction data such as scanner data, e-invoice data and administrative
+transaction data where prices are associated with actual purchases and
+typically include information on quantities or expenditures, and
+non-transaction data such as web-scraped data and online advertisements
+data, where prices reflect posted or offered prices but typically do not
+include quantities, expenditures or confirmation that a transaction has
+occurred. Both types of data sources offer potential improvements in
+coverage, accuracy and efficiency. 
 
-However, before moving to implementation, national statistical offices (NSOs) are encouraged to take a structured and deliberate approach to assessing why alternative data sources are being introduced, what role they are intended to play within the index framework, and how they can be integrated into existing statistical processes. Early decisions in these areas can have lasting implications for index design, operational practices and resource requirements.
+However, before moving to implementation, national statistical offices
+(NSOs) are encouraged to take a structured and deliberate approach to
+assessing why alternative data sources are being introduced, what role
+they are intended to play within the index framework, and how they can
+be integrated into existing statistical processes. Early decisions in
+these areas can have lasting implications for index design, operational
+practices and resource requirements.
 
-This section sets out key considerations relevant during the early stages of exploration and planning. It is intended to support informed decision-making and to help NSOs identify the areas that require more detailed investigation, many of which are addressed in subsequent chapters of the Handbook.
+This section sets out key considerations relevant during the early
+stages of exploration and planning. It is intended to support informed
+decision-making and to help NSOs identify the areas that require more
+detailed investigation, many of which are addressed in subsequent
+chapters of the Handbook.
 
-While this Handbook focuses on the use of alternative data sources in the production of consumer price statistics, many of the data sources and processes described are also relevant to [other areas of official statistics](other-uses-of-alternative-data-beyond-cpi.qmd), including purchasing power parities, national accounts, business price indices, and business statistics. Where appropriate, the handbook highlights considerations that may support broader reuse of data across statistical domains, while recognising that conceptual requirements and methodological choices may differ.
+While this Handbook focuses on the use of alternative data sources in
+the production of consumer price statistics, many of the data sources
+and processes described are also relevant to [other areas of official
+statistics](other-uses-of-alternative-data-beyond-cpi.qmd),
+including purchasing power parities, national accounts, business price
+indices, and business statistics. Where appropriate, the handbook
+highlights considerations that may support broader reuse of data across
+statistical domains, while recognising that conceptual requirements and
+methodological choices may differ.

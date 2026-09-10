@@ -1,48 +1,159 @@
 ---
 title: "Deriving proxy weights for web scraped data"
+date-modified: "2021-10-05"
 ---
 
-Web scraped data does not contain expenditure information. In some cases, proxy expenditure weights can be derived.\
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2021-10-05                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910506) |
-+---------------------+--------------------------------------------------------------------------------------------+
+Web scraped data does not contain expenditure information. In some
+cases, proxy expenditure weights can be derived.\
 
 ------------------------------------------------------------------------
 
 # Introduction {#Derivingproxyweightsforwebscrapeddata-Introduction}
 
-In contrast to scanner data, web scraped data are not transaction data which means that they do not contain information on the quantities sold. Especially in the dynamic universe of online trading, it would be important to know if a price that has been observed is really relevant in terms of the number of transactions that have been taken place at this price. Research has shown this is rarely the case and while consumers purchase a variety of products, they exhibit strong preference for only a small subsection of the available products and brands within any item. Antoniades et al. (2019) on distribution as expenditure found that typically sales distribution is so skewed, that based on their calculations total sales of the top 2% of grocery products per item accounted for as much as the total sales of the bottom 96%. 
+In contrast to scanner data, web scraped data are not transaction data
+which means that they do not contain information on the quantities sold.
+Especially in the dynamic universe of online trading, it would be
+important to know if a price that has been observed is really relevant
+in terms of the number of transactions that have been taken place at
+this price. Research has shown this is rarely the case and while
+consumers purchase a variety of products, they exhibit strong preference
+for only a small subsection of the available products and brands within
+any item. Antoniades et al. (2019) on distribution as expenditure found
+that typically sales distribution is so skewed, that based on their
+calculations total sales of the top 2% of grocery products per item
+accounted for as much as the total sales of the bottom 96%. 
 
-The lack of information on the quantities sold entails two issues that have to be dealt with when web scraped data are used to compute price indices, aggregation of prices across time and how proxy expenditure weights can be calculated and used in the calculation of price indices.
+The lack of information on the quantities sold entails two issues that
+have to be dealt with when web scraped data are used to compute price
+indices, aggregation of prices across time and how proxy expenditure
+weights can be calculated and used in the calculation of price indices.
 
 # Aggregation of prices over time {#Derivingproxyweightsforwebscrapeddata-Aggregationofpricesovertime}
 
-First, a decision has to be made on how different prices for the same item are aggregated over time (for example for a month or a quarter). Usually, the prices observed at different times of the month (or quarter) are aggregated to an unweighted (equally) weighted average price, which reflects the assumption that the buying behaviour with respect to a specific item is more or less independent of the price. Even though this is likely to be a too strong assumption, past research projects such as Chessa & Griffioen (2019) did not find severe differences between unit values based on scanner data and the respective average prices based on web scraped data. As expected, unit values were often found to be lower or equal compared to the average web scraped prices. Different factors may offer an explanation for this observation, such as different forms of discount that may enter transaction prices which cannot be scraped (e.g. discounts for customer card holders) and also increases in the numbers of items sold during discount periods. It is important to keep in mind that there seem to be only a few examples of such comparative studies (perhaps due to the difficult in sourcing different data for the same retailer), and that the cited study applies to a web-only shop. Further research could be conducted to verify whether the unweighted average price is appropriate also for products and/or retailers with both physical outlets and web shops, and for products/retailers with a very dynamic pricing strategy. In this context, it is worth mentioning that for the purpose of calculating the Consumer Price Index (CPI), the prices which are used for the index calculation must not necessarily reflect the true price level but the true price development. This means that the bias of the average price level could be greater than the bias of the change in the average price level.
+First, a decision has to be made on how different prices for the same
+item are aggregated over time (for example for a month or a quarter).
+Usually, the prices observed at different times of the month (or
+quarter) are aggregated to an unweighted (equally) weighted average
+price, which reflects the assumption that the buying behaviour with
+respect to a specific item is more or less independent of the price.
+Even though this is likely to be a too strong assumption, past research
+projects such as Chessa & Griffioen (2019) did not find severe
+differences between unit values based on scanner data and the respective
+average prices based on web scraped data. As expected, unit values were
+often found to be lower or equal compared to the average web scraped
+prices. Different factors may offer an explanation for this observation,
+such as different forms of discount that may enter transaction prices
+which cannot be scraped (e.g. discounts for customer card holders) and
+also increases in the numbers of items sold during discount periods. It
+is important to keep in mind that there seem to be only a few examples
+of such comparative studies (perhaps due to the difficult in sourcing
+different data for the same retailer), and that the cited study applies
+to a web-only shop. Further research could be conducted to verify
+whether the unweighted average price is appropriate also for products
+and/or retailers with both physical outlets and web shops, and for
+products/retailers with a very dynamic pricing strategy. In this
+context, it is worth mentioning that for the purpose of calculating the
+Consumer Price Index (CPI), the prices which are used for the index
+calculation must not necessarily reflect the true price level but the
+true price development. This means that the bias of the average price
+level could be greater than the bias of the change in the average price
+level.
 
 # Calculation of proxy weights {#Derivingproxyweightsforwebscrapeddata-Calculationofproxyweights}
 
-Second, the lack of information on quantities sold is an issue when it comes to price index calculations. ONS (2020) found that unweighted indices may suffer from a notable bias compared to their weighted counterparts. In order to mitigate this bias, some research has been conducted on deriving proxy weights for web scraped data. Two different approaches have arisen which are introduced in the following paragraphs.
+Second, the lack of information on quantities sold is an issue when it
+comes to price index calculations. ONS (2020) found that unweighted
+indices may suffer from a notable bias compared to their weighted
+counterparts. In order to mitigate this bias, some research has been
+conducted on deriving proxy weights for web scraped data. Two different
+approaches have arisen which are introduced in the following paragraphs.
 
-Chessa & Griffioen (2019) used the number of times an item was scraped as a proxy for the quantities sold for this item. In their study, they compared web scraped data and scanner data from the same retailer. The website of the retailer was fully scraped which means that an item could have been scraped on different \"routes\", i.e. when navigating from the main menu through the various submenus. For example, an item from the retailer analysed by Chessa & Griffioen (2019) could be found in the sub menu \"mens' clothing\" but also in the sub menu \"sales\". Chessa & Griffioen (2019) observed in their data a remarkable correlation between the number of prices scraped with this technique and the quantities sold based on the scanner data of the same retailer. The price indices calculated with these proxy weights were much closer to the benchmark prices indices based on scanner data than the unweighted price indices. Even though the results were promising, the authors recommended to verify whether these findings apply also to other retailers.
+Chessa & Griffioen (2019) used the number of times an item was scraped
+as a proxy for the quantities sold for this item. In their study, they
+compared web scraped data and scanner data from the same retailer. The
+website of the retailer was fully scraped which means that an item could
+have been scraped on different \"routes\", i.e. when navigating from the
+main menu through the various submenus. For example, an item from the
+retailer analysed by Chessa & Griffioen (2019) could be found in the sub
+menu \"mens' clothing\" but also in the sub menu \"sales\". Chessa &
+Griffioen (2019) observed in their data a remarkable correlation between
+the number of prices scraped with this technique and the quantities sold
+based on the scanner data of the same retailer. The price indices
+calculated with these proxy weights were much closer to the benchmark
+prices indices based on scanner data than the unweighted price indices.
+Even though the results were promising, the authors recommended to
+verify whether these findings apply also to other retailers.
 
-A different approach was conducted by Touzani & van Buskirk (2015) and ONS (2020). They used the popularity rankings defined by the order (or rather position) of where products are published on the website of a retailer. Thereby, they assumed that the cumulative distribution of the rank order was equal to the cumulative distribution of the number of sales. Given a log normal distribution, a truncated log normal distribution and a Pareto distribution, ONS (2020) determined the required distribution parameters by a maximum likelihood estimation based on summary statistics which were available in a scanner data set of the same retailer. In a next step, the sales quantities were derived from the equation of the cumulative distribution function of the rank order on the website and the suggested cumulative distribution function of the quantities sold. These approximated sales quantities were then used in a final step to calculate price indices. The results indicated that especially the truncated log, normal distribution could reduce the bias as measured with respect to the scanner data indices in comparison to the unweighted index series. It is important to note that this kind of approach requires the retailers to provide summary statistics, which means that some kind of cooperation with a retailer is needed and it relies on the (strong) assumption that the order in which products appear on retailers' websites is reflective of quantities sold. For some retailers, it is possible to sort by \"popularity\" which could infer this relationship. However, for some retailers this option is not possible and they either don\'t allow sorting, or use the vaguer term \"relevance\". In some cases, retailers may influence the order to ensure that those products with larger profit margins sit at the top of the list rather than those with high quantities sold. This means that this approach should be used only when it can be reasonably assumed that the position of the product on the website indeed reflects the order of quantities sold because otherwise, there is a danger that the bias gets even worse compared to an unweighted index.
+A different approach was conducted by Touzani & van Buskirk (2015) and
+ONS (2020). They used the popularity rankings defined by the order (or
+rather position) of where products are published on the website of a
+retailer. Thereby, they assumed that the cumulative distribution of the
+rank order was equal to the cumulative distribution of the number of
+sales. Given a log normal distribution, a truncated log normal
+distribution and a Pareto distribution, ONS (2020) determined the
+required distribution parameters by a maximum likelihood estimation
+based on summary statistics which were available in a scanner data set
+of the same retailer. In a next step, the sales quantities were derived
+from the equation of the cumulative distribution function of the rank
+order on the website and the suggested cumulative distribution function
+of the quantities sold. These approximated sales quantities were then
+used in a final step to calculate price indices. The results indicated
+that especially the truncated log, normal distribution could reduce the
+bias as measured with respect to the scanner data indices in comparison
+to the unweighted index series. It is important to note that this kind
+of approach requires the retailers to provide summary statistics, which
+means that some kind of cooperation with a retailer is needed and it
+relies on the (strong) assumption that the order in which products
+appear on retailers' websites is reflective of quantities sold. For some
+retailers, it is possible to sort by \"popularity\" which could infer
+this relationship. However, for some retailers this option is not
+possible and they either don\'t allow sorting, or use the vaguer term
+\"relevance\". In some cases, retailers may influence the order to
+ensure that those products with larger profit margins sit at the top of
+the list rather than those with high quantities sold. This means that
+this approach should be used only when it can be reasonably assumed that
+the position of the product on the website indeed reflects the order of
+quantities sold because otherwise, there is a danger that the bias gets
+even worse compared to an unweighted index.
 
-Possible alternatives for deriving proxy weights also include (research still ongoing): scraping the number of reviews for each product as a proxy for expenditure, testing the market share approach outlined in Antoniades et al. (2019), and using the theory of \"price banding\". The principle around the price band approach is a simplistic one, that producers know the optimum price they can sell their product to maximise sales. We can deduce that the more products around a certain price point will contain the highest selling products of the item, because more producers recognise the price as the optimum selling price. In practice, this means that each item is split into multiple price bands and each product can then be assigned to a band based on its price. The bands are then ranked from most products to least, with the products in the most populated price band receiving more weight than the products in the less populated price bands. As these research projects complete, we will link to the published results on this page.
+Possible alternatives for deriving proxy weights also include (research
+still ongoing): scraping the number of reviews for each product as a
+proxy for expenditure, testing the market share approach outlined in
+Antoniades et al. (2019), and using the theory of \"price banding\". The
+principle around the price band approach is a simplistic one, that
+producers know the optimum price they can sell their product to maximise
+sales. We can deduce that the more products around a certain price point
+will contain the highest selling products of the item, because more
+producers recognise the price as the optimum selling price. In practice,
+this means that each item is split into multiple price bands and each
+product can then be assigned to a band based on its price. The bands are
+then ranked from most products to least, with the products in the most
+populated price band receiving more weight than the products in the less
+populated price bands. As these research projects complete, we will link
+to the published results on this page.
 
 # Alternative approaches {#Derivingproxyweightsforwebscrapeddata-Alternativeapproaches}
 
-Apart from these approaches to calculate proxy weights, one could also think about other ways to reduce the bias of unweighted indices for web scraped data. One option could be to use a bestseller approach where a certain number of the most popular items would be selected for the price collection via web scraping. The required bestseller lists could be searched on product specific websites or magazines. This approach would exclude items rarely sold from the price collection, which again might increase the representativity of the index results. Another approach that could be investigated is the use of weights from external sources. Even when these weights might not be available on the item level, they could help to distinguish more relevant from less relevant product groups (in terms of expenditure shares) such that an implicit or explicit weighting could be applied at the level of product groups. For example, weight information may be available at the brand level for technology products that could then be used to approximate the weight for individual items.
+Apart from these approaches to calculate proxy weights, one could also
+think about other ways to reduce the bias of unweighted indices for web
+scraped data. One option could be to use a bestseller approach where a
+certain number of the most popular items would be selected for the price
+collection via web scraping. The required bestseller lists could be
+searched on product specific websites or magazines. This approach would
+exclude items rarely sold from the price collection, which again might
+increase the representativity of the index results. Another approach
+that could be investigated is the use of weights from external sources.
+Even when these weights might not be available on the item level, they
+could help to distinguish more relevant from less relevant product
+groups (in terms of expenditure shares) such that an implicit or
+explicit weighting could be applied at the level of product groups. For
+example, weight information may be available at the brand level for
+technology products that could then be used to approximate the weight
+for individual items.
 
-This is an area of ongoing research and it is clear that more work is necessary to shed more light on the issue of deriving proxy weights for web scraped data.
+This is an area of ongoing research and it is clear that more work is
+necessary to shed more light on the issue of deriving proxy weights for
+web scraped data.
 
 \
 
@@ -50,10 +161,18 @@ This is an area of ongoing research and it is clear that more work is necessary 
 
 # References {#Derivingproxyweightsforwebscrapeddata-References}
 
-\(1\) Antoniades, A., Feenstra, R.C., and Xu, M. (2019) Using the Retail Distribution to Impute Expenditure Shares <https://www.aeaweb.org/conference/2020/preliminary/paper/r3FSyhnB>
+\(1\) Antoniades, A., Feenstra, R.C., and Xu, M. (2019) Using the Retail
+Distribution to Impute Expenditure Shares
+<https://www.aeaweb.org/conference/2020/preliminary/paper/r3FSyhnB>
 
-\(2\) Chessa, A. and Griffioen, R. (2019) Comparing Price Indices of Clothing and Footwear for Scanner Data and Web Scraped Data. <https://www.insee.fr/en/statistiques/4203548?sommaire=4203556>
+\(2\) Chessa, A. and Griffioen, R. (2019) Comparing Price Indices of
+Clothing and Footwear for Scanner Data and Web Scraped Data.
+<https://www.insee.fr/en/statistiques/4203548?sommaire=4203556>
 
-\(3\) ONS (2020) Using statistical distributions to estimate weights for web-scraped price quotes in consumer price statistics <https://www.ons.gov.uk/economy/inflationandpriceindices/articles/usingstatisticaldistributionstoestimateweightsforwebscrapedpricequotesinconsumerpricestatistics/2020-09-01>
+\(3\) ONS (2020) Using statistical distributions to estimate weights for
+web-scraped price quotes in consumer price statistics
+<https://www.ons.gov.uk/economy/inflationandpriceindices/articles/usingstatisticaldistributionstoestimateweightsforwebscrapedpricequotesinconsumerpricestatistics/2020-09-01>
 
-\(4\) Touzani, S. & van Buskirk, R. (2015) Estimating Sales and Sales Market Share from Sales Rank Data for Consumer Appliances <https://www.researchgate.net/publication/272830600_Estimating_Sales_and_Sales_Market_Share_from_Sales_Rank_Data_for_Consumer_Appliances>
+\(4\) Touzani, S. & van Buskirk, R. (2015) Estimating Sales and Sales
+Market Share from Sales Rank Data for Consumer Appliances
+<https://www.researchgate.net/publication/272830600_Estimating_Sales_and_Sales_Market_Share_from_Sales_Rank_Data_for_Consumer_Appliances>

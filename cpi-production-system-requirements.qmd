@@ -1,62 +1,145 @@
 ---
 title: "CPI production system requirements"
+date-modified: "2026-05-12"
 ---
 
-Requirements for IT systems are dependent on the choice of data source, the implementation plan for each new data source and the availability and knowledge of staff with specialist IT skills. In general, considerations can be split into IT requirements for data collection, transfer and storage, and production systems.
+Requirements for IT systems are dependent on the choice of data source,
+the implementation plan for each new data source and the availability
+and knowledge of staff with specialist IT skills. In general,
+considerations can be split into IT requirements for data collection,
+transfer and storage, and production systems.
 
-Recent empirical evidence provides additional context for these requirements. A global survey of around 70 National Statistical Offices (NSOs) conducted during winter 2025 focused on how each NSO structures, develops, and maintains their Consumer Price Index (CPI) production systems and organizes the teams that are responsible for these systems. The findings highlight that CPI production systems are best understood as complex analytical systems, and that architectural and organisational choices have material implications for system sustainability, adaptability and readiness for alternative data sources. The interim report can be found here: <https://un-task-team-for-scanner-data.github.io/production-systems-survey/report-site/>.
+Recent empirical evidence provides additional context for these
+requirements. A global survey of around 70 National Statistical Offices
+(NSOs) conducted during winter 2025 focused on how each NSO structures,
+develops, and maintains their Consumer Price Index (CPI) production
+systems and organizes the teams that are responsible for these systems.
+The findings highlight that CPI production systems are best understood
+as complex analytical systems, and that architectural and organisational
+choices have material implications for system sustainability,
+adaptability and readiness for alternative data sources. The interim
+report can be found
+here: <https://un-task-team-for-scanner-data.github.io/production-systems-survey/report-site/>.
 
-We will continue to look at extending our Handbook content and training materials on this topic during 2026/2027.
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v6                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2026-05-12                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Refreshed guidance to include reference to interim survey report and FAIR guidance.        |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page history         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910453) |
-+----------------------+--------------------------------------------------------------------------------------------+
+We will continue to look at extending our Handbook content and training
+materials on this topic during 2026/2027.
 
 ------------------------------------------------------------------------
 
 # Data collection, transfer and storage {#CPIproductionsystemrequirements-Datacollectiontransferandstorage}
 
-For web scraped data, a National Statistical Office (NSO) may need to invest in building a new collection platform if they choose to implement web scraping in house. Some considerations on technology and skills required can be found in the section [Strategies available for in-house web scraping](strategies-available-for-in-house-web-scraping.qmd).
+For web scraped data, a National Statistical Office (NSO) may need to
+invest in building a new collection platform if they choose to implement
+web scraping in house. Some considerations on technology and skills
+required can be found in the section [Strategies available for in-house
+web
+scraping](strategies-available-for-in-house-web-scraping.qmd).
 
-For any data delivered from external providers, a secure transfer mechanism should be conducted using secure, reliable, and formally agreed mechanisms that are consistent with both the provider's requirements and the NSO's legal and institutional obligations. Arrangements should be clearly specified within data sharing agreements and supported by appropriate technical safeguards (see Section [Data selection and acquisition](data-selection-and-acquisition.qmd))
+For any data delivered from external providers, a secure transfer
+mechanism should be conducted using secure, reliable, and formally
+agreed mechanisms that are consistent with both the provider's
+requirements and the NSO's legal and institutional obligations.
+Arrangements should be clearly specified within data sharing agreements
+and supported by appropriate technical safeguards (see Section [Data
+selection and
+acquisition](data-selection-and-acquisition.qmd))
 
-It is likely that the new data collected or supplied will be larger than the current collection. The NSO should therefore ensure that there is enough space for these data to be securely stored, likely working in partnership with the IT department or with skilled data engineers and architects. Cloud storage can be useful for this purpose as it allows an NSO to access sufficient capacity without the need to buy and manage its own data storage infrastructure. Some data suppliers may also require guarantees that data are securely stored and that access permissions are managed appropriately, making security a key consideration.
+It is likely that the new data collected or supplied will be larger than
+the current collection. The NSO should therefore ensure that there is
+enough space for these data to be securely stored, likely working in
+partnership with the IT department or with skilled data engineers and
+architects. Cloud storage can be useful for this purpose as it allows an
+NSO to access sufficient capacity without the need to buy and manage its
+own data storage infrastructure. Some data suppliers may also require
+guarantees that data are securely stored and that access permissions are
+managed appropriately, making security a key consideration.
 
-Survey findings reinforce the importance of these considerations (<https://un-task-team-for-scanner-data.github.io/production-systems-survey/report-site/>). While many CPI production systems now operate on large and increasingly heterogeneous datasets, the majority of NSOs still rely primarily on traditional databases or local file systems, with very limited use of analytics‑optimised file formats or object storage solutions. At the same time, lack of staff capacity and technical skills were cited as major barriers to adopting alternative data sources. This suggests that storage design and data access patterns can act as binding constraints on system evolution, particularly where full‑data approaches are desired. As a result, scalable, secure and well‑structured storage solutions should be treated as core IT requirements rather than optional enhancements.
+Survey findings reinforce the importance of these considerations
+(<https://un-task-team-for-scanner-data.github.io/production-systems-survey/report-site/>).
+While many CPI production systems now operate on large and increasingly
+heterogeneous datasets, the majority of NSOs still rely primarily on
+traditional databases or local file systems, with very limited use of
+analytics‑optimised file formats or object storage solutions. At the
+same time, lack of staff capacity and technical skills were cited as
+major barriers to adopting alternative data sources. This suggests that
+storage design and data access patterns can act as binding constraints
+on system evolution, particularly where full‑data approaches are
+desired. As a result, scalable, secure and well‑structured storage
+solutions should be treated as core IT requirements rather than optional
+enhancements.
 
 # Production systems {#CPIproductionsystemrequirements-Productionsystems}
 
-Existing production systems may still be suitable if the NSO chooses to use a static (sampling) approach (see [Product sampling for price index calculation](product-sampling-for-price-index-calculation.qmd)). This allows substitution of the current sample of products with those collected from alternative data sources while continuing to use existing aggregation systems. This approach generally requires less system redevelopment and minimises disruption to established production processes.
+Existing production systems may still be suitable if the NSO chooses to
+use a static (sampling) approach (see [Product sampling for price index
+calculation](product-sampling-for-price-index-calculation.qmd)).
+This allows substitution of the current sample of products with those
+collected from alternative data sources while continuing to use existing
+aggregation systems. This approach generally requires less system
+redevelopment and minimises disruption to established production
+processes.
 
-However, if the NSO wishes to use a dynamic approach, implementing more complex methods or processing a larger proportion of the available data, it may be necessary to upgrade the production system. This may involve building a new system for a particular category and integrating its outputs into an existing aggregation framework. Alternatively, it may be more effective to design a new system that is capable of processing multiple data sources in parallel. When designed in a flexible manner, such systems can support future extensions without repeated redevelopment.
+However, if the NSO wishes to use a dynamic approach, implementing more
+complex methods or processing a larger proportion of the available data,
+it may be necessary to upgrade the production system. This may involve
+building a new system for a particular category and integrating its
+outputs into an existing aggregation framework. Alternatively, it may be
+more effective to design a new system that is capable of processing
+multiple data sources in parallel. When designed in a flexible manner,
+such systems can support future extensions without repeated
+redevelopment.
 
-Evidence from the CPI production systems survey (<https://un-task-team-for-scanner-data.github.io/production-systems-survey/report-site/>) indicates that these design choices have long‑term implications. The most common architecture observed across NSOs is monolithic, with single systems spanning multiple stages of the statistical production process. These systems are more likely to be infrequently updated and to experience long lead times for large changes. In contrast, more modular production systems are associated with shorter lead times, more frequent updates and greater capacity to evolve over time. This supports approaches that emphasise clear system boundaries, pipeline‑based designs and the separation of responsibilities across components, particularly where future data sources or methodological changes are anticipated. Examples of this approach are provided in the Case Studies section below. 
+Evidence from the CPI production systems survey
+(<https://un-task-team-for-scanner-data.github.io/production-systems-survey/report-site/>)
+indicates that these design choices have long‑term implications. The
+most common architecture observed across NSOs is monolithic, with single
+systems spanning multiple stages of the statistical production process.
+These systems are more likely to be infrequently updated and to
+experience long lead times for large changes. In contrast, more modular
+production systems are associated with shorter lead times, more frequent
+updates and greater capacity to evolve over time. This supports
+approaches that emphasise clear system boundaries, pipeline‑based
+designs and the separation of responsibilities across components,
+particularly where future data sources or methodological changes are
+anticipated. Examples of this approach are provided in the Case Studies
+section below. 
 
-These approaches will typically require support from specialist data engineers who are able to build, test and maintain such systems. NSOs may also benefit from developing a platform of modular tools to handle different stages of processing, making it easier to distinguish where open‑source analytical development is appropriate and where more formal IT‑led development is required.
+These approaches will typically require support from specialist data
+engineers who are able to build, test and maintain such systems. NSOs
+may also benefit from developing a platform of modular tools to handle
+different stages of processing, making it easier to distinguish where
+open‑source analytical development is appropriate and where more formal
+IT‑led development is required.
 
 ## Use of open-source {#CPIproductionsystemrequirements-Useofopen-source}
 
-Many NSOs have used open‑source languages such as Python or R to write parts or all of the systems required for processing new data sources, reflecting their flexibility and wide ecosystem of analytical libraries. Several packages have been developed by NSOs to support this approach. For more information on available open-source software for official statistics, and in particular price statistics, please see <https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/reproducibility-guidance/open-material.html>.
+Many NSOs have used open‑source languages such as Python or R to write
+parts or all of the systems required for processing new data sources,
+reflecting their flexibility and wide ecosystem of analytical libraries.
+Several packages have been developed by NSOs to support this approach.
+For more information on available open-source software for official
+statistics, and in particular price statistics, please
+see <https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/reproducibility-guidance/open-material.html>.
 
 # Practical suggestions {#CPIproductionsystemrequirements-Practicalsuggestions}
 
-Based on the survey results, the interim report highlighted several concrete and practical suggestions that may help the teams responsible for CPI Production Systems to manage complexity and reduce maintenance burden for these systems. For more information see <https://un-task-team-for-scanner-data.github.io/production-systems-survey/report-site/findings-and-next-steps.html#practical-suggestions>.
+Based on the survey results, the interim report highlighted several
+concrete and practical suggestions that may help the teams responsible
+for CPI Production Systems to manage complexity and reduce maintenance
+burden for these systems. For more information see
+<https://un-task-team-for-scanner-data.github.io/production-systems-survey/report-site/findings-and-next-steps.html#practical-suggestions>.
 
 \
 
 Important
 
-All of these suggestions are guidelines based on correlational evidence and general industry knowledge.
+All of these suggestions are guidelines based on correlational evidence
+and general industry knowledge.
 
-The report is not claiming any strict cause-and-effect relationships from this survey alone. Rather, the goal is to encourage readers to think critically about these suggestions and to pursue suggestions that resonate based on their own experiences.
+The report is not claiming any strict cause-and-effect relationships
+from this survey alone. Rather, the goal is to encourage readers to
+think critically about these suggestions and to pursue suggestions that
+resonate based on their own experiences.
 
 \
 
@@ -65,11 +148,14 @@ At high level, the following guidelines are provided:
 - Think explicitly about system boundaries.
 - Think explicitly about data interchange **between** systems.
 - Embed technical expertise in business domain teams.
-- Adopt Git and GitLab or GitHub as a Version Control System for code, configuration, and documentation.
+- Adopt Git and GitLab or GitHub as a Version Control System for code,
+  configuration, and documentation.
 - Leverage analytics optimized file formats like Apache Parquet
-- Where it's feasible, implement Complex Analytical Systems as pipelines with one-way data flows and idempotent operations.
+- Where it's feasible, implement Complex Analytical Systems as pipelines
+  with one-way data flows and idempotent operations.
 - Practice updating systems more frequently.
-- Ensure your CPI Production System can operate in a separate development environment.
+- Ensure your CPI Production System can operate in a separate
+  development environment.
 
 # Case studies {#CPIproductionsystemrequirements-Casestudies}
 

@@ -1,62 +1,108 @@
 ---
 title: "Decomposition"
+date-modified: "2021-12-13"
 ---
 
-In addition to measuring the aggregate price or quantity change, it is important to decompose the change into its contributions by individual commodities or groupings. The calculation of such contributions is an important tool for compilers to validate and interpret price index results (1, 3). NSOs find greater need for index decomposition methods when processing transaction data sets that usually contain in the order of (tens of) thousands of products. Methods that are able to identify the main drivers behind overall price change are increasingly important when dealing with such large data sets.
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v8                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2021-12-13                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910502) |
-+---------------------+--------------------------------------------------------------------------------------------+
+In addition to measuring the aggregate price or quantity change, it is
+important to decompose the change into its contributions by individual
+commodities or groupings. The calculation of such contributions is an
+important tool for compilers to validate and interpret price index
+results (1, 3). NSOs find greater need for index decomposition methods
+when processing transaction data sets that usually contain in the order
+of (tens of) thousands of products. Methods that are able to identify
+the main drivers behind overall price change are increasingly important
+when dealing with such large data sets.
 
 ------------------------------------------------------------------------
 
 # Introduction {#Decomposition-Introduction}
 
-In general, a price index that takes the form of an arithmetic mean of commodity price ratios or relatives has an additive decomposition, i.e. it can be expressed as a sum of contributions depending on prices or price changes. An additively decomposed price index can be written as $P^{t_{1},t_{2}}=\sum_{i} f_{i}(\mathbf{p_{i}},\mathbf{w_{i}})$, where $t_{1}, t_{2}$ mean the base and research period respectively, $\mathbf{p_{i}}$ is a vector of prices of commodities, $\mathbf{w_{i}}$ is a vector of weights for the aggregation. 
+In general, a price index that takes the form of an arithmetic mean of
+commodity price ratios or relatives has an additive decomposition, i.e.
+it can be expressed as a sum of contributions depending on prices or
+price changes. An additively decomposed price index can be written as
+$P^{t_{1},t_{2}}=\sum_{i} f_{i}(\mathbf{p_{i}},\mathbf{w_{i}})$, where
+$t_{1}, t_{2}$ mean the base and research period respectively,
+$\mathbf{p_{i}}$ is a vector of prices of commodities, $\mathbf{w_{i}}$
+is a vector of weights for the aggregation. 
 
-If the price index takes a form of a geometric mean of price relatives, it has a multiplicative decomposition: $P^{t_{1},t_{2}}=\prod_{i} f_{i}(\mathbf{p_{i}},\mathbf{w_{i}})$.
+If the price index takes a form of a geometric mean of price relatives,
+it has a multiplicative decomposition:
+$P^{t_{1},t_{2}}=\prod_{i} f_{i}(\mathbf{p_{i}},\mathbf{w_{i}})$.
 
-Individual product contributions can be directly derived from these two analytical forms, as the individual contributions sum or multiply to the overall price index. The additive decomposition has a important application in the CPI and HICP, as will be discussed below.
+Individual product contributions can be directly derived from these two
+analytical forms, as the individual contributions sum or multiply to the
+overall price index. The additive decomposition has a important
+application in the CPI and HICP, as will be discussed below.
 
 # Decomposition of bilateral indices {#Decomposition-Decompositionofbilateralindices}
 
-In most cases, the decomposition of bilateral indices is quite simple and often the additive or multiplicative decomposition of an index results almost directly from its definition. For instance, the Laspeyres price index can be written in the following additive form:
+In most cases, the decomposition of bilateral indices is quite simple
+and often the additive or multiplicative decomposition of an index
+results almost directly from its definition. For instance, the Laspeyres
+price index can be written in the following additive form:
 
 $$P_{La}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} s_{i}^{t_{1}} \frac{p_{i}^{t_{2}}} {p_{i}^{t_{1}}}$$
 
-With the weights $s_i^{t_1,t_2}$ as the price updated weights of a previous year (i.e. for Laspeyres type method, which is commonly used by NSOs). The arithmetic index formula above is a fixed-base index, which means that the terms in this formula equal to the contributions of products or aggregates to the fixed-base index of a higher aggregate. Contributions to other types of indices, such as year on year indices, can be derived analytically (the [HICP manual](https://ec.europa.eu/eurostat/documents/3859598/9479325/KS-GQ-17-015-EN-N.pdf/d5e63427-c588-479f-9b19-f4b4d698f2a2) provides an overview of the formula used to calculate contributions to the monthly and annual growth rate of inflation). There are numerous examples of other additive index formulas, such as Dutot, Paasche, Walsh, Marshall-Edgeworth and the bilateral Geary-Khamis index. The remarks with regard to product contributions that were made for the Laspeyres index also apply to these index formulas.
+With the weights $s_i^{t_1,t_2}$ as the price updated weights of a
+previous year (i.e. for Laspeyres type method, which is commonly used by
+NSOs). The arithmetic index formula above is a fixed-base index, which
+means that the terms in this formula equal to the contributions of
+products or aggregates to the fixed-base index of a higher aggregate.
+Contributions to other types of indices, such as year on year indices,
+can be derived analytically (the [HICP
+manual](https://ec.europa.eu/eurostat/documents/3859598/9479325/KS-GQ-17-015-EN-N.pdf/d5e63427-c588-479f-9b19-f4b4d698f2a2)
+provides an overview of the formula used to calculate contributions to
+the monthly and annual growth rate of inflation). There are numerous
+examples of other additive index formulas, such as Dutot, Paasche,
+Walsh, Marshall-Edgeworth and the bilateral Geary-Khamis index. The
+remarks with regard to product contributions that were made for the
+Laspeyres index also apply to these index formulas.
 
-It may be clear that product contributions do not simply sum to the overall index when an index formula is not additive. Approximate additive decomposition methods could be derived by a linearization of a non-additive index formula. This is an active topic of research.
+It may be clear that product contributions do not simply sum to the
+overall index when an index formula is not additive. Approximate
+additive decomposition methods could be derived by a linearization of a
+non-additive index formula. This is an active topic of research.
 
-Multiplicative index formulas are examples of non-additive or non-linear index methods. Instead of finding linearizations, NSOs could alternatively exploit the readily available multiplicative decomposition of this class of index methods. For example, the Törnqvist price index has the following, natural multiplicative form:
+Multiplicative index formulas are examples of non-additive or non-linear
+index methods. Instead of finding linearizations, NSOs could
+alternatively exploit the readily available multiplicative decomposition
+of this class of index methods. For example, the Törnqvist price index
+has the following, natural multiplicative form:
 
 $$P_{T}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \left(\frac{p_{i}^{t_{2}}}{p_{i}^{t_{1}}}\right)^{\frac{s_{i}^{t_{1}}+s_{i}^{t_{2}}}{2}}$$
 
-A wide overview of additive and multiplicative decompositions of bilateral price index formulas can be found in publications by Vartia (1974, 1976), Diewert (2002) or Balk (2008).
+A wide overview of additive and multiplicative decompositions of
+bilateral price index formulas can be found in publications by Vartia
+(1974, 1976), Diewert (2002) or Balk (2008).
 
 # Decomposition of multilateral indices {#Decomposition-Decompositionofmultilateralindices}
 
-The decomposition of multilateral indices is a bit more complicated, which results from the fact that when comparing two time periods $t_{1}$ and $t_{2}$, multilateral indexes take into account the entire time window $[0,T]$ anyway. In addition, products that occur in one of the two compared periods may not appear in the sample at all in the second of the compared periods.  Below are example formulas of decompositions of three multilateral indices (CCDI, Geary-Khamis, TPD). See [Webster and Tarnow-Mordi (2019)](https://intapi.sciendo.com/pdf/10.2478/jos-2019-0020) for more details on each.
+The decomposition of multilateral indices is a bit more complicated,
+which results from the fact that when comparing two time periods $t_{1}$
+and $t_{2}$, multilateral indexes take into account the entire time
+window $[0,T]$ anyway. In addition, products that occur in one of the
+two compared periods may not appear in the sample at all in the second
+of the compared periods.  Below are example formulas of decompositions
+of three multilateral indices (CCDI, Geary-Khamis, TPD). See [Webster
+and Tarnow-Mordi
+(2019)](https://intapi.sciendo.com/pdf/10.2478/jos-2019-0020) for more
+details on each.
 
 ## Multiplicative decomposition of the GEKS index {#Decomposition-MultiplicativedecompositionoftheGEKSindex}
 
 $$P_{CCDI}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{w_{i}^{*, t_{2}}}}{(p_{i}^{t_{1}})^{w_{i}^{*, t_{1}}}} \prod_{t=0}^{T} (p_{i}^{t}) ^ \frac {w_{i}^{t,t_{1}}-w_{i}^{t,t_{2}}} {T+1}$$
 
-where $w_{i}^{t_{1}, t_{2}}=(\frac{p_{i}^{t_{1}} q_{i}^{t_{1}}} {\sum\limits_{j \in G_{t_{1}, t_{2}}}p_{j}^{t_{1}} q_{j}^{t_{1}}}+\frac{p_{i}^{t_{2}} q_{i}^{t_{2}}} {\sum\limits_{j \in G_{t_{1}, t_{2}}}p_{j}^{t_{2}} q_{j}^{t_{2}}})$ and $w_{i}^{*, t}=\frac{1}{T+1} \sum_{s=0}^{T} w_{t}^{s,t}$.
+where
+$w_{i}^{t_{1}, t_{2}}=(\frac{p_{i}^{t_{1}} q_{i}^{t_{1}}} {\sum\limits_{j \in G_{t_{1}, t_{2}}}p_{j}^{t_{1}} q_{j}^{t_{1}}}+\frac{p_{i}^{t_{2}} q_{i}^{t_{2}}} {\sum\limits_{j \in G_{t_{1}, t_{2}}}p_{j}^{t_{2}} q_{j}^{t_{2}}})$
+and $w_{i}^{*, t}=\frac{1}{T+1} \sum_{s=0}^{T} w_{t}^{s,t}$.
 
 ## Additive decomposition of the Geary-Khamis index {#Decomposition-AdditivedecompositionoftheGeary-Khamisindex}
 
 $$P_{GK}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} \frac {s_{i}^{t_{1}} \sigma_{i}^{t_{2}} p_{i}^{t_{2}}} {\sigma_{i}^{t_{1}} p_{i}^{t_{1}}} + \frac{1}{P_{GK}^{0, t_{1}}} \sum\limits_{i \in G_{t_{2}} / G_{t_{1}}} \frac {s_{i}^{t_{2}} p_{i}^{t_{2}}} {v_{i}}$$
 
-where $\sigma_{i}^{t}=\frac {p_{i}^{t} v_{i}} {\sum\limits_{j \in G_{t}} p_{j}^{t} v_{j}}$.
+where
+$\sigma_{i}^{t}=\frac {p_{i}^{t} v_{i}} {\sum\limits_{j \in G_{t}} p_{j}^{t} v_{j}}$.
 
 ## Multiplicative decomposition of the Time Product Dummy (TPD) index {#Decomposition-MultiplicativedecompositionoftheTimeProductDummyTPDindex}
 
@@ -68,12 +114,20 @@ $$P_{TPD}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_
 
 # References {#Decomposition-References}
 
-\(1\) Balk, B. M. (2008). Price and Quantity Index Numbers: Models for Measuring Aggregate Change and Difference, New York: Cambridge University Press.
+\(1\) Balk, B. M. (2008). Price and Quantity Index Numbers: Models for
+Measuring Aggregate Change and Difference, New York: Cambridge
+University Press.
 
-\(2\) Diewert, E. W. (2002). The Quadratic Approximation Lemma and Decompositions of Superlative Indexes. *Journal of Economic and Social Measurement*, 28, no. 1,2: 63-68.
+\(2\) Diewert, E. W. (2002). The Quadratic Approximation Lemma and
+Decompositions of Superlative Indexes. *Journal of Economic and Social
+Measurement*, 28, no. 1,2: 63-68.
 
-\(3\) Webster, M., Tarnow-Mordi, R. C. (2019). Decomposing Multilateral Price Indexes into the Contributions of Individual Commodities, *Journal of Official Statistics*, 35(2), 461-486.
+\(3\) Webster, M., Tarnow-Mordi, R. C. (2019). Decomposing Multilateral
+Price Indexes into the Contributions of Individual Commodities, *Journal
+of Official Statistics*, 35(2), 461-486.
 
-\(4\) Vartia, Y. O. (1974). Relative Changes and Economic Indices. Doctoral dissertation, University of Helsinki.
+\(4\) Vartia, Y. O. (1974). Relative Changes and Economic Indices.
+Doctoral dissertation, University of Helsinki.
 
-\(5\) Vartia, Y. O. (1976). Ideal Log-Change Index Numbers. *Scandinavian Journal of Statistics*, 3(3), 121-126.
+\(5\) Vartia, Y. O. (1976). Ideal Log-Change Index Numbers.
+*Scandinavian Journal of Statistics*, 3(3), 121-126.

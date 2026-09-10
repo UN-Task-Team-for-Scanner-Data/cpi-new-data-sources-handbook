@@ -1,52 +1,124 @@
 ---
 title: "Method 1: Attribute-based classification method"
+date-modified: "2025-04-28"
 ---
 
-Attribute-based classification involves classifying observations in the data by mapping structured variables or attributes available in the alternative data file to the necessary taxonomy classes. Thus each unique product detected is automatically assigned to the mapped class. This method is also commonly called rule-based classification, however will be referred to as attribute-based for consistency.
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2025-04-28                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication                                                                        |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281182) |
-+---------------------+--------------------------------------------------------------------------------------------+
+Attribute-based classification involves classifying observations in the
+data by mapping structured variables or attributes available in the
+alternative data file to the necessary taxonomy classes. Thus each
+unique product detected is automatically assigned to the mapped class.
+This method is also commonly called rule-based classification, however
+will be referred to as attribute-based for consistency.
 
 ------------------------------------------------------------------------
 
 # Why use attribute based classification: {#Method1Attributebasedclassificationmethod-Whyuseattributebasedclassification}
 
-Attribute-based classification is often the first to be investigated by NSOs when they wish to classify unique products. If various attributes in the data (most commonly categorical variables) are stable, then it is convenient to use this method. For instance, scanner retailers may provide National Statistical Offices (NSOs) categorical variables which represent the category the retailer itself applies to a set of products. Alternatively, after scraping a retailer website, the NSO may wish to use breadcrumbs that show which category a specific product on the website belongs to. The NSO may find these type of product attributes (i.e. categories) stable over time and thus may depend on them for classification. This is often tested when NSOs trial different classification methods as part of initial classification. For example if categories stay stable over 13 or 25 months then it may be likely that they stay stable for a while longer and it is simplest to set up a set of rules that look for specific attributes to perform classification.
+Attribute-based classification is often the first to be investigated by
+NSOs when they wish to classify unique products. If various attributes
+in the data (most commonly categorical variables) are stable, then it is
+convenient to use this method. For instance, scanner retailers may
+provide National Statistical Offices (NSOs) categorical variables which
+represent the category the retailer itself applies to a set of products.
+Alternatively, after scraping a retailer website, the NSO may wish to
+use breadcrumbs that show which category a specific product on the
+website belongs to. The NSO may find these type of product attributes
+(i.e. categories) stable over time and thus may depend on them for
+classification. This is often tested when NSOs trial different
+classification methods as part of initial classification. For example if
+categories stay stable over 13 or 25 months then it may be likely that
+they stay stable for a while longer and it is simplest to set up a set
+of rules that look for specific attributes to perform classification.
 
-Attribute-based classification may depend on very granular attributes and may be developed iteratively, such as by manually labelling a sample of the data when developing an initial classification method (using [method 0](method-0-manual-labelling-or-validation-of-predicted-labels.qmd)). For instance, after annotating a sample of products, the NSO may find that specific retailer categories (or other attributes) are stable and can map cleanly into the classification categories to which the NSO is looking to classifying data. If the NSO finds that attributes aren\'t perfect and some attributes (say categories) do not cleanly map to a classification code but need tuning to filter out some products, other methods may be needed (see [method 2](method-2-pattern-matching-classification-method.qmd) for more detail in such a case). 
+Attribute-based classification may depend on very granular attributes
+and may be developed iteratively, such as by manually labelling a sample
+of the data when developing an initial classification method (using
+[method 0](method-0-manual-labelling-or-validation-of-predicted-labels.qmd)). For instance, after annotating a sample of
+products, the NSO may find that specific retailer categories (or other
+attributes) are stable and can map cleanly into the classification
+categories to which the NSO is looking to classifying data. If the NSO
+finds that attributes aren\'t perfect and some attributes (say
+categories) do not cleanly map to a classification code but need tuning
+to filter out some products, other methods may be needed (see [method
+2](method-2-pattern-matching-classification-method.qmd) for more detail in such a case). 
 
-To adopt attribute (or rule-based) classification however, it is best not to have too many attributes on which rules are based as rules need to be maintained for recurrent classification. If attributes suddenly prove unstable and there are a lot of products and thus rules to review and fix, this may be a non-trivial task to handle during tight production timelines. Hence, NSOs should be cognisant of the risk of failure and not use this method if there are too many rules that need to be maintained.
+To adopt attribute (or rule-based) classification however, it is best
+not to have too many attributes on which rules are based as rules need
+to be maintained for recurrent classification. If attributes suddenly
+prove unstable and there are a lot of products and thus rules to review
+and fix, this may be a non-trivial task to handle during tight
+production timelines. Hence, NSOs should be cognisant of the risk of
+failure and not use this method if there are too many rules that need to
+be maintained.
 
 # How to develop and apply attribute-based classification: {#Method1Attributebasedclassificationmethod-Howtodevelopandapplyattribute-basedclassification}
 
-Conceptually, there are several ways that NSOs can look to create rules based on attributes:
+Conceptually, there are several ways that NSOs can look to create rules
+based on attributes:
 
-- **Iterative sampling approach** - NSOs can look to start with a sample of products and manually label them to the category that classification will be done to (see [method 0](method-0-manual-labelling-or-validation-of-predicted-labels.qmd) for more details). Then various structured attributes (such as retailer provided categories) can be determined if they are able to map all or most unique products to categories of interest. As the initial manually labelled sample may be small and not all rules may be found, it is likely that several rounds are needed to make more rules. To do this, the NSO can classify the remaining products from unclassified products, for which rules can be created. This can be continued until all products are classified.
-- **Category-by-category mapping approach** - the NSO can either (a) list all categories of interest and then look for attributes in the data that may align with the scope of the category, or (b) look at all attributes and then evaluate each, attribute-by-attribute, creating rules to link them to classes of interest. In the latter case, this is difficult if the dataset has many types of attributes but is quite simple if there are only a couple or ideally one (say retailer specified category). 
+- **Iterative sampling approach** - NSOs can look to start with a sample
+  of products and manually label them to the category that
+  classification will be done to (see [method 0](method-0-manual-labelling-or-validation-of-predicted-labels.qmd) for
+  more details). Then various structured attributes (such as retailer
+  provided categories) can be determined if they are able to map all or
+  most unique products to categories of interest. As the initial
+  manually labelled sample may be small and not all rules may be found,
+  it is likely that several rounds are needed to make more rules. To do
+  this, the NSO can classify the remaining products from unclassified
+  products, for which rules can be created. This can be continued until
+  all products are classified.
+- **Category-by-category mapping approach** - the NSO can either (a)
+  list all categories of interest and then look for attributes in the
+  data that may align with the scope of the category, or (b) look at all
+  attributes and then evaluate each, attribute-by-attribute, creating
+  rules to link them to classes of interest. In the latter case, this is
+  difficult if the dataset has many types of attributes but is quite
+  simple if there are only a couple or ideally one (say retailer
+  specified category). 
 
-In both cases, a clear understanding of what is in-scope and out-of-scope for the categories that the NSO wants must be developed. This taxonomy definition may need to be tuned if gaps are found. It may also be advisable to double check if rules are clear and unambiguous. If there is disagreement whether a retailer category should be assigned to a category of interest, investigate the products in the category. Finally, it is likely that retailer categories will not cleanly map to categories of interest, but a many-to-one relationship (in favour of retailer category) will occur. 
+In both cases, a clear understanding of what is in-scope and
+out-of-scope for the categories that the NSO wants must be developed.
+This taxonomy definition may need to be tuned if gaps are found. It may
+also be advisable to double check if rules are clear and unambiguous. If
+there is disagreement whether a retailer category should be assigned to
+a category of interest, investigate the products in the category.
+Finally, it is likely that retailer categories will not cleanly map to
+categories of interest, but a many-to-one relationship (in favour of
+retailer category) will occur. 
 
-In production (i.e. recurrent classification), this method may be applied on all new products to automatically assign them to a class of interest.
+In production (i.e. recurrent classification), this method may be
+applied on all new products to automatically assign them to a class of
+interest.
 
 # Best practices and quality considerations: {#Method1Attributebasedclassificationmethod-Bestpracticesandqualityconsiderations}
 
-Several approaches of implementation and quality maintenance are recommended:
+Several approaches of implementation and quality maintenance are
+recommended:
 
-- **Develop robust implementation**: Implementation of attribute-based methods can be based on spreadsheets in simple cases, however given it is best to do programatically, it is best to store the developed rules and the program as part of a program, such as in a version controlled location. That way there is full transparency what rules were used at which time. For instance, if rules are developed programatically, they can be saved as a distinct .csv or .json file in the same repository as the classification code. Thus the production classification system can import these rules and apply them on newly received products.
-- **Develop reports to detect potential breaks in the rules or new attributes**: The relationship between attributes in the dataset and what categories they represent could break over time (in small ways or all at once). Hence, it is necessary to develop checks to sense when this occurs. For instance, if new attributes (for instance categories) are detected, this could be a sign that some old rules are no longer correct. Alternatively, if the amount of products in each category of interest suddenly shifts it may be that attributes may no longer be correctly positioned to map correctly.
+- **Develop robust implementation**: Implementation of attribute-based
+  methods can be based on spreadsheets in simple cases, however given it
+  is best to do programatically, it is best to store the developed rules
+  and the program as part of a program, such as in a version controlled
+  location. That way there is full transparency what rules were used at
+  which time. For instance, if rules are developed programatically, they
+  can be saved as a distinct .csv or .json file in the same repository
+  as the classification code. Thus the production classification system
+  can import these rules and apply them on newly received products.
+- **Develop reports to detect potential breaks in the rules or new
+  attributes**: The relationship between attributes in the dataset and
+  what categories they represent could break over time (in small ways or
+  all at once). Hence, it is necessary to develop checks to sense when
+  this occurs. For instance, if new attributes (for instance categories)
+  are detected, this could be a sign that some old rules are no longer
+  correct. Alternatively, if the amount of products in each category of
+  interest suddenly shifts it may be that attributes may no longer be
+  correctly positioned to map correctly.
 
 Example
 
-Consider an instance where a data supplier provides the prices of a variety of new and refurbished laptops and tablets, with some example observations shown in the table below:
+Consider an instance where a data supplier provides the prices of a
+variety of new and refurbished laptops and tablets, with some example
+observations shown in the table below:
 
 Table 1: Example data that can be used by an attribute-based classifier
 
@@ -71,9 +143,11 @@ Our desired classes may consist of:
 - New tablets
 - Refurbished tablets
 
-In this case, we may set the following rules to classify data to the \"New laptops\" class.
+In this case, we may set the following rules to classify data to the
+\"New laptops\" class.
 
-Code 1: Example of a rule based on two attributes in the example data of Table 1
+Code 1: Example of a rule based on two attributes in the example data of
+Table 1
 
 **Simple rules that map attribute**
 
@@ -82,4 +156,9 @@ if product_type == 'Laptop' | new_or_refubished == 'new'
     coicop_code = 'New Laptops'
 ```
 
-Note in this instance, a null value in the product_type variable for Laptop 4 may mean that we do not appropriately classify this observation. There are several options for handling such observations: NSOs may choose to leave these observations as out-of-scope; impute the underlying attribute variable to enable classification; or manually classify such observations in a \"mop-up\" exercise.
+Note in this instance, a null value in the product_type variable for
+Laptop 4 may mean that we do not appropriately classify this
+observation. There are several options for handling such observations:
+NSOs may choose to leave these observations as out-of-scope; impute the
+underlying attribute variable to enable classification; or manually
+classify such observations in a \"mop-up\" exercise.

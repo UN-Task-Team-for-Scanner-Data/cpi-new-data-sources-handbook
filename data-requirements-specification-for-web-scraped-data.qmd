@@ -1,72 +1,125 @@
 ---
 title: "Data requirements specification for web scraped data"
+date-modified: "2021-07-16"
 ---
 
 Key variables to look for when acquiring web scraped data\
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v2                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2021-07-16                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910467) |
-+----------------------+--------------------------------------------------------------------------------------------+
 
 ------------------------------------------------------------------------
 
 # Introduction {#Datarequirementsspecificationforwebscrapeddata-Introduction}
 
-The selection of the appropriate variables to extract relies on the expected use for the data. For the purposes of Consumer Price Index (CPI) compilation, one should extract basic information that can be used to characterise a product offer and allows to track its evolution along time. A [unique product offer](identifying-unique-products.qmd) is characterised for information on three dimensions: the outlet, the product specifications and the time of the offer. Besides the information necessary for the characterization of product offers, additional relevant data can also include data for the derivation of proxy weights, hedonics and delivery fees.
+The selection of the appropriate variables to extract relies on the
+expected use for the data. For the purposes of Consumer Price Index
+(CPI) compilation, one should extract basic information that can be used
+to characterise a product offer and allows to track its evolution along
+time. A [unique product
+offer](identifying-unique-products.qmd) is characterised for
+information on three dimensions: the outlet, the product specifications
+and the time of the offer. Besides the information necessary for the
+characterization of product offers, additional relevant data can also
+include data for the derivation of proxy weights, hedonics and delivery
+fees.
 
 # Key variables {#Datarequirementsspecificationforwebscrapeddata-Keyvariables}
 
-When performing web scraping, useful information required to characterise each of these variables are presented below (more detail is available in the Eurostat \"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\"):
+When performing web scraping, useful information required to
+characterise each of these variables are presented below (more detail is
+available in the Eurostat \"[Practical guidelines on web scraping for
+the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\"):
 
 ## Outlet identifier {#Datarequirementsspecificationforwebscrapeddata-Outletidentifier}
 
-Identification of the online retailer can be provided by the URL that identifies the site. In the case that data is extracted from marketplaces or price comparison websites, it might be useful to collect the URL or other information that characterizes the outlet.
+Identification of the online retailer can be provided by the URL that
+identifies the site. In the case that data is extracted from
+marketplaces or price comparison websites, it might be useful to collect
+the URL or other information that characterizes the outlet.
 
 ## Article identifier {#Datarequirementsspecificationforwebscrapeddata-Articleidentifier}
 
-To allow a unique identification and track of an article, important characteristics include:
+To allow a unique identification and track of an article, important
+characteristics include:
 
 1.  the URL of the article within the site
-2.  when available, code of the article such as Global Trade Item Number (GTIN), stock keeping unit (SKU) or the retailer's own code. Note that for services, this may not apply.
-3.  short text with the article description (for example, product name or service description)
-4.  additional article's characteristics (for example, for clothing you may be interested in material or size)
+2.  when available, code of the article such as Global Trade Item Number
+    (GTIN), stock keeping unit (SKU) or the retailer's own code. Note
+    that for services, this may not apply.
+3.  short text with the article description (for example, product name
+    or service description)
+4.  additional article's characteristics (for example, for clothing you
+    may be interested in material or size)
 5.  retailers\' classification of the article
 
-Note that items (3), (4), and (5) are especially useful for purposes of automatic classification of the articles and stratification into homogeneous products. The use of the items characteristics is also key for the derivation of hedonic indices.
+Note that items (3), (4), and (5) are especially useful for purposes of
+automatic classification of the articles and stratification into
+homogeneous products. The use of the items characteristics is also key
+for the derivation of hedonic indices.
 
 ## Price and Time {#Datarequirementsspecificationforwebscrapeddata-PriceandTime}
 
-The observed product offer of the article displayed in the web site. In some cases, more than one price is displayed by the retailer. The National Statistical Office (NSO) should extract the price that best suits the scope of the CPI. The time or date for which the price is extracted should also be recorded for compilation purposes.
+The observed product offer of the article displayed in the web site. In
+some cases, more than one price is displayed by the retailer. The
+National Statistical Office (NSO) should extract the price that best
+suits the scope of the CPI. The time or date for which the price is
+extracted should also be recorded for compilation purposes.
 
 ## Other information {#Datarequirementsspecificationforwebscrapeddata-Otherinformation}
 
-Delivery fees can also be a price determinant characteristic as consumer's may face different fees according to their residence address. In this case, the collection of such taxes is advisable.
+Delivery fees can also be a price determinant characteristic as
+consumer's may face different fees according to their residence address.
+In this case, the collection of such taxes is advisable.
 
 # Other considerations {#Datarequirementsspecificationforwebscrapeddata-Otherconsiderations}
 
 ## Frequency of collection and comparability {#Datarequirementsspecificationforwebscrapeddata-Frequencyofcollectionandcomparability}
 
-The frequency of collection can vary according to the variables characteristics and pricing dynamics of the goods and services being tracked. Information on variables such as product attributes that usually do not change can be scraped on a different schedule (for example, weekly) compared with more frequently changing attributes such as the price.
+The frequency of collection can vary according to the variables
+characteristics and pricing dynamics of the goods and services being
+tracked. Information on variables such as product attributes that
+usually do not change can be scraped on a different schedule (for
+example, weekly) compared with more frequently changing attributes such
+as the price.
 
-The frequency of collection of prices will depend on the price dynamics associated with a given sector and retailer. In many cases, a daily collection of prices is enough. However, if significant price changes occur as a function of time of day, collections at higher frequencies could be used. For more details on price dynamics of web retailers see Ref. (1). However, increasing the number of collections has implications for the amount of data storage required and also increases the risk of blocking by the website through the increased burden. In instances where prices are not expected to change much, the collection frequency can be updated accordingly to align to traditional collection (for example, monthly).
+The frequency of collection of prices will depend on the price dynamics
+associated with a given sector and retailer. In many cases, a daily
+collection of prices is enough. However, if significant price changes
+occur as a function of time of day, collections at higher frequencies
+could be used. For more details on price dynamics of web retailers see
+Ref. (1). However, increasing the number of collections has implications
+for the amount of data storage required and also increases the risk of
+blocking by the website through the increased burden. In instances where
+prices are not expected to change much, the collection frequency can be
+updated accordingly to align to traditional collection (for example,
+monthly).
 
-Internet prices can also present different results according to different factors such as the internet protocol (IP) addresses and computer brand. These dynamics are more prevalent for services. One should take care that changes in such characteristics are not creating spurious price changes across time.
+Internet prices can also present different results according to
+different factors such as the internet protocol (IP) addresses and
+computer brand. These dynamics are more prevalent for services. One
+should take care that changes in such characteristics are not creating
+spurious price changes across time.
 
 ## Proxy weights {#Datarequirementsspecificationforwebscrapeddata-Proxyweights}
 
-Web data does not provide information on items and quantities sold for the derivation of elementary weighted indices. However, proxy variables can be adopted for this purpose, and this can require the collection of additional data according to the method adopted. One possibility is to adopt the number of times an item is offered by the site within a given period (most commonly monthly) to derive its weights. In this scenario, it is important to not remove duplicates, that is, products that appear on multiple pages on a website, for example, once in \"men\'s clothing\" and once in \"ready for summer\". Another possibility is to use the retailer's popularity ranks of most sold items. For more details on the use of proxy weights see the wiki section on [expenditure proxies](deriving-proxy-weights-for-web-scraped-data.qmd).
+Web data does not provide information on items and quantities sold for
+the derivation of elementary weighted indices. However, proxy variables
+can be adopted for this purpose, and this can require the collection of
+additional data according to the method adopted. One possibility is to
+adopt the number of times an item is offered by the site within a given
+period (most commonly monthly) to derive its weights. In this scenario,
+it is important to not remove duplicates, that is, products that appear
+on multiple pages on a website, for example, once in \"men\'s clothing\"
+and once in \"ready for summer\". Another possibility is to use the
+retailer's popularity ranks of most sold items. For more details on the
+use of proxy weights see the wiki section on [expenditure
+proxies](deriving-proxy-weights-for-web-scraped-data.qmd).
 
 \
 
-Section [Example file structures for web scraped and scanner data](example-file-structures-for-web-scraped-and-scanner-data.qmd) of this wiki provides a comparison between what a typical file structure may look like for scanner data and web scraped data.
+Section [Example file structures for web scraped and scanner
+data](example-file-structures-for-web-scraped-and-scanner-data.qmd)
+of this wiki provides a comparison between what a typical file structure
+may look like for scanner data and web scraped data.
 
 \
 
@@ -74,7 +127,8 @@ Section [Example file structures for web scraped and scanner data](example-file
 
 # References {#Datarequirementsspecificationforwebscrapeddata-References}
 
-\(1\) Blaudow, C., Burg, F. (2018). Dynamic pricing as a challenge for consumer price statistics. EURONA 2018/01.
+\(1\) Blaudow, C., Burg, F. (2018). Dynamic pricing as a challenge for
+consumer price statistics. EURONA 2018/01.
 
 <https://ec.europa.eu/eurostat/cros/system/files/euronaissue1-2018-article4.pdf>
 

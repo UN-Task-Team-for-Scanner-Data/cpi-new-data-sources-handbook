@@ -1,28 +1,25 @@
 ---
 title: "Key decision points"
+date-modified: "2026-05-12"
 ---
 
-The adoption of alternative data sources involves a sequence of related decisions that shape both the technical and organisational direction of implementation.
+The adoption of alternative data sources involves a sequence of related
+decisions that shape both the technical and organisational direction of
+implementation.
 
-These decisions are rarely one-off and may need to be revisited as experience grows, systems evolve, and data availability changes. Making these decision points explicit can help NSOs plan their work more coherently and avoid misalignment between strategy, methods, and resources.
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v4                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2026-05-12                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | New page - initial published version, added link to CPI production system reqts page       |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=443416692) |
-+---------------------+--------------------------------------------------------------------------------------------+
+These decisions are rarely one-off and may need to be revisited as
+experience grows, systems evolve, and data availability changes. Making
+these decision points explicit can help NSOs plan their work more
+coherently and avoid misalignment between strategy, methods, and
+resources.
 
 ------------------------------------------------------------------------
 
 # What data to use, and for what purpose {#Keydecisionpoints-Whatdatatouseandforwhatpurpose end="1026" data-start="988"}
 
-One of the first decisions concerns which data sources to use, and what role they are expected to play in CPI production and other official statistical outputs. Alternative data may be used to:
+One of the first decisions concerns which data sources to use, and what
+role they are expected to play in CPI production and other official
+statistical outputs. Alternative data may be used to:
 
 - Replace existing survey-based price collection
 
@@ -32,32 +29,86 @@ One of the first decisions concerns which data sources to use, and what role the
 
 - Support other statistical outputs produced by an NSO
 
-NSOs may also choose to adopt different data sources for different product groups, depending on market structure, data availability, and quality considerations.
+NSOs may also choose to adopt different data sources for different
+product groups, depending on market structure, data availability, and
+quality considerations.
 
-When acquiring alternative data sources, NSOs may also wish to consider whether the data could support statistical uses beyond CPI, such as national accounts or purchasing power parities. For example, decisions around the treatment of VAT, the definition of turnover, and the level of aggregation may affect the suitability of the data for other purposes. While CPI specific requirements will often take precedence, early consideration of potential reuse may reduce duplication of data acquisition and processing effort across the organisation. See section [Other uses of alternative data sources](other-uses-of-alternative-data-within-cpi.qmd).
+When acquiring alternative data sources, NSOs may also wish to consider
+whether the data could support statistical uses beyond CPI, such as
+national accounts or purchasing power parities. For example, decisions
+around the treatment of VAT, the definition of turnover, and the level
+of aggregation may affect the suitability of the data for other
+purposes. While CPI specific requirements will often take precedence,
+early consideration of potential reuse may reduce duplication of data
+acquisition and processing effort across the organisation. See
+section [Other uses of alternative data
+sources](other-uses-of-alternative-data-within-cpi.qmd).
 
-Clarifying the purpose can help determine the level of methodological ambition, the acceptable level of operational risk, and the extent to which existing production processes may need to change.
+Clarifying the purpose can help determine the level of methodological
+ambition, the acceptable level of operational risk, and the extent to
+which existing production processes may need to change.
 
 # Sampling from the data versus using the full universe {#Keydecisionpoints-Samplingfromthedataversususingthefulluniverse end="1613" data-start="1556"}
 
-Alternative data sources often provide far more observations than traditional surveys, leading to a key decision on whether to work with the full universe of observed prices or transactions, or whether to construct samples from the data. Sampling approaches may reduce processing burden, simplify quality assurance, and align more closely with existing CPI practices. By contrast, using the full universe of data may better capture product turnover and changes in consumption patterns, but typically requires more advanced systems and methods.
+Alternative data sources often provide far more observations than
+traditional surveys, leading to a key decision on whether to work with
+the full universe of observed prices or transactions, or whether to
+construct samples from the data. Sampling approaches may reduce
+processing burden, simplify quality assurance, and align more closely
+with existing CPI practices. By contrast, using the full universe of
+data may better capture product turnover and changes in consumption
+patterns, but typically requires more advanced systems and methods.
 
-This decision has direct implications for index method choice, system design, and validation strategies, and should therefore be considered alongside broader implementation plans. Sampling approaches are discussed further in the section [Product sampling for price index calculation](product-sampling-for-price-index-calculation.qmd).
+This decision has direct implications for index method choice, system
+design, and validation strategies, and should therefore be considered
+alongside broader implementation plans. Sampling approaches are
+discussed further in the section [Product sampling for price index
+calculation](product-sampling-for-price-index-calculation.qmd).
 
 # Choice of index method and compilation approach {#Keydecisionpoints-Choiceofindexmethodandcompilationapproach end="2999" data-start="2948"}
 
-Index method selection is a central decision point and depends on several interrelated factors, including data availability, product churn, and revision policies. The choice between bilateral and multilateral methods, as well as between static and dynamic compilation approaches, should be informed by both data properties and organisational constraints.
+Index method selection is a central decision point and depends on
+several interrelated factors, including data availability, product
+churn, and revision policies. The choice between bilateral and
+multilateral methods, as well as between static and dynamic compilation
+approaches, should be informed by both data properties and
+organisational constraints.
 
-Where alternative data include quantity or expenditure information, NSOs must decide whether and how this information will be used in index compilation. This involves assessing the reliability and conceptual suitability of the data, considering whether proxy measures are appropriate where quantities are unavailable, and determining how frequently weights should be updated.
+Where alternative data include quantity or expenditure information, NSOs
+must decide whether and how this information will be used in index
+compilation. This involves assessing the reliability and conceptual
+suitability of the data, considering whether proxy measures are
+appropriate where quantities are unavailable, and determining how
+frequently weights should be updated.
 
-These decisions strongly influence whether weighted or unweighted index methods are feasible and affect how closely resulting indices reflect consumer behaviour at detailed levels.
+These decisions strongly influence whether weighted or unweighted index
+methods are feasible and affect how closely resulting indices reflect
+consumer behaviour at detailed levels.
 
-Many NSOs adopt a phased approach, beginning with simpler bilateral methods and transitioning to multilateral approaches as experience and system capability increase. Details of these methods are provided in the section on [Price index methods](price-index-methods.qmd).
+Many NSOs adopt a phased approach, beginning with simpler bilateral
+methods and transitioning to multilateral approaches as experience and
+system capability increase. Details of these methods are provided in the
+section on [Price index methods](price-index-methods.qmd).
 
 # Integration with existing production systems and user communication {#Keydecisionpoints-Integrationwithexistingproductionsystemsandusercommunication end="3740" data-start="3692"}
 
-Alternative data sources rarely operate in isolation. NSOs must decide how new data will be integrated with existing CPI production systems, including traditional price surveys, aggregation structures, and dissemination practices. In some cases, parallel systems may be maintained during transition periods; in others, production processes may be redesigned more fundamentally. See section [CPI production system requirements](cpi-production-system-requirements.qmd) for more information.
+Alternative data sources rarely operate in isolation. NSOs must decide
+how new data will be integrated with existing CPI production systems,
+including traditional price surveys, aggregation structures, and
+dissemination practices. In some cases, parallel systems may be
+maintained during transition periods; in others, production processes
+may be redesigned more fundamentally. See section [CPI production system
+requirements](cpi-production-system-requirements.qmd) for
+more information.
 
-These decisions affect not only technical implementation but also staffing, maintenance, and long-term sustainability.
+These decisions affect not only technical implementation but also
+staffing, maintenance, and long-term sustainability.
 
-Introducing alternative data sources may also affect CPI outputs, even when headline results remain broadly similar. NSOs should therefore consider how methodological changes will be tested and evaluated, how impacts will be analysed, and how developments will be communicated to users. Clear documentation and transparent decision-making are essential to maintaining trust in official statistics during periods of change. These aspects are discussed further in the section on [Implementation](implementation.qmd). 
+Introducing alternative data sources may also affect CPI outputs, even
+when headline results remain broadly similar. NSOs should therefore
+consider how methodological changes will be tested and evaluated, how
+impacts will be analysed, and how developments will be communicated to
+users. Clear documentation and transparent decision-making are essential
+to maintaining trust in official statistics during periods of change.
+These aspects are discussed further in the section on
+[Implementation](implementation.qmd). 

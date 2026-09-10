@@ -133,8 +133,12 @@ website:
       - implementation.qmd
       - training-material.qmd
 
+language:
+  title-block-modified: "Last updated"
+
 format:
   html:
+    date-format: "D MMMM YYYY"
     toc: true
     theme:
       light: flatly

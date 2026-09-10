@@ -1,30 +1,30 @@
 ---
 title: "Why use alternative data sources? Strategic motivations"
+date-modified: "2026-05-13"
 ---
 
-Common reasons shared by NSOs as a driver for using these new data sources.
+Common reasons shared by NSOs as a driver for using these new data
+sources.
 
-National Statistical Offices (NSOs) adopt alternative data sources for a range of strategic, methodological, and operational reasons. While the specific motivations vary across countries and institutional settings, several common drivers are apparent.
+National Statistical Offices (NSOs) adopt alternative data sources for a
+range of strategic, methodological, and operational reasons. While the
+specific motivations vary across countries and institutional settings,
+several common drivers are apparent.
 
-Importantly, the decision to use alternative data sources is rarely motivated by a single factor. Instead, NSOs typically face a combination of pressures and opportunities, and the relative importance of these may evolve over time as systems, skills, and user expectations change.
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v4                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2026-05-13                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | New page - initial published version, link updated to using data beyond CPI                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=442728488) |
-+---------------------+--------------------------------------------------------------------------------------------+
+Importantly, the decision to use alternative data sources is rarely
+motivated by a single factor. Instead, NSOs typically face a combination
+of pressures and opportunities, and the relative importance of these may
+evolve over time as systems, skills, and user expectations change.
 
 ------------------------------------------------------------------------
 
 # Improving timeliness and frequency {#WhyusealternativedatasourcesStrategicmotivations-Improvingtimelinessandfrequency end="1026" data-start="988"}
 
-Alternative data sources can support more timely price measurement by reducing reliance on manual data collection and processing. Transaction data, APIs, and some administrative sources are often available on a regular and predictable schedule, while web-based sources can be collected at high frequency.
+Alternative data sources can support more timely price measurement by
+reducing reliance on manual data collection and processing. Transaction
+data, APIs, and some administrative sources are often available on a
+regular and predictable schedule, while web-based sources can be
+collected at high frequency.
 
 This can enable:
 
@@ -32,25 +32,48 @@ This can enable:
 
 - More rapid incorporation of price changes, and
 
-- Greater flexibility in responding to shocks or sudden market developments.
+- Greater flexibility in responding to shocks or sudden market
+  developments.
 
-For some NSOs, improved timeliness is a key motivation for initially piloting alternative data sources, even if full integration into headline CPI production occurs later.
+For some NSOs, improved timeliness is a key motivation for initially
+piloting alternative data sources, even if full integration into
+headline CPI production occurs later.
 
 # Increasing granularity and analytical potential {#WhyusealternativedatasourcesStrategicmotivations-Increasinggranularityandanalyticalpotential end="1730" data-start="1679"}
 
-Compared with traditional survey-based collection, alternative data sources often provide large volumes of detailed observations. This can allow NSOs to compile and explore indices at more granular levels (e.g. by product, retailer, or region) and to refine and/or expand its coverage (in terms of sectors of the basket and regions covered).
+Compared with traditional survey-based collection, alternative data
+sources often provide large volumes of detailed observations. This can
+allow NSOs to compile and explore indices at more granular levels (e.g.
+by product, retailer, or region) and to refine and/or expand its
+coverage (in terms of sectors of the basket and regions covered).
 
-Greater granularity can support internal quality assurance, methodological research, and more informed communication with users, even where headline CPI outputs remain unchanged.
+Greater granularity can support internal quality assurance,
+methodological research, and more informed communication with users,
+even where headline CPI outputs remain unchanged.
 
 # Supporting methodological development {#WhyusealternativedatasourcesStrategicmotivations-Supportingmethodologicaldevelopment end="2298" data-start="2257"}
 
-The availability of detailed price and, in some cases, quantity information opens up methodological options that are difficult or impossible to implement with traditional survey data alone. In particular, transaction data can support the use of explicit weighting at the elementary aggregate level and facilitate the application of more advanced index number methods.
+The availability of detailed price and, in some cases, quantity
+information opens up methodological options that are difficult or
+impossible to implement with traditional survey data alone. In
+particular, transaction data can support the use of explicit weighting
+at the elementary aggregate level and facilitate the application of more
+advanced index number methods.
 
-For some NSOs, the adoption of alternative data sources is closely linked to longer-term plans to modernise index compilation methods, rather than simply to replace existing collection mechanisms. This kind of strategy is recommended and the discussions presented in this Handbook are expected to support CPI compilers to have a thorough vision of the processes involved in the use of alternative data sources to also build their own strategic plans. 
+For some NSOs, the adoption of alternative data sources is closely
+linked to longer-term plans to modernise index compilation methods,
+rather than simply to replace existing collection mechanisms. This kind
+of strategy is recommended and the discussions presented in this
+Handbook are expected to support CPI compilers to have a thorough vision
+of the processes involved in the use of alternative data sources to also
+build their own strategic plans. 
 
 # Improving efficiency and sustainability {#WhyusealternativedatasourcesStrategicmotivations-Improvingefficiencyandsustainability end="2910" data-start="2867"}
 
-Alternative data sources have the potential to reduce the operational burden associated with large-scale price collection, particularly in categories where traditional surveys are resource-intensive or difficult to maintain.
+Alternative data sources have the potential to reduce the operational
+burden associated with large-scale price collection, particularly in
+categories where traditional surveys are resource-intensive or difficult
+to maintain.
 
 Over time, automated data acquisition and processing can:
 
@@ -60,24 +83,40 @@ Over time, automated data acquisition and processing can:
 
 - Improve resilience to staff turnover or external disruptions.
 
-However, these efficiency gains are typically realised only after initial investment in systems, skills, and governance arrangements.
+However, these efficiency gains are typically realised only after
+initial investment in systems, skills, and governance arrangements.
 
 # Enhancing coverage of rapidly changing markets {#WhyusealternativedatasourcesStrategicmotivations-Enhancingcoverageofrapidlychangingmarkets end="3510" data-start="3460"}
 
-Some markets, such as consumer electronics, online services, or digitally delivered goods, evolve quickly and are challenging to capture using traditional survey approaches. Alternative data sources may allow NSOs to:
+Some markets, such as consumer electronics, online services, or
+digitally delivered goods, evolve quickly and are challenging to capture
+using traditional survey approaches. Alternative data sources may allow
+NSOs to:
 
 - Detect new products more quickly,
 
-- Collect rich products attributes in a a cost-effective way that can be used for the construction of hedonic adjustments;
+- Collect rich products attributes in a a cost-effective way that can be
+  used for the construction of hedonic adjustments;
 
 - Better reflect changes in assortments, and
 
 - Reduce delays in incorporating market innovations into price indices.
 
-This motivation is particularly relevant in environments characterised by high product churn or frequent changes in retail channels.
+This motivation is particularly relevant in environments characterised
+by high product churn or frequent changes in retail channels.
 
 # Supporting wider use across the statistical system {#WhyusealternativedatasourcesStrategicmotivations-Supportingwideruseacrossthestatisticalsystem end="4070" data-start="4016"}
 
-Although the primary focus of this handbook is on consumer price statistics, many NSOs are also motivated by the potential to reuse alternative data sources across multiple statistical domains. Where data access, concepts, and quality permit, a single data acquisition effort may support price statistics alongside other outputs such as business price statistics, PPPs, national accounts, short-term indicators, or analytical work.
+Although the primary focus of this handbook is on consumer price
+statistics, many NSOs are also motivated by the potential to reuse
+alternative data sources across multiple statistical domains. Where data
+access, concepts, and quality permit, a single data acquisition effort
+may support price statistics alongside other outputs such as business
+price statistics, PPPs, national accounts, short-term indicators, or
+analytical work.
 
-This broader perspective can strengthen the strategic case for investment but also increases the importance of coordination across organisational units. Other uses of alternative data sources are considered in the section [Other uses of alternative data sources](other-uses-of-alternative-data-beyond-cpi.qmd). 
+This broader perspective can strengthen the strategic case for
+investment but also increases the importance of coordination across
+organisational units. Other uses of alternative data sources are
+considered in the section [Other uses of alternative data
+sources](other-uses-of-alternative-data-beyond-cpi.qmd). 

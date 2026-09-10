@@ -1,32 +1,39 @@
 ---
 title: "Alternative approaches to acquiring scanner data"
+date-modified: "2021-07-19"
 ---
 
-Suggestions of what to do if the NSO is unable to acquire scanner data directly from retailers\
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v2                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2021-07-19                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910462) |
-+----------------------+--------------------------------------------------------------------------------------------+
+Suggestions of what to do if the NSO is unable to acquire scanner data
+directly from retailers\
 
 ------------------------------------------------------------------------
 
 # Alternative approaches to acquiring scanner data {#Alternativeapproachestoacquiringscannerdata-Alternativeapproachestoacquiringscannerdata}
 
-In the case that the National Statistical Office (NSO) cannot obtain scanner data directly from the retailers, an alternative approach is to get the data from market research companies ([CPI Manual, Concepts and Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx), 2020). Ref. (1) provides a practical example of this use case.
+In the case that the National Statistical Office (NSO) cannot obtain
+scanner data directly from the retailers, an alternative approach is to
+get the data from market research companies ([CPI Manual, Concepts and
+Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx),
+2020). Ref. (1) provides a practical example of this use case.
 
-Usually in this kind of approach data supply will not be free and financial resources are necessary to purchase the data. Advantages of the approach may include the negotiation of data sets relating to different retailers from one or a few data providers. The supply of cleaned data already classified according to the Consumer Price Index (CPI) classification can also be a benefit of this approach. This can lead to reduced costs than those incurred by the NSO to build all the infrastructure to perform all these steps on its own. 
+Usually in this kind of approach data supply will not be free and
+financial resources are necessary to purchase the data. Advantages of
+the approach may include the negotiation of data sets relating to
+different retailers from one or a few data providers. The supply of
+cleaned data already classified according to the Consumer Price Index
+(CPI) classification can also be a benefit of this approach. This can
+lead to reduced costs than those incurred by the NSO to build all the
+infrastructure to perform all these steps on its own. 
 
-Besides the cost for obtaining the data, other disadvantages in this process include reduction in the control of the data being received and the loss of flexibility in the negotiation of the data sets and variables of interest and possible changes in data content over time.
+Besides the cost for obtaining the data, other disadvantages in this
+process include reduction in the control of the data being received and
+the loss of flexibility in the negotiation of the data sets and
+variables of interest and possible changes in data content over time.
 
-Eurostat\'s HICP - [Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details) recommends whenever possible, to obtain scanner directly from the retailers.
+Eurostat\'s HICP - [Practical Guide for Processing Supermarket Scanner
+Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details)
+recommends whenever possible, to obtain scanner directly from the
+retailers.
 
 \
 
@@ -34,6 +41,9 @@ Eurostat\'s HICP - [Practical Guide for Processing Supermarket Scanner Data](ht
 
 # References {#Alternativeapproachestoacquiringscannerdata-References}
 
-\(1\) Krsinich, F. (2015) Implementation of consumer electronics scanner data in the New Zealand CPI. Paper presented at the meeting of the Ottawa Group at Tokyo, Japan. <http://www.stat.go.jp/english/info/meetings/og2015/pdf/t4s8p26_pap.pdf>
+\(1\) Krsinich, F. (2015) Implementation of consumer electronics scanner
+data in the New Zealand CPI. Paper presented at the meeting of the
+Ottawa Group at Tokyo, Japan.
+<http://www.stat.go.jp/english/info/meetings/og2015/pdf/t4s8p26_pap.pdf>
 
 \

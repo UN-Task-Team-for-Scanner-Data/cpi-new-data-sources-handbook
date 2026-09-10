@@ -1,41 +1,64 @@
 ---
 title: "Scanner data"
+date-modified: "2024-03-01"
 ---
 
-This section addresses the main steps that should be considered for acquisition of scanner data sets for the production of price statistics.\
+This section addresses the main steps that should be considered for
+acquisition of scanner data sets for the production of price
+statistics.\
 
 Section contents:
 
-- [Initial steps in the acquisition of scanner data](initial-steps-in-the-acquisition-of-scanner-data.qmd) --- Recommendations on how an NSO can approach retailers to acquire scanner data
-- [Data requirements specification for scanner data](data-requirements-specification-for-scanner-data.qmd) --- Key variables to ask for when acquiring scanner data.
-- [Data sharing agreements](data-sharing-agreements.qmd) --- Data sharing agreements can help provide structure to data flows between a supplier and NSO
-- [Alternative approaches to acquiring scanner data](alternative-approaches-to-acquiring-scanner-data.qmd) --- Suggestions of what to do if the NSO is unable to acquire scanner data directly from retailers
-- [Monitoring, validation and plausibility checks for scanner data](monitoring-validation-and-plausibility-checks-for-scanner-data.qmd) --- Recommended checks to carry out on the incoming flows of scanner data
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v2                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2024-03-01                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910458) |
-+----------------------+--------------------------------------------------------------------------------------------+
+- [Initial steps in the acquisition of scanner
+  data](initial-steps-in-the-acquisition-of-scanner-data.qmd)
+  --- Recommendations on how an NSO can approach retailers to acquire
+  scanner data
+- [Data requirements specification for scanner
+  data](data-requirements-specification-for-scanner-data.qmd)
+  --- Key variables to ask for when acquiring scanner data.
+- [Data sharing agreements](data-sharing-agreements.qmd) ---
+  Data sharing agreements can help provide structure to data flows
+  between a supplier and NSO
+- [Alternative approaches to acquiring scanner
+  data](alternative-approaches-to-acquiring-scanner-data.qmd)
+  --- Suggestions of what to do if the NSO is unable to acquire scanner
+  data directly from retailers
+- [Monitoring, validation and plausibility checks for scanner
+  data](monitoring-validation-and-plausibility-checks-for-scanner-data.qmd) --- Recommended checks to carry out on the
+  incoming flows of scanner data
 
 ------------------------------------------------------------------------
 
 # Overview {#Scannerdata-Overview}
 
-The challenges involved in the negotiations of scanner data sets with the retailers as well as important aspects that can be helpful for the statistical agency to succeed in these negotiations are given in the section [initial steps in data acquisition of scanner data](initial-steps-in-the-acquisition-of-scanner-data.qmd).
+The challenges involved in the negotiations of scanner data sets with
+the retailers as well as important aspects that can be helpful for the
+statistical agency to succeed in these negotiations are given in the
+section [initial steps in data acquisition of scanner
+data](initial-steps-in-the-acquisition-of-scanner-data.qmd).
 
-The [data requirements specification](data-requirements-specification-for-scanner-data.qmd) section discusses the most important variables that should be considered for use in price statistics. The section also highlights the need to establish, in the preliminary conversations with the retailers, an exploratory analysis of the coverage and stability of the data sets in order to get a deeper understanding of the information available which will subsidize the negotiations of the data contents and formats to be delivered.
+The [data requirements
+specification](data-requirements-specification-for-scanner-data.qmd)
+section discusses the most important variables that should be considered
+for use in price statistics. The section also highlights the need to
+establish, in the preliminary conversations with the retailers, an
+exploratory analysis of the coverage and stability of the data sets in
+order to get a deeper understanding of the information available which
+will subsidize the negotiations of the data contents and formats to be
+delivered.
 
-Important considerations to set legal grounds to guarantee an uninterrupted and appropriate data supply are given in the section [data sharing agreements](data-sharing-agreements.qmd).
+Important considerations to set legal grounds to guarantee an
+uninterrupted and appropriate data supply are given in the section [data
+sharing agreements](data-sharing-agreements.qmd).
 
-For the cases where data can not be obtained straight from the retailers, the [alternative approaches](alternative-approaches-to-acquiring-scanner-data.qmd) section presents brief comments on the use of market research companies that can provide such data.
+For the cases where data can not be obtained straight from the
+retailers, the [alternative
+approaches](alternative-approaches-to-acquiring-scanner-data.qmd)
+section presents brief comments on the use of market research companies
+that can provide such data.
 
-Finally, the [monitoring, validation and plausibility checks](monitoring-validation-and-plausibility-checks-for-scanner-data.qmd) section discusses the procedures necessary to ascertain the data received is fit for purpose.
+Finally, the [monitoring, validation and plausibility
+checks](monitoring-validation-and-plausibility-checks-for-scanner-data.qmd) section discusses the procedures necessary to
+ascertain the data received is fit for purpose.
 
 \

@@ -1,48 +1,139 @@
 ---
 title: "Strategies available for in-house web scraping"
+date-modified: "2022-06-02"
 ---
 
 Points to consider if in-house web scraping is the chosen solution\
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v2                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2022-06-02                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910466) |
-+----------------------+--------------------------------------------------------------------------------------------+
 
 ------------------------------------------------------------------------
 
 # Preliminary analysis {#Strategiesavailableforinhousewebscraping-Preliminaryanalysis}
 
-If the National Statistical Office (NSO) decides to perform the web scraping on its own, some points should be considered to define the best scraping strategy and the best web scraping tool to adopt or develop.
+If the National Statistical Office (NSO) decides to perform the web
+scraping on its own, some points should be considered to define the best
+scraping strategy and the best web scraping tool to adopt or develop.
 
-Once the candidate sites are identified, guidance on web scraping for Consumer Price Indices (CPIs) (see section 3 of Eurostat\'s \"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\" for further discussion) recommends that before putting up any scraping tools the first strategy to follow is check whether there is an Application Programming Interface (API) available to extract the desired data. The use of an API of a given web source allows access to a structured database that allows the extraction of the source's data with improved control and stability without the need to scrape. An example on the use of an API for CPI purposes can be found in Annex II of Ref. \"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\" and section \"[Collection of data via APIs](collection-of-data-via-apis.qmd)\".
+Once the candidate sites are identified, guidance on web scraping for
+Consumer Price Indices (CPIs) (see section 3 of Eurostat\'s \"[Practical
+guidelines on web scraping for the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\"
+for further discussion) recommends that before putting up any scraping
+tools the first strategy to follow is check whether there is an
+Application Programming Interface (API) available to extract the desired
+data. The use of an API of a given web source allows access to a
+structured database that allows the extraction of the source's data with
+improved control and stability without the need to scrape. An example on
+the use of an API for CPI purposes can be found in Annex II of Ref.
+\"[Practical guidelines on web scraping for the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\" and
+section \"[Collection of data via
+APIs](collection-of-data-via-apis.qmd)\".
 
-Another important issue to consider before scraping a site is to check what is the site policy regarding web scraping. Some websites have restrictions against being scraped and may even forbid it. It is a good practice to follow the site rules. Robots.txt contains the information about website policies concerning which areas that scrapers are allowed to search. This file can be accessed by typing the root of the website and adding \'/robots.txt\'. For instance, <https://www.ecb.europa.eu/robots.txt>. A more detailed discussion on legal issues on using web scraping for CPIs is discussed in the Eurostat\'s \"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\". Examples of NSOs current practices are presented in Annex VII of this guidance. The [web scraping policy of the ONS-UK](https://www.ons.gov.uk/aboutus/transparencyandgovernance/datastrategy/datapolicies/webscrapingpolicy) is another interesting example on such practices, where permissions to web scrape are managed centrally to avoid duplication and reduce the risk of blocking.
+Another important issue to consider before scraping a site is to check
+what is the site policy regarding web scraping. Some websites have
+restrictions against being scraped and may even forbid it. It is a good
+practice to follow the site rules. Robots.txt contains the information
+about website policies concerning which areas that scrapers are allowed
+to search. This file can be accessed by typing the root of the website
+and adding \'/robots.txt\'. For instance,
+<https://www.ecb.europa.eu/robots.txt>. A more detailed discussion on
+legal issues on using web scraping for CPIs is discussed in the
+Eurostat\'s \"[Practical guidelines on web scraping for the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\".
+Examples of NSOs current practices are presented in Annex VII of this
+guidance. The [web scraping policy of the
+ONS-UK](https://www.ons.gov.uk/aboutus/transparencyandgovernance/datastrategy/datapolicies/webscrapingpolicy)
+is another interesting example on such practices, where permissions to
+web scrape are managed centrally to avoid duplication and reduce the
+risk of blocking.
 
 # Targeted versus bulk approaches  {#Strategiesavailableforinhousewebscraping-Targetedversusbulkapproaches}
 
-If an API is not available and scraping is allowed, the choice of the best tool will rely on some factors such as the amount and frequency of data to be collected from a given site and the number of sites necessary to provide an appropriate coverage of a given item of the basket. Regarding these issues, web scraping can be divided in two approaches: targeted and bulk (\"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\").
+If an API is not available and scraping is allowed, the choice of the
+best tool will rely on some factors such as the amount and frequency of
+data to be collected from a given site and the number of sites necessary
+to provide an appropriate coverage of a given item of the basket.
+Regarding these issues, web scraping can be divided in two approaches:
+targeted and bulk (\"[Practical guidelines on web scraping for the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\").
 
-Targeted web scraping aims at collecting data whose attributes are predefined beforehand and hence applies to the collection of a limited number of items from a given number of websites. This is useful for when the goal is to [sample from these new data sources](product-sampling-for-price-index-calculation.qmd) in order to replace the existing collection, rather than use the full data set. The bulk approach aims at extracting a large volume of data without selecting a subset of items to price.
+Targeted web scraping aims at collecting data whose attributes are
+predefined beforehand and hence applies to the collection of a limited
+number of items from a given number of websites. This is useful for when
+the goal is to [sample from these new data
+sources](product-sampling-for-price-index-calculation.qmd) in
+order to replace the existing collection, rather than use the full data
+set. The bulk approach aims at extracting a large volume of data without
+selecting a subset of items to price.
 
-The targeted approach is commonly employed when the goal is to replace and improve the collection of items of the basket that are usually performed in a manual centralized approach by means of emails, phone calls, human inspection of websites, etc. For this kind of problem, it is desirable to have a more generic web scraping tool that can be used to extract data from different websites and with a few input and control parameters that can be defined manually by users. See Ref. (1) and (2) for some examples.
+The targeted approach is commonly employed when the goal is to replace
+and improve the collection of items of the basket that are usually
+performed in a manual centralized approach by means of emails, phone
+calls, human inspection of websites, etc. For this kind of problem, it
+is desirable to have a more generic web scraping tool that can be used
+to extract data from different websites and with a few input and control
+parameters that can be defined manually by users. See Ref. (1) and (2)
+for some examples.
 
-NSOs have been employing the use of so-called point-and-click functionality tools to perform targeted extraction of web data. Such tools are based on user-friendly interfaces where users need to provide a set of parameters of the sites to extract desired information. There are third-parties that offer those engines and some NSOs have been exploring such tools. A disadvantage of using third-party tools is that they are not designed for the specific needs of CPI collection. For instance, such services are usually not free of charge and not open source, hence changes in the underlying scripts according to user needs are not allowed. For further discussion see section 3 of \"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\".\
+NSOs have been employing the use of so-called point-and-click
+functionality tools to perform targeted extraction of web data. Such
+tools are based on user-friendly interfaces where users need to provide
+a set of parameters of the sites to extract desired information. There
+are third-parties that offer those engines and some NSOs have been
+exploring such tools. A disadvantage of using third-party tools is that
+they are not designed for the specific needs of CPI collection. For
+instance, such services are usually not free of charge and not open
+source, hence changes in the underlying scripts according to user needs
+are not allowed. For further discussion see section 3 of \"[Practical
+guidelines on web scraping for the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\".\
 
-An alternative is to develop fit for purpose tools in-house. A nice example of such an approach is the RobotTool engine, developed by Statistics Netherlands for targeted collection of prices. In Ref. (2) the details for the creation and development of the tool are discussed. The tool is currently available at <https://github.com/SNStatComp/RobotTool>, where the license terms are also presented, although note that as of June 2022, this repo will no longer be updated to reflect changes on the internal CBS production version of the tool.
+An alternative is to develop fit for purpose tools in-house. A nice
+example of such an approach is the RobotTool engine, developed by
+Statistics Netherlands for targeted collection of prices. In Ref. (2)
+the details for the creation and development of the tool are discussed.
+The tool is currently available at
+<https://github.com/SNStatComp/RobotTool>, where the license terms are
+also presented, although note that as of June 2022, this repo will no
+longer be updated to reflect changes on the internal CBS production
+version of the tool.
 
-For bulk collection the best option is to scrape by coding since the manual work to predefine the data of interest would be too resource intensive. The computational efficiency is also a key point since coded scrapers will usually run much faster than point and click applications. The code shall automate the actions that would be conducted by a web browser such as, opening a webpage, clicking and scrolling, and selecting the elements of interest by means of a query. Techniques to be employed will rely on the sites being of a static or dynamic nature (\"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\").
+For bulk collection the best option is to scrape by coding since the
+manual work to predefine the data of interest would be too resource
+intensive. The computational efficiency is also a key point since coded
+scrapers will usually run much faster than point and click applications.
+The code shall automate the actions that would be conducted by a web
+browser such as, opening a webpage, clicking and scrolling, and
+selecting the elements of interest by means of a query. Techniques to be
+employed will rely on the sites being of a static or dynamic nature
+(\"[Practical guidelines on web scraping for the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\").
 
-Due to its free software character, R and Python are popular tools adopted for web scraping by coding. Also, they already offer dedicated libraries developed for this goal. Among the most used ones we can cite [Rvest](https://cran.r-project.org/web/packages/rvest/index.html) and [RSelenium](https://cran.r-project.org/web/packages/RSelenium/index.html) in R, whereas in Python some options available include [urllib3](https://pypi.org/project/urllib3/), [BeautifulSoup](https://pypi.org/project/beautifulsoup4/) and [Scrapy3](https://pypi.org/project/Scrapy3/). The use of Selenium is necessary whenever the site has a dynamical character which demands the action of a user interacting with the page in order to get a given information. Selenium mimics a human in performing such tasks. The RSelenium library deals with this in R. Selenium is compatible and can be installed in Python also (see [here](https://selenium-python.readthedocs.io/installation.html#installing-python-bindings-for-selenium), for instance). 
+Due to its free software character, R and Python are popular tools
+adopted for web scraping by coding. Also, they already offer dedicated
+libraries developed for this goal. Among the most used ones we can cite
+[Rvest](https://cran.r-project.org/web/packages/rvest/index.html) and
+[RSelenium](https://cran.r-project.org/web/packages/RSelenium/index.html)
+in R, whereas in Python some options available include
+[urllib3](https://pypi.org/project/urllib3/),
+[BeautifulSoup](https://pypi.org/project/beautifulsoup4/) and
+[Scrapy3](https://pypi.org/project/Scrapy3/). The use of Selenium is
+necessary whenever the site has a dynamical character which demands the
+action of a user interacting with the page in order to get a given
+information. Selenium mimics a human in performing such tasks. The
+RSelenium library deals with this in R. Selenium is compatible and can
+be installed in Python also (see
+[here](https://selenium-python.readthedocs.io/installation.html#installing-python-bindings-for-selenium),
+for instance). 
 
-In section 3 of \"[Practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\", there is a detailed discussion on the main software used for coding a scraper and in Annex VII a list of the tools currently adopted by different NSOs. A more general discussion on Information Technology (IT) requirements for these new data sources is available in the section [CPI production system requirements](cpi-production-system-requirements.qmd).
+In section 3 of \"[Practical guidelines on web scraping for the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)\", there
+is a detailed discussion on the main software used for coding a scraper
+and in Annex VII a list of the tools currently adopted by different
+NSOs. A more general discussion on Information Technology (IT)
+requirements for these new data sources is available in the section [CPI
+production system
+requirements](cpi-production-system-requirements.qmd).
 
 \
 
@@ -50,8 +141,14 @@ In section 3 of \"[Practical guidelines on web scraping for the HICP](https://ec
 
 # References {#Strategiesavailableforinhousewebscraping-References}
 
-\(1\) ten Bosch, O. and Windmeijer, D (2016). On the use of internet data for the Dutch CPI. Paper presented at the UNECE Meeting of the Group of experts on Price Indices. <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2016/Session_2_Netherlands_On_the_use_of_internet_data_for_Dutch_CPI.pdf>
+\(1\) ten Bosch, O. and Windmeijer, D (2016). On the use of internet
+data for the Dutch CPI. Paper presented at the UNECE Meeting of the
+Group of experts on Price Indices.
+<https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2016/Session_2_Netherlands_On_the_use_of_internet_data_for_Dutch_CPI.pdf>
 
-\(2\) ten Bosch, O. and Windmeijer, D (2014). On the use of internet robots for official statistics. Paper presented at the Meeting on the Management of Statistical Information Systems (MSIS 2014). <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.50/2014/Topic_3_NL.pdf>
+\(2\) ten Bosch, O. and Windmeijer, D (2014). On the use of internet
+robots for official statistics. Paper presented at the Meeting on the
+Management of Statistical Information Systems (MSIS 2014).
+<https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.50/2014/Topic_3_NL.pdf>
 
 \

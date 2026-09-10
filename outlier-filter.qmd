@@ -1,56 +1,124 @@
 ---
 title: "Outlier filter"
+date-modified: "2023-12-01"
 ---
 
-Outlier filters aim at excluding or correcting extreme price increases or price decreases, typically compared to the previous period, from the price index calculation\
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2023-12-01                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910481) |
-+---------------------+--------------------------------------------------------------------------------------------+
+Outlier filters aim at excluding or correcting extreme price increases
+or price decreases, typically compared to the previous period, from the
+price index calculation\
 
 ------------------------------------------------------------------------
 
 # Introduction {#Outlierfilter-Introduction}
 
-Outlier filters aim at excluding or correcting extreme price increases or price decreases, typically compared to the previous period, from the price index calculation.
+Outlier filters aim at excluding or correcting extreme price increases
+or price decreases, typically compared to the previous period, from the
+price index calculation.
 
-National Statistical Offices (NSOs) should investigate the reasons for extreme price movement in a given dataset. If the scanner data are thought to provide accurate price information at the product level, outlier filters may not be required since the scanner data is considered an accurate census of transactions. If the data are thought to include noise in price information (from returns or reporting error), or if there is variation in the quality or quantity of the underlying product associated with a price, outlier removal may help exclude pricing errors and help smooth price change due to product variations. Outlier filtering should be more aggressive in unweighted indexes and for offer price data (web scraped) since outlier prices in such cases are not likely to be included in index calculations in a representative manner. 
+National Statistical Offices (NSOs) should investigate the reasons for
+extreme price movement in a given dataset. If the scanner data are
+thought to provide accurate price information at the product level,
+outlier filters may not be required since the scanner data is considered
+an accurate census of transactions. If the data are thought to include
+noise in price information (from returns or reporting error), or if
+there is variation in the quality or quantity of the underlying product
+associated with a price, outlier removal may help exclude pricing errors
+and help smooth price change due to product variations. Outlier
+filtering should be more aggressive in unweighted indexes and for offer
+price data (web scraped) since outlier prices in such cases are not
+likely to be included in index calculations in a representative manner. 
 
-When products are identified as outliers, it may be necessary to impute these price movements (see section on [Treatment of missing prices](treatment-of-missing-prices.qmd)).
+When products are identified as outliers, it may be necessary to impute
+these price movements (see section on [Treatment of missing
+prices](treatment-of-missing-prices.qmd)).
 
-There are a number of different methods available for identifying outliers in the data. The simplest approach is to define \"fences\" where any data that lie outside these thresholds are removed. Other approaches are also available, although to the best of our knowledge none of these methods are currently used in production. These methods can be applied to price levels, or some measurement of price change (for example, month on month; base period to current period) within a product group in a particular time period. Because there are so many possible combinations it is important to test fully the impact of these methods on the final index values as it is likely to differ between different data sources and/or product groups.
+There are a number of different methods available for identifying
+outliers in the data. The simplest approach is to define \"fences\"
+where any data that lie outside these thresholds are removed. Other
+approaches are also available, although to the best of our knowledge
+none of these methods are currently used in production. These methods
+can be applied to price levels, or some measurement of price change (for
+example, month on month; base period to current period) within a product
+group in a particular time period. Because there are so many possible
+combinations it is important to test fully the impact of these methods
+on the final index values as it is likely to differ between different
+data sources and/or product groups.
 
-The parameters for these methods to identify outliers should be set very carefully such that the number of outliers remains low and the setting of the thresholds does not lead to any bias of the index results.
+The parameters for these methods to identify outliers should be set very
+carefully such that the number of outliers remains low and the setting
+of the thresholds does not lead to any bias of the index results.
 
 # User defined fences {#Outlierfilter-Userdefinedfences}
 
-This approach creates a range of accepted values by setting a cut off threshold (or \"fence\"). National Statistical Offices (NSOs) have previously set these ratios to be between ratio 3 and ratio 4 (see the section on [current practice](current-practice-of-data-filtering.qmd)). Ratio 3 means that articles whose prices increase by more than 200% or decrease by more than 66% are removed. In order to make sure that decimal errors are detected the ratios should not exceed the value of 10. Of course, the upper and the lower threshold can also not be based on a certain ratio but instead can be chosen separately. For example, Poland has set the upper limit for the outlier filter at factor 3 (200% price increase) and the lower limit at 0.25 (75% price decrease). Moreover, the ratio can be set differently depending on the product group (for example, more volatile product groups may require a higher ratio than more stable categories).\
+This approach creates a range of accepted values by setting a cut off
+threshold (or \"fence\"). National Statistical Offices (NSOs) have
+previously set these ratios to be between ratio 3 and ratio 4 (see the
+section on [current
+practice](current-practice-of-data-filtering.qmd)). Ratio 3
+means that articles whose prices increase by more than 200% or decrease
+by more than 66% are removed. In order to make sure that decimal errors
+are detected the ratios should not exceed the value of 10. Of course,
+the upper and the lower threshold can also not be based on a certain
+ratio but instead can be chosen separately. For example, Poland has set
+the upper limit for the outlier filter at factor 3 (200% price increase)
+and the lower limit at 0.25 (75% price decrease). Moreover, the ratio
+can be set differently depending on the product group (for example, more
+volatile product groups may require a higher ratio than more stable
+categories).\
 
-Further research is needed to investigate how to detect the optimal values for this approach. An example of research in this area is from the Office for National Statistics (2022): [Outlier detection for rail fares and second-hand cars dynamic price data](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/outlierdetectionforrailfaresandsecondhandcarsdynamicpricedata) where the user defined fence with value 3 has since been implemented for used cars and railfares, and subsequent follow-up research for groceries (yet to be implemented) (2023): [Outlier detection for grocery scanner data in consumer price statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/outlierdetectionforgroceryscannerdatainconsumerpricestatistics)
+Further research is needed to investigate how to detect the optimal
+values for this approach. An example of research in this area is from
+the Office for National Statistics (2022): [Outlier detection for rail
+fares and second-hand cars dynamic price
+data](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/outlierdetectionforrailfaresandsecondhandcarsdynamicpricedata)
+where the user defined fence with value 3 has since been implemented for
+used cars and railfares, and subsequent follow-up research for groceries
+(yet to be implemented) (2023): [Outlier detection for grocery scanner
+data in consumer price
+statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/outlierdetectionforgroceryscannerdatainconsumerpricestatistics)
 
 # Other approaches {#Outlierfilter-Otherapproaches}
 
-As an alternative to the fixed thresholds, Białek and Beręsewicz (2021) tested removing each month all products with the lowest and the highest one percent of all price changes within each product group. It was shown that this alternative had a bigger impact on the index results than fixed thresholds of ratio 3 or ratio 4.
+As an alternative to the fixed thresholds, Białek and Beręsewicz (2021)
+tested removing each month all products with the lowest and the highest
+one percent of all price changes within each product group. It was shown
+that this alternative had a bigger impact on the index results than
+fixed thresholds of ratio 3 or ratio 4.
 
-Another option could be the use of a flexible outlier filter. A flexible outlier filter may take the historic price development of the product group into consideration in order to define whether a price is an outlier or not.
+Another option could be the use of a flexible outlier filter. A flexible
+outlier filter may take the historic price development of the product
+group into consideration in order to define whether a price is an
+outlier or not.
 
-Other potential methods that create a range of acceptable values are the Tukey, kimber and k sigma approaches. These are defined as follows:
+Other potential methods that create a range of acceptable values are the
+Tukey, kimber and k sigma approaches. These are defined as follows:
 
-- Tukey: Tukey's rule says that the outliers are values that are more than 1.5 times the interquartile range from the quartiles --- i.e., either below Q1 − 1.5 IQR, or above Q3 + 1.5 IQR. If Q1 and Q3 are the lower and upper quartiles respectively, then one could define an outlier to be any observation outside the range (in the standard implementation, k here is defined at 1.5 but it is a editable parameter): \[Q1 -- k(Q3-Q1), Q3 + k(Q3-Q1)\]
+- Tukey: Tukey's rule says that the outliers are values that are more
+  than 1.5 times the interquartile range from the quartiles --- i.e.,
+  either below Q1 − 1.5 IQR, or above Q3 + 1.5 IQR. If Q1 and Q3 are the
+  lower and upper quartiles respectively, then one could define an
+  outlier to be any observation outside the range (in the standard
+  implementation, k here is defined at 1.5 but it is a editable
+  parameter): \[Q1 -- k(Q3-Q1), Q3 + k(Q3-Q1)\]
 
-- Kimber: To incorporate the skewness of the distribution and possibly improve outlier detection, Kimber proposed fences using a constant multiple of the lower and the upper semi-interquartile ranges measured from the first and third quartile, respectively. The formula for this is: \[LF =Q1 -- k(𝑆𝐼𝑄𝑅𝐿), UF= Q3 + k(𝑆𝐼𝑄𝑅𝑈)\]
+- Kimber: To incorporate the skewness of the distribution and possibly
+  improve outlier detection, Kimber proposed fences using a constant
+  multiple of the lower and the upper semi-interquartile ranges measured
+  from the first and third quartile, respectively. The formula for this
+  is: \[LF =Q1 -- k(𝑆𝐼𝑄𝑅𝐿), UF= Q3 + k(𝑆𝐼𝑄𝑅𝑈)\]
 
-- K-Sigma: Given a normal distribution, k-Sigma (usually 3-sigma) follows the idea that nearly all values lie within 3 standard deviations from the mean. Any data that falls outside of this boundary may be determined as an outlier
+- K-Sigma: Given a normal distribution, k-Sigma (usually 3-sigma)
+  follows the idea that nearly all values lie within 3 standard
+  deviations from the mean. Any data that falls outside of this boundary
+  may be determined as an outlier
 
-Finally, there are also other more complex methods to identify outliers that use machine learning. For example, the DBSCAN algorithm is a method that identifies high density areas "clusters" of products. Any products that aren't identified as a belonging to a cluster are then identified as being outliers. For a wider review of possible methods that can be used for outlier detection, please see previous ONS (2021) research[.](https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2021/09/ADS_anomalydetection_technicalpanel-for-publishing.pptx)
+Finally, there are also other more complex methods to identify outliers
+that use machine learning. For example, the DBSCAN algorithm is a method
+that identifies high density areas "clusters" of products. Any products
+that aren't identified as a belonging to a cluster are then identified
+as being outliers. For a wider review of possible methods that can be
+used for outlier detection, please see previous ONS (2021)
+research[.](https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2021/09/ADS_anomalydetection_technicalpanel-for-publishing.pptx)
 
 \
 
@@ -58,8 +126,11 @@ Finally, there are also other more complex methods to identify outliers that use
 
 # References {#Outlierfilter-References}
 
-Białek, J. and Beręsewicz, M. (2021). *Scanner data in inflation measurement: From raw data to price indices*, Statistical Journal of the IAOS 37, 1315--1336, <http://doi.org/10.3233/SJI-210816>
+Białek, J. and Beręsewicz, M. (2021). *Scanner data in inflation
+measurement: From raw data to price indices*, Statistical Journal of the
+IAOS 37, 1315--1336, <http://doi.org/10.3233/SJI-210816>
 
-ONS (2021) <https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2021/09/ADS_anomalydetection_technicalpanel-for-publishing.pptx> 
+ONS (2021)
+<https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2021/09/ADS_anomalydetection_technicalpanel-for-publishing.pptx> 
 
 \

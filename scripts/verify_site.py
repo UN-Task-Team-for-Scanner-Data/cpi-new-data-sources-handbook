@@ -21,7 +21,37 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
+from bs4 import BeautifulSoup
+
 from convert_all import EXPORT_DIR, REPO_ROOT, assign_slugs, flatten, page_stats, parse_tree
+
+# Letters the .qmd may fall short of its source before it counts as lost prose.
+# Conversion normally ADDS letters, because link targets become visible text.
+PROSE_TOLERANCE = 100
+
+DROP_SELECTORS = ("div.toc-macro", "ol#breadcrumbs", "div.page-metadata", "style", "script")
+
+
+def source_prose_letters(node) -> int:
+    """Count letters in a source page body, ignoring the page information aside."""
+    src = EXPORT_DIR / node.href
+    if not src.is_file():
+        return 0
+
+    soup = BeautifulSoup(src.read_text(encoding="utf-8", errors="replace"), "lxml")
+    content = soup.find("div", id="main-content")
+    if content is None:
+        return 0
+
+    for selector in DROP_SELECTORS:
+        for tag in content.select(selector):
+            tag.decompose()
+    for aside in content.select("div.cell.aside"):
+        heading = aside.find("strong")
+        if heading and "page information" in heading.get_text(strip=True).lower():
+            aside.decompose()
+
+    return len(re.sub(r"[^a-z]", "", content.get_text(" ", strip=True).lower()))
 
 
 def main() -> None:
@@ -71,6 +101,23 @@ def main() -> None:
     for qmd in sorted(REPO_ROOT.glob("*.qmd")):
         if b"\r\r\n" in qmd.read_bytes():
             hard.append(f"DOUBLED CR: {qmd.name}")
+
+    # 4. prose parity: the .qmd must not be materially shorter than its source.
+    # Counting formulas and images cannot detect dropped prose. Pandoc has
+    # silently dropped whole paragraphs here, with no warning and no other
+    # check failing.
+    for node in pages:
+        qmd = REPO_ROOT / f"{node.slug}.qmd"
+        if not qmd.is_file():
+            continue
+        src_letters = source_prose_letters(node)
+        if not src_letters:
+            continue
+        body = re.sub(r"^---\n.*?\n---\n", "", qmd.read_text(encoding="utf-8"), flags=re.S)
+        out_letters = len(re.sub(r"[^a-z]", "", body.lower()))
+        if out_letters < src_letters - PROSE_TOLERANCE:
+            hard.append(
+                f"PROSE LOST: {node.slug} (source {src_letters}, qmd {out_letters})")
 
     print(f"pages checked: {len(pages)}")
     for s in soft:

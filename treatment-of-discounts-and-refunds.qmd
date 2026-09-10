@@ -1,49 +1,83 @@
 ---
 title: "Treatment of discounts and refunds"
+date-modified: "2021-06-09"
 ---
 
-This page contains information on how discounts and refunds should be treated in the data.The statistical agency should examine the treatment of discounts and refunds and assess their impact if possible (see for example Ref. [\[](https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06)[1](https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06)[\]](https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06)).
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2021-06-09                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910478) |
-+---------------------+--------------------------------------------------------------------------------------------+
+This page contains information on how discounts and refunds should be
+treated in the data.The statistical agency should examine the treatment
+of discounts and refunds and assess their impact if possible (see for
+example Ref.
+[\[](https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06)[1](https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06)[\]](https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06)).
 
 ------------------------------------------------------------------------
 
 # Treatment of discounts {#Treatmentofdiscountsandrefunds-Treatmentofdiscounts}
 
-In general, prices obtained from scanner data (or web scraped data) should be consistent with the price concept used in the CPI. For example, they should include any taxes and charges that are directly connected to the purchase of the priced product.
+In general, prices obtained from scanner data (or web scraped data)
+should be consistent with the price concept used in the CPI. For
+example, they should include any taxes and charges that are directly
+connected to the purchase of the priced product.
 
-In addition to conceptual considerations, the treatment of discounts is very much dependent on the way that discounts are recorded in the data. There can be different types of discounts. For example:
+In addition to conceptual considerations, the treatment of discounts is
+very much dependent on the way that discounts are recorded in the
+data. There can be different types of discounts. For example:
 
-- Temporarily reduced prices available to all consumers (for example 20% off). An average transaction price calculated over the reference period would cover both discounted and regular prices.
-- An additional quantity in the product (for example 20% more weight). Such types of discounts may be linked to changes in the article codes. Linking or grouping techniques may be needed to properly capture these discounts (see [Identifying unique products](https://unstats.un.org/wiki/display/GWGSD/Identifying+unique+products)).
-- Lower prices for damaged or defective products, or products close to their expiry date. It could be argued that such price reductions should not be included in the CPI given these are not products of comparable quality, but it may not always be possible to identify such transactions separately in the data.
-- Clearance prices for products reaching the end of their product lifecycle - the [Dumping filter](dumping-filter.qmd) can help identify these cases when expenditure information is available.
-- Loyalty cards and loyalty refunds. Very often, information on such schemes cannot be extracted from the scanner data.
-- Multibuy offers (for example 'Buy 2 get 1 for free\'). Such schemes may or may not be captured in the turnover and sales data for a specific article. Depending on the recording of such transactions, the average price may or may not be lower than the price charged for a single article.  
+- Temporarily reduced prices available to all consumers (for example 20%
+  off). An average transaction price calculated over the reference
+  period would cover both discounted and regular prices.
+- An additional quantity in the product (for example 20% more weight).
+  Such types of discounts may be linked to changes in the article codes.
+  Linking or grouping techniques may be needed to properly capture these
+  discounts (see [Identifying unique
+  products](https://unstats.un.org/wiki/display/GWGSD/Identifying+unique+products)).
+- Lower prices for damaged or defective products, or products close to
+  their expiry date. It could be argued that such price reductions
+  should not be included in the CPI given these are not products of
+  comparable quality, but it may not always be possible to identify such
+  transactions separately in the data.
+- Clearance prices for products reaching the end of their product
+  lifecycle - the [Dumping filter](dumping-filter.qmd) can
+  help identify these cases when expenditure information is available.
+- Loyalty cards and loyalty refunds. Very often, information on such
+  schemes cannot be extracted from the scanner data.
+- Multibuy offers (for example 'Buy 2 get 1 for free\'). Such schemes
+  may or may not be captured in the turnover and sales data for a
+  specific article. Depending on the recording of such transactions, the
+  average price may or may not be lower than the price charged for a
+  single article.  
 
-It is very important to discuss these aspects with the data supplier where possible (see section [Data requirements specification for scanner data](data-requirements-specification-for-scanner-data.qmd)).
+It is very important to discuss these aspects with the data supplier
+where possible (see section [Data requirements specification for scanner
+data](data-requirements-specification-for-scanner-data.qmd)).
 
 # Treatment of refunds {#Treatmentofdiscountsandrefunds-Treatmentofrefunds}
 
-Refunds happen when consumers return the product that they have previously purchased. Such transactions are typically treated as negative sales by the retailers. Depending on the data set, returns may or may not be separately identifiable. They can be included in the turnover and sales data of an article code. Turnover and sales could (in theory) become negative, in which case they should best be removed. Refunds may also be shown separately in the data. A further complication is that refunds may be recorded in a period other than the period of purchase. Refunds could play a more important role in some product categories, such as clothing, and may be less common in other product categories, such as food.
+Refunds happen when consumers return the product that they have
+previously purchased. Such transactions are typically treated as
+negative sales by the retailers. Depending on the data set, returns may
+or may not be separately identifiable. They can be included in the
+turnover and sales data of an article code. Turnover and sales could (in
+theory) become negative, in which case they should best be removed.
+Refunds may also be shown separately in the data. A further complication
+is that refunds may be recorded in a period other than the period of
+purchase. Refunds could play a more important role in some product
+categories, such as clothing, and may be less common in other product
+categories, such as food.
 
 # Other considerations {#Treatmentofdiscountsandrefunds-Otherconsiderations}
 
-Deposits should be excluded from the price used in the calculations. The articles in the scanner data or web scraped data that have a deposit should be identified and the deposit fee should be deducted from the price where applicable.
+Deposits should be excluded from the price used in the calculations. The
+articles in the scanner data or web scraped data that have a deposit
+should be identified and the deposit fee should be deducted from the
+price where applicable.
 
-With web scraped prices, delivery charges or credit card fees may apply. The treatment of such additional costs is discussed in paragraphs 11.78-11.80 of the [CPI Manual](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx).
+With web scraped prices, delivery charges or credit card fees may apply.
+The treatment of such additional costs is discussed in paragraphs
+11.78-11.80 of the [CPI
+Manual](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx).
 
-For a review of how discounts and refunds could be treated in scanner data please see Ref. (1).
+For a review of how discounts and refunds could be treated in scanner
+data please see Ref. (1).
 
 \
 
@@ -51,4 +85,6 @@ For a review of how discounts and refunds could be treated in scanner data pleas
 
 # Reference {#Treatmentofdiscountsandrefunds-Reference}
 
-\(1\) ONS (2021). Research into the use of scanner data for constructing UK consumer price statistics. Available at: <https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06>
+\(1\) ONS (2021). Research into the use of scanner data for constructing
+UK consumer price statistics. Available
+at: <https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06>

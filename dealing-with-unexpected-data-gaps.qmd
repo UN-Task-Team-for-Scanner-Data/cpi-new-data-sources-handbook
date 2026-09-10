@@ -1,51 +1,145 @@
 ---
 title: "Dealing with unexpected data gaps"
+date-modified: "2022-06-28"
 ---
 
-This page contains information on how to deal with unexpected gaps in the supply of new data sources\
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v3                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2022-06-28                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910472) |
-+----------------------+--------------------------------------------------------------------------------------------+
+This page contains information on how to deal with unexpected gaps in
+the supply of new data sources\
 
 ------------------------------------------------------------------------
 
 # How do unexpected data gaps occur {#Dealingwithunexpecteddatagaps-Howdounexpecteddatagapsoccur}
 
-Unexpected data gaps can occur for several reasons. First, the data provider (retailer) might change the structure of its data such that the data processing in the statistical offices no longer works. Second, scanner data deliveries may fail due to technical problems on either the transmitting or receiving side. Third, the worst case scenario arises when the data provider decides to stop its data deliveries.
+Unexpected data gaps can occur for several reasons. First, the data
+provider (retailer) might change the structure of its data such that the
+data processing in the statistical offices no longer works. Second,
+scanner data deliveries may fail due to technical problems on either the
+transmitting or receiving side. Third, the worst case scenario arises
+when the data provider decides to stop its data deliveries.
 
-In the case of web scraping, similar problems can happen. Changes to a retailer\'s website, such as revisions to the site\'s layout or structure, may require changes to established web scraping code or even completely new development. Moreover, technical problems in the statistical offices might interrupt the data scraping. Finally, it might also happen that retailers block the web scraping efforts of the statistical offices.
+In the case of web scraping, similar problems can happen. Changes to a
+retailer\'s website, such as revisions to the site\'s layout or
+structure, may require changes to established web scraping code or even
+completely new development. Moreover, technical problems in the
+statistical offices might interrupt the data scraping. Finally, it might
+also happen that retailers block the web scraping efforts of the
+statistical offices.
 
 # How can unexpected data gaps harm the production process {#Dealingwithunexpecteddatagaps-Howcanunexpecteddatagapsharmtheproductionprocess}
 
-In the best case, while there may be a delay in the data, in certain scenarios missing data can be delivered retroactively such that they can still be used for the calculation of the final results with no noticeable impact. Generally, the longer the reporting period, the better are the chances that missing data will arrive in time. Therefore, a quarterly CPI has some advantages here over a monthly published CPI.
+In the best case, while there may be a delay in the data, in certain
+scenarios missing data can be delivered retroactively such that they can
+still be used for the calculation of the final results with no
+noticeable impact. Generally, the longer the reporting period, the
+better are the chances that missing data will arrive in time. Therefore,
+a quarterly CPI has some advantages here over a monthly published CPI.
 
-In case that the missing data do not arrive in time, i.e. before the deadline of the CPI production, there still might be sufficient data available in order to maintain the regular CPI production. For example, a monthly CPI calculation might be based on scanner data of the first two weeks of the month. If some scanner data are missing only for the second but not the first week, it is still possible to produce index results even though they will be probably of poorer quality.
+In case that the missing data do not arrive in time, i.e. before the
+deadline of the CPI production, there still might be sufficient data
+available in order to maintain the regular CPI production. For example,
+a monthly CPI calculation might be based on scanner data of the first
+two weeks of the month. If some scanner data are missing only for the
+second but not the first week, it is still possible to produce index
+results even though they will be probably of poorer quality.
 
-In cases where data is not available from only one or a few specific retailers, it is reasonable to conduct some imputation based on the data or rather index results of the remaining retailers. When data are not available for the majority or even all retailers, more complex solutions have to be applied which require some preparation in advance (see next section). If historic data are required to calculate indices as in the case of multilateral methods, missing data should be requested by the statistical offices even if the deadline for the current reporting period (to which the missing data belongs) has already expired.
+In cases where data is not available from only one or a few specific
+retailers, it is reasonable to conduct some imputation based on the data
+or rather index results of the remaining retailers. When data are not
+available for the majority or even all retailers, more complex solutions
+have to be applied which require some preparation in advance (see next
+section). If historic data are required to calculate indices as in the
+case of multilateral methods, missing data should be requested by the
+statistical offices even if the deadline for the current reporting
+period (to which the missing data belongs) has already expired.
 
-In contrast to scanner data, web scraping data are definitively lost when this kind of automated survey fails at a certain point of time. However, since web scraping can also be conducted at another point of time, the harm that arises depends on how fast problems are detected and whether there is enough time buffer to solve them. This is why it is very important to monitor the ongoing quality of web scraped data (see section [Monitoring, validation and plausibility checks for web scraped data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd)).
+In contrast to scanner data, web scraping data are definitively lost
+when this kind of automated survey fails at a certain point of time.
+However, since web scraping can also be conducted at another point of
+time, the harm that arises depends on how fast problems are detected and
+whether there is enough time buffer to solve them. This is why it is
+very important to monitor the ongoing quality of web scraped data (see
+section [Monitoring, validation and plausibility checks for web scraped
+data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd)).
 
 # How to mitigate the harm of unexpected data gaps {#Dealingwithunexpecteddatagaps-Howtomitigatetheharmofunexpecteddatagaps}
 
-The best way to mitigate the harm of unexpected data gaps is to mitigate the risk that unexpected data gaps arise at all. For scanner or admin data, it is highly recommended to either enter into [data sharing agreements](https://unstats.un.org/wiki/display/GWGSD/Data+sharing+agreements) with the suppliers (either voluntary or contractual) and/or to implement a legal mandate requiring suppliers to provide transaction data to statistical agencies. Independent from the legal situation, a data sharing agreement is always helpful to enable a partner-like connection between the supplier and the statistical office. Typically, data sharing agreements specify that the statistical office will be informed in advance whenever the structure of the data will be changed by the supplier. This will help the statistical office to avoid facing unexpected data gaps.
+The best way to mitigate the harm of unexpected data gaps is to mitigate
+the risk that unexpected data gaps arise at all. For scanner or admin
+data, it is highly recommended to either enter into [data sharing
+agreements](https://unstats.un.org/wiki/display/GWGSD/Data+sharing+agreements) with
+the suppliers (either voluntary or contractual) and/or to implement a
+legal mandate requiring suppliers to provide transaction data to
+statistical agencies. Independent from the legal situation, a data
+sharing agreement is always helpful to enable a partner-like connection
+between the supplier and the statistical office. Typically, data sharing
+agreements specify that the statistical office will be informed in
+advance whenever the structure of the data will be changed by the
+supplier. This will help the statistical office to avoid facing
+unexpected data gaps.
 
-For web scraped data, retailers scraped by the statistical offices should be informed in a timely manner. This will help to avoid the retailer [blocking the statistical office's web scraping activities](common-technical-problems-for-in-house-web-scraping.qmd). A [data sharing agreement](data-sharing-agreements.qmd) could further arrange for the statistical office to be informed of upcoming website redesigns. In any case, the time slots for web scraping should be set appropriately, meaning that there is enough time buffer to try the price collection another time (either manually or automated by web scraping) if the regular web scraping fails.
+For web scraped data, retailers scraped by the statistical offices
+should be informed in a timely manner. This will help to avoid the
+retailer [blocking the statistical office's web scraping
+activities](common-technical-problems-for-in-house-web-scraping.qmd).
+A [data sharing agreement](data-sharing-agreements.qmd) could
+further arrange for the statistical office to be informed of upcoming
+website redesigns. In any case, the time slots for web scraping should
+be set appropriately, meaning that there is enough time buffer to try
+the price collection another time (either manually or automated by web
+scraping) if the regular web scraping fails.
 
-[Monitoring](monitoring-validation-and-plausibility-checks-for-scanner-data.qmd) the data arrival is another important measure to be aware of unexpected data gaps as early as possible increasing the chance to solve technical problems timely. Since the time slot to fix technical problems might be very short (especially for monthly published indices), it is recommend to maintain regularly a contact list containing all relevant contacts, both internal and external. This will speed up the process of solving technical problems whenever they occur. For web scraping, it is even more important to ensure the data quality at the time of scraping in case of errors identified (see section [Monitoring, validation and plausibility checks for web scraped data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd)).
+[Monitoring](monitoring-validation-and-plausibility-checks-for-scanner-data.qmd) the data arrival is another important
+measure to be aware of unexpected data gaps as early as possible
+increasing the chance to solve technical problems timely. Since the time
+slot to fix technical problems might be very short (especially for
+monthly published indices), it is recommend to maintain regularly a
+contact list containing all relevant contacts, both internal and
+external. This will speed up the process of solving technical problems
+whenever they occur. For web scraping, it is even more important to
+ensure the data quality at the time of scraping in case of errors
+identified (see section [Monitoring, validation and plausibility checks
+for web scraped data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd)).
 
-If, nevertheless, no data are available at all that can be used for the CPI production of the current reporting period, a backup plan is required to impute the missing prices or rather indices. If scanner data from only a few retailers are missing, the index changes of the remaining retailers could be used for imputation of missing elementary aggregate indices. The way of imputation may depend on the implemented [aggregation](aggregation-across-time-and-outlets.qmd) strategy and the market coverage achieved by the different data sources. In case that this way of imputation is not reasonable or possible, an alternative plan (prepared in advance) should be activated. Three possible solutions are presented here:
+If, nevertheless, no data are available at all that can be used for the
+CPI production of the current reporting period, a backup plan is
+required to impute the missing prices or rather indices. If scanner data
+from only a few retailers are missing, the index changes of the
+remaining retailers could be used for imputation of missing elementary
+aggregate indices. The way of imputation may depend on the implemented
+[aggregation](aggregation-across-time-and-outlets.qmd)
+strategy and the market coverage achieved by the different data sources.
+In case that this way of imputation is not reasonable or possible, an
+alternative plan (prepared in advance) should be activated. Three
+possible solutions are presented here:
 
-- *Price collectors*: This option can be implemented relatively easily when price collectors still visit some of the stores of the retailer whose scanner data are missing. Then, a sample of products sold during month m-1 (last month for which scanner data are available) could be drawn from the stores that are usually visited by the price collectors (for the residual price collection). Price collectors record prices which are used to produce indices whose change is then used for imputation. Given that price collectors no longer visit the stores of the retailer whose scanner data are missing, price collectors might also be acquired by third party companies at short notice. However, this requires that a contract between the statistical office and the third party company has been concluded in advance. Alternatively to the collection of shelf-prices, \"manual\" online price collections can also be conducted to maintain the index production.
-- *Web scraped indices*: Parallel to processing scanner data, web scraped indices could be established. In the scenario that the scanner data are not available, the changes of the web scraped indices could be used for imputation purposes.
-- *Indices/Data provided by third party companies*: Statistical offices could try to engage third party companies such as market research companies to calculate the required price indices or to provide the missing data when the statistical office faces an unexpected data gap. It has to be determined, established and contracted in advance what the third party company shall provide in such an emergency situation.
+- *Price collectors*: This option can be implemented relatively easily
+  when price collectors still visit some of the stores of the retailer
+  whose scanner data are missing. Then, a sample of products sold during
+  month m-1 (last month for which scanner data are available) could be
+  drawn from the stores that are usually visited by the price collectors
+  (for the residual price collection). Price collectors record prices
+  which are used to produce indices whose change is then used for
+  imputation. Given that price collectors no longer visit the stores of
+  the retailer whose scanner data are missing, price collectors might
+  also be acquired by third party companies at short notice. However,
+  this requires that a contract between the statistical office and the
+  third party company has been concluded in advance. Alternatively to
+  the collection of shelf-prices, \"manual\" online price collections
+  can also be conducted to maintain the index production.
+- *Web scraped indices*: Parallel to processing scanner data, web
+  scraped indices could be established. In the scenario that the scanner
+  data are not available, the changes of the web scraped indices could
+  be used for imputation purposes.
+- *Indices/Data provided by third party companies*: Statistical offices
+  could try to engage third party companies such as market research
+  companies to calculate the required price indices or to provide the
+  missing data when the statistical office faces an unexpected data gap.
+  It has to be determined, established and contracted in advance what
+  the third party company shall provide in such an emergency situation.
 
-All three proposals are for imputation purposes and should not be considered as a long term solutions in the scenario where scanner data deliveries are ceased permanently. Fortunately, NSOs that are already working with scanner data have not yet experienced very severe data gaps. This is mainly due to a good relationship to the retailers which should always be the aim of a statistical office.
+All three proposals are for imputation purposes and should not be
+considered as a long term solutions in the scenario where scanner data
+deliveries are ceased permanently. Fortunately, NSOs that are already
+working with scanner data have not yet experienced very severe data
+gaps. This is mainly due to a good relationship to the retailers which
+should always be the aim of a statistical office.

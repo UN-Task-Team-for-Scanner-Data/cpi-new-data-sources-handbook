@@ -1,53 +1,121 @@
 ---
 title: "Methods for when expenditure data are not available"
+date-modified: "2021-12-03"
 ---
 
-This page summarises potential criteria that could be used by an NSO to decide on an index method for when expenditure data are not available.\
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v4                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2021-12-03                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910505) |
-+---------------------+--------------------------------------------------------------------------------------------+
+This page summarises potential criteria that could be used by an NSO to
+decide on an index method for when expenditure data are not available.\
 
 ------------------------------------------------------------------------
 
 # Criteria for choosing a suitable index method {#Methodsforwhenexpendituredataarenotavailable-Criteriaforchoosingasuitableindexmethod}
 
-In the same way as for when [expenditure data is available](methods-for-when-expenditure-data-are-available.qmd), in the case where a sample of products is chosen from the web scraped data (see section [Product sampling for price index calculation](https://unstats.un.org/wiki/display/GWGSD/Product+sampling+for+price+index+calculation)), a National Statistics Office (NSO) can continue to use a standard unweighted bilateral index approach because the data will remain fairly stable over time (to note, although we focus on scraped data here, these findings are also valid for other forms of price collection where transaction information is missing).
+In the same way as for when [expenditure data is
+available](methods-for-when-expenditure-data-are-available.qmd),
+in the case where a sample of products is chosen from the web scraped
+data (see section [Product sampling for price index
+calculation](https://unstats.un.org/wiki/display/GWGSD/Product+sampling+for+price+index+calculation)),
+a National Statistics Office (NSO) can continue to use a standard
+unweighted bilateral index approach because the data will remain fairly
+stable over time (to note, although we focus on scraped data here, these
+findings are also valid for other forms of price collection where
+transaction information is missing).
 
-If a more dynamic approach is preferred (i.e. the data contains many new and disappearing products and high product turnover), chained unweighted bilateral indices or multilateral indices can also be used for these data (such as chained Jevons).
+If a more dynamic approach is preferred (i.e. the data contains many new
+and disappearing products and high product turnover), chained unweighted
+bilateral indices or multilateral indices can also be used for these
+data (such as chained Jevons).
 
-NSOs should consider whether suitable [expenditure proxies can be developed](deriving-proxy-weights-for-web-scraped-data.qmd). While it is difficult to make an assessment of the difference between indices calculated using web scraped data and transaction data due to the difficulty in obtaining these sources for the same retailers, there are some evidence to suggest it can make an impact.
+NSOs should consider whether suitable [expenditure proxies can be
+developed](deriving-proxy-weights-for-web-scraped-data.qmd).
+While it is difficult to make an assessment of the difference between
+indices calculated using web scraped data and transaction data due to
+the difficulty in obtaining these sources for the same retailers, there
+are some evidence to suggest it can make an impact.
 
-For example, recent research has shown that the definition of product quantities may have a big influence on price indices. As a consequence, the difference between price indices computed with transaction data and scraped data can be quite large (1). A previous study carried out resulted in comparable indices between the two data sources, but the study only included one retail chain, which is a web-only shop (2). Similarly, ONS (2020) found that unweighted indices may suffer from a notable bias compared to their weighted counterparts.
+For example, recent research has shown that the definition of product
+quantities may have a big influence on price indices. As a consequence,
+the difference between price indices computed with transaction data and
+scraped data can be quite large (1). A previous study carried out
+resulted in comparable indices between the two data sources, but the
+study only included one retail chain, which is a web-only shop (2).
+Similarly, ONS (2020) found that unweighted indices may suffer from a
+notable bias compared to their weighted counterparts.
 
-There are possible benefits however, to using unweighted index methods as well. For example, the use of chained unweighted index formulas (e.g. the chain Jevons index) does not take into account the different levels of consumption of individual products in the analyzed periods and therefore does not suffer from chain drift. The use of the chain Jevons index can also be justified within the so-called dynamic approach, as long as the sample is selected by applying appropriate [data filters](https://unstats.un.org/wiki/display/GWGSD/Data+filtering) (e.g. extreme price filter or low sales filter). To note for particular categories that are characterized by high product churn, additional work can sometimes be required before a chained index can be applied, for example, clothing. If there is no comparable matching going on, even if a comparable item comes in at a higher price to one that went out of stock, this increase in price won't get captured in the period that the new item is introduced. Instead, it will take until the 2nd period for any price change to be captured for the new item, and in most cases for clothing, prices tend to fall over time. This results in a significant downward trend in the price index over time. One solution for this problem is to use product grouping to create larger (but still homogenous) groups of products which reduce the churn in the data (see [Identifying unique products](identifying-unique-products.qmd) section).
+There are possible benefits however, to using unweighted index methods
+as well. For example, the use of chained unweighted index formulas (e.g.
+the chain Jevons index) does not take into account the different levels
+of consumption of individual products in the analyzed periods and
+therefore does not suffer from chain drift. The use of the chain Jevons
+index can also be justified within the so-called dynamic approach, as
+long as the sample is selected by applying appropriate [data
+filters](https://unstats.un.org/wiki/display/GWGSD/Data+filtering) (e.g.
+extreme price filter or low sales filter). To note for particular
+categories that are characterized by high product churn, additional work
+can sometimes be required before a chained index can be applied, for
+example, clothing. If there is no comparable matching going on, even if
+a comparable item comes in at a higher price to one that went out of
+stock, this increase in price won't get captured in the period that the
+new item is introduced. Instead, it will take until the 2nd period for
+any price change to be captured for the new item, and in most cases for
+clothing, prices tend to fall over time. This results in a significant
+downward trend in the price index over time. One solution for this
+problem is to use product grouping to create larger (but still
+homogenous) groups of products which reduce the churn in the data (see
+[Identifying unique
+products](identifying-unique-products.qmd) section).
 
-An NSO can use a similar framework as laid out in the section [Methods for when expenditure data are available](methods-for-when-expenditure-data-are-available.qmd) to assess the suitability of unweighted indices. For example, in ONS (2020), the GEKS-Jevons is included in a shortlist of index methods when quantity data are not available based on an assessment against theoretical properties, resource requirements, interpretability, flexibility and coherence.
+An NSO can use a similar framework as laid out in the section [Methods
+for when expenditure data are
+available](methods-for-when-expenditure-data-are-available.qmd)
+to assess the suitability of unweighted indices. For example, in ONS
+(2020), the GEKS-Jevons is included in a shortlist of index methods when
+quantity data are not available based on an assessment against
+theoretical properties, resource requirements, interpretability,
+flexibility and coherence.
 
-In practice, Grahonja and Postrašija (2021) investigated possibilities of applying multilateral methods to scraped data, focusing on computer equipment and package holidays (3). Because of problems in finding suitable quantity proxies, they suggested to use the Jevons index. In order to obtain transitive series with the Jevons method, prices have to be imputed in periods when product prices are not available. Instead of using an \`imputed Jevons\', statistical offices may consider the GEKS-Jevons or the equally weighted Time Product Dummy method.
+In practice, Grahonja and Postrašija (2021) investigated possibilities
+of applying multilateral methods to scraped data, focusing on computer
+equipment and package holidays (3). Because of problems in finding
+suitable quantity proxies, they suggested to use the Jevons index. In
+order to obtain transitive series with the Jevons method, prices have to
+be imputed in periods when product prices are not available. Instead of
+using an \`imputed Jevons\', statistical offices may consider the
+GEKS-Jevons or the equally weighted Time Product Dummy method.
 
-The use of the Jevons and Dudot indices, as well as other valuable insights is discussed in the guide on web scraping by Eurostat (2021) (6). Finally, as an example, unweighted index methods for scraped data are used in production in the Dutch CPI, mostly for clothing and footwear. The methods use Dutot type indices for homogeneous product groups, which are combined with annually fixed weights to indices at COICOP-5 level (5).
+The use of the Jevons and Dudot indices, as well as other valuable
+insights is discussed in the guide on web scraping by Eurostat (2021)
+(6). Finally, as an example, unweighted index methods for scraped data
+are used in production in the Dutch CPI, mostly for clothing and
+footwear. The methods use Dutot type indices for homogeneous product
+groups, which are combined with annually fixed weights to indices at
+COICOP-5 level (5).
 
 ------------------------------------------------------------------------
 
 # References {#Methodsforwhenexpendituredataarenotavailable-References}
 
-\(1\) Chessa, A.G. et al. (2021). \"Stratification, Index Calculation and Validation for Transaction and Web Scraped Data\". Report of the Eurostat grant research project ICAVIS 887057-2019-NL-PRICE, Statistics Netherlands. To be uploaded on CIRCABC in December 2021.
+\(1\) Chessa, A.G. et al. (2021). \"Stratification, Index Calculation
+and Validation for Transaction and Web Scraped Data\". Report of the
+Eurostat grant research project ICAVIS 887057-2019-NL-PRICE, Statistics
+Netherlands. To be uploaded on CIRCABC in December 2021.
 
-\(2\) Chessa, A.G., and Griffioen, R. (2019). \"Comparing Price Indices of Clothing and Footwear for Scanner Data and Web Scraped Data\". *Economie et Statistique*, 509, 49-68.
+\(2\) Chessa, A.G., and Griffioen, R. (2019). \"Comparing Price Indices
+of Clothing and Footwear for Scanner Data and Web Scraped Data\".
+*Economie et Statistique*, 509, 49-68.
 
-\(3\) Grahonja, Č., and Postrašija, M. (2021). \"Challenges with scraped data in the field of HICP/CPI\". *Presented at the Meeting of the Group of Experts on Consumer Price Indices*, 2-10 June 2021 (online).
+\(3\) Grahonja, Č., and Postrašija, M. (2021). \"Challenges with scraped
+data in the field of HICP/CPI\". *Presented at the Meeting of the Group
+of Experts on Consumer Price Indices*, 2-10 June 2021 (online).
 
-\(4\) ONS (2020). \"The winning formula? A framework for choosing an appropriate index method for use on web scraped and scanner data\". Office for National Statistics.
+\(4\) ONS (2020). \"The winning formula? A framework for choosing an
+appropriate index method for use on web scraped and scanner data\".
+Office for National Statistics.
 
-\(5\) Griffioen, R., and ten Bosch, O. (2016). \"On the Use of Internet Data for the Dutch CPI\". *Paper presented at the Meeting of the Group of Experts on Consumer Price Indices*, Geneva, Switzerland, 2-4 May 2016.
+\(5\) Griffioen, R., and ten Bosch, O. (2016). \"On the Use of Internet
+Data for the Dutch CPI\". *Paper presented at the Meeting of the Group
+of Experts on Consumer Price Indices*, Geneva, Switzerland, 2-4 May
+2016.
 
-(6) Eurostat (2021). Practical Guidelines on Web Scraping for the HICP. November 2020.
+(6) Eurostat (2021). Practical Guidelines on Web Scraping for the HICP.
+November 2020.

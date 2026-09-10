@@ -53,6 +53,9 @@ LAYOUT_UNWRAP_SELECTORS = (
 
 IMG_KEEP_ATTRS = {"src", "alt"}
 
+PAGE_INFO_LABEL = "page information"
+LAST_UPDATED_LABEL = "last updated"
+
 INLINE_MATH = re.compile(r"\\\(.+?\\\)", re.S)
 
 CENTRED_STYLE = re.compile(r"text-align\s*:\s*center", re.I)
@@ -103,6 +106,40 @@ def extract_title(soup: BeautifulSoup) -> str:
     if " : " in text:
         text = text.split(" : ")[-1].strip()
     return text
+
+
+def extract_page_information(content) -> str | None:
+    """Remove the Confluence page information aside and return its date.
+
+    The aside holds Version, Last updated on, Summary of changes and a link to
+    the wiki page history. Only the date is kept, as the page date in the front
+    matter. The rest is wiki bookkeeping and carries no meaning here.
+
+    Matching keys on the "Page information" heading. Some pages carry an aside
+    of real handbook content, which must survive.
+
+    Runs before clean_content(), which unwraps div.cell and would destroy the
+    wrapper this looks for.
+    """
+    date = None
+
+    for aside in content.select("div.cell.aside"):
+        heading = aside.find("strong")
+        if heading is None:
+            continue
+        if PAGE_INFO_LABEL not in heading.get_text(strip=True).lower():
+            continue
+
+        for row in aside.find_all("tr"):
+            cells = row.find_all("td")
+            if len(cells) != 2:
+                continue
+            if cells[0].get_text(strip=True).lower().startswith(LAST_UPDATED_LABEL):
+                date = cells[1].get_text(" ", strip=True) or None
+
+        aside.decompose()
+
+    return date
 
 
 def promote_centred_math(content) -> int:
@@ -271,7 +308,10 @@ def run_pandoc(html_fragment: str) -> str:
         "html+tex_math_single_backslash",
         "-t",
         "markdown+tex_math_dollars-simple_tables-multiline_tables",
-        "--wrap=none",
+        # --wrap=auto, not --wrap=none. With --wrap=none pandoc silently drops
+        # text from some paragraphs. It removed 1080 characters from
+        # working-with-class-imbalance and reported no warning.
+        "--wrap=auto",
     ]
     result = subprocess.run(cmd, input=html_fragment.encode("utf-8"), capture_output=True)
     if result.returncode != 0:
@@ -282,10 +322,15 @@ def run_pandoc(html_fragment: str) -> str:
     return result.stdout.decode("utf-8").replace("\r\n", "\n")
 
 
-def build_qmd(title: str, markdown: str) -> str:
+def build_qmd(title: str, markdown: str, date: str | None = None) -> str:
     escaped_title = title.replace('"', '\\"')
+    front = [f'title: "{escaped_title}"']
+    if date:
+        # date-modified, not date. Quarto labels `date` as "Published", which
+        # would be false: these pages were published on the wiki years earlier.
+        front.append(f'date-modified: "{date}"')
     body = markdown.strip("\n")
-    return f'---\ntitle: "{escaped_title}"\n---\n\n{body}\n'
+    return "---\n" + "\n".join(front) + f"\n---\n\n{body}\n"
 
 
 def main() -> None:
@@ -308,6 +353,7 @@ def main() -> None:
         print(f'ERROR: no <div id="main-content"> found in {html_path}', file=sys.stderr)
         sys.exit(1)
 
+    page_date = extract_page_information(content)
     clean_content(content)
     promote_centred_math(content)
     process_images(content, html_path, slug)
@@ -324,7 +370,7 @@ def main() -> None:
 
     markdown = run_pandoc(cleaned_html)
 
-    qmd_text = build_qmd(title, markdown)
+    qmd_text = build_qmd(title, markdown, page_date)
     qmd_path = REPO_ROOT / f"{slug}.qmd"
     qmd_path.write_text(qmd_text, encoding="utf-8", newline="\n")
     print(f"Wrote {qmd_path}")

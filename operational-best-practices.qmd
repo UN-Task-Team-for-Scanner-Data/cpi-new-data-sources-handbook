@@ -1,23 +1,24 @@
 ---
 title: "Operational best practices"
+date-modified: "2025-04-28"
 ---
 
-Once NSOs select and develop an appropriate classification method, they have to implement it. This section includes articles on appropriate ways to operationalize classification. Most of the guidance is provided with context to recurrent classification as this is where most continual efforts are usually needed.
+Once NSOs select and develop an appropriate classification method, they
+have to implement it. This section includes articles on appropriate ways
+to operationalize classification. Most of the guidance is provided with
+context to recurrent classification as this is where most continual
+efforts are usually needed.
 
 Section contents:
 
-- [Designing the classification step: operational considerations](designing-the-classification-step-operational-considerations.qmd) --- This section provides context about where and how the classification step fits into the rest of the pipeline processing alternative data to create elementary price indices, as well as some important considerations and options when setting up the classification process. This article can also be seen as a companion to the pre-conditions to classification section, helping the NSO design the operational process for the individual or blended method that will be chosen.
+- [Designing the classification step: operational
+  considerations](designing-the-classification-step-operational-considerations.qmd) --- This section provides context
+  about where and how the classification step fits into the rest of the
+  pipeline processing alternative data to create elementary price
+  indices, as well as some important considerations and options when
+  setting up the classification process. This article can also be seen
+  as a companion to the pre-conditions to classification section,
+  helping the NSO design the operational process for the individual or
+  blended method that will be chosen.
 
 \
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2025-04-28                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication                                                                        |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=337281209) |
-+---------------------+--------------------------------------------------------------------------------------------+

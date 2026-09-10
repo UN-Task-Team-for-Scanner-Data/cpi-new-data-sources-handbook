@@ -1,48 +1,68 @@
 ---
 title: "Monitoring, validation and plausibility checks for scanner data"
+date-modified: "2021-07-16"
 ---
 
 Recommended checks to carry out on the incoming flows of scanner data\
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v2                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2021-07-16                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910463) |
-+----------------------+--------------------------------------------------------------------------------------------+
 
 ------------------------------------------------------------------------
 
 # Monitoring, validation and plausibility checks for scanner data {#Monitoringvalidationandplausibilitychecksforscannerdata-Monitoringvalidationandplausibilitychecksforscannerdata}
 
-Processing scanner data sets is a challenging task. The development of an automatic routine control for data on arrival is essential to identify, avoid and minimize errors on the processing of scanner data by National Statistical Offices (NSOs).
+Processing scanner data sets is a challenging task. The development of
+an automatic routine control for data on arrival is essential to
+identify, avoid and minimize errors on the processing of scanner data by
+National Statistical Offices (NSOs).
 
-Eurostat\'s HICP - [Practical Guide for Processing Supermarket Scanner Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details) suggests that monitoring data on arrival should be part of a quality framework for scanner data and describes several data quality indicators that should be adopted in this process, see Table 2 in the practical guide for more details. It also points that when dealing with such large data sets "errors are bound to occur and should be seen as acceptable within certain limits". Hence, the monitoring and validation procedures will rely on the manual and automated control checks performed and the degree of severity that is attributed to inconsistencies found to produce the Consumer Price Index (CPI) or other statistics of interest.
+Eurostat\'s HICP - [Practical Guide for Processing Supermarket Scanner
+Data](https://circabc.europa.eu/ui/group/7b031f10-ac19-4da3-a36f-58708a70133d/library/8e1333df-ca16-40fc-bc6a-1ce1be37247c/details)
+suggests that monitoring data on arrival should be part of a quality
+framework for scanner data and describes several data quality indicators
+that should be adopted in this process, see Table 2 in the practical
+guide for more details. It also points that when dealing with such large
+data sets "errors are bound to occur and should be seen as acceptable
+within certain limits". Hence, the monitoring and validation procedures
+will rely on the manual and automated control checks performed and the
+degree of severity that is attributed to inconsistencies found to
+produce the Consumer Price Index (CPI) or other statistics of interest.
 
 Important checks to perform include:
 
 - check if the data was received
-- check if the data in the files received are in the right format and contain all the variables of interest (in the correct data type) as agreed with the supplier
+- check if the data in the files received are in the right format and
+  contain all the variables of interest (in the correct data type) as
+  agreed with the supplier
 
 If the data received by the retailer is disaggregated per store:
 
-- check if the data for all the stores is contained in the files and also check for important changes such as closure and opening of stores or whether a store has changed its category along time (for instance, a supermarket turning into a discount store) - see Ref. (1) for more details.
+- check if the data for all the stores is contained in the files and
+  also check for important changes such as closure and opening of stores
+  or whether a store has changed its category along time (for instance,
+  a supermarket turning into a discount store) - see Ref. (1) for more
+  details.
 
 For the data received by each retailer/store:
 
-- check if the total revenue by retailer/store are within certain range limits which can be determined by the historical series
-- check if the number of article codes agree with previous rounds and if collecting [a specific sample](product-sampling-for-price-index-calculation.qmd) the target article codes are contained in the files
-- check if unit value prices per article code, between consecutive periods, lie within an acceptable range of variation (3)
-- check time series of monthly quantities and prices to evaluate data consistency and the appearance of outliers (2)
+- check if the total revenue by retailer/store are within certain range
+  limits which can be determined by the historical series
+- check if the number of article codes agree with previous rounds and if
+  collecting [a specific
+  sample](product-sampling-for-price-index-calculation.qmd)
+  the target article codes are contained in the files
+- check if unit value prices per article code, between consecutive
+  periods, lie within an acceptable range of variation (3)
+- check time series of monthly quantities and prices to evaluate data
+  consistency and the appearance of outliers (2)
 
-One point to note is that data received on a more frequent basis provides the opportunity to identify inconsistencies at an early stage and increases the possibility to fix the problems faster. 
+One point to note is that data received on a more frequent basis
+provides the opportunity to identify inconsistencies at an early stage
+and increases the possibility to fix the problems faster. 
 
-A nice example of the implementation of a system to test scanner data files at arrival can be found in Ref. (1). Authors also discuss the use of a fall-back plan in case scanner data sets cease to be delivered for some reason. Another interesting example can be found in section 5.2 of Ref. (2).
+A nice example of the implementation of a system to test scanner data
+files at arrival can be found in Ref. (1). Authors also discuss the use
+of a fall-back plan in case scanner data sets cease to be delivered for
+some reason. Another interesting example can be found in section 5.2 of
+Ref. (2).
 
 \
 
@@ -50,10 +70,18 @@ A nice example of the implementation of a system to test scanner data files at a
 
 # References {#Monitoringvalidationandplausibilitychecksforscannerdata-References}
 
-\(1\) Guðmundsdóttir, H. E. and Jónasdóttir, L. G. (2016). Scanner Data: Initial Data Testing. Paper presented at the UNECE Meeting of the Group of experts on Price Indices. <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2016/Session_1_Iceland_Initial_data_testing.pdf>
+\(1\) Guðmundsdóttir, H. E. and Jónasdóttir, L. G. (2016). Scanner Data:
+Initial Data Testing. Paper presented at the UNECE Meeting of the Group
+of experts on Price Indices.
+<https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2016/Session_1_Iceland_Initial_data_testing.pdf>
 
-\(2\) Krsinich, F. (2015) Implementation of consumer electronics scanner data in the New Zealand CPI. Paper presented at the meeting of the Ottawa Group at Tokyo, Japan. <http://www.stat.go.jp/english/info/meetings/og2015/pdf/t4s8p26_pap.pdf>
+\(2\) Krsinich, F. (2015) Implementation of consumer electronics scanner
+data in the New Zealand CPI. Paper presented at the meeting of the
+Ottawa Group at Tokyo, Japan.
+<http://www.stat.go.jp/english/info/meetings/og2015/pdf/t4s8p26_pap.pdf>
 
-\(3\) van der Grient, H. and de Haan, J. (2010). The use of supermarket scanner data in the Dutch CPI. Paper presented at the UNECE Meeting of the Group of experts on Price Indices.
+\(3\) van der Grient, H. and de Haan, J. (2010). The use of supermarket
+scanner data in the Dutch CPI. Paper presented at the UNECE Meeting of
+the Group of experts on Price Indices.
 
 <https://www.cbs.nl/en-gb/our-services/methods/surveys/aanvullende-onderzoeksbeschrijvingen/the-use-of-supermarket-scanner-data-in-the-dutch-cpi>

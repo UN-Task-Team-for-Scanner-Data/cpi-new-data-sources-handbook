@@ -1,37 +1,79 @@
 ---
 title: "Collection of data via APIs"
+date-modified: "2021-05-04"
 ---
 
-An alternative to automatically scraping data from web pages is to extract data directly from application programming interface (APIs)\
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v4                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2021-05-04                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910471) |
-+----------------------+--------------------------------------------------------------------------------------------+
+An alternative to automatically scraping data from web pages is to
+extract data directly from application programming interface (APIs)\
 
 ------------------------------------------------------------------------
 
 # API data collection {#CollectionofdataviaAPIs-APIdatacollection}
 
-An alternative to automatically scraping data from web pages is to extract data directly from application programming interface (APIs). The [Eurostat's practical guidelines on web scraping for the HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/) (Harmonised Index of Consumer Prices) recommend checking for available APIs before setting up solutions for web scraping. The purpose of an API is to provide structured and controlled access to specific data or services. API is a set of procedures and communication protocols that provide access to data of an application, operating system or other services.
+An alternative to automatically scraping data from web pages is to
+extract data directly from application programming interface (APIs). The
+[Eurostat's practical guidelines on web scraping for the
+HICP](https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/)
+(Harmonised Index of Consumer Prices) recommend checking for available
+APIs before setting up solutions for web scraping. The purpose of an API
+is to provide structured and controlled access to specific data or
+services. API is a set of procedures and communication protocols that
+provide access to data of an application, operating system or other
+services.
 
-Compared to scraping web pages, extracting data from databases often means greater stability and less maintenance work. While web pages suddenly may change their layout and hence require corrections in the scraping code, the API solutions are often more stable and changes in the API structure are likely to be announced in advance. Extracting data from API can be an effective way to get large amount of data with less time spent on data collection. Some APIs are free to access and available for everyone, but in most cases access to API will require formal contracts with data owners and a pay-per-use approach.
+Compared to scraping web pages, extracting data from databases often
+means greater stability and less maintenance work. While web pages
+suddenly may change their layout and hence require corrections in the
+scraping code, the API solutions are often more stable and changes in
+the API structure are likely to be announced in advance. Extracting data
+from API can be an effective way to get large amount of data with less
+time spent on data collection. Some APIs are free to access and
+available for everyone, but in most cases access to API will require
+formal contracts with data owners and a pay-per-use approach.
 
-An example of how APIs can be used in practice are for the collection of airfare prices (see section on [Selection of categories](selection-of-categories.qmd)). Some National Statistical Offices (NSOs) use an API in the data collection of airline tickets where requests with parameters on representative flights are sent to the API and the API returns information on prices and additional information related to the tickets (for example, flight number, departure and arrival time, booking category, etc.). The Eurostat practical guidelines suggest that the booking system Amadeus can serve as a good starting point to master using APIs.
+An example of how APIs can be used in practice are for the collection of
+airfare prices (see section on [Selection of
+categories](selection-of-categories.qmd)). Some National
+Statistical Offices (NSOs) use an API in the data collection of airline
+tickets where requests with parameters on representative flights are
+sent to the API and the API returns information on prices and additional
+information related to the tickets (for example, flight number,
+departure and arrival time, booking category, etc.). The Eurostat
+practical guidelines suggest that the booking system Amadeus can serve
+as a good starting point to master using APIs.
 
-Making use of available air travel APIs has the advantage that NSOs do not have to set up airline-specific API solutions, but only need to deal with one single data provider. On the other hand, it is important to check with data provider the actual market coverage and what information is provided in the API. It can also be advisable to check prices collected from the API against prices on the airline companies' own web pages and to look closer into any discrepancies.
+Making use of available air travel APIs has the advantage that NSOs do
+not have to set up airline-specific API solutions, but only need to deal
+with one single data provider. On the other hand, it is important to
+check with data provider the actual market coverage and what information
+is provided in the API. It can also be advisable to check prices
+collected from the API against prices on the airline companies' own web
+pages and to look closer into any discrepancies.
 
-Measuring airfares presents a challenge as they are subject to a dynamic pricing structure, dependent on how far in advance they are booked and on availability. Furthermore, flights shall be included in the Consumer Price Index (CPI) when actually consumed, not purchased. As airline tickets often show strong price fluctuations it is important to separate between time of ordering and time of travelling. Making a schedule for the price collection of flights rests on a series of assumptions that must be adapted to the specific situation in each country. The prices should be recorded sufficiently in advance of departure to ensure they are representative of consumers' expenditure and behaviour. Input from professionals from within the airline industry could be very useful when setting up such a schedule.
+Measuring airfares presents a challenge as they are subject to a dynamic
+pricing structure, dependent on how far in advance they are booked and
+on availability. Furthermore, flights shall be included in the Consumer
+Price Index (CPI) when actually consumed, not purchased. As airline
+tickets often show strong price fluctuations it is important to separate
+between time of ordering and time of travelling. Making a schedule for
+the price collection of flights rests on a series of assumptions that
+must be adapted to the specific situation in each country. The prices
+should be recorded sufficiently in advance of departure to ensure they
+are representative of consumers' expenditure and behaviour. Input from
+professionals from within the airline industry could be very useful when
+setting up such a schedule.
 
-The data collection may be performed by using Python programming language and by making use of software packages that can be downloaded and imported, for more information see example in the annex II of Eurostat practical guidelines.
+The data collection may be performed by using Python programming
+language and by making use of software packages that can be downloaded
+and imported, for more information see example in the annex II of
+Eurostat practical guidelines.
 
-The collected API data can be monitored and checked for abnormalities in the same way as data collected through web scraping, see section on [monitoring, validation and plausibility checks for web scraped data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd). 
+The collected API data can be monitored and checked for abnormalities in
+the same way as data collected through web scraping, see section on
+[monitoring, validation and plausibility checks for web scraped
+data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd). 
 
-In the training course 2 about data acquisition, in [module 2.3 ](https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.3:ScrapingthedataviaAPIs:~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None)[ ](https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.1:AcquiringscannerdataforCPI(inprogress):~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None)a general description is given of the main issues to face and the plan to implement to access data via API.
+In the training course 2 about data acquisition, in [module
+2.3 ](https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.3:ScrapingthedataviaAPIs:~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None)[ ](https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.1:AcquiringscannerdataforCPI(inprogress):~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None)a
+general description is given of the main issues to face and the plan to
+implement to access data via API.

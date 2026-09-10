@@ -1,37 +1,52 @@
 ---
 title: "Web scraping"
+date-modified: "2024-03-01"
 ---
 
 This section covers the acquisition of web scraped data.\
 
 Section contents:
 
-- [Different approaches to accessing web scraped data](different-approaches-to-accessing-web-scraped-data.qmd) --- Approaches for setting up a web scraping project
-- [Strategies available for in-house web scraping](strategies-available-for-in-house-web-scraping.qmd) --- Points to consider if in-house web scraping is the chosen solution
-- [Data requirements specification for web scraped data](data-requirements-specification-for-web-scraped-data.qmd) --- Key variables to look for when acquiring web scraped data
-- [Monitoring, validation and plausibility checks for web scraped data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd) --- Recommended checks to carry out on incoming flows of web scraping data
-- [Common technical problems for in-house web scraping](common-technical-problems-for-in-house-web-scraping.qmd) --- Overcoming some common technical problems for web scraping
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v2                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2024-03-01                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page History         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910464) |
-+----------------------+--------------------------------------------------------------------------------------------+
+- [Different approaches to accessing web scraped
+  data](different-approaches-to-accessing-web-scraped-data.qmd)
+  --- Approaches for setting up a web scraping project
+- [Strategies available for in-house web
+  scraping](strategies-available-for-in-house-web-scraping.qmd)
+  --- Points to consider if in-house web scraping is the chosen solution
+- [Data requirements specification for web scraped
+  data](data-requirements-specification-for-web-scraped-data.qmd)
+  --- Key variables to look for when acquiring web scraped data
+- [Monitoring, validation and plausibility checks for web scraped
+  data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd) --- Recommended checks to carry out on incoming
+  flows of web scraping data
+- [Common technical problems for in-house web
+  scraping](common-technical-problems-for-in-house-web-scraping.qmd)
+  --- Overcoming some common technical problems for web scraping
 
 ------------------------------------------------------------------------
 
 # Overview {#Webscraping-Overview}
 
-Initial considerations on the aspects that should be taken into account to set a web scraping project are presented in section [different approaches to accessing web scraped data](different-approaches-to-accessing-web-scraped-data.qmd). The different strategies that a statistical agency can use to implement in-house scrapers are discussed in section [if in-house, what strategies are available?](strategies-available-for-in-house-web-scraping.qmd)
+Initial considerations on the aspects that should be taken into account
+to set a web scraping project are presented in section [different
+approaches to accessing web scraped
+data](different-approaches-to-accessing-web-scraped-data.qmd).
+The different strategies that a statistical agency can use to implement
+in-house scrapers are discussed in section [if in-house, what strategies
+are
+available?](strategies-available-for-in-house-web-scraping.qmd)
 
-The sections [data requirements specification for web scraped data](data-requirements-specification-for-web-scraped-data.qmd) and [monitoring, validation and plausibility checks](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd), discuss, respectively, the main variables of interest that should be considered for web collection and important checks for monitoring and validation of the extracted data.
+The sections [data requirements specification for web scraped
+data](data-requirements-specification-for-web-scraped-data.qmd)
+and [monitoring, validation and plausibility checks](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd),
+discuss, respectively, the main variables of interest that should be
+considered for web collection and important checks for monitoring and
+validation of the extracted data.
 
-[Common technical problems for in-house web scraping](common-technical-problems-for-in-house-web-scraping.qmd) highlights most common problems that National Statistical Offices (NSOs) can find while trying to build and maintain web scrapers for the production of price statistics.
+[Common technical problems for in-house web
+scraping](common-technical-problems-for-in-house-web-scraping.qmd)
+highlights most common problems that National Statistical Offices (NSOs)
+can find while trying to build and maintain web scrapers for the
+production of price statistics.
 
 \

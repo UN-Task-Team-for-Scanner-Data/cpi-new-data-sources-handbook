@@ -1,29 +1,46 @@
 ---
 title: "Price index methods"
+date-modified: "2024-03-01"
 ---
 
-This section summarises the current literature available on price index methods that can be used for these new data sources.\
+This section summarises the current literature available on price index
+methods that can be used for these new data sources.\
 
 Section contents:
 
-- [Bilateral price index methods](bilateral-price-index-methods.qmd) --- This section presents the basic, commonly known formulas of bilateral price indices. 
-  - [Example of chain drift](example-of-chain-drift.qmd) --- Chain drift occurs when an index does not return to unity when prices in the current period return to their levels in the base period. 
-- [Multilateral price index methods](multilateral-price-index-methods.qmd) --- This section presents the basic, commonly known formulas of multilateral price indices.
-- [Extension methods](extension-methods.qmd) --- Extension methods can be used in combination with multilateral methods to ensure revision-free index series. 
-- [Decomposition](decomposition.qmd) --- In addition to measuring the aggregate price or quantity change, it is important to decompose the change into its contributions by individual commodities or groupings.
-- [Choosing an index method](choosing-an-index-method.qmd) --- This section contains information on how an NSO can choose a suitable index method.
-  - [Methods for when expenditure data are available](methods-for-when-expenditure-data-are-available.qmd) --- This page summarizes potential criteria that could be used by an NSO to decide on an index method for when expenditure data are available.
-  - [Methods for when expenditure data are not available](methods-for-when-expenditure-data-are-not-available.qmd) --- This page summarises potential criteria that could be used by an NSO to decide on an index method for when expenditure data are not available.
-- [Deriving proxy weights for web scraped data](deriving-proxy-weights-for-web-scraped-data.qmd) --- Web scraped data does not contain expenditure information. In some cases, proxy expenditure weights can be derived.
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v4                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2024-03-01                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page history         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910486) |
-+----------------------+--------------------------------------------------------------------------------------------+
+- [Bilateral price index
+  methods](bilateral-price-index-methods.qmd) --- This
+  section presents the basic, commonly known formulas of bilateral price
+  indices. 
+  - [Example of chain drift](example-of-chain-drift.qmd) ---
+    Chain drift occurs when an index does not return to unity when
+    prices in the current period return to their levels in the base
+    period. 
+- [Multilateral price index
+  methods](multilateral-price-index-methods.qmd) --- This
+  section presents the basic, commonly known formulas of multilateral
+  price indices.
+- [Extension methods](extension-methods.qmd) --- Extension
+  methods can be used in combination with multilateral methods to ensure
+  revision-free index series. 
+- [Decomposition](decomposition.qmd) --- In addition to
+  measuring the aggregate price or quantity change, it is important to
+  decompose the change into its contributions by individual commodities
+  or groupings.
+- [Choosing an index method](choosing-an-index-method.qmd)
+  --- This section contains information on how an NSO can choose a
+  suitable index method.
+  - [Methods for when expenditure data are
+    available](methods-for-when-expenditure-data-are-available.qmd)
+    --- This page summarizes potential criteria that could be used by an
+    NSO to decide on an index method for when expenditure data are
+    available.
+  - [Methods for when expenditure data are not
+    available](methods-for-when-expenditure-data-are-not-available.qmd)
+    --- This page summarises potential criteria that could be used by an
+    NSO to decide on an index method for when expenditure data are not
+    available.
+- [Deriving proxy weights for web scraped
+  data](deriving-proxy-weights-for-web-scraped-data.qmd) ---
+  Web scraped data does not contain expenditure information. In some
+  cases, proxy expenditure weights can be derived.

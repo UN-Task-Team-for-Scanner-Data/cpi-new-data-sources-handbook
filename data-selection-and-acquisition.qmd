@@ -1,27 +1,32 @@
 ---
 title: "Data selection and acquisition"
+date-modified: "2024-03-01"
 ---
 
-This section discusses how to select and acquire these new data sources. The goal of the section is to provide readers useful information on the complexities involved in obtaining these data as well as additional information such as the description of the data requirements that should be considered for the development of price statistics and the steps involved in the monitoring and validation of the data sets received. As the marked differences in the nature of these data sources are also manifested in the procedures for data acquisition, a separate discussion is provided to deal with the peculiarities of each case. 
+This section discusses how to select and acquire these new data
+sources. The goal of the section is to provide readers useful
+information on the complexities involved in obtaining these data as well
+as additional information such as the description of the data
+requirements that should be considered for the development of price
+statistics and the steps involved in the monitoring and validation of
+the data sets received. As the marked differences in the nature of these
+data sources are also manifested in the procedures for data acquisition,
+a separate discussion is provided to deal with the peculiarities of each
+case. 
 
 Section contents:
 
-- [Selection of categories](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910456/Selection+of+categories)
-- [Selection of retailers for alternative data sources](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910457/Selection+of+retailers+for+alternative+data+sources)
-- [Scanner data](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910458/Scanner+data)
-- [Web scraping](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910464/Web+scraping)
-- [Example file structures for web scraped and scanner data](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910470/Example+file+structures+for+web+scraped+and+scanner+data)
-- [Collection of data via APIs](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910471/Collection+of+data+via+APIs)
-- [Dealing with unexpected data gaps](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910472/Dealing+with+unexpected+data+gaps)
-
-**Page information**
-
-+----------------------+--------------------------------------------------------------------------------------------+
-| Version              | v5                                                                                         |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Last updated on      | 2024-03-01                                                                                 |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes   | Initial publication version                                                                |
-+----------------------+--------------------------------------------------------------------------------------------+
-| Page history         | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910455) |
-+----------------------+--------------------------------------------------------------------------------------------+
+- [Selection of
+  categories](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910456/Selection+of+categories)
+- [Selection of retailers for alternative data
+  sources](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910457/Selection+of+retailers+for+alternative+data+sources)
+- [Scanner
+  data](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910458/Scanner+data)
+- [Web
+  scraping](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910464/Web+scraping)
+- [Example file structures for web scraped and scanner
+  data](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910470/Example+file+structures+for+web+scraped+and+scanner+data)
+- [Collection of data via
+  APIs](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910471/Collection+of+data+via+APIs)
+- [Dealing with unexpected data
+  gaps](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910472/Dealing+with+unexpected+data+gaps)

@@ -1,108 +1,399 @@
 ---
 title: "Quality change and hedonic estimation"
+date-modified: "2022-05-09"
 ---
 
-This page contains information on accounting for quality change in the measurement of consumer prices\
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2022-05-09                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page history        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910515) |
-+---------------------+--------------------------------------------------------------------------------------------+
+This page contains information on accounting for quality change in the
+measurement of consumer prices\
 
 ------------------------------------------------------------------------
 
 # Introduction {#Qualitychangeandhedonicestimation-Introduction}
 
-NSOs attempt to calculate measures of price change that account for the changing quality of goods and services in their datasets and in the real-world markets they represent.  At the most fundamental level, this typically means targeting a "constant quality" price measure where price change is measured based on the same set of products over time. However, the real world set of products experiences churn and NSOs are often forced to evaluate the price change between two distinct products. Moreover, a NSO may wish to target a cost-of-living index where improved product varieties enhance consumer welfare.
+NSOs attempt to calculate measures of price change that account for the
+changing quality of goods and services in their datasets and in the
+real-world markets they represent.  At the most fundamental level, this
+typically means targeting a "constant quality" price measure where price
+change is measured based on the same set of products over time. However,
+the real world set of products experiences churn and NSOs are often
+forced to evaluate the price change between two distinct products.
+Moreover, a NSO may wish to target a cost-of-living index where improved
+product varieties enhance consumer welfare.
 
-NSOs often use quality adjustments to account for differences in the quality of products between time periods.  Typically, the price difference between two products is adjusted using component costs, production cost, or a hedonic estimate of the difference in the characteristic values between two products.  The hedonic approach, which assumes prices are functions of a product's characteristics, can also be used to directly estimate price change with hedonic indexes.  This page discusses the objectives in accounting for quality adjustment and several estimation methods used for accommodating quality change with a focus on hedonic methods.
+NSOs often use quality adjustments to account for differences in the
+quality of products between time periods.  Typically, the price
+difference between two products is adjusted using component costs,
+production cost, or a hedonic estimate of the difference in the
+characteristic values between two products.  The hedonic approach, which
+assumes prices are functions of a product's characteristics, can also be
+used to directly estimate price change with hedonic indexes.  This page
+discusses the objectives in accounting for quality adjustment and
+several estimation methods used for accommodating quality change with a
+focus on hedonic methods.
 
-Several goals may motivate NSOs to adopt hedonic estimation and other forms of quality adjustment. Several of these objectives are interrelated, but distinctions may provide clarification where distinctions can be made. Different methods of quality adjustment or price estimation should be considered depending on the specific issues relevant to the market or dataset.
+Several goals may motivate NSOs to adopt hedonic estimation and other
+forms of quality adjustment. Several of these objectives are
+interrelated, but distinctions may provide clarification where
+distinctions can be made. Different methods of quality adjustment or
+price estimation should be considered depending on the specific issues
+relevant to the market or dataset.
 
 # Objectives motivating quality change and hedonic estimation {#Qualitychangeandhedonicestimation-Objectivesmotivatingqualitychangeandhedonicestimation}
 
 ## Quality bias {#Qualitychangeandhedonicestimation-Qualitybias}
 
-NSOs have largely focused on eliminating or at least reducing quality bias, measured price change attributable to a change in the set of goods and services used to calculate a price index rather than a change in the measurement objective (typically cost of living or cost of goods). Hedonic methods and other quality adjustments methods are used to reduce quality bias, which we define here as a measured price change attributable to a difference in the value of the product sets observed over two or more time periods used to calculate a price index. Both real-world markets and sampled datasets undergo significant churn as specific products and varieties enter and exit the market. When a shift in the value of the goods results in a change in the measured price level, this apparent price change is a result of quality bias.
+NSOs have largely focused on eliminating or at least reducing quality
+bias, measured price change attributable to a change in the set of goods
+and services used to calculate a price index rather than a change in the
+measurement objective (typically cost of living or cost of goods).
+Hedonic methods and other quality adjustments methods are used to reduce
+quality bias, which we define here as a measured price change
+attributable to a difference in the value of the product sets observed
+over two or more time periods used to calculate a price index. Both
+real-world markets and sampled datasets undergo significant churn as
+specific products and varieties enter and exit the market. When a shift
+in the value of the goods results in a change in the measured price
+level, this apparent price change is a result of quality bias.
 
-Matched model indexes may differ from hedonic estimates in certain cases. Two of the cases of most interest are when the characteristics and pricing behavior of product entrants and exits differ substantially from "matched" products and when the number of matched products is low. The frequency of matched products may be particularly low when price comparisons are being made over a large time span. This is particularly likely to arise when constructing multilateral price indexes as discussed below. Matched model indexes in scanner data functionally use the overlap approach to quality change unless an intervention is made to prevent different versions of an item from being used in the price index during the same time period.
+Matched model indexes may differ from hedonic estimates in certain
+cases. Two of the cases of most interest are when the characteristics
+and pricing behavior of product entrants and exits differ substantially
+from "matched" products and when the number of matched products is low.
+The frequency of matched products may be particularly low when price
+comparisons are being made over a large time span. This is particularly
+likely to arise when constructing multilateral price indexes as
+discussed below. Matched model indexes in scanner data functionally use
+the overlap approach to quality change unless an intervention is made to
+prevent different versions of an item from being used in the price index
+during the same time period.
 
-NSOs account for product updates that change an product identifier by \"relinking\" discontinued products to their successors or finding a similar \"replacement\" item and using the price change between the two versions of a product. A matched model price index that does not use item replacement or relinking will only reflect the price change for a specific product version. While this produces a \"constant quality\" measure--one that even accommodates new good improvements with the overlap approach, this matched model will omit any price change associated with a model update, and may also introduce product cycle bias (such as showing downward price change as the result of new products tending to be sold at full price and then exiting the market at a discount). When NSOs use relinking or item replacement to address these issues, they introduce quality bias which must then be addressed with adjustment methods. Williams (2021) shows that price change across model iterations or relaunches can be substantial and larger in scale than typical estimates of quality bias. NSOs also use \"grouping\" (see [identifying unique products](identifying-unique-products.qmd)) to combine products with different identifiers into a homogeneous unit value that will be treated as a single good. Both \"grouping\" and \"relinking\" help to address product turnover. Grouping should be used when two identifiers are used for homogeneous products with little or no differentiation. Relinking should be when a product has strong life cycle effects.
+NSOs account for product updates that change an product identifier by
+\"relinking\" discontinued products to their successors or finding a
+similar \"replacement\" item and using the price change between the two
+versions of a product. A matched model price index that does not use
+item replacement or relinking will only reflect the price change for a
+specific product version. While this produces a \"constant quality\"
+measure--one that even accommodates new good improvements with the
+overlap approach, this matched model will omit any price change
+associated with a model update, and may also introduce product cycle
+bias (such as showing downward price change as the result of new
+products tending to be sold at full price and then exiting the market at
+a discount). When NSOs use relinking or item replacement to address
+these issues, they introduce quality bias which must then be addressed
+with adjustment methods. Williams (2021) shows that price change across
+model iterations or relaunches can be substantial and larger in scale
+than typical estimates of quality bias. NSOs also use \"grouping\" (see
+[identifying unique
+products](identifying-unique-products.qmd)) to combine
+products with different identifiers into a homogeneous unit value that
+will be treated as a single good. Both \"grouping\" and \"relinking\"
+help to address product turnover. Grouping should be used when two
+identifiers are used for homogeneous products with little or no
+differentiation. Relinking should be when a product has strong life
+cycle effects.
 
-Quality bias is often a secondary effect of an effort to use relinking across product relaunches and replacement to accommodate price effects related to a product\'s life cycle ([ILO 2020, p. 179](https://www.ilo.org/wcmsp5/groups/public/---dgreports/---stat/documents/publication/wcms_761444.pdf#page=179)). Practitioners should consider how a quality adjustment method might be impacted by the life cycle effect as well. Ideally, any hedonic price measurement would be able to model and account for life cycle effects. When not accounted for, life cycles may introduce a bias. For example, take the case of staggered price change such as annually updated contracts. In the case of an annual contract, price change for a specific product or service will only occur at an annual frequency. A naïve specification may attribute differences in the price level between pricing regimes to differences in the characteristics. Hedonic imputation with estimates specific to a pricing regime (old vs updated contracts) may accommodate this aspect of price change.  One of the motivations for relinking, and otherwise moving beyond matched model price change, is to capture price change associated with product change. For a variety of possible reasons, sellers may introduce price change (or otherwise change pricing strategy) when updating a product or product lineup. In the case of such a market, a same version, matched model price index would fail to capture price change. In order to capture price change between the set of old and updated products, either relinking or hedonic methods must be used. Similarly, relinking methods are used to offset other life cycle effects including patterns of discounting where a product ends its life cycle at a clearance rate.
+Quality bias is often a secondary effect of an effort to use relinking
+across product relaunches and replacement to accommodate price effects
+related to a product\'s life cycle ([ILO 2020, p.
+179](https://www.ilo.org/wcmsp5/groups/public/---dgreports/---stat/documents/publication/wcms_761444.pdf#page=179)).
+Practitioners should consider how a quality adjustment method might be
+impacted by the life cycle effect as well. Ideally, any hedonic price
+measurement would be able to model and account for life cycle effects.
+When not accounted for, life cycles may introduce a bias. For example,
+take the case of staggered price change such as annually updated
+contracts. In the case of an annual contract, price change for a
+specific product or service will only occur at an annual frequency. A
+naïve specification may attribute differences in the price level between
+pricing regimes to differences in the characteristics. Hedonic
+imputation with estimates specific to a pricing regime (old vs updated
+contracts) may accommodate this aspect of price change.  One of the
+motivations for relinking, and otherwise moving beyond matched model
+price change, is to capture price change associated with product change.
+For a variety of possible reasons, sellers may introduce price change
+(or otherwise change pricing strategy) when updating a product or
+product lineup. In the case of such a market, a same version, matched
+model price index would fail to capture price change. In order to
+capture price change between the set of old and updated products,
+either relinking or hedonic methods must be used. Similarly, relinking
+methods are used to offset other life cycle effects including patterns
+of discounting where a product ends its life cycle at a clearance rate.
 
 ## Changes in consumer surplus {#Qualitychangeandhedonicestimation-Changesinconsumersurplus}
 
-The introduction of a new good may allow consumers to achieve higher levels of utility under the same budget constraint. Hicks (1940) provided the original motivation for hedonic imputation with the recommendation that entrant goods be accounted for by estimating a "shadow price" so high that none of the good would be purchased in the period prior to its introduction. However, welfare interpretations of hedonic estimates have proven problematic. Hick's \"shadow price\" is incompatible with typical utility functions, notably CES. Feenstra (1995) presents a welfare interpretation of standard hedonic indexes, but the assumptions required are restrictive. Also, while hedonic methods capture improved features, standard approaches do not capture novel features or completely new goods (see Crawford and Neary, 2021).
+The introduction of a new good may allow consumers to achieve higher
+levels of utility under the same budget constraint. Hicks (1940)
+provided the original motivation for hedonic imputation with the
+recommendation that entrant goods be accounted for by estimating a
+"shadow price" so high that none of the good would be purchased in the
+period prior to its introduction. However, welfare interpretations of
+hedonic estimates have proven problematic. Hick's \"shadow price\" is
+incompatible with typical utility functions, notably CES. Feenstra
+(1995) presents a welfare interpretation of standard hedonic indexes,
+but the assumptions required are restrictive. Also, while hedonic
+methods capture improved features, standard approaches do not capture
+novel features or completely new goods (see Crawford and Neary, 2021).
 
-Non-hedonic price measurement methods have been proposed to account for the benefits of new varieties. Standard hedonic methods do not capture changes in consumer surplus directly related to changes in variety. Feenstra (1994) and Feenstra and Diewert (2022) have proposed adjustments to account for changes in product variety. However, these methods may be sensitive to identifying assumptions and the demand model specification. 
+Non-hedonic price measurement methods have been proposed to account for
+the benefits of new varieties. Standard hedonic methods do not capture
+changes in consumer surplus directly related to changes in variety.
+Feenstra (1994) and Feenstra and Diewert (2022) have proposed
+adjustments to account for changes in product variety. However, these
+methods may be sensitive to identifying assumptions and the demand model
+specification. 
 
 ## Imputation  {#Qualitychangeandhedonicestimation-Imputation}
 
-Hedonic imputation can be thought of more generally as a means of correcting weighting by imputing the price of missing observations when "missingness" is associated with distinct pricing behavior.  Hedonic imputation often focuses on the cases of entry and exit, but other factors may be associated with a probability of "missing" an observation that results in a segment of a product category being underweighted. In such cases, hedonic imputation essentially serves as a weight correction. Also, while the existing literature focuses on imputation for entry and exit rather than "temporarily" missing observation, the distinction may not be useful in scanner data context. When working with current period sales records, an NSO will often be unable to ascertain whether an item has been discontinued or could be expected to return.
+Hedonic imputation can be thought of more generally as a means of
+correcting weighting by imputing the price of missing observations when
+"missingness" is associated with distinct pricing behavior.  Hedonic
+imputation often focuses on the cases of entry and exit, but other
+factors may be associated with a probability of "missing" an observation
+that results in a segment of a product category being underweighted. In
+such cases, hedonic imputation essentially serves as a weight
+correction. Also, while the existing literature focuses on imputation
+for entry and exit rather than "temporarily" missing observation, the
+distinction may not be useful in scanner data context. When working with
+current period sales records, an NSO will often be unable to ascertain
+whether an item has been discontinued or could be expected to return.
 
-While many hedonic studies have focused on the price of entering goods, following Hicks, Erickson and Pakes (2011) focus on the use of hedonic imputation to estimate prices that may have exited the market before a data collector was able to capture a price. They found price surveys systematically omit the end of a product's lifecycle where prices tend to be substantially discounted, and therefore introduce a bias into the index. This specific issue is less of a concern when scanner data accounts for the complete set of transaction prices from a seller.
+While many hedonic studies have focused on the price of entering goods,
+following Hicks, Erickson and Pakes (2011) focus on the use of hedonic
+imputation to estimate prices that may have exited the market before a
+data collector was able to capture a price. They found price surveys
+systematically omit the end of a product's lifecycle where prices tend
+to be substantially discounted, and therefore introduce a bias into the
+index. This specific issue is less of a concern when scanner data
+accounts for the complete set of transaction prices from a seller.
 
 # Quality change in scanner vs survey data {#Qualitychangeandhedonicestimation-Qualitychangeinscannervssurveydata}
 
-Quality adjustment arises by necessity in traditional, fixed sample surveys. In this case, a sampled product is replaced with a new product. The replacement may be initiated because the original product is no longer available for sale or because the sample is being refreshed. In these cases, a comparison between the old and new item may be "forced" by product turnover where a data collector must find a product to replace one that has been discontinued. In contrast, scanner data do not have a one-to-one match predetermined by a data collector--as we typically see in survey data. Some data may have attributes that imply a predecessor and successor relationship between different versions of a product, but the scanner data relinking process typically involves establishing a \"many-to-many\" or selecting a single match from a variety of possible matches. Moreover, with scanner data, there is ambiguity in the timing of the linking process whereas survey data (by construction) often present discrete, non-overlapping entry and exit points for different versions of products. With scanner data, even in cases with clear matches between product versions, there is usually an overlap period instead of distinct entry and exit points. Methodological decisions must be made on how to handle the simultaneous existence of multiple versions of a product. In the case of scanner data, where observations typically reflect dynamic entry and exit, one-to-one replacements occur infrequently and an \"adjustment\" for the difference in quality between specific goods may be less useful than methods that take into account broader quality change in a market.  Quality adjustments may still be relevant when a fixed sample is drawn from a scanner data set or when relinking methods are used to create one-to-one replacements.
+Quality adjustment arises by necessity in traditional, fixed sample
+surveys. In this case, a sampled product is replaced with a new product.
+The replacement may be initiated because the original product is no
+longer available for sale or because the sample is being refreshed. In
+these cases, a comparison between the old and new item may be "forced"
+by product turnover where a data collector must find a product to
+replace one that has been discontinued. In contrast, scanner data do not
+have a one-to-one match predetermined by a data collector--as we
+typically see in survey data. Some data may have attributes that imply a
+predecessor and successor relationship between different versions of a
+product, but the scanner data relinking process typically involves
+establishing a \"many-to-many\" or selecting a single match from a
+variety of possible matches. Moreover, with scanner data, there is
+ambiguity in the timing of the linking process whereas survey data (by
+construction) often present discrete, non-overlapping entry and exit
+points for different versions of products. With scanner data, even in
+cases with clear matches between product versions, there is usually an
+overlap period instead of distinct entry and exit points. Methodological
+decisions must be made on how to handle the simultaneous existence of
+multiple versions of a product. In the case of scanner data, where
+observations typically reflect dynamic entry and exit, one-to-one
+replacements occur infrequently and an \"adjustment\" for the difference
+in quality between specific goods may be less useful than methods that
+take into account broader quality change in a market.  Quality
+adjustments may still be relevant when a fixed sample is drawn from a
+scanner data set or when relinking methods are used to create one-to-one
+replacements.
 
-The literature on quality adjustment usually makes a distinction between imputation for temporarily missing and permanently discontinued items (see ILO (2004) Chapter 7).  Often in scanner data, the difference may not be discernible in real time. Goods and services may have fluctuations in availability, or they may be available but not actually purchased in a transaction for a given time period. Moreover, the distinction between temporarily and permanently missing prices may not matter depending on the measurement method.
+The literature on quality adjustment usually makes a distinction between
+imputation for temporarily missing and permanently discontinued items
+(see ILO (2004) Chapter 7).  Often in scanner data, the difference may
+not be discernible in real time. Goods and services may have
+fluctuations in availability, or they may be available but not actually
+purchased in a transaction for a given time period. Moreover, the
+distinction between temporarily and permanently missing prices may not
+matter depending on the measurement method.
 
-NSOs often have a great deal of control over what data elements are collected. NSOs usually have their data collectors record detailed information on the product features for those product categories where hedonic and other quality adjustments might be applied. When using scanner and other non-survey sources, NSOs typically have access to that has not been purposively collected for price index construction and may lack the depth of feature detail need for hedonic estimation. If the data have product identification numbers, feature information may be obtained by webscraping retail, review, or other sites that contain product information matching this feature data to scanner data. If product identifiers cannot be matched to other sources and the feature data are sparse, the NSO may need to use non-hedonic methods such as a time-product dummy or even a basic matched model price index. If the data do not provide clear product identifiers at all, NSOs should weigh the benefits of scanner data source (quantity information, transaction prices, expense of collection) against the potential for quality bias.
+NSOs often have a great deal of control over what data elements are
+collected. NSOs usually have their data collectors record detailed
+information on the product features for those product categories where
+hedonic and other quality adjustments might be applied. When using
+scanner and other non-survey sources, NSOs typically have access to that
+has not been purposively collected for price index construction and may
+lack the depth of feature detail need for hedonic estimation. If the
+data have product identification numbers, feature information may be
+obtained by webscraping retail, review, or other sites that contain
+product information matching this feature data to scanner data. If
+product identifiers cannot be matched to other sources and the feature
+data are sparse, the NSO may need to use non-hedonic methods such as a
+time-product dummy or even a basic matched model price index. If the
+data do not provide clear product identifiers at all, NSOs should weigh
+the benefits of scanner data source (quantity information, transaction
+prices, expense of collection) against the potential for quality bias.
 
-The GEKS/CCDI, GK, and Time Product Dummy (formally described in the [multilateral section of this handbook](https://unstats.un.org/wiki/display/GWGSD/Multilateral+price+index+methods)) are all matched model methods that make price comparisons over an extended period of time. As a result, these multilateral methods are often subject to product churn. GEKS and CCDI approaches can be combined with hedonic imputation methods (discussed in the next section) to address issues of product churn (see de Haan and Krinsinich, 2014; de Haan and Daalmans, 2019).
+The GEKS/CCDI, GK, and Time Product Dummy (formally described in the
+[multilateral section of this
+handbook](https://unstats.un.org/wiki/display/GWGSD/Multilateral+price+index+methods))
+are all matched model methods that make price comparisons over an
+extended period of time. As a result, these multilateral methods are
+often subject to product churn. GEKS and CCDI approaches can be combined
+with hedonic imputation methods (discussed in the next section) to
+address issues of product churn (see de Haan and Krinsinich, 2014; de
+Haan and Daalmans, 2019).
 
 # Hedonic methods {#Qualitychangeandhedonicestimation-Hedonicmethods}
 
-Diewert (2003) adopts a consumer demand approach to hedonic regression. This method allows an interpretation of hedonic regression results as estimates of consumer demand without explicitly accounting for the supply-side of the market. Another vein hedonic of research going back to Rosen (1976) also takes into account structural aspects of the market with a system of equations. This second approach requires additional data (the specifics of which depend on the method) and more complicated estimation methods (see Bajari and Benkard, 2005). The consumer approach rests on restrictive assumptions including homogeneous consumers with a linear utility function. The consumer approach has generally been the focus of NSOs given the limitations of price survey data. However, as NSOs increasingly gain access to scanner data and other high-frequency market information more powerful hedonic techniques may be possible options. This article focuses on the consumer approach as it has been typically used by NSOs.
+Diewert (2003) adopts a consumer demand approach to hedonic regression.
+This method allows an interpretation of hedonic regression results as
+estimates of consumer demand without explicitly accounting for the
+supply-side of the market. Another vein hedonic of research going back
+to Rosen (1976) also takes into account structural aspects of the market
+with a system of equations. This second approach requires additional
+data (the specifics of which depend on the method) and more complicated
+estimation methods (see Bajari and Benkard, 2005). The consumer approach
+rests on restrictive assumptions including homogeneous consumers with a
+linear utility function. The consumer approach has generally been the
+focus of NSOs given the limitations of price survey data. However, as
+NSOs increasingly gain access to scanner data and other high-frequency
+market information more powerful hedonic techniques may be possible
+options. This article focuses on the consumer approach as it has been
+typically used by NSOs.
 
-A number of different hedonic methods have been proposed. One of the most prevalent methods is time dummy hedonic regression. Here, the price of the product is regressed on variables representing product characteristics and one or more time period indicators (corresponding to when sales were observed in scanner data or when price collection occurred).  The time-period dummy variable can then be interpreted as a price index.  This regression can be estimated using a regression for two, adjacent time periods and then dummy variable index can be chained to produce an accumulated time series. Alternatively, a single regression for a dataset pooled over many time periods with dummy variables indicating time period price effects in relation to a base month. The adjacent period approach has the advantage of accommodating changes in characteristic valuation, but this can also lead to "drift" compared to pooled estimates. Time dummy hedonic regressions typically constrain the dependent variable (price) to a log transformation. While this facilitates interpretation of the time-dummy variable, many studies have argued hedonic estimation is best performed with flexible functional form specifications (for example Cropper, Deck, and McConnell, 1988; Halvorsen and Pollakowski, 1981).
+A number of different hedonic methods have been proposed. One of the
+most prevalent methods is time dummy hedonic regression. Here, the price
+of the product is regressed on variables representing product
+characteristics and one or more time period indicators (corresponding to
+when sales were observed in scanner data or when price collection
+occurred).  The time-period dummy variable can then be interpreted as a
+price index.  This regression can be estimated using a regression for
+two, adjacent time periods and then dummy variable index can be chained
+to produce an accumulated time series. Alternatively, a single
+regression for a dataset pooled over many time periods with dummy
+variables indicating time period price effects in relation to a base
+month. The adjacent period approach has the advantage of accommodating
+changes in characteristic valuation, but this can also lead to "drift"
+compared to pooled estimates. Time dummy hedonic regressions typically
+constrain the dependent variable (price) to a log transformation. While
+this facilitates interpretation of the time-dummy variable, many studies
+have argued hedonic estimation is best performed with flexible
+functional form specifications (for example Cropper, Deck, and
+McConnell, 1988; Halvorsen and Pollakowski, 1981).
 
 $$\ln p_{i}^{t}=\alpha+\sum_{t=1}^{T} \delta^{t} D_{i}^{t}+\sum_{k=1}^{K} \beta_{k} z_{ik}+\varepsilon_{i}^{t}$$
 
-A time-product dummy (TPD) regression similarly uses time period dummy variable to produce price indexes, but product-specific dummy variables are used in the regression instead of characteristic variables. This method behaves similarly to conventional matched model price indexes, which also estimate price change based on the product space instead of the characteristic space. Also, like conventional price index, time-product estimates only trivially incorporate observations that are not observed in multiple time periods (Diewert, 2021).  de Haan, Rens Hendriks, Michael Scholz (2016) analyze the relationship between TPD and TDH price indexes and find that the TPD overfits the data.
+A time-product dummy (TPD) regression similarly uses time period dummy
+variable to produce price indexes, but product-specific dummy variables
+are used in the regression instead of characteristic variables. This
+method behaves similarly to conventional matched model price indexes,
+which also estimate price change based on the product space instead of
+the characteristic space. Also, like conventional price index,
+time-product estimates only trivially incorporate observations that are
+not observed in multiple time periods (Diewert, 2021).  de Haan, Rens
+Hendriks, Michael Scholz (2016) analyze the relationship between TPD and
+TDH price indexes and find that the TPD overfits the data.
 
 $$\ln p_{i}^{t}=\alpha+\sum_{t=1}^{T} \delta^{t} D_{i}^{t}+\sum_{j=1}^{N-1} \gamma_{j} D_{i,j}+\varepsilon_{i}^{t}$$
 
-Alternatively, hedonic regressions can be used to estimate prices in a hedonic imputation index (also referred to as the \"characteristics approach\"). Silver and Heravi (2007) and Diewert (2020) favor adjacent period hedonic imputation indexes over TDH and Aizcorbe (2014) considers imputation methods to be a \"best practice.\" Diewert discusses hedonic imputation and taste change. Adjacent period and pooled period hedonic estimates impose the restriction of not allowing for taste change. This can be addressed by estimating a hedonic regression for each time period, t, and the using the regression estimates for t to impute the missing prices of t. This method has a higher data requirement than others however. Hedonic imputation indexes also have the advantage of allowing greater flexibility in their specification and functional form than the time-dummy approach (Aizcorbe 2014). With *h^t^*(*z~t~*) representing the single period hedonic regression in time *t*, after Silver and Heravi (2007), we can write a hedonic Laspeyres full imputation index where all matched and unmatched observations i in period 0 (*N~0~*): 
+Alternatively, hedonic regressions can be used to estimate prices in a
+hedonic imputation index (also referred to as the \"characteristics
+approach\"). Silver and Heravi (2007) and Diewert (2020)
+favor adjacent period hedonic imputation indexes over TDH and Aizcorbe
+(2014) considers imputation methods to be a \"best practice.\" Diewert
+discusses hedonic imputation and taste change. Adjacent period and
+pooled period hedonic estimates impose the restriction of not allowing
+for taste change. This can be addressed by estimating a hedonic
+regression for each time period, t, and the using the regression
+estimates for t to impute the missing prices of t. This method has a
+higher data requirement than others however. Hedonic imputation indexes
+also have the advantage of allowing greater flexibility in their
+specification and functional form than the time-dummy approach (Aizcorbe
+2014). With *h^t^*(*z~t~*) representing the single period hedonic
+regression in time *t*, after Silver and Heravi (2007), we can write a
+hedonic Laspeyres full imputation index where all matched and unmatched
+observations i in period 0 (*N~0~*): 
 
 $$P_{HLas}=\frac{\sum\limits_{i \in N_{0}} h^{1}(z_{i}^{0}) q_{i}^{0} }{\sum\limits_{i \in N_{0}} h^{0}(z_{i}^{0}) q_{i}^{0}}$$
 
-And a hedonic Paasche index for all matched and unmatched observations in period 1 (*N~1~*):
+And a hedonic Paasche index for all matched and unmatched observations
+in period 1 (*N~1~*):
 
 $$P_{HPas}=\frac{\sum\limits_{i \in N_{1}} h^{1}(z_{i}^{1}) q_{i}^{1} }{\sum\limits_{i \in N_{1}} h^{0}(z_{i}^{1}) q_{i}^{1}}$$
 
-The geometric average of the two would represent a hedonic Fisher full imputation index, and other formulas can be used as well with the predictions of the estimated hedonic function, *h^t^*(*z~t~*), representing the prices for unmatched and matched goods in period *t*. Silver and Heravi (2007) also present a generalized hedonic imputation Törnqvist that decomposes the formula into three terms matched observations, unmatched old observations, and unmatched new observations:
+The geometric average of the two would represent a hedonic Fisher full
+imputation index, and other formulas can be used as well with the
+predictions of the estimated hedonic function, *h^t^*(*z~t~*),
+representing the prices for unmatched and matched goods in period *t*.
+Silver and Heravi (2007) also present a generalized hedonic imputation
+Törnqvist that decomposes the formula into three terms matched
+observations, unmatched old observations, and unmatched new
+observations:
 
 $$P_{HTorn}=\left[\frac{\prod_{i \in S^{M}} h^{1}(z_{i}^{m})}{\prod_{i \in S^{M}} h^{0}(z_{i}^{m})} \right]^{\tilde s_{i}^{m}} \times \left[\frac{\prod_{i \in S^{0}(0 \lnot 1)} h^{1}(z_{i}^{0})}{\prod_{i \in S^{0}(0 \lnot 1)} h^{0}(z_{i}^{0})} \right]^{s_{i}^{0}/2} \times \left[\frac{\prod_{i \in S^{1}(1 \lnot 0)} h^{1}(z_{i}^{1})}{\prod_{i \in S^{1}(1 \lnot 0)} h^{0}(z_{i}^{1})} \right]^{s_{i}^{1}/2}$$
 
-Where expenditure share weights are calculated as $s_i^{t} ={ p_i^{t} q_i^{t} }/ \sum_j p_j^{t} q_j^{t}$. As applied to the weight term for matched observations, expenditure shares are calculated as $\tilde s_{i}^{m} = (s_i^{0}+s_i^{1})/2 \text{ for } i \in S^{M}$.
+Where expenditure share weights are calculated as
+$s_i^{t} ={ p_i^{t} q_i^{t} }/ \sum_j p_j^{t} q_j^{t}$. As applied to
+the weight term for matched observations, expenditure shares are
+calculated as
+$\tilde s_{i}^{m} = (s_i^{0}+s_i^{1})/2 \text{ for } i \in S^{M}$.
 
 \
 
-Hedonic imputation indexes can either be \"full imputation,\" where the entire set of prices is projected using the estimated model, or \"partial imputation\" where matched observations use observed prices and only unmatched observations are imputed. Partial imputation where an observed price and an imputation are compared should generally be avoided. \"Dual\" or \"double imputation\"  where imputations are used for both the numerator and denominator are generally preferred since this approach is less sensitive to misspecification of the hedonic model used to only impute one period in a partial imputation approach (Silver 2016).
+Hedonic imputation indexes can either be \"full imputation,\" where the
+entire set of prices is projected using the estimated model, or
+\"partial imputation\" where matched observations use observed prices
+and only unmatched observations are imputed. Partial imputation where an
+observed price and an imputation are compared should generally be
+avoided. \"Dual\" or \"double imputation\"  where imputations are used
+for both the numerator and denominator are generally preferred since
+this approach is less sensitive to misspecification of the hedonic model
+used to only impute one period in a partial imputation approach (Silver
+2016).
 
 # Unit value approach {#Qualitychangeandhedonicestimation-Unitvalueapproach}
 
-An alternative approach is to focus on the unit value concept. For *homogeneous* products, a unit value index will be preferred over other index formulas. Silver (2011) introduces the concept of *broadly comparable* products where a set of goods may be very similar but differ slightly in terms of quality. In such a case, a quality-adjusted unit value may be the preferred methodology. de Haan and Krsinich (2018) discuss time dummy hedonic estimates as means of producing a quality-adjusted unit value index.
+An alternative approach is to focus on the unit value concept. For
+*homogeneous* products, a unit value index will be preferred over other
+index formulas. Silver (2011) introduces the concept of *broadly
+comparable* products where a set of goods may be very similar but differ
+slightly in terms of quality. In such a case, a quality-adjusted unit
+value may be the preferred methodology. de Haan and Krsinich (2018)
+discuss time dummy hedonic estimates as means of producing a
+quality-adjusted unit value index.
 
-The Geary-Khamis price change estimator produces a quality adjusted measure of price change by accounting for the relative desirability of goods in different time periods (Chessa, 2016). 
+The Geary-Khamis price change estimator produces a quality adjusted
+measure of price change by accounting for the relative desirability of
+goods in different time periods (Chessa, 2016). 
 
 # Practical advice {#Qualitychangeandhedonicestimation-Practicaladvice}
 
-Hedonic models can be evaluated based on their goodness of fit. Typically, this is measured with "R-squared" or the coefficient of determination, which indicates the amount of variation in the dependent variable explained by the independent variables in the model. A low R-squared may result from inherent volatility or it may suggest model misspecification such as omitted variables or a problem with the functional form. R-squared can be used to compare different model specifications, but R-squared values for different dependent variable transformation are not directly comparable.  A large number of explanatory variables may improve the R-squared value because of overfitting and not actually improve the predictive power of a model. The "adjusted-R-squared" and other techniques penalize the inclusion of additional explanatory variables in order to account for overfitting. Test for functional form, such as the Box-Cox or Box-Tidwell, will help identify whether the variable transformations in a given specification are appropriate.
+Hedonic models can be evaluated based on their goodness of fit.
+Typically, this is measured with "R-squared" or the coefficient of
+determination, which indicates the amount of variation in the dependent
+variable explained by the independent variables in the model. A low
+R-squared may result from inherent volatility or it may suggest model
+misspecification such as omitted variables or a problem with the
+functional form. R-squared can be used to compare different model
+specifications, but R-squared values for different dependent variable
+transformation are not directly comparable.  A large number of
+explanatory variables may improve the R-squared value because of
+overfitting and not actually improve the predictive power of a model.
+The "adjusted-R-squared" and other techniques penalize the inclusion of
+additional explanatory variables in order to account for overfitting.
+Test for functional form, such as the Box-Cox or Box-Tidwell, will help
+identify whether the variable transformations in a given specification
+are appropriate.
 
-Hedonic model often include indicator or dummy variables that use binary values (0 or 1) represent a feature or a time period. Some statistical packages automatically generate dummy variables for categorical variables when using certain procedures (For example, \"Proc GLM\" in SAS and \"lm\" in the R stats package). Other packages or estimation methods may require dummy variables to be created by the user manually, with custom code, or using dummy variable generating functions. "One-hot-encoding" functions may be used to assist in generating dummy variables.
+Hedonic model often include indicator or dummy variables that use binary
+values (0 or 1) represent a feature or a time period. Some statistical
+packages automatically generate dummy variables for categorical
+variables when using certain procedures (For example, \"Proc GLM\" in
+SAS and \"lm\" in the R stats package). Other packages or estimation
+methods may require dummy variables to be created by the user manually,
+with custom code, or using dummy variable generating functions.
+"One-hot-encoding" functions may be used to assist in generating dummy
+variables.
 
-If multiple dummy variables are used to represent the different possible values of given category (time periods, colors) one dummy variable must be omitted to avoid perfect collinearity with the intercept term (the dummy variable trap). The statistical significance of dummy variables is given in relation to the dummy variable "base" or the omitted categorization. Changing the dummy variable "base" may change the significance of the other dummy variables, but it will not actually change the model estimates or the overall validity of the model. Selecting an extreme category or a category with a low standard error will increase the implied precision of the other variables but not meaningfully improve the model.
+If multiple dummy variables are used to represent the different possible
+values of given category (time periods, colors) one dummy variable must
+be omitted to avoid perfect collinearity with the intercept term (the
+dummy variable trap). The statistical significance of dummy variables is
+given in relation to the dummy variable "base" or the omitted
+categorization. Changing the dummy variable "base" may change the
+significance of the other dummy variables, but it will not actually
+change the model estimates or the overall validity of the model.
+Selecting an extreme category or a category with a low standard error
+will increase the implied precision of the other variables but not
+meaningfully improve the model.
 
 \
 
@@ -110,47 +401,98 @@ If multiple dummy variables are used to represent the different possible values 
 
 # References {#Qualitychangeandhedonicestimation-References}
 
-Aizcorbe, Ana (2014). *A Practical Guide to Price Index and Hedonic Techniques.* Oxford University Press.               
+Aizcorbe, Ana (2014). *A Practical Guide to Price Index and Hedonic
+Techniques.* Oxford University Press.               
 
-Aizcorbe, Ana, Carol Corrado, and Mark Doms. 2003. *When do Matched-Model and Hedonic Techniques Yield Similar Price Measures?* Working Paper Series 2003-14, Federal Reserve Bank of San Francisco. <https://www.frbsf.org/economic-research/files/wp03-14bk.pdf>.
+Aizcorbe, Ana, Carol Corrado, and Mark Doms. 2003. *When do
+Matched-Model and Hedonic Techniques Yield Similar Price Measures?*
+Working Paper Series 2003-14, Federal Reserve Bank of San Francisco.
+<https://www.frbsf.org/economic-research/files/wp03-14bk.pdf>.
 
-Bajari, Patrick, and C. Lanier Benkard. \"Demand estimation with heterogeneous consumers and unobserved product characteristics: A hedonic approach.\" Journal of political economy 113, no. 6 (2005): 1239-1276.
+Bajari, Patrick, and C. Lanier Benkard. \"Demand estimation with
+heterogeneous consumers and unobserved product characteristics: A
+hedonic approach.\" Journal of political economy 113, no. 6 (2005):
+1239-1276.
 
-Chessa, A. G. (2016). A new methodology for processing scanner data in the Dutch CPI. *Eurostat review of National Accounts and Macroeconomic Indicators*, *1*(2016), 49-69.
+Chessa, A. G. (2016). A new methodology for processing scanner data in
+the Dutch CPI. *Eurostat review of National Accounts and Macroeconomic
+Indicators*, *1*(2016), 49-69.
 
-Ian Crawford, J. Peter Neary; New Characteristics and Hedonic Price Index Numbers. The Review of Economics and Statistics 2021; doi: <https://doi.org/10.1162/rest_a_01079>
+Ian Crawford, J. Peter Neary; New Characteristics and Hedonic Price
+Index Numbers. The Review of Economics and Statistics 2021;
+doi: <https://doi.org/10.1162/rest_a_01079>
 
-Cropper, Maureen L., Leland B. Deck, and Kenneth E. McConnell. "On the Choice of Functional Form for Hedonic Price Functions." *The Review of Economics and Statistics* 70, no. 4 (1988): 668--75. <https://doi.org/10.2307/1935831>.
+Cropper, Maureen L., Leland B. Deck, and Kenneth E. McConnell. "On the
+Choice of Functional Form for Hedonic Price Functions." *The Review of
+Economics and Statistics* 70, no. 4 (1988): 668--75.
+<https://doi.org/10.2307/1935831>.
 
-Diewert, W. Erwin. 2003. \"Hedonic Regressions. A Consumer Theory Approach.\" In *Scanner Data and Price Indexes*, edited by Robert C. Feenstra and Matthew D. Shapiro, 317-348. University of Chicago Press. <http://www.nber.org/chapters/c9740>.
+Diewert, W. Erwin. 2003. \"Hedonic Regressions. A Consumer Theory
+Approach.\" In *Scanner Data and Price Indexes*, edited by Robert C.
+Feenstra and Matthew D. Shapiro, 317-348. University of Chicago Press.
+<http://www.nber.org/chapters/c9740>.
 
-Diewert, W.E. (2019), "Quality Adjustment and Hedonics: A Unified Approach", Discussion Paper 19- 01, Vancouver School of Economics, University of British Columbia, Vancouver, B.C., Canada, V6T 1L4.
+Diewert, W.E. (2019), "Quality Adjustment and Hedonics: A Unified
+Approach", Discussion Paper 19- 01, Vancouver School of Economics,
+University of British Columbia, Vancouver, B.C., Canada, V6T 1L4.
 
-Erwin Diewert & Robert C. Feenstra, 2021. \"Estimating the Benefits of New Products,\" NBER Chapters, in: *Big Data for Twenty-First-Century Economic Statistics*, National Bureau of Economic Research, Inc.
+Erwin Diewert & Robert C. Feenstra, 2021. \"Estimating the Benefits of
+New Products,\" NBER Chapters, in: *Big Data for Twenty-First-Century
+Economic Statistics*, National Bureau of Economic Research, Inc.
 
-Feenstra, R.C. (1994), "New Product Varieties and the Measurement of International Prices", *American Economic Review* 84:1, 157-177.
+Feenstra, R.C. (1994), "New Product Varieties and the Measurement of
+International Prices", *American Economic Review* 84:1, 157-177.
 
-Feenstra, Robert C, 1995. \"Exact Hedonic Price Indexes,\" *The Review of Economics and Statistics*, MIT Press, vol. 77(4), pages 634-653, November.
+Feenstra, Robert C, 1995. \"Exact Hedonic Price Indexes,\" *The Review
+of Economics and Statistics*, MIT Press, vol. 77(4), pages 634-653,
+November.
 
-Jan de Haan & Frances Krsinich (2014) Scanner Data and the Treatment of Quality Change in Nonrevisable Price Indexes, Journal of Business & Economic Statistics, 32:3, 341-358, DOI: [10.1080/07350015.2014.880059](https://doi.org/10.1080/07350015.2014.880059)
+Jan de Haan & Frances Krsinich (2014) Scanner Data and the Treatment of
+Quality Change in Nonrevisable Price Indexes, Journal of Business &
+Economic
+Statistics, 32:3, 341-358, DOI: [10.1080/07350015.2014.880059](https://doi.org/10.1080/07350015.2014.880059)
 
-Jan de Haan & Rens Hendriks & Michael Scholz, 2016. \"A Comparison of Weighted Time-Product Dummy and Time Dummy Hedonic Indexes,\"\
-Graz Economics Papers 2016-13, University of Graz, Department of Economics. \<<https://ideas.repec.org/p/grz/wpaper/2016-13.html>\>
+Jan de Haan & Rens Hendriks & Michael Scholz, 2016. \"A Comparison of
+Weighted Time-Product Dummy and Time Dummy Hedonic Indexes,\"\
+Graz Economics Papers 2016-13, University of Graz, Department of
+Economics. \<<https://ideas.repec.org/p/grz/wpaper/2016-13.html>\>
 
-Jan de Haan & Frances Krsinich, 2018. \"Time Dummy Hedonic and Quality‐Adjusted Unit Value Indexes: Do They Really Differ?,\" Review of Income and Wealth, International Association for Research in Income and Wealth, vol. 64(4), pages 757-776, December. \<<https://ideas.repec.org/a/bla/revinw/v64y2018i4p757-776.html>\>
+Jan de Haan & Frances Krsinich, 2018. \"Time Dummy Hedonic and
+Quality‐Adjusted Unit Value Indexes: Do They Really Differ?,\" Review of
+Income and Wealth, International Association for Research in Income and
+Wealth, vol. 64(4), pages 757-776, December.
+\<<https://ideas.repec.org/a/bla/revinw/v64y2018i4p757-776.html>\>
 
-de Haan, J. and Daalmans, J. (2019), 'Scanner data in the CPI -- the imputation CCDI index revisited', paper presented at the 16th Meeting of the Ottawa Group, Rio de Janeiro, Brazil, 8--10 May. <https://eventos.fgv.br/sites/eventos.fgv.br/files/arquivos/u161/imputation_ccdi_index_revisited_24_march_2019.pdf>
+de Haan, J. and Daalmans, J. (2019), 'Scanner data in the CPI -- the
+imputation CCDI index revisited', paper presented at the 16th Meeting of
+the Ottawa Group, Rio de Janeiro, Brazil, 8--10 May.
+<https://eventos.fgv.br/sites/eventos.fgv.br/files/arquivos/u161/imputation_ccdi_index_revisited_24_march_2019.pdf>
 
-Halvorsen, Robert, and Henry O. Pollakowski. \"Choice of functional form for hedonic price equations.\" *Journal of Urban Economics* 10, no. 1 (1981): 37-49.
+Halvorsen, Robert, and Henry O. Pollakowski. \"Choice of functional form
+for hedonic price equations.\" *Journal of Urban Economics* 10, no. 1
+(1981): 37-49.
 
-Rosen, Sherwin. "Hedonic Prices and Implicit Markets: Product Differentiation in Pure Competition." *Journal of Political Economy* 82, no. 1 (1974): 34--55. <http://www.jstor.org/stable/1830899>.
+Rosen, Sherwin. "Hedonic Prices and Implicit Markets: Product
+Differentiation in Pure Competition." *Journal of Political Economy* 82,
+no. 1 (1974): 34--55. <http://www.jstor.org/stable/1830899>.
 
-Silver, Mick. \"An index number formula problem: The aggregation of broadly comparable items.\" *Journal of Official Statistics* 27, no. 4 (2011): 553.
+Silver, Mick. \"An index number formula problem: The aggregation of
+broadly comparable items.\" *Journal of Official Statistics* 27, no. 4
+(2011): 553.
 
-Silver, Mick. 2016. \"How to Better Measure Hedonic Residential Property Price Indexes,\" IMF Working Papers 2016/213, *International Monetary Fund*. [ https://www.imf.org/external/pubs/ft/wp/2016/wp16213.pdf](https://www.imf.org/external/pubs/ft/wp/2016/wp16213.pdf)
+Silver, Mick. 2016. \"How to Better Measure Hedonic Residential Property
+Price Indexes,\" IMF Working Papers 2016/213, *International Monetary
+Fund*.
+[ https://www.imf.org/external/pubs/ft/wp/2016/wp16213.pdf](https://www.imf.org/external/pubs/ft/wp/2016/wp16213.pdf)
 
-Silver, Mick, and Saeed Heravi. "The Difference between Hedonic Imputation Indexes and Time Dummy Hedonic Indexes." *Journal of Business & Economic Statistics* 25, no. 2 (2007): 239--46. <http://www.jstor.org/stable/27638928>.
+Silver, Mick, and Saeed Heravi. "The Difference between Hedonic
+Imputation Indexes and Time Dummy Hedonic Indexes." *Journal of Business
+& Economic Statistics* 25, no. 2 (2007): 239--46.
+<http://www.jstor.org/stable/27638928>.
 
-Williams, Brendan (2021). \"Twenty-One Years of Adjustments for Quality Change in the U.S. Consumer Price Index.\" Conference paper. Group of Experts on Consumer Price Indices. Online. <https://unece.org/sites/default/files/2021-05/Session_3_US-BLS_Paper_0.docx>
+Williams, Brendan (2021). \"Twenty-One Years of Adjustments for Quality
+Change in the U.S. Consumer Price Index.\" Conference paper. Group of
+Experts on Consumer Price Indices. Online.
+<https://unece.org/sites/default/files/2021-05/Session_3_US-BLS_Paper_0.docx>
 
 \

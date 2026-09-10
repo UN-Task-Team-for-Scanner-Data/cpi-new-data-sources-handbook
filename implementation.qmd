@@ -1,20 +1,21 @@
 ---
 title: "Implementation"
+date-modified: "2022-11-23"
 ---
 
-This page contains information on how to implement these new data sources into production. Once the research stage for any given data source has completed, there are a number of different steps to consider before moving to actual regular CPI production. This also depends on whether this is the first time of implementing these new data sources, or whether this is a phased approach where new categories/data sources are implemented over time (see [Selection of categories](selection-of-categories.qmd)). For example, a new production system can be built in a flexible manner to ensure that any future work to implement new categories can use this existing system and methods rather than requiring new development. The rough order of steps is presented below. Each NSO will of course have their individual circumstances to consider when planning this work.
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2022-11-23                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910516) |
-+---------------------+--------------------------------------------------------------------------------------------+
+This page contains information on how to implement these new data
+sources into production. Once the research stage for any given data
+source has completed, there are a number of different steps to consider
+before moving to actual regular CPI production. This also depends on
+whether this is the first time of implementing these new data sources,
+or whether this is a phased approach where new categories/data sources
+are implemented over time (see [Selection of
+categories](selection-of-categories.qmd)). For example, a new
+production system can be built in a flexible manner to ensure that any
+future work to implement new categories can use this existing system and
+methods rather than requiring new development. The rough order of steps
+is presented below. Each NSO will of course have their individual
+circumstances to consider when planning this work.
 
 ------------------------------------------------------------------------
 
@@ -22,40 +23,145 @@ This page contains information on how to implement these new data sources into p
 
 \
 
-After testing the new data sources and methodology (summarised in the previous handbook sections), a final decision on the actual methods to be implemented in the regular CPI production must be made and how the new indices shall be integrated with the remaining indices (see [Aggregation](aggregation.qmd)) based on other data sources and methodology. For information on how to introduce multilateral methods in regular HICP production, see Eurostat's guidelines "[Practical Guide on Multilateral Methods in the HICP](https://ec.europa.eu/eurostat/documents/3859598/14503841/KS-GQ-21-020-EN-N.pdf)" (chapter 10)
+After testing the new data sources and methodology (summarised in the
+previous handbook sections), a final decision on the actual methods to
+be implemented in the regular CPI production must be made and how the
+new indices shall be integrated with the remaining indices (see
+[Aggregation](aggregation.qmd)) based on other data sources
+and methodology. For information on how to introduce multilateral
+methods in regular HICP production, see Eurostat's guidelines
+"[Practical Guide on Multilateral Methods in the
+HICP](https://ec.europa.eu/eurostat/documents/3859598/14503841/KS-GQ-21-020-EN-N.pdf)"
+(chapter 10)
 
 # Build a production system {#Implementation-Buildaproductionsystem}
 
-New methodology will most likely require that a new production system needs to be built (see [CPI production system requirements](cpi-production-system-requirements.qmd)). Prototype systems may have already been built in the research phase, but to move to production it is very important to have extensive tests that the new regular production system provides the expected results. Detailed documentation of the workflows and the different steps of production processes must also be created. In the line with producing the impact assessment, the system should be run in parallel for a certain time period to ensure it is stable and any bugs in the process have been found before moving it to live production. The production system should also include functionality to mitigate against scenarios where regular data is partly or totally missing from one or several retailers (see section [Dealing with unexpected data gaps](dealing-with-unexpected-data-gaps.qmd)).
+New methodology will most likely require that a new production system
+needs to be built (see [CPI production system
+requirements](cpi-production-system-requirements.qmd)).
+Prototype systems may have already been built in the research phase, but
+to move to production it is very important to have extensive tests that
+the new regular production system provides the expected results.
+Detailed documentation of the workflows and the different steps of
+production processes must also be created. In the line with producing
+the impact assessment, the system should be run in parallel for a
+certain time period to ensure it is stable and any bugs in the process
+have been found before moving it to live production. The production
+system should also include functionality to mitigate against scenarios
+where regular data is partly or totally missing from one or several
+retailers (see section [Dealing with unexpected data
+gaps](dealing-with-unexpected-data-gaps.qmd)).
 
 # Adapt production process to incorporate these new data sources and/or methods {#Implementation-Adaptproductionprocesstoincorporatethesenewdatasourcesandormethods}
 
-It is likely that when these new data sources are introduced, the production process will need to change. For example, the data may arrive more frequently (weekly rather than monthly) so the burden of running initial checks on these data could be more spread out through the month. Depending on methods chosen, the production team may need to spend more time on classifying the products, but may save time with no longer needing to run manual collections. Time will be required to train the production team if new systems and methods are being introduced (referring to the documentation produced for the new system).
+It is likely that when these new data sources are introduced, the
+production process will need to change. For example, the data may arrive
+more frequently (weekly rather than monthly) so the burden of running
+initial checks on these data could be more spread out through the month.
+Depending on methods chosen, the production team may need to spend more
+time on classifying the products, but may save time with no longer
+needing to run manual collections. Time will be required to train the
+production team if new systems and methods are being introduced
+(referring to the documentation produced for the new system).
 
 # Assess the impact of new methodology {#Implementation-Assesstheimpactofnewmethodology}
 
-Before implementation of CPI indices based on new data sources like scanner data it is important to assess the impact of the data source and new methodology. This can be done by performing a comparative study of the old and new methodology. The [CPI Manual, Concepts and Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx) (2020), paragraphs 10.116-10.121, discusses the importance of producing empirical results in relation to the implementation of multilateral methods. The indices should be run in parallel over a certain period of time, for instance a year, in order to study the methodology and produce and fully understand the empirical results.
+Before implementation of CPI indices based on new data sources like
+scanner data it is important to assess the impact of the data source and
+new methodology. This can be done by performing a comparative study of
+the old and new methodology. The [CPI Manual, Concepts and
+Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx) (2020),
+paragraphs 10.116-10.121, discusses the importance of producing
+empirical results in relation to the implementation of multilateral
+methods. The indices should be run in parallel over a certain period of
+time, for instance a year, in order to study the methodology and produce
+and fully understand the empirical results.
 
-The impact results of the new data source/methodology based on historical back data should emphasize both the effect on the all-item index as well as the COICOP groups affected. For instance, if scanner data is introduced for COICOP 01 Food and non-alcoholic beverages, the impact should be calculated for the all-item index, the aggregated COICOP group, as well as for lower levels.
+The impact results of the new data source/methodology based on
+historical back data should emphasize both the effect on the all-item
+index as well as the COICOP groups affected. For instance, if scanner
+data is introduced for COICOP 01 Food and non-alcoholic beverages, the
+impact should be calculated for the all-item index, the aggregated
+COICOP group, as well as for lower levels.
 
 # Communication and publication {#Implementation-Communicationandpublication}
 
-Introducing alternative data sources in the official CPI often means a major change and may provide real impact on the results. It is therefore important to provide adequate information to the users throughout the research and implementation phases. The information should be tailored both towards expert users as well as other users of the statistics by presenting both high-level summaries and more in-depth technical information. For the trust in the published CPI to continue it is important to ensure transparency and understanding of the methods used. Using scanner data and in particular multilateral methods are more complicated than traditional price index methodology and may present communication challenges for NSOs.
+Introducing alternative data sources in the official CPI often means a
+major change and may provide real impact on the results. It is therefore
+important to provide adequate information to the users throughout the
+research and implementation phases. The information should be tailored
+both towards expert users as well as other users of the statistics by
+presenting both high-level summaries and more in-depth technical
+information. For the trust in the published CPI to continue it is
+important to ensure transparency and understanding of the methods used.
+Using scanner data and in particular multilateral methods are more
+complicated than traditional price index methodology and may present
+communication challenges for NSOs.
 
-The results and the impact of the new method should be made available to all users, at the same time and according to a publication schedule announced in advance. Any significant changes in methodology must be fully explained and notified as far in advance as possible of the change being made. For more information on users need, see the CPI Manual, Concepts and Methods (2020) (paragraphs 10.116-10.121, 14.55-14.64). For an example of a publication explaining upcoming changes at (fairly) high level please see the Office for National Statistics\' (ONS) publication [Introducing multilateral index methods into consumer price statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/introducingmultilateralindexmethodsintoconsumerpricestatistics)
+The results and the impact of the new method should be made available to
+all users, at the same time and according to a publication schedule
+announced in advance. Any significant changes in methodology must be
+fully explained and notified as far in advance as possible of the change
+being made. For more information on users need, see the CPI Manual,
+Concepts and Methods (2020) (paragraphs 10.116-10.121, 14.55-14.64). For
+an example of a publication explaining upcoming changes at (fairly) high
+level please see the Office for National Statistics\' (ONS) publication
+[Introducing multilateral index methods into consumer price
+statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/introducingmultilateralindexmethodsintoconsumerpricestatistics)
 
 # Linking index series of new methodology to old series {#Implementation-Linkingindexseriesofnewmethodologytooldseries}
 
-When NSOs implement new methods based on alternative data sources like for instance scanner data in the CPI, the new series need to be linked to the old official series in order to have continuous CPI series. Due to the new methodology, the new index series are not directly comparable to previous index series and may show different price development. Also, switching the method from for instance an unweighted bilateral sample-based index based on scanner data to a multilateral index using all scanner data as well as both price and quantity information may result in differences in the price development.
+When NSOs implement new methods based on alternative data sources like
+for instance scanner data in the CPI, the new series need to be linked
+to the old official series in order to have continuous CPI series. Due
+to the new methodology, the new index series are not directly comparable
+to previous index series and may show different price development. Also,
+switching the method from for instance an unweighted bilateral
+sample-based index based on scanner data to a multilateral index using
+all scanner data as well as both price and quantity information may
+result in differences in the price development.
 
-The new index can be implemented in different ways. Some NSOs may present the change in methodology as breaks in the index series, others may present revised series even though many NSOs choose not to revise CPI once it is published. Making use of alternative data like scanner data often implies that NSOs do have historical back data of certain length which enables different chain-linking methods.
+The new index can be implemented in different ways. Some NSOs may
+present the change in methodology as breaks in the index series, others
+may present revised series even though many NSOs choose not to revise
+CPI once it is published. Making use of alternative data like scanner
+data often implies that NSOs do have historical back data of certain
+length which enables different chain-linking methods.
 
-The three methods that can be used to link an index of new methodology to a previous official index are:
+The three methods that can be used to link an index of new methodology
+to a previous official index are:
 
 1.  base month overlap method/base month linking
-2.  year on year linking method, linking on the same month of previous year
-3.  annual overlap method, where an entire year is used as an overlap period, also called an average year correction.
+2.  year on year linking method, linking on the same month of previous
+    year
+3.  annual overlap method, where an entire year is used as an overlap
+    period, also called an average year correction.
 
-By using base month overlap method, the monthly change rates of the new index are preserved, but the year on year change rates may not be consistent with the change rates of the new index series. Using the year on year linking secures the year on year movements, but not necessarily the monthly price changes of the new index series during the first year. The annual overlap method ensures that the annual growth rate is identical in the new index series and the chained official index series. By using the annual overlap method, one therefore makes a level shift adjustment or an average year correction to the chained official index. The adjustment factor can be defined as the ratio of the averages of the indices of the old and new methodology over the months in the year before the new methodology is introduced. The monthly change rates will be equal to the indices for the new series, except for the first month of implementation. Antonio Chessa discusses the different chain linking methods in the paper "[Extension of multilateral index series over time: Analysis and comparison of methods](https://unece.org/sites/default/files/2021-05/Session_1_Netherlands_Paper.pdf)" (2021).
+By using base month overlap method, the monthly change rates of the new
+index are preserved, but the year on year change rates may not be
+consistent with the change rates of the new index series. Using the year
+on year linking secures the year on year movements, but not necessarily
+the monthly price changes of the new index series during the first year.
+The annual overlap method ensures that the annual growth rate is
+identical in the new index series and the chained official index series.
+By using the annual overlap method, one therefore makes a level shift
+adjustment or an average year correction to the chained official index.
+The adjustment factor can be defined as the ratio of the averages of the
+indices of the old and new methodology over the months in the year
+before the new methodology is introduced. The monthly change rates will
+be equal to the indices for the new series, except for the first month
+of implementation. Antonio Chessa discusses the different chain linking
+methods in the paper "[Extension of multilateral index series over time:
+Analysis and comparison of
+methods](https://unece.org/sites/default/files/2021-05/Session_1_Netherlands_Paper.pdf)"
+(2021).
 
-Depending on how different the price development is between the indices of the new and the old methodology, the choice of chain-linking method may potentially impact the results of the new chained official index during the first transition year of the new method. The European Central Bank Statistics Paper "[Chain linking over December and methodological changes in the HICP: view from a central bank perspective](https://https/www.ecb.europa.eu/pub/pdf/scpsps/ecb.sps40~fb2e530fe6.en.pdf)" (2021) discusses chain-linking strategies in relation to the European Harmonised Index of Consumer Prices (HICP) and methodological changes. 
+Depending on how different the price development is between the indices
+of the new and the old methodology, the choice of chain-linking method
+may potentially impact the results of the new chained official index
+during the first transition year of the new method. The European Central
+Bank Statistics Paper "[Chain linking over December and methodological
+changes in the HICP: view from a central bank
+perspective](https://https/www.ecb.europa.eu/pub/pdf/scpsps/ecb.sps40~fb2e530fe6.en.pdf)"
+(2021) discusses chain-linking strategies in relation to the European
+Harmonised Index of Consumer Prices (HICP) and methodological changes. 

@@ -1,44 +1,94 @@
 ---
 title: "Treatment of missing prices"
+date-modified: "2022-06-02"
 ---
 
-This page contains information on how to treat missing prices through product-level imputation methods.\
-
-**Page information**
-
-+---------------------+--------------------------------------------------------------------------------------------+
-| Version             | v2                                                                                         |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Last updated on     | 2022-06-02                                                                                 |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Summary of changes  | Initial publication version                                                                |
-+---------------------+--------------------------------------------------------------------------------------------+
-| Page History        | [See here](https://unstats.un.org/wiki/pages/viewpreviousversions.action?pageId=240910485) |
-+---------------------+--------------------------------------------------------------------------------------------+
+This page contains information on how to treat missing prices through
+product-level imputation methods.\
 
 ------------------------------------------------------------------------
 
 # Treatment of missing prices {#Treatmentofmissingprices-Treatmentofmissingprices}
 
-The focus in this section lies in methods to impute a temporarily missing price possibly caused, for example, by a product not being available at the time of price collection (sold-out, breakdown of supply chains), seasonalities, erratic reporting, or a non-sale (or indeed through the use of [outlier detection methods](outlier-filter.qmd)). Of course, it is critical to avoid any bias to the index through imputation.
+The focus in this section lies in methods to impute a temporarily
+missing price possibly caused, for example, by a product not being
+available at the time of price collection (sold-out, breakdown of supply
+chains), seasonalities, erratic reporting, or a non-sale (or indeed
+through the use of [outlier detection
+methods](outlier-filter.qmd)). Of course, it is critical to
+avoid any bias to the index through imputation.
 
-Following the [CPI Manual, Concepts and Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx) (2020), various procedures for imputations include:
+Following the [CPI Manual, Concepts and
+Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx)
+(2020), various procedures for imputations include:
 
 - Overall mean imputation
 - Target mean imputation
 - Carry forward
 - Hedonic (regression) methods
 
-In general, omitting the variety for which the price is missing is not recommended.
+In general, omitting the variety for which the price is missing is not
+recommended.
 
-1.  Overall mean imputation: Imputing the missing price by the average price change for the prices that are available in the elementary aggregate. This method provides the same result as simply dropping the variety that is missing from both periods from the calculation. It is simple to program and requires no subjective decision-making.
-2.  Targeted mean imputation: Imputing the missing price by the price change of an elementary aggregate or an aggregate of similar varieties, that is, varieties expected to have similar short-term price changes (for example, within the same geographic area or type of outlet). A key requirement of this method is an adequate sample size of those items used to calculate the imputation.
-3.  Carry forward: Use of the last observed price (i.e., no price change). This method should only be used when the compiler has a high certainty that the price has not changed (for example, for tariffs set annually).
-4.  Hedonic (regression) methods: A log-linear regression model is estimated on the pooled data of all periods using Weighted Least Squares with the expenditure shares of the single items in each period serving as weights. When detailed information on the item's (quantity of) characteristics is available, the Time Dummy Hedonic (TDH) method can be used. An alternative is, in absence of such quality information, the Time-Product Dummy (TPD) method which is based on item fixed-effects. The fitted values of these models (adequately back-transformed) are the imputed missing prices. For a comparison of both methods, see, for example, de Haan, Hendriks, and Scholz (2021).
+1.  Overall mean imputation: Imputing the missing price by the average
+    price change for the prices that are available in the elementary
+    aggregate. This method provides the same result as simply dropping
+    the variety that is missing from both periods from the calculation.
+    It is simple to program and requires no subjective decision-making.
+2.  Targeted mean imputation: Imputing the missing price by the price
+    change of an elementary aggregate or an aggregate of similar
+    varieties, that is, varieties expected to have similar short-term
+    price changes (for example, within the same geographic area or type
+    of outlet). A key requirement of this method is an adequate sample
+    size of those items used to calculate the imputation.
+3.  Carry forward: Use of the last observed price (i.e., no price
+    change). This method should only be used when the compiler has a
+    high certainty that the price has not changed (for example, for
+    tariffs set annually).
+4.  Hedonic (regression) methods: A log-linear regression model is
+    estimated on the pooled data of all periods using Weighted Least
+    Squares with the expenditure shares of the single items in each
+    period serving as weights. When detailed information on the item's
+    (quantity of) characteristics is available, the Time Dummy Hedonic
+    (TDH) method can be used. An alternative is, in absence of such
+    quality information, the Time-Product Dummy (TPD) method which is
+    based on item fixed-effects. The fitted values of these models
+    (adequately back-transformed) are the imputed missing prices. For a
+    comparison of both methods, see, for example, de Haan, Hendriks, and
+    Scholz (2021).
 
-Only a few studies are conducted that assess the missing pattern in the CPI microdata or compare the performance of the aforementioned imputation methods. Feenstra and Diewert (2000) discuss alternative imputation methods for missing prices in the construction of price indexes. They evaluate the alternatives by their ability to both minimize the erratic movement in the price index and still incorporate all available information.  Bradley (2003) examines and compares diﬀerent imputation methods including an economic approach. Indexes are constructed using these various imputation methods using price and expenditure data from scanner sales of cereal in the New York area. Gomes (2018) investigates empirically the mechanism of missingness (prices in relation to other covariates). Kelly and Mogalanyane (2019) use a multi-year synthetic dataset and find that the overall and targeted mean imputation method most often had the lowest deviation in the imputed price and the overall index.
+Only a few studies are conducted that assess the missing pattern in the
+CPI microdata or compare the performance of the aforementioned
+imputation methods. Feenstra and Diewert (2000) discuss alternative
+imputation methods for missing prices in the construction of price
+indexes. They evaluate the alternatives by their ability to both
+minimize the erratic movement in the price index and still incorporate
+all available information.  Bradley (2003) examines and compares
+diﬀerent imputation methods including an economic approach. Indexes are
+constructed using these various imputation methods using price and
+expenditure data from scanner sales of cereal in the New York area.
+Gomes (2018) investigates empirically the mechanism of missingness
+(prices in relation to other covariates). Kelly and Mogalanyane (2019)
+use a multi-year synthetic dataset and find that the overall and
+targeted mean imputation method most often had the lowest deviation in
+the imputed price and the overall index.
 
-With regards to new data sources, in scanner data, when a particular item in a particular outlet does not sell in a certain period, it is not possible to determine if this non-sale was the result of no inventories or no consumer demand for the product (because the price was too high). Therefore it is not possible to get a "list" price as one would be able to collect through a standard sampling system. The use of matched-item GEKS price indexes (see [Multilateral price index methods](multilateral-price-index-methods.qmd)) do not explicitly account for new and disappearing items and can suffer from quality change bias or bias due to a change in barcode during a product relaunch. In de Haan and Daalmans (2019) [Scanner Data in the CPI: The Imputation CCDI Index Revisited](https://eventos.fgv.br/sites/eventos.fgv.br/files/arquivos/u161/imputation_ccdi_index_revisited_24_march_2019.pdf) , the authors present a GEKS index that is explicitly quality-adjusted through imputation of the unmatched new and disappearing items' "missing prices".
+With regards to new data sources, in scanner data, when a particular
+item in a particular outlet does not sell in a certain period, it is not
+possible to determine if this non-sale was the result of no inventories
+or no consumer demand for the product (because the price was too high).
+Therefore it is not possible to get a "list" price as one would be able
+to collect through a standard sampling system. The use of matched-item
+GEKS price indexes (see [Multilateral price index
+methods](multilateral-price-index-methods.qmd)) do not
+explicitly account for new and disappearing items and can suffer from
+quality change bias or bias due to a change in barcode during a product
+relaunch. In de Haan and Daalmans (2019) [Scanner Data in the CPI: The
+Imputation CCDI Index
+Revisited](https://eventos.fgv.br/sites/eventos.fgv.br/files/arquivos/u161/imputation_ccdi_index_revisited_24_march_2019.pdf)
+, the authors present a GEKS index that is explicitly quality-adjusted
+through imputation of the unmatched new and disappearing items' "missing
+prices".
 
 \
 
@@ -46,14 +96,26 @@ With regards to new data sources, in scanner data, when a particular item in a p
 
 # References {#Treatmentofmissingprices-References}
 
-Bradley, R. (2003) [Price Index Estimation Using Price Imputation for Unsold Items](https://ideas.repec.org/h/nbr/nberch/9741.html), [NBER Chapters](https://ideas.repec.org/s/nbr/nberch.html), in: [Scanner Data and Price Indexes](https://ideas.repec.org/b/nbr/nberbk/feen03-1.html), 349-379.
+Bradley, R. (2003) [Price Index Estimation Using Price Imputation for
+Unsold Items](https://ideas.repec.org/h/nbr/nberch/9741.html), [NBER
+Chapters](https://ideas.repec.org/s/nbr/nberch.html), in: [Scanner Data
+and Price Indexes](https://ideas.repec.org/b/nbr/nberbk/feen03-1.html),
+349-379.
 
-Consumer Price Index Manual. Concepts and Methods (2020). ILO/IMF/OECD/Eurostat/ UNECE/ The World Bank, Geneva.
+Consumer Price Index Manual. Concepts and Methods (2020).
+ILO/IMF/OECD/Eurostat/ UNECE/ The World Bank, Geneva.
 
-de Haan, J., Hendriks, R., and M. Scholz (2021). Price Measurement Using Scanner Data: Time-Product Dummy Versus Time Dummy Hedonic Indexes, Review of Income and Wealth, 67, 394-417.
+de Haan, J., Hendriks, R., and M. Scholz (2021). Price Measurement Using
+Scanner Data: Time-Product Dummy Versus Time Dummy Hedonic Indexes,
+Review of Income and Wealth, 67, 394-417.
 
-Feenstra, R. C., and E. W. Diewert. (2000). Imputation and Price Indexes: Theory and Evidence from the International Price Program. Working Paper no. 00-12. University of California, Davis.
+Feenstra, R. C., and E. W. Diewert. (2000). Imputation and Price
+Indexes: Theory and Evidence from the International Price Program.
+Working Paper no. 00-12. University of California, Davis.
 
-Gomes, H. (2018) Evaluation of Patterns of Missing Prices in CPI Data, Statistical Survey Paper, OSMR, BLS.
+Gomes, H. (2018) Evaluation of Patterns of Missing Prices in CPI Data,
+Statistical Survey Paper, OSMR, BLS.
 
-Kelly, P., and  M. Mogalanyane (2019) Missing in Action: Testing Alternative Methods for Imputations and Seasonal Items, Ottawa Group Meeting.
+Kelly, P., and  M. Mogalanyane (2019) Missing in Action: Testing
+Alternative Methods for Imputations and Seasonal Items, Ottawa Group
+Meeting.
