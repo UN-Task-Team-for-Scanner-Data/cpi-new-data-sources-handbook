@@ -18,12 +18,13 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import shutil
 import subprocess
 import sys
 from pathlib import Path, PurePosixPath
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
@@ -52,6 +53,14 @@ LAYOUT_UNWRAP_SELECTORS = (
 
 IMG_KEEP_ATTRS = {"src", "alt"}
 
+INLINE_MATH = re.compile(r"\\\(.+?\\\)", re.S)
+
+CENTRED_STYLE = re.compile(r"text-align\s*:\s*center", re.I)
+
+# Characters of non-formula text a centred paragraph may hold and still count as
+# a standalone equation. Covers stray punctuation and spacing.
+DISPLAY_MATH_RESIDUE = 3
+
 
 def _fix_console_encoding() -> None:
     """Avoid UnicodeEncodeError on Windows consoles using legacy code pages."""
@@ -71,9 +80,10 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Also write the cleaned intermediate HTML to scripts/_debug/<slug>.cleaned.html.",
     )
-    # NOTE: no --regex-math flag. Math delimiters (\(...\) \[...\]) are left as
-    # literal text; conversion to $...$ is handled by pandoc's
-    # tex_math_single_backslash reader extension in run_pandoc(), not by regex.
+    # NOTE: pandoc's tex_math_single_backslash reader extension converts math
+    # delimiters to $...$ and $$...$$ in run_pandoc(). No regex does that.
+    # promote_centred_math() only swaps inline delimiters for display ones on
+    # centred standalone formulas, before pandoc runs.
     return parser.parse_args()
 
 
@@ -93,6 +103,57 @@ def extract_title(soup: BeautifulSoup) -> str:
     if " : " in text:
         text = text.split(" : ")[-1].strip()
     return text
+
+
+def promote_centred_math(content) -> int:
+    """Rewrite centred standalone formulas to display math delimiters.
+
+    Confluence writes display equations with inline delimiters inside a centred
+    paragraph. Pandoc reads those as inline math, so the equation renders at text
+    size with cramped fractions. Rewriting the delimiters makes pandoc emit
+    display math instead.
+
+    A paragraph qualifies only when it is centred AND holds nothing but the
+    formula. Single-symbol labels such as class names in table cells sit in
+    uncentred paragraphs, so they stay inline.
+
+    A paragraph holding any child tag is skipped. Rewriting replaces the whole
+    paragraph, which would drop a link or an anchor.
+
+    Returns the number of formulas promoted.
+    """
+    promoted = 0
+
+    for p in content.find_all("p"):
+        if not CENTRED_STYLE.search(p.get("style") or ""):
+            continue
+
+        if p.find(True) is not None:
+            continue
+
+        # Join text nodes without stripping each one. Stripping per node would
+        # delete the spaces that separate LaTeX tokens across a node boundary.
+        text = p.get_text("").strip()
+        matches = INLINE_MATH.findall(text)
+        if not matches:
+            continue
+
+        residue = text
+        for match in matches:
+            residue = residue.replace(match, "")
+        if len(residue.strip()) > DISPLAY_MATH_RESIDUE:
+            continue
+
+        p.clear()
+        p.append(NavigableString(INLINE_MATH.sub(_to_display_math, text)))
+        promoted += len(matches)
+
+    return promoted
+
+
+def _to_display_math(match: re.Match) -> str:
+    """Swap one formula's inline delimiters for display delimiters."""
+    return "\\[" + match.group(0)[2:-2] + "\\]"
 
 
 def clean_content(content) -> None:
@@ -248,6 +309,7 @@ def main() -> None:
         sys.exit(1)
 
     clean_content(content)
+    promote_centred_math(content)
     process_images(content, html_path, slug)
     process_attachment_links(content, html_path, slug)
 

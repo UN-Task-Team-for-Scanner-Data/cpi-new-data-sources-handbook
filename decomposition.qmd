@@ -30,7 +30,7 @@ Individual product contributions can be directly derived from these two analytic
 
 In most cases, the decomposition of bilateral indices is quite simple and often the additive or multiplicative decomposition of an index results almost directly from its definition. For instance, the Laspeyres price index can be written in the following additive form:
 
-$P_{La}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} s_{i}^{t_{1}} \frac{p_{i}^{t_{2}}} {p_{i}^{t_{1}}}$
+$$P_{La}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} s_{i}^{t_{1}} \frac{p_{i}^{t_{2}}} {p_{i}^{t_{1}}}$$
 
 With the weights $s_i^{t_1,t_2}$ as the price updated weights of a previous year (i.e. for Laspeyres type method, which is commonly used by NSOs). The arithmetic index formula above is a fixed-base index, which means that the terms in this formula equal to the contributions of products or aggregates to the fixed-base index of a higher aggregate. Contributions to other types of indices, such as year on year indices, can be derived analytically (the [HICP manual](https://ec.europa.eu/eurostat/documents/3859598/9479325/KS-GQ-17-015-EN-N.pdf/d5e63427-c588-479f-9b19-f4b4d698f2a2) provides an overview of the formula used to calculate contributions to the monthly and annual growth rate of inflation). There are numerous examples of other additive index formulas, such as Dutot, Paasche, Walsh, Marshall-Edgeworth and the bilateral Geary-Khamis index. The remarks with regard to product contributions that were made for the Laspeyres index also apply to these index formulas.
 
@@ -38,7 +38,7 @@ It may be clear that product contributions do not simply sum to the overall inde
 
 Multiplicative index formulas are examples of non-additive or non-linear index methods. Instead of finding linearizations, NSOs could alternatively exploit the readily available multiplicative decomposition of this class of index methods. For example, the Törnqvist price index has the following, natural multiplicative form:
 
-$P_{T}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \left(\frac{p_{i}^{t_{2}}}{p_{i}^{t_{1}}}\right)^{\frac{s_{i}^{t_{1}}+s_{i}^{t_{2}}}{2}}$
+$$P_{T}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \left(\frac{p_{i}^{t_{2}}}{p_{i}^{t_{1}}}\right)^{\frac{s_{i}^{t_{1}}+s_{i}^{t_{2}}}{2}}$$
 
 A wide overview of additive and multiplicative decompositions of bilateral price index formulas can be found in publications by Vartia (1974, 1976), Diewert (2002) or Balk (2008).
 
@@ -48,19 +48,19 @@ The decomposition of multilateral indices is a bit more complicated, which resul
 
 ## Multiplicative decomposition of the GEKS index {#Decomposition-MultiplicativedecompositionoftheGEKSindex}
 
-$P_{CCDI}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{w_{i}^{*, t_{2}}}}{(p_{i}^{t_{1}})^{w_{i}^{*, t_{1}}}} \prod_{t=0}^{T} (p_{i}^{t}) ^ \frac {w_{i}^{t,t_{1}}-w_{i}^{t,t_{2}}} {T+1}$
+$$P_{CCDI}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{w_{i}^{*, t_{2}}}}{(p_{i}^{t_{1}})^{w_{i}^{*, t_{1}}}} \prod_{t=0}^{T} (p_{i}^{t}) ^ \frac {w_{i}^{t,t_{1}}-w_{i}^{t,t_{2}}} {T+1}$$
 
 where $w_{i}^{t_{1}, t_{2}}=(\frac{p_{i}^{t_{1}} q_{i}^{t_{1}}} {\sum\limits_{j \in G_{t_{1}, t_{2}}}p_{j}^{t_{1}} q_{j}^{t_{1}}}+\frac{p_{i}^{t_{2}} q_{i}^{t_{2}}} {\sum\limits_{j \in G_{t_{1}, t_{2}}}p_{j}^{t_{2}} q_{j}^{t_{2}}})$ and $w_{i}^{*, t}=\frac{1}{T+1} \sum_{s=0}^{T} w_{t}^{s,t}$.
 
 ## Additive decomposition of the Geary-Khamis index {#Decomposition-AdditivedecompositionoftheGeary-Khamisindex}
 
-$P_{GK}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} \frac {s_{i}^{t_{1}} \sigma_{i}^{t_{2}} p_{i}^{t_{2}}} {\sigma_{i}^{t_{1}} p_{i}^{t_{1}}} + \frac{1}{P_{GK}^{0, t_{1}}} \sum\limits_{i \in G_{t_{2}} / G_{t_{1}}} \frac {s_{i}^{t_{2}} p_{i}^{t_{2}}} {v_{i}}$
+$$P_{GK}^{t_{1}, t_{2}}=\sum\limits_{i \in G_{t_{1}, t_{2}}} \frac {s_{i}^{t_{1}} \sigma_{i}^{t_{2}} p_{i}^{t_{2}}} {\sigma_{i}^{t_{1}} p_{i}^{t_{1}}} + \frac{1}{P_{GK}^{0, t_{1}}} \sum\limits_{i \in G_{t_{2}} / G_{t_{1}}} \frac {s_{i}^{t_{2}} p_{i}^{t_{2}}} {v_{i}}$$
 
 where $\sigma_{i}^{t}=\frac {p_{i}^{t} v_{i}} {\sum\limits_{j \in G_{t}} p_{j}^{t} v_{j}}$.
 
 ## Multiplicative decomposition of the Time Product Dummy (TPD) index {#Decomposition-MultiplicativedecompositionoftheTimeProductDummyTPDindex}
 
-$P_{TPD}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{s_{i}^{ t_{2}}}}{(p_{i}^{t_{1}})^{s_{i}^{t_{1}}}} (\exp(\hat\delta+\hat\gamma_{i}))^{s_{i}^{t_{2}}-s_{i}^{t_{1}}}$
+$$P_{TPD}^{t_{1}, t_{2}}=\prod\limits_{i \in G_{t_{1}, t_{2}}} \frac {(p_{i}^{t_{2}})^{s_{i}^{ t_{2}}}}{(p_{i}^{t_{1}})^{s_{i}^{t_{1}}}} (\exp(\hat\delta+\hat\gamma_{i}))^{s_{i}^{t_{2}}-s_{i}^{t_{1}}}$$
 
 \
 

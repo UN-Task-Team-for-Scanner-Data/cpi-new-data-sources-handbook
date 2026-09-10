@@ -40,21 +40,21 @@ Several metrics can be calculated from this:
 
 - **Accuracy** is the proportion of correct predictions out of all predictions made. Accuracy is also an indicator of the overall classification task (i.e. summarizes the situation for both positive and negative classes as one metric).
 
-$\text{Accuracy} = \frac{\text{correct predictions}}{\text{all predictions}}= \frac{tp + tn}{tp+tn+fp+fn}$
+$$\text{Accuracy} = \frac{\text{correct predictions}}{\text{all predictions}}= \frac{tp + tn}{tp+tn+fp+fn} $$
 
 - **Precision** is the proportion of correct predictions out of all predictions estimated as positive. It is calculated individually for each class.
 
-$\text{Precision} = \frac{tp}{tp+fp}$
+$$\text{Precision} = \frac{tp}{tp+fp}$$
 
 - **Recall** (also called sensitivity) is the proportion of true positives out of all positive observations. Similar to precision, it is calculated for each class.
 
-$\text{Recall} = \frac{tp}{tp+fn}$
+$$\text{Recall} = \frac{tp}{tp+fn}$$
 
 Ideally, we want a high precision and a high recall. Precision and recall do not necessarily both increase, they can also behave in opposite ways. Both can be combined through an F1 score:
 
 - **F1 score** is the harmonic mean of precision and recall. The F1 score shows how precise the model is, as well as how robust it is. If one of the two metrics is much lower than the other, then the F1 score is lower than the arithmetic mean of the two scores.
 
-$\text{F1} = \frac{2tp}{ (2tp+fp+fn)} = 2\frac{\text{precision}* \text{recall}}{\text{precision} + \text{recall}}$
+$$\text{F1} = \frac{2tp}{ (2tp+fp+fn)} = 2\frac{\text{precision}* \text{recall}}{\text{precision} + \text{recall}}$$
 
 Accuracy and F1 score are very commonly used scores to evaluate a classifier. Accuracy is very easy to interpret, but it also has weaknesses especially with heterogeneous distributed class sizes (or imbalanced data). Suppose you have one class with 99 observations and a second class with one observation. If the classifier always estimates the first class, it will have an accuracy of 99%, however it will always miss the second class, which is undesirable. 
 
@@ -112,19 +112,19 @@ Table 3: A One-vs-Rest confusion matrix
 |        | $C_\text{rest}$ | $\sum_{j \ne i}{N_{j,i}}$ | $\sum_{j \ne i}{N_{j,j}}$ |
 +--------+-----------------+---------------------------+---------------------------+
 
-$\text{precision}_i = \frac{tp}{tp+fp}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{j,i}}}]$
+$$\text{precision}_i = \frac{tp}{tp+fp}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{j,i}}}]$$
 
-$\text{recall}_i = \frac{tp}{tp+fn}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{i,j}}}$
+$$\text{recall}_i = \frac{tp}{tp+fn}= \frac{N_{i,i}}{N_{i,i}+\sum_{j \ne i}{N_{i,j}}}$$
 
-$\text{F1}_i = 2\frac{\text{precision}_i* \text{recall}_i}{\text{precision}_i + \text{recall}_i}$
+$$\text{F1}_i = 2\frac{\text{precision}_i* \text{recall}_i}{\text{precision}_i + \text{recall}_i}$$
 
 To consider the performance of a model as a whole for all classes, instead of individually on a class-by-class basis, two ways to calcuate are common - **micro scores** or **macro scores**. For the micro scores, the true positives, true negatives, false positives and false negatives of all classes are added together and then the scores are calculated according to the above formula. The macro scores are calculated from the arithmetic mean of the scores of the individual classes.
 
-$\text{macro precision} = \frac{1}{n} \sum_{i=1}^n{\text{precision}_i}$
+$$\text{macro precision} = \frac{1}{n} \sum_{i=1}^n{\text{precision}_i} $$
 
-$\text{macro recall} = \frac{1}{n} \sum_{i=1}^n{\text{recall}_i}$
+$$\text{macro recall} = \frac{1}{n} \sum_{i=1}^n{\text{recall}_i} $$
 
-$\text{macro F1} = \frac{1}{n} \sum_{i=1}^n{\text{f1}_i}$
+$$\text{macro F1} = \frac{1}{n} \sum_{i=1}^n{\text{f1}_i} $$
 
 The macro F1 score considers large and small classes equally. As a result, observations from a large class have less influence on the score than observations from a small class. This effect is stronger the larger the imbalance in class sizes. It is relatively easy to recognize when any class has very poor scores. Whether this differential influence is desirable or not must be considered from a specialized point of view. An alternative would be to assign weights to each class and calculate a weighted average. Possible weights would be class size or, in the context of price statistics, turnover and weighing.
 
@@ -260,7 +260,7 @@ Here one can clearly see that due to the unequal class distribution, the F1 micr
 
 A more generalized version of the F1 score defined above is the F-beta score:
 
-$\text{f}_\beta = (1+ \beta^2)* \left( \frac{\text{precision}* \text{recall}}{\beta^2 * \text{precision} + \text{recall}}  \right)$
+$$\text{f}_\beta = (1+ \beta^2)* \left( \frac{\text{precision}* \text{recall}}{\beta^2 * \text{precision} + \text{recall}}  \right)$$
 
 Depending on the value for beta, precision or recall has a stronger influence on f-beta. A value smaller than one means, that there is more weight on precision. A value bigger than one means more weight on recall. 
 
