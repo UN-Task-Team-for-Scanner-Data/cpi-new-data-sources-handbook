@@ -3,7 +3,10 @@ project:
 
 website:
   title: "Handbook on utilising new data sources in the production of consumer price statistics"
-  # repo-url / repo-actions: add once the UN-Task-Team-for-Scanner-Data repo exists
+  site-url: https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/
+  repo-url: https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook
+  repo-branch: main
+  repo-actions: [edit, issue]
   bread-crumbs: true
   page-navigation: true
   back-to-top-navigation: true

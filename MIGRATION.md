@@ -23,13 +23,24 @@ uv run scripts/convert_all.py --run    # convert everything + rewrite links + si
 uv run scripts/verify_site.py          # after quarto render: parity + link check
 ```
 
-## Deployment (ready, waiting on org repo)
+## Deployment
 
-`.github/workflows/publish.yml` renders and publishes to GitHub Pages on every push
-to `main` (quarto-dev/quarto-actions). One-time setup once the repo exists under
-`UN-Task-Team-for-Scanner-Data`: push `main`, run `quarto publish gh-pages` locally
-once to create the `gh-pages` branch, then set repo Settings → Pages → deploy from
-`gh-pages`. After that, every merged change publishes automatically.
+`.github/workflows/publish.yml` renders the site and publishes it to the `gh-pages`
+branch on every push to `main` (quarto-dev/quarto-actions).
+
+Two repo settings are required. The workflow fails without them.
+
+1. Settings → Actions → General → Workflow permissions → **Read and write
+   permissions**. The default is read-only. That default caps the workflow token,
+   so the action cannot create `gh-pages`.
+2. Settings → Pages → Source → **Deploy from a branch** → `gh-pages` / `(root)`.
+
+Published URL:
+<https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/>
+
+The site serves from a subpath, not a domain root. `site-url` in `_quarto.yml` must
+match that URL exactly, or search and the sitemap point at the wrong host while every
+page still renders correctly.
 
 ## Pilot scope (how fidelity was established)
 
@@ -116,5 +127,5 @@ polish against Helen's `UNTT slide template.potx` is a later step.
 ## Constraints
 
 - Commits to this repo are authored solely by Lewis (`LAE-ONS-GOV-UK`).
-- Target remote (once created): `https://LAE-ONS-GOV-UK@github.com/UN-Task-Team-for-Scanner-Data/<repo>.git`
+- Remote: `https://LAE-ONS-GOV-UK@github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook.git`
   — the explicit username pins Windows credential selection to the ONS account.
