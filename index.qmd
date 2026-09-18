@@ -20,5 +20,3 @@ Rendering fidelity was validated first on the most demanding pages:
   handbook's most formula-dense page
 - [How to evaluate classification methods](how-to-evaluate-classification-methods.qmd)
 
-Conversion tooling and migration status live in the repo (`MIGRATION.md`,
-`scripts/convert_page.py`, `scripts/convert_all.py`).
