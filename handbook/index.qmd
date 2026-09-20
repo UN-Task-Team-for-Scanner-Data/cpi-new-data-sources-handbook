@@ -1,5 +1,5 @@
 ---
-title: "Handbook on utilising new data sources in the production of consumer price statistics"
+title: "An introduction to the handbook"
 date-modified: "2026-05-08"
 ---
 
