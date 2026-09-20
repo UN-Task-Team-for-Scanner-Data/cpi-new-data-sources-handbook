@@ -1,16 +1,12 @@
 project:
   type: website
-  # Render handbook pages only. MIGRATION.md is internal team notes and must not
-  # reach the public site.
-  render:
-    - "*.qmd"
 
 website:
   title: "Handbook on utilising new data sources in the production of consumer price statistics"
   site-url: https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/
   repo-url: https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook
   repo-branch: main
-  repo-actions: [edit, issue]
+  repo-actions: [source, issue]
   bread-crumbs: true
   page-navigation: true
   back-to-top-navigation: true
@@ -25,117 +21,53 @@ website:
       - icon: person-raised-hand
         href: https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml
     left:
-      - href: index.qmd
-        text: Home
+      - href: handbook/index.qmd
+        text: Handbook
+
+
   sidebar:
-    style: "floating"
-    collapse-level: 1
-    align: left
-    contents:
-      - index.qmd
-      - introduction.qmd
-      - "---"
-      - acknowledgements.qmd
-      - glossary.qmd
-      - section: "Initial considerations"
-        href: initial-considerations.qmd
-        contents:
-          - overview-of-alternative-data-sources.qmd
-          - why-use-alternative-data-sources-strategic-motivations.qmd
-          - key-challenges-and-trade-offs.qmd
-          - key-decision-points.qmd
-          - resource-implications-and-organisational-readiness.qmd
-      - cpi-production-system-requirements.qmd
-      - quality-assurance.qmd
-      - section: "Data selection and acquisition"
-        href: data-selection-and-acquisition.qmd
-        contents:
-          - selection-of-categories.qmd
-          - selection-of-retailers-for-alternative-data-sources.qmd
-          - section: "Scanner data"
-            href: scanner-data.qmd
-            contents:
-              - initial-steps-in-the-acquisition-of-scanner-data.qmd
-              - data-requirements-specification-for-scanner-data.qmd
-              - data-sharing-agreements.qmd
-              - alternative-approaches-to-acquiring-scanner-data.qmd
-              - monitoring-validation-and-plausibility-checks-for-scanner-data.qmd
-          - section: "Web scraping"
-            href: web-scraping.qmd
-            contents:
-              - different-approaches-to-accessing-web-scraped-data.qmd
-              - strategies-available-for-in-house-web-scraping.qmd
-              - data-requirements-specification-for-web-scraped-data.qmd
-              - monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd
-              - common-technical-problems-for-in-house-web-scraping.qmd
-          - example-file-structures-for-web-scraped-and-scanner-data.qmd
-          - collection-of-data-via-apis.qmd
-          - dealing-with-unexpected-data-gaps.qmd
-      - section: "Preparation of data"
-        href: preparation-of-data.qmd
-        contents:
-          - product-sampling-for-price-index-calculation.qmd
-          - standardising-the-data.qmd
-          - aggregation-across-time-and-outlets.qmd
-          - identifying-unique-products.qmd
-          - treatment-of-discounts-and-refunds.qmd
-      - section: "Classification"
-        href: classification.qmd
-        contents:
-          - section: "Pre-conditions and deciding on appropriate classification methods"
-            href: pre-conditions-and-deciding-on-appropriate-classification-methods.qmd
-            contents:
-              - note-on-variables-applicable-for-classification.qmd
-          - method-0-manual-labelling-or-validation-of-predicted-labels.qmd
-          - method-1-attribute-based-classification-method.qmd
-          - method-2-pattern-matching-classification-method.qmd
-          - method-3-recommendation-machine-assisted-classification.qmd
-          - section: "Method 4: Machine Learning classification method"
-            href: method-4-machine-learning-classification-method.qmd
-            contents:
-              - how-to-evaluate-classification-methods.qmd
-              - working-with-class-imbalance.qmd
-          - section: "Operational best practices"
-            href: operational-best-practices.qmd
-            contents:
-              - designing-the-classification-step-operational-considerations.qmd
-      - section: "Data filtering and missing prices"
-        href: data-filtering-and-missing-prices.qmd
-        contents:
-          - outlier-filter.qmd
-          - dumping-filter.qmd
-          - low-sales-filter.qmd
-          - current-practice-of-data-filtering.qmd
-          - treatment-of-missing-prices.qmd
-      - section: "Price index methods"
-        href: price-index-methods.qmd
-        contents:
-          - section: "Bilateral price index methods"
-            href: bilateral-price-index-methods.qmd
-            contents:
-              - example-of-chain-drift.qmd
-          - multilateral-price-index-methods.qmd
-          - extension-methods.qmd
-          - decomposition.qmd
-          - section: "Choosing an index method"
-            href: choosing-an-index-method.qmd
-            contents:
-              - methods-for-when-expenditure-data-are-available.qmd
-              - methods-for-when-expenditure-data-are-not-available.qmd
-          - deriving-proxy-weights-for-web-scraped-data.qmd
-      - aggregation.qmd
-      - section: "Other uses of alternative data"
-        href: other-uses-of-alternative-data.qmd
-        contents:
-          - other-uses-of-alternative-data-beyond-cpi.qmd
-          - other-uses-of-alternative-data-within-cpi.qmd
-      - section: "Other considerations"
-        href: other-considerations.qmd
-        contents:
-          - seasonal-products.qmd
-          - quality-change-and-hedonic-estimation.qmd
-      - implementation.qmd
-      - training-material.qmd
+    - id: handbook
+      style: "floating"
+      collapse-level: 1
+      align: left
+      contents:
+        - handbook/index.qmd
+        - "---"
+        - section: "Initial considerations"
+          href: handbook/initial-considerations/index.qmd
+          contents:
+          - handbook/initial-considerations/overview-of-alternative-data-sources.qmd
+          - handbook/initial-considerations/why-use-alternative-data-sources-strategic-motivations.qmd
+          - handbook/initial-considerations/key-challenges-and-trade-offs.qmd
+          - handbook/initial-considerations/key-decision-points.qmd
+          - handbook/initial-considerations/resource-implications-and-organisational-readiness.qmd
+        - handbook/cpi-production-system-requirements.qmd
+        - handbook/quality-assurance.qmd
+        - section: "Data selection and acquisition"
+          href: handbook/data-selection-and-acquisition/index.qmd
+          contents:
+            - handbook/data-selection-and-acquisition/selection-of-categories.qmd
+            - handbook/data-selection-and-acquisition/selection-of-retailers-for-alternative-data-sources.qmd
+            - section: "Scanner data"
+              href: handbook/data-selection-and-acquisition/scanner/index.qmd
+              contents:
+                - handbook/data-selection-and-acquisition/scanner/initial-steps-in-the-acquisition-of-scanner-data.qmd
+                - handbook/data-selection-and-acquisition/scanner/data-requirements-specification-for-scanner-data.qmd
+                - handbook/data-selection-and-acquisition/scanner/data-sharing-agreements.qmd
+                - handbook/data-selection-and-acquisition/scanner/alternative-approaches-to-acquiring-scanner-data.qmd
+                - handbook/data-selection-and-acquisition/scanner/monitoring-validation-and-plausibility-checks-for-scanner-data.qmd
+            - section: "Web scraping"
+              href: handbook/data-selection-and-acquisition/web-scraped/index.qmd
+              contents:
+                - handbook/data-selection-and-acquisition/web-scraped/different-approaches-to-accessing-web-scraped-data.qmd
+                - handbook/data-selection-and-acquisition/web-scraped/strategies-available-for-in-house-web-scraping.qmd
+                - handbook/data-selection-and-acquisition/web-scraped/data-requirements-specification-for-web-scraped-data.qmd
+                - handbook/data-selection-and-acquisition/web-scraped/monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd
+                - handbook/data-selection-and-acquisition/web-scraped/common-technical-problems-for-in-house-web-scraping.qmd
+            - handbook/data-selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.qmd
+            - handbook/data-selection-and-acquisition/collection-of-data-via-apis.qmd
+            - handbook/data-selection-and-acquisition/dealing-with-unexpected-data-gaps.qmd
+    
 
 language:
   title-block-modified: "Last updated"
