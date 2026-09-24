@@ -18,10 +18,8 @@ website:
   navbar:
     background: primary
     search: true
-    title: "New data sources in consumer price statistics"
+    title: "Handbook on utilising new data sources in the production of consumer price statistics"
     right:
-      - icon: globe
-        href: https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics
       - icon: person-raised-hand
         href: https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml
     left:
