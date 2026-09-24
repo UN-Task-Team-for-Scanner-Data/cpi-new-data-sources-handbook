@@ -1187,12 +1187,11 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Handbook on utilising new data sources in the production of consumer price statistics",
+    "title": "Home",
     "section": "",
-    "text": "NoteMigration in progress\n\n\n\nThis site is a migration of the UN Task Team handbook from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.\n\n\nStart with the introduction, or browse the full handbook from the sidebar.\nRendering fidelity was validated first on the most demanding pages:\n\nExtension methods — figures and LaTeX formulas together\nMultilateral price index methods — the handbook’s most formula-dense page\nHow to evaluate classification methods\n\nConversion tooling and migration status live in the repo (MIGRATION.md, scripts/convert_page.py, scripts/convert_all.py).\n\n\n\n Back to top",
+    "text": "NoteMigration in progress\n\n\n\nThis site is a migration of the UN Task Team [handbook] (https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics) from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing. Note conversion tooling and migration status live in the repo (MIGRATION.md, scripts/convert_page.py, scripts/convert_all.py).\n\n\nStart with the introduction, or browse the full handbook from the sidebar.\n\n\n\n Back to top",
     "crumbs": [
-      "Home",
-      "Handbook on utilising new data sources in the production of consumer price statistics"
+      "Home"
     ]
   },
   {
