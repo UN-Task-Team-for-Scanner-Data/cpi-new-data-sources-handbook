@@ -3,7 +3,7 @@ title: "Home"
 ---
 
 ::: {.callout-note title="Migration in progress"}
-This site is a migration of the UN Task Team [handbook] (https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics)
+This site is a migration of the UN Task Team [handbook](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics)
 from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with
 automated tooling; review and sign-off by the Task Team is ongoing. Note conversion tooling and migration status live in the repo (`MIGRATION.md`, `scripts/convert_page.py`, `scripts/convert_all.py`).
 :::
