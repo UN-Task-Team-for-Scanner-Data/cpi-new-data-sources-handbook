@@ -21,8 +21,10 @@ website:
       - icon: person-raised-hand
         href: https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml
     left:
-      - href: index.qmd
+      - href: handbook/index.qmd
         text: Handbook
+      - href: training/index.qmd
+        text: Training Materials
 
 
   sidebar:
@@ -31,7 +33,7 @@ website:
       collapse-level: 1
       align: left
       contents:
-        - index.qmd
+        - handbook/index.qmd
         - "---"
         - section: "Initial considerations"
           href: handbook/initial-considerations/index.qmd
@@ -67,7 +69,71 @@ website:
             - handbook/data-selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.qmd
             - handbook/data-selection-and-acquisition/collection-of-data-via-apis.qmd
             - handbook/data-selection-and-acquisition/dealing-with-unexpected-data-gaps.qmd
-    
+        - section: "Preparation of data"
+          href: handbook/preparation/index.qmd
+          contents:
+            - handbook/preparation/product-sampling-for-price-index-calculation.qmd
+            - handbook/preparation/standardising-the-data.qmd
+            - handbook/preparation/aggregation-across-time-and-outlets.qmd
+            - handbook/preparation/identifying-unique-products.qmd
+            - handbook/preparation/treatment-of-discounts-and-refunds.qmd
+        - section: "Classification"
+          href: handbook/classification/index.qmd
+          contents:
+            - section: "Pre-conditions and deciding on appropriate classification methods"
+              href: handbook/classification/pre-conditions-and-deciding-on-appropriate-classification-methods.qmd
+              contents:
+                - handbook/classification/note-on-variables-applicable-for-classification.qmd
+            - handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.qmd
+            - handbook/classification/method-1-attribute-based-classification-method.qmd
+            - handbook/classification/method-2-pattern-matching-classification-method.qmd
+            - handbook/classification/method-3-recommendation-machine-assisted-classification.qmd
+            - section: "Method 4: Machine Learning classification method"
+              href: handbook/classification/method-4-machine-learning-classification-method.qmd
+              contents:
+                - handbook/classification/how-to-evaluate-classification-methods.qmd
+                - handbook/classification/working-with-class-imbalance.qmd
+            - section: "Operational best practices"
+              href: handbook/classification/operational-best-practices.qmd
+              contents:
+                - handbook/classification/designing-the-classification-step-operational-considerations.qmd
+        - section: "Data filtering and missing prices"
+          href: handbook/filtering/index.qmd
+          contents:
+            - handbook/filtering/outlier-filter.qmd
+            - handbook/filtering/dumping-filter.qmd
+            - handbook/filtering/low-sales-filter.qmd
+            - handbook/filtering/current-practice-of-data-filtering.qmd
+            - handbook/filtering/treatment-of-missing-prices.qmd
+        - section: "Price index methods"
+          href: handbook/index-methods/index.qmd
+          contents:
+            - section: "Bilateral price index methods"
+              href: handbook/index-methods/bilateral-price-index-methods.qmd
+              contents:
+                - handbook/index-methods/example-of-chain-drift.qmd
+            - handbook/index-methods/multilateral-price-index-methods.qmd
+            - handbook/index-methods/extension-methods.qmd
+            - handbook/index-methods/decomposition.qmd
+            - section: "Choosing an index method"
+              href: handbook/index-methods/choosing-an-index-method.qmd
+              contents:
+                - handbook/index-methods/methods-for-when-expenditure-data-are-available.qmd
+                - handbook/index-methods/methods-for-when-expenditure-data-are-not-available.qmd
+            - handbook/index-methods/deriving-proxy-weights-for-web-scraped-data.qmd
+        - handbook/aggregation.qmd
+        - section: "Other uses of alternative data"
+          href: handbook/other-uses/index.qmd
+          contents:
+            - handbook/other-uses/other-uses-of-alternative-data-beyond-cpi.qmd
+            - handbook/other-uses/other-uses-of-alternative-data-within-cpi.qmd
+        - section: "Other considerations"
+          href: handbook/other-considerations/index.qmd
+          contents:
+            - handbook/other-considerations/seasonal-products.qmd
+            - handbook/other-considerations/quality-change-and-hedonic-estimation.qmd
+        - handbook/implementation.qmd
+
 
 language:
   title-block-modified: "Last updated"
