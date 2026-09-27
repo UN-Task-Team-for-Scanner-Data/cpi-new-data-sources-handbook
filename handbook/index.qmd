@@ -8,9 +8,7 @@ format:
     toc-expand: 2
 ---
 
-Review the sections to navigate to the section you see as most valuable.
-
-# Contents: {#Handbookonutilisingnewdatasourcesintheproductionofconsumerpricestatistics-Contents}
+# Handbook content
 
 - [Acknowledgements](/handbook/acknowledgements.qmd) --- The development of this handbook and associated training material is a testament to the hard work of many individuals who collaborated on drafting, reviewing and updating the content. 
 - [Glossary](/handbook/glossary.qmd) --- This page contains the handbook glossary.

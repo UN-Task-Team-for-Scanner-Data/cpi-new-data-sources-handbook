@@ -1,5 +1,5 @@
 ---
-title: "Handbook on utilising new data sources in the production of consumer price statistics"
+title: "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!"
 date: last-updated
 format:
   html:
