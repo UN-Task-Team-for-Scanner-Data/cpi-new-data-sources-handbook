@@ -21,7 +21,7 @@ website:
       - icon: person-raised-hand
         href: https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml
     left:
-      - href: handbook/index.qmd
+      - href: index.qmd
         text: Handbook
 
 
@@ -31,7 +31,7 @@ website:
       collapse-level: 1
       align: left
       contents:
-        - handbook/index.qmd
+        - index.qmd
         - "---"
         - section: "Initial considerations"
           href: handbook/initial-considerations/index.qmd
