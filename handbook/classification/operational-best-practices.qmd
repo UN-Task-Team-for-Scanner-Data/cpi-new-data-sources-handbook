@@ -1,6 +1,11 @@
 ---
 title: "Operational best practices"
+date: "2025-04-28"
 date-modified: "2025-04-28"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 Once NSOs select and develop an appropriate classification method, they
@@ -11,8 +16,7 @@ efforts are usually needed.
 
 Section contents:
 
-- [Designing the classification step: operational
-  considerations](designing-the-classification-step-operational-considerations.qmd) --- This section provides context
+- [Designing the classification step: operational considerations](/handbook/classification/designing-the-classification-step-operational-considerations.qmd) --- This section provides context
   about where and how the classification step fits into the rest of the
   pipeline processing alternative data to create elementary price
   indices, as well as some important considerations and options when

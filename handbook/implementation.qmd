@@ -1,6 +1,11 @@
 ---
 title: "Implementation"
-date-modified: "2022-11-23"
+date: "2024-05-08"
+date-modified: "2024-05-08"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 This page contains information on how to implement these new data
@@ -9,8 +14,7 @@ source has completed, there are a number of different steps to consider
 before moving to actual regular CPI production. This also depends on
 whether this is the first time of implementing these new data sources,
 or whether this is a phased approach where new categories/data sources
-are implemented over time (see [Selection of
-categories](selection-of-categories.qmd)). For example, a new
+are implemented over time (see [Selection of categories](/handbook/selection-and-acquisition/selection-of-categories.qmd)). For example, a new
 production system can be built in a flexible manner to ensure that any
 future work to implement new categories can use this existing system and
 methods rather than requiring new development. The rough order of steps
@@ -27,18 +31,15 @@ After testing the new data sources and methodology (summarised in the
 previous handbook sections), a final decision on the actual methods to
 be implemented in the regular CPI production must be made and how the
 new indices shall be integrated with the remaining indices (see
-[Aggregation](aggregation.qmd)) based on other data sources
+[Aggregation](/handbook/aggregation.qmd)) based on other data sources
 and methodology. For information on how to introduce multilateral
 methods in regular HICP production, see Eurostat's guidelines
-"[Practical Guide on Multilateral Methods in the
-HICP](https://ec.europa.eu/eurostat/documents/3859598/14503841/KS-GQ-21-020-EN-N.pdf)"
-(chapter 10)
+"[Practical Guide on Multilateral Methods in the HICP](https://ec.europa.eu/eurostat/documents/3859598/14503841/KS-GQ-21-020-EN-N.pdf)" (chapter 10)
 
 # Build a production system {#Implementation-Buildaproductionsystem}
 
 New methodology will most likely require that a new production system
-needs to be built (see [CPI production system
-requirements](cpi-production-system-requirements.qmd)).
+needs to be built (see [CPI production system requirements](/handbook/cpi-production-system-requirements.qmdd)).
 Prototype systems may have already been built in the research phase, but
 to move to production it is very important to have extensive tests that
 the new regular production system provides the expected results.
@@ -49,8 +50,7 @@ certain time period to ensure it is stable and any bugs in the process
 have been found before moving it to live production. The production
 system should also include functionality to mitigate against scenarios
 where regular data is partly or totally missing from one or several
-retailers (see section [Dealing with unexpected data
-gaps](dealing-with-unexpected-data-gaps.qmd)).
+retailers (see section [Dealing with unexpected datagaps](/handbook/selection-and-acquisition/dealing-with-unexpected-data-gaps.qmd)).
 
 # Adapt production process to incorporate these new data sources and/or methods {#Implementation-Adaptproductionprocesstoincorporatethesenewdatasourcesandormethods}
 
@@ -69,8 +69,7 @@ production team if new systems and methods are being introduced
 Before implementation of CPI indices based on new data sources like
 scanner data it is important to assess the impact of the data source and
 new methodology. This can be done by performing a comparative study of
-the old and new methodology. The [CPI Manual, Concepts and
-Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx) (2020),
+the old and new methodology. The [CPI Manual, Concepts and Methods](https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx) (2020),
 paragraphs 10.116-10.121, discusses the importance of producing
 empirical results in relation to the implementation of multilateral
 methods. The indices should be run in parallel over a certain period of
@@ -106,8 +105,7 @@ being made. For more information on users need, see the CPI Manual,
 Concepts and Methods (2020) (paragraphs 10.116-10.121, 14.55-14.64). For
 an example of a publication explaining upcoming changes at (fairly) high
 level please see the Office for National Statistics\' (ONS) publication
-[Introducing multilateral index methods into consumer price
-statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/introducingmultilateralindexmethodsintoconsumerpricestatistics)
+[Introducing multilateral index methods into consumer price statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/introducingmultilateralindexmethodsintoconsumerpricestatistics)
 
 # Linking index series of new methodology to old series {#Implementation-Linkingindexseriesofnewmethodologytooldseries}
 
@@ -151,17 +149,12 @@ indices of the old and new methodology over the months in the year
 before the new methodology is introduced. The monthly change rates will
 be equal to the indices for the new series, except for the first month
 of implementation. Antonio Chessa discusses the different chain linking
-methods in the paper "[Extension of multilateral index series over time:
-Analysis and comparison of
-methods](https://unece.org/sites/default/files/2021-05/Session_1_Netherlands_Paper.pdf)"
-(2021).
+methods in the paper "[Extension of multilateral index series over time: Analysis and comparison of methods](https://unece.org/sites/default/files/2021-05/Session_1_Netherlands_Paper.pdf)" (2021).
 
 Depending on how different the price development is between the indices
 of the new and the old methodology, the choice of chain-linking method
 may potentially impact the results of the new chained official index
 during the first transition year of the new method. The European Central
-Bank Statistics Paper "[Chain linking over December and methodological
-changes in the HICP: view from a central bank
-perspective](https://https/www.ecb.europa.eu/pub/pdf/scpsps/ecb.sps40~fb2e530fe6.en.pdf)"
+Bank Statistics Paper "[Chain linking over December and methodological changes in the HICP: view from a central bank perspective](https://https/www.ecb.europa.eu/pub/pdf/scpsps/ecb.sps40~fb2e530fe6.en.pdf)"
 (2021) discusses chain-linking strategies in relation to the European
 Harmonised Index of Consumer Prices (HICP) and methodological changes. 

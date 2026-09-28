@@ -1,6 +1,11 @@
 ---
 title: "Method 2: Pattern matching classification method"
+date: "2025-04-28"
 date-modified: "2025-04-28"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 Pattern based classification involves mapping individual records to the
@@ -12,7 +17,7 @@ individual records. This approach is typically used when attribute based
 classification is not sufficiently detailed but it is not necessary to
 make the extra investment to develop or maintain more complex methods.
 This method can also be considered an attribute-based method (thus an
-alternative to [method 1](method-1-attribute-based-classification-method.qmd)) where specific patterns in
+alternative to [method 1](/handbook/classification/method-1-attribute-based-classification-method.qmd)) where specific patterns in
 the unique products\' characteristics need to be matched to classify,
 rather than a handful of structure attributes (such as product
 categories).
@@ -43,8 +48,7 @@ not look to change much, then this method can become quite useful. NSOs
 may find this out when they annotate a sample of products and find that
 some products do not cleanly match (as per the [rule-based
 approach](method-1-attribute-based-classification-method.qmd)) but keywords or specific patterns (such as
-via [regular
-expressions](https://en.wikipedia.org/wiki/Regular_expression)) may be
+via [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)) may be
 effective at classifying a whole set of products. Breaking down a
 product ID (such as its UPC) and mapping sub-parts of this code can be
 considered a form of pattern matching.
@@ -70,8 +74,7 @@ enable better use of rule-based classification.
 To demonstrate the process, consider one category in an alternative data
 source that is not homogenous but needs to be mapped to two sub-classes
 (or COICOP-6 classes). This example is based on the visual diagram
-outlined in the [homogeneity of product
-considerations](https://unstats.un.org/wiki/display/GWGSD/Pre-conditions+and+deciding+on+appropriate+classification+methods#Preconditionsanddecidingonappropriateclassificationmethods-Homogeneityofthedesiredclassifications).
+outlined in the [homogeneity of product considerations](/handbook/classification/pre-conditions-and-deciding-on-appropriate-classification-methods.qmd).
 
 Code 1: Example attribute based on text matching apples names
 

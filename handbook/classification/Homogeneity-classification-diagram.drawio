@@ -1,0 +1,128 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="-47vawB2OklfKsO3BJrx">
+    <mxGraphModel dx="830" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SSQXawZmtTG-jishtQTu-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="SSQXawZmtTG-jishtQTu-1" target="SSQXawZmtTG-jishtQTu-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="310" />
+              <mxPoint x="240" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="SSQXawZmtTG-jishtQTu-1" target="SSQXawZmtTG-jishtQTu-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="310" />
+              <mxPoint x="570" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-1" value="Apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="355" y="251" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="SSQXawZmtTG-jishtQTu-2" target="SSQXawZmtTG-jishtQTu-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="400" />
+              <mxPoint x="120" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SSQXawZmtTG-jishtQTu-2" target="SSQXawZmtTG-jishtQTu-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="390" />
+              <mxPoint x="240" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="SSQXawZmtTG-jishtQTu-2" target="SSQXawZmtTG-jishtQTu-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="400" />
+              <mxPoint x="355" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-2" value="Green apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="195" y="340" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SSQXawZmtTG-jishtQTu-3" target="SSQXawZmtTG-jishtQTu-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="400" />
+              <mxPoint x="475" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SSQXawZmtTG-jishtQTu-3" target="SSQXawZmtTG-jishtQTu-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="400" />
+              <mxPoint x="590" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="SSQXawZmtTG-jishtQTu-3" target="SSQXawZmtTG-jishtQTu-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="400" />
+              <mxPoint x="710" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-3" value="Red Apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="525" y="340" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-4" value="Granny smith apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="70" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-5" value="Braeburn apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="190" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-6" value="Crispin apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="305" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-7" value="Honeycrisp apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="425" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-8" value="Gala apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="540" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-9" value="Mcintosh apples" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="660" y="430" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="SSQXawZmtTG-jishtQTu-11" target="SSQXawZmtTG-jishtQTu-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-11" value="0.1.1.6.3 -&amp;nbsp;Stone fruits and pome fruits, fresh " style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="330" y="172" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-22" value="" style="endArrow=classic;html=1;rounded=0;startArrow=classic;startFill=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="840" y="180" as="sourcePoint" />
+            <mxPoint x="840" y="462" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-23" value="COICOP 5 / NSO-1 code level for specific retailer" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="485" y="182" width="215" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SSQXawZmtTG-jishtQTu-26" value="Tradeoff between classification ability and homogeneity of a class" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="700" y="241" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="L2nDybMmB9wwb03HZ6T9-1" value="NSO-2 code level" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="256" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="L2nDybMmB9wwb03HZ6T9-2" value="NSO-3 code level" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="345" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="L2nDybMmB9wwb03HZ6T9-3" value="NSO-4 code level" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="770" y="435" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
