@@ -7,11 +7,13 @@ format:
     toc-expand: 2
 ---
 
-There are several factors that NSO typically consider when approaching or implementing classification, such as the scale and complexity of the task, whether this is just the initial phase of classification or recurrent classification in production, or the structure and quality of the data. Evaluating these factors is useful to select the method(s) most appropriate for each use case.\
+There are several factors that NSO typically consider when approaching or implementing classification, such as the scale and complexity of the task, whether this is just the initial phase of classification or recurrent classification in production, or the structure and quality of the data. Evaluating these factors is useful to select the method(s) most appropriate for each use case.
 
-Also see another article in this section:
+:::{.callout-tip}
+## Variables useful for classification
+See [notes on variables applicable for classification](/handbook/classification/note-on-variables-applicable-for-classification.qmd) on which variables obtained during the acquisition process are typically applicable for classification. 
+:::
 
--   [Note on variables applicable for classification](/handbook/classification/note-on-variables-applicable-for-classification.qmd) --- Several variables obtained during the acquisition process  are typically applicable for classification. 
 
 ------------------------------------------------------------------------
 
