@@ -1,6 +1,11 @@
 ---
 title: "Glossary"
-date-modified: "2024-03-27"
+date: "2024-03-27"
+date-modified: "2026-05-12"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 This page contains the handbook glossary.\
@@ -57,9 +62,7 @@ Table 1: summary of terminology used to describe products
 +---------------------------------------------------------------------------------------------+-----------------+
 
 Other words/phrases often used here include Global Trade Item Number
-(GTIN), item code and item. The glossary in the [Consumer Price Index
-(CPI)
-Manual](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/consumerpricesindicestechnicalmanual2019)
+(GTIN), item code and item. The glossary in the [Consumer Price Index (CPI) Manual](https://www.ons.gov.uk/economy/inflationandpriceindices/methodologies/consumerpricesindicestechnicalmanual2019)
 uses the term **variety** to mean \"the individual product for which
 prices are collected during the collection period. It includes the
 detailed specification of the product or item observed\". However, for

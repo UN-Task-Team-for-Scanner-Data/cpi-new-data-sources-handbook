@@ -1,6 +1,11 @@
 ---
 title: "Quality assurance"
+date: "2024-05-08"
 date-modified: "2026-05-12"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 The use of alternative data sources in CPI compilation requires robust
@@ -66,12 +71,9 @@ With the advance of modern methods and systems, including the potential
 use of machine learning and AI in the production of Official Statistics,
 some other dimensions of quality are also being considered and proposed.
 For example, reproducibility has been a key consideration in recent
-years (see for example, [the Price Statistics Reproducibility
-Project](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/)),
+years (see for example, [the Price Statistics Reproducibility Project](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/)),
 while explainability and robustnesses have also been proposed in the
-Machine Learning context (see [A Quality Concept for the Use of Machine
-Learning in Official
-Statistics](https://unece.org/sites/default/files/2023-05/ML2023_S2_Germany_Dumpert_Paper.pdf)). 
+Machine Learning context (see [A Quality Concept for the Use of Machine Learning in Official Statistics](https://unece.org/sites/default/files/2023-05/ML2023_S2_Germany_Dumpert_Paper.pdf)). 
 
 All quality dimensions remain applicable when using alternative data
 sources for CPI production. In practice, however, their implementation
@@ -129,11 +131,11 @@ structural differences may indicate delivery errors or changes in
 provider systems that require investigation.
 
 At this stage it is often useful to
-[standardise](standardising-the-data.qmd) incoming data into
+[standardise](/handbook/preparation/standardising-the-data.qmd) incoming data into
 a common internal schema used for CPI processing. For example, NSOs may
 adopt consistent naming conventions and variable definitions for key
 fields such as price, quantity, product identifiers or transaction
-dates. [Standardising](standardising-the-data.qmd) the data
+dates. [Standardising](/handbook/preparation/standardising-the-data.qmd) the data
 structure helps ensure consistency across different sources and
 simplifies downstream processing.
 
@@ -179,15 +181,13 @@ affect index stability and should be investigated carefully.
 Before introducing indices derived from alternative data sources into
 live production, it is generally advisable to conduct impact analysis
 comparing the results with existing CPI series (see section
-on [Implementation](implementation.qmd)). Differences between
+on [Implementation](/handbook/implementation.qmd)). Differences between
 the new and existing approaches should be understood and documented, and
 any methodological changes should be clearly explainable to users.
 
 Some NSOs also use formal governance arrangements when introducing new
 data sources or index methods, such as internal review panels or
-external advisory groups (see as an example the UK\'s [advisory panels
-for consumer prices - stakeholder and
-technical](https://uksa.statisticsauthority.gov.uk/the-authority-board/committees/national-statisticians-advisory-committees-and-panels/advisory-panels-for-consumer-price-statistics/)).
+external advisory groups (see as an example the UK\'s [advisory panels for consumer prices - stakeholder and technical](https://uksa.statisticsauthority.gov.uk/the-authority-board/committees/national-statisticians-advisory-committees-and-panels/advisory-panels-for-consumer-price-statistics/)).
 These structures can provide additional scrutiny and help ensure that
 proposed methodological changes are robust and transparent.
 
@@ -210,6 +210,6 @@ additional monitoring may be required to ensure that model performance
 remains stable over time. Changes in product ranges or market behaviour
 may affect the accuracy of such models and periodic review may therefore
 be necessary. The section
-on [classification ](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910479/Classification)includes
+on [classification](/handbook/classification/index.qmd) includes
 a discussion on monitoring the accuracy of any machine learning models
 used over time.

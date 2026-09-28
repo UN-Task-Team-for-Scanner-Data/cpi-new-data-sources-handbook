@@ -133,6 +133,9 @@ website:
             - handbook/other-considerations/seasonal-products.qmd
             - handbook/other-considerations/quality-change-and-hedonic-estimation.qmd
         - handbook/implementation.qmd
+        - "---"
+        - handbook/glossary.qmd
+        - handbook/acknowledgements.qmd
 
 
 language:
