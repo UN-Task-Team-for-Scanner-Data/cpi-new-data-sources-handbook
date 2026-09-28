@@ -1,6 +1,11 @@
 ---
 title: "Method 3: Recommendation / Machine-assisted classification"
+date: "2025-04-28"
 date-modified: "2025-04-28"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 Machine-assisted classification is still a manual classification
@@ -77,7 +82,7 @@ Table 1: Pros and cons of a keyword-based recommender
 
 Another option is to use hierarchy mappings. This approach recommends
 classes that fit a specific retailer hierarchy descriptor and is thus
-similar to [rule based classification](method-1-attribute-based-classification-method.qmd). For example, if
+similar to [rule based classification](/handbook/classification/method-1-attribute-based-classification-method.qmd). For example, if
 the retailer hierarchy is "Bakery/Bread/Sliced loaves" then the machine
 might recommend "white bread loaves", "wholemeal bread loaves" and
 "seeded bread".
@@ -111,7 +116,7 @@ result in a lot of setup and maintenance work.
 ## Machine learning {#Method3RecommendationMachineassistedclassification-Machinelearning}
 
 A third option is to use supervised machine learning (thus a toned
-version of [method 4](method-4-machine-learning-classification-method.qmd)). This approach involves training
+version of [method 4](/handbook/classification/method-4-machine-learning-classification-method.qmd)). This approach involves training
 a machine learning algorithm by using previously labelled data, then
 using this algorithm to make recommendations on future data. Labellers
 manually scrutinise each product, either choosing the appropriate label
@@ -126,7 +131,7 @@ Vector Machines). This allows labellers to observe several potential
 classes, rather than just the single class the algorithm considers to be
 the most likely. If NSOs choose to not review each unique product but
 only a sub-set and accept the ML model\'s recommendation, this can be
-considered [method 4.](method-4-machine-learning-classification-method.qmd)
+considered [method 4](/handbook/classification/method-4-machine-learning-classification-method.qmd).
 
 Note, a potential variant of the machine learning approach to leverage
 most of the process but stop short of training ML models, instead

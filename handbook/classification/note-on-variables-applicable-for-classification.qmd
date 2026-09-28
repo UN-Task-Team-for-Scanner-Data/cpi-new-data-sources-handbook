@@ -1,6 +1,11 @@
 ---
 title: "Note on variables applicable for classification"
-date-modified: "2024-04-28"
+date: "2025-04-28"
+date-modified: "2025-04-28"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 Several variables [obtained during the acquisition process](/handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.qmd) are typically applicable for classification. An important consideration is making sure that the appropriate variables are included when acquisition is being discussed, as it may be challenging to expand the set over time. The below table summarizes the variables commonly found useful, although this table should not mean that all variables are used. Studies should be done to make sure that only useful variables are used in the classification process (for example some variables may not be of much value to a classifier).
