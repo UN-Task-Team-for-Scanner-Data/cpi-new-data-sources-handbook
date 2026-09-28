@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-05-13">
 
-<title>Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics! – Handbook on utilising new data sources in the production of consumer price statistics</title>
+<title>Different approaches to accessing web scraped data – Handbook on utilising new data sources in the production of consumer price statistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,27 +29,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-05c8e062c466870eec3e1bf175a0efc4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-05c8e062c466870eec3e1bf175a0efc4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -252,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Handbook on utilising new data sources in the production of consumer price statistics</span>
     </a>
   </div>
@@ -263,11 +262,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./handbook/index.html"> 
+    <a class="nav-link" href="../../../handbook/index.html"> 
 <span class="menu-text">Handbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./training/index.html"> 
+    <a class="nav-link" href="../../../training/index.html"> 
 <span class="menu-text">Training Materials</span></a>
   </li>  
 </ul>
@@ -290,16 +289,15 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-covered" id="toc-what-is-covered" class="nav-link active" data-scroll-target="#what-is-covered">What is covered?</a></li>
-  <li><a href="#how-to-use-the-handbook" id="toc-how-to-use-the-handbook" class="nav-link" data-scroll-target="#how-to-use-the-handbook">How to use the handbook</a></li>
-  <li><a href="#what-is-the-handbook-based-on" id="toc-what-is-the-handbook-based-on" class="nav-link" data-scroll-target="#what-is-the-handbook-based-on">What is the handbook based on</a></li>
-  <li><a href="#how-to-use-the-handbook-1" id="toc-how-to-use-the-handbook-1" class="nav-link" data-scroll-target="#how-to-use-the-handbook-1">How to use the handbook</a></li>
+  <li><a href="#Differentapproachestoaccessingwebscrapeddata-Initialconsiderationsforsettingawebscrapingproject" id="toc-Differentapproachestoaccessingwebscrapeddata-Initialconsiderationsforsettingawebscrapingproject" class="nav-link active" data-scroll-target="#Differentapproachestoaccessingwebscrapeddata-Initialconsiderationsforsettingawebscrapingproject">Initial considerations for setting a web scraping project</a></li>
+  <li><a href="#Differentapproachestoaccessingwebscrapeddata-Overviewonapproachestobeadopted" id="toc-Differentapproachestoaccessingwebscrapeddata-Overviewonapproachestobeadopted" class="nav-link" data-scroll-target="#Differentapproachestoaccessingwebscrapeddata-Overviewonapproachestobeadopted">Overview on approaches to be adopted</a></li>
+  <li><a href="#Differentapproachestoaccessingwebscrapeddata-References" id="toc-Differentapproachestoaccessingwebscrapeddata-References" class="nav-link" data-scroll-target="#Differentapproachestoaccessingwebscrapeddata-References">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/handbook/selection-and-acquisition/web-scraped/different-approaches-to-accessing-web-scraped-data.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -307,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!</h1>
+<h1 class="title">Different approaches to accessing web scraped data</h1>
 </div>
 
 
@@ -315,17 +313,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">13 May 2024</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Last updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">28 September 2026</p>
+      <p class="date-modified">16 July 2021</p>
     </div>
   </div>
     
@@ -336,40 +328,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Migration in progress">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Migration in progress
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This site is a migration of the UN Task Team <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics">handbook</a> from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.</p>
-</div>
-</div>
-<p>Welcome to the handbook on new data methods for consumer price statistics. This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.</p>
-<p>Developed by the <a href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml">UN Task Team on Scanner Data</a>, it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices.&nbsp;</p>
-<section id="what-is-covered" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-covered">What is covered?</h2>
-<p>The Handbook covers a broad range of data sources - including transaction data such as scanner data, and non-transaction data such as web-scraped data - that differ to traditional collection in how prices are observed, recorded and accessed. It is intended to support both organisations exploring these data sources for the first time, and those seeking to refine or extend existing implementations.</p>
-<p>This Handbook complements Chapter 10 of the <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40stat/documents/publication/wcms_761444.pdf">CPI Manual, Concepts and Methods</a> by providing detailed operational guidance on the use of alternative data sources in CPI production. It does not replace the CPI Manual, which sets out the underlying concepts, principles and governance framework for the use of alternative data sources in CPI compilation.</p>
-<p>This Handbook covers key stages of the CPI production process where new data sources may be introduced, including data acquisition, preparation, classification, index compilation, quality assurance, and dissemination. It brings together conceptual discussion, practical considerations, methodological options, and examples from country practices, with the aim of supporting informed decision-making rather than prescribing a single method or workflow.</p>
+<p>Approaches for setting up a web scraping project<br>
+</p>
+<p><br>
+</p>
+<hr>
+<section id="Differentapproachestoaccessingwebscrapeddata-Initialconsiderationsforsettingawebscrapingproject" class="level1">
+<h1>Initial considerations for setting a web scraping project</h1>
+<p>In the last decade, the interest in the use of the internet as a source for the development and improvement of price statistics by National Statistical Offices (NSOs) has grown substantially. This is conducted by a combination of the rise in the representativity of e-commerce practices by consumers, substantial increase in the number of online retailers, and the possibility of NSOs extracting large amount of valuable information from websites possibly at reduced costs.</p>
+<p>Behind the information that a browser displays for each web page lies a html-like structure that contains the information seen by users. Web scraping consists of building automatic tools that walk through the html and extracts information of interest buried in the html nodes and process them into a convenient structured format.</p>
+<p>Data collection from the internet and its subsequent processing for producing statistics can demand different levels of Information Technology (IT) skills. These range from basic understanding of how an html page is structured, to knowledge of cloud computing and machine learning techniques (more discussions can be found in section 3 of Ref. (1)). This will rely on the amount of information to be extracted from the websites and processing procedures to clean and classify the data for the purposes of the Consumer Price Index (CPI).</p>
+<p>A comprehensive and detailed description of the steps necessary for setting up web scraping for official statistics is presented in a reference framework proposed in the Eurostat "<a href="https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/">Practical guidelines on web scraping for the HICP</a>". This framework relies on three main phases: the site analysis phase, the data analysis and design phase, and the production phase.</p>
+<p>In summary,</p>
+<ul>
+<li>The site analysis relies on the identification and evaluation of the characteristics and data available at retailer’s sites fit for use by CPI purposes, and selection of the appropriate web scraping mechanism to adopt.</li>
+<li>Data analysis and design relate to building the tools to extract web data and analysis of the information retrieved.</li>
+<li>The production phase relates to implementation and maintenance of the scrapers into CPI routines.</li>
+</ul>
+<p>Though data acquisition occurs in different phases, Ref. (1) suggests that it is crucial to decide at the beginning of the project who will be responsible for the scrapers in the long term at the production phase, since this is very demanding in human and financial resources. NSOs have taken a variety of approaches, from working with more centralised IT resources, to set up and maintain the scrapers, to having the web scraping team sit within the Prices production area.</p>
 </section>
-<section id="how-to-use-the-handbook" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-the-handbook">How to use the handbook</h2>
-<p>There is no single “correct” approach to using new data sources in CPI production. The appropriate choices will depend on national circumstances, data availability, institutional arrangements, technical capacity, and user needs. Accordingly, the purpose of this handbook is to present the range of available approaches, highlight their strengths and limitations, and provide guidance to help users assess what is most suitable for their particular context.</p>
-<p>While the primary focus of this Handbook is on consumer price statistics, many of the data sources, processes, and systems discussed may also support other areas of official statistics. Where relevant, considerations for broader statistical use are highlighted to support efficient and sustainable use of alternative data sources across statistical domains.</p>
+<section id="Differentapproachestoaccessingwebscrapeddata-Overviewonapproachestobeadopted" class="level1">
+<h1>Overview on approaches to be adopted</h1>
+<p>NSOs interested in using web data can choose between (i) developing in-house expertise and structure necessary for data extraction and processing; or (ii) contracting third party services. The adoption of the best approach should consider the goals of the NSOs in respect to the use of web scraping for CPI, resources available and the complexity of all the steps involved to set up web scrapers for the compilation of CPIs.</p>
+<p>According to Ref. (1), to develop and maintain scraping by coding internally is usually the ideal option since this process is more flexible and allows to better handle data according to CPI needs. This approach also tends to be cheaper in the long run and the web scraping expertise developed by the internal personnel can be applied to produce official statistics in other areas beyond the CPI (Ref. 3).</p>
+<p>However, due the complexity and costs involved in the development and maintenance of the robots for data acquisition, some NSOs may find more suitable to adopt an alternative approach and contract third party services that provide the desired information (Ref. 4, 5). &nbsp;In this approach usually the NSO specifies the product categories and retailers of interest and the frequency to which data should be collected and sent to the NSO. Important things to include in the contract refers to the possibility of refreshing the sample by the addition of new retailers and basket items across time and to require a good coverage of data.</p>
+<p>By the adoption of third party services, the NSO can also specify that the data is provided after cleaning and already classified according to the CPI needs. This means that according to the services adopted, the demands for internal infrastructure an NSO would have to create for the development, maintenance and processing of web data can be reduced.</p>
+<p>One of the challenges of using web scraped data are that a back series of data are less easily available (unlike scanner data). Some NSOs have contracted third party services in the short-term to ensure data can be collected for analysis and research purposes while the process of building up in-house web scraping capability takes place. Once the in-house team is set up, the third party contract can be terminated.&nbsp;&nbsp;</p>
+<p>In the training course 2 about data acquisition, in&nbsp;<a href="https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.2:Scrapingdatafromtheweb:~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None">module 2.2</a> a general description is given of the main issues to face and the plan to implement to access data via web scraping techniques.</p>
+<p><br>
+</p>
+<hr>
 </section>
-<section id="what-is-the-handbook-based-on" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-the-handbook-based-on">What is the handbook based on</h2>
-<p>This Handbook draws on existing international manuals, methodological papers, and country experiences, while also improving the literature on topics where guidance is currently more limited, such as data acquisition strategies, classification challenges, and the handling of highly dynamic product universes. Given the rapid pace of methodological and technological developments in this field, the handbook is designed as a living document. It will be reviewed and updated over time to reflect new research, emerging best practices, and feedback from users.</p>
-</section>
-<section id="how-to-use-the-handbook-1" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-the-handbook-1">How to use the handbook</h2>
-<p>Users of this Handbook are encouraged&nbsp;to support its ongoing development and improvement. Feedback may include suggestions on topics that could be expanded or added, identification of errors or areas requiring clarification, or proposals to refine existing content in light of new research or country experience. Such feedback will help ensure that this Handbook remains relevant, accurate, and responsive to the evolving needs of the international statistical community. Feedback can be provided through answering the questions on this form:&nbsp;<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=vweIB4LOiEa84A2BFoTcRidRNcIM9HtMhJmbNi1T8MlUNTZXQ0MzUk5RQTNQMlUzWldETDJaR0JSQy4u&amp;r3ba99449c6ab4175bd4fd934b09149a5=https%3A%2F%2Funstats.un.org%2Fwiki%2Fspaces%2FGWGSD%2Fpages%2F240910447%2FHandbook%2Bon%2Butilising%2Bnew%2Bdata%2Bsources%2Bin%2Bthe%2Bproduction%2Bof%2Bconsumer%2Bprice%2Bstatistics">UN Task Team on Scanner Data - e-Handbook Feedback Form</a>.</p>
-<p>This Handbook is publicly available and intended to be used alongside related <a href="./training/index.html">training materials</a> and other supporting resources developed by the UN Task Team on Scanner Data.</p>
+<section id="Differentapproachestoaccessingwebscrapeddata-References" class="level1">
+<h1>References</h1>
+<p>(1) Bentley and Krsinich (2017). Towards a big data CPI for New Zealand. Paper presented at the meeting of the Ottawa Group at Eltville, Germany. <a href="https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/4a256353001af3ed4b2562bb00121564/1ab31c25da944ff5ca25822c00757f87/$FILE/Towards%20a%20big%20data%20CPI%20for%20New%20Zealand%20-Alan%20Bentley,%20Frances%20Krsinich%20-%20Paper.pdf" class="uri">https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/4a256353001af3ed4b2562bb00121564/1ab31c25da944ff5ca25822c00757f87/$FILE/Towards%20a%20big%20data%20CPI%20for%20New%20Zealand%20-Alan%20Bentley,%20Frances%20Krsinich%20-%20Paper.pdf</a></p>
+<p>(2) Eurostat, (2020), Practical guidelines on web scraping for the HICP. <a href="https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf" class="uri">https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf</a></p>
+<p>(3) ONS, (2019). Using alternative data sources in consumer price indices: May 2019. <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/articles/usingalternativedatasourcesinconsumerpriceindices/may2019" class="uri">https://www.ons.gov.uk/economy/inflationandpriceindices/articles/usingalternativedatasourcesinconsumerpriceindices/may2019</a></p>
+<p>(4) Ten Bosch O, Windmeijer D, Van Delden A, and Van Den Heuvel G (2018). Web scraping meets survey design: combining forces. Paper presented at the BIGSURV18 CONFERENCE, BARCELONA, SPAIN. <a href="https://www.bigsurv.org/bigsurv18/uploads/73/61/20180820_BigSurv_WebscrapingMeetsSurveyDesign.pdf" class="uri">https://www.bigsurv.org/bigsurv18/uploads/73/61/20180820_BigSurv_WebscrapingMeetsSurveyDesign.pdf</a></p>
+<p>(5) Ten Bosch and Windmeijer (2016). On the use of internet data for the Dutch CPI. Paper presented at the UNECE Meeting of the Group of experts on Price Indices. <a href="https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2016/Session_2_Netherlands_On_the_use_of_internet_data_for_Dutch_CPI.pdf" class="uri">https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2016/Session_2_Netherlands_On_the_use_of_internet_data_for_Dutch_CPI.pdf</a></p>
 
 
 </section>
@@ -793,4 +789,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/handbook/selection-and-acquisition/web-scraped/different-approaches-to-accessing-web-scraped-data.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

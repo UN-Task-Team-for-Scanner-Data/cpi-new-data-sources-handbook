@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-05-13">
 
-<title>Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics! – Handbook on utilising new data sources in the production of consumer price statistics</title>
+<title>Collection of data via APIs – Handbook on utilising new data sources in the production of consumer price statistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -30,27 +29,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-05c8e062c466870eec3e1bf175a0efc4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-05c8e062c466870eec3e1bf175a0efc4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -252,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Handbook on utilising new data sources in the production of consumer price statistics</span>
     </a>
   </div>
@@ -263,11 +262,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./handbook/index.html"> 
+    <a class="nav-link" href="../../handbook/index.html"> 
 <span class="menu-text">Handbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./training/index.html"> 
+    <a class="nav-link" href="../../training/index.html"> 
 <span class="menu-text">Training Materials</span></a>
   </li>  
 </ul>
@@ -290,16 +289,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-covered" id="toc-what-is-covered" class="nav-link active" data-scroll-target="#what-is-covered">What is covered?</a></li>
-  <li><a href="#how-to-use-the-handbook" id="toc-how-to-use-the-handbook" class="nav-link" data-scroll-target="#how-to-use-the-handbook">How to use the handbook</a></li>
-  <li><a href="#what-is-the-handbook-based-on" id="toc-what-is-the-handbook-based-on" class="nav-link" data-scroll-target="#what-is-the-handbook-based-on">What is the handbook based on</a></li>
-  <li><a href="#how-to-use-the-handbook-1" id="toc-how-to-use-the-handbook-1" class="nav-link" data-scroll-target="#how-to-use-the-handbook-1">How to use the handbook</a></li>
+  <li><a href="#CollectionofdataviaAPIs-APIdatacollection" id="toc-CollectionofdataviaAPIs-APIdatacollection" class="nav-link active" data-scroll-target="#CollectionofdataviaAPIs-APIdatacollection">API data collection</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/handbook/selection-and-acquisition/collection-of-data-via-apis.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -307,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!</h1>
+<h1 class="title">Collection of data via APIs</h1>
 </div>
 
 
@@ -315,17 +311,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">13 May 2024</p>
-    </div>
-  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Last updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">28 September 2026</p>
+      <p class="date-modified">4 May 2021</p>
     </div>
   </div>
     
@@ -336,40 +326,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Migration in progress">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Migration in progress
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This site is a migration of the UN Task Team <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics">handbook</a> from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.</p>
-</div>
-</div>
-<p>Welcome to the handbook on new data methods for consumer price statistics. This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.</p>
-<p>Developed by the <a href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml">UN Task Team on Scanner Data</a>, it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices.&nbsp;</p>
-<section id="what-is-covered" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-covered">What is covered?</h2>
-<p>The Handbook covers a broad range of data sources - including transaction data such as scanner data, and non-transaction data such as web-scraped data - that differ to traditional collection in how prices are observed, recorded and accessed. It is intended to support both organisations exploring these data sources for the first time, and those seeking to refine or extend existing implementations.</p>
-<p>This Handbook complements Chapter 10 of the <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40stat/documents/publication/wcms_761444.pdf">CPI Manual, Concepts and Methods</a> by providing detailed operational guidance on the use of alternative data sources in CPI production. It does not replace the CPI Manual, which sets out the underlying concepts, principles and governance framework for the use of alternative data sources in CPI compilation.</p>
-<p>This Handbook covers key stages of the CPI production process where new data sources may be introduced, including data acquisition, preparation, classification, index compilation, quality assurance, and dissemination. It brings together conceptual discussion, practical considerations, methodological options, and examples from country practices, with the aim of supporting informed decision-making rather than prescribing a single method or workflow.</p>
-</section>
-<section id="how-to-use-the-handbook" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-the-handbook">How to use the handbook</h2>
-<p>There is no single “correct” approach to using new data sources in CPI production. The appropriate choices will depend on national circumstances, data availability, institutional arrangements, technical capacity, and user needs. Accordingly, the purpose of this handbook is to present the range of available approaches, highlight their strengths and limitations, and provide guidance to help users assess what is most suitable for their particular context.</p>
-<p>While the primary focus of this Handbook is on consumer price statistics, many of the data sources, processes, and systems discussed may also support other areas of official statistics. Where relevant, considerations for broader statistical use are highlighted to support efficient and sustainable use of alternative data sources across statistical domains.</p>
-</section>
-<section id="what-is-the-handbook-based-on" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-the-handbook-based-on">What is the handbook based on</h2>
-<p>This Handbook draws on existing international manuals, methodological papers, and country experiences, while also improving the literature on topics where guidance is currently more limited, such as data acquisition strategies, classification challenges, and the handling of highly dynamic product universes. Given the rapid pace of methodological and technological developments in this field, the handbook is designed as a living document. It will be reviewed and updated over time to reflect new research, emerging best practices, and feedback from users.</p>
-</section>
-<section id="how-to-use-the-handbook-1" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-the-handbook-1">How to use the handbook</h2>
-<p>Users of this Handbook are encouraged&nbsp;to support its ongoing development and improvement. Feedback may include suggestions on topics that could be expanded or added, identification of errors or areas requiring clarification, or proposals to refine existing content in light of new research or country experience. Such feedback will help ensure that this Handbook remains relevant, accurate, and responsive to the evolving needs of the international statistical community. Feedback can be provided through answering the questions on this form:&nbsp;<a href="https://forms.office.com/Pages/ResponsePage.aspx?id=vweIB4LOiEa84A2BFoTcRidRNcIM9HtMhJmbNi1T8MlUNTZXQ0MzUk5RQTNQMlUzWldETDJaR0JSQy4u&amp;r3ba99449c6ab4175bd4fd934b09149a5=https%3A%2F%2Funstats.un.org%2Fwiki%2Fspaces%2FGWGSD%2Fpages%2F240910447%2FHandbook%2Bon%2Butilising%2Bnew%2Bdata%2Bsources%2Bin%2Bthe%2Bproduction%2Bof%2Bconsumer%2Bprice%2Bstatistics">UN Task Team on Scanner Data - e-Handbook Feedback Form</a>.</p>
-<p>This Handbook is publicly available and intended to be used alongside related <a href="./training/index.html">training materials</a> and other supporting resources developed by the UN Task Team on Scanner Data.</p>
+<p>An alternative to automatically scraping data from web pages is to extract data directly from application programming interface (APIs)<br>
+</p>
+<hr>
+<section id="CollectionofdataviaAPIs-APIdatacollection" class="level1">
+<h1>API data collection</h1>
+<p>An alternative to automatically scraping data from web pages is to extract data directly from application programming interface (APIs). The <a href="https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/">Eurostat’s practical guidelines on web scraping for the HICP</a> (Harmonised Index of Consumer Prices) recommend checking for available APIs before setting up solutions for web scraping. The purpose of an API is to provide structured and controlled access to specific data or services. API is a set of procedures and communication protocols that provide access to data of an application, operating system or other services.</p>
+<p>Compared to scraping web pages, extracting data from databases often means greater stability and less maintenance work. While web pages suddenly may change their layout and hence require corrections in the scraping code, the API solutions are often more stable and changes in the API structure are likely to be announced in advance. Extracting data from API can be an effective way to get large amount of data with less time spent on data collection. Some APIs are free to access and available for everyone, but in most cases access to API will require formal contracts with data owners and a pay-per-use approach.</p>
+<p>An example of how APIs can be used in practice are for the collection of airfare prices (see section on <a href="../../handbook/selection-and-acquisition/selection-of-categories.html">Selection of categories</a>). Some National Statistical Offices (NSOs) use an API in the data collection of airline tickets where requests with parameters on representative flights are sent to the API and the API returns information on prices and additional information related to the tickets (for example, flight number, departure and arrival time, booking category, etc.). The Eurostat practical guidelines suggest that the booking system Amadeus can serve as a good starting point to master using APIs.</p>
+<p>Making use of available air travel APIs has the advantage that NSOs do not have to set up airline-specific API solutions, but only need to deal with one single data provider. On the other hand, it is important to check with data provider the actual market coverage and what information is provided in the API. It can also be advisable to check prices collected from the API against prices on the airline companies’ own web pages and to look closer into any discrepancies.</p>
+<p>Measuring airfares presents a challenge as they are subject to a dynamic pricing structure, dependent on how far in advance they are booked and on availability. Furthermore, flights shall be included in the Consumer Price Index (CPI) when actually consumed, not purchased. As airline tickets often show strong price fluctuations it is important to separate between time of ordering and time of travelling. Making a schedule for the price collection of flights rests on a series of assumptions that must be adapted to the specific situation in each country. The prices should be recorded sufficiently in advance of departure to ensure they are representative of consumers’ expenditure and behaviour. Input from professionals from within the airline industry could be very useful when setting up such a schedule.</p>
+<p>The data collection may be performed by using Python programming language and by making use of software packages that can be downloaded and imported, for more information see example in the annex II of Eurostat practical guidelines.</p>
+<p>The collected API data can be monitored and checked for abnormalities in the same way as data collected through web scraping, see section on <a href="monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd">monitoring, validation and plausibility checks for web scraped data</a>.&nbsp;</p>
+<p>In the training course 2 about data acquisition, in&nbsp;<a href="https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.3:ScrapingthedataviaAPIs:~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None">module 2.3&nbsp;</a><a href="https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.1:AcquiringscannerdataforCPI(inprogress):~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None">&nbsp;</a>a general description is given of the main issues to face and the plan to implement to access data via API.</p>
 
 
 </section>
@@ -793,4 +762,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/handbook/selection-and-acquisition/collection-of-data-via-apis.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
