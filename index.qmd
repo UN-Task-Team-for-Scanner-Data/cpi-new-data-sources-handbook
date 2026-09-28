@@ -1,6 +1,7 @@
 ---
 title: "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!"
-date: last-updated
+date: 2024-05-13
+date-modified: last-modified
 format:
   html:
     toc: true
