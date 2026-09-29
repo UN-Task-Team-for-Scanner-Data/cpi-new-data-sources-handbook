@@ -42,6 +42,12 @@ website:
           - text: "CPI Manual"
             href: https://www.imf.org/en/data/statistics/cpi-manual
             icon: journal-check
+          - text: "Ottawa Group website"
+            href: https://stats.unece.org/ottawagroup/
+            icon: people
+          - text: "CPI Expert Group website"
+            href: https://unece.org/expert-group-consumer-price-indices
+            icon: people
 
     left:
       - href: handbook/index.qmd
