@@ -3,13 +3,8 @@ title: "Multilateral price index methods"
 date-modified: "2021-10-05"
 ---
 
-This section presents the basic, commonly known formulas of multilateral
-price indices.Like the [Bilateral price index
-methods](bilateral-price-index-methods.qmd) section, it does
-not include a broader discussion of the legitimacy of using individual
-indices. For more information on choosing an index method, see
-the [Choosing an index
-method](https://unstats.un.org/wiki/display/GWGSD/Choosing+an+index+method) section.
+This section presents the basic, commonly known formulas of multilateral price indices.Like the [Bilateral price index methods](bilateral-price-index-methods.qmd) section, it does not include a broader discussion of the legitimacy of using individual indices. For more information on choosing an index method, see
+the [Choosing an index method](choosing-an-index-method.qmd) section.
 
 ------------------------------------------------------------------------
 
