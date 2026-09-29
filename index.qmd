@@ -6,6 +6,15 @@ format:
   html:
     toc: true
     toc-expand: 2
+
+citation:
+  type: manuscript
+  title: "Handbook on new data sources in price statistics" 
+  issued: "2026-05-14"        # Standard CSL variable for publication/presentation date
+  url: https://www.xxx.com
+  doi: 10.1234/example        #TO DO
+  publisher: "UN Task Team on Scanner data"
+  abstract: "TO DO"
 ---
 
 ::: {.callout-note title="Migration in progress"}

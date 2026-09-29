@@ -1,0 +1,9 @@
+---
+title: "Style guide"
+date: 2026-09-29
+date-modified: last-modified
+format:
+  html:
+    toc: true
+    toc-expand: 2
+---

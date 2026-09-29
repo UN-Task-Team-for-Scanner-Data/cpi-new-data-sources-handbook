@@ -1,6 +1,11 @@
 ---
 title: "Collection of data via APIs"
+date: "2021-05-04"
 date-modified: "2021-05-04"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 An alternative to automatically scraping data from web pages is to
@@ -73,7 +78,4 @@ the same way as data collected through web scraping, see section on
 [monitoring, validation and plausibility checks for web scraped
 data](monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd). 
 
-In the training course 2 about data acquisition, in [module
-2.3 ](https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.3:ScrapingthedataviaAPIs:~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None)[ ](https://unstats.un.org/wiki/display/GWGSD/Training+material#Trainingmaterial-Module2.1:AcquiringscannerdataforCPI(inprogress):~:text=with%20voice%20over-,2.%20Data%20acquisition,-Pre%2Drequisite%3A%20None)a
-general description is given of the main issues to face and the plan to
-implement to access data via API.
+In the training course 2 about data acquisition, in [module 2.3](/training/index.qmd) a general description is given of the main issues to face and the plan to implement to access data via API.
