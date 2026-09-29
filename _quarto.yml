@@ -7,6 +7,7 @@ website:
   repo-url: https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook
   favicon: handbook\images\logo.png
   repo-branch: main
+  draft-mode: visibile
   repo-actions: [source, issue]
   bread-crumbs: true
   page-navigation: true
@@ -30,6 +31,24 @@ website:
           - text: "Style Guide"
             href: about/style-guide.qmd
             icon: text-left
+      - text: "Related materials"
+        icon: lightbulb
+        menu:
+          - text: "Prices Reproducibility Guidance"
+            href: https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/
+            icon: flask
+          - text: "Open price statistics datasets"
+            href: https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/
+            icon: database-check
+          - text: "CPI Manual"
+            href: https://www.imf.org/en/data/statistics/cpi-manual
+            icon: journal-check
+          - text: "Ottawa Group website"
+            href: https://stats.unece.org/ottawagroup/
+            icon: people
+          - text: "CPI Expert Group website"
+            href: https://unece.org/expert-group-consumer-price-indices
+            icon: people
 
     left:
       - href: handbook/index.qmd

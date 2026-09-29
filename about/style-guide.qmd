@@ -1,9 +1,64 @@
 ---
 title: "Style guide"
+description: "Overview of the principles and specific steps we use to make our material professional and consistent"
 date: 2026-09-29
 date-modified: last-modified
-format:
-  html:
-    toc: true
-    toc-expand: 2
+draft: true
 ---
+
+To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors.
+
+# Principles
+
+:::{.callout-note}
+## TBC
+
+This should be flushed out. Possible principles include
+-   Clarity 
+-   Consistency
+-   Neutrality
+-   ... 
+
+:::
+
+# Specifics
+
+## Metadata
+
+Common metadata at the top of each `.qmd` file is as follows:
+
+```
+---
+title: "Style guide"
+description: "Overview of the principles and specific steps we use to make our material professional and consistent"
+date: 2026-09-29
+date-modified: last-modified
+draft: true
+---
+```
+
+-   `title` - states the (short) name of the page
+
+## Page overview
+
+Each page should start with a sentence or two at the top introducing the metarial, then headings per topic, and sub-headings (h2) for sub-parts
+
+## Formatting
+
+Heading, sub-heading, etc
+
+## Tables
+
+TBC
+
+## Figures
+
+TBC
+
+## References
+
+TBC
+
+# Guidance for proof readers
+
+TBC
