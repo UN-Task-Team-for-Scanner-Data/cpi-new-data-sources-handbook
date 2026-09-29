@@ -30,6 +30,18 @@ website:
           - text: "Style Guide"
             href: about/style-guide.qmd
             icon: text-left
+      - text: "Related materials"
+        icon: lightbulb
+        menu:
+          - text: "Prices Reproducibility Guidance"
+            href: https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/
+            icon: flask
+          - text: "Open price statistics datasets"
+            href: https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/
+            icon: database-check
+          - text: "CPI Manual"
+            href: https://www.imf.org/en/data/statistics/cpi-manual
+            icon: journal-check
 
     left:
       - href: handbook/index.qmd
