@@ -1,0 +1,24 @@
+---
+title: "How to contribute"
+date: 2026-09-29
+date-modified: last-modified
+format:
+  html:
+    toc: true
+    toc-expand: 2
+---
+
+Welcome! Thank you for your interest to contribute to this handbook. 
+
+# Overview 
+
+
+
+
+# Detail on how to contribute
+
+## Option 1: Submit issue
+
+## Option 2: Fork and create a PR
+
+## Option 3: ... 
