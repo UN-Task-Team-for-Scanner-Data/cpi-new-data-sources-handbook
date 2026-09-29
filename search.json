@@ -2110,6 +2110,20 @@
     "text": "Welcome! Thank you for your interest to contribute to this handbook."
   },
   {
+    "objectID": "about/contributing.html#semantic-versioning",
+    "href": "about/contributing.html#semantic-versioning",
+    "title": "How to contribute",
+    "section": "Semantic versioning",
+    "text": "Semantic versioning\nWe use semantic versioning to guide us in how to make changes to our material. Specifically:\n\n\n\n\n\n\n\n\n\nLevel​\nExamples​\nDefault route​\nReview expectation​\n\n\nPATCH​\nSpelling, links, formatting, bibliography and other non-substantive corrections​\nCommunity issue or pull request using a GitHub template​\nTechnical Secretariat check and merge once automated and editorial checks pass​\n\n\nMINOR​\nCase study, expanded example, factual clarification, evidence or code revision that does not change overall scope​\nCommunity or Task Team pull request​\nRelevant peer review and Steering Group approval​\n\n\nMAJOR​\nNew chapter, substantial method, new data source, major restructuring or new training module​\nTask Team workstream / funded technical lead or consultant role​\nDocumented peer review and Steering Group-level sign-off​"
+  },
+  {
+    "objectID": "about/contributing.html#gitflow-process",
+    "href": "about/contributing.html#gitflow-process",
+    "title": "How to contribute",
+    "section": "Gitflow process",
+    "text": "Gitflow process\nTO DO"
+  },
+  {
     "objectID": "about/contributing.html#option-1-submit-issue",
     "href": "about/contributing.html#option-1-submit-issue",
     "title": "How to contribute",
