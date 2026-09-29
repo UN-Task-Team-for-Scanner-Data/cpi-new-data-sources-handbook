@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-05-13">
 
 <title>Data selection and acquisition – Handbook on utilising new data sources in the production of consumer price statistics</title>
 <style>
@@ -36,6 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../handbook/images/logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -251,8 +253,12 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../handbook/images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../../handbook/images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Handbook on utilising new data sources in the production of consumer price statistics</span>
+    <span class="navbar-title">New data sources in consumer price statistics</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -262,20 +268,41 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../handbook/index.html"> 
+    <a class="nav-link" href="../../handbook/index.html"> <i class="bi bi-journal-bookmark" role="img">
+</i> 
 <span class="menu-text">Handbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../training/index.html"> 
+    <a class="nav-link" href="../../training/index.html"> <i class="bi bi-play-btn-fill" role="img">
+</i> 
 <span class="menu-text">Training Materials</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml"> <i class="bi bi-person-raised-hand" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about-us" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-person-raised-hand" role="img">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text">About us</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about-us">    
+        <li>
+    <a class="dropdown-item" href="../../about/index.html"><i class="bi bi-people-fill" role="img">
+</i> 
+ <span class="dropdown-text">About</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../about/contributing.html"><i class="bi bi-pencil-square" role="img">
+</i> 
+ <span class="dropdown-text">How to contribute</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../about/style-guide.html"><i class="bi bi-text-left" role="img">
+</i> 
+ <span class="dropdown-text">Style Guide</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -305,11 +332,17 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13 May 2024</p>
+    </div>
+  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Last updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">1 March 2024</p>
+      <p class="date-modified">13 May 2026</p>
     </div>
   </div>
     
@@ -323,13 +356,13 @@ ul.task-list li input[type="checkbox"] {
 <p>This section discusses how to select and acquire these new data sources.&nbsp;The goal of the section is to provide readers useful information on the complexities involved in obtaining these data as well as additional information such as the description of the data requirements that should be considered for the development of price statistics and the steps involved in the monitoring and validation of the data sets received. As the marked differences in the nature of these data sources are also manifested in the procedures for data acquisition, a separate discussion is provided to deal with the peculiarities of each case.&nbsp;</p>
 <p>Section contents:</p>
 <ul>
-<li><a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910456/Selection+of+categories">Selection of categories</a></li>
-<li><a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910457/Selection+of+retailers+for+alternative+data+sources">Selection of retailers for alternative data sources</a></li>
-<li><a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910458/Scanner+data">Scanner data</a></li>
-<li><a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910464/Web+scraping">Web scraping</a></li>
-<li><a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910470/Example+file+structures+for+web+scraped+and+scanner+data">Example file structures for web scraped and scanner data</a></li>
-<li><a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910471/Collection+of+data+via+APIs">Collection of data via APIs</a></li>
-<li><a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910472/Dealing+with+unexpected+data+gaps">Dealing with unexpected data gaps</a></li>
+<li><a href="../../handbook/selection-and-acquisition/selection-of-categories.html">Selection of categories</a></li>
+<li><a href="../../handbook/selection-and-acquisition/selection-of-retailers-for-alternative-data-sources.html">Selection of retailers for alternative data sources</a></li>
+<li><a href="../../handbook/selection-and-acquisition/scanner/index.html">Scanner data</a></li>
+<li><a href="../../handbook/selection-and-acquisition/web-scraped/index.html">Web scraping</a></li>
+<li><a href="../../handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.html">Example file structures for web scraped and scanner data</a></li>
+<li><a href="../../handbook/selection-and-acquisition/collection-of-data-via-apis.html">Collection of data via APIs</a></li>
+<li><a href="../../handbook/selection-and-acquisition/dealing-with-unexpected-data-gaps.html">Dealing with unexpected data gaps</a></li>
 </ul>
 
 

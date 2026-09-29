@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../handbook/images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -251,8 +252,12 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../handbook/images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../handbook/images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Handbook on utilising new data sources in the production of consumer price statistics</span>
+    <span class="navbar-title">New data sources in consumer price statistics</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -262,20 +267,41 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../handbook/index.html"> 
+    <a class="nav-link" href="../handbook/index.html"> <i class="bi bi-journal-bookmark" role="img">
+</i> 
 <span class="menu-text">Handbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../training/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../training/index.html" aria-current="page"> <i class="bi bi-play-btn-fill" role="img">
+</i> 
 <span class="menu-text">Training Materials</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml"> <i class="bi bi-person-raised-hand" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about-us" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-person-raised-hand" role="img">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text">About us</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about-us">    
+        <li>
+    <a class="dropdown-item" href="../about/index.html"><i class="bi bi-people-fill" role="img">
+</i> 
+ <span class="dropdown-text">About</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../about/contributing.html"><i class="bi bi-pencil-square" role="img">
+</i> 
+ <span class="dropdown-text">How to contribute</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../about/style-guide.html"><i class="bi bi-text-left" role="img">
+</i> 
+ <span class="dropdown-text">Style Guide</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -293,15 +319,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#Trainingmaterial-Introduction" id="toc-Trainingmaterial-Introduction" class="nav-link active" data-scroll-target="#Trainingmaterial-Introduction"><strong>Introduction</strong></a>
+  <li><a href="#Trainingmaterial-Introduction" id="toc-Trainingmaterial-Introduction" class="nav-link active" data-scroll-target="#Trainingmaterial-Introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview" id="toc-Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview" class="nav-link" data-scroll-target="#Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview"><strong>1. Alternative Data Sources (ADS) to compile CPI: an overview</strong></a></li>
-  <li><a href="#Trainingmaterial-2Dataacquisition" id="toc-Trainingmaterial-2Dataacquisition" class="nav-link" data-scroll-target="#Trainingmaterial-2Dataacquisition"><strong>2. Data acquisition</strong></a></li>
-  <li><a href="#Trainingmaterial-3Preparationofdata" id="toc-Trainingmaterial-3Preparationofdata" class="nav-link" data-scroll-target="#Trainingmaterial-3Preparationofdata"><strong>3. Preparation of data</strong></a></li>
-  <li><a href="#Trainingmaterial-4Classification" id="toc-Trainingmaterial-4Classification" class="nav-link" data-scroll-target="#Trainingmaterial-4Classification"><strong>4. Classification</strong></a></li>
-  <li><a href="#Trainingmaterial-5Datafilteringandmissingprices" id="toc-Trainingmaterial-5Datafilteringandmissingprices" class="nav-link" data-scroll-target="#Trainingmaterial-5Datafilteringandmissingprices"><strong>5. Data filtering and missing prices</strong></a></li>
-  <li><a href="#Trainingmaterial-6Priceindexmethods" id="toc-Trainingmaterial-6Priceindexmethods" class="nav-link" data-scroll-target="#Trainingmaterial-6Priceindexmethods"><strong>6. Price index methods</strong></a></li>
-  <li><a href="#Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem" id="toc-Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem" class="nav-link" data-scroll-target="#Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem"><strong>7. Integration of Alternative data sources into the production system&nbsp;</strong></a></li>
+  <li><a href="#Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview" id="toc-Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview" class="nav-link" data-scroll-target="#Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview">1. Alternative Data Sources (ADS) to compile CPI: an overview</a></li>
+  <li><a href="#Trainingmaterial-2Dataacquisition" id="toc-Trainingmaterial-2Dataacquisition" class="nav-link" data-scroll-target="#Trainingmaterial-2Dataacquisition">2. Data acquisition</a></li>
+  <li><a href="#Trainingmaterial-3Preparationofdata" id="toc-Trainingmaterial-3Preparationofdata" class="nav-link" data-scroll-target="#Trainingmaterial-3Preparationofdata">3. Preparation of data</a></li>
+  <li><a href="#Trainingmaterial-4Classification" id="toc-Trainingmaterial-4Classification" class="nav-link" data-scroll-target="#Trainingmaterial-4Classification">4. Classification</a></li>
+  <li><a href="#Trainingmaterial-5Datafilteringandmissingprices" id="toc-Trainingmaterial-5Datafilteringandmissingprices" class="nav-link" data-scroll-target="#Trainingmaterial-5Datafilteringandmissingprices">5. Data filtering and missing prices</a></li>
+  <li><a href="#Trainingmaterial-6Priceindexmethods" id="toc-Trainingmaterial-6Priceindexmethods" class="nav-link" data-scroll-target="#Trainingmaterial-6Priceindexmethods">6. Price index methods</a></li>
+  <li><a href="#Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem" id="toc-Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem" class="nav-link" data-scroll-target="#Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem">7. Integration of Alternative data sources into the production system</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/training/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -339,14 +365,14 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <hr>
 <section id="Trainingmaterial-Introduction" class="level1" style="text-align: left;">
-<h1 style="text-align: left;"><strong>Introduction</strong></h1>
+<h1 style="text-align: left;">Introduction</h1>
 <p>Each e-learning course and its modules are self-paced and have been developed by the Task Team on Scanner Data of the UN Committee of Experts on Big Data and Data Science for Official Statistics. Training will be published on the following website:&nbsp;<a href="https://learning.officialstatistics.org/course/index.php?categoryid=15" class="uri">https://learning.officialstatistics.org/course/index.php?categoryid=15</a>.&nbsp;</p>
 <p>You will need to create an account on the UN learning platform to log in but all quick and easy to do and once on you can click through the content.</p>
 <p>Each module has different durations and can be attended independently of each other. At the end of each module you must complete the Quiz section with a passing grade, as well as the&nbsp;feedback survey, to receive a course certificate.</p>
 <p><br>
 </p>
 <section id="Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview" class="level2">
-<h2 class="anchored" data-anchor-id="Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview"><strong>1. Alternative Data Sources (ADS) to compile CPI: an overview</strong></h2>
+<h2 class="anchored" data-anchor-id="Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview">1. Alternative Data Sources (ADS) to compile CPI: an overview</h2>
 <p><strong>Status: published - <a href="https://learning.officialstatistics.org/course/view.php?id=123" class="uri">https://learning.officialstatistics.org/course/view.php?id=123</a></strong></p>
 <p><strong>Pre-requisite: none</strong></p>
 <p><strong>Level: Foundation</strong></p>
@@ -367,7 +393,7 @@ ul.task-list li input[type="checkbox"] {
 </p>
 </section>
 <section id="Trainingmaterial-2Dataacquisition" class="level2" style="text-align: left;">
-<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-2Dataacquisition"><strong>2. Data acquisition</strong></h2>
+<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-2Dataacquisition">2. Data acquisition</h2>
 <p><strong>Status: published - <a href="https://learning.officialstatistics.org/enrol/index.php?id=124" class="uri">https://learning.officialstatistics.org/enrol/index.php?id=124</a></strong></p>
 <p><strong>Pre-requisite: None</strong></p>
 <p><strong>Level: Foundation</strong></p>
@@ -388,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
 </p>
 </section>
 <section id="Trainingmaterial-3Preparationofdata" class="level2" style="text-align: left;">
-<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-3Preparationofdata"><strong>3. Preparation of data</strong></h2>
+<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-3Preparationofdata">3. Preparation of data</h2>
 <p><strong>Status: forthcoming</strong></p>
 <p><strong>Pre-requisite: courses 1, 2</strong></p>
 <p><strong>Level: Intermediate</strong></p>
@@ -420,7 +446,7 @@ ul.task-list li input[type="checkbox"] {
 </p>
 </section>
 <section id="Trainingmaterial-4Classification" class="level2" style="text-align: left;">
-<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-4Classification"><strong>4. Classification</strong></h2>
+<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-4Classification">4. Classification</h2>
 <p><strong>Status: forthcoming</strong></p>
 <p><strong>Pre-requisite: courses 2, 3</strong></p>
 <p><strong>Level: Expert/Advanced Level</strong></p>
@@ -446,7 +472,7 @@ ul.task-list li input[type="checkbox"] {
 </p>
 </section>
 <section id="Trainingmaterial-5Datafilteringandmissingprices" class="level2" style="text-align: left;">
-<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-5Datafilteringandmissingprices"><strong>5. Data filtering and missing prices</strong></h2>
+<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-5Datafilteringandmissingprices">5. Data filtering and missing prices</h2>
 <p><strong>Status: forthcoming</strong></p>
 <p><strong>Pre-requisite: course 2, 3</strong></p>
 <p><strong>Level: Expert/Advanced Level</strong></p>
@@ -472,7 +498,7 @@ ul.task-list li input[type="checkbox"] {
 </p>
 </section>
 <section id="Trainingmaterial-6Priceindexmethods" class="level2" style="text-align: left;">
-<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-6Priceindexmethods"><strong>6. Price index methods</strong></h2>
+<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-6Priceindexmethods">6. Price index methods</h2>
 <p><strong>Status: forthcoming</strong></p>
 <p><strong>Pre-requisite: 2, 3, 4</strong></p>
 <p><strong>Level: Expert/Advanced Level</strong></p>
@@ -503,7 +529,7 @@ ul.task-list li input[type="checkbox"] {
 </p>
 </section>
 <section id="Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem" class="level2" style="text-align: left;">
-<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem"><strong>7. Integration of Alternative data sources into the production system&nbsp;</strong></h2>
+<h2 style="text-align: left;" class="anchored" data-anchor-id="Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem">7. Integration of Alternative data sources into the production system</h2>
 <p><strong>Status: forthcoming</strong></p>
 <p><strong>Pre-requisite: course 1, 3, 4, 5, 6</strong></p>
 <p><strong>Level: Expert/Advanced Level</strong></p>
