@@ -4,7 +4,49 @@
     "href": "about/style-guide.html",
     "title": "Style guide",
     "section": "",
-    "text": "Back to top"
+    "text": "To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors."
+  },
+  {
+    "objectID": "about/style-guide.html#metadata",
+    "href": "about/style-guide.html#metadata",
+    "title": "Style guide",
+    "section": "Metadata",
+    "text": "Metadata\nCommon metadata at the top of each .qmd file is as follows:\n---\ntitle: \"Style guide\"\ndescription: \"Overview of the principles and specific steps we use to make our material professional and consistent\"\ndate: 2026-09-29\ndate-modified: last-modified\ndraft: true\n---\n\ntitle - states the (short) name of the page"
+  },
+  {
+    "objectID": "about/style-guide.html#page-overview",
+    "href": "about/style-guide.html#page-overview",
+    "title": "Style guide",
+    "section": "Page overview",
+    "text": "Page overview\nEach page should start with a sentence or two at the top introducing the metarial, then headings per topic, and sub-headings (h2) for sub-parts"
+  },
+  {
+    "objectID": "about/style-guide.html#formatting",
+    "href": "about/style-guide.html#formatting",
+    "title": "Style guide",
+    "section": "Formatting",
+    "text": "Formatting\nHeading, sub-heading, etc"
+  },
+  {
+    "objectID": "about/style-guide.html#tables",
+    "href": "about/style-guide.html#tables",
+    "title": "Style guide",
+    "section": "Tables",
+    "text": "Tables\nTBC"
+  },
+  {
+    "objectID": "about/style-guide.html#figures",
+    "href": "about/style-guide.html#figures",
+    "title": "Style guide",
+    "section": "Figures",
+    "text": "Figures\nTBC"
+  },
+  {
+    "objectID": "about/style-guide.html#references",
+    "href": "about/style-guide.html#references",
+    "title": "Style guide",
+    "section": "References",
+    "text": "References\nTBC"
   },
   {
     "objectID": "about/index.html",
