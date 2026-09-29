@@ -8,7 +8,7 @@ links to available courses.\
 
 ------------------------------------------------------------------------
 
-# **Introduction** {#Trainingmaterial-Introduction style="text-align: left;"}
+# Introduction {#Trainingmaterial-Introduction style="text-align: left;"}
 
 Each e-learning course and its modules are self-paced and have been
 developed by the Task Team on Scanner Data of the UN Committee of
@@ -27,7 +27,7 @@ course certificate.
 
 \
 
-## **1. Alternative Data Sources (ADS) to compile CPI: an overview** {#Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview}
+## 1. Alternative Data Sources (ADS) to compile CPI: an overview {#Trainingmaterial-1AlternativeDataSourcesADStocompileCPIanoverview}
 
 **Status: published -
 <https://learning.officialstatistics.org/course/view.php?id=123>**
@@ -64,7 +64,7 @@ It is broken down by six modules:
 
 \
 
-## **2. Data acquisition** {#Trainingmaterial-2Dataacquisition style="text-align: left;"}
+## 2. Data acquisition {#Trainingmaterial-2Dataacquisition style="text-align: left;"}
 
 **Status: published -
 <https://learning.officialstatistics.org/enrol/index.php?id=124>**
@@ -97,7 +97,7 @@ It is broken down by six modules:
 
 \
 
-## **3. Preparation of data** {#Trainingmaterial-3Preparationofdata style="text-align: left;"}
+## 3. Preparation of data {#Trainingmaterial-3Preparationofdata style="text-align: left;"}
 
 **Status: forthcoming**
 
@@ -145,7 +145,7 @@ The **second** **section** is broken down by three modules:
 
 \
 
-## **4. Classification** {#Trainingmaterial-4Classification style="text-align: left;"}
+## 4. Classification {#Trainingmaterial-4Classification style="text-align: left;"}
 
 **Status: forthcoming**
 
@@ -195,7 +195,7 @@ The **second** **section** is broken down by two modules:
 
 \
 
-## **5. Data filtering and missing prices** {#Trainingmaterial-5Datafilteringandmissingprices style="text-align: left;"}
+## 5. Data filtering and missing prices {#Trainingmaterial-5Datafilteringandmissingprices style="text-align: left;"}
 
 **Status: forthcoming**
 
@@ -237,7 +237,7 @@ The **second section** is broken down by two modules:
 
 \
 
-## **6. Price index methods** {#Trainingmaterial-6Priceindexmethods style="text-align: left;"}
+## 6. Price index methods {#Trainingmaterial-6Priceindexmethods style="text-align: left;"}
 
 **Status: forthcoming**
 
@@ -282,7 +282,7 @@ The** second section **is broken down by two modules:
 
 \
 
-## **7. Integration of Alternative data sources into the production system ** {#Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem style="text-align: left;"}
+## 7. Integration of Alternative data sources into the production system{#Trainingmaterial-7IntegrationofAlternativedatasourcesintotheproductionsystem style="text-align: left;"}
 
 **Status: forthcoming**
 

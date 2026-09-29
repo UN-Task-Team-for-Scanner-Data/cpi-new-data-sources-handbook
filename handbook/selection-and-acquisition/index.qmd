@@ -1,6 +1,11 @@
 ---
 title: "Data selection and acquisition"
-date-modified: "2024-03-01"
+date: "2024-05-13"
+date-modified: "2026-05-13"
+format:
+  html:
+    toc: true
+    toc-expand: 2
 ---
 
 This section discusses how to select and acquire these new data
@@ -16,17 +21,10 @@ case. 
 
 Section contents:
 
-- [Selection of
-  categories](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910456/Selection+of+categories)
-- [Selection of retailers for alternative data
-  sources](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910457/Selection+of+retailers+for+alternative+data+sources)
-- [Scanner
-  data](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910458/Scanner+data)
-- [Web
-  scraping](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910464/Web+scraping)
-- [Example file structures for web scraped and scanner
-  data](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910470/Example+file+structures+for+web+scraped+and+scanner+data)
-- [Collection of data via
-  APIs](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910471/Collection+of+data+via+APIs)
-- [Dealing with unexpected data
-  gaps](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910472/Dealing+with+unexpected+data+gaps)
+- [Selection of categories](/handbook/selection-and-acquisition/selection-of-categories.qmd)
+- [Selection of retailers for alternative data sources](/handbook/selection-and-acquisition/selection-of-retailers-for-alternative-data-sources.qmd)
+- [Scanner data](/handbook/selection-and-acquisition/scanner/index.qmd)
+- [Web scraping](/handbook/selection-and-acquisition/web-scraped/index.qmd)
+- [Example file structures for web scraped and scanner data](/handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.qmd)
+- [Collection of data via APIs](/handbook/selection-and-acquisition/collection-of-data-via-apis.qmd)
+- [Dealing with unexpected data gaps](/handbook/selection-and-acquisition/dealing-with-unexpected-data-gaps.qmd)

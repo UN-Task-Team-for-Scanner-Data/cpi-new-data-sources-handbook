@@ -27,6 +27,9 @@ website:
           - text: "How to contribute"
             href: about/contributing.qmd
             icon: pencil-square
+          - text: "Style Guide"
+            href: about/style-guide.qmd
+            icon: text-left
 
     left:
       - href: handbook/index.qmd
