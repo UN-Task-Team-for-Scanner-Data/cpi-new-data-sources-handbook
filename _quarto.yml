@@ -7,7 +7,7 @@ website:
   repo-url: https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook
   favicon: handbook\images\logo.png
   repo-branch: main
-  draft-mode: visibile
+  draft-mode: visible
   repo-actions: [source, issue]
   bread-crumbs: true
   page-navigation: true
