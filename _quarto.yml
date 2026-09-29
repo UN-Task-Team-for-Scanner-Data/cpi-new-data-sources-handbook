@@ -38,22 +38,27 @@ website:
           - text: "Prices Reproducibility Guidance"
             href: https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/
             icon: flask
+            target: "_blank"
           - text: "Open price statistics datasets"
             href: https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/
             icon: database-check
+            target: "_blank"
           - text: "---"
           - text: "Official guidance and manuals"
           - text: "CPI Manual"
             href: https://www.imf.org/en/data/statistics/cpi-manual
             icon: journal-check
+            target: "_blank"
           - text: "---"
           - text: "Main conferences"
           - text: "Ottawa Group website"
             href: https://stats.unece.org/ottawagroup/
             icon: people
+            target: "_blank"
           - text: "CPI Expert Group website"
             href: https://unece.org/expert-group-consumer-price-indices
             icon: people
+            target: "_blank"
 
     left:
       - href: handbook/index.qmd
