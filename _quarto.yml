@@ -59,29 +59,29 @@ website:
         - handbook/cpi-production-system-requirements.qmd
         - handbook/quality-assurance.qmd
         - section: "Data selection and acquisition"
-          href: handbook/data-selection-and-acquisition/index.qmd
+          href: handbook/selection-and-acquisition/index.qmd
           contents:
-            - handbook/data-selection-and-acquisition/selection-of-categories.qmd
-            - handbook/data-selection-and-acquisition/selection-of-retailers-for-alternative-data-sources.qmd
+            - handbook/selection-and-acquisition/selection-of-categories.qmd
+            - handbook/selection-and-acquisition/selection-of-retailers-for-alternative-data-sources.qmd
             - section: "Scanner data"
-              href: handbook/data-selection-and-acquisition/scanner/index.qmd
+              href: handbook/selection-and-acquisition/scanner/index.qmd
               contents:
-                - handbook/data-selection-and-acquisition/scanner/initial-steps-in-the-acquisition-of-scanner-data.qmd
-                - handbook/data-selection-and-acquisition/scanner/data-requirements-specification-for-scanner-data.qmd
-                - handbook/data-selection-and-acquisition/scanner/data-sharing-agreements.qmd
-                - handbook/data-selection-and-acquisition/scanner/alternative-approaches-to-acquiring-scanner-data.qmd
-                - handbook/data-selection-and-acquisition/scanner/monitoring-validation-and-plausibility-checks-for-scanner-data.qmd
+                - handbook/selection-and-acquisition/scanner/initial-steps-in-the-acquisition-of-scanner-data.qmd
+                - handbook/selection-and-acquisition/scanner/data-requirements-specification-for-scanner-data.qmd
+                - handbook/selection-and-acquisition/scanner/data-sharing-agreements.qmd
+                - handbook/selection-and-acquisition/scanner/alternative-approaches-to-acquiring-scanner-data.qmd
+                - handbook/selection-and-acquisition/scanner/monitoring-validation-and-plausibility-checks-for-scanner-data.qmd
             - section: "Web scraping"
-              href: handbook/data-selection-and-acquisition/web-scraped/index.qmd
+              href: handbook/selection-and-acquisition/web-scraped/index.qmd
               contents:
-                - handbook/data-selection-and-acquisition/web-scraped/different-approaches-to-accessing-web-scraped-data.qmd
-                - handbook/data-selection-and-acquisition/web-scraped/strategies-available-for-in-house-web-scraping.qmd
-                - handbook/data-selection-and-acquisition/web-scraped/data-requirements-specification-for-web-scraped-data.qmd
-                - handbook/data-selection-and-acquisition/web-scraped/monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd
-                - handbook/data-selection-and-acquisition/web-scraped/common-technical-problems-for-in-house-web-scraping.qmd
-            - handbook/data-selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.qmd
-            - handbook/data-selection-and-acquisition/collection-of-data-via-apis.qmd
-            - handbook/data-selection-and-acquisition/dealing-with-unexpected-data-gaps.qmd
+                - handbook/selection-and-acquisition/web-scraped/different-approaches-to-accessing-web-scraped-data.qmd
+                - handbook/selection-and-acquisition/web-scraped/strategies-available-for-in-house-web-scraping.qmd
+                - handbook/selection-and-acquisition/web-scraped/data-requirements-specification-for-web-scraped-data.qmd
+                - handbook/selection-and-acquisition/web-scraped/monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd
+                - handbook/selection-and-acquisition/web-scraped/common-technical-problems-for-in-house-web-scraping.qmd
+            - handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.qmd
+            - handbook/selection-and-acquisition/collection-of-data-via-apis.qmd
+            - handbook/selection-and-acquisition/dealing-with-unexpected-data-gaps.qmd
         - section: "Preparation of data"
           href: handbook/preparation/index.qmd
           contents:
