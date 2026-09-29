@@ -34,15 +34,20 @@ website:
       - text: "Related materials"
         icon: lightbulb
         menu:
+          - text: "Our materials"
           - text: "Prices Reproducibility Guidance"
             href: https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/
             icon: flask
           - text: "Open price statistics datasets"
             href: https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/
             icon: database-check
+          - text: "---"
+          - text: "Official guidance and manuals"
           - text: "CPI Manual"
             href: https://www.imf.org/en/data/statistics/cpi-manual
             icon: journal-check
+          - text: "---"
+          - text: "Main conferences"
           - text: "Ottawa Group website"
             href: https://stats.unece.org/ottawagroup/
             icon: people
