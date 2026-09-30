@@ -2,22 +2,9 @@
 title: "Data selection and acquisition"
 date: "2024-05-13"
 date-modified: "2026-05-13"
-format:
-  html:
-    toc: true
-    toc-expand: 2
 ---
 
-This section discusses how to select and acquire these new data
-sources. The goal of the section is to provide readers useful
-information on the complexities involved in obtaining these data as well
-as additional information such as the description of the data
-requirements that should be considered for the development of price
-statistics and the steps involved in the monitoring and validation of
-the data sets received. As the marked differences in the nature of these
-data sources are also manifested in the procedures for data acquisition,
-a separate discussion is provided to deal with the peculiarities of each
-case. 
+This section discusses how to select and acquire these new data sources. The goal of the section is to provide readers useful information on the complexities involved in obtaining these data as well as additional information such as the description of the data requirements that should be considered for the development of price statistics and the steps involved in the monitoring and validation of the data sets received. As the marked differences in the nature of these data sources are also manifested in the procedures for data acquisition, a separate discussion is provided to deal with the peculiarities of each case. 
 
 Section contents:
 
