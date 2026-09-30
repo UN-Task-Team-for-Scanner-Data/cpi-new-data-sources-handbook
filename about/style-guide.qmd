@@ -10,15 +10,10 @@ To ensure that all material on the site is consistent, the following principles 
 
 # Principles
 
-:::{.callout-note}
+::: callout-note
 ## TBC
 
-This should be flushed out. Possible principles include
--   Clarity 
--   Consistency
--   Neutrality
--   ... 
-
+This should be flushed out. Possible principles include - Clarity - Consistency - Neutrality - ...
 :::
 
 # Specifics
@@ -27,7 +22,7 @@ This should be flushed out. Possible principles include
 
 Common metadata at the top of each `.qmd` file is as follows:
 
-```
+```         
 ---
 title: "Style guide"
 description: "Overview of the principles and specific steps we use to make our material professional and consistent"
@@ -49,7 +44,33 @@ Heading, sub-heading, etc
 
 ## Tables
 
-TBC
+There are [many ways](https://quarto.org/docs/authoring/tables.html) to make tables. The minimum default is to separate the id of the table and to give it a title. That way you can reference the table in the text.
+
+For example:
+
+``` md
+| fruit  | price  |
+|--------|--------|
+| apple  | 2.05   |
+| pear   | 1.37   |
+| orange | 3.09   |
+
+: Fruit prices {#tbl-fruits .striped .hover}
+
+In the body of your text, you can reference the @tbl-fruits.
+```
+
+This will rendered as follows:
+
+| fruit  | price |
+|--------|-------|
+| apple  | 2.05  |
+| pear   | 1.37  |
+| orange | 3.09  |
+
+: Fruit prices {#tbl-fruits .striped .hover}
+
+In the body of your text, you can reference the @tbl-fruits.
 
 ## Figures
 
