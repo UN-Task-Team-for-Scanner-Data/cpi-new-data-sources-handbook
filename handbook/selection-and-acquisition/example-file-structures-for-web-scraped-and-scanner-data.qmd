@@ -3,17 +3,12 @@ title: "Example file structures for web scraped and scanner data"
 date-modified: "2021-08-02"
 ---
 
-This page contains example variables and data types for new data
-sources\
-
-------------------------------------------------------------------------
+This page contains example variables and data types for new data sources.
 
 # Typical file structures {#Examplefilestructuresforwebscrapedandscannerdata-Typicalfilestructures}
 
-Table 1 provides some example file structures for web scraped and
-scanner data for comparison purposes using groceries as a case study.
+@tbl-typical-file-structure provides some example file structures for web scraped and scanner data for comparison purposes using groceries as a case study.
 
-Table 1: typical file structures
 
 +------------------+------------+---------------+------------------+------------+-------------+
 | **Scanner data**                              | **Web scraped data**                        |
@@ -55,3 +50,6 @@ Table 1: typical file structures
 |                  |            |               | (web scraped     | currency   |             |
 |                  |            |               | data only)*      |            |             |
 +------------------+------------+---------------+------------------+------------+-------------+
+
+: Typical file structures {#tbl-typical-file-structure .striped .hover}
+
