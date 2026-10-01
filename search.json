@@ -981,7 +981,7 @@
     "href": "index.html",
     "title": "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!",
     "section": "",
-    "text": "NoteMigration in progress\n\n\n\nThis site is a migration of the UN Task Team handbook from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.\nWelcome to the handbook on new data methods for consumer price statistics. This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.\nDeveloped by the UN Task Team on Scanner Data, it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices."
+    "text": "NoteMigration in progress\n\n\n\nThis site is a migration of the UN Task Team handbook from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.\nWelcome to the handbook on new data sources in consumer price statistics. This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.\nDeveloped by the UN Task Team on Scanner Data, it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices."
   },
   {
     "objectID": "index.html#what-is-covered",
@@ -1005,11 +1005,11 @@
     "text": "What is the handbook based on\nThis Handbook draws on existing international manuals, methodological papers, and country experiences, while also improving the literature on topics where guidance is currently more limited, such as data acquisition strategies, classification challenges, and the handling of highly dynamic product universes. Given the rapid pace of methodological and technological developments in this field, the handbook is designed as a living document. It will be reviewed and updated over time to reflect new research, emerging best practices, and feedback from users."
   },
   {
-    "objectID": "index.html#how-to-use-the-handbook-1",
-    "href": "index.html#how-to-use-the-handbook-1",
+    "objectID": "index.html#contributing-feedback-and-future-development",
+    "href": "index.html#contributing-feedback-and-future-development",
     "title": "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!",
-    "section": "How to use the handbook",
-    "text": "How to use the handbook\nUsers of this Handbook are encouraged to support its ongoing development and improvement. Feedback may include suggestions on topics that could be expanded or added, identification of errors or areas requiring clarification, or proposals to refine existing content in light of new research or country experience. Such feedback will help ensure that this Handbook remains relevant, accurate, and responsive to the evolving needs of the international statistical community. Feedback can be provided through answering the questions on this form: UN Task Team on Scanner Data - e-Handbook Feedback Form.\nThis Handbook is publicly available and intended to be used alongside related training materials and other supporting resources developed by the UN Task Team on Scanner Data."
+    "section": "Contributing feedback and future development",
+    "text": "Contributing feedback and future development\nUsers of this Handbook are encouraged to support its ongoing development and improvement. Feedback may include suggestions on topics that could be expanded or added, identification of errors or areas requiring clarification, or proposals to refine existing content in light of new research or country experience. Such feedback will help ensure that this Handbook remains relevant, accurate, and responsive to the evolving needs of the international statistical community. Please see the how to contribute guide for more information.\nThis Handbook is publicly available and intended to be used alongside related training materials and other supporting resources developed by the UN Task Team on Scanner Data."
   },
   {
     "objectID": "CONTRIBUTING.html",
