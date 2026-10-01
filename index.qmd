@@ -9,7 +9,7 @@ format:
 
 citation:
   type: manuscript
-  title: "Handbook on new data sources in price statistics" 
+  title: "Handbook on new data sources in consumer price statistics" 
   issued: "2026-05-14"        # Standard CSL variable for publication/presentation date
   url: https://www.xxx.com
   doi: 10.1234/example        #TO DO
@@ -21,10 +21,9 @@ citation:
 This site is a migration of the UN Task Team [handbook](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics) from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.
 :::
 
-Welcome to the handbook on new data methods for consumer price statistics. This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.
+Welcome to the handbook on new data sources in consumer price statistics. This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.
 
-Developed by the [UN Task Team on Scanner Data](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml),
-it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices. 
+Developed by the [UN Task Team on Scanner Data](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml), it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices. 
 
 ## What is covered?
 
@@ -32,24 +31,20 @@ The Handbook covers a broad range of data sources - including transaction data s
 
 This Handbook complements Chapter 10 of the [CPI Manual, Concepts and Methods](https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40dgreports/%40stat/documents/publication/wcms_761444.pdf) by providing detailed operational guidance on the use of alternative data sources in CPI production. It does not replace the CPI Manual, which sets out the underlying concepts, principles and governance framework for the use of alternative data sources in CPI compilation.
 
-This Handbook covers key stages of the CPI production process where new data sources may be introduced, including data acquisition, preparation, classification, index compilation, quality assurance, and dissemination. It brings together conceptual discussion, practical considerations, methodological options, and examples from country practices, with the
-aim of supporting informed decision-making rather than prescribing a single method or workflow.
+This Handbook covers key stages of the CPI production process where new data sources may be introduced, including data acquisition, preparation, classification, index compilation, quality assurance, and dissemination. It brings together conceptual discussion, practical considerations, methodological options, and examples from country practices, with the aim of supporting informed decision-making rather than prescribing a single method or workflow.
 
 ## How to use the handbook
 
-There is no single "correct" approach to using new data sources in CPI production. The appropriate choices will depend on national circumstances, data availability, institutional arrangements, technical capacity, and user needs. Accordingly, the purpose of this handbook is to present the range of available approaches, highlight their strengths
-and limitations, and provide guidance to help users assess what is most suitable for their particular context.
+There is no single "correct" approach to using new data sources in CPI production. The appropriate choices will depend on national circumstances, data availability, institutional arrangements, technical capacity, and user needs. Accordingly, the purpose of this handbook is to present the range of available approaches, highlight their strengths and limitations, and provide guidance to help users assess what is most suitable for their particular context.
 
-While the primary focus of this Handbook is on consumer price statistics, many of the data sources, processes, and systems discussed may also support other areas of official statistics. Where relevant, considerations for broader statistical use are highlighted to support efficient and sustainable use of alternative data sources across
-statistical domains.
+While the primary focus of this Handbook is on consumer price statistics, many of the data sources, processes, and systems discussed may also support other areas of official statistics. Where relevant, considerations for broader statistical use are highlighted to support efficient and sustainable use of alternative data sources across statistical domains.
 
 ## What is the handbook based on
 
-This Handbook draws on existing international manuals, methodological papers, and country experiences, while also improving the literature on topics where guidance is currently more limited, such as data acquisition strategies, classification challenges, and the handling of highly dynamic product universes. Given the rapid pace of methodological
-and technological developments in this field, the handbook is designed as a living document. It will be reviewed and updated over time to reflect new research, emerging best practices, and feedback from users.
+This Handbook draws on existing international manuals, methodological papers, and country experiences, while also improving the literature on topics where guidance is currently more limited, such as data acquisition strategies, classification challenges, and the handling of highly dynamic product universes. Given the rapid pace of methodological and technological developments in this field, the handbook is designed as a living document. It will be reviewed and updated over time to reflect new research, emerging best practices, and feedback from users.
 
-## How to use the handbook
+## Contributing feedback and future development
 
-Users of this Handbook are encouraged to support its ongoing development and improvement. Feedback may include suggestions on topics that could be expanded or added, identification of errors or areas requiring clarification, or proposals to refine existing content in light of new research or country experience. Such feedback will help ensure that this Handbook remains relevant, accurate, and responsive to the evolving needs of the international statistical community. Feedback can be provided through answering the questions on this form: [UN Task Team on Scanner Data - e-Handbook Feedback Form](https://forms.office.com/Pages/ResponsePage.aspx?id=vweIB4LOiEa84A2BFoTcRidRNcIM9HtMhJmbNi1T8MlUNTZXQ0MzUk5RQTNQMlUzWldETDJaR0JSQy4u&r3ba99449c6ab4175bd4fd934b09149a5=https%3A%2F%2Funstats.un.org%2Fwiki%2Fspaces%2FGWGSD%2Fpages%2F240910447%2FHandbook%2Bon%2Butilising%2Bnew%2Bdata%2Bsources%2Bin%2Bthe%2Bproduction%2Bof%2Bconsumer%2Bprice%2Bstatistics).
+Users of this Handbook are encouraged to support its ongoing development and improvement. Feedback may include suggestions on topics that could be expanded or added, identification of errors or areas requiring clarification, or proposals to refine existing content in light of new research or country experience. Such feedback will help ensure that this Handbook remains relevant, accurate, and responsive to the evolving needs of the international statistical community. Please see the [how to contribute guide](/about/contributing.qmd) for more information.
 
 This Handbook is publicly available and intended to be used alongside related [training materials](/training/index.qmd) and other supporting resources developed by the UN Task Team on Scanner Data.
