@@ -2,10 +2,6 @@
 title: "Overview"
 date: "2024-05-08"
 date-modified: "2026-05-08"
-format:
-  html:
-    toc: true
-    toc-expand: 2
 ---
 
 # Handbook content
@@ -15,34 +11,23 @@ format:
 - [Initial considerations](/handbook/initial-considerations/index.qmd) --- This section covers some initial considerations that NSOs are recommended to review before setting out to use alternative data sources in the production of consumer price statistics.
   - [Overview of alternative data sources](/handbook/initial-considerations/overview-of-alternative-data-sources.qmd) --- This page contains a general introduction to each of the alternative data sources used to compile consumer price indices. 
   - [Why use alternative data sources? Strategic motivations](/handbook/initial-considerations/why-use-alternative-data-sources-strategic-motivations.qmd) --- Common reasons shared by NSOs as a driver for using these new data sources.
-  - [Key challenges and trade-offs](/handbook/initial-considerations/key-challenges-and-trade-offs.qmd) --- Alternative data sources introduce a number of challenges and trade-offs that National Statistical Offices (NSOs) must actively
-    manage.
-  - [Key decision points](/handbook/initial-considerations/key-decision-points.qmd) --- The adoption of alternative data sources involves a sequence of related decisions that shape both the technical and organisational direction
-    of implementation.
+  - [Key challenges and trade-offs](/handbook/initial-considerations/key-challenges-and-trade-offs.qmd) --- Alternative data sources introduce a number of challenges and trade-offs that National Statistical Offices (NSOs) must actively manage.
+  - [Key decision points](/handbook/initial-considerations/key-decision-points.qmd) --- The adoption of alternative data sources involves a sequence of related decisions that shape both the technical and organisational direction of implementation.
   - [Resource implications and organisational readiness](/handbook/initial-considerations/resource-implications-and-organisational-readiness.qmd) --- The adoption of alternative data sources typically requires a different mix of resources and capabilities compared with traditional survey-based price collection.
 - [CPI production system requirements](/handbook/cpi-production-system-requirements.qmd) --- Requirements for IT systems are dependent on the choice of data source, the implementation plan for each new data source and the availability and knowledge of staff with specialist IT skills. 
 - [Quality assurance](/handbook/quality-assurance.qmd) --- The use of alternative data sources in CPI compilation requires robust quality assurance procedures. 
-- [Data selection and acquisition](/handbook/selection-and-acquisition/index.qmd) --- This
-  section discusses how to select and acquire these new data sources.
-  - [Selection of categories](/handbook/selection-and-acquisition/selection-of-categories.qmd)
-    --- One of the initial steps in this process is the identification
-    and selection of product categories to consider for the adoption of
-    alternative data sources
+- [Data selection and acquisition](/handbook/selection-and-acquisition/index.qmd) --- This section discusses how to select and acquire these new data sources.
+  - [Selection of categories](/handbook/selection-and-acquisition/selection-of-categories.qmd) --- One of the initial steps in this process is the identification and selection of product categories to consider for the adoption of alternative data sources
   - [Selection of retailers for alternative data sources](/handbook/selection-and-acquisition/selection-of-retailers-for-alternative-data-sources.qmd) --- This page contains information on how to identify suitable retailers who can supply these alternative data sources
   - [Scanner data](/handbook/selection-and-acquisition/scanner/index.qmd) --- This section addresses the main steps that should be considered for acquisition of scanner data sets for the production of price statistics.
-    - [Initial steps in the acquisition of scanner data](/handbook/selection-and-acquisition/scanner/initial-steps-in-the-acquisition-of-scanner-data.qmd) --- Recommendations on how an NSO can approach retailers to
-      acquire scanner data
+    - [Initial steps in the acquisition of scanner data](/handbook/selection-and-acquisition/scanner/initial-steps-in-the-acquisition-of-scanner-data.qmd) --- Recommendations on how an NSO can approach retailers to acquire scanner data
     - [Data requirements specification for scanner data](/handbook/selection-and-acquisition/scanner/data-requirements-specification-for-scanner-data.qmd) --- Key variables to ask for when acquiring scanner data.
     - [Data sharing agreements](/handbook/selection-and-acquisition/scanner/data-sharing-agreements.qmd) --- Data sharing agreements can help provide structure to data flows between a supplier and NSO
-    - [Alternative approaches to acquiring scanner data](/handbook/selection-and-acquisition/scanner/alternative-approaches-to-acquiring-scanner-data.qmd) --- Suggestions of what to do if the NSO is unable to acquire
-      scanner data directly from retailers
-    - [Monitoring, validation and plausibility checks for scanner data](/handbook/selection-and-acquisition/scanner/monitoring-validation-and-plausibility-checks-for-scanner-data.qmd) --- Recommended checks to carry out on the
-      incoming flows of scanner data
-  - [Web scraping](/handbook/selection-and-acquisition/web-scraped/index.qmd) --- This section covers
-    the acquisition of web scraped data.
+    - [Alternative approaches to acquiring scanner data](/handbook/selection-and-acquisition/scanner/alternative-approaches-to-acquiring-scanner-data.qmd) --- Suggestions of what to do if the NSO is unable to acquire scanner data directly from retailers
+    - [Monitoring, validation and plausibility checks for scanner data](/handbook/selection-and-acquisition/scanner/monitoring-validation-and-plausibility-checks-for-scanner-data.qmd) --- Recommended checks to carry out on the incoming flows of scanner data
+  - [Web scraping](/handbook/selection-and-acquisition/web-scraped/index.qmd) --- This section covers the acquisition of web scraped data.
     - [Different approaches to accessing web scraped data](/handbook/selection-and-acquisition/web-scraped/different-approaches-to-accessing-web-scraped-data.qmd) --- Approaches for setting up a web scraping project
-    - [Strategies available for in-house web scraping](/handbook/selection-and-acquisition/web-scraped/strategies-available-for-in-house-web-scraping.qmd) --- Points to consider if in-house web scraping is the chosen
-      solution
+    - [Strategies available for in-house web scraping](/handbook/selection-and-acquisition/web-scraped/strategies-available-for-in-house-web-scraping.qmd) --- Points to consider if in-house web scraping is the chosen solution
     - [Data requirements specification for web scraped data](/handbook/selection-and-acquisition/web-scraped/data-requirements-specification-for-web-scraped-data.qmd) --- Key variables to look for when acquiring web scraped data
     - [Monitoring, validation and plausibility checks for web scraped data](/handbook/selection-and-acquisition/web-scraped/monitoring-validation-and-plausibility-checks-for-web-scraped-data.qmd) --- Recommended checks to carry out on incoming flows of web scraping data.
     - [Common technical problems for in-house web scraping](/handbook/selection-and-acquisition/web-scraped/common-technical-problems-for-in-house-web-scraping.qmd) --- Overcoming some common technical problems for web scraping
@@ -94,6 +79,4 @@ format:
 
 # Training contents
 
-- [Training material](training-material.qmd) --- This page
-  contains a summary of the planned training curriculum and links to
-  available courses.
+- [Training material](training-material.qmd) --- This page contains a summary of the planned training curriculum and links to available courses.

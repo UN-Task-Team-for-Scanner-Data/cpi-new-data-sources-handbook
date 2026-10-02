@@ -1,6 +1,6 @@
 ---
 title: "Style guide"
-description: "Overview of the principles and specific steps we use to make our material professional and consistent"
+subtitle: "Overview of the principles and specific steps we use to make our material professional and consistent"
 date: 2026-09-29
 date-modified: last-modified
 draft: true
@@ -11,36 +11,79 @@ To ensure that all material on the site is consistent, the following principles 
 # Principles
 
 ::: callout-note
-## TBC
+## Draft
 
-This should be flushed out. Possible principles include - Clarity - Consistency - Neutrality - ...
+Draft principles being flushed out
+
+-   **Clarity**
+
+-   **Consistency**
+
+-   **Neutrality** - we provide guidance on what could be done or what are seen as sensible defaults (if they are set in the discipline). Where there is disagreement in the discipline, the options are outlined.
+
+-   **Browsability** - the content here is not meant to be very technical or hard to read and digest. Content is fundamentally designed to be an overview. Hence content is written so that readers can quickly browse through a set of pages, find a seciton that interests them, and read through it.
+
+-   ...
 :::
 
 # Specifics
 
+For a good overview of all the options, check out the [Authoring section in the Quarto docs, starting with markdown basics](https://quarto.org/docs/authoring/markdown-basics.html).
+
 ## Metadata
 
-Common metadata at the top of each `.qmd` file is as follows:
+Quarto uses the metadata specified in each `.qmd` file to format the page. For an overview, check out the [formats that are supported](https://quarto.org/docs/output-formats/all-formats.html), with specific focus on [the html format](https://quarto.org/docs/output-formats/html-basics.html). The default minimum metadata per page should be:
 
-```         
+``` md
 ---
 title: "Style guide"
-description: "Overview of the principles and specific steps we use to make our material professional and consistent"
+subtitle: "Overview of the principles and specific steps we use to make our material professional and consistent"
 date: 2026-09-29
 date-modified: last-modified
 draft: true
 ---
+
+# Text of article
 ```
 
 -   `title` - states the (short) name of the page
+-   `subtitle` - a summary of the page. Optional
+-   `date` - when the article was last published
+-   `date-modified` - when the article was last updated. Note, for many pages, this is set at a hard coded date to start. However once you edit the page, please change this to a value of `last-modified`, which will make Quarto render it automatically to the date the specific `.qmd` file was changed.
+-   `draft` - whether there is an orange draft header to the page or not. You can use this to publish draft pages for review (`draft: true`) before they are considered final (either set it as `draft: false` or remove the `draft` from the top of the `yaml`)
 
 ## Page overview
 
 Each page should start with a sentence or two at the top introducing the metarial, then headings per topic, and sub-headings (h2) for sub-parts
 
-## Formatting
+## Writing and formatting text
 
-Heading, sub-heading, etc
+Text follows common approach specified by markdown (for example heading, bold, italic, etc). Checkout the [summary on markdown basics](https://quarto.org/docs/authoring/markdown-basics.html) for a good walkthrough.
+
+A few dos and donts:
+
+-   **Do** - use headings widely.
+    -   Making it easy for readers to browse pages and parts of specific pages to zero in to the content they are looking for
+-   **Do** - use lists, diagrams, callouts, and other formatting liberally
+    -   Again, the goal is to make it easy to read and understand content.
+-   **Don't** - write long technical paragraphs
+    -   *Big and bulky paragraphs or too many paragraphs together make it hard for readers to zero in to the content that would help them most*.
+-   **Don't** - use new line separation (or by pressing enter) to separate out pages.
+    -   *Let quarto do this for you when it renders the page. This is a cleaner way to track changes as the content evolves over time and it leaves the formatting to Quarto or to specifications so that we can have consistent format.*
+
+## Links
+
+There are many ways to [make links](https://quarto.org/docs/authoring/markdown-basics.html#links-images), depending on what you want to do. The default is:
+
+``` md
+See the [aggregation](/handbook/aggregation.qmd) section for more details.
+```
+
+Which will be rendered as:
+
+> See the [aggregation](/handbook/aggregation.qmd) section for more details.
+
+**Note**: You can specify the link relative to the root directory (hence `/handbook/...`) or relative to the folder the `qmd` file you are editing (hence you can state `aggregation.qmd` if say you are on the `glossary.qmd` file).
 
 ## Tables
 
@@ -50,7 +93,7 @@ For example:
 
 ``` md
 | fruit  | price  |
-|--------|--------|
+|:-------|--------|
 | apple  | 2.05   |
 | pear   | 1.37   |
 | orange | 3.09   |
@@ -63,7 +106,7 @@ In the body of your text, you can reference the @tbl-fruits.
 This will rendered as follows:
 
 | fruit  | price |
-|--------|-------|
+|:-------|-------|
 | apple  | 2.05  |
 | pear   | 1.37  |
 | orange | 3.09  |
@@ -74,7 +117,26 @@ In the body of your text, you can reference the @tbl-fruits.
 
 ## Figures
 
-TBC
+There are also a lot of ways to embed [figures](https://quarto.org/docs/authoring/figures.html) into the text.
+
+``` md
+![The handbook logo](/handbook/images/logo.png){
+    #fig-logo
+    fig-align="center" 
+    width=50%}
+
+This is illustrated well by @fig-logo.
+```
+
+This will be rendered as:
+
+![The handbook logo](/handbook/images/logo.png){#fig-logo fig-align="center" width="50%"}
+
+This is illustrated well by @fig-logo.
+
+## Callouts
+
+[Callouts](https://quarto.org/docs/authoring/callouts.html) can be used to call attention to specific types of things.
 
 ## References
 
