@@ -6,7 +6,7 @@ date-modified: last-modified
 draft: true
 ---
 
-To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors.
+To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors. This material is based on other materials like [The Turing Way style guide](https://book.the-turing-way.org/community-handbook/style/). 
 
 # Principles
 
