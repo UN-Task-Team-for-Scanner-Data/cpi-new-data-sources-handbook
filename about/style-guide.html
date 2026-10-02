@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-09-29">
-<meta name="description" content="Overview of the principles and specific steps we use to make our material professional and consistent">
 
 <title>Style guide – Handbook on utilising new data sources in the production of consumer price statistics</title>
 <style>
@@ -401,9 +400,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#metadata" id="toc-metadata" class="nav-link" data-scroll-target="#metadata">Metadata</a></li>
   <li><a href="#page-overview" id="toc-page-overview" class="nav-link" data-scroll-target="#page-overview">Page overview</a></li>
-  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a></li>
+  <li><a href="#writing-and-formatting-text" id="toc-writing-and-formatting-text" class="nav-link" data-scroll-target="#writing-and-formatting-text">Writing and formatting text</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
   <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
+  <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts">Callouts</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   <li><a href="#guidance-for-proof-readers" id="toc-guidance-for-proof-readers" class="nav-link" data-scroll-target="#guidance-for-proof-readers">Guidance for proof readers</a></li>
@@ -417,13 +418,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Style guide</h1>
+<p class="subtitle lead">Overview of the principles and specific steps we use to make our material professional and consistent</p>
 </div>
 
-<div>
-  <div class="description">
-    Overview of the principles and specific steps we use to make our material professional and consistent
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -439,7 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Last updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">1 October 2026</p>
+      <p class="date-modified">2 October 2026</p>
     </div>
   </div>
     
@@ -459,51 +456,94 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>TBC
+<span class="screen-reader-only">Note</span>Draft
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This should be flushed out. Possible principles include - Clarity - Consistency - Neutrality - …</p>
+<p>Draft principles being flushed out</p>
+<ul>
+<li><p><strong>Clarity</strong></p></li>
+<li><p><strong>Consistency</strong></p></li>
+<li><p><strong>Neutrality</strong> - we provide guidance on what could be done or what are seen as sensible defaults (if they are set in the discipline). Where there is disagreement in the discipline, the options are outlined.</p></li>
+<li><p><strong>Browsability</strong> - the content here is not meant to be very technical or hard to read and digest. Content is fundamentally designed to be an overview. Hence content is written so that readers can quickly browse through a set of pages, find a seciton that interests them, and read through it.</p></li>
+<li><p>…</p></li>
+</ul>
 </div>
 </div>
 </section>
 <section id="specifics" class="level1">
 <h1>Specifics</h1>
+<p>For a good overview of all the options, check out the <a href="https://quarto.org/docs/authoring/markdown-basics.html">Authoring section in the Quarto docs, starting with markdown basics</a>.</p>
 <section id="metadata" class="level2">
 <h2 class="anchored" data-anchor-id="metadata">Metadata</h2>
-<p>Common metadata at the top of each <code>.qmd</code> file is as follows:</p>
-<pre><code>---
-title: "Style guide"
-description: "Overview of the principles and specific steps we use to make our material professional and consistent"
-date: 2026-09-29
-date-modified: last-modified
-draft: true
----</code></pre>
+<p>Quarto uses the metadata specified in each <code>.qmd</code> file to format the page. For an overview, check out the <a href="https://quarto.org/docs/output-formats/all-formats.html">formats that are supported</a>, with specific focus on <a href="https://quarto.org/docs/output-formats/html-basics.html">the html format</a>. The default minimum metadata per page should be:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Style guide"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Overview of the principles and specific steps we use to make our material professional and consistent"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-09-29</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> last-modified</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Text of article</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>title</code> - states the (short) name of the page</li>
+<li><code>subtitle</code> - a summary of the page. Optional</li>
+<li><code>date</code> - when the article was last published</li>
+<li><code>date-modified</code> - when the article was last updated. Note, for many pages, this is set at a hard coded date to start. However once you edit the page, please change this to a value of <code>last-modified</code>, which will make Quarto render it automatically to the date the specific <code>.qmd</code> file was changed.</li>
+<li><code>draft</code> - whether there is an orange draft header to the page or not. You can use this to publish draft pages for review (<code>draft: true</code>) before they are considered final (either set it as <code>draft: false</code> or remove the <code>draft</code> from the top of the <code>yaml</code>)</li>
 </ul>
 </section>
 <section id="page-overview" class="level2">
 <h2 class="anchored" data-anchor-id="page-overview">Page overview</h2>
 <p>Each page should start with a sentence or two at the top introducing the metarial, then headings per topic, and sub-headings (h2) for sub-parts</p>
 </section>
-<section id="formatting" class="level2">
-<h2 class="anchored" data-anchor-id="formatting">Formatting</h2>
-<p>Heading, sub-heading, etc</p>
+<section id="writing-and-formatting-text" class="level2">
+<h2 class="anchored" data-anchor-id="writing-and-formatting-text">Writing and formatting text</h2>
+<p>Text follows common approach specified by markdown (for example heading, bold, italic, etc). Checkout the <a href="https://quarto.org/docs/authoring/markdown-basics.html">summary on markdown basics</a> for a good walkthrough.</p>
+<p>A few dos and donts:</p>
+<ul>
+<li><strong>Do</strong> - use headings widely.
+<ul>
+<li>Making it easy for readers to browse pages and parts of specific pages to zero in to the content they are looking for</li>
+</ul></li>
+<li><strong>Do</strong> - use lists, diagrams, callouts, and other formatting liberally
+<ul>
+<li>Again, the goal is to make it easy to read and understand content.</li>
+</ul></li>
+<li><strong>Don’t</strong> - write long technical paragraphs
+<ul>
+<li><em>Big and bulky paragraphs or too many paragraphs together make it hard for readers to zero in to the content that would help them most</em>.</li>
+</ul></li>
+<li><strong>Don’t</strong> - use new line separation (or by pressing enter) to separate out pages.
+<ul>
+<li><em>Let quarto do this for you when it renders the page. This is a cleaner way to track changes as the content evolves over time and it leaves the formatting to Quarto or to specifications so that we can have consistent format.</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<p>There are many ways to <a href="https://quarto.org/docs/authoring/markdown-basics.html#links-images">make links</a>, depending on what you want to do. The default is:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">aggregation</span><span class="co">](/handbook/aggregation.qmd)</span> section for more details.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Which will be rendered as:</p>
+<blockquote class="blockquote">
+<p>See the <a href="../handbook/aggregation.html">aggregation</a> section for more details.</p>
+</blockquote>
+<p><strong>Note</strong>: You can specify the link relative to the root directory (hence <code>/handbook/...</code>) or relative to the folder the <code>qmd</code> file you are editing (hence you can state <code>aggregation.qmd</code> if say you are on the <code>glossary.qmd</code> file).</p>
 </section>
 <section id="tables" class="level2">
 <h2 class="anchored" data-anchor-id="tables">Tables</h2>
 <p>There are <a href="https://quarto.org/docs/authoring/tables.html">many ways</a> to make tables. The minimum default is to separate the id of the table and to give it a title. That way you can reference the table in the text.</p>
 <p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> fruit  <span class="pp">|</span> price  <span class="pp">|</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------|--------|</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> apple  <span class="pp">|</span> 2.05   <span class="pp">|</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> pear   <span class="pp">|</span> 1.37   <span class="pp">|</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> orange <span class="pp">|</span> 3.09   <span class="pp">|</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>: Fruit prices {#tbl-fruits .striped .hover}</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>In the body of your text, you can reference the @tbl-fruits.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> fruit  <span class="pp">|</span> price  <span class="pp">|</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-------|--------|</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> apple  <span class="pp">|</span> 2.05   <span class="pp">|</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> pear   <span class="pp">|</span> 1.37   <span class="pp">|</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> orange <span class="pp">|</span> 3.09   <span class="pp">|</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>: Fruit prices {#tbl-fruits .striped .hover}</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>In the body of your text, you can reference the @tbl-fruits.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This will rendered as follows:</p>
 <div id="tbl-fruits" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -514,21 +554,21 @@ Table&nbsp;1: Fruit prices
 <table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
-<th>fruit</th>
+<th style="text-align: left;">fruit</th>
 <th>price</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>apple</td>
+<td style="text-align: left;">apple</td>
 <td>2.05</td>
 </tr>
 <tr class="even">
-<td>pear</td>
+<td style="text-align: left;">pear</td>
 <td>1.37</td>
 </tr>
 <tr class="odd">
-<td>orange</td>
+<td style="text-align: left;">orange</td>
 <td>3.09</td>
 </tr>
 </tbody>
@@ -540,7 +580,29 @@ Table&nbsp;1: Fruit prices
 </section>
 <section id="figures" class="level2">
 <h2 class="anchored" data-anchor-id="figures">Figures</h2>
-<p>TBC</p>
+<p>There are also a lot of ways to embed <a href="https://quarto.org/docs/authoring/figures.html">figures</a> into the text.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="al">![The handbook logo](/handbook/images/logo.png)</span>{</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    #fig-logo</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    fig-align="center" </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    width=50%}</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>This is illustrated well by @fig-logo.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will be rendered as:</p>
+<div id="fig-logo" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../handbook/images/logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The handbook logo
+</figcaption>
+</figure>
+</div>
+<p>This is illustrated well by <a href="#fig-logo" class="quarto-xref">Figure&nbsp;1</a>.</p>
+</section>
+<section id="callouts" class="level2">
+<h2 class="anchored" data-anchor-id="callouts">Callouts</h2>
+<p><a href="https://quarto.org/docs/authoring/callouts.html">Callouts</a> can be used to call attention to specific types of things.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
