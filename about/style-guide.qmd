@@ -6,8 +6,7 @@ date-modified: last-modified
 draft: true
 ---
 
-To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors.
-This material is based on other materials like [The Turing Way style guide](https://book.the-turing-way.org/community-handbook/style/). 
+To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors. This material is insipred (and is a succinct version) of other guides such as [The Turing Way style guide](https://book.the-turing-way.org/community-handbook/style/).
 
 # Principles
 
@@ -69,8 +68,8 @@ A few dos and donts:
     -   Again, the goal is to make it easy to read and understand content.
 -   **Don't** - write long technical paragraphs
     -   *Big and bulky paragraphs or too many paragraphs together make it hard for readers to zero in to the content that would help them most*.
--   **Don't** - use new line separation (or by pressing enter) to separate out pages.
-    -   *Let quarto do this for you when it renders the page. This is a cleaner way to track changes as the content evolves over time and it leaves the formatting to Quarto or to specifications so that we can have consistent format.*
+-   **Don't** - use new line separation (or by pressing enter) for each sentence and two spaces per paragraph.
+    -   *Quarto will merge together separate sentences and will format paragraphs appropriately. Separating things out allows us to track changes per sentence in git. See [new line breaks](https://book.the-turing-way.org/community-handbook/style/style-writing-markdown/#write-each-sentence-in-a-new-line-line-breaks) guidance in the Turing Way style guide for a full explanation.*
 
 ## Links
 
