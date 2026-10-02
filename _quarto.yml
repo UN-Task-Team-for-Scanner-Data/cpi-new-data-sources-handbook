@@ -183,6 +183,10 @@ website:
 language:
   title-block-modified: "Last updated"
 
+editor:
+  markdown:
+    wrap: sentence
+
 format:
   html:
     date-format: "D MMMM YYYY"
