@@ -1,38 +1,52 @@
 ---
 title: "Style guide"
-description: "Overview of the principles and specific steps we use to make our material professional and consistent"
+subtitle: "Overview of the principles and specific steps we use to make our material professional and consistent"
 date: 2026-09-29
 date-modified: last-modified
 draft: true
 ---
 
-To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors.
+To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors. 
 
 # Principles
 
 ::: callout-note
 ## TBC
 
-This should be flushed out. Possible principles include - Clarity - Consistency - Neutrality - ...
+This should be flushed out. Possible principles include 
+-   Clarity
+-   Consistency
+-   Neutrality
+-   ...
 :::
 
 # Specifics
 
+For a good overview of all the options, check out the [Authoring section in the Quarto docs, starting with markdown basics](https://quarto.org/docs/authoring/markdown-basics.html).
+
 ## Metadata
 
-Common metadata at the top of each `.qmd` file is as follows:
+Quarto uses the metadata specified in each `.qmd` file to format the page. For an overview, check out the [formats that are supported](https://quarto.org/docs/output-formats/all-formats.html), with specific focus on [the html format](https://quarto.org/docs/output-formats/html-basics.html). The default minimum metadata per page should be:
 
-```         
+
+``` md         
 ---
 title: "Style guide"
-description: "Overview of the principles and specific steps we use to make our material professional and consistent"
+subtitle: "Overview of the principles and specific steps we use to make our material professional and consistent"
 date: 2026-09-29
 date-modified: last-modified
 draft: true
 ---
+
+# Text of article
+
 ```
 
 -   `title` - states the (short) name of the page
+-   `subtitle` - a summary of the page. Optional
+-   `date`  - when the article was last published
+-   `date-modified` - when the article was last updated. Note, for many pages, this is set at a hard coded date to start. However once you edit the page, please change this to a value of `last-modified`, which will make Quarto render it automatically to the date the specific `.qmd` file was changed.
+-   `draft` - whether there is an orange draft header to the page or not. You can use this to publish draft pages for review (`draft: true`) before they are considered final (either set it as `draft: false` or remove the `draft` from the top of the `yaml`)
 
 ## Page overview
 
@@ -42,6 +56,20 @@ Each page should start with a sentence or two at the top introducing the metaria
 
 Heading, sub-heading, etc
 
+## Links
+
+There are many ways to [make links](https://quarto.org/docs/authoring/markdown-basics.html#links-images), depending on what you want to do. The default is:
+
+``` md
+See the [aggregation](/handbook/aggregation.qmd) section for more details.
+```
+
+Which will be rendered as:
+
+> See the [aggregation](/handbook/aggregation.qmd) section for more details.
+
+**Note**: You can specify the link relative to the root directory (hence `/handbook/...`) or relative to the folder the `qmd` file you are editing (hence you can state `aggregation.qmd` if say you are on the `glossary.qmd` file).
+
 ## Tables
 
 There are [many ways](https://quarto.org/docs/authoring/tables.html) to make tables. The minimum default is to separate the id of the table and to give it a title. That way you can reference the table in the text.
@@ -50,7 +78,7 @@ For example:
 
 ``` md
 | fruit  | price  |
-|--------|--------|
+|:-------|--------|
 | apple  | 2.05   |
 | pear   | 1.37   |
 | orange | 3.09   |
@@ -63,7 +91,7 @@ In the body of your text, you can reference the @tbl-fruits.
 This will rendered as follows:
 
 | fruit  | price |
-|--------|-------|
+|:-------|-------|
 | apple  | 2.05  |
 | pear   | 1.37  |
 | orange | 3.09  |
@@ -74,7 +102,29 @@ In the body of your text, you can reference the @tbl-fruits.
 
 ## Figures
 
-TBC
+There are also a lot of ways to embed [figures](https://quarto.org/docs/authoring/figures.html) into the text.
+
+``` md
+![The handbook logo](/handbook/images/logo.png){
+    #fig-logo
+    fig-align="center" 
+    width=50%}
+
+This is illustrated well by @fig-logo.
+```
+
+This will be rendered as:
+
+![The handbook logo](/handbook/images/logo.png){
+    #fig-logo
+    fig-align="center" 
+    width=50%}
+
+This is illustrated well by @fig-logo.
+
+## Callouts
+
+[Callouts](https://quarto.org/docs/authoring/callouts.html) can be used to call attention to specific types of things.
 
 ## References
 
