@@ -4,7 +4,7 @@
     "href": "about/style-guide.html",
     "title": "Style guide",
     "section": "",
-    "text": "To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors. This material is based on other materials like The Turing Way style guide."
+    "text": "To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors. This material is insipred (and is a succinct version) of other guides such as The Turing Way style guide."
   },
   {
     "objectID": "about/style-guide.html#metadata",
@@ -25,7 +25,7 @@
     "href": "about/style-guide.html#writing-and-formatting-text",
     "title": "Style guide",
     "section": "Writing and formatting text",
-    "text": "Writing and formatting text\nText follows common approach specified by markdown (for example heading, bold, italic, etc). Checkout the summary on markdown basics for a good walkthrough.\nA few dos and donts:\n\nDo - use headings widely.\n\nMaking it easy for readers to browse pages and parts of specific pages to zero in to the content they are looking for\n\nDo - use lists, diagrams, callouts, and other formatting liberally\n\nAgain, the goal is to make it easy to read and understand content.\n\nDon’t - write long technical paragraphs\n\nBig and bulky paragraphs or too many paragraphs together make it hard for readers to zero in to the content that would help them most.\n\nDon’t - use new line separation (or by pressing enter) to separate out pages.\n\nLet quarto do this for you when it renders the page. This is a cleaner way to track changes as the content evolves over time and it leaves the formatting to Quarto or to specifications so that we can have consistent format."
+    "text": "Writing and formatting text\nText follows common approach specified by markdown (for example heading, bold, italic, etc). Checkout the summary on markdown basics for a good walkthrough.\nA few dos and donts:\n\nDo - use headings widely.\n\nMaking it easy for readers to browse pages and parts of specific pages to zero in to the content they are looking for\n\nDo - use lists, diagrams, callouts, and other formatting liberally\n\nAgain, the goal is to make it easy to read and understand content.\n\nDon’t - write long technical paragraphs\n\nBig and bulky paragraphs or too many paragraphs together make it hard for readers to zero in to the content that would help them most.\n\nDon’t - use new line separation (or by pressing enter) for each sentence and two spaces per paragraph.\n\nQuarto will merge together separate sentences and will format paragraphs appropriately. Separating things out allows us to track changes per sentence in git. See new line breaks guidance in the Turing Way style guide for a full explanation."
   },
   {
     "objectID": "about/style-guide.html#links",
