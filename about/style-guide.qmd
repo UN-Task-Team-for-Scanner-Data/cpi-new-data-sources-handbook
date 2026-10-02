@@ -20,9 +20,12 @@ Draft principles being flushed out
 
 -   **Consistency**
 
--   **Neutrality** - we provide guidance on what could be done or what are seen as sensible defaults (if they are set in the discipline). Where there is disagreement in the discipline, the options are outlined.
+-   **Neutrality** - we provide guidance on what could be done or what are seen as sensible defaults (if they are set in the discipline).
+    Where there is disagreement in the discipline, the options are outlined.
 
--   **Browsability** - the content here is not meant to be very technical or hard to read and digest. Content is fundamentally designed to be an overview. Hence content is written so that readers can quickly browse through a set of pages, find a seciton that interests them, and read through it.
+-   **Browsability** - the content here is not meant to be very technical or hard to read and digest.
+    Content is fundamentally designed to be an overview.
+    Hence content is written so that readers can quickly browse through a set of pages, find a seciton that interests them, and read through it.
 
 -   ...
 :::
@@ -33,7 +36,9 @@ For a good overview of all the options, check out the [Authoring section in the 
 
 ## Metadata
 
-Quarto uses the metadata specified in each `.qmd` file to format the page. For an overview, check out the [formats that are supported](https://quarto.org/docs/output-formats/all-formats.html), with specific focus on [the html format](https://quarto.org/docs/output-formats/html-basics.html). The default minimum metadata per page should be:
+Quarto uses the metadata specified in each `.qmd` file to format the page.
+For an overview, check out the [formats that are supported](https://quarto.org/docs/output-formats/all-formats.html), with specific focus on [the html format](https://quarto.org/docs/output-formats/html-basics.html).
+The default minimum metadata per page should be:
 
 ``` md
 ---
@@ -59,7 +64,8 @@ Each page should start with a sentence or two at the top introducing the metaria
 
 ## Writing and formatting text
 
-Text follows common approach specified by markdown (for example heading, bold, italic, etc). Checkout the [summary on markdown basics](https://quarto.org/docs/authoring/markdown-basics.html) for a good walkthrough.
+Text follows common approach specified by markdown (for example heading, bold, italic, etc).
+Checkout the [summary on markdown basics](https://quarto.org/docs/authoring/markdown-basics.html) for a good walkthrough.
 
 A few dos and donts:
 
@@ -70,13 +76,12 @@ A few dos and donts:
 -   **Don't** - write long technical paragraphs
     -   *Big and bulky paragraphs or too many paragraphs together make it hard for readers to zero in to the content that would help them most*.
 -   **Don't** - use new line separation (or by pressing enter) for each sentence and two spaces per paragraph.
-    -   *Quarto will merge together separate sentences and will format paragraphs appropriately.
-    Separating things out allows us to track changes per sentence in git. 
-    See [new line breaks](https://book.the-turing-way.org/community-handbook/style/style-writing-markdown/#write-each-sentence-in-a-new-line-line-breaks) guidance in the Turing Way style guide for a full explanation.*
+    -   *Quarto will merge together separate sentences and will format paragraphs appropriately. Separating things out allows us to track changes per sentence in git. See [new line breaks](https://book.the-turing-way.org/community-handbook/style/style-writing-markdown/#write-each-sentence-in-a-new-line-line-breaks) guidance in the Turing Way style guide for a full explanation.*
 
 ## Links
 
-There are many ways to [make links](https://quarto.org/docs/authoring/markdown-basics.html#links-images), depending on what you want to do. The default is:
+There are many ways to [make links](https://quarto.org/docs/authoring/markdown-basics.html#links-images), depending on what you want to do.
+The default is:
 
 ``` md
 See the [aggregation](/handbook/aggregation.qmd) section for more details.
@@ -90,7 +95,9 @@ Which will be rendered as:
 
 ## Tables
 
-There are [many ways](https://quarto.org/docs/authoring/tables.html) to make tables. The minimum default is to separate the id of the table and to give it a title. That way you can reference the table in the text.
+There are [many ways](https://quarto.org/docs/authoring/tables.html) to make tables.
+The minimum default is to separate the id of the table and to give it a title.
+That way you can reference the table in the text.
 
 For example:
 
