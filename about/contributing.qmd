@@ -9,16 +9,18 @@ format:
     toc-expand: 2
 ---
 
-Welcome! Thank you for your interest to contribute to this handbook.
+Welcome!
+Thank you for your interest to contribute to this handbook.
 
 # Overview
 
 ## Semantic versioning
 
-We use [semantic versioning](https://semver.org/) to guide us in how to make changes to our material. Specifically:
+We use [semantic versioning](https://semver.org/) to guide us in how to make changes to our material.
+Specifically:
 
 |  |  |  |  |
-|----------------|-------------------|-------------------|-------------------|
+|------------------|------------------|------------------|------------------|
 | **Level**​ | **Examples**​ | **Default route**​ | **Review expectation**​ |
 | **PATCH**​ | Spelling, links, formatting, bibliography and other non-substantive corrections​ | Community issue or pull request using a GitHub template​ | Technical Secretariat check and merge once automated and editorial checks pass​ |
 | **MINOR**​ | Case study, expanded example, factual clarification, evidence or code revision that does not change overall scope​ | Community or Task Team pull request​ | Relevant peer review and Steering Group approval​ |

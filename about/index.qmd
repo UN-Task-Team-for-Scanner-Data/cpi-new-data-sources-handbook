@@ -5,13 +5,15 @@ date-modified: last-modified
 draft: true
 ---
 
-Welcome! This project is maintained by the UN Task Team on Scanner data.
+Welcome!
+This project is maintained by the UN Task Team on Scanner data.
 
 # Who are we?
 
 ## More about the Task Team
 
-The Task Team on Scanner data is one of the workstreams stood up and supported by the CEBD. Read more about us [here](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml).
+The Task Team on Scanner data is one of the workstreams stood up and supported by the CEBD.
+Read more about us [here](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml).
 
 ## Who is on the Task Team?
 
@@ -19,21 +21,19 @@ Check out the acknowledgement section to see the full list of current and past p
 
 # Roster of experts
 
-:::{.callout-note}
+::: callout-note
 ## TBC
 
 A roster of experts by topic will be added here
-
 :::
 
 # Our presentations
 
-We are active in the price statistics space and have presented at several conferences. Below is a notable list
+We are active in the price statistics space and have presented at several conferences.
+Below is a notable list
 
-
-:::{.callout-note}
+::: callout-note
 ## WIP
 
 A list of events we supported will be added soon
-
 :::
