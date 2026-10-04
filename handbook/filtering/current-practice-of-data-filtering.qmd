@@ -3,27 +3,20 @@ title: "Current practice of data filtering"
 date-modified: "2023-12-01"
 ---
 
-This page contains a summary of how NSOs currently approach data
-filtering.\
-
-------------------------------------------------------------------------
+This page contains a summary of how NSOs currently approach data filtering.
 
 # Current practice {#Currentpracticeofdatafiltering-Currentpractice}
 
-Table 1: examples of where countries have applied these filters:
++-------------+----------------+----------------------+---------------+-----------------+----------------+----------------+------------------+
+|             |                | Country              | Index formula | Commodity group | Outlier filter | Dumping filter | Low sales filter |
++:============+:===============+:=====================+===============+:================+================+================+==================+
+| Upper Limit | Lower Limit    | Price Filter         | Sales Filter  | Lambda          |                |                |                  |
++-------------+----------------+----------------------+---------------+-----------------+----------------+----------------+------------------+
+| Poland      | Chained Jevons | \                    | 3             | 0.25            | \-             | \-             | 1.25             |
++-------------+----------------+----------------------+---------------+-----------------+----------------+----------------+------------------+
+| Norway      | GEKS-Törnqvist | Groceries            | 4             | 0.25            | 0.9            | 0.2            | \-               |
++-------------+----------------+----------------------+---------------+-----------------+----------------+----------------+------------------+
+| UK          | GEKS-Törnqvist | Railfares; used cars | 3             | 0.33            | \-             | \-             | \-               |
++-------------+----------------+----------------------+---------------+-----------------+----------------+----------------+------------------+
 
-+----------+----------------+------------+--------+--------+---------+---------+--------+
-| Country\ | Index formula  | Commodity  | Outlier filter  | Dumping filter\   | Low    |
-| \        |                | group\     |                 | \                 | sales  |
-|          |                | \          |                 |                   | filter |
-+----------+----------------+------------+--------+--------+---------+---------+--------+
-| Upper    | Lower Limit    | Price      | Sales  | Lambda |         |         |        |
-| Limit    |                | Filter     | Filter |        |         |         |        |
-+----------+----------------+------------+--------+--------+---------+---------+--------+
-| Poland   | Chained Jevons | \          | 3      | 0.25   | \-      | \-      | 1.25   |
-+----------+----------------+------------+--------+--------+---------+---------+--------+
-| Norway   | GEKS-Törnqvist | Groceries  | 4      | 0.25   | 0.9     | 0.2     | \-     |
-+----------+----------------+------------+--------+--------+---------+---------+--------+
-| UK       | GEKS-Törnqvist | Railfares; | 3      | 0.33   | \-      | \-      | \-     |
-|          |                | used cars  |        |        |         |         |        |
-+----------+----------------+------------+--------+--------+---------+---------+--------+
+: Examples of where countries have applied these filters {#tbl-filter-examples .striped .hover}
