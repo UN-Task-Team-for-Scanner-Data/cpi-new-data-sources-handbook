@@ -149,11 +149,13 @@ This is illustrated well by @fig-logo.
 [Code listings](https://quarto.org/docs/authoring/cross-references.html#code-listings) are a great way to showcase a piece of code inside a page. For example:
 
 ``` md
+
 @lst-code-example shows a simple code introducing a RAP
 
 ``` {#lst-code-example .python lst-cap="Simple code example"}
 print("Hello! Welcome to the price index RAP")
 ```
+
 ```
 
 Will be displayed as
@@ -162,6 +164,8 @@ Will be displayed as
 
 ``` {#lst-code-example .python lst-cap="Simple code example"}
 print("Hello! Welcome to the price index RAP")
+```
+
 
 ## Callouts
 
