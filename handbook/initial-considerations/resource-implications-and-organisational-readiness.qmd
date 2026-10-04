@@ -7,8 +7,6 @@ The adoption of alternative data sources typically requires a different mix of r
 
 While long-term efficiency gains are often cited as a motivation, most NSOs experience an initial increase in resource demands during research and implementation phases.
 
-------------------------------------------------------------------------
-
 # Staffing and skills {#Resourceimplicationsandorganisationalreadiness-Staffingandskills}
 
 Alternative data sources often require new technical and methodological skills, particularly in areas such as data engineering, programming, database management, and advanced index number methods.
