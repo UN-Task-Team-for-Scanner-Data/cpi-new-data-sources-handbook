@@ -125,6 +125,12 @@ This will rendered as follows:
 
 In the body of your text, you can reference the @tbl-fruits.
 
+:::{.callout-tip}
+## Options
+
+There are several options you can use to configure how the table looks. For example incliding `.sm` within the parameters in the curly brackets makes the table text smaller to fit it better to the page width.
+:::
+
 ## Figures
 
 There are also a lot of ways to embed [figures](https://quarto.org/docs/authoring/figures.html) into the text.
