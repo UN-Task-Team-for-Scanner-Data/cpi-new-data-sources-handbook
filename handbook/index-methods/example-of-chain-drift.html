@@ -914,56 +914,70 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Chain drift occurs when an index does not return to unity when prices in the current period return to their levels in the base period.&nbsp;The problem is mostly caused by sales (that is, highly discounted prices) of products. An example will illustrate the problem.</p>
+<p>Chain drift occurs when an index does not return to unity when prices in the current period return to their levels in the base period.&nbsp; The problem is mostly caused by sales (that is, highly discounted prices) of products. An example will illustrate the problem.</p>
 <p>This example is taken from the upcoming publication: Consumer Price Index Theory chapter 6, Ref. (1).</p>
-<hr>
 <section id="Exampleofchaindrift-Exampleofchaindrift" class="level1">
 <h1>Example of chain drift</h1>
-<p>Suppose that we are given the price and quantity data for two commodities for four periods. The data are listed in Table 1 below.&nbsp;</p>
-<p>Table 1: Price and Quantity Data for Two Products for Four Periods&nbsp;</p>
-<table class="caption-top table">
+<p>Suppose that we are given the price and quantity data for two commodities for four periods. The data are listed in <a href="#tbl-price-quantity-2-product-data" class="quarto-xref">Table&nbsp;1</a> below.&nbsp;</p>
+<div id="tbl-price-quantity-2-product-data" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-price-quantity-2-product-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Price and Quantity Data for Two Products for Four Periods&nbsp;
+</figcaption>
+<div aria-describedby="tbl-price-quantity-2-product-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Period t</th>
+<th style="text-align: left;">p<sub>1</sub><sup>t</sup></th>
+<th style="text-align: left;">p<sub>2</sub><sup>t</sup></th>
+<th style="text-align: left;">q<sub>1</sub><sup>t</sup></th>
+<th style="text-align: left;">q<sub>2</sub><sup>t</sup></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>Period t</td>
-<td>p<sub>1</sub><sup>t</sup></td>
-<td>p<sub>2</sub><sup>t</sup></td>
-<td>q<sub>1</sub><sup>t</sup></td>
-<td>q<sub>2</sub><sup>t</sup></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">100</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>10</td>
-<td>100</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0.5</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">5000</td>
+<td style="text-align: left;">100</td>
 </tr>
 <tr class="odd">
-<td>2</td>
-<td>0.5</td>
-<td>1.0</td>
-<td>5000</td>
-<td>100</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">100</td>
 </tr>
 <tr class="even">
-<td>3</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>1</td>
-<td>100</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>10</td>
-<td>100</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">1.0</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">100</td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>The first commodity is subject to periodic sales (in period 2), when the price drops to half of its normal level. In period 1, we have “normal” off sale demand for commodity 1 which is equal to 10 units. In period 2, the sale takes place and demand explodes to 5000 units. In period 3, the commodity is off sale and the price is back to 1 but many shoppers have stocked up in the previous period so demand falls to only 1 unit. Finally in period 4, the commodity is off sale and we are back to the “normal” demand of 10 units. Commodity two is dull: its price is 1 in all periods and the quantity sold is 100 units in each period. Note that the only thing that has happened going from period 3 to 4 is that the demand for commodity one has picked up from 1 unit to the “normal” level of 10 units. Also note that, conveniently, the period 4 data are exactly equal to the period 1 data so that for Walsh’s test to be satisfied, the product of the period to period chain links must equal one.</p>
-<p>Table 2 lists the fixed base Fisher, Laspeyres and Paasche price indexes, P<sub>F(FB)</sub>, P<sub>L(FB)</sub> and P<sub>P(FB)</sub> and as expected, they behave perfectly in period 4, returning to the period 1 level of 1. Then the chained Fisher, Törnqvist-Theil, Laspeyres and Paasche price indexes, P<sub>F(CH)</sub>, P<sub>T(CH)</sub>, P<sub>L(CH)</sub> and P<sub>P(CH)</sub> are listed. Obviously, the chained Laspeyres and Paasche indexes have chain drift bias that is extraordinary but what is interesting is that the chained Fisher has a 2% downward bias, and the chained Törnqvist has a close to 3% downward bias.&nbsp;</p>
-<p>Table 2: Fixed Base and Chained Fisher, Törnqvist-Theil, Laspeyres and Paasche Indexes</p>
-<table class="caption-top table">
+<p><a href="#tbl-chain-drift-example" class="quarto-xref">Table&nbsp;2</a> lists the fixed base Fisher, Laspeyres and Paasche price indexes, P<sub>F(FB)</sub>, P<sub>L(FB)</sub> and P<sub>P(FB)</sub> and as expected, they behave perfectly in period 4, returning to the period 1 level of 1. Then the chained Fisher, Törnqvist-Theil, Laspeyres and Paasche price indexes, P<sub>F(CH)</sub>, P<sub>T(CH)</sub>, P<sub>L(CH)</sub> and P<sub>P(CH)</sub> are listed. Obviously, the chained Laspeyres and Paasche indexes have chain drift bias that is extraordinary but what is interesting is that the chained Fisher has a 2% downward bias, and the chained Törnqvist has a close to 3% downward bias.&nbsp;</p>
+<div id="tbl-chain-drift-example" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-chain-drift-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Fixed Base and Chained Fisher, Törnqvist-Theil, Laspeyres and Paasche Indexes
+</figcaption>
+<div aria-describedby="tbl-chain-drift-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 12%">
@@ -974,65 +988,69 @@ ul.task-list li input[type="checkbox"] {
 <col style="width: 12%">
 <col style="width: 12%">
 </colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Period</th>
+<th style="text-align: left;">P<sub>F(FB)</sub></th>
+<th style="text-align: left;">P<sub>L(FB)</sub></th>
+<th style="text-align: left;">P<sub>P(FB)</sub></th>
+<th style="text-align: left;">P<sub>F(CH)</sub></th>
+<th style="text-align: left;">P<sub>T(CH)</sub></th>
+<th style="text-align: left;">P<sub>L(CH)</sub></th>
+<th style="text-align: left;">P<sub>P(CH)</sub></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td>Period</td>
-<td>P<sub>F(FB)</sub></td>
-<td>P<sub>L(FB)</sub></td>
-<td>P<sub>P(FB)</sub></td>
-<td>P<sub>F(CH)</sub></td>
-<td>P<sub>T(CH)</sub></td>
-<td>P<sub>L(CH)</sub></td>
-<td>P<sub>P(CH)</sub></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>1.000</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0.698</td>
+<td style="text-align: left;">0.955</td>
+<td style="text-align: left;">0.510</td>
+<td style="text-align: left;">0.698</td>
+<td style="text-align: left;">0.694</td>
+<td style="text-align: left;">0.955</td>
+<td style="text-align: left;">0.510</td>
 </tr>
 <tr class="odd">
-<td>2</td>
-<td>0.698</td>
-<td>0.955</td>
-<td>0.510</td>
-<td>0.698</td>
-<td>0.694</td>
-<td>0.955</td>
-<td>0.510</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">0.979</td>
+<td style="text-align: left;">0.972</td>
+<td style="text-align: left;">1.872</td>
+<td style="text-align: left;">0.512</td>
 </tr>
 <tr class="even">
-<td>3</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>0.979</td>
-<td>0.972</td>
-<td>1.872</td>
-<td>0.512</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>1.000</td>
-<td>0.979</td>
-<td>0.972</td>
-<td>1.872</td>
-<td>0.512</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">1.000</td>
+<td style="text-align: left;">0.979</td>
+<td style="text-align: left;">0.972</td>
+<td style="text-align: left;">1.872</td>
+<td style="text-align: left;">0.512</td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>What explains the results in the above table? The problem is this: when commodity one comes off sale and goes back to its regular price in period 3, the corresponding quantity does not return to the level it had in period 1: the period 3 demand is only 1 unit whereas the “normal” period 1 demand for commodity 1 was 10 units. It is only in period 4, that demand for commodity one recovers to the period 1 level. However, since prices are the same in periods 3 and 4, all of the chain links show no change (even though quantities are changing) and this is what causes the difficulties. If demand for commodity one in period 3 had immediately recovered to its “normal” period 1 level of 10, then there would be no chain drift problem.</p>
-<hr>
 </section>
 <section id="Exampleofchaindrift-References" class="level1">
 <h1>References</h1>
-<p>(1) Diewert, E., Becker-Vermeulen, C., De Haan, J., Gorajek, A., Hill, R., Johnson, R., Lamboray, C., Li, C., Reinsdorf, M., Rambaldi, A., Rao, P., Shimizu, C., Silver, M., Weselake-George, Z. and Yélou, C. (2021). [online] Available at: <a href="https://www.imf.org/-/media/Files/Data/CPI/companion-publication/chapter-6-chain-drift-problem-and-multilateral-indices.ashx" class="uri">https://www.imf.org/-/media/Files/Data/CPI/companion-publication/chapter-6-chain-drift-problem-and-multilateral-indices.ashx</a>&nbsp;</p>
+<p>(1) Diewert, E., Becker-Vermeulen, C., De Haan, J., Gorajek, A., Hill, R., Johnson, R., Lamboray, C., Li, C., Reinsdorf, M., Rambaldi, A., Rao, P., Shimizu, C., Silver, M., Weselake-George, Z. and Yélou, C. (2021). [online] Available at: <a href="https://www.imf.org/-/media/Files/Data/CPI/companion-publication/chapter-6-chain-drift-problem-and-multilateral-indices.ashx" class="uri">https://www.imf.org/-/media/Files/Data/CPI/companion-publication/chapter-6-chain-drift-problem-and-multilateral-indices.ashx</a></p>
 
 
 </section>

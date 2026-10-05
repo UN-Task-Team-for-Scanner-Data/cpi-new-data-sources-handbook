@@ -913,9 +913,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Data will need to be standardised before being used to calculate price indices.<br>
-</p>
-<hr>
+<p>Data will need to be standardised before being used to calculate price indices.</p>
 <section id="Standardisingthedata-Standardisingthedata" class="level1">
 <h1>Standardising the data</h1>
 <p>After the data are received by the National Statistical Office (NSO), it will need to be standardised in order to be processed through the statistical pipeline. Standardisation can include:</p>
@@ -925,74 +923,84 @@ ul.task-list li input[type="checkbox"] {
 <li>creating new variables that can help with future processing</li>
 </ul>
 <p>Scanner data sets typically do not contain a price variable. Instead, the price variable has to be calculated. An average price is obtained by dividing total turnover&nbsp;with the corresponding total number of units sold (the ‘quantity’ variable) for a given set of transactions.&nbsp; Because this is an <em>average</em> price, it&nbsp;may be different from the price that would be observed by a price collector on a particular day, in a specific outlet for a specific product.</p>
-<p>Different articles usually have different package sizes, weights etc.. The price and quantity variables could be transformed into a common, standard, measurement unit.&nbsp; Consider the example presented in Table 1:</p>
-<p>Table 1: deriving a standardised price</p>
-<table class="caption-top table">
+<p>Different articles usually have different package sizes, weights etc. The price and quantity variables could be transformed into a common, standard, measurement unit.&nbsp; Consider the example presented in <a href="#tbl-standardized-price-process" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="tbl-standardized-price-process" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-standardized-price-process-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Deriving a standardised price
+</figcaption>
+<div aria-describedby="tbl-standardized-price-process-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
-<col style="width: 9%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 7%">
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 6%">
 <col style="width: 14%">
-<col style="width: 15%">
+<col style="width: 17%">
 <col style="width: 15%">
 </colgroup>
-<tbody>
-<tr class="odd">
-<td>Article code</td>
-<td><p>Turnover</p>
-<p>(1)</p></td>
-<td><p>Quantity</p>
-<p>(2)</p></td>
-<td><p>Price</p>
-<p>(3) = (1)/(2)</p></td>
-<td><p>Unit</p>
-<p>(4)</p></td>
-<td><p>Standardised unit</p>
-<p>(5)</p></td>
-<td><p>Standardised quantity</p>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Article code</th>
+<th style="text-align: left;"><p>Turnover</p>
+<p>(1)</p></th>
+<th style="text-align: left;"><p>Quantity</p>
+<p>(2)</p></th>
+<th style="text-align: left;"><p>Price</p>
+<p>(3) = (1)/(2)</p></th>
+<th style="text-align: left;"><p>Unit</p>
+<p>(4)</p></th>
+<th style="text-align: left;"><p>Standardised unit</p>
+<p>(5)</p></th>
+<th style="text-align: left;"><p>Standardised quantity</p>
 <p>&nbsp;(6) = (2) * (4)/(5)</p>
 <p><br>
-</p></td>
-<td><p>Standardised price</p>
+</p></th>
+<th style="text-align: left;"><p>Standardised price</p>
 <p>(7) = (1)/(6)</p>
 <p><br>
-</p></td>
+</p></th>
 </tr>
-<tr class="even">
-<td>&nbsp;XXXA</td>
-<td>1536</td>
-<td>720</td>
-<td><h1 id="section">1536/720</h1>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">XXXA</td>
+<td style="text-align: left;">1536</td>
+<td style="text-align: left;">720</td>
+<td style="text-align: left;"><p>1536/720</p>
 <p>2.13</p></td>
-<td>0.8 kg</td>
-<td>1 kg</td>
-<td><p>720* (0.8/1)</p>
+<td style="text-align: left;">0.8 kg</td>
+<td style="text-align: left;">1 kg</td>
+<td style="text-align: left;"><p>720* (0.8/1)</p>
 <p>= 576</p>
 <p><br>
 </p></td>
-<td><p>1536/576</p>
+<td style="text-align: left;"><p>1536/576</p>
 <p>= 2.67</p></td>
 </tr>
-<tr class="odd">
-<td>XXXB</td>
-<td>1432</td>
-<td>620</td>
-<td><h1 id="section-1">1432/620</h1>
+<tr class="even">
+<td style="text-align: left;">XXXB</td>
+<td style="text-align: left;">1432</td>
+<td style="text-align: left;">620</td>
+<td style="text-align: left;"><p>1432/620</p>
 <p>2.31</p></td>
-<td>0.9 kg</td>
-<td>1 kg</td>
-<td><p>620 * (0.9/1)</p>
+<td style="text-align: left;">0.9 kg</td>
+<td style="text-align: left;">1 kg</td>
+<td style="text-align: left;"><p>620 * (0.9/1)</p>
 <p>= 558</p></td>
-<td><p>1432/558</p>
+<td style="text-align: left;"><p>1432/558</p>
 <p>= 2.57</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>Standardising the price and quantity variable facilitates analysing the prices data. It is also useful when grouping together different article codes, or when linking an article code in a certain period with another article code in a previous period, although the different articles do not have, for example, the same weight. Note that most index formulas are invariant to changes in the units of measurements.</p>
-<p>Some articles, especially certain fruits or vegetables but also some cheese, meat and fish are sold by weight. For those articles, the quantity variable is typically not measured by the 'number of transactions', but by the total weight sold (e.g.&nbsp;kilograms). In that case, the calculated average price is already standardised (for example an average price per kilogram).&nbsp;</p>
-<p>A standardised price could also be calculated for web scraped data. For example, for clothing multipacks, the scraped price could be transformed into a 'price per unit'.</p>
+<p>Some articles, especially certain fruits or vegetables but also some cheese, meat and fish are sold by weight. For those articles, the quantity variable is typically not measured by the ‘number of transactions’, but by the total weight sold (e.g.&nbsp;kilograms). In that case, the calculated average price is already standardised (for example an average price per kilogram).</p>
+<p>A standardised price could also be calculated for web scraped data. For example, for clothing multipacks, the scraped price could be transformed into a ‘price per unit’.</p>
 
 
 </section>

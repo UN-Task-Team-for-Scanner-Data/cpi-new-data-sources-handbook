@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-05-08">
 
 <title>Overview of alternative data sources – Handbook on utilising new data sources in the production of consumer price statistics</title>
 <style>
@@ -919,6 +920,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">8 May 2024</p>
+    </div>
+  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Last updated</div>
@@ -944,7 +951,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Most alternative data sources used in practice fall predominantly into one of these categories. Once data are acquired, many downstream processing steps, such as cleaning, classification, validation, and index compilation, are conceptually similar across sources. However, the availability (or absence) of quantity or expenditure information is often a key determinator in the choice of sampling, index number methods, and aggregation strategies.</p>
 <p>The main types of alternative data sources that can be considered within this framework are described below.&nbsp;</p>
-<hr>
 <section id="Overviewofalternativedatasources-Transactiondata" class="level1">
 <h1>Transaction data</h1>
 <p>Transaction data record actual purchases made by consumers and typically include information on turnover, quantities sold, and prices paid. Scanner data (transaction data recorded at retailer checkout points) are one of the most prominent examples of this data type. More broadly, transaction data may be collected through a variety of systems and are not limited to physical retail environments. For example, e-invoice data, administrative transaction data, and other electronic transaction records such as loyalty-scheme databases, receipt based data and IoT (“Internet of Things”) enabled devices (such as smart appliances, connected home devices and wearables) are becoming increasingly explored and considered.&nbsp;</p>
@@ -1015,90 +1021,100 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="Overviewofalternativedatasources-Keyfeaturesofalternativedatasources" class="level1" style="text-align: left;">
-<h1 style="text-align: left;">Key features of alternative data sources</h1>
-<p>The features of these data sources are summarized in Table 1. More detailed examples of file structures for scanner data and web-scraped data are provided in the section <a href="../../handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.html">Example file structures for web scraped and scanner data</a>. Emerging sources have not been included in this table as their features vary from source to source, if any of these emerging sources become prominent in use within consumer price statistics, they will be appended to the table accordingly.&nbsp;</p>
-<p>Table 1: Features of new and existing data sources</p>
-<table class="caption-top table">
+<section id="Overviewofalternativedatasources-Keyfeaturesofalternativedatasources" class="level1">
+<h1>Key features of alternative data sources</h1>
+<p>The features of these data sources are summarized in <a href="#tbl-features-in-the-data" class="quarto-xref">Table&nbsp;1</a>. More detailed examples of file structures for scanner data and web-scraped data are provided in the section <a href="../../handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.html">Example file structures for web scraped and scanner data</a>. Emerging sources have not been included in this table as their features vary from source to source, if any of these emerging sources become prominent in use within consumer price statistics, they will be appended to the table accordingly.&nbsp;</p>
+<div id="tbl-features-in-the-data" class="sm striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-features-in-the-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Features of new and existing data sources
+</figcaption>
+<div aria-describedby="tbl-features-in-the-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-sm table-striped table-hover small caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Data dimension</th>
+<th style="text-align: left;">Traditional data</th>
+<th style="text-align: left;">Transaction data</th>
+<th style="text-align: left;">Non-transaction data</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><strong>Data dimension</strong></td>
-<td><strong>Traditional data</strong></td>
-<td><strong>Transaction data</strong></td>
-<td><strong>Non-transaction data</strong></td>
-</tr>
-<tr class="even">
-<td>Data acquisition</td>
-<td>Manual mainly via software running on tablet</td>
-<td>Automated - acquired from retailers, government or other organisations collecting them primarily for non-statistical aims</td>
-<td><p>Automated - data acquired directly from providers, web-scraped (although requires maintenance for website changes) or through APIs</p>
+<td style="text-align: left;">Data acquisition</td>
+<td style="text-align: left;">Manual mainly via software running on tablet</td>
+<td style="text-align: left;">Automated - acquired from retailers, government or other organisations collecting them primarily for non-statistical aims</td>
+<td style="text-align: left;"><p>Automated - data acquired directly from providers, web-scraped (although requires maintenance for website changes) or through APIs</p>
 <p><br>
 </p></td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">Completeness/scope</td>
+<td style="text-align: left;">Sample items from&nbsp;sample of retailers</td>
+<td style="text-align: left;">All transactions (census) for participating retailers/companies</td>
+<td style="text-align: left;">Bulk or targeted sample from online retailers (web/API), participants&nbsp;or data owners</td>
+</tr>
 <tr class="odd">
-<td>Completeness/scope</td>
-<td>Sample items from&nbsp;sample of retailers</td>
-<td>All transactions (census) for participating retailers/companies</td>
-<td>Bulk or targeted sample from online retailers (web/API), participants&nbsp;or data owners</td>
+<td style="text-align: left;">Metadata</td>
+<td style="text-align: left;">Item description and NSO specified attributes</td>
+<td style="text-align: left;">Item description and often limited attributes</td>
+<td style="text-align: left;">Item description and attributes as described on website or according to available attributes in other databases</td>
 </tr>
 <tr class="even">
-<td>Metadata</td>
-<td>Item description and NSO specified attributes</td>
-<td>Item description and often limited attributes</td>
-<td>Item description and attributes as described on website or according to available attributes in other databases</td>
+<td style="text-align: left;">Quantity data</td>
+<td style="text-align: left;">None (shelf space and other possible proxies)</td>
+<td style="text-align: left;">Quantities&nbsp;sold</td>
+<td style="text-align: left;">None (although see Section&nbsp;<a href="../../handbook/index-methods/deriving-proxy-weights-for-web-scraped-data.html">Deriving proxy weights for web scraped data</a>)</td>
 </tr>
 <tr class="odd">
-<td>Quantity data</td>
-<td>None (shelf space and other possible proxies)</td>
-<td>Quantities&nbsp;sold</td>
-<td>None (although see Section&nbsp;<a href="../../handbook/index-methods/deriving-proxy-weights-for-web-scraped-data.html">Deriving proxy weights for web scraped data</a>)</td>
+<td style="text-align: left;">Price data</td>
+<td style="text-align: left;">List price</td>
+<td style="text-align: left;">Transaction price</td>
+<td style="text-align: left;">List price</td>
 </tr>
 <tr class="even">
-<td>Price data</td>
-<td>List price</td>
-<td>Transaction price</td>
-<td>List price</td>
-</tr>
-<tr class="odd">
-<td>Time of data availability</td>
-<td>Based on NSO processing speed</td>
-<td>Scheduled file deliveries - may introduce some lag. Access to historic data generally available</td>
-<td><p>For web or API: Near instantaneous if scraped or API, may be some lag if provider-delivered. Limited to no access to historic data.</p>
+<td style="text-align: left;">Time of data availability</td>
+<td style="text-align: left;">Based on NSO processing speed</td>
+<td style="text-align: left;">Scheduled file deliveries - may introduce some lag. Access to historic data generally available</td>
+<td style="text-align: left;"><p>For web or API: Near instantaneous if scraped or API, may be some lag if provider-delivered. Limited to no access to historic data.</p>
 <p>For administrative non-transacted data / some online listings data: Scheduled file deliveries - may introduce some lag. Access to historic data generally available</p></td>
 </tr>
-<tr class="even">
-<td>Time coverage</td>
-<td>One point in time in collection period</td>
-<td>Complete coverage across month although can be aggregated to daily/weekly/monthly instead of individual transactions</td>
-<td><p>For web or API: High-frequency (depending on the purpose, different frequencies are possible eg scraping can happen hourly, daily, weekly or monthly)</p>
+<tr class="odd">
+<td style="text-align: left;">Time coverage</td>
+<td style="text-align: left;">One point in time in collection period</td>
+<td style="text-align: left;">Complete coverage across month although can be aggregated to daily/weekly/monthly instead of individual transactions</td>
+<td style="text-align: left;"><p>For web or API: High-frequency (depending on the purpose, different frequencies are possible eg scraping can happen hourly, daily, weekly or monthly)</p>
 <p>For administrative non transacted data: depends on the kind of sector and data set.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
 <section id="Overviewofalternativedatasources-Strengthslimitationsandrisksofalternativedatasources" class="level1">
 <h1>Strengths, limitations and risks of alternative data sources</h1>
 <p>Alternative data sources&nbsp;offer important opportunities to enhance consumer price statistics, but their use also introduces a range of methodological, operational, and governance considerations. These considerations vary across data sources and across national contexts, and should be assessed carefully as part of an NSOs implementation strategy.</p>
-<section id="Overviewofalternativedatasources-Coverageandrepresentativeness" class="level2" data-end="1124" data-start="1089">
-<h2 data-end="1124" data-start="1089" class="anchored" data-anchor-id="Overviewofalternativedatasources-Coverageandrepresentativeness">Coverage and representativeness</h2>
+<section id="Overviewofalternativedatasources-Coverageandrepresentativeness" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Coverageandrepresentativeness">Coverage and representativeness</h2>
 <p>Some alternative data sources, particularly transaction data, can provide detailed information on prices and quantities for a large share of consumer purchases within participating retailers. This can improve representativeness at detailed levels and support the use of explicit expenditure or quantity weighting.</p>
 <p>Non-transaction data sources, such as web-scraped or API-based price data and online listings data, typically provide extensive coverage of listed products and prices but may not include information on how frequently those products are purchased, this may disproportionately represent products that are frequently listed or heavily marketed online, regardless of how often they are actually purchased.</p>
 <p>When quantity or expenditure information is unavailable, price indices derived from these data implicitly treat all observed products as equally important. This can result in indices that over-represent niche, premium, or rarely purchased products and under-represent commonly purchased items. While proxy weighting approaches have been proposed, identifying robust and conceptually appropriate proxies remains challenging and is an active area of research.</p>
 <p>Administrative data may offer comprehensive or near-census coverage for specific services or regulated prices, but may be limited in scope or frequency and may not align perfectly with CPI concepts without adjustment.</p>
 </section>
-<section id="Overviewofalternativedatasources-Methodologicalimplications" class="level2" data-end="2167" data-start="2136">
-<h2 data-end="2167" data-start="2136" class="anchored" data-anchor-id="Overviewofalternativedatasources-Methodologicalimplications">Methodological implications</h2>
+<section id="Overviewofalternativedatasources-Methodologicalimplications" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Methodologicalimplications">Methodological implications</h2>
 <p>The characteristics of each data source influence the choice of data preparation methods, index number formulas, and aggregation strategies. The availability (or absence) of quantity or expenditure information is particularly important, as it affects whether weighted or unweighted methods can be used at the elementary aggregate level.</p>
 <p>Alternative data sources may also exhibit features such as high product turnover, frequent product relaunches, or changes in item definitions over time. These features can complicate <a href="../../handbook/preparation/identifying-unique-products.html">product identification, matching, and quality adjustment</a>, and place additional demands on data processing and index compilation systems regardless of the data source used.</p>
 </section>
-<section id="Overviewofalternativedatasources-Operationalandsustainabilityconsiderations" class="level2" data-end="2912" data-start="2863">
-<h2 data-end="2912" data-start="2863" class="anchored" data-anchor-id="Overviewofalternativedatasources-Operationalandsustainabilityconsiderations">Operational and sustainability considerations</h2>
+<section id="Overviewofalternativedatasources-Operationalandsustainabilityconsiderations" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Operationalandsustainabilityconsiderations">Operational and sustainability considerations</h2>
 <p>Compared with traditional survey-based collection, alternative data sources introduce different operational dependencies. Transaction data such as scanner data and administrative transaction data often rely on sustained cooperation with data providers or other public authorities, while non-transaction data such as web-scraping collection depends on stable technical access and clearly defined collection arrangements.</p>
 <p>The long-term availability and continuity of alternative data cannot always be guaranteed. Changes in business practices, data systems, legislation, or technical interfaces may affect data supply over time. NSOs should therefore consider sustainability, contingency planning, and the implications of data changes for index continuity and comparability. Web scraping relies on automated extraction from retailer websites, which may change without notice or restrict access over time. APIs and data-sharing agreements may provide greater stability but require sustained cooperation with data providers.</p>
-<p>When inserting the use of alternative data sources into production it is important and highly recommended that NSOs consider a feasible <a href="dealing-with-unexpected-data-gaps.qmd">fallback plan to mitigate possible data gaps</a> in the acquisition process.&nbsp;</p>
+<p>When inserting the use of alternative data sources into production it is important and highly recommended that NSOs consider a feasible <a href="../../handbook/selection-and-acquisition/dealing-with-unexpected-data-gaps.html">fallback plan to mitigate possible data gaps</a> in the acquisition process.&nbsp;</p>
 </section>
-<section id="Overviewofalternativedatasources-Legalethicalandgovernanceissues" class="level2" data-end="3665" data-start="3624">
-<h2 data-end="3665" data-start="3624" class="anchored" data-anchor-id="Overviewofalternativedatasources-Legalethicalandgovernanceissues">Legal, ethical, and governance issues</h2>
+<section id="Overviewofalternativedatasources-Legalethicalandgovernanceissues" class="level2">
+<h2 class="anchored" data-anchor-id="Overviewofalternativedatasources-Legalethicalandgovernanceissues">Legal, ethical, and governance issues</h2>
 <p>The use of alternative data sources raises legal and ethical considerations related to data access, confidentiality, intellectual property, and compliance with national and international regulations. These considerations apply across data sources, though the specific risks and mitigation strategies may differ.</p>
 <p>Clear governance arrangements, transparency about data use, and, where appropriate, formal data-sharing agreements are essential to ensure that alternative data are used responsibly and sustainably in official statistics. Further discussion on deriving a formal agreement for scanner data can be found in the section <a href="../../handbook/selection-and-acquisition/scanner/data-sharing-agreements.html">Data sharing agreements</a> and in the training material for the module on data acquisition.</p>
 

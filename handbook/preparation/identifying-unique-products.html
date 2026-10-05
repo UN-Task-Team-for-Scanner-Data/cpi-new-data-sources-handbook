@@ -914,27 +914,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Data are usually&nbsp;disaggregated by various dimensions. This page contains information on how products can be defined from the given article codes.<br>
-</p>
-<hr>
+<p>Data are usually&nbsp;disaggregated by various dimensions. This page contains information on how products can be defined from the given article codes.</p>
 <section id="Identifyinguniqueproducts-Aggregatingarticlecodes" class="level1">
 <h1>Aggregating article codes</h1>
-<p>After possibly aggregating across time and outlets (see <a href="../../handbook/preparation/aggregation-across-time-and-outlets.html">Aggregation across time and outlets</a>), an average price by article code is available. In some cases, these article codes may be too detailed for price index calculation because of relaunches, or because article code churn is very high (see for example Ref. (4) for discussion on this by the Office for National Statistics (ONS).</p>
+<p>After possibly aggregating across time and outlets (see <a href="../../handbook/preparation/aggregation-across-time-and-outlets.html">Aggregation across time and outlets</a>), an average price by article code is available. In some cases, these article codes may be too detailed for price index calculation because of relaunches, or because article code churn is very high (see for example Ref. (4) for discussion on this by the Office for National Statistics (ONS)).</p>
 <p>For example, let us suppose that a first article code has a price of 20 euros in period 1 and becomes unavailable from period 2 thereafter. A second article code of the same quality (a ‘relaunch’) has a price of 25 euros and is only available from period 2 onwards. A price index based on matching article codes would miss the price increase from 20 euros to 25 euros.</p>
 <p>In some product categories, such as clothing and footwear, the article codes frequently appear and disappear making it difficult to match them across time and therefore price changes are not adequately measured.</p>
 <p>There are different strategies to cope with new and disappearing article codes.</p>
 <ol type="1">
 <li>Linking - an outgoing article code is linked with an incoming article code so that their prices can be directly compared, possibly applying a quantity adjustment if package size has changed (see Ref. (1) for linking article codes for clothing and Ref. (4) for application of relaunch linking to groceries).</li>
 <li>Grouping&nbsp;- different articles with similar characteristics are grouped together and the average prices for these groupings are followed over time. (see Ref. (3) for creating homogeneous products for sports equipment). There are trade-offs in creating groupings (homogenous products). If a grouping is too broad, this can lead to unit value bias (and high volatility) as the individual articles are not strictly comparable. On the other hand, defining the grouping too narrowly may lead to a lack of matching between outgoing and new or returning articles. The multivariate adaptive regression splines&nbsp;(MARS) method (see Ref. (2)) can be used as a tool for finding a compromise between these two objectives.</li>
-<li>Quality adjustment and hedonics - the prices for the new and disappearing articles are imputed in the periods when they are not available with the help of a hedonic function. For additional detail, see the section on <a href="quality-change-and-hedonic-estimation.qmd">Quality change and hedonic estimation</a>.</li>
+<li>Quality adjustment and hedonics - the prices for the new and disappearing articles are imputed in the periods when they are not available with the help of a hedonic function. For additional detail, see the section on <a href="../../handbook/other-considerations/quality-change-and-hedonic-estimation.html">Quality change and hedonic estimation</a>.</li>
 </ol>
-<p>Table 1 below summarises some of the key advantages and disadvantages of using these strategies.</p>
-<p>Table 1: Key advantages and disadvantages of using linking, grouping and hedonics strategies.</p>
-<table class="caption-top table">
+<p><a href="#tbl-unique-product-strategies" class="quarto-xref">Table&nbsp;1</a> below summarises some of the key advantages and disadvantages of using these strategies.</p>
+<div id="tbl-unique-product-strategies" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-unique-product-strategies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Key advantages and disadvantages of using linking, grouping and hedonics strategies
+</figcaption>
+<div aria-describedby="tbl-unique-product-strategies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 31%">
-<col style="width: 47%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 45%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -959,6 +962,9 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>All three strategies require some kind of metadata on product characteristics. Such metadata can be obtained as follows:</p>
 <ol type="1">
 <li>Extract relevant information from the text strings (such as the brand).</li>
@@ -967,9 +973,6 @@ ul.task-list li input[type="checkbox"] {
 <li>Use additional information on product characteristics provided by market research companies.</li>
 <li>Scrape additional product characteristics on the web for the article codes included in scanner data.</li>
 </ol>
-<p><br>
-</p>
-<hr>
 </section>
 <section id="Identifyinguniqueproducts-References" class="level1">
 <h1>References</h1>
@@ -977,8 +980,6 @@ ul.task-list li input[type="checkbox"] {
 <p>(2) Chessa, A. G. (2019). MARS: A method for defining products and linking barcodes of item relaunches, paper presented at the 16th meeting of the Ottawa Group, Rio de Janeiro, Brazil <a href="https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/home/Meeting+16/$FILE/A%20method%20for%20defining%20products%20paper.pdf" class="uri">https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/home/Meeting+16/$FILE/A%20method%20for%20defining%20products%20paper.pdf</a></p>
 <p>(3) Nyborg Hov K., Johannessen R. (2018). Using scanner data for sports equipment. Paper written for the joint UNECE/ILOs Meeting of the Group of Experts on Consumer Price Indices, Geneva, Switzerland <a href="https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2018/Norway_-_session_1.pdf" class="uri">https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2018/Norway_-_session_1.pdf</a></p>
 <p>(4) ONS (2021). Research into the use of scanner data for constructing UK consumer price statistics <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06" class="uri">https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06</a></p>
-<p><br>
-</p>
 
 
 </section>

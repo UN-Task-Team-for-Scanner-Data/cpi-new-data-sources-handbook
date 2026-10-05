@@ -116,6 +116,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <meta name="quarto:status" content="draft">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -404,6 +433,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
   <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Figures</a></li>
+  <li><a href="#code-examples" id="toc-code-examples" class="nav-link" data-scroll-target="#code-examples">Code examples</a></li>
+  <li><a href="#formulas" id="toc-formulas" class="nav-link" data-scroll-target="#formulas">Formulas</a></li>
   <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts">Callouts</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
@@ -436,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Last updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">2 October 2026</p>
+      <p class="date-modified">5 October 2026</p>
     </div>
   </div>
     
@@ -525,10 +556,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="links">Links</h2>
 <p>There are many ways to <a href="https://quarto.org/docs/authoring/markdown-basics.html#links-images">make links</a>, depending on what you want to do. The default is:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>See the <span class="co">[</span><span class="ot">aggregation</span><span class="co">](/handbook/aggregation.qmd)</span> section for more details.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Which will be rendered as:</p>
-<blockquote class="blockquote">
+<p><strong>Will be rendered as follows</strong></p>
 <p>See the <a href="../handbook/aggregation.html">aggregation</a> section for more details.</p>
-</blockquote>
 <p><strong>Note</strong>: You can specify the link relative to the root directory (hence <code>/handbook/...</code>) or relative to the folder the <code>qmd</code> file you are editing (hence you can state <code>aggregation.qmd</code> if say you are on the <code>glossary.qmd</code> file).</p>
 </section>
 <section id="tables" class="level2">
@@ -544,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>: Fruit prices {#tbl-fruits .striped .hover}</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>In the body of your text, you can reference the @tbl-fruits.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This will rendered as follows:</p>
+<p><strong>Will rendered as follows</strong></p>
 <div id="tbl-fruits" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fruits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -577,6 +606,19 @@ Table&nbsp;1: Fruit prices
 </figure>
 </div>
 <p>In the body of your text, you can reference the <a href="#tbl-fruits" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Options
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are several options you can use to configure how the table looks. For example incliding <code>.sm</code> within the parameters in the curly brackets makes the table text smaller to fit it better to the page width.</p>
+</div>
+</div>
 </section>
 <section id="figures" class="level2">
 <h2 class="anchored" data-anchor-id="figures">Figures</h2>
@@ -587,7 +629,7 @@ Table&nbsp;1: Fruit prices
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    width=50%}</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>This is illustrated well by @fig-logo.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This will be rendered as:</p>
+<p><strong>Will be rendered as</strong></p>
 <div id="fig-logo" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -599,6 +641,51 @@ Figure&nbsp;1: The handbook logo
 </figure>
 </div>
 <p>This is illustrated well by <a href="#fig-logo" class="quarto-xref">Figure&nbsp;1</a>.</p>
+</section>
+<section id="code-examples" class="level2">
+<h2 class="anchored" data-anchor-id="code-examples">Code examples</h2>
+<p><a href="https://quarto.org/docs/authoring/cross-references.html#code-listings">Code listings</a> are a great way to showcase a piece of code inside a page. For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>@lst-code-example shows a simple code introducing a RAP</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">``` {#lst-code-example .python lst-cap="Simple code example"}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">print("Hello! Welcome to the price index RAP")</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Will be displayed as</strong></p>
+<p><a href="#lst-code-example" class="quarto-xref">Listing&nbsp;1</a> shows a simple code introducing a RAP</p>
+<div id="lst-code-example" class="python listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-code-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1: Simple code example
+</figcaption>
+<div aria-describedby="lst-code-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello! Welcome to the price index RAP"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</figure>
+</div>
+</section>
+<section id="formulas" class="level2">
+<h2 class="anchored" data-anchor-id="formulas">Formulas</h2>
+<p>Quarto <a href="https://quarto.org/docs/output-formats/html-basics.html#latex-equations">renders LaTex equations</a>, meaning basic LaTex formulas can be used. Using visual mode in vscode or Rstudio is the easiest way to write and display these at the same time.</p>
+<p>Formulas are surrounded by a single <code>$</code> for inline (i.e.&nbsp;within the text) or two of bulk formulas in the middle of a page.</p>
+<p>For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>P_{J}^{0, t}=</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    \prod_{i \in G_{0, t}} \left(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        \frac{p_{i}^{t}}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>             {p_{i}^{0}}</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        \right)^{\frac{1}{N_{0, t}}} </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>Is the Jevons index, where $G_{0,t}$ is a set of matched products in both months 0 and t.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Will display as</strong></p>
+<p><span class="math display">\[
+P_{J}^{0, t}=
+    \prod_{i \in G_{0, t}} \left(
+        \frac{p_{i}^{t}}
+             {p_{i}^{0}}
+        \right)^{\frac{1}{N_{0, t}}}
+\]</span></p>
+<p>Is the Jevons index, where <span class="math inline">\(G_{0,t}\)</span> is a set of matched products in both months 0 and t.</p>
 </section>
 <section id="callouts" class="level2">
 <h2 class="anchored" data-anchor-id="callouts">Callouts</h2>

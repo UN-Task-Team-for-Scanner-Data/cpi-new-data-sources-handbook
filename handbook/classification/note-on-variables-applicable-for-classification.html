@@ -914,54 +914,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Several variables <a href="../../handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.html">obtained during the acquisition process</a> are typically applicable for classification.&nbsp;An important consideration is making sure that the appropriate variables are included when acquisition is being discussed, as it may be challenging to expand the set over time. The below table summarizes the variables commonly found useful, although this table should not mean that all variables are used. Studies should be done to make sure that only useful variables are used in the classification process (for example some variables may not be of much value to a classifier).</p>
-<p>Table 1: Summary of typical variables in alternative data and their application for classification</p>
-<table class="caption-top table">
+<p>Several variables <a href="../../handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.html">obtained during the acquisition process</a> are typically applicable for classification.&nbsp; An important consideration is making sure that the appropriate variables are included when acquisition is being discussed, as it may be challenging to expand the set over time. The below table summarizes the variables commonly found useful, although this table should not mean that all variables are used. Studies should be done to make sure that only useful variables are used in the classification process (for example some variables may not be of much value to a classifier).</p>
+<div id="tbl-variables-for-classification" class="sm striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-variables-for-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary of typical variables in alternative data and their application for classification
+</figcaption>
+<div aria-describedby="tbl-variables-for-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-sm table-striped table-hover small caption-top table">
 <tbody>
 <tr class="odd">
-<td><strong>Value for classification</strong></td>
-<td><strong>Variable</strong></td>
-<td><strong>Definition and note on its application for classification</strong></td>
-<td><strong>Note on data the variable is available in</strong></td>
+<td style="text-align: left;"><strong>Value for classification</strong></td>
+<td style="text-align: left;"><strong>Variable</strong></td>
+<td style="text-align: left;"><strong>Definition and note on its application for classification</strong></td>
+<td style="text-align: left;"><strong>Note on data the variable is available in</strong></td>
 </tr>
 <tr class="even">
-<td>High</td>
-<td>Product name</td>
-<td>Actual product being sold. Useful for all but <a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">Method 1</a>.</td>
-<td>This variable is usually available everywhere. Web scrape definitions of product names may be unstable as a retailer may modify the name over time (such as adding “SALE” at the end of the name).</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Product name</td>
+<td style="text-align: left;">Actual product being sold. Useful for all but <a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">Method 1</a>.</td>
+<td style="text-align: left;">This variable is usually available everywhere. Web scrape definitions of product names may be unstable as a retailer may modify the name over time (such as adding “SALE” at the end of the name).</td>
 </tr>
 <tr class="odd">
-<td>High</td>
-<td>Retailer category / categories</td>
-<td>The retailer specific category or set of hierarchical | Usually | categories. Most useful for rule-based approaches (<a href="../../handbook/classification/method-1-attribute-based-classification-method.html">methods 1</a> and <a href="../../handbook/classification/method-2-pattern-matching-classification-method.html">2</a>).</td>
-<td>Usually available as retailer categories in scanner, or captured as a “breadcrumb” navigation variable on web scrape data.</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Retailer category / categories</td>
+<td style="text-align: left;">The retailer specific category or set of hierarchical | Usually | categories. Most useful for rule-based approaches (<a href="../../handbook/classification/method-1-attribute-based-classification-method.html">methods 1</a> and <a href="../../handbook/classification/method-2-pattern-matching-classification-method.html">2</a>).</td>
+<td style="text-align: left;">Usually available as retailer categories in scanner, or captured as a “breadcrumb” navigation variable on web scrape data.</td>
 </tr>
 <tr class="even">
-<td>High</td>
-<td>Product identifier (ideally GTIN)</td>
-<td>The unique identifier for the product, ideally the GTIN, the first 2 codes of which are country, then 3-7 are manufacturer/producer specific. This variable is heavily used by many NSOs. If GTIN is not available, other variables such as UPC or SKU could be useful, but these provide less value for classification.</td>
-<td>Usually provided with Scanner data, however not available in all countries. Web scrape data usually does not contain GTINs but may have SKUs or other retailer specific product numbers.</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Product identifier (ideally GTIN)</td>
+<td style="text-align: left;">The unique identifier for the product, ideally the GTIN, the first 2 codes of which are country, then 3-7 are manufacturer/producer specific. This variable is heavily used by many NSOs. If GTIN is not available, other variables such as UPC or SKU could be useful, but these provide less value for classification.</td>
+<td style="text-align: left;">Usually provided with Scanner data, however not available in all countries. Web scrape data usually does not contain GTINs but may have SKUs or other retailer specific product numbers.</td>
 </tr>
 <tr class="odd">
-<td>Medium</td>
-<td>Description</td>
-<td>Text description of the product. Useful for all but <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">Method 1</a>. For automated methods such as <a href="../../handbook/classification/method-3-recommendation-machine-assisted-classification.html">methods 3</a> and <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">4</a>, this is often the main variable that is used in the text processing pipeline to help predict the product class</td>
-<td></td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Text description of the product. Useful for all but <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">Method 1</a>. For automated methods such as <a href="../../handbook/classification/method-3-recommendation-machine-assisted-classification.html">methods 3</a> and <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">4</a>, this is often the main variable that is used in the text processing pipeline to help predict the product class</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td>Medium</td>
-<td>Brand</td>
-<td>Brand of the manufacturer. Usually used in concatenation, and may be used by all but <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">method 1</a>. If GTIN is available, you can extract brand from there.</td>
-<td></td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Brand</td>
+<td style="text-align: left;">Brand of the manufacturer. Usually used in concatenation, and may be used by all but <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">method 1</a>. If GTIN is available, you can extract brand from there.</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td>Low (but high for quality adjustment methods)</td>
-<td>Product characteristics (sometimes called features)</td>
-<td>Materials or other attributes of the product. This may be useful if classification needs nuanced terms such as materials (e.g.&nbsp;clothing) and is usually only adopted when the process is highly automated (such as <a href="../../handbook/classification/method-3-recommendation-machine-assisted-classification.html">Methods 3</a> and <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">4</a>). Methods that apply <a href="../../handbook/other-considerations/quality-change-and-hedonic-estimation.html">quality adjustment (such as hedonics)</a> use this type of data heavily.</td>
-<td>This variable is usually not provided in scanner data, but is available in web scrape and administrative data.</td>
+<td style="text-align: left;">Low (but high for quality adjustment methods)</td>
+<td style="text-align: left;">Product characteristics (sometimes called features)</td>
+<td style="text-align: left;">Materials or other attributes of the product. This may be useful if classification needs nuanced terms such as materials (e.g.&nbsp;clothing) and is usually only adopted when the process is highly automated (such as <a href="../../handbook/classification/method-3-recommendation-machine-assisted-classification.html">Methods 3</a> and <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">4</a>). Methods that apply <a href="../../handbook/other-considerations/quality-change-and-hedonic-estimation.html">quality adjustment (such as hedonics)</a> use this type of data heavily.</td>
+<td style="text-align: left;">This variable is usually not provided in scanner data, but is available in web scrape and administrative data.</td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 
 
 

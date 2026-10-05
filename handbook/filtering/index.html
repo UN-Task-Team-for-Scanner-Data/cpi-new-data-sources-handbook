@@ -913,8 +913,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This section covers some common methods used to filter the data before it is used to calculate indices, as well as a summary of how missing prices should be treated.<br>
-</p>
+<p>This section covers some common methods used to filter the data before it is used to calculate indices, as well as a summary of how missing prices should be treated.</p>
 <p>Section contents:</p>
 <ul>
 <li><a href="../../handbook/filtering/outlier-filter.html">Outlier filter</a> — Outlier filters aim at excluding or correcting extreme price increases or price decreases, typically compared to the previous period, from the price index calculation</li>
@@ -923,7 +922,6 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="../../handbook/filtering/current-practice-of-data-filtering.html">Current practice of data filtering</a> — This page contains a summary of how NSOs currently approach data filtering.</li>
 <li><a href="../../handbook/filtering/treatment-of-missing-prices.html">Treatment of missing prices</a> — This page contains information on how to treat missing prices through product-level imputation methods.</li>
 </ul>
-<hr>
 <section id="Datafilteringandmissingprices-Overview" class="level1">
 <h1>Overview</h1>
 <p>The scale of these new data sources&nbsp;mean that new methods are required to automatically identify and remove erroneous observations, as the traditional manual scrutiny of flagged observations is not feasible. Traditional data filtering often focuses on removing observations that are thought to be the result of erroneous data collection or that have a large impact due to small sample sizes.</p>
@@ -936,7 +934,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>The outlier filter focuses only on extreme price increases or decreases whereas the dumping filter and low sales filter additionally take the development of sales quantities into account. The settings of these data filters depend not only on the index formula that will be used but also on the type of data these filters are applied to. Typically, these data filters are used directly before the index calculation. Thereby, the order of filtering may have an impact on the index results. Usually, the outlier filter is applied first and then the dumping or low sales filter. For more detail on how these filters relate to the choice of index method and data source, please see the specific pages linked above.&nbsp;</p>
 <p>For products identified as outliers it may be appropriate to consider <a href="../../handbook/filtering/treatment-of-missing-prices.html">imputation</a>. For those products filtered out by the dumping or low sales filter, these should not be imputed.&nbsp;</p>
-<p>Since web scraping data comprise of information only on prices but not sales quantities, the dumping filter and low sales filter cannot be applied in the typical manner. However, there is currently ongoing research into methods to&nbsp;<a href="https://unstats.un.org/wiki/display/GWGSD/Deriving+proxy+weights+for+web+scraped+data">estimate the expenditure shares of web scraped articles</a>.</p>
+<p>Since web scraping data comprise of information only on prices but not sales quantities, the dumping filter and low sales filter cannot be applied in the typical manner. However, there is currently ongoing research into methods to&nbsp;<a href="../../handbook/index-methods/deriving-proxy-weights-for-web-scraped-data.html">estimate the expenditure shares of web scraped articles</a>.</p>
 <p>Over time, it is important to monitor whether the applied data filters are set appropriately. For example, it should be checked periodically if the share of filtered products is&nbsp;too high&nbsp;or if some certain product groups are filtered out systematically and unjustifiably. In this case, the data filters should be adjusted or there should be an option implemented into the production system, which allows the data filter to be overruled.</p>
 <p>Data filtering is an area of active research and it is likely that different data sources and/or suppliers require different approaches to data filtering based on their own existing quality controls and circumstances. As such, National Statistical Offices (NSOs) are recommended to conduct their own empirical research using these approaches before deciding if any data filtering are required and if so which approach is most suitable.</p>
 

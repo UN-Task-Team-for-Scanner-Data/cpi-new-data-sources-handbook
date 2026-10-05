@@ -927,7 +927,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Machine-assisted classification is still a manual classification technique and therefore the ideas in the <a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">manual classification chapter</a> are still valid. The key difference is the addition of a recommendation system that supports labellers in identifying the most appropriate class. Every product is still manually scrutinised, but machine-assistance may improve efficiency and potentially quality by offering recommendations.&nbsp;For example, for a product sold in a supermarket, a labeller may be faced with hundreds of possible food and drink, pharmaceutical, household goods and clothing (amongst other) classes to choose from. The labeller may immediately recognise the appropriate class, then spend minutes navigating a complex hierarchical structure to choose it. The recommendation system used in machine-assisted manual classification provides a shortened list of options for the labeller to choose from, substantially improving the speed with which labellers can parse lists of classes to assign the most appropriate one.</p>
+<p>Machine-assisted classification is still a manual classification technique and therefore the ideas in the <a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">manual classification chapter</a> are still valid. The key difference is the addition of a recommendation system that supports labellers in identifying the most appropriate class. Every product is still manually scrutinised, but machine-assistance may improve efficiency and potentially quality by offering recommendations.&nbsp; For example, for a product sold in a supermarket, a labeller may be faced with hundreds of possible food and drink, pharmaceutical, household goods and clothing (amongst other) classes to choose from. The labeller may immediately recognise the appropriate class, then spend minutes navigating a complex hierarchical structure to choose it. The recommendation system used in machine-assisted manual classification provides a shortened list of options for the labeller to choose from, substantially improving the speed with which labellers can parse lists of classes to assign the most appropriate one.</p>
 <section id="Method3RecommendationMachineassistedclassification-Whentousemachine-assistedmanualclassification" class="level1">
 <h1>When to use machine-assisted manual classification</h1>
 <p>Machine-assisted manual classification is most beneficial when the classification task is large enough that investing in machine-assistance techniques provides reasonable efficiency gains, but small enough that the associated manual work is still viable. This makes it a potentially good candidate for classification of supermarket data.</p>
@@ -939,11 +939,16 @@ ul.task-list li input[type="checkbox"] {
 <section id="Method3RecommendationMachineassistedclassification-Keyword-basedrecommender" class="level2">
 <h2 class="anchored" data-anchor-id="Method3RecommendationMachineassistedclassification-Keyword-basedrecommender">Keyword-based recommender</h2>
 <p>The first potential option is a keyword-based recommender. This approach uses words within the product name, description and hierarchy to identify potential classes, similar to <a href="../../handbook/classification/method-2-pattern-matching-classification-method.html">pattern based classification</a>. For example, if the word “cola” appears in the product name or description, then the machine might recommend “fizzy drinks” and “pre-mixed spirits” as classes.</p>
-<p>Table 1: Pros and cons of a keyword-based recommender</p>
-<table class="caption-top table">
+<div id="tbl-keyword-pros-cons" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-keyword-pros-cons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Pros and cons of a keyword-based recommender
+</figcaption>
+<div aria-describedby="tbl-keyword-pros-cons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
-<col style="width: 47%">
-<col style="width: 51%">
+<col style="width: 44%">
+<col style="width: 55%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -962,15 +967,23 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
 <section id="Method3RecommendationMachineassistedclassification-Hierarchymapping" class="level2">
 <h2 class="anchored" data-anchor-id="Method3RecommendationMachineassistedclassification-Hierarchymapping">Hierarchy mapping</h2>
 <p>Another option is to use hierarchy mappings. This approach recommends classes that fit a specific retailer hierarchy descriptor and is thus similar to <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">rule based classification</a>. For example, if the retailer hierarchy is “Bakery/Bread/Sliced loaves” then the machine might recommend “white bread loaves”, “wholemeal bread loaves” and “seeded bread”.</p>
-<p>Table 2: Pros and cons of a hierarchy mapping approach</p>
-<table class="caption-top table">
+<div id="tbl-hierarchy-pros-cons" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hierarchy-pros-cons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Pros and cons of a hierarchy mapping approach
+</figcaption>
+<div aria-describedby="tbl-hierarchy-pros-cons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
-<col style="width: 47%">
-<col style="width: 51%">
+<col style="width: 30%">
+<col style="width: 69%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -990,18 +1003,26 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>Note that NSOs should choose an appropriate level of granularity with which to create these mappings. Mapping at a very high level is likely to result in the labeller still needing to work through a very large list of classes. By contrast, mapping at a very low level is likely to result in a lot of setup and maintenance work.</p>
 </section>
 <section id="Method3RecommendationMachineassistedclassification-Machinelearning" class="level2">
 <h2 class="anchored" data-anchor-id="Method3RecommendationMachineassistedclassification-Machinelearning">Machine learning</h2>
 <p>A third option is to use supervised machine learning (thus a toned version of <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">method 4</a>). This approach involves training a machine learning algorithm by using previously labelled data, then using this algorithm to make recommendations on future data. Labellers manually scrutinise each product, either choosing the appropriate label from a list of the machine’s predictions or correcting the machine if the appropriate label isn’t available.</p>
-<p>If this approach is taken, it may be better to use a machine learning algorithm which can provide multiple predictions with associated probabilities (such as XGBoost and Logistic Regression) than an algorithm that can only provide a single prediction (such as Support Vector Machines). This allows labellers to observe several potential classes, rather than just the single class the algorithm considers to be the most likely. If NSOs choose to not review each unique product but only a sub-set and accept the ML model's recommendation, this can be considered&nbsp;<a href="../../handbook/classification/method-4-machine-learning-classification-method.html">method 4</a>.</p>
-<p>Note, a potential variant of the machine learning approach&nbsp;to leverage most of the process but stop short of training ML models, instead comparing a new product to classes using similarity score in vector space. To do this, first levergage the preprocessing step (see <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">ML chapter</a> for more details) to convert a product's text descriptions into a vector. Secondly, use similarity scores (such as cosine similarity), compare the vector of the new product with the average vector for the nearest categories. See Wall et al (2025) for an application of this for labelling (1).</p>
-<p>Table 3: Pros and cons of a ML approach</p>
-<table class="caption-top table">
+<p>If this approach is taken, it may be better to use a machine learning algorithm which can provide multiple predictions with associated probabilities (such as XGBoost and Logistic Regression) than an algorithm that can only provide a single prediction (such as Support Vector Machines). This allows labellers to observe several potential classes, rather than just the single class the algorithm considers to be the most likely. If NSOs choose to not review each unique product but only a sub-set and accept the ML model’s recommendation, this can be considered&nbsp;<a href="../../handbook/classification/method-4-machine-learning-classification-method.html">method 4</a>.</p>
+<p>Note, a potential variant of the machine learning approach&nbsp;to leverage most of the process but stop short of training ML models, instead comparing a new product to classes using similarity score in vector space. To do this, first levergage the preprocessing step (see <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">ML chapter</a> for more details) to convert a product’s text descriptions into a vector. Secondly, use similarity scores (such as cosine similarity), compare the vector of the new product with the average vector for the nearest categories. See Wall et al (2025) for an application of this for labelling (1).</p>
+<div id="tbl-ml-pros-cons" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ml-pros-cons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Pros and cons of a ML approach
+</figcaption>
+<div aria-describedby="tbl-ml-pros-cons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
-<col style="width: 47%">
-<col style="width: 51%">
+<col style="width: 60%">
+<col style="width: 39%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1022,12 +1043,14 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<hr>
+</div>
+</figure>
+</div>
 </section>
 </section>
 <section id="Method3RecommendationMachineassistedclassification-References" class="level1">
 <h1>References</h1>
-<p>(1) Wall, M., Chiumera,D., DeVilliers, G., Bajwa, K., Spackman, W., Goussev, S. (2025) "Automating the detection of product relaunches: A supervised learning approach to shrinkflation and stretchflation"&nbsp;<em>Presented at the 2025 CPI Expert Group. <a href="https://unece.org/sites/default/files/2025-04/Wall-Chiumera%20et%20al%20%282025%29%20Automating%20the%20Detection%20of%20Product%20Relaunches%20-%20paper.pdf" class="uri">https://unece.org/sites/default/files/2025-04/Wall-Chiumera%20et%20al%20%282025%29%20Automating%20the%20Detection%20of%20Product%20Relaunches%20-%20paper.pdf</a></em></p>
+<p>(1) Wall, M., Chiumera,D., DeVilliers, G., Bajwa, K., Spackman, W., Goussev, S. (2025) “Automating the detection of product relaunches: A supervised learning approach to shrinkflation and stretchflation”&nbsp;<em>Presented at the 2025 CPI Expert Group. <a href="https://unece.org/sites/default/files/2025-04/Wall-Chiumera%20et%20al%20%282025%29%20Automating%20the%20Detection%20of%20Product%20Relaunches%20-%20paper.pdf" class="uri">https://unece.org/sites/default/files/2025-04/Wall-Chiumera%20et%20al%20%282025%29%20Automating%20the%20Detection%20of%20Product%20Relaunches%20-%20paper.pdf</a></em></p>
 
 
 </section>

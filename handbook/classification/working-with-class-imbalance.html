@@ -888,6 +888,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#Workingwithclassimbalance-Undersampling" id="toc-Workingwithclassimbalance-Undersampling" class="nav-link" data-scroll-target="#Workingwithclassimbalance-Undersampling">Undersampling</a></li>
   <li><a href="#Workingwithclassimbalance-Oversampling" id="toc-Workingwithclassimbalance-Oversampling" class="nav-link" data-scroll-target="#Workingwithclassimbalance-Oversampling">Oversampling</a>
   <ul class="collapse">
+  <li><a href="#random-oversampling" id="toc-random-oversampling" class="nav-link" data-scroll-target="#random-oversampling">Random Oversampling</a></li>
   <li><a href="#Workingwithclassimbalance-SMOTE" id="toc-Workingwithclassimbalance-SMOTE" class="nav-link" data-scroll-target="#Workingwithclassimbalance-SMOTE">SMOTE</a></li>
   </ul></li>
   </ul></li>
@@ -931,7 +932,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Datasets NSOs need to classify are typically not equally distributed, as some classes have many records (i.e.&nbsp;unique products) while others have only a few. This requires additional steps to be taken when designing and testing classifiers.&nbsp;Specitically, this represents a challenge for automated methods (such as <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">Method 4 or Machine Learning (ML)</a>), as models could struggle when they don’t have a lot of examples to learn from, thus typically misclassifying sparse categories. This chapter introduces approaches that NSOs could use to mitigate consequences that arise from such class imbalance problems.</p>
+<p>Datasets NSOs need to classify are typically not equally distributed, as some classes have many records (i.e.&nbsp;unique products) while others have only a few. This requires additional steps to be taken when designing and testing classifiers.&nbsp; Specitically, this represents a challenge for automated methods (such as <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">Method 4 or Machine Learning (ML)</a>), as models could struggle when they don’t have a lot of examples to learn from, thus typically misclassifying sparse categories. This chapter introduces approaches that NSOs could use to mitigate consequences that arise from such class imbalance problems.</p>
 <section id="Workingwithclassimbalance-Overviewoftheproblem" class="level1">
 <h1>Overview of the problem</h1>
 <p>An imbalanced class distribution is a case where class sizes within a dataset vary significantly in size amongst each other. In the context of the alternative data training data sets, imbalanced data or (muliti)classimbalances means that there are some classes - the majority classes - for which we find plenty examples in the data (e. g. red wine) while other classes&nbsp; - the minority classes - are represented by barely a few articles (e. g. bananas). This presents a challenge for supervised ML models, which typically work well when the number of samples in each class are about equal. This is because most algorithms are designed to optimize based on a cost function. However, if the data set is highly imbalanced, a model could minimize the cost function at the expense of minority classes. This implies an indirect weighting of the majority classes by overrepresentation. The model may also not learn to easily distinguish a class from another if there are not enough examples. As a result, some classes could be systematically misclassified while the overall score for the classifier with many classes could be relatively high (<a href="../../handbook/classification/how-to-evaluate-classification-methods.html">for instance micro F1 scores</a>). This is a challenge within price statistics as classification is a critical step prior to applying price index formulas on each <a href="../../handbook/aggregation.html">retailer, category, and geography combination in order to determine the sub-elementary aggregate index</a>. Misclassification may thus cause bias in the calculated index that may also impact the elementary aggregate this data is integrated into (1).</p>
@@ -961,20 +962,22 @@ ul.task-list li input[type="checkbox"] {
 <section id="Workingwithclassimbalance-Oversampling" class="level2">
 <h2 class="anchored" data-anchor-id="Workingwithclassimbalance-Oversampling">Oversampling</h2>
 <p>An alternative is to oversample minority classes, which may be more appropriate for NSOs. Specifically, as minority classes in alternative datasets may be mostly represented by just a few items, undersampling would be inappropriate as a balanced training dataset can only be achieved by a huge loss of data, and thus a resultant compromise in the quality of the ML classification. Oversampling techniques aim to balance class distributions by <u>adding</u> items to the minority class. Thus, it is a good choice when the training data set does not possess enough data in each class. The minority classes are not necessarily supplemented by creating exact copies of the particular records in those classes, as more diverse synthetic samples can also be created by introducing small variations of the items. This rebalancing method has is advantageous in that no information is lost, however its overuse can increases the likelihood of an ML model overfitting through replication of parts of the minority class specific items.&nbsp;</p>
-<p>Random Oversampling</p>
+<section id="random-oversampling" class="level3">
+<h3 class="anchored" data-anchor-id="random-oversampling">Random Oversampling</h3>
 <p>The simplest oversampling technique refers to random oversampling. It randomly selects examples from the minority class and adds them to the training data set until an approximately balanced set is achieved. This method is also applicable to the minority class’ feature space. As an example, if ngrams are used for text classification, one can randomly draw and combine ngrams from the minority class and add the result to the training data set. It worth mentioning, that this approach increases the likelihood of overfitting since examples or features are merely duplicated and the feature space is not increased. NSOs may need to regularize more heavily in this case to make sure models generalize out of sample.</p>
+</section>
 <section id="Workingwithclassimbalance-SMOTE" class="level3">
 <h3 class="anchored" data-anchor-id="Workingwithclassimbalance-SMOTE">SMOTE</h3>
 <p>In contrast to random oversampling with replacement, which does not necessarily increase the recognition of the minority classes, Synthetic Minority Oversampling Technique (or SMOTE) tries to identify similar but more specific regions in the feature space for the minority classes. In other words, the minority classes are oversampled by synthetically creating new examples:</p>
 <ul>
 <li><em>First</em>, features of the minority class are chosen (green points in panel a of <a href="#fig-smote" class="quarto-xref">Figure&nbsp;1</a>).</li>
-<li><em>Second</em>, identify the <em>k</em> nearest neighbors (the black point in panel b of Figure 1 is a selected feature and whereas the yellow points represent its neighbors). One can determine the specific number of neighbors <em>k</em> arbitrarily or by using heuristics, such as the “elbow method”.</li>
+<li><em>Second</em>, identify the <em>k</em> nearest neighbors (the black point in panel b of <a href="#fig-smote" class="quarto-xref">Figure&nbsp;1</a> is a selected feature and whereas the yellow points represent its neighbors). One can determine the specific number of neighbors <em>k</em> arbitrarily or by using heuristics, such as the “elbow method”.</li>
 <li><em>Third</em>, synthetic examples are generated. Intuitively, this is done by randomly placing a point between the selected samples and their neighbors (red point between the brown points in panel c of Figure 1). Technically, the difference of the minority class feature vector and its nearest neighbor is taken. Thereafter, the differences are multiplied by a random number between 0 and 1. The resulting vector of synthetic features is added to the minority class’ feature vector. In the multiclass case, this procedure is repeated for each minority class.</li>
 </ul>
 <div id="fig-smote" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-smote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../handbook/classification/337281208.png" class="img-fluid figure-img">
+<img src="../../handbook/images/classification/337281208.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-smote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: How synthetic samples are generated with SMOTE. Each point represent a record in the feature space. See Schubach et al (2017) for more details.
@@ -988,7 +991,6 @@ Figure&nbsp;1: How synthetic samples are generated with SMOTE. Each point repres
 <section id="Workingwithclassimbalance-BlendedSampling" class="level1">
 <h1>Blended Sampling</h1>
 <p>NSOs can also apply a combination of oversampling the minority class and undersampling the majority class can be useful to handle strongly imbalanced data.&nbsp;</p>
-<hr>
 </section>
 <section id="Workingwithclassimbalance-References" class="level1">
 <h1>References</h1>

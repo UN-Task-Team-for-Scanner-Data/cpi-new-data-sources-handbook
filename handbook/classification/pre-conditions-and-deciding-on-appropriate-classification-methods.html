@@ -943,62 +943,72 @@ ul.task-list li input[type="checkbox"] {
 <p>See <a href="../../handbook/classification/note-on-variables-applicable-for-classification.html">notes on variables applicable for classification</a> on which variables obtained during the acquisition process&nbsp;are typically applicable for classification.&nbsp;</p>
 </div>
 </div>
-<hr>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Considerationofclassificationcomplexity" class="level1">
 <h1>Consideration of classification complexity</h1>
 <p>The complexity of classifying any given dataset can vary dependent on several factors. These factors should be considered before deciding which classification method(s) to adopt to classify each dataset. In this section, we explore these factors.</p>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Scaleofthetask" class="level2">
 <h2 class="anchored" data-anchor-id="Preconditionsanddecidingonappropriateclassificationmethods-Scaleofthetask">Scale of the task</h2>
 <p>In most datasets, there is a many-to-one relationship between rows in the dataset and unique products. For example, if a supermarket provides daily data for 400 stores, then a single year of data may contain up to (365 days x 400 stores = ) 146,000 entries for a single barcode (GTIN). Typically, classification should be performed at the product-level (using SKUs or GTINs) so that each product is classified once, then propagated across its many entries within the transactional dataset. Since we classify at the product-level, the scale of the classification task can often be significantly less than it first seems. (1)</p>
-<p>The NSO has some flexibility on what it chooses as the unique product when classifying. Ideally, the same granularity is used for clasification as for price index compilation (for instance SKU is used to classify to avoid the overly detailed nature of GTIN). However this is not always desirable if the unique products for price index methods are aggregates of lower level products (as unique products for price indices are often described as outputs after ‘aggregate across products’) and require classification category as the input for that aggregataion. In this case, a granularity that is stable should be chosen. For instance NSOs may classify to GTIN knowing that all GTINs with the same product name falling under the same SKU within that category are aggregated up to get one unique product and its unit price for input to the price index methods step.&nbsp;&nbsp;</p>
+<p>The NSO has some flexibility on what it chooses as the unique product when classifying. Ideally, the same granularity is used for clasification as for price index compilation (for instance SKU is used to classify to avoid the overly detailed nature of GTIN). However this is not always desirable if the unique products for price index methods are aggregates of lower level products (as unique products for price indices are often described as outputs after ‘aggregate across products’) and require classification category as the input for that aggregataion. In this case, a granularity that is stable should be chosen. For instance NSOs may classify to GTIN knowing that all GTINs with the same product name falling under the same SKU within that category are aggregated up to get one unique product and its unit price for input to the price index methods step.&nbsp; &nbsp;</p>
 <p>When an NSO first acquires a large dataset, the NSO faces a challenging initial task of classifying the dataset for the first time, particularly if the retailer stocks a lot of products. After the initial classification task, the ongoing monthly task of maintaining a fully-classified dataset depends on the overall scale of the unique products and the product churn rate within the data.</p>
-<p>Table 1 shows synthetic examples of stores of varying complexity when it comes to the scale of the classification task:</p>
+<p><a href="#tbl-scale-of-task" class="quarto-xref">Table&nbsp;1</a> shows synthetic examples of stores of varying complexity when it comes to the scale of the classification task:</p>
 <ul>
 <li>The electronics store stocks few products and the resulting classification task is small both initially and on an ongoing basis. The NSO may avoid complex automation techniques that may take more time to maintain than they save.</li>
 <li>The supermarket requires significant classification work to classify it initially, but due to a small product churn rate, the ongoing work to sustain a classified dataset is relatively small. The NSO may choose to invest into automation to improve efficiency (and likely favour simpler automation methods) but this may be optional depending on NSO resources.&nbsp;</li>
 <li>The clothing store not only stocks a lot of products, but also has a very high churn rate and as a result automation is likely a necessity for maintaining a fully-classified dataset.</li>
 </ul>
-<p>Table 1: Scale of classification depends on both the number of products stocked and the churn rate.</p>
-<table class="caption-top table">
+<div id="tbl-scale-of-task" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-scale-of-task-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Scale of classification depends on both the number of products stocked and the churn rate.
+</figcaption>
+<div aria-describedby="tbl-scale-of-task-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
-<col style="width: 36%">
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 18%">
+<col style="width: 46%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 16%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td></td>
-<td><strong>Store: Electronics</strong></td>
-<td><strong>Store: Supermarket</strong></td>
-<td><strong>Store: Clothing</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Store:<br>
+Electronics</strong></td>
+<td style="text-align: left;"><strong>Store:<br>
+Supermarket</strong></td>
+<td style="text-align: left;"><strong>Store:<br>
+Clothing</strong></td>
 </tr>
 <tr class="even">
-<td><strong># products stocked</strong></td>
-<td>300</td>
-<td>40,000</td>
-<td>20,000</td>
+<td style="text-align: left;"><strong># products stocked</strong></td>
+<td style="text-align: left;">300</td>
+<td style="text-align: left;">40,000</td>
+<td style="text-align: left;">20,000</td>
 </tr>
 <tr class="odd">
-<td><strong>Product churn rate</strong></td>
-<td>20%</td>
-<td>2%</td>
-<td>30%</td>
+<td style="text-align: left;"><strong>Product churn rate</strong></td>
+<td style="text-align: left;">20%</td>
+<td style="text-align: left;">2%</td>
+<td style="text-align: left;">30%</td>
 </tr>
 <tr class="even">
-<td><strong># labels needed (initial month)</strong></td>
-<td>300</td>
-<td>40,000</td>
-<td>20,000</td>
+<td style="text-align: left;"><strong># labels needed (initial month)</strong></td>
+<td style="text-align: left;">300</td>
+<td style="text-align: left;">40,000</td>
+<td style="text-align: left;">20,000</td>
 </tr>
 <tr class="odd">
-<td><strong># labels needed (each month after)</strong></td>
-<td>60</td>
-<td>800</td>
-<td>6,000</td>
+<td style="text-align: left;"><strong># labels needed (each month after)</strong></td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;">800</td>
+<td style="text-align: left;">6,000</td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>When starting any classification task, it is recommended the NSO measures the scale of the task so that a proportionate classification method can be chosen.</p>
 </section>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Homogeneityofthedesiredclassifications" class="level2">
@@ -1020,7 +1030,7 @@ Figure&nbsp;1: NSOs will need to consider the trade-off between homogeneity and 
 </figcaption>
 </figure>
 </div>
-<p>NSOs may also choose to classify at a lower level than the level that elementary aggregates are calculated (for instance if the classification performance is easier to do at the lower level but there is insufficient weight data to integrate at this lower level). In this case, the price index step may need to have a mapping to join the lower level classes into the class at which the elementary aggregate method needs to be calculated (i.e.&nbsp;a concordance, such as to go from NSO-3 to NSO-2 if NSO-2 is the level at which elementary aggregate is calcuated as per Figure 2 above). See <a href="../../handbook/aggregation.html">Aggregation</a> for more detail about integration approaches.&nbsp;</p>
+<p>NSOs may also choose to classify at a lower level than the level that elementary aggregates are calculated (for instance if the classification performance is easier to do at the lower level but there is insufficient weight data to integrate at this lower level). In this case, the price index step may need to have a mapping to join the lower level classes into the class at which the elementary aggregate method needs to be calculated (i.e.&nbsp;a concordance, such as to go from NSO-3 to NSO-2 if NSO-2 is the level at which elementary aggregate is calcuated as per <a href="#fig-homogeneity-complexity-trade-off" class="quarto-xref">Figure&nbsp;1</a> above). See <a href="../../handbook/aggregation.html">Aggregation</a> for more detail about integration approaches.&nbsp;</p>
 </section>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Dataqualityorstabilityconsiderations" class="level2">
 <h2 class="anchored" data-anchor-id="Preconditionsanddecidingonappropriateclassificationmethods-Dataqualityorstabilityconsiderations">Data quality or stability considerations</h2>
@@ -1038,49 +1048,57 @@ Figure&nbsp;1: NSOs will need to consider the trade-off between homogeneity and 
 </section>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Differentiatinginitialclassificationfromdevelopingarecurrentproductionprocess" class="level1">
 <h1>Differentiating initial classification from developing a recurrent production process</h1>
-<p>While methods that can be applied to classifications are pretty standard (more on selecting methods below), the objective of classification changes considerably the nature of the task that needs to be done. Table 2 summarizes the key aspects that are different between the two types of classification.&nbsp;&nbsp;</p>
-<p>Table 2: Aspects different between initial and recurrent classification</p>
-<table class="caption-top table">
+<p>While methods that can be applied to classifications are pretty standard (more on selecting methods below), the objective of classification changes considerably the nature of the task that needs to be done. <a href="#tbl-initial-recurrent-classification" class="quarto-xref">Table&nbsp;2</a> summarizes the key aspects that are different between the two types of classification.&nbsp; &nbsp;</p>
+<div id="tbl-initial-recurrent-classification" class="sm striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-initial-recurrent-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Aspects different between initial and recurrent classification
+</figcaption>
+<div aria-describedby="tbl-initial-recurrent-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-sm table-striped table-hover small caption-top table">
 <thead>
 <tr class="header">
-<th>Aspect to consider</th>
-<th>Initial classification: key considerations</th>
-<th>Recurrent classification: key considerations</th>
+<th style="text-align: left;">Aspect to consider</th>
+<th style="text-align: left;">Initial classification: key considerations</th>
+<th style="text-align: left;">Recurrent classification: key considerations</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Time to complete task</td>
-<td>Time to complete could span months and usually depends on the timeline of the research project. The process may also be iterative as different methods and different level of validation is trialed. If NSOs have targeted production officers, they may support or supervise this process part-time, but usually different individuals are doing the work.</td>
-<td>Time to classify is usually tightly bounded to the production schedule of the CPI. Only a few days may be allocated to this task, and the process has to be stable and robust. Automation of the process is thus usually a high priority.</td>
+<td style="text-align: left;">Time to complete task</td>
+<td style="text-align: left;">Time to complete could span months and usually depends on the timeline of the research project. The process may also be iterative as different methods and different level of validation is trialed. If NSOs have targeted production officers, they may support or supervise this process part-time, but usually different individuals are doing the work.</td>
+<td style="text-align: left;">Time to classify is usually tightly bounded to the production schedule of the CPI. Only a few days may be allocated to this task, and the process has to be stable and robust. Automation of the process is thus usually a high priority.</td>
 </tr>
 <tr class="even">
-<td>Scale of task</td>
-<td>Scale depends on the size of dataset that needs to be labelled. Commonly, a year is used, however if multilateral methods with a 25 month window are being researched, a larger dataset may need to be labelled.</td>
-<td>Scale depends on the overall size of the retailer (i.e.&nbsp;how many products are sold in total) and the churn rate. As only new unique products need classification, task is much smaller.</td>
+<td style="text-align: left;">Scale of task</td>
+<td style="text-align: left;">Scale depends on the size of dataset that needs to be labelled. Commonly, a year is used, however if multilateral methods with a 25 month window are being researched, a larger dataset may need to be labelled.</td>
+<td style="text-align: left;">Scale depends on the overall size of the retailer (i.e.&nbsp;how many products are sold in total) and the churn rate. As only new unique products need classification, task is much smaller.</td>
 </tr>
 <tr class="odd">
-<td>The process usually applied to classify unique records</td>
-<td>Typically, a representative time period that is necessary to study and decide on a price index applicable for production is first identified (commonly 12 months for bilateral or 13/25 months for multilateral methods). All unique products occurring during this backcast period are identified, and are prioritized for classification. Depending on the skills, complexity of the task, time to complete the project, or other factors - different methods may be chosen and for different segments of the data. For instance a more rule-based system may be used (such as <a href="../../handbook/classification/method-2-pattern-matching-classification-method.html">method 2</a>) as it can be designed slowly and iteratively. Or for instance to prepare for a high scale scenario, a sample of the unique products may be manually labelled (using <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/337281179/Method+0+Manual+labelling+or+validation+of+predicted+labels">method 0</a>), and a Machine Learning model may be developed (<a href="../../handbook/classification/method-4-machine-learning-classification-method.html">method 4</a>) to predict the categories of all other products, which are then quality assured. This phase typically is an iterative research process as different methods are trialed and evaluated, and the most applicable method for production recurrent classification is developed.</td>
-<td>The production classification method is developed beforehand, and applied on all new unique products. It is typically combined with quality assessment and quality control methods to evaluate how well the method works.</td>
+<td style="text-align: left;">The process usually applied to classify unique records</td>
+<td style="text-align: left;">Typically, a representative time period that is necessary to study and decide on a price index applicable for production is first identified (commonly 12 months for bilateral or 13/25 months for multilateral methods). All unique products occurring during this backcast period are identified, and are prioritized for classification. Depending on the skills, complexity of the task, time to complete the project, or other factors - different methods may be chosen and for different segments of the data. For instance a more rule-based system may be used (such as <a href="../../handbook/classification/method-2-pattern-matching-classification-method.html">method 2</a>) as it can be designed slowly and iteratively. Or for instance to prepare for a high scale scenario, a sample of the unique products may be manually labelled (using <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/337281179/Method+0+Manual+labelling+or+validation+of+predicted+labels">method 0</a>), and a Machine Learning model may be developed (<a href="../../handbook/classification/method-4-machine-learning-classification-method.html">method 4</a>) to predict the categories of all other products, which are then quality assured. This phase typically is an iterative research process as different methods are trialed and evaluated, and the most applicable method for production recurrent classification is developed.</td>
+<td style="text-align: left;">The production classification method is developed beforehand, and applied on all new unique products. It is typically combined with quality assessment and quality control methods to evaluate how well the method works.</td>
 </tr>
 <tr class="even">
-<td>How quality is maintained/checked</td>
-<td>As classification is typically an iterative approach in this phase, effort continues until a desired (or achievable) quality level is reached. Quality is usually tested with manual method (<a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">method 0</a>) on a sample of the data. Given sufficient resources, for this sample, method 0 labelling with robust multi-labeler consistency checks may be completed.</td>
-<td>Considerable investment is usually made to maintain quality in production, balanced with the limited time and resources available. If manual methods are used (i.e.&nbsp;<a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">method 0</a>), then usually subject matter production experts are entrusted with this role. If automated methods are used, a sample (or all) unique records may also be manually checked/validated and performance statistics are calculated. Checks and contingency plans are usually put in place to evaluate when a method is failing and fix the problem quickly.</td>
+<td style="text-align: left;">How quality is maintained/checked</td>
+<td style="text-align: left;">As classification is typically an iterative approach in this phase, effort continues until a desired (or achievable) quality level is reached. Quality is usually tested with manual method (<a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">method 0</a>) on a sample of the data. Given sufficient resources, for this sample, method 0 labelling with robust multi-labeler consistency checks may be completed.</td>
+<td style="text-align: left;">Considerable investment is usually made to maintain quality in production, balanced with the limited time and resources available. If manual methods are used (i.e.&nbsp;<a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">method 0</a>), then usually subject matter production experts are entrusted with this role. If automated methods are used, a sample (or all) unique records may also be manually checked/validated and performance statistics are calculated. Checks and contingency plans are usually put in place to evaluate when a method is failing and fix the problem quickly.</td>
 </tr>
 <tr class="odd">
-<td>Supporting processes needed</td>
-<td><br>
+<td style="text-align: left;">Supporting processes needed</td>
+<td style="text-align: left;"><br>
 </td>
-<td>Additional processes may need to be put in place, especially for Machine Learning methods, most notably ML Operations or MLOps. Notably, statistics on the performance of the production method are calculated by sampling and manually validating new products. This guides whether data degradataion has occured and model retraining is necessary. <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">Method 4</a> covers this in more detail.</td>
+<td style="text-align: left;">Additional processes may need to be put in place, especially for Machine Learning methods, most notably ML Operations or MLOps. Notably, statistics on the performance of the production method are calculated by sampling and manually validating new products. This guides whether data degradataion has occured and model retraining is necessary. <a href="../../handbook/classification/method-4-machine-learning-classification-method.html">Method 4</a> covers this in more detail.</td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Determiningmethodsmostapplicabletothetask" class="level1">
 <h1>Determining methods most applicable to the task</h1>
-<p>As outlined above, a method for classification depends on many factors, including but not limited to the objective faced (initial or recurrent classification), data structure and quality, data volume faced, or skillset available at the NSO. As some of these factors change, most commonly the expertise of NSO staff, NSOs revisit the methods the choose to find a more optimal way to classify data. Below are several questions commonly asked by NSOs when they wish to choose a specific classification method:</p>
+<p>As outlined above, a method for classification depends on many factors, including but not limited to the objective faced (initial or recurrent classification), data structure and quality, data volume faced, or skillset available at the NSO. As some of these factors change, most commonly the expertise of NSO staff, NSOs revisit the methods the choose to find a more optimal way to classify data. Below are several questions commonly asked by NSOs when they wish to choose a specific classification method and <a href="#fig-choosing-classification-method" class="quarto-xref">Figure&nbsp;2</a> that visually shows how these questions can support method choice:</p>
 <ol type="1">
 <li><strong>Is the scale of the task to classify or maintain a method small?</strong> For instance if the volume of work to classify records is sufficiently small, manual classification may be appropriate.</li>
 <li><strong>Is the dataset structured and does the structure persist over long periods?</strong> In other words, is the obtained dataset highly structured with variables (such as say data provided categories), would simple rule or attribute based classification to persist with little risk?&nbsp;&nbsp;
@@ -1113,7 +1131,6 @@ Figure&nbsp;2: A flowchart is outlined to support NSOs in the consideration of a
 <ul>
 <li>Blending classification methods (work in progress)</li>
 </ul>
-<hr>
 </section>
 <section id="Preconditionsanddecidingonappropriateclassificationmethods-Referencesandfootnotes" class="level1">
 <h1>References and footnotes</h1>

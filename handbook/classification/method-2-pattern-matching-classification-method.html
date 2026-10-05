@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -926,24 +961,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Pattern based classification involves mapping individual records to the taxonomy classes of interest according to patterns present in their descriptive attributes. For instance, patterns in the categories of the alternative data, patterns in the product name, or specific keywords in the product description - could all be used to classify a set of individual records.&nbsp;This approach is typically used when attribute based classification is not sufficiently detailed but it is not necessary to make the extra investment to develop or maintain more complex methods. This method can also be considered an attribute-based method (thus an alternative to <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">method 1</a>) where specific patterns in the unique products' characteristics need to be matched to classify, rather than a handful of structure attributes (such as product categories).</p>
-<hr>
+<p>Pattern based classification involves mapping individual records to the taxonomy classes of interest according to patterns present in their descriptive attributes. For instance, patterns in the categories of the alternative data, patterns in the product name, or specific keywords in the product description - could all be used to classify a set of individual records.&nbsp; This approach is typically used when attribute based classification is not sufficiently detailed but it is not necessary to make the extra investment to develop or maintain more complex methods. This method can also be considered an attribute-based method (thus an alternative to <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">method 1</a>) where specific patterns in the unique products’ characteristics need to be matched to classify, rather than a handful of structure attributes (such as product categories).</p>
 <section id="Method2Patternmatchingclassificationmethod-Whyandhowtousepatternmatchingclassification" class="level1">
 <h1>Why and how to use pattern matching classification:</h1>
-<p>NSOs look into pattern matching when simpler methods (most notably attribute-based classification) prove insufficient. For instance, NSOs may find that a category in the alternative data is too large and cannot be cleanly mapped to smaller and more homogenous CPI categories. The NSO may then wish to map the alternative data category but not a certain subset of products, which will be classified to other categories. In more complex situations, the NSO may not use alternative data categories at all and may only use keywords or various other patterns to map all products to the classes of interest. Similar to the setting up a <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">rule based approach</a> that depends on structured variables, it is natural for NSOs to explore this method when they are investigating initial classification.&nbsp;</p>
+<p>NSOs look into pattern matching when simpler methods (most notably attribut-based classification) prove insufficient. For instance, NSOs may find that a category in the alternative data is too large and cannot be cleanly mapped to smaller and more homogenous CPI categories. The NSO may then wish to map the alternative data category but not a certain subset of products, which will be classified to other categories. In more complex situations, the NSO may not use alternative data categories at all and may only use keywords or various other patterns to map all products to the classes of interest. Similar to the setting up a <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">rule based approach</a> that depends on structured variables, it is natural for NSOs to explore this method when they are investigating initial classification.&nbsp;</p>
 <p>The method can prove effective if the distribution of the natural language that describes unique products (for example product id, names, descriptions, categories) are very stable and do not change over a long period of time. For instance, if a category variable in alternative data can be cleanly separated into two or more classes and the category does not look to change much, then this method can become quite useful. NSOs may find this out when they annotate a sample of products and find that some products do not cleanly match (as per the <a href="../../handbook/classification/method-1-attribute-based-classification-method.html">rule-based approach</a>) but keywords or specific patterns (such as via&nbsp;<a href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a>) may be effective at classifying a whole set of products. Breaking down a product ID (such as its UPC) and mapping sub-parts of this code can be considered a form of pattern matching.</p>
 <p>Similar and even more critical than with attribute (or rule-based) classification, it is best not to have too many pattern-based rules that need to be maintained for recurrent classification. As keywords and patterns may shift over time (gradually or suddenly), this may cause many unique records to be misclassified, requiring a non-trivial validation and fix processes during tight production timelines. The NSO should be cognisant of the risk when developing pattern-based rules.</p>
 <p>Note that pattern-matching may be considered an extention (and thus used effectively in conjunction) of rule-based classification. NSOs can use pattern-matching to create boolean attributes determining whether key phrases are found in natural text, then use these attributes as part of a wider attribute-based classification system. Pattern-matching may also sometimes be used to impute null values found in attribute columns to enable better use of rule-based classification.</p>
 <section id="Method2Patternmatchingclassificationmethod-Exampleofwhatpatternmatchinglookslike" class="level2">
 <h2 class="anchored" data-anchor-id="Method2Patternmatchingclassificationmethod-Exampleofwhatpatternmatchinglookslike">Example of what pattern matching looks like</h2>
 <p>To demonstrate the process, consider one category in an alternative data source that is not homogenous but needs to be mapped to two sub-classes (or COICOP-6 classes). This example is based on the visual diagram outlined in the <a href="../../handbook/classification/pre-conditions-and-deciding-on-appropriate-classification-methods.html">homogeneity of product considerations</a>.</p>
-<p>Code 1: Example attribute based on text matching apples names</p>
-<p><strong>Simple example of attribute based classification</strong></p>
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false"><code>if alternative_data_category = 'Apples'
-    if product_name includes 'GALA'
-        coicop_code = 'red apples'      #or code for red apples category
-    if product_name includes 'Crispin'
-        coicop_code = 'green apples'    #or code for green apples</code></pre>
+<p><a href="#lst-attribute-matching" class="quarto-xref">Listing&nbsp;1</a> shows an example of attribute based on text matching apples names.</p>
+<hr>
+<div id="lst-attribute-matching" class="python listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-attribute-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1: Simple example of attribute based classification
+</figcaption>
+<div aria-describedby="lst-attribute-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> alternative_data_category <span class="op">=</span> <span class="st">'Apples'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> product_name includes <span class="st">'GALA'</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        coicop_code <span class="op">=</span> <span class="st">'red apples'</span>      <span class="co">#or code for red apples category</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> product_name includes <span class="st">'Crispin'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        coicop_code <span class="op">=</span> <span class="st">'green apples'</span>    <span class="co">#or code for green apples</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</figure>
+</div>
 </section>
 </section>
 <section id="Method2Patternmatchingclassificationmethod-Howtodevelopandapplypatternbasedclassification" class="level1">
@@ -966,7 +1009,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Develop robust implementation</strong> - as keywords and patterns may shift over time, spreadsheet approaches may be too complex to be maintained effectively. Once several patterns start being used, more programmatic approaches and best practices similar to RAP are recommended. This way the NSO can have a standalone mapping dictionary that is version controlled and modified as keywords and patterns change.&nbsp;</li>
 <li><strong>Develop reports for potential breaks in the patterns or detection of new keywords</strong> - as the patterns may be quite fragile and constantly require tuning, it is best to have ways to detect when a shift has occurred. For instance, the NSO can track the number of unique products by classified category tu understand how pattern-based rules worked each time and detect if suddenly some pattern-based rules no longer seem to apply to any products or apply to too many products. NSOs can also detect if there remain any unclassified products that existing pattern based-rules did not catch. It is best to review these pattern-based rules periodically even if no breaks are detected as patterns (i.e.&nbsp;the distribution of data being classified) may shift in unnoticed ways.</li>
 </ul>
-<hr>
 </section>
 <section id="Method2Patternmatchingclassificationmethod-References" class="level1">
 <h1>References</h1>

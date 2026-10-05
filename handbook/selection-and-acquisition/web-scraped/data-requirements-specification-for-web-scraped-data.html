@@ -926,16 +926,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Key variables to look for when acquiring web scraped data<br>
-</p>
-<hr>
+<p>Key variables to look for when acquiring web scraped data.</p>
 <section id="Datarequirementsspecificationforwebscrapeddata-Introduction" class="level1">
 <h1>Introduction</h1>
-<p>The selection of the appropriate variables to extract relies on the expected use for the data. For the purposes of Consumer Price Index (CPI) compilation, one should extract basic information that can be used to characterise a product offer and allows to track its evolution along time. A <a href="identifying-unique-products.qmd">unique product offer</a> is characterised for information on three dimensions: the outlet, the product specifications and the time of the offer. Besides the information necessary for the characterization of product offers, additional relevant data can also include data for the derivation of proxy weights, hedonics and delivery fees.</p>
+<p>The selection of the appropriate variables to extract relies on the expected use for the data. For the purposes of Consumer Price Index (CPI) compilation, one should extract basic information that can be used to characterise a product offer and allows to track its evolution along time. A <a href="../../../handbook/preparation/identifying-unique-products.html">unique product offer</a> is characterised for information on three dimensions: the outlet, the product specifications and the time of the offer. Besides the information necessary for the characterization of product offers, additional relevant data can also include data for the derivation of proxy weights, hedonics and delivery fees.</p>
 </section>
 <section id="Datarequirementsspecificationforwebscrapeddata-Keyvariables" class="level1">
 <h1>Key variables</h1>
-<p>When performing web scraping, useful information required to characterise each of these variables are presented below (more detail is available in the Eurostat "<a href="https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/">Practical guidelines on web scraping for the HICP</a>"):</p>
+<p>When performing web scraping, useful information required to characterise each of these variables are presented below (more detail is available in the Eurostat “<a href="https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/">Practical guidelines on web scraping for the HICP</a>”).</p>
 <section id="Datarequirementsspecificationforwebscrapeddata-Outletidentifier" class="level2">
 <h2 class="anchored" data-anchor-id="Datarequirementsspecificationforwebscrapeddata-Outletidentifier">Outlet identifier</h2>
 <p>Identification of the online retailer can be provided by the URL that identifies the site. In the case that data is extracted from marketplaces or price comparison websites, it might be useful to collect the URL or other information that characterizes the outlet.</p>
@@ -948,7 +946,7 @@ ul.task-list li input[type="checkbox"] {
 <li>when available, code of the article such as Global Trade Item Number (GTIN), stock keeping unit (SKU) or the retailer’s own code. Note that for services, this may not apply.</li>
 <li>short text with the article description (for example, product name or service description)</li>
 <li>additional article’s characteristics (for example, for clothing you may be interested in material or size)</li>
-<li>retailers' classification of the article</li>
+<li>retailers’ classification of the article</li>
 </ol>
 <p>Note that items (3), (4), and (5) are especially useful for purposes of automatic classification of the articles and stratification into homogeneous products. The use of the items characteristics is also key for the derivation of hedonic indices.</p>
 </section>
@@ -971,21 +969,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="Datarequirementsspecificationforwebscrapeddata-Proxyweights" class="level2">
 <h2 class="anchored" data-anchor-id="Datarequirementsspecificationforwebscrapeddata-Proxyweights">Proxy weights</h2>
-<p>Web data does not provide information on items and quantities sold for the derivation of elementary weighted indices. However, proxy variables can be adopted for this purpose, and this can require the collection of additional data according to the method adopted. One possibility is to adopt the number of times an item is offered by the site within a given period (most commonly monthly) to derive its weights. In this scenario, it is important to not remove duplicates, that is, products that appear on multiple pages on a website, for example, once in "men's clothing" and once in "ready for summer". Another possibility is to use the retailer’s popularity ranks of most sold items. For more details on the use of proxy weights see the wiki section on <a href="deriving-proxy-weights-for-web-scraped-data.qmd">expenditure proxies</a>.</p>
-<p><br>
-</p>
-<p>Section&nbsp;<a href="example-file-structures-for-web-scraped-and-scanner-data.qmd">Example file structures for web scraped and scanner data</a> of this wiki provides a comparison between what a typical file structure may look like for scanner data and web scraped data.</p>
-<p><br>
-</p>
-<hr>
+<p>Web data does not provide information on items and quantities sold for the derivation of elementary weighted indices. However, proxy variables can be adopted for this purpose, and this can require the collection of additional data according to the method adopted. One possibility is to adopt the number of times an item is offered by the site within a given period (most commonly monthly) to derive its weights. In this scenario, it is important to not remove duplicates, that is, products that appear on multiple pages on a website, for example, once in “men’s clothing” and once in “ready for summer”. Another possibility is to use the retailer’s popularity ranks of most sold items. For more details on the use of proxy weights see the wiki section on <a href="../../../handbook/index-methods/deriving-proxy-weights-for-web-scraped-data.html">expenditure proxies</a>.</p>
+<p>Section&nbsp;<a href="../../../handbook/selection-and-acquisition/example-file-structures-for-web-scraped-and-scanner-data.html">Example file structures for web scraped and scanner data</a> of this wiki provides a comparison between what a typical file structure may look like for scanner data and web scraped data.</p>
 </section>
 </section>
 <section id="Datarequirementsspecificationforwebscrapeddata-References" class="level1">
 <h1>References</h1>
-<p>(1) Blaudow, C., Burg, F. (2018). Dynamic pricing as a challenge for consumer price statistics. EURONA 2018/01.</p>
-<p><a href="https://ec.europa.eu/eurostat/cros/system/files/euronaissue1-2018-article4.pdf" class="uri">https://ec.europa.eu/eurostat/cros/system/files/euronaissue1-2018-article4.pdf</a></p>
-<p><br>
-</p>
+<p>(1) Blaudow, C., Burg, F. (2018). Dynamic pricing as a challenge for consumer price statistics. EURONA 2018/01. <a href="https://ec.europa.eu/eurostat/cros/system/files/euronaissue1-2018-article4.pdf" class="uri">https://ec.europa.eu/eurostat/cros/system/files/euronaissue1-2018-article4.pdf</a></p>
 
 
 </section>

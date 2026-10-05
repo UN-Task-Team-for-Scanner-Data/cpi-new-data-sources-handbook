@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -884,6 +919,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#Method1Attributebasedclassificationmethod-Whyuseattributebasedclassification" id="toc-Method1Attributebasedclassificationmethod-Whyuseattributebasedclassification" class="nav-link active" data-scroll-target="#Method1Attributebasedclassificationmethod-Whyuseattributebasedclassification">Why use attribute based classification:</a></li>
   <li><a href="#Method1Attributebasedclassificationmethod-Howtodevelopandapplyattribute-basedclassification" id="toc-Method1Attributebasedclassificationmethod-Howtodevelopandapplyattribute-basedclassification" class="nav-link" data-scroll-target="#Method1Attributebasedclassificationmethod-Howtodevelopandapplyattribute-basedclassification">How to develop and apply attribute-based classification:</a></li>
   <li><a href="#Method1Attributebasedclassificationmethod-Bestpracticesandqualityconsiderations" id="toc-Method1Attributebasedclassificationmethod-Bestpracticesandqualityconsiderations" class="nav-link" data-scroll-target="#Method1Attributebasedclassificationmethod-Bestpracticesandqualityconsiderations">Best practices and quality considerations:</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/handbook/classification/method-1-attribute-based-classification-method.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -922,8 +958,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Attribute-based classification involves classifying observations in the data by mapping structured variables or attributes available in the alternative data file to the necessary taxonomy classes.&nbsp;Thus each unique product detected is automatically assigned to the mapped class. This method is also commonly called rule-based classification, however will be referred to as attribute-based for consistency.</p>
-<hr>
+<p>Attribute-based classification involves classifying observations in the data by mapping structured variables or attributes available in the alternative data file to the necessary taxonomy classes.&nbsp; Thus each unique product detected is automatically assigned to the mapped class. This method is also commonly called rule-based classification, however will be referred to as attribute-based for consistency.</p>
 <section id="Method1Attributebasedclassificationmethod-Whyuseattributebasedclassification" class="level1">
 <h1>Why use attribute based classification:</h1>
 <p>Attribute-based classification is often the first to be investigated by NSOs when they wish to classify unique products. If various attributes in the data (most commonly categorical variables) are stable, then it is convenient to use this method. For instance, scanner retailers may provide National Statistical Offices (NSOs) categorical variables which represent the category the retailer itself applies to a set of products. Alternatively, after scraping a retailer website, the NSO may wish to use breadcrumbs that show which category a specific product on the website belongs to. The NSO may find these type of product attributes (i.e.&nbsp;categories) stable over time and thus may depend on them for classification. This is often tested when NSOs trial different classification methods as part of initial classification. For example if categories stay stable over 13 or 25 months then it may be likely that they stay stable for a while longer and it is simplest to set up a set of rules that look for specific attributes to perform classification.</p>
@@ -947,10 +982,17 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Develop robust implementation</strong>: Implementation of attribute-based methods can be based on spreadsheets in simple cases, however given it is best to do programatically, it is best to store the developed rules and the program as part of a program, such as in a version controlled location. That way there is full transparency what rules were used at which time. For instance, if rules are developed programatically, they can be saved as a distinct .csv or .json file in the same repository as the classification code. Thus the production classification system can import these rules and apply them on newly received products.</li>
 <li><strong>Develop reports to detect potential breaks in the rules or new attributes</strong>: The relationship between attributes in the dataset and what categories they represent could break over time (in small ways or all at once). Hence, it is necessary to develop checks to sense when this occurs. For instance, if new attributes (for instance categories) are detected, this could be a sign that some old rules are no longer correct. Alternatively, if the amount of products in each category of interest suddenly shifts it may be that attributes may no longer be correctly positioned to map correctly.</li>
 </ul>
-<p>Example</p>
-<p>Consider an instance where a data supplier provides the prices of a variety of new and refurbished laptops and tablets, with some example observations shown in the table below:</p>
-<p>Table 1: Example data that can be used by an attribute-based classifier</p>
-<table class="caption-top table">
+</section>
+<section id="example" class="level1">
+<h1>Example</h1>
+<p>Consider an instance where a data supplier provides the prices of a variety of new and refurbished laptops and tablets, with some example observations shown in <a href="#tbl-data-for-attribute-classification" class="quarto-xref">Table&nbsp;1</a> below:</p>
+<div id="tbl-data-for-attribute-classification" class="striped hover quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-for-attribute-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Example data that can be used by an attribute-based classifier
+</figcaption>
+<div aria-describedby="tbl-data-for-attribute-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 21%">
 <col style="width: 17%">
@@ -960,53 +1002,56 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <thead>
 <tr class="header">
-<th>collection_date</th>
-<th>product_name</th>
+<th style="text-align: left;">collection_date</th>
+<th style="text-align: left;">product_name</th>
 <th>product_type</th>
-<th>new_or_refurbished</th>
-<th>price</th>
+<th style="text-align: left;">new_or_refurbished</th>
+<th style="text-align: left;">price</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>20/03/2024</td>
-<td>Laptop 1</td>
+<td style="text-align: left;">20/03/2024</td>
+<td style="text-align: left;">Laptop 1</td>
 <td>Laptop</td>
-<td>new</td>
-<td>400</td>
+<td style="text-align: left;">new</td>
+<td style="text-align: left;">400</td>
 </tr>
 <tr class="even">
-<td>23/03/2024</td>
-<td>Laptop 2</td>
+<td style="text-align: left;">23/03/2024</td>
+<td style="text-align: left;">Laptop 2</td>
 <td>Laptop</td>
-<td>new</td>
-<td>550</td>
+<td style="text-align: left;">new</td>
+<td style="text-align: left;">550</td>
 </tr>
 <tr class="odd">
-<td>06/03/2024</td>
-<td>Laptop 3</td>
+<td style="text-align: left;">06/03/2024</td>
+<td style="text-align: left;">Laptop 3</td>
 <td>Laptop</td>
-<td>refurbished</td>
-<td>440</td>
+<td style="text-align: left;">refurbished</td>
+<td style="text-align: left;">440</td>
 </tr>
 <tr class="even">
-<td>09/03/2024</td>
-<td>Tablet 1</td>
+<td style="text-align: left;">09/03/2024</td>
+<td style="text-align: left;">Tablet 1</td>
 <td>Tablet</td>
-<td>new</td>
-<td>250</td>
+<td style="text-align: left;">new</td>
+<td style="text-align: left;">250</td>
 </tr>
 <tr class="odd">
-<td>12/03/2024</td>
-<td>Laptop 4</td>
+<td style="text-align: left;">12/03/2024</td>
+<td style="text-align: left;">Laptop 4</td>
 <td><br>
 </td>
-<td><br>
+<td style="text-align: left;"><br>
 </td>
-<td>330</td>
+<td style="text-align: left;">330</td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>Our desired classes may consist of:</p>
 <ul>
 <li>New laptops</li>
@@ -1015,10 +1060,18 @@ ul.task-list li input[type="checkbox"] {
 <li>Refurbished tablets</li>
 </ul>
 <p>In this case, we may set the following rules to classify data to the “New laptops” class.</p>
-<p>Code 1: Example of a rule based on two attributes in the example data of Table 1</p>
-<p><strong>Simple rules that map attribute</strong></p>
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: shell; gutter: false"><code>if product_type == 'Laptop' | new_or_refubished == 'new'
-    coicop_code = 'New Laptops'</code></pre>
+<p><a href="#lst-rule-based-example" class="quarto-xref">Listing&nbsp;1</a> shows an example of a rule based on two attributes in the example data of <a href="#tbl-data-for-attribute-classification" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="lst-rule-based-example" class="python listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-rule-based-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1: Simple rules that map attribute
+</figcaption>
+<div aria-describedby="lst-rule-based-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> product_type <span class="op">==</span> <span class="st">'Laptop'</span> <span class="op">|</span> new_or_refubished <span class="op">==</span> <span class="st">'new'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    coicop_code <span class="op">=</span> <span class="st">'New Laptops'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</figure>
+</div>
 <p>Note in this instance, a null value in the product_type variable for Laptop 4 may mean that we do not appropriately classify this observation. There are several options for handling such observations: NSOs may choose to leave these observations as out-of-scope; impute the underlying attribute variable to enable classification; or manually classify such observations in a “mop-up” exercise.</p>
 
 
