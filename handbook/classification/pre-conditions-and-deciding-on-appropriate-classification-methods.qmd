@@ -43,18 +43,18 @@ After the initial classification task, the ongoing monthly task of maintaining a
 -   The supermarket requires significant classification work to classify it initially, but due to a small product churn rate, the ongoing work to sustain a classified dataset is relatively small. The NSO may choose to invest into automation to improve efficiency (and likely favour simpler automation methods) but this may be optional depending on NSO resources. 
 -   The clothing store not only stocks a lot of products, but also has a very high churn rate and as a result automation is likely a necessity for maintaining a fully-classified dataset.
 
-+:----------------------------------------+:--------------+:--------------+:-------------+
-|                                         | **Store:\     | **Store:\     | **Store:\    |
-|                                         | Electronics** | Supermarket** | Clothing**   |
-+-----------------------------------------+---------------+---------------+--------------+
-| **\# products stocked**                 | 300           | 40,000        | 20,000       |
-+-----------------------------------------+---------------+---------------+--------------+
-| **Product churn rate**                  | 20%           | 2%            | 30%          |
-+-----------------------------------------+---------------+---------------+--------------+
-| **\# labels needed (initial month)**    | 300           | 40,000        | 20,000       |
-+-----------------------------------------+---------------+---------------+--------------+
-| **\# labels needed (each month after)** | 60            | 800           | 6,000        |
-+-----------------------------------------+---------------+---------------+--------------+
++:----------------------------------------+:--------------+:--------------+:-----------+
+|                                         | **Store:\     | **Store:\     | **Store:\  |
+|                                         | Electronics** | Supermarket** | Clothing** |
++-----------------------------------------+---------------+---------------+------------+
+| **\# products stocked**                 | 300           | 40,000        | 20,000     |
++-----------------------------------------+---------------+---------------+------------+
+| **Product churn rate**                  | 20%           | 2%            | 30%        |
++-----------------------------------------+---------------+---------------+------------+
+| **\# labels needed (initial month)**    | 300           | 40,000        | 20,000     |
++-----------------------------------------+---------------+---------------+------------+
+| **\# labels needed (each month after)** | 60            | 800           | 6,000      |
++-----------------------------------------+---------------+---------------+------------+
 
 : Scale of classification depends on both the number of products stocked and the churn rate. {#tbl-scale-of-task .striped .hover}
 
@@ -74,7 +74,7 @@ NSOs then decide to what extent they further stratify the data:
 -   Classifying to NSO-3 may increase the chance of misclassification when the labeler or algorithm lacks sufficient information to accurately choose between classes. This lack of information can introduce large class imbalances, which can complicate machine learning processes, especially if there there are few examples available for training.
 -   Classifying to NSO-2 may offer a suitable balance between homogeneity and classification complexity requirements.
 
-![NSOs will need to consider the trade-off between homogeneity and classification complexity when deciding how granular to make their strata.](Homogeneity-classification-diagram.drawio.png){#fig-homogeneity-complexity-trade-off fig-align="center"}
+![NSOs will need to consider the trade-off between homogeneity and classification complexity when deciding how granular to make their strata.](/handbook/images/classification/Homogeneity-classification-diagram.drawio.png){#fig-homogeneity-complexity-trade-off fig-align="center"}
 
 NSOs may also choose to classify at a lower level than the level that elementary aggregates are calculated (for instance if the classification performance is easier to do at the lower level but there is insufficient weight data to integrate at this lower level).
 In this case, the price index step may need to have a mapping to join the lower level classes into the class at which the elementary aggregate method needs to be calculated (i.e. a concordance, such as to go from NSO-3 to NSO-2 if NSO-2 is the level at which elementary aggregate is calcuated as per @fig-homogeneity-complexity-trade-off above).
@@ -137,7 +137,7 @@ Below are several questions commonly asked by NSOs when they wish to choose a sp
 3.  **Are record descriptions rich but evolve over time?** For instance if data describing each product is diverse and changes over time, more complex methods may be needed as simpler methods may be too changellenging to maintain. However this works well if the data is rich enough for advanced methods to be developed. This question can be considered an extension of #2 above.
 4.  **What is the volume of the validation task?** If more advanced methods are adopted (following from #3 above), can annotators validate all or almost all records every month? This may be preferential if the volume is low as annotators can be quite accurate and the technical investment necessary to maintain advanced classification methods (Machine Learning) with lower proportions of validation may require considerable investment in processes (see [Method 4](/handbook/classification/method-4-machine-learning-classification-method.qmd) for more on MLOps).
 
-![A flowchart is outlined to support NSOs in the consideration of above questions and informing their decision of which classification method to pursue dependent on their measurement goals and the characteristics of their data.](classification-decision-tree.drawio.png){#fig-choosing-classification-method fig-align="center"}
+![A flowchart is outlined to support NSOs in the consideration of above questions and informing their decision of which classification method to pursue dependent on their measurement goals and the characteristics of their data.](/handbook/images/classification/classification-decision-tree.drawio.png){#fig-choosing-classification-method fig-align="center"}
 
 The approaches are presented in the flowchart as distinct options -- each described in full with their initial setup, maintenance process to maintain the accuracy of the classification on a regular basis, and examples of NSO experience in these methods:
 
