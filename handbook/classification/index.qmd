@@ -2,25 +2,28 @@
 title: "Classification"
 date: "2024-05-10"
 date-modified: last-modified
-format:
-  html:
-    toc: true
-    toc-expand: 2
 ---
 
 # Purpose of this section
 
 ## Classification within the overall process
 
-The goal of this section is to provide guidance on the critical step of classifying new data sources and make them ready for price index compilation. Similar to other applications within official statistics (section 5.2. and 5.3 of [the GSBPM](https://unece.org/sites/default/files/2023-11/GSBPM%20v5_1.pdf) define this task), classification must be done to calculate low level aggregates by strata. Specifically, once [data preparation steps](/handbook/preparation/index.qmd) are complete, all prices in each retailer dataset need to be categorised to a classification system (or taxonomy) utilised by the NSO as part of index stratification. In other words, the output of the classification step is to assign all prices in the dataset to a category that will support the stratification process [in the aggregation step](/handbook/aggregation.qmd) (1, 2, 3). Categorising prices to each geographic strata also used for aggregation, and the assigning of data to structured variables used for [quality adjustment methods](/handbook/other-considerations/quality-change-and-hedonic-estimation.qmd), can both also be considered classification. Furthermore, the activity of classification is done both initially when preparing to integrate a new data source into the CPI or to support the research process, and on a recurrent basis once the dataset is in production.
+The goal of this section is to provide guidance on the critical step of classifying new data sources and make them ready for price index compilation. 
+Similar to other applications within official statistics (section 5.2. and 5.3 of [the GSBPM](https://unece.org/sites/default/files/2023-11/GSBPM%20v5_1.pdf) define this task), classification must be done to calculate low level aggregates by strata.
+Specifically, once [data preparation steps](/handbook/preparation/index.qmd) are complete, all prices in each retailer dataset need to be categorised to a classification system (or taxonomy) utilised by the NSO as part of index stratification.
+In other words, the output of the classification step is to assign all prices in the dataset to a category that will support the stratification process [in the aggregation step](/handbook/aggregation.qmd) (1, 2, 3).
+Categorising prices to each geographic strata also used for aggregation, and the assigning of data to structured variables used for [quality adjustment methods](/handbook/other-considerations/quality-change-and-hedonic-estimation.qmd), can both also be considered classification.
+Furthermore, the activity of classification is done both initially when preparing to integrate a new data source into the CPI or to support the research process, and on a recurrent basis once the dataset is in production.
 
 ## How the guidance is tailored
 
-While classification activities can be outsourced (or already classified data could be [acquired](/handbook/selection-and-acquisition/index.qmd)), typically NSOs have chosen to do classification in-house. Guidance is thus tailored to NSOs developing the process themselves.
+While classification activities can be outsourced (or already classified data could be [acquired](/handbook/selection-and-acquisition/index.qmd)), typically NSOs have chosen to do classification in-house.
+Guidance is thus tailored to NSOs developing the process themselves.
 
 ## What is included in the guidance
 
-The below guidance provides an overview of the common classification methods and demonstrates notable aspects using code notebooks and public data. Each method is outlined
+The below guidance provides an overview of the common classification methods and demonstrates notable aspects using code notebooks and public data.
+Each method is outlined
 
 1.  with the initial process to classify data to initially integrate a dataset into production,
 2.  the regular process of classifying data once in production, and
@@ -42,20 +45,20 @@ Section contents:
     -   [How to evaluate classification methods](/handbook/classification/how-to-evaluate-classification-methods.qmd) --- There are numerous metrics that can be tracked and applied when evaluating how well a classifier performs. 
     -   [Working with class imbalance](/handbook/classification/working-with-class-imbalance.qmd) --- Datasets NSOs need to classify are typically not equally distributed, as some classes have many records (i.e. unique products) while others have only a few. This requires additional steps to be taken when designing and testing classifiers. 
 -   [Operational best practices](/handbook/classification/operational-best-practices.qmd) --- Once NSOs select and develop an appropriate classification method, they have to implement it. This section includes articles on appropriate ways to operationalize classification. 
-    -   [Designing the classification step: operational considerations](designing-the-classification-step-operational-considerations.qmd) --- This section provides context about where and how the classification step fits into the rest of the pipeline processing alternative data to create elementary price indices, as well as some important considerations and options when setting up the classification process. This article can also be seen as a companion to the pre-conditions to classification section, helping the NSO design the operational process for the individual or blended method that will be chosen.
-
-**Note**: All code notebooks demonstrating these methods, as well as diagrams will be saved in a public way for all to see, such as on our [classification_methods GitHub repository](https://github.com/UN-Task-Team-for-Scanner-Data/classification_methods).
+    -   [Designing the classification step: operational considerations](/handbook/classification/designing-the-classification-step-operational-considerations.qmd) --- This section provides context about where and how the classification step fits into the rest of the pipeline processing alternative data to create elementary price indices, as well as some important considerations and options when setting up the classification process. This article can also be seen as a companion to the pre-conditions to classification section, helping the NSO design the operational process for the individual or blended method that will be chosen.
 
 ::: callout-caution
 ## Additional guidance is still being developed
 
-Workstream 2 is still finalizing a few additional topics of guidance. See [slide 6 of the 2025 CPI Expert Group presentation](https://unece.org/sites/default/files/2025-04/1.3_UN%20Task%20Team.pdf) for more on what is being developed.
+Workstream 2 is still finalizing a few additional topics of guidance.
+See [slide 6 of the 2025 CPI Expert Group presentation](https://unece.org/sites/default/files/2025-04/1.3_UN%20Task%20Team.pdf) for more on what is being developed.
 :::
 
 # References  {#Classification-References}
 
 \(1\) Practical guidelines on web scraping for the HICP (2020) <https://ec.europa.eu/eurostat/documents/272892/12032198/Guidelines-web-scraping-HICP-11-2020.pdf/>
 
-\(2\) See chapters 5, 8, and 10 for more information in Consumer Prices Index Manual (2020). <https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx>
+\(2\) See chapters 5, 8, and 10 for more information in Consumer Prices Index Manual (2020).
+<https://www.imf.org/-/media/Files/Data/CPI/cpi-manual-concepts-and-methods.ashx>
 
 \(3\) Practical Guide for Processing Supermarket Scanner Data, Eurostat (2017) <https://circabc.europa.eu/sd/a/8e1333df-ca16-40fc-bc6a-1ce1be37247c/Practical-Guide-Supermarket-Scanner-Data-September-2017.pdf>

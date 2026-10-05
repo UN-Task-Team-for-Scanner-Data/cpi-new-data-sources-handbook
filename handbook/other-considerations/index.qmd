@@ -3,15 +3,9 @@ title: "Other considerations"
 date-modified: "2024-03-01"
 ---
 
-This section contains information on how to treat seasonal products and
-quality change.\
+This section contains information on how to treat seasonal products and quality change.
 
 Section contents:
 
-- [Seasonal products](seasonal-products.qmd) --- This page
-  contains information on the treatment of seasonal products in the CPI
-  and implications of using the new data sources
-- [Quality change and hedonic
-  estimation](quality-change-and-hedonic-estimation.qmd) ---
-  This page contains information on accounting for quality change in the
-  measurement of consumer prices
+-   [Seasonal products](seasonal-products.qmd) --- This page contains information on the treatment of seasonal products in the CPI and implications of using the new data sources.
+-   [Quality change and hedonic estimation](quality-change-and-hedonic-estimation.qmd) --- This page contains information on accounting for quality change in the measurement of consumer prices.
