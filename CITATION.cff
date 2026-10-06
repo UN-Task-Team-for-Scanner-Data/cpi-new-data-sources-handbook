@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: Handbook on new data sources in consumer price statistics
+version: 0.1
+license: CC-BY-SA-4.0
+abstract: The most recent release of the Handbook on new data sources in consumer price statistics.
+message: To reference the latest version of this handbook, please cite it as below.
+authors:
+  - name: "UN Task Team on Scanner Data"
+keywords:
+  - official statistics
+  - price statisticscffconvert --validate
+  - new data sources
