@@ -87,7 +87,7 @@ Using scanner data for sports equipment. 
 \(2\) See Sands, H and Baker, J (2022) Using transaction-level rail fares data to transform consumer price statistics, UK.
 <https://www.ons.gov.uk/economy/inflationandpriceindices/articles/usingtransactionlevelrailfaresdatatotransformconsumerpricestatisticsuk/2022-06-28>
 
-\(3\) Read more about [how to deal with taxonomy changes here](https://unstats.un.org/wiki/spaces/GWGSD/pages/177144040/Dealing+with+taxonomy+changes+and+maintaining+classification+methods). 
+\(3\) Guidance on how to deal with taxonomy changes within the classification is coming soon. 
 
 \(4\) See slide 10 in Goussev, S.
 (2023) "Enhancing the Canadian Consumer Price Index" <https://unece.org/sites/default/files/2023-05/7.2%20Canada.pdf>, for a visual of how one classification process could support several statistical outputs, such as an average price table and elementary price indices.
