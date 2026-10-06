@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,9 +46,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-e8a51b7917113a6e75f0405e5179fea3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -1056,6 +1056,11 @@ Table&nbsp;2: Aspects different between initial and recurrent classification
 </figcaption>
 <div aria-describedby="tbl-initial-recurrent-classification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-sm table-striped table-hover small caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 66%">
+<col style="width: 30%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Aspect to consider</th>
@@ -1076,8 +1081,7 @@ Table&nbsp;2: Aspects different between initial and recurrent classification
 </tr>
 <tr class="odd">
 <td style="text-align: left;">The process usually applied to classify unique records</td>
-<td style="text-align: left;">Typically, a representative time period that is necessary to study and decide on a price index applicable for production is first identified (commonly 12 months for bilateral or 13/25 months for multilateral methods). All unique products occurring during this backcast period are identified, and are prioritized for classification. Depending on the skills, complexity of the task, time to complete the project, or other factors - different methods may be chosen and for different segments of the data. For instance a more rule-based system may be used (such as <a href="../../handbook/classification/method-2-pattern-matching-classification-method.html">method 2</a>) as it can be designed slowly and iteratively. Or for instance to prepare for a high scale scenario, a sample of the unique products may be manually labelled (using <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/337281179/Method+0+Manual+labelling+or+validation+of+predicted+labels">method 0</a>), and a Machine Learning model may be developed (<a href="../../handbook/classification/method-4-machine-learning-classification-method.html">method 4</a>) to predict the categories of all other products, which are then quality assured. This phase typically is an iterative research process as different methods are trialed and evaluated, and the most applicable method for production recurrent classification is developed.</td>
-<td style="text-align: left;">The production classification method is developed beforehand, and applied on all new unique products. It is typically combined with quality assessment and quality control methods to evaluate how well the method works.</td>
+<td colspan="2" style="text-align: left;">Typically, a representative time period that is necessary to study and decide on a price index applicable for production is first identified (commonly 12 months for bilateral or 13/25 months for multilateral methods). All unique products occurring during this backcast period are identified, and are prioritized for classification. Depending on the skills, complexity of the task, time to complete the project, or other factors - different methods may be chosen and for different segments of the data. For instance a more rule-based system may be used (such as <a href="../../handbook/classification/method-2-pattern-matching-classification-method.html">method 2</a>) as it can be designed slowly and iteratively. Or for instance to prepare for a high scale scenario, a sample of the unique products may be manually labelled (using <a href="../../handbook/classification/method-0-manual-labelling-or-validation-of-predicted-labels.html">method 0</a>), and a Machine Learning model may be developed (<a href="../../handbook/classification/method-4-machine-learning-classification-method.html">method 4</a>) to predict the categories of all other products, which are then quality assured. This phase typically is an iterative research process as different methods are trialed and evaluated, and the most applicable method for production recurrent classification is developed. | The production classification method is developed beforehand, and applied on all new unique products. It is typically combined with quality assessment and quality control methods to evaluate how well the method works. |</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">How quality is maintained/checked</td>
