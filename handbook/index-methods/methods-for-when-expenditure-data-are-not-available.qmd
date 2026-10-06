@@ -7,7 +7,7 @@ This page summarises potential criteria that could be used by an NSO to decide o
 
 # Criteria for choosing a suitable index method {#Methodsforwhenexpendituredataarenotavailable-Criteriaforchoosingasuitableindexmethod}
 
-In the same way as for when [expenditure data is available](methods-for-when-expenditure-data-are-available.qmd), in the case where a sample of products is chosen from the web scraped data (see section [Product sampling for price index calculation](https://unstats.un.org/wiki/display/GWGSD/Product+sampling+for+price+index+calculation)), a National Statistics Office (NSO) can continue to use a standard unweighted bilateral index approach because the data will remain fairly stable over time (to note, although we focus on scraped data here, these findings are also valid for other forms of price collection where transaction information is missing).
+In the same way as for when [expenditure data is available](methods-for-when-expenditure-data-are-available.qmd), in the case where a sample of products is chosen from the web scraped data (see section [Product sampling for price index calculation](/handbook/preparation/product-sampling-for-price-index-calculation.qmd)), a National Statistics Office (NSO) can continue to use a standard unweighted bilateral index approach because the data will remain fairly stable over time (to note, although we focus on scraped data here, these findings are also valid for other forms of price collection where transaction information is missing).
 
 If a more dynamic approach is preferred (i.e. the data contains many new and disappearing products and high product turnover), chained unweighted bilateral indices or multilateral indices can also be used for these data (such as chained Jevons).
 

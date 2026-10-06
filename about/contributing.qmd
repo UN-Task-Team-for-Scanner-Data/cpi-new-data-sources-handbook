@@ -3,14 +3,17 @@ title: "How to contribute"
 date: 2026-09-29
 date-modified: last-modified
 draft: true
-format:
-  html:
-    toc: true
-    toc-expand: 2
 ---
 
 Welcome!
 Thank you for your interest to contribute to this handbook.
+
+::: callout-caution
+## WIP
+
+A draft is outlined below, however we are still finalizing the contributing process.
+Please come back soon
+:::
 
 # Overview
 
@@ -26,14 +29,53 @@ Specifically:
 | **MINOR**​ | Case study, expanded example, factual clarification, evidence or code revision that does not change overall scope​ | Community or Task Team pull request​ | Relevant peer review and Steering Group approval​ |
 | **MAJOR**​ | New chapter, substantial method, new data source, major restructuring or new training module​ | Task Team workstream / funded technical lead or consultant role​ | Documented peer review and Steering Group-level sign-off​ |
 
+: Categoires of contribution {#tbl-contributing-categories .striped .hover}
+
+## Archiving to Zenodo
+
+We archive a copy of the repository to Zenodo during major increments (specifically during Major changes).
+
 ## Gitflow process
 
-TO DO
+We follow a basic Pull Request process, [similar to The Turing Way](https://book.the-turing-way.org/community-handbook/contributing/#ch-contributing-pull-request).
 
 # Detail on how to contribute
 
-## Option 1: Submit issue
+## Step 1: Stat with an "issue"
 
-## Option 2: Fork and create a PR
+First off, look through open issues to see if a topic has already been raised.
+Either participate in a discussion on existing topics or start a new issue if you can't find a discussion on your topic.
 
-## Option 3: ...
+-   If you are describing something that needs to change – please tell so that we can deal with it.
+-   If you want to help us solve the problem (we encourage you to do so), describe what you would like to change. If the idea is approved, you can proceed to the next step.
+
+## Step 2: Create a parallel copy (via a fork or new branch) and create a Pull Request (PR) to merge
+
+Draft up changes that you want to make in a branch of your own fork of this repository.
+Keep your PR as draft until it is ready to be reviewed.
+
+## Step 3: Coordinate on review (only if needed)
+
+If you are coordianting with others who don't use GitHub much and want to provide them an offline copy, you can integrate an export to [PDF](https://quarto.org/docs/reference/formats/pdf.html) or [MS word](https://quarto.org/docs/reference/formats/docx.html) in your article.
+This will allow you to download a copy for offline use.
+However, you will have to re-integrate these changes back into your fork.
+
+``` md
+---
+title: "Article title"
+date: "YYYY-MM-DD"
+  pdf:
+    documentclass: article
+    papersize: letter
+  docx:
+    toc: true
+---
+```
+
+## Step 4: Submit the PR
+
+Once you are ready to merge your PR, remove the 'draft' status of the PR.
+One of our team will support you through the rest of the process.
+You may need to iterate on your changes if the material isn't yet ready to merge.
+
+**That's it!!**

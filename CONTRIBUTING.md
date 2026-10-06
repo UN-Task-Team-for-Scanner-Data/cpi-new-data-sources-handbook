@@ -9,7 +9,7 @@ Example contributions:
 
 # How to contribute
 
-The easiest way to contribute is to add an issue with your idea. We will discuss the idea with you and invite you to support it further, such as by submitting a Pull Request. Detailed overview on [how to contribute](https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/about/) is available on the project site.
+The easiest way to contribute is to add an issue with your idea. We will discuss the idea with you and invite you to support it further, such as by submitting a Pull Request. Detailed overview on [how to contribute](https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/about/contributing.html) is available on the project site.
 
 # Code of Conduct
 
