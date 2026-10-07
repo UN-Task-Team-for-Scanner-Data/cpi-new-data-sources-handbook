@@ -34,10 +34,13 @@ Specifically:
 ## Archiving to Zenodo
 
 We archive a copy of the repository to Zenodo during major increments (specifically during Major changes).
+Specifically, when the handbook has accumulated enough conseqential changes from a previous major release (such as major changes or perhaps several minor ones), we [release a new version of the handbook](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), which [archives a copy of the handbook](https://help.zenodo.org/docs/github/archive-software/github-upload/) to Zenodo.
+
+You can see [our previous releases](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/releases).
 
 ## Gitflow process
 
-We follow a basic Pull Request process, [similar to The Turing Way](https://book.the-turing-way.org/community-handbook/contributing/#ch-contributing-pull-request).
+All our contributions follow a basic Pull Request process, [similar to The Turing Way](https://book.the-turing-way.org/community-handbook/contributing/#ch-contributing-pull-request).
 
 # Detail on how to contribute
 
@@ -54,9 +57,34 @@ Either participate in a discussion on existing topics or start a new issue if yo
 Draft up changes that you want to make in a branch of your own fork of this repository.
 Keep your PR as draft until it is ready to be reviewed.
 
+::: callout-tip
+## Update the last updated date!
+
+Many of our pages start out with hard coded dates (read about the the typical metadata in the style guide). Make sure you change `date-modified` to `last-modified` if you see it hard coded. For example: 
+
+``` yml
+--- 
+title: "page title"
+date: "2024-05-08" 
+date-modified: "2025-10-08" # UPDATE THIS
+---
+```
+
+Change to:
+
+``` yml
+---
+title: "page title"
+date: "2024-05-08" 
+date-modified: last-modified
+---
+```
+
+:::
+
 ## Step 3: Coordinate on review (only if needed)
 
-If you are coordianting with others who don't use GitHub much and want to provide them an offline copy, you can integrate an export to [PDF](https://quarto.org/docs/reference/formats/pdf.html) or [MS word](https://quarto.org/docs/reference/formats/docx.html) in your article.
+If you are coordinating with others who don't use GitHub much and want to provide them an offline copy, you can integrate an export to [PDF](https://quarto.org/docs/reference/formats/pdf.html) or [MS word](https://quarto.org/docs/reference/formats/docx.html) in your article.
 This will allow you to download a copy for offline use.
 However, you will have to re-integrate these changes back into your fork.
 

@@ -40,7 +40,7 @@ Quarto uses the metadata specified in each `.qmd` file to format the page.
 For an overview, check out the [formats that are supported](https://quarto.org/docs/output-formats/all-formats.html), with specific focus on [the html format](https://quarto.org/docs/output-formats/html-basics.html).
 The default minimum metadata per page should be:
 
-``` md
+``` yml
 ---
 title: "Style guide"
 subtitle: "Overview of the principles and specific steps we use to make our material professional and consistent"
@@ -49,7 +49,6 @@ date-modified: last-modified
 draft: true
 ---
 
-# Text of article
 ```
 
 -   `title` - states the (short) name of the page
