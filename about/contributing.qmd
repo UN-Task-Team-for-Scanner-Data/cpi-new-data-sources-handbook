@@ -22,9 +22,8 @@ Please come back soon
 We use [semantic versioning](https://semver.org/) to guide us in how to make changes to our material.
 Specifically:
 
-|  |  |  |  |
-|------------------|------------------|------------------|------------------|
-| **Level**​ | **Examples**​ | **Default route**​ | **Review expectation**​ |
+| Level​ | Examples​ | Default route​ | Review expectation​ |
+|:-------------------------|:--------------------------------------------------------------------|:---------------------------------------------------|:----------------------------------------------------------------------------------------|
 | **PATCH**​ | Spelling, links, formatting, bibliography and other non-substantive corrections​ | Community issue or pull request using a GitHub template​ | Technical Secretariat check and merge once automated and editorial checks pass​ |
 | **MINOR**​ | Case study, expanded example, factual clarification, evidence or code revision that does not change overall scope​ | Community or Task Team pull request​ | Relevant peer review and Steering Group approval​ |
 | **MAJOR**​ | New chapter, substantial method, new data source, major restructuring or new training module​ | Task Team workstream / funded technical lead or consultant role​ | Documented peer review and Steering Group-level sign-off​ |
@@ -60,7 +59,9 @@ Keep your PR as draft until it is ready to be reviewed.
 ::: callout-tip
 ## Update the last updated date!
 
-Many of our pages start out with hard coded dates (read about the the typical metadata in the style guide). Make sure you change `date-modified` to `last-modified` if you see it hard coded. For example: 
+Many of our pages start out with hard coded dates (read about the the typical [metadata in the style guide](/about/style-guide.qmd#metadata)).
+Make sure you change `date-modified` to `last-modified` if you see it hard coded.
+For example:
 
 ``` yml
 --- 
@@ -79,7 +80,6 @@ date: "2024-05-08"
 date-modified: last-modified
 ---
 ```
-
 :::
 
 ## Step 3: Coordinate on review (only if needed)
