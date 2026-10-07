@@ -1,31 +1,18 @@
 ---
-title: "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!"
+title: "Welcome to the handbook on utilising new data sources in the production of consumer price statistics!"
 date: 2024-05-13
 date-modified: last-modified
-format:
-  html:
-    toc: true
-    toc-expand: 2
-
-citation:
-  type: manuscript
-  title: "Handbook on new data sources in consumer price statistics" 
-  issued: "2026-05-14"        # Standard CSL variable for publication/presentation date
-  url: https://www.xxx.com
-  doi: 10.1234/example        #TO DO
-  publisher: "UN Task Team on Scanner data"
-  abstract: "TO DO"
 ---
 
-::: {.callout-note title="Migration in progress"}
-This site is a migration of the UN Task Team [handbook](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics) from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub.
-All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.
+Developed by the [UN Task Team on Scanner Data](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml), this handbook is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices. 
+
+::: callout-note
+## Deprecation of previous (wiki) version
+
+This handbook used to be (and may be for a while) still available on [the UNstats wiki](https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics).
+That version has however been deprecated and will not be maintained.
+All content and changes will be made to the current version you are on.
 :::
-
-Welcome to the handbook on new data sources in consumer price statistics.
-This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.
-
-Developed by the [UN Task Team on Scanner Data](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml), it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices. 
 
 ## What is covered?
 
@@ -53,6 +40,11 @@ This Handbook draws on existing international manuals, methodological papers, an
 Given the rapid pace of methodological and technological developments in this field, the handbook is designed as a living document.
 It will be reviewed and updated over time to reflect new research, emerging best practices, and feedback from users.
 
+## What else is included
+
+Further to the handbook, we provide [self-paced learning courses](/training/index.qmd), [guidance on conducting reproducible research in price statistics](https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/), and a [catalog of open datasets](https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/) applicable to price statistics research.
+Read more [about us](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml), explore this (and linked sites), and checkout [our GitHub group](https://github.com/UN-Task-Team-for-Scanner-Data) for more on our projects.
+
 ## Contributing feedback and future development
 
 Users of this Handbook are encouraged to support its ongoing development and improvement.
@@ -61,3 +53,33 @@ Such feedback will help ensure that this Handbook remains relevant, accurate, an
 Please see the [how to contribute guide](/about/contributing.qmd) for more information.
 
 This Handbook is publicly available and intended to be used alongside related [training materials](/training/index.qmd) and other supporting resources developed by the UN Task Team on Scanner Data.
+
+## How to cite {#how-to-cite}
+
+The handbook is availible in [CC-BY 4.0 licence](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/LICENCE).
+
+You can confirm how to cite our handbook by citing the [latest release in Zenodo](https://doi.org/10.5281/zenodo.23192540).
+Below is an example, although it may be out of date.
+
+### BibTeX citation
+
+``` bibtex
+@software{un_task_team_on_scanner_data_2026_23192541,
+  author       = {UN Task Team on Scanner Data},
+  title        = {Handbook on new data sources in consumer price
+                   statistics
+                  },
+  month        = oct,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {0.1.0},
+  doi          = {10.5281/zenodo.23192541},
+  url          = {https://doi.org/10.5281/zenodo.23192541},
+}
+```
+
+### Chicago
+
+``` {.md .code-overflow-wrap}
+UN Task Team on Scanner Data. Handbook on New Data Sources in Consumer Price Statistics. V. 0.1.0. Zenodo, released October 6, 2026. https://doi.org/10.5281/zenodo.23192541.
+```
