@@ -11,7 +11,7 @@
     "href": "about/style-guide.html#metadata",
     "title": "Style guide",
     "section": "Metadata",
-    "text": "Metadata\nQuarto uses the metadata specified in each .qmd file to format the page. For an overview, check out the formats that are supported, with specific focus on the html format. The default minimum metadata per page should be:\n---\ntitle: \"Style guide\"\nsubtitle: \"Overview of the principles and specific steps we use to make our material professional and consistent\"\ndate: 2026-09-29\ndate-modified: last-modified\ndraft: true\n---\n\n# Text of article\n\ntitle - states the (short) name of the page\nsubtitle - a summary of the page. Optional\ndate - when the article was last published\ndate-modified - when the article was last updated. Note, for many pages, this is set at a hard coded date to start. However once you edit the page, please change this to a value of last-modified, which will make Quarto render it automatically to the date the specific .qmd file was changed.\ndraft - whether there is an orange draft header to the page or not. You can use this to publish draft pages for review (draft: true) before they are considered final (either set it as draft: false or remove the draft from the top of the yaml)"
+    "text": "Metadata\nQuarto uses the metadata specified in each .qmd file to format the page. For an overview, check out the formats that are supported, with specific focus on the html format. The default minimum metadata per page should be:\n---\ntitle: \"Style guide\"\nsubtitle: \"Overview of the principles and specific steps we use to make our material professional and consistent\"\ndate: 2026-09-29\ndate-modified: last-modified\ndraft: true\n---\n\ntitle - states the (short) name of the page\nsubtitle - a summary of the page. Optional\ndate - when the article was last published\ndate-modified - when the article was last updated. Note, for many pages, this is set at a hard coded date to start. However once you edit the page, please change this to a value of last-modified, which will make Quarto render it automatically to the date the specific .qmd file was changed.\ndraft - whether there is an orange draft header to the page or not. You can use this to publish draft pages for review (draft: true) before they are considered final (either set it as draft: false or remove the draft from the top of the yaml)"
   },
   {
     "objectID": "about/style-guide.html#page-overview",
@@ -1007,37 +1007,51 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!",
+    "title": "Welcome to the handbook on utilising new data sources in the production of consumer price statistics!",
     "section": "",
-    "text": "NoteMigration in progress\n\n\n\nThis site is a migration of the UN Task Team handbook from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.\nWelcome to the handbook on new data sources in consumer price statistics. This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.\nDeveloped by the UN Task Team on Scanner Data, it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices."
+    "text": "Developed by the UN Task Team on Scanner Data, this handbook is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices."
   },
   {
     "objectID": "index.html#what-is-covered",
     "href": "index.html#what-is-covered",
-    "title": "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!",
+    "title": "Welcome to the handbook on utilising new data sources in the production of consumer price statistics!",
     "section": "What is covered?",
     "text": "What is covered?\nThe Handbook covers a broad range of data sources - including transaction data such as scanner data, and non-transaction data such as web-scraped data - that differ to traditional collection in how prices are observed, recorded and accessed. It is intended to support both organisations exploring these data sources for the first time, and those seeking to refine or extend existing implementations.\nThis Handbook complements Chapter 10 of the CPI Manual, Concepts and Methods by providing detailed operational guidance on the use of alternative data sources in CPI production. It does not replace the CPI Manual, which sets out the underlying concepts, principles and governance framework for the use of alternative data sources in CPI compilation.\nThis Handbook covers key stages of the CPI production process where new data sources may be introduced, including data acquisition, preparation, classification, index compilation, quality assurance, and dissemination. It brings together conceptual discussion, practical considerations, methodological options, and examples from country practices, with the aim of supporting informed decision-making rather than prescribing a single method or workflow."
   },
   {
     "objectID": "index.html#how-to-use-the-handbook",
     "href": "index.html#how-to-use-the-handbook",
-    "title": "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!",
+    "title": "Welcome to the handbook on utilising new data sources in the production of consumer price statistics!",
     "section": "How to use the handbook",
     "text": "How to use the handbook\nThere is no single “correct” approach to using new data sources in CPI production. The appropriate choices will depend on national circumstances, data availability, institutional arrangements, technical capacity, and user needs. Accordingly, the purpose of this handbook is to present the range of available approaches, highlight their strengths and limitations, and provide guidance to help users assess what is most suitable for their particular context.\nWhile the primary focus of this Handbook is on consumer price statistics, many of the data sources, processes, and systems discussed may also support other areas of official statistics. Where relevant, considerations for broader statistical use are highlighted to support efficient and sustainable use of alternative data sources across statistical domains."
   },
   {
     "objectID": "index.html#what-is-the-handbook-based-on",
     "href": "index.html#what-is-the-handbook-based-on",
-    "title": "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!",
+    "title": "Welcome to the handbook on utilising new data sources in the production of consumer price statistics!",
     "section": "What is the handbook based on",
     "text": "What is the handbook based on\nThis Handbook draws on existing international manuals, methodological papers, and country experiences, while also improving the literature on topics where guidance is currently more limited, such as data acquisition strategies, classification challenges, and the handling of highly dynamic product universes. Given the rapid pace of methodological and technological developments in this field, the handbook is designed as a living document. It will be reviewed and updated over time to reflect new research, emerging best practices, and feedback from users."
   },
   {
+    "objectID": "index.html#what-else-is-included",
+    "href": "index.html#what-else-is-included",
+    "title": "Welcome to the handbook on utilising new data sources in the production of consumer price statistics!",
+    "section": "What else is included",
+    "text": "What else is included\nFurther to the handbook, we provide self-paced learning courses, guidance on conducting reproducible research in price statistics, and a catalog of open datasets applicable to price statistics research. Read more about us, explore this (and linked sites), and checkout our GitHub group for more on our projects."
+  },
+  {
     "objectID": "index.html#contributing-feedback-and-future-development",
     "href": "index.html#contributing-feedback-and-future-development",
-    "title": "Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!",
+    "title": "Welcome to the handbook on utilising new data sources in the production of consumer price statistics!",
     "section": "Contributing feedback and future development",
     "text": "Contributing feedback and future development\nUsers of this Handbook are encouraged to support its ongoing development and improvement. Feedback may include suggestions on topics that could be expanded or added, identification of errors or areas requiring clarification, or proposals to refine existing content in light of new research or country experience. Such feedback will help ensure that this Handbook remains relevant, accurate, and responsive to the evolving needs of the international statistical community. Please see the how to contribute guide for more information.\nThis Handbook is publicly available and intended to be used alongside related training materials and other supporting resources developed by the UN Task Team on Scanner Data."
+  },
+  {
+    "objectID": "index.html#how-to-cite",
+    "href": "index.html#how-to-cite",
+    "title": "Welcome to the handbook on utilising new data sources in the production of consumer price statistics!",
+    "section": "How to cite",
+    "text": "How to cite\nThe handbook is availible in CC-BY 4.0 licence.\nYou can confirm how to cite our handbook by citing the latest release in Zenodo. Below is an example, although it may be out of date.\n\nBibTeX citation\n@software{un_task_team_on_scanner_data_2026_23192541,\n  author       = {UN Task Team on Scanner Data},\n  title        = {Handbook on new data sources in consumer price\n                   statistics\n                  },\n  month        = oct,\n  year         = 2026,\n  publisher    = {Zenodo},\n  version      = {0.1.0},\n  doi          = {10.5281/zenodo.23192541},\n  url          = {https://doi.org/10.5281/zenodo.23192541},\n}\n\n\nChicago\nUN Task Team on Scanner Data. Handbook on New Data Sources in Consumer Price Statistics. V. 0.1.0. Zenodo, released October 6, 2026. https://doi.org/10.5281/zenodo.23192541."
   },
   {
     "objectID": "CONTRIBUTING.html",
@@ -2156,21 +2170,21 @@
     "href": "about/contributing.html#semantic-versioning",
     "title": "How to contribute",
     "section": "Semantic versioning",
-    "text": "Semantic versioning\nWe use semantic versioning to guide us in how to make changes to our material. Specifically:\n\n\n\nTable 1: Categoires of contribution\n\n\n\n\n\n\n\n\n\n\n\nLevel​\nExamples​\nDefault route​\nReview expectation​\n\n\nPATCH​\nSpelling, links, formatting, bibliography and other non-substantive corrections​\nCommunity issue or pull request using a GitHub template​\nTechnical Secretariat check and merge once automated and editorial checks pass​\n\n\nMINOR​\nCase study, expanded example, factual clarification, evidence or code revision that does not change overall scope​\nCommunity or Task Team pull request​\nRelevant peer review and Steering Group approval​\n\n\nMAJOR​\nNew chapter, substantial method, new data source, major restructuring or new training module​\nTask Team workstream / funded technical lead or consultant role​\nDocumented peer review and Steering Group-level sign-off​"
+    "text": "Semantic versioning\nWe use semantic versioning to guide us in how to make changes to our material. Specifically:\n\n\n\nTable 1: Categoires of contribution\n\n\n\n\n\n\n\n\n\n\n\nLevel​\nExamples​\nDefault route​\nReview expectation​\n\n\n\n\nPATCH​\nSpelling, links, formatting, bibliography and other non-substantive corrections​\nCommunity issue or pull request using a GitHub template​\nTechnical Secretariat check and merge once automated and editorial checks pass​\n\n\nMINOR​\nCase study, expanded example, factual clarification, evidence or code revision that does not change overall scope​\nCommunity or Task Team pull request​\nRelevant peer review and Steering Group approval​\n\n\nMAJOR​\nNew chapter, substantial method, new data source, major restructuring or new training module​\nTask Team workstream / funded technical lead or consultant role​\nDocumented peer review and Steering Group-level sign-off​"
   },
   {
     "objectID": "about/contributing.html#archiving-to-zenodo",
     "href": "about/contributing.html#archiving-to-zenodo",
     "title": "How to contribute",
     "section": "Archiving to Zenodo",
-    "text": "Archiving to Zenodo\nWe archive a copy of the repository to Zenodo during major increments (specifically during Major changes)."
+    "text": "Archiving to Zenodo\nWe archive a copy of the repository to Zenodo during major increments (specifically during Major changes). Specifically, when the handbook has accumulated enough conseqential changes from a previous major release (such as major changes or perhaps several minor ones), we release a new version of the handbook, which archives a copy of the handbook to Zenodo.\nYou can see our previous releases."
   },
   {
     "objectID": "about/contributing.html#gitflow-process",
     "href": "about/contributing.html#gitflow-process",
     "title": "How to contribute",
     "section": "Gitflow process",
-    "text": "Gitflow process\nWe follow a basic Pull Request process, similar to The Turing Way."
+    "text": "Gitflow process\nAll our contributions follow a basic Pull Request process, similar to The Turing Way."
   },
   {
     "objectID": "about/contributing.html#step-1-stat-with-an-issue",
@@ -2184,14 +2198,14 @@
     "href": "about/contributing.html#step-2-create-a-parallel-copy-via-a-fork-or-new-branch-and-create-a-pull-request-pr-to-merge",
     "title": "How to contribute",
     "section": "Step 2: Create a parallel copy (via a fork or new branch) and create a Pull Request (PR) to merge",
-    "text": "Step 2: Create a parallel copy (via a fork or new branch) and create a Pull Request (PR) to merge\nDraft up changes that you want to make in a branch of your own fork of this repository. Keep your PR as draft until it is ready to be reviewed."
+    "text": "Step 2: Create a parallel copy (via a fork or new branch) and create a Pull Request (PR) to merge\nDraft up changes that you want to make in a branch of your own fork of this repository. Keep your PR as draft until it is ready to be reviewed.\n\n\n\n\n\n\nTipUpdate the last updated date!\n\n\n\nMany of our pages start out with hard coded dates (read about the the typical metadata in the style guide). Make sure you change date-modified to last-modified if you see it hard coded. For example:\n--- \ntitle: \"page title\"\ndate: \"2024-05-08\" \ndate-modified: \"2025-10-08\" # UPDATE THIS\n---\nChange to:\n---\ntitle: \"page title\"\ndate: \"2024-05-08\" \ndate-modified: last-modified\n---"
   },
   {
     "objectID": "about/contributing.html#step-3-coordinate-on-review-only-if-needed",
     "href": "about/contributing.html#step-3-coordinate-on-review-only-if-needed",
     "title": "How to contribute",
     "section": "Step 3: Coordinate on review (only if needed)",
-    "text": "Step 3: Coordinate on review (only if needed)\nIf you are coordianting with others who don’t use GitHub much and want to provide them an offline copy, you can integrate an export to PDF or MS word in your article. This will allow you to download a copy for offline use. However, you will have to re-integrate these changes back into your fork.\n---\ntitle: \"Article title\"\ndate: \"YYYY-MM-DD\"\n  pdf:\n    documentclass: article\n    papersize: letter\n  docx:\n    toc: true\n---"
+    "text": "Step 3: Coordinate on review (only if needed)\nIf you are coordinating with others who don’t use GitHub much and want to provide them an offline copy, you can integrate an export to PDF or MS word in your article. This will allow you to download a copy for offline use. However, you will have to re-integrate these changes back into your fork.\n---\ntitle: \"Article title\"\ndate: \"YYYY-MM-DD\"\n  pdf:\n    documentclass: article\n    papersize: letter\n  docx:\n    toc: true\n---"
   },
   {
     "objectID": "about/contributing.html#step-4-submit-the-pr",

@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-05-13">
 
-<title>Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics! – Handbook on utilising new data sources in the production of consumer price statistics</title>
+<title>Welcome to the handbook on utilising new data sources in the production of consumer price statistics! – Handbook on utilising new data sources in the production of consumer price statistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -362,7 +397,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#what-is-covered" id="toc-what-is-covered" class="nav-link active" data-scroll-target="#what-is-covered">What is covered?</a></li>
   <li><a href="#how-to-use-the-handbook" id="toc-how-to-use-the-handbook" class="nav-link" data-scroll-target="#how-to-use-the-handbook">How to use the handbook</a></li>
   <li><a href="#what-is-the-handbook-based-on" id="toc-what-is-the-handbook-based-on" class="nav-link" data-scroll-target="#what-is-the-handbook-based-on">What is the handbook based on</a></li>
+  <li><a href="#what-else-is-included" id="toc-what-else-is-included" class="nav-link" data-scroll-target="#what-else-is-included">What else is included</a></li>
   <li><a href="#contributing-feedback-and-future-development" id="toc-contributing-feedback-and-future-development" class="nav-link" data-scroll-target="#contributing-feedback-and-future-development">Contributing feedback and future development</a></li>
+  <li><a href="#how-to-cite" id="toc-how-to-cite" class="nav-link" data-scroll-target="#how-to-cite">How to cite</a>
+  <ul class="collapse">
+  <li><a href="#bibtex-citation" id="toc-bibtex-citation" class="nav-link" data-scroll-target="#bibtex-citation">BibTeX citation</a></li>
+  <li><a href="#chicago" id="toc-chicago" class="nav-link" data-scroll-target="#chicago">Chicago</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -372,7 +413,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to the handbook (and supporting materials) on utilising new data sources in the production of consumer price statistics!</h1>
+<h1 class="title">Welcome to the handbook on utilising new data sources in the production of consumer price statistics!</h1>
 </div>
 
 
@@ -390,7 +431,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Last updated</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">6 October 2026</p>
+      <p class="date-modified">7 October 2026</p>
     </div>
   </div>
     
@@ -401,21 +442,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Migration in progress">
+<p>Developed by the <a href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml">UN Task Team on Scanner Data</a>, this handbook is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices.&nbsp;</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Migration in progress
+<span class="screen-reader-only">Note</span>Deprecation of previous (wiki) version
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This site is a migration of the UN Task Team <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics">handbook</a> from the UN Statistics Confluence wiki to Quarto, so the handbook can be version-controlled and maintained on GitHub. All pages have been converted with automated tooling; review and sign-off by the Task Team is ongoing.</p>
+<p>This handbook used to be (and may be for a while) still available on <a href="https://unstats.un.org/wiki/spaces/GWGSD/pages/240910447/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics">the UNstats wiki</a>. That version has however been deprecated and will not be maintained. All content and changes will be made to the current version you are on.</p>
 </div>
 </div>
-<p>Welcome to the handbook on new data sources in consumer price statistics. This Handbook provides an overview and reference framework for the use of new data sources in the production of consumer price statistics.</p>
-<p>Developed by the <a href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml">UN Task Team on Scanner Data</a>, it is intended for a broad audience, including national statistical offices, central banks, international organisations, and researchers involved in the development, implementation, or evaluation of consumer price indices.&nbsp;</p>
 <section id="what-is-covered" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-covered">What is covered?</h2>
 <p>The Handbook covers a broad range of data sources - including transaction data such as scanner data, and non-transaction data such as web-scraped data - that differ to traditional collection in how prices are observed, recorded and accessed. It is intended to support both organisations exploring these data sources for the first time, and those seeking to refine or extend existing implementations.</p>
@@ -431,28 +471,43 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="what-is-the-handbook-based-on">What is the handbook based on</h2>
 <p>This Handbook draws on existing international manuals, methodological papers, and country experiences, while also improving the literature on topics where guidance is currently more limited, such as data acquisition strategies, classification challenges, and the handling of highly dynamic product universes. Given the rapid pace of methodological and technological developments in this field, the handbook is designed as a living document. It will be reviewed and updated over time to reflect new research, emerging best practices, and feedback from users.</p>
 </section>
+<section id="what-else-is-included" class="level2">
+<h2 class="anchored" data-anchor-id="what-else-is-included">What else is included</h2>
+<p>Further to the handbook, we provide <a href="./training/index.html">self-paced learning courses</a>, <a href="https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/">guidance on conducting reproducible research in price statistics</a>, and a <a href="https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/">catalog of open datasets</a> applicable to price statistics research. Read more <a href="https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml">about us</a>, explore this (and linked sites), and checkout <a href="https://github.com/UN-Task-Team-for-Scanner-Data">our GitHub group</a> for more on our projects.</p>
+</section>
 <section id="contributing-feedback-and-future-development" class="level2">
 <h2 class="anchored" data-anchor-id="contributing-feedback-and-future-development">Contributing feedback and future development</h2>
 <p>Users of this Handbook are encouraged&nbsp;to support its ongoing development and improvement. Feedback may include suggestions on topics that could be expanded or added, identification of errors or areas requiring clarification, or proposals to refine existing content in light of new research or country experience. Such feedback will help ensure that this Handbook remains relevant, accurate, and responsive to the evolving needs of the international statistical community. Please see the <a href="./about/contributing.html">how to contribute guide</a> for more information.</p>
 <p>This Handbook is publicly available and intended to be used alongside related <a href="./training/index.html">training materials</a> and other supporting resources developed by the UN Task Team on Scanner Data.</p>
+</section>
+<section id="how-to-cite" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-cite">How to cite</h2>
+<p>The handbook is availible in <a href="https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/blob/main/LICENCE">CC-BY 4.0 licence</a>.</p>
+<p>You can confirm how to cite our handbook by citing the <a href="https://doi.org/10.5281/zenodo.23192540">latest release in Zenodo</a>. Below is an example, although it may be out of date.</p>
+<section id="bibtex-citation" class="level3">
+<h3 class="anchored" data-anchor-id="bibtex-citation">BibTeX citation</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">@software{un_task_team_on_scanner_data_2026_23192541,</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">  author       = {UN Task Team on Scanner Data},</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  title        = {Handbook on new data sources in consumer price</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">                   statistics</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">                  },</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  month        = oct,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  year         = 2026,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  publisher    = {Zenodo},</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  version      = {0.1.0},</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  doi          = {10.5281/zenodo.23192541},</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  url          = {https://doi.org/10.5281/zenodo.23192541},</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="chicago" class="level3">
+<h3 class="anchored" data-anchor-id="chicago">Chicago</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode md code-overflow-wrap code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>UN Task Team on Scanner Data. Handbook on New Data Sources in Consumer Price Statistics. V. 0.1.0. Zenodo, released October 6, 2026. https://doi.org/10.5281/zenodo.23192541.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@unpublished{2026,
-  author = {},
-  publisher = {UN Task Team on Scanner data},
-  title = {Handbook on New Data Sources in Consumer Price Statistics},
-  date = {2026-05-14},
-  url = {https://www.xxx.com},
-  doi = {10.1234/example},
-  langid = {en},
-  abstract = {TO DO}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-2026" class="csl-entry quarto-appendix-citeas" role="listitem">
-<span>“Handbook on New Data Sources in Consumer Price
-Statistics.”</span> 2026. UN Task Team on Scanner data, May 14. <a href="https://doi.org/10.1234/example">https://doi.org/10.1234/example</a>.
-</div></div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
