@@ -64,7 +64,7 @@ Below is an example, although it may be out of date.
 ### BibTeX citation
 
 ``` bibtex
-@software{un_task_team_on_scanner_data_2026_23192541,
+@software{un_task_team_on_scanner_data_2026_23201947,
   author       = {UN Task Team on Scanner Data},
   title        = {Handbook on new data sources in consumer price
                    statistics
@@ -72,14 +72,14 @@ Below is an example, although it may be out of date.
   month        = oct,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {0.1.0},
-  doi          = {10.5281/zenodo.23192541},
-  url          = {https://doi.org/10.5281/zenodo.23192541},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.23201947},
+  url          = {https://doi.org/10.5281/zenodo.23201947},
 }
 ```
 
 ### Chicago
 
 ``` {.md .code-overflow-wrap}
-UN Task Team on Scanner Data. Handbook on New Data Sources in Consumer Price Statistics. V. 0.1.0. Zenodo, released October 6, 2026. https://doi.org/10.5281/zenodo.23192541.
+UN Task Team on Scanner Data. Handbook on New Data Sources in Consumer Price Statistics. V. 1.0.0. Zenodo, released October 7, 2026. https://doi.org/10.5281/zenodo.23201947.
 ```
