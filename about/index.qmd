@@ -37,3 +37,8 @@ Below is a notable list
 
 A list of events we supported will be added soon
 :::
+
+# How to cite the handbook?
+
+It is best to cite the latest release pushed to [our Zenodo repository](https://doi.org/10.5281/zenodo.23192540).
+See an example on the [handbook home page](/index.qmd#how-to-cite).
