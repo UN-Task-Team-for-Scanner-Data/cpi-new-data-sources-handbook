@@ -12,22 +12,22 @@ This material is insipred (and is a succinct version) of other guides such as [T
 # Principles
 
 ::: callout-note
-## Draft
+## Draft principles
 
-Draft principles being flushed out
+-   **Clarity** - the fundamental goal of the handbook and our other content is to enable practitioners in price statistics to understand new data methods and to apply them for research or production.
+    The clearer the language and materials, the better.
+    If a visual helps, we should add them.
 
--   **Clarity**
+-   **Consistency** - we have many authors and experts contributing throughout the handbook.
+    Making sure that material is consistent and clear for all users, no matter who wrote it originally, is key to ensure it serves its purpose.
 
--   **Consistency**
-
--   **Neutrality** - we provide guidance on what could be done or what are seen as sensible defaults (if they are set in the discipline).
+-   **Neutrality** - as we mentioned [in the introduction](/index.qmd#how-to-use-the-handbook), there is no "one" way to use new data sources.
+    We thus provide guidance on what could be done or what are seen as sensible defaults (if they exist in the discipline).
     Where there is disagreement in the discipline, the options are outlined.
 
 -   **Browsability** - the content here is not meant to be very technical or hard to read and digest.
     Content is fundamentally designed to be an overview.
-    Hence content is written so that readers can quickly browse through a set of pages, find a seciton that interests them, and read through it.
-
--   ...
+    Hence content is written so that readers can quickly browse through a set of pages, find a section that interests them, and read through it.
 :::
 
 # Specifics
@@ -40,7 +40,7 @@ Quarto uses the metadata specified in each `.qmd` file to format the page.
 For an overview, check out the [formats that are supported](https://quarto.org/docs/output-formats/all-formats.html), with specific focus on [the html format](https://quarto.org/docs/output-formats/html-basics.html).
 The default minimum metadata per page should be:
 
-``` md
+``` yml
 ---
 title: "Style guide"
 subtitle: "Overview of the principles and specific steps we use to make our material professional and consistent"
@@ -48,8 +48,6 @@ date: 2026-09-29
 date-modified: last-modified
 draft: true
 ---
-
-# Text of article
 ```
 
 -   `title` - states the (short) name of the page
@@ -162,7 +160,6 @@ For example:
 ``` {#lst-code-example .python lst-cap="Simple code example"}
 print("Hello! Welcome to the price index RAP")
 ```
-
 ````
 
 **Will be displayed as**
