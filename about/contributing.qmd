@@ -43,7 +43,7 @@ All our contributions follow a basic Pull Request process, [similar to The Turin
 
 # Detail on how to contribute
 
-## Step 1: Stat with an "issue"
+## Step 1: Start with an "issue"
 
 First off, look through open issues to see if a topic has already been raised.
 Either participate in a discussion on existing topics or start a new issue if you can't find a discussion on your topic.
