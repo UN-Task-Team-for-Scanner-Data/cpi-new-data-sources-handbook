@@ -225,7 +225,7 @@ Relaunch linking should be implemented as a controlled production cycle rather t
 
 **Figure 1: Operational workflow example**
 
-![Operational workflow example](identifying-unique-products-assets/media/image1.jpg){width="6.913903105861768in" height="2.6672069116360455in"}
+![Operational workflow example](handbook/images/preparation/operational_workflow_example.png){width="6.913903105861768in" height="2.6672069116360455in"}
 
 Candidate scores or rules can be used to distinguish clear non-matches, high-confidence links and uncertain cases requiring review. Any automated acceptance should be introduced only after validation against reviewed examples and should be subject to ongoing monitoring. Thresholds should reflect both the quality of the available evidence and the statistical consequences of incorrect links.
 
