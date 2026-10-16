@@ -37,7 +37,7 @@ The product key used in production should make these choices explicit. It should
 
 ## Common product identifiers in alternative data sources
 
-Product identifiers provide the first point of evidence that observations might refer to the same item. Their interpretation matters because the same term is not always used consistently across suppliers.
+Product identifiers provide the first point of evidence that observations might refer to the same product. Their interpretation matters because the same term is not always used consistently across suppliers.
 
 Table 2 provides some common examples of product identifiers that can be observed or derived in alternative data sources.
 
@@ -90,7 +90,7 @@ Table 3 proposes families of attributes that can be used to help define a unique
 
   Temporal and status signals   First seen, last seen, active status, temporary gap, overlap                           Helps distinguish a relaunched product from an unrelated item and constrains possible predecessors.             Timing supports a decision but does not prove continuity on its own.
 
-  Text and image features       Normalised tokens, extracted brand or size, text similarity, packaging similarity      Adds evidence where structured characteristics are limited.                                                     Automated similarity can reproduce source errors and should be validated against labelled examples.
+  Text and image features       Normalised tokens, extracted brand or size, text similarity, packaging similarity      Adds evidence where structured characteristics are limited.                                                     Automated similarity can reproduce source errors and should be validated against labelled examples. Storage can be an issue. 
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Where relevant characteristics are embedded in unstructured product descriptions, text processing or machine-learning methods can also be used to extract or standardise attributes such as brand, size, material, style or model. These derived attributes should be validated before being incorporated into the product definition.
@@ -177,7 +177,7 @@ Product grouping and relaunch linking provide related but distinct responses to 
 
 If a comparable replacement is treated as entirely new, the series breaks and the price movement between the old and new versions is omitted from a matched calculation. If two materially different products are linked, quality difference may be recorded as price change.
 
-The same principle applies when the displayed pack price is unchanged but the pack size reduces. In that case continuity may be retained, but the price must be compared on an equivalent quantity basis so that the effective increase is captured. Failure to identify and appropriately treat such changes can cause shrinkflation to be missed (Białek, Bobel and Oprych-Franków, 2024; Van Loon, 2024).
+The same principle applies when the displayed pack price is unchanged but the pack size reduces, sometimes referred to as "shrinkflation". In that case continuity may be retained, but the price must be compared on an equivalent quantity basis so that the effective increase is captured. Failure to identify and appropriately treat such changes can cause shrinkflation to be missed (Białek, Bobel and Oprych-Franków, 2024; Van Loon, 2024).
 
 Consider an article costing 20 euros in period 1 that is unavailable from period 2. A second article of the same quality appears in period 2 at 25 euros. Exact code matching misses the increase because there is no common article code across the two periods. A justified relaunch link preserves the comparison.
 
@@ -245,9 +245,9 @@ Changes to product definitions or linking rules can alter historical comparabili
 
 ## Product identification and index number methods
 
-The choice of index number method can influence the level of detail required in product identification and relaunch linking. Many bilateral index number formulae rely on explicit product matches between periods. If a product disappears and is replaced by a new product identifier, the price movement between the two observations will only contribute to the index if the relationship between them has been recognised through product grouping, relaunch linking or another matching process. Because multilateral methods such as GEKS are constructed from a series of bilateral comparisons, they inherit much of this dependence on explicit matching.
+The choice of index number method can influence the level of detail required in product identification and relaunch linking. Many bilateral index number formulae rely on explicit product matches between periods. If a product disappears and is replaced by a new product identifier, the price movement between the two observations will only contribute to the index if the relationship between them has been recognised through product grouping, relaunch linking or another matching process. Because certain multilateral methods such as GEKS are constructed from a series of bilateral comparisons, they inherit much of this dependence on explicit matching.
 
-Other methods, including the Quality-Adjusted Geary Khamis (QU-GK), Time Product Dummy (TPD) and Time Dummy Hedonic (TDH) approaches, make use of a wider set of observations simultaneously. Although these methods still require sufficient overlap between products and periods, they are generally less dependent on direct one-to-one product matching than purely bilateral approaches. Information can be transmitted through chains of overlapping observations, allowing price movement to be estimated even where individual product matches are less complete.
+Other multilateral methods, including the Quality-Adjusted Geary Khamis (QU-GK), Time Product Dummy (TPD) and Time Dummy Hedonic (TDH) approaches, make use of a wider set of observations simultaneously. Although these methods still require sufficient overlap between products and periods, they are generally less dependent on direct one-to-one product matching than purely bilateral approaches. Information can be transmitted through chains of overlapping observations, allowing price movement to be estimated even where individual product matches are less complete.
 
 In practice, this means that methods such as TPD, TDH and QU-GK may be more resilient to product churn and incomplete matching than bilateral approaches. However, this should not be interpreted as removing the need for product identification. Poorly defined products, excessive product turnover, or failure to identify important relaunches can still affect index quality regardless of the estimation method used.
 
