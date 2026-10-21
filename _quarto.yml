@@ -196,6 +196,6 @@ format:
     toc: true
     toc-expand: 2
     theme:
-      light: flatly
+      light: pulse
       dark: cyborg
     css: styles.css
