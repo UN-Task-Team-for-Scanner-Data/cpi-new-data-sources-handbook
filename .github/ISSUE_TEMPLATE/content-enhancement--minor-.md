@@ -52,6 +52,15 @@ Provide any supporting resources, references, publications, examples, notebooks 
 
 List any chapter leads, Task Team members or subject matter experts who should review this proposal.
 
+**Contribution Approach**
+
+How would you like this proposal to be taken forward?
+
+- [ ] If approved, I intend to prepare and submit a pull request
+- [ ] I would like support developing a pull request
+- [ ] I would like the Secretariat to take this proposal forward
+- [ ] Unsure – guidance would be appreciated
+
 **Additional Comments**
 
 Add any additional information that may assist reviewers.
