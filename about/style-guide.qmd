@@ -7,7 +7,7 @@ draft: true
 ---
 
 To ensure that all material on the site is consistent, the following principles are to be used by all authors and editors.
-This material is insipred (and is a succinct version) of other guides such as [The Turing Way style guide](https://book.the-turing-way.org/community-handbook/style/).
+This material is inspired (and is a succinct version) of other guides such as [The Turing Way style guide](https://book.the-turing-way.org/community-handbook/style/).
 
 # Principles
 
@@ -58,7 +58,7 @@ draft: true
 
 ## Page overview
 
-Each page should start with a sentence or two at the top introducing the metarial, then headings per topic, and sub-headings (h2) for sub-parts
+Each page should start with a sentence or two at the top introducing the material, then headings per topic, and sub-headings (h2) for sub-parts
 
 ## Writing and formatting text
 
@@ -127,7 +127,7 @@ In the body of your text, you can reference the @tbl-fruits.
 ## Options
 
 There are several options you can use to configure how the table looks.
-For example incliding `.sm` within the parameters in the curly brackets makes the table text smaller to fit it better to the page width.
+For example including `.sm` within the parameters in the curly brackets makes the table text smaller to fit it better to the page width.
 :::
 
 ## Figures
