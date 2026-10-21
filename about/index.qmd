@@ -30,7 +30,7 @@ A roster of experts by topic will be added here
 # Our presentations
 
 We are active in the price statistics space and have presented at several conferences.
-Below is a notable list
+@tbl-task-team-presentations shows our main recent presentations.
 
 ```{python}
 #| echo: false
