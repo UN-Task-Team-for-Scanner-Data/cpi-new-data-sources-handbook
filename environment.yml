@@ -1,0 +1,14 @@
+name: cpi-handbook
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python packages
+  - python=3.12
+  - numpy
+  - scipy
+  - ipykernel
+  - pandas
+  - itables

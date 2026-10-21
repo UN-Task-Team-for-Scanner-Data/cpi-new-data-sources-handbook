@@ -32,11 +32,31 @@ A roster of experts by topic will be added here
 We are active in the price statistics space and have presented at several conferences.
 Below is a notable list
 
-::: callout-note
-## WIP
+```{python}
+#| echo: false
+#| warning: false
+#| label: tbl-task-team-presentations
+#| fig-cap: "Key Task Team presentations"
 
-A list of events we supported will be added soon
-:::
+import pandas as pd
+from itables import show, JavascriptFunction 
+
+df = pd.read_csv('presentations.csv', sep='|')
+show(
+    df,
+    allow_html=True,
+    autoWidth=False,
+    # style="table-layout:fixed",#; width:800px;",
+    # Add buttons to customie actions that can be taken
+    buttons=['pageLength', 'csvHtml15','colvis'],
+    # Add a search pagen to ensure that I can filter the data in some way
+    # layout={"top1":'searchPanes'},
+    columnDefs=[
+        # Modify width of overly wide columns and make them word wrap
+        {"width": "300px", "targets": [2, 3, 4], "className": "word-wrap"},
+    ]
+    )
+```
 
 # How to cite the handbook?
 

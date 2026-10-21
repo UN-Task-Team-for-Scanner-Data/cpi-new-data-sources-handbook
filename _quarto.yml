@@ -1,6 +1,9 @@
 project:
   type: website
 
+execute:
+  freeze: auto
+
 website:
   title: "Handbook on utilising new data sources in the production of consumer price statistics"
   site-url: https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/
