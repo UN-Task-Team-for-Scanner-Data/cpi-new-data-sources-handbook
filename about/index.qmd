@@ -12,7 +12,7 @@ This project is maintained by the UN Task Team on Scanner data.
 
 ## More about the Task Team
 
-The Task Team on Scanner data is one of the workstreams stood up and supported by the CEBD.
+The Task Team on Scanner data is one of the workstreams stood up and supported by the UN Committee of Experts on Big Data and Data Science for Official Statistics (UN-CEBD).
 Read more about us [here](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml).
 
 ## Who is on the Task Team?
