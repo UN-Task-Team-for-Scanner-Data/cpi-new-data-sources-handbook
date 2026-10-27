@@ -19,7 +19,7 @@ Note that this differs from observations removed by [dumping filters](https://un
 
 # Treatment of missing prices {#treatment-of-missing-prices}
 
-Treatment of missing prices can depend on whether the absence is temporary or permanent, but also the context of the approach and index method being used. They are usually treated through imputation though in some contexts by omission. Of course, it is critical to avoid any bias to the index through imputation or otherwise. 
+Treatment of missing prices can depend on whether the absence is temporary or permanent, but also the context of the approach and index method being used. They are usually treated through imputation, though in some contexts by omission. Of course, it is critical to avoid any bias to the index through imputation or otherwise. 
 
 ## Static bilateral approach {#static-bilateral-approach}
 
