@@ -5,35 +5,6 @@ date-modified: last-modified
 
 This page contains information on what missing prices are and how to treat them, depending on the context of the missing price and the index construction method in use.
 
-Contents:
-
--   [What are \"missing\" prices?](#what-are-missing-prices)
-
--   [Treatment of missing prices](#treatment-of-missing-prices)
-
-    -   [Static bilateral approach](#static-bilateral-approach)
-
-    -   [Chained bilateral approach](#chained-bilateral-approach)
-
-    -   [Multilateral approach](#multilateral-approach)
-
-    -   [Summary: Handling missing products depending on type of unavailability and index calculation approach](#summary-handling-missing-products)
-
--   [Imputation methods](#imputation-methods)
-
-    -   [Overall mean imputation](#overall-mean-imputation)
-
-    -   [Target mean imputation](#target-mean-imputation)
-
-    -   [Carry forward](#carry-forward)
-
-    -   [Hedonic (regression) methods](#hedonic-regression-methods)
-
--   [Choosing an imputation strategy](#choosing-an-imputation-strategy)
-
--   [References](#references)
-
-
 # What are \"missing\" prices? {#what-are-missing-prices}
 
 Missing prices occur when a valid price for a product or variety cannot be obtained for a given period. They can be **temporary** (expected to reappear) or **permanent** (the product is withdrawn from the market).
