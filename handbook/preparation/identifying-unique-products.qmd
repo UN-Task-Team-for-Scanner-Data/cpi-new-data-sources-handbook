@@ -1,63 +1,282 @@
 ---
-title: "Identifying unique products"
-date-modified: "2021-06-07"
+title: "Defining products, aggregating article codes and maintaining continuity"
+date-modified: last-modified
 ---
 
-Data are usually disaggregated by various dimensions.
-This page contains information on how products can be defined from the given article codes.
+## Introduction
 
-# Aggregating article codes {#Identifyinguniqueproducts-Aggregatingarticlecodes}
+A consumer price index measures price change by comparing like-with-like products through time. Every price observation must therefore be associated with a product definition that determines which observations can be compared directly, which can be aggregated, and when a change in identity should break the price series. This requirement applies to all forms of price collection, but it becomes especially visible in alternative data sources because identifiers, product descriptions, packaging and market assortments can change at high frequency.
 
-After possibly aggregating across time and outlets (see [Aggregation across time and outlets](aggregation-across-time-and-outlets.qmd)), an average price by article code is available.
-In some cases, these article codes may be too detailed for price index calculation because of relaunches, or because article code churn is very high (see for example Ref. (4) for discussion on this by the Office for National Statistics (ONS)).
+Following aggregation across outlets or time, an average price or unit value may be available for each article code. It is tempting to treat that article code in isolation as the product. However, article codes are usually created for the operational needs of manufacturers, retailers, websites or data suppliers rather than for statistical price measurement. A code may be extremely detailed, may only be unique within one business, or may change even when the underlying product remains comparable. Conversely, one code or broad category may occasionally cover observations that differ in characteristics relevant to quality.
 
-For example, let us suppose that a first article code has a price of 20 euros in period 1 and becomes unavailable from period 2 thereafter.
-A second article code of the same quality (a 'relaunch') has a price of 25 euros and is only available from period 2 onwards.
-A price index based on matching article codes would miss the price increase from 20 euros to 25 euros.
+The task is therefore wider than simply aggregating article codes. It is to define products, or homogeneous product groups, at a level that supports both valid comparison and adequate continuity. A definition that is too narrow can break a continuing product into several identities and leave too few matched observations, while a definition that is too broad can combine products with material quality differences and allow changes in the sales mix to affect measured price change. The appropriate level of detail is therefore an empirical and operational choice, not simply a property of the source data.
 
-In some product categories, such as clothing and footwear, the article codes frequently appear and disappear making it difficult to match them across time and therefore price changes are not adequately measured.
+These challenges have been observed across scanner and web-scraped data, particularly where product turnover is high or source identifiers change through time (Deshaies-Moreault and Émond, 2016; ONS, 2021; Chessa, 2019).
 
-There are different strategies to cope with new and disappearing article codes.
+## What constitutes a product observation?
 
-1.  Linking - an outgoing article code is linked with an incoming article code so that their prices can be directly compared, possibly applying a quantity adjustment if package size has changed (see Ref. (1) for linking article codes for clothing and Ref. (4) for application of relaunch linking to groceries).
-2.  Grouping - different articles with similar characteristics are grouped together and the average prices for these groupings are followed over time. (see Ref. (3) for creating homogeneous products for sports equipment). There are trade-offs in creating groupings (homogenous products). If a grouping is too broad, this can lead to unit value bias (and high volatility) as the individual articles are not strictly comparable. On the other hand, defining the grouping too narrowly may lead to a lack of matching between outgoing and new or returning articles. The multivariate adaptive regression splines (MARS) method (see Ref. (2)) can be used as a tool for finding a compromise between these two objectives.
-3.  Quality adjustment and hedonics - the prices for the new and disappearing articles are imputed in the periods when they are not available with the help of a hedonic function. For additional detail, see the section on [Quality change and hedonic estimation](/handbook/other-considerations/quality-change-and-hedonic-estimation.qmd).
+A product observation is usually a combination of the item itself and the context in which its price is observed. The dimensions required (Table 1) depend on the intended index and the source. A code that is unique within a retailer may not be unique across retailers. A product that is comparable nationally may need to be distinguished by region, outlet type or sales channel where these dimensions form part of the price-determining context. Time is not normally part of the enduring product identity, but it locates each observation within the price series.
 
-@tbl-unique-product-strategies below summarises some of the key advantages and disadvantages of using these strategies.
+**Table 1: Useful dimensions for defining a unique product**
 
-|  |  |  |
-|-----------------|----------------------|--------------------------------|
-| Approach | Advantages | Disadvantages |
-| **Linking** | Captures relaunches | Identification of article codes to be linked can be difficult |
-| **Grouping** | Increases matching over time | Unit value bias can occur |
-| **Hedonics** | Explicitly adjusts for quality changes | Product characteristics are required |
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  **Dimension**   **Examples**                                                 **Question for product definition**
+  --------------- ------------------------------------------------------------ ---------------------------------------------------------------------------------------
+  Product         Identifier, name, brand, model, variant, formulation, pack   Which characteristics must be the same for a like-for-like comparison?
 
-: Key advantages and disadvantages of using linking, grouping and hedonics strategies {#tbl-unique-product-strategies .striped .hover}
+  Outlet          Business identifier, retailer, store, outlet type            Is the same item comparable across outlets, or should outlet context remain separate?
 
-All three strategies require some kind of metadata on product characteristics.
-Such metadata can be obtained as follows:
+  Location        Country, region, municipality, postcode                      Does location define a distinct market or collection context?
 
-1.  Extract relevant information from the text strings (such as the brand).
-2.  Calculate distance measures between the text strings.
-3.  Use the metadata directly provided in the data (e.g. retailer classifications, structured product characteristics).
-4.  Use additional information on product characteristics provided by market research companies.
-5.  Scrape additional product characteristics on the web for the article codes included in scanner data.
+  Channel         Physical store, website, app, marketplace                    Can observations be combined across sales channels?
 
-# References {#Identifyinguniqueproducts-References}
+  Time            Day, week, month, year                                       At what frequency are observations aggregated and compared?
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-\(1\) Bertolotto, M.
-(2019).
-Online Price Index with Product Replacement: The Closest-Match Approach, paper presented at the 16th meeting of the Ottawa Group, Rio de Janeiro, Brazil.
-<https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/home/Meeting+16/$FILE/Online%20Price%20Index%20with%20Product%20Replacement%20paper.pdf>
+The product key used in production should make these choices explicit. It should also distinguish the source key, which identifies the record in the source system, from the product identifier used for statistical purposes, which expresses the product definition adopted for index construction. The two may be identical where a stable source identifier is sufficient, but they should not be assumed to be identical by default.
 
-\(2\) Chessa, A. G.
-(2019).
-MARS: A method for defining products and linking barcodes of item relaunches, paper presented at the 16th meeting of the Ottawa Group, Rio de Janeiro, Brazil <https://www.ottawagroup.org/Ottawa/ottawagroup.nsf/home/Meeting+16/$FILE/A%20method%20for%20defining%20products%20paper.pdf>
+## Common product identifiers in alternative data sources
 
-\(3\) Nyborg Hov K., Johannessen R.
-(2018).
-Using scanner data for sports equipment.
-Paper written for the joint UNECE/ILOs Meeting of the Group of Experts on Consumer Price Indices, Geneva, Switzerland <https://unece.org/fileadmin/DAM/stats/documents/ece/ces/ge.22/2018/Norway_-_session_1.pdf>
+Product identifiers provide the first point of evidence that observations might refer to the same product. Their interpretation matters because the same term is not always used consistently across suppliers.
 
-\(4\) ONS (2021).
-Research into the use of scanner data for constructing UK consumer price statistics <https://www.ons.gov.uk/economy/inflationandpriceindices/articles/researchintotheuseofscannerdataforconstructingukconsumerpricestatistics/2021-04-06>
+Table 2 provides some common examples of product identifiers that can be observed or derived in alternative data sources.
+
+**Table 2: Common product identifiers in alternative data sources**
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  **Identifier**                **Meaning and typical use**                                                                                                **Strengths for price measurement**                                                                          **Limitations and cautions**
+  ----------------------------- -------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------
+  GTIN                          Global Trade Item Number. A global identifier of up to 14 digits used for trade items and commonly encoded in a barcode.   Often identifies a specific trade item and pack configuration; widely used in retail and supply chains.      A new number may be issued after a pack, formulation or presentation change. Availability and consistency can differ across sources.
+
+  SKU                           Stock Keeping Unit. An identifier created by a retailer or organisation for its own inventory.                             Can be a strong within-retailer item key and is often readily available in transaction data.                 Not standardised across businesses. The same item can have different SKUs, and internal systems may replace or reuse codes.
+
+  PLU                           Price Look-Up code. Usually a four- or five-digit code used for loose produce at retail.                                   Supports identification of unpackaged produce where a barcode is unavailable.                                May identify a type of produce rather than all characteristics needed for a homogeneous statistical product.
+
+  VNR                           A six-digit Nordic article number used for a specific medicinal article or pack.                                           Provides a sector-specific pack identifier in relevant pharmaceutical data.                                  Its relevance is market-specific and it should not be confused with PLU or a general retail identifier.
+
+  Retailer article or item ID   A proprietary identifier used in a retailer, supplier or data-provider system.                                             Often the most complete source key available for a specific dataset.                                         Meaning, stability and scope must be documented with the supplier. It may be unique only inside one system.
+
+  URL or web product ID         A product-page address or stable identifier used by an online retailer or platform.                                        Useful for tracking listings in web-scraped data and linking records back to source pages.                   Pages, paths and identifiers can change during site redesigns, relaunches or listing consolidation.
+
+  Model or catalogue number     A manufacturer or seller code for a model, specification or catalogue entry.                                               Can be highly informative for durable goods and equipment.                                                   The same marketed product can have regional or seller-specific codes, and model codes may omit configuration details.
+
+  Derived statistical ID        A key constructed by the statistical organisation from selected identifiers and attributes.                                Makes the statistical definition explicit and can provide continuity when one source code is insufficient.   Its quality depends on field cleaning, the selected attributes, missing-value rules and ongoing monitoring.
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+An identifier should be treated as evidence rather than a guarantee of product equivalence. A stable GTIN or SKU can provide a strong exact match, but should still be interpreted alongside pack size, unit and other material characteristics. Conversely, an identifier change is a signal to investigate rather than automatic evidence that the product is new. Experience with scanner data has shown that source product codes in these data can change frequently through time (Deshaies-Moreault and Émond, 2016).
+
+## Defining products when one identifier is not enough
+
+Where no suitable stable identifier exists, or where the identifier does not capture all relevant dimensions (ref Table 1), a statistical product ID can be constructed from a small set of stable attributes. The aim is not to include every available field, as that can create an unnecessarily narrow definition that can break a continuous price series. Instead, fields should be selected because they distinguish characteristics that consumers value, affect the quantity represented, or define the market context of the comparison.
+
+Table 3 proposes families of attributes that can be used to help define a unique product for the purpose of price aggregation.
+
+**Table 3: Key attributes for defining unique products**
+
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Attribute family              Possible variables                                                                     Why it may matter                                                                                               Important cautions
+  ----------------------------- -------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------
+  Core identity                 Product name, brand, sub-brand, model, variant, flavour, style                         Distinguishes the underlying marketed item or version.                                                          Free text must be standardised; minor wording changes should not automatically create a new product.
+
+  Source evidence               GTIN, SKU, URL, seller ID, catalogue number                                            Retains the original record key and supports audit and tracing.                                                 Source identifiers can change and should not necessarily define the enduring statistical identity.
+
+  Pack and quantity             Pack size, count, weight, volume, unit, multipack structure, format                    Supports quantity comparability and reveals effective price changes such as a smaller pack at the same price.   Units must be standardised before comparison; nominal pack descriptions may be incomplete or inconsistent.
+
+  Technical specification       Capacity, dimensions, material, ingredients, strength, energy rating, engine, memory   Captures characteristics that may define quality in durable, technical or regulated markets.                    The relevant variables differ by category; missing values must not silently collapse distinct products.
+
+  Classification                Retailer hierarchy, statistical classification, category, product type                 Constrains comparisons to plausible parts of the market and supports candidate generation.                      Classification errors can block valid product links or combine unlike products.
+
+  Outlet and channel            Retailer, outlet type, region, physical or online channel                              Preserves context where the same item is not considered directly comparable across markets.                     Including too much context can duplicate the same underlying product and reduce matching.
+
+  Temporal and status signals   First seen, last seen, active status, temporary gap, overlap                           Helps distinguish a relaunched product from an unrelated item and constrains possible predecessors.             Timing supports a decision but does not prove continuity on its own.
+
+  Text and image features       Normalised tokens, extracted brand or size, text similarity, packaging similarity      Adds evidence where structured characteristics are limited.                                                     Automated similarity can reproduce source errors and should be validated against labelled examples. Storage can be an issue. 
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Where relevant characteristics are embedded in unstructured product descriptions, text processing or machine-learning methods can also be used to extract or standardise attributes such as brand, size, material, style or model. These derived attributes should be validated before being incorporated into the product definition.
+
+The final production specification should document the selected variables, cleaning and standardisation rules, treatment of missing or conflicting values, how identifiers are concatenated or encoded, and how changes to the rule are versioned. It should also describe what happens when an otherwise comparable observation is missing one component of the key. Creating a placeholder category can increase matching but may also combine unlike records, while excluding the observation reduces coverage. The appropriate rule should be tested and made visible.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Examples of derived definitions:** A grocery definition might combine retailer item ID, outlet type, and unit of measurement. A car definition may use make, model, age band and relevant specification rather than an individual registration plate. A rail-fare definition may combine origin, destination and fare type. |
+|                                                                                                                                                                                                                                                                                                                               |
+| These are illustrations: the adopted fields must be justified for the market and index use.                                                                                                                                                                                                                                   |
++===============================================================================================================================================================================================================================================================================================================================+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+## Aggregation and unit values
+
+Some alternative data sources, particularly transaction data such as scanner data, report expenditure and quantity rather than an individual transaction price for every purchase. A unit value is then calculated as total expenditure divided by total quantity for the observations included in a product group and period. A unit value is a representative average of transaction prices, not necessarily a price observed in any single transaction.
+
++---------------------------------------------------------------------------------------------------------------+
+| **Unit values**                                                                                               |
+|                                                                                                               |
+| Unit value = total expenditure / total quantity.                                                              |
+|                                                                                                               |
+| Quantities must be expressed in a common unit, and the observations combined should be of comparable quality. |
++===============================================================================================================+
++---------------------------------------------------------------------------------------------------------------+
+
+The composition of the group matters. Suppose two apple varieties both become more expensive, but consumers shift their purchases towards the cheaper variety, as shown in Table 4. The unit value for all apples can fall even though neither variety has fallen in price. The result reflects a change in the quantity mix, not pure price change. This is **unit value bias** and is a central reason why article-code aggregation must be tied to a defensible product definition.
+
+**Table 4: Worked example of unit value bias**
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  **Product**             **Period 1 price**   **Period 2 price**   **Price movement**   **Interpretation**
+  ----------------------- -------------------- -------------------- -------------------- -------------------------------------------------------------------------------
+  Pink Lady               0.50                 0.55                 +10.0%               Price rises within the variety.
+
+  Gala                    0.30                 0.35                 +16.7%               Price rises within the variety.
+
+  All apples unit value   0.43                 0.40                 -7.0%                The combined result falls because the mix shifts towards the cheaper variety.
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The appropriate response in this example is to treat variety as part of the product definition and calculate unit values within the more homogeneous product groupings. Elementary aggregation can then take place using the index methodology and weights rather than by allowing an uncontrolled change in the sales mix to determine the price relative of the unit values.
+
+## Product grouping
+
+Product grouping combines article codes that are judged to represent sufficiently similar products. Instead of requiring an exact article-code match from one period to the next, the method follows the average price or unit value of the group. Product grouping can increase continuity where source codes are short-lived, but it transfers greater importance to the homogeneity of the group.
+
+Grouping can be based on a retailer hierarchy, a statistical classification, structured characteristics, or a derived combination of fields. The suitable definition is normally category-specific. Characteristics that are essential for one market may be irrelevant in another. Variety is important for some foods; route and ticket conditions are central to transport; model, age and specification matter for used vehicles; brand, garment type, material and construction may be relevant for clothing. A single universal rule is therefore unlikely to produce credible groups across the whole data source.
+
+Where the number or diversity of article codes makes manual grouping difficult, data-driven methods can help develop product groups. These may range from transparent attribute-based rules to clustering methods that identify groups of products with similar characteristics. Text-processing methods can also derive characteristics or similarity measures from product descriptions where structured attributes are limited.
+
+Such methods can be used to explore which characteristics distinguish products, identify heterogeneity within existing definitions, or propose candidate groups for subsequent assessment. For example, ONS research on high-churn clothing data investigated both clustering and an attribute-based approach using characteristics extracted from product descriptions to create more persistent groups of similar products (ONS, 2021). ONS found that the relatively simple attribute-based approach offered some practical advantages over more complex clustering approaches in that application, illustrating that method complexity should be driven by the statistical problem and available data rather than being an objective in itself.
+
+However derived, candidate product definitions or groupings should be assessed using a range of diagnostics. Examples are provided in Table 5; these should be interpreted alongside examination of the underlying products and sensitivity of the resulting index.
+
+**Table 5 -- diagnostic measures for assessing product identification**
+
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  **Diagnostic**                       **What it assesses**                                                  **Warning signal**                                                                                                                        **Possible response**
+  ------------------------------------ --------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------
+  Match rate                           Continuity from one period to the next                                A sustained fall or strong variation without an understood market explanation                                                             Review source identifiers, key construction and whether the definition is too narrow.
+
+  Observation count                    Robustness and coverage                                               Many sparse groups or groups represented by very few observations                                                                         Consider whether some distinctions can be removed without combining material quality differences.
+
+  Within-group dispersion              Homogeneity of prices or unit values                                  Wide or unstable spread within a group                                                                                                    Inspect product composition and test splitting by an additional quality characteristic.
+
+  Churn                                Stability of the statistical identities                               Large jumps in new and disappearing IDs                                                                                                   Check source changes, missing fields, coding revisions and potential relaunches.
+
+  Composition sensitivity              Dependence of the unit value on changing shares                       Combined movement conflicts with component movements                                                                                      Use more homogeneous groups or calculate component price changes separately.
+
+  Index sensitivity                    Materiality of the definition                                         Index paths differ materially under plausible groupings                                                                                   Investigate the drivers, document the selected rule and strengthen review.
+
+  MARS or related comparative metric   Balance between within-group price homogeneity and retained matches   Improvements in homogeneity are achieved only through substantial loss of matches, or high matching is achieved by heterogeneous groups   Compare alternative definitions or clustering parameters and inspect resulting groups and index sensitivity.
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+No single diagnostic establishes that a product definition is appropriate. Match rate alone may favour definitions that are too broad, while within-group homogeneity alone may favour definitions that are too narrow. The product match-adjusted R-squared (MARS) approach proposed by Chessa (2019), for example, provides one way of jointly considering price homogeneity and retained matches. Diagnostics should be interpreted alongside inspection of the products being grouped, sensitivity testing and knowledge of the market.
+
+Product definitions should also be monitored after implementation. Changes in source systems, available attributes or market assortments may affect their performance, so grouping rules should be documented and capable of being reviewed and updated.
+
+## Product churn and replacement
+
+Product churn is the appearance and disappearance of source identifiers through time. Some churn represents genuine product entry and exit. Some churn reflects temporary unavailability, a packaging redesign, a change of GTIN or SKU, a new web page, a reformulation, or a product returning under a different source code.
+
+Product grouping and relaunch linking provide related but distinct responses to churn. Grouping reduces dependence on the continued availability of an individual article by following a homogeneous group through time. Relaunch linking instead seeks to establish continuity between particular outgoing and incoming article codes.
+
+If a comparable replacement is treated as entirely new, the series breaks and the price movement between the old and new versions is omitted from a matched calculation. If two materially different products are linked, quality difference may be recorded as price change.
+
+The same principle applies when the displayed pack price is unchanged but the pack size reduces, sometimes referred to as "shrinkflation". In that case continuity may be retained, but the price must be compared on an equivalent quantity basis so that the effective increase is captured. Failure to identify and appropriately treat such changes can cause shrinkflation to be missed (Białek, Bobel and Oprych-Franków, 2024; Van Loon, 2024).
+
+Consider an article costing 20 euros in period 1 that is unavailable from period 2. A second article of the same quality appears in period 2 at 25 euros. Exact code matching misses the increase because there is no common article code across the two periods. A justified relaunch link preserves the comparison.
+
+## Relaunch linking
+
+Relaunch linking connects an incoming article code to an earlier product history where the available evidence supports continuity. Candidate links should normally be assessed using several signals together, as a single shared characteristic is rarely conclusive. Where the number of possible predecessors is large, automated methods can be used to generate or rank plausible candidates. Table 6 gives examples of evidence that may support this process.
+
+**Table 6: Evidence to support relaunch linking**
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  **Evidence**                     **How it supports the assessment**                                                                                   **Why it is not sufficient alone**
+  -------------------------------- -------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------
+  Identifier relationship          A supplier mapping, predecessor field or related code can provide direct evidence.                                   Mappings may contain administrative rather than statistical relationships.
+
+  Brand, name and variant          Strong agreement supports a common underlying identity.                                                              Similar names can cover different pack sizes, specifications or quality levels.
+
+  Pack and unit                    Matching quantity and format support direct comparison; a known size change supports quantity adjustment.            The same size does not establish that formulation or quality is unchanged.
+
+  Technical attributes             Agreement in specifications or ingredients strengthens comparability.                                                Source attributes may be missing, inconsistently populated or stale.
+
+  Timing                           An incoming item appears near the disappearance of a plausible predecessor, sometimes with a short overlap or gap.   Unrelated products can enter at the same time; genuine relaunches may overlap for clearance or transition. Seasonality must be considered.
+
+  Packaging or image               Visual continuity may support a relaunch hypothesis.                                                                 Similar packaging can occur across a range; image matching may ignore material product changes.
+
+  Price and unit-price behaviour   A plausible relationship can support the link and reveal quantity effects.                                           Similar prices do not prove that products are comparable, and relaunches can include large price changes.
+
+  Classification                   A common class narrows candidates to a relevant market segment.                                                      Misclassification can exclude the true predecessor or admit unlike candidates.
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The assessment may result in a direct link where the product is materially unchanged; a link requiring quantity or quality treatment where continuity exists but relevant characteristics have changed; or a new statistical identity where material differences remain or the evidence is insufficient. Uncertain cases should not be forced into a link.
+
+Relaunch identification does not necessarily require a complex automated system. Depending on data volumes, candidate lists based on recent disappearing and incoming products can be reviewed using the evidence in Table 6; automation becomes more valuable as the number of products and potential matches increases.
+
+Automated approaches can range from deterministic matching and text-similarity measures to supervised machine-learning models trained on previously reviewed links. Statistics Belgium has investigated text mining and fuzzy matching to support comparison of incoming and disappearing scanner-data products (Van Loon and Valenduc, 2015); Białek, Bobel and Oprych-Franków (2024) use product identifiers and text similarity as part of an automated procedure for detecting product downsizing in scanner data; Bertolotto (2019) considered a closest-match approach to identifying replacements; and more recent Statistics Canada research has applied text similarity and supervised machine learning to potential product relaunches (Wall et al., 2025). These examples illustrate how different levels of automation can support candidate generation and linking according to the scale, available information and processing capacity. The appropriate degree of automation depends on the available information, product volumes and quality of validation data.
+
+### Positioning relaunch linking in the wider process
+
+Relaunch linking also interacts with product classification. A classify-first approach can restrict the search for predecessors to a manageable set of products, but classification errors may exclude a valid match. Alternatively, linking can take place before detailed classification, reducing this dependency but increasing the number of candidates that need to be considered. Hybrid approaches can use broad, reliable classifications to restrict candidate generation before applying more detailed classification.
+
+The appropriate sequence depends on the volume and diversity of the data, classification quality and available processing and review capacity. The selected workflow should be documented because it can affect both linking rates and the interpretation of performance diagnostics.
+
+### Operational relaunch-linking workflow
+
+Relaunch linking should be implemented as a controlled production cycle rather than a single similarity calculation. Automation can identify and rank plausible candidates, but the process also likely requires some means of review to avoid the risk of matching products that materially differ in quality. An example of how relaunch linking can be introduced as part of a production cycle is provided in Figure 1.
+
+**Figure 1: Operational workflow example**
+
+![Operational workflow example](handbook/images/preparation/operational_workflow_example.png){width="6.913903105861768in" height="2.6672069116360455in"}
+
+Candidate scores or rules can be used to distinguish clear non-matches, high-confidence links and uncertain cases requiring review. Any automated acceptance should be introduced only after validation against reviewed examples and should be subject to ongoing monitoring. Thresholds should reflect both the quality of the available evidence and the statistical consequences of incorrect links.
+
+Overlap requires care. An outgoing product and its relaunch may both be sold for a transition period. The process should define whether both observations remain distinct until a cutover, whether their quantities are aggregated under one statistical identity, and how duplicate representation is prevented. A temporary gap also requires a rule governing how far back the candidate search extends. These parameters should be based on market behaviour and tested for sensitivity.
+
+Every confirmed link should retain an audit trail. At a minimum this should identify the incoming and predecessor records, the evidence and rule or model used, the decision, any adjustment, the effective period and the version of the process. Rejected links are also informative and should be retained where feasible, particularly when they support model evaluation or later investigation.
+
+## Validation, monitoring and governance
+
+Validation should address both individual decisions and aggregate statistical behaviour. A high linking rate is not evidence of a good method if unrelated products are being joined. Equally, a low linking rate may be reasonable in a market with substantial genuine innovation, but it may also signal missing metadata, a changed source system or thresholds that are too restrictive.
+
+Monitoring should be proportionate to statistical risk. Cases with large expenditure, large implied price changes, conflicting evidence or novel attribute patterns may warrant greater review than routine low-impact cases. Validation should nevertheless include a broader sample of production cases so that systematic errors are not overlooked. This should include both accepted and rejected or unlinked cases, since errors can arise from incorrect links as well as genuine relaunches that have been missed.
+
+Where machine-learning models are used, monitoring should also consider whether the characteristics of incoming products or model performance change through time. Statistics Canada, for example, has incorporated monitoring for concept drift, manual validation and model retraining into its approach to production machine learning for consumer prices (Ritter et al., 2025).
+
+Changes to product definitions or linking rules can alter historical comparability. Material changes should therefore be sensitivity tested, versioned and, where necessary, accompanied by an appropriate transition or back-series approach.
+
+## Product identification and index number methods
+
+The choice of index number method can influence the level of detail required in product identification and relaunch linking. Many bilateral index number formulae rely on explicit product matches between periods. If a product disappears and is replaced by a new product identifier, the price movement between the two observations will only contribute to the index if the relationship between them has been recognised through product grouping, relaunch linking or another matching process. Because certain multilateral methods such as GEKS are constructed from a series of bilateral comparisons, they inherit much of this dependence on explicit matching.
+
+Other multilateral methods, including the Quality-Adjusted Geary Khamis (QU-GK), Time Product Dummy (TPD) and Time Dummy Hedonic (TDH) approaches, make use of a wider set of observations simultaneously. Although these methods still require sufficient overlap between products and periods, they are generally less dependent on direct one-to-one product matching than purely bilateral approaches. Information can be transmitted through chains of overlapping observations, allowing price movement to be estimated even where individual product matches are less complete.
+
+In practice, this means that methods such as TPD, TDH and QU-GK may be more resilient to product churn and incomplete matching than bilateral approaches. However, this should not be interpreted as removing the need for product identification. Poorly defined products, excessive product turnover, or failure to identify important relaunches can still affect index quality regardless of the estimation method used.
+
+Consequently, product grouping and relaunch linking remain important components of production, even where the chosen index number formula is relatively robust to missing matches. Explicitly identifying comparable products provides greater transparency, improves diagnostic capabilities and reduces the risk that important price movements are missed.
+
+The interaction between product-identification strategies and index number methods remains an area of research. Statistical offices should therefore evaluate product-definition, grouping and relaunch-linking decisions in conjunction with the chosen index methodology rather than treating them as independent design choices.
+
+## Quality adjustment and hedonic methods
+
+Product grouping and relaunch linking do not remove the need to consider quality change. A replacement may be related to its predecessor while differing in characteristics valued by consumers. Where a direct quantity comparison is possible, such as a change in pack weight, prices can be standardised to a common unit \[LINK\]. Other differences may require an explicit quality-adjustment method.
+
+Hedonic methods use observed product characteristics to estimate their relationship with price and can support quality adjustment or the treatment of new and disappearing products. Product identification and quality adjustment should nevertheless be treated as distinct decisions: first, whether observations represent the same or related products; and second, how any material difference between them should be treated. Quality adjustment and hedonic methods are discussed further in \[LINK\].
+
+## References
+
+Białek, J., Bobel, A. and Oprych-Franków, D. (2025). [*Automatic downsizing and upsizing detection using scanner data and their impact on price indices*](https://journals.sagepub.com/doi/10.1177/18747655251342654). Statistical Journal of the IAOS, 41(3), 858--872.
+
+Deshaies-Moreault, C. and Émond, N. (2016). [Challenges Associated with Using Scanner Data for the Consumer Price Index](https://www150.statcan.gc.ca/n1/en/catalogue/11-522-X201700014751). Statistics Canada International Symposium Series. Statistics Canada
+
+Bertolotto, M. (2019). [Online Price Index with Automated Product Replacement: The Closest-Match Approach](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3296073). 16th Meeting of the Ottawa Group.
+
+Chessa, A.G. (2019). [MARS: A Method for Defining Products and Linking Barcodes of Item Relaunches](https://eventos.fgv.br/sites/eventos.fgv.br/files/arquivos/u161/product_definition_with_mars_chessa_og19.pdf). 16th Meeting of the Ottawa Group.
+
+Office for National Statistics (2021). [Product grouping: measuring inflation in dynamic clothing markets](https://www.ons.gov.uk/economy/inflationandpriceindices/articles/productgroupingmeasuringinflationindynamicclothingmarkets/2021-11-09). Office for National Statistics
+
+Ritter, C., Spackman, W., Best, T., Goussev, S., DeVilliers, G. and Theobald, S. (2025). [Adopting a High Level MLOps Practice for the Production Applications of Machine Learning in the Canadian Consumer Prices Index](https://www.statcan.gc.ca/en/data-science/network/high-level-mlops-practice). Statistics Canada. Statistics Canada
+
+Van Loon, K. and Valenduc, F. (2015). [*Belgian Scanner Data Project: Methodology and Results*](https://www.istat.it/wp-content/uploads/2015/09/4.2-WS-Scanner-data-Rome-1-2-Oct_Loon_Valenduc-Belgian-scanner-data-project-methodology-and-results.pdf). International Workshop on Scanner Data, Rome, 1--2 October 2015.
+
+Van Loon, K. (2024). [*Product Relaunches, Shrinkflation and Quality Adjustment in Scanner Data*](https://unece.org/sites/default/files/2024-10/Statistics%20Belgium%20-%20Ken%20Van%20Loon%20-%20Product%20relaunches%20shrinkflation%20and%20quality%20adjustment%20in%20scanner%20data%20-%20%20UNECE%20CPI%20workshop.pdf). UNECE Workshop on the Utilisation and Integration of New Data Sources for the Consumer Price Index, Brussels, 29--31 October 2024
+
+Wall, M., Chiumera, D., DeVilliers, G., Bajwa, K., Spackman, W. and Goussev, S. (2025). [Automating the Detection of Product Relaunches: A Supervised Learning Approach to Shrinkflation and Stretchflation](https://unece.org/sites/default/files/2025-04/Wall-Chiumera%20et%20al%20%282025%29%20Automating%20the%20Detection%20of%20Product%20Relaunches%20-%20paper.pdf). Meeting of the Group of Experts on Consumer Price Indices.
