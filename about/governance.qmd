@@ -1,0 +1,93 @@
+---
+title: "Governance"
+date: 2026-11-01
+date-modified: last-modified
+draft: true
+---
+
+# How governance helps
+
+::: {.callout-important appearance="simple"}
+We see **governance** as the processes and norms used by a community to deliver useful products and services that same community, by means of fostering direction and focus of enthusiastic contributors towards shared goals.
+:::
+
+Breaking that out a little, we see the key aspects as:
+
+-   We **develop value adding products** – with the goal to make it easier for price statisticians to understand, research, or implement alternative data to enhance their national statistical outputs.
+
+-   We help focus the **best and brightest** in our community to **help the community itself** – as our community can only learn from each other
+
+-   We work to instill **transparency in the direction and the strategies** used – as a means of validating the direction and making it easy to engage and participate
+
+## Overview of the three levels
+
+There are three broad levels of our group:
+
+-   The **broader community** – that includes everyone who work in the discipline of price statistics.
+    As this is the audience of our materials, we are directly accountable to them.
+    We welcome our initial contributors from this group, as active content consumers can start contributing back to share their expertise.
+
+-   **Maintainers** – are active contributors and project managers who give their *blood, sweat, and tears* (typically as volunteers but sometimes as dedicated resources) to create value or sustain it.
+
+-   The **steering group** – is a nominated or volunteer group set strategic team level direction, evaluate gaps and launch workstreams to address them, advocate for the group and setting wider norms that help the broader community.
+
+@fig-roles-sankey shows this breakdown visually.
+
+![How the community, contributors, and the task team interrelate](/handbook/images/about/sankey-roles.drawio.png){#fig-roles-sankey fig-align="center" width="50%"}
+
+# Level-by-level deep dive
+
+## The (price statistics) community
+
+The broader community is made up of all members of the discipline, whether they work for the National Statistical Office producing consumer price statistics, a central bank that leverages it, an academic or researcher, or anyone else.
+This community can be broken broken up into two sub-groups.
+
+### Passive community members
+
+Passive community members consume outputs created by the Task Team, but do not interact.
+This group may not find the material of value, or if they do, choose not to participate.
+
+### Active community members (one-off contributors)
+
+Passive community members who see issues and want to participate periodically, are free to participate in the contributing process.
+They may only be light or periodic participants.
+
+## Maintainers
+
+### Project Managers
+
+### Active Contributors
+
+## Steering Committee
+
+### Workstream leads
+
+# How we work
+
+## Principles
+
+## Process
+
+### Workstreams and groups
+
+There are several distinct workstreams, each with their own focus:
+
+-   Workstream 1 - Handbook (workstream completed work and was closed)
+
+-   Workstream 2 - Classification
+
+-   Workstream 3 - Training
+
+-   Workstream 4 - Systems
+
+-   Workstream 5 - Reproducibility/FAIR
+
+There are also several distinct groups
+
+-   Technical group - supports the material on the Task Team GitHub, such as by setting up advanced Quarto or GitHub actions processes to enable our products to work.
+
+### Project management meets GitHub
+
+All activity
+
+### Communication
