@@ -33,7 +33,7 @@ There are three broad levels of our group:
 
 @fig-roles-sankey shows this breakdown visually.
 
-![How the community, contributors, and the task team interrelate](/handbook/images/about/sankey-roles.drawio.png){#fig-roles-sankey fig-align="center" width="50%"}
+![How the community, contributors, and the task team interrelate](/handbook/images/about/sankey-roles.drawio.png){#fig-roles-sankey fig-align="center" width="80%"}
 
 # Level-by-level deep dive
 

@@ -25,6 +25,9 @@ website:
           - text: "About"
             href: about/index.qmd
             icon: people-fill
+          - text: "Governance and roles"
+            href: about/governance.qmd
+            icon: people
           - text: "How to contribute"
             href: about/contributing.qmd
             icon: pencil-square
