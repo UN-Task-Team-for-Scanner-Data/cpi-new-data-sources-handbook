@@ -41,10 +41,11 @@ We break down the overall consumer price statistics community into three broad l
 @fig-stakeholder-sankey showcases this breakdown visually.
 
 ::: {#fig-stakeholder-sankey fig-align="center"}
-
 ![](/handbook/images/about/sankey-roles.drawio.png)
 
 <!-- NOTE - Mermaid diagram below is commented out as mermaid v11.15.0+ is needed to render it properly -->
+
+````{=html}
 <!-- ```{mermaid}
 ---
 config:
@@ -75,6 +76,7 @@ Active or contributing community members,Active contributors,20
 
 Consumer Price Statistics Community,Steering committee,5
 ``` -->
+````
 
 How the overall consumer price statistics community breaks out into various groups.
 :::
@@ -152,6 +154,26 @@ The steering committee is made up of workstream leads and is supported by the UN
 # How we work
 
 ## Principles
+
+::: callout-important
+**Trustworthiness**
+
+As our main purpose is to make it easy for price statisticians to understand and use alternative data in their local cases, making sure that the material is trustworthy is the main goal.
+
+- **Timeliness** - Ensure that any content produced by the Task Team in line with the above objectives remain up to date with current discussions in the field.
+  For this objective, the Task Team will be supported by a Secretariat function which will be responsible for maintaining the existing published content.
+
+- **Informed choice** - We provide a range of options, we tend to not recommend a single “best” approach.
+  Instead we will encourage a review of the options and decide what is best for their particular situation.
+
+**Transparency**
+
+We seek to manage our direction in a transparent manner to ensure that we earn the trust of the wider community (who can thus more readily use our content) and make it attractive for individuals to contribute
+
+**Empowerment**
+
+We make the process of contributing simple, enabling everyone from beginners to experts to contribute to our content
+:::
 
 ## Process
 
