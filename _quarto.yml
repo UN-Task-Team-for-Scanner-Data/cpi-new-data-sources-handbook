@@ -8,7 +8,7 @@ website:
   favicon: handbook\images\logo.png
   repo-branch: main
   draft-mode: visible
-  repo-actions: [source, issue]
+  repo-actions: [edit, issue]
   bread-crumbs: true
   page-navigation: true
   back-to-top-navigation: true
