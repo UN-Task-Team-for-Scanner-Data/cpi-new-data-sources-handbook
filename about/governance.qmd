@@ -41,7 +41,11 @@ We break down the overall consumer price statistics community into three broad l
 @fig-stakeholder-sankey showcases this breakdown visually.
 
 ::: {#fig-stakeholder-sankey fig-align="center"}
-```{mermaid}
+
+![](/handbook/images/about/sankey-roles.drawio.png)
+
+<!-- NOTE - Mermaid diagram below is commented out as mermaid v11.15.0+ is needed to render it properly -->
+<!-- ```{mermaid}
 ---
 config:
   sankey:
@@ -70,7 +74,7 @@ Active or contributing community members,Project managers or coordinators,5
 Active or contributing community members,Active contributors,20
 
 Consumer Price Statistics Community,Steering committee,5
-```
+``` -->
 
 How the overall consumer price statistics community breaks out into various groups.
 :::
