@@ -8,7 +8,7 @@ website:
   favicon: handbook\images\logo.png
   repo-branch: main
   draft-mode: visible
-  repo-actions: [source, issue]
+  repo-actions: [edit, issue]
   bread-crumbs: true
   page-navigation: true
   back-to-top-navigation: true
@@ -25,6 +25,9 @@ website:
           - text: "About"
             href: about/index.qmd
             icon: people-fill
+          - text: "Governance and roles"
+            href: about/governance.qmd
+            icon: people
           - text: "How to contribute"
             href: about/contributing.qmd
             icon: pencil-square
