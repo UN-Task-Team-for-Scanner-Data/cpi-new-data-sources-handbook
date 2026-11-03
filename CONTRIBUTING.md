@@ -14,3 +14,21 @@ The easiest way to contribute is to add an issue with your idea. We will discuss
 # Code of Conduct
 
 As a contributor, help keep the community open, inclusive, and collaborative. Read the [code of conduct](/CODE_OF_CONDUCT.md) for more details.
+
+# Quick tips on the repository structure
+
+If you are making consequential changes (such as adding new materials), please keep the following structure in mind and add your files to the relevant folder.
+
+```
+├── handbook                # Where main handbook content is stored
+│   ├── images              # Folder where all images and files that generate images (such as 
+│   │                         draw.io files) are stored (in sub-folders)
+│   └── *                   # Grouped content (such as classification) is grouped into a sub-folder
+│
+├── training                # Where the overview of training materials is stored
+│
+├── notebooks               # Where notebooks with code examples are stored
+│
+└── about                   # Where administrative project pages are stored
+
+```
