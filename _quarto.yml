@@ -191,6 +191,7 @@ website:
         - about/index.qmd
         - about/governance.qmd
         - about/contributing.qmd
+        - about/how-we-work.qmd
         - about/style-guide.qmd
 
 language:

@@ -44,19 +44,24 @@ Handbook changes should trigger consideration of related code, training and cata
 
 ### Overall RACI
 
-| Activity | Project Managers | Active Contributors | Steering committee | Col5 | Col6 |
-|----|----|----|----|----|----|
+| Activity | Project Managers | Active Contributors | Steering committee | Expert Roster | Casual contributors |
+|------------|------------|------------|------------|------------|------------|
 | Maintaining contribution process and guardrails | Responsible | Consulted through PR process | Accountable for success |  |  |
 | Triage an issue or basic PR | Responsible |  |  |  |  |
-|  |  |  |  |  |  |
+| ... |  |  |  |  |  |
 
 : RACI matrix
 
 - *Responsible (R) —* Those who complete the task.
+- *Accountable* (A) — The one ultimately answerable for the correct completion of the deliverable or task, ensuring the prerequisites of the task are met, and delegating the work to those *responsible*.
+- *Consulted* (C) — Those whose opinions are sought, such as subject-matter experts, and with whom there is two-way communication.
+- *Informed* (I) — Those who are kept up-to-date on progress, often only on completion of the task or deliverable, and with whom there is just one-way communication.
 
-- *Accountable* (A) (also *approver* or *approving authority*) — The one ultimately answerable for the correct completion of the deliverable or task, ensuring the prerequisites of the task are met, and delegating the work to those *responsible*.
+### How we're organized
 
-### Workstreams and groups
+We have workstreams for focused work, and groups for less structured tasks
+
+#### Workstreams
 
 There are several distinct workstreams, each with their own focus:
 
@@ -72,10 +77,22 @@ There are several distinct workstreams, each with their own focus:
 
 There are also several distinct groups
 
+- Triage group – that facilitates the incorporation of contributions on an annual schedule (aligned to the once a year price statistics conference cadence) and throughout the year to incorporate direct contributions
 - Technical group - supports the material on the Task Team GitHub, such as by setting up advanced Quarto or GitHub actions processes to enable our products to work.
 
 ### Project management meets GitHub
 
-All activity
+We use GitHub to track all work activity:
+
+- All activity is tracked on GitHub as issues and PRs.
+
+- GitHub projects to project manage specific workstreams or group work.
+  A project charter that outlines the scope for the year (if its organized) is made to identify why something is in scope.
 
 ### Communication
+
+::: callout-note
+## Do we need a slack/related?
+
+TBC - for offline async conversations between the community
+:::
