@@ -194,7 +194,7 @@ website:
           href: about/index.qmd
         - "---"
         - "Governance and how to contribute"
-        - text: " - Governance and how to contribute"
+        - text: " - Governance and the context of the broader community"
           href: about/governance.qmd
         - text: " - How to contribute"
           href: about/contributing.qmd
