@@ -21,19 +21,20 @@ website:
     right:
       - text: "About us"
         icon: person-raised-hand
-        menu:
-          - text: "About"
-            href: about/index.qmd
-            icon: people-fill
-          - text: "Governance and roles"
-            href: about/governance.qmd
-            icon: people
-          - text: "How to contribute"
-            href: about/contributing.qmd
-            icon: pencil-square
-          - text: "Style Guide"
-            href: about/style-guide.qmd
-            icon: text-left
+        href: about/index.qmd
+        # menu:
+        #   - text: "About"
+        #     href: about/index.qmd
+        #     icon: people-fill
+        #   - text: "Governance and roles"
+        #     href: about/governance.qmd
+        #     icon: people
+        #   - text: "How to contribute"
+        #     href: about/contributing.qmd
+        #     icon: pencil-square
+        #   - text: "Style Guide"
+        #     href: about/style-guide.qmd
+        #     icon: text-left
       - text: "Related materials"
         icon: lightbulb
         menu:
@@ -182,6 +183,27 @@ website:
         - handbook/glossary.qmd
         - handbook/acknowledgements.qmd
 
+    - id: about
+      style: "floating"
+      collapse-level: 1
+      align: left
+      contents:
+        - "---"
+        - "Overview"
+        - text: " - About"
+          href: about/index.qmd
+        - "---"
+        - "Governance and how to contribute"
+        - text: " - Governance and how to contribute"
+          href: about/governance.qmd
+        - text: " - How to contribute"
+          href: about/contributing.qmd
+        - text: " - How we work"
+          href: about/how-we-work.qmd
+        - "---"
+        - "Style guide"
+        - text: " - Style guide"
+          href: about/style-guide.qmd
 
 language:
   title-block-modified: "Last updated"
@@ -198,4 +220,4 @@ format:
     theme:
       light: flatly
       dark: cyborg
-    css: styles.css
+    css: custom.css

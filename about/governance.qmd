@@ -1,9 +1,4 @@
----
-title: "Roles and Governance"
-date: 2026-11-01
-date-modified: last-modified
-draft: true 
----
+
 
 # What is governance to us?
 
@@ -150,53 +145,3 @@ The steering committee is made up of workstream leads and is supported by the UN
 
 > The steering group is fundamentally accountable for the quality and trustworthiness of the materials/products created by the whole group.
 > They have owner role on Task Team products.
-
-# How we work
-
-## Principles
-
-::: callout-important
-**Trustworthiness**
-
-As our main purpose is to make it easy for price statisticians to understand and use alternative data in their local cases, making sure that the material is trustworthy is the main goal.
-
-- **Timeliness** - Ensure that any content produced by the Task Team in line with the above objectives remain up to date with current discussions in the field.
-  For this objective, the Task Team will be supported by a Secretariat function which will be responsible for maintaining the existing published content.
-
-- **Informed choice** - We provide a range of options, we tend to not recommend a single “best” approach.
-  Instead we will encourage a review of the options and decide what is best for their particular situation.
-
-**Transparency**
-
-We seek to manage our direction in a transparent manner to ensure that we earn the trust of the wider community (who can thus more readily use our content) and make it attractive for individuals to contribute
-
-**Empowerment**
-
-We make the process of contributing simple, enabling everyone from beginners to experts to contribute to our content
-:::
-
-## Process
-
-### Workstreams and groups
-
-There are several distinct workstreams, each with their own focus:
-
-- Workstream 1 - Handbook (workstream completed work and was closed)
-
-- Workstream 2 - Classification
-
-- Workstream 3 - Training
-
-- Workstream 4 - Systems
-
-- Workstream 5 - Reproducibility/FAIR
-
-There are also several distinct groups
-
-- Technical group - supports the material on the Task Team GitHub, such as by setting up advanced Quarto or GitHub actions processes to enable our products to work.
-
-### Project management meets GitHub
-
-All activity
-
-### Communication

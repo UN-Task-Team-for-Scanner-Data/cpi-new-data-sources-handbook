@@ -8,53 +8,52 @@ draft: true
 Welcome!
 Thank you for your interest to contribute to this handbook.
 
-::: callout-caution
-## Work in progress
-
-The contribution process outlined below is still being finalised and may change. Please check this page again before beginning a contribution.
-:::
-
 # Overview
 
-Contributions can range from correcting a broken link to proposing a new chapter or methodological approach. We use semantic versioning to classify changes and determine the appropriate contribution, review and approval route.
+Contributions can range from correcting a broken link to proposing a new chapter or methodological approach.
+We use semantic versioning to classify changes and determine the appropriate contribution, review and approval route.
 
 ## Semantic versioning
 
 We use [semantic versioning](https://semver.org/) to guide how changes to the handbook are classified.
 
 | Level | Examples | Default route | Review expectation |
-|:---|:---|:---|:---|
-| **PATCH** | Spelling, links, formatting, bibliography and other non substantive corrections | Correction Request issue | Technical Secretariat review and merge once automated and editorial checks pass |
-| **MINOR** | Case study, expanded example, factual clarification, evidence or code revision that does not change the overall scope | Content Enhancement issue followed by a community, Task Team or Secretariat pull request | Relevant peer review and Steering Group approval |
-| **MAJOR** | New chapter, substantial methodological change, new data source, major restructuring or new training module | Handbook Change Proposal issue, followed by a Task Team workstream, technical lead or consultant role | Documented peer review and Steering Group level approval |
+|:--------|:--------------------|:-----------------|:-----------------|
+| [**PATCH**](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues?q=state%3Aopen%20label%3AMAJOR){.highlight-patch} | Spelling, links, formatting, bibliography and other non substantive corrections | Correction Request issue | Technical Secretariat review and merge once automated and editorial checks pass |
+| [**MINOR**](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues?q=state%3Aopen%20label%3AMINOR){.highlight-minor} | Case study, expanded example, factual clarification, evidence or code revision that does not change the overall scope | Content Enhancement issue followed by a community, Task Team or Secretariat pull request | Relevant peer review and Steering Group approval |
+| [**MAJOR**](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues?q=state%3Aopen%20label%3APATCH){.highlight-major} | New chapter, substantial methodological change, new data source, major restructuring or new training module | Handbook Change Proposal issue, followed by a Task Team workstream, technical lead or consultant role | Documented peer review and Steering Group level approval |
 
-: Categories of contribution {#tbl-contributing-categories .striped .hover}
+: Categories of contribution {#tbl-semantic-versioning .striped .hover tbl-colwidths="[15,25,25,25]"}
 
 ## Choosing an issue template
 
-All proposed changes should begin with a GitHub issue. This allows the proposal to be discussed, classified and assigned to the appropriate contribution route before work begins.
+All proposed changes should begin with a GitHub issue.
+This allows the proposal to be discussed, classified and assigned to the appropriate contribution route before work begins.
 
 Select the issue template that best matches the scope of the proposed change:
 
 | Issue template | When to use it | Typical outcome |
-|:---|:---|:---|
-| **Correction Request (PATCH)** | Spelling mistakes, broken links, formatting problems, citation updates and other non substantive corrections | Secretariat review and implementation |
-| **Content Enhancement (MINOR)** | Additional examples, case studies, explanations, evidence, resources or code that do not change the overall scope of the handbook | Contributor or Secretariat development, followed by relevant review and approval |
-| **Handbook Change Proposal (MAJOR)** | New methodology, a new chapter, substantial restructuring, a new data source or changes to existing recommendations | Task Team discussion, documented peer review and formal approval |
+|:-----------------------|:-----------------------|:-----------------------|
+| **Correction Request ([PATCH]{.highlight-patch})** | Spelling mistakes, broken links, formatting problems, citation updates and other non substantive corrections | Secretariat review and implementation |
+| **Content Enhancement ([MINOR]{.highlight-minor})** | Additional examples, case studies, explanations, evidence, resources or code that do not change the overall scope of the handbook | Contributor or Secretariat development, followed by relevant review and approval |
+| **Handbook Change Proposal ([MAJOR]{.highlight-major})** | New methodology, a new chapter, substantial restructuring, a new data source or changes to existing recommendations | Task Team discussion, documented peer review and formal approval |
 | **Discussion / Guidance Request** | Questions, early ideas or proposals that require discussion before the appropriate route can be determined | Guidance or discussion, potentially followed by raising a PATCH, MINOR or MAJOR issue |
+
+: Issue templates {#tbl-issue-templates .striped .hover}
 
 [Create a new issue using an issue template](/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new/choose).
 
-If you are unsure which category applies, use the **Discussion / Guidance Request** template. The Secretariat can help determine the most appropriate route.
+If you are unsure which category applies, use the **Discussion / Guidance Request** template.
+The Secretariat can help determine the most appropriate route.
 
 For PATCH issues, the Technical Secretariat will implement an approved correction.
 
 For MINOR and MAJOR issues, contributors can indicate whether they:
 
-* intend to prepare and submit a pull request if the issue is approved;
-* would like support developing a pull request;
-* would like the Technical Secretariat to take the proposal forward; or
-* are raising the proposal for discussion before deciding how it should be implemented.
+- intend to prepare and submit a pull request if the issue is approved;
+- would like support developing a pull request;
+- would like the Technical Secretariat to take the proposal forward; or
+- are raising the proposal for discussion before deciding how it should be implemented.
 
 ::: callout-tip
 ## You do not need to submit a pull request
@@ -68,9 +67,11 @@ When raising a MINOR or MAJOR issue, indicate whether you would like to develop 
 
 We archive selected releases of the repository in Zenodo.
 
-When the handbook has accumulated sufficient consequential changes since the previous archived version, such as a major change or a collection of minor changes, we [create a new GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository). The GitHub and Zenodo integration then [archives a copy of that release in Zenodo](https://help.zenodo.org/docs/github/archive-software/github-upload/).
+When the handbook has accumulated sufficient consequential changes since the previous archived version, such as a major change or a collection of minor changes, we [create a new GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+The GitHub and Zenodo integration then [archives a copy of that release in Zenodo](https://help.zenodo.org/docs/github/archive-software/github-upload/).
 
-The live handbook may therefore include changes made since the latest archived and citable version. Users who need a fixed version for citation should use the relevant archived release.
+The live handbook may therefore include changes made since the latest archived and citable version.
+Users who need a fixed version for citation should use the relevant archived release.
 
 You can view [previous handbook releases](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/releases).
 
@@ -78,20 +79,23 @@ You can view [previous handbook releases](https://github.com/UN-Task-Team-for-Sc
 
 Contributions that require changes to the repository generally follow a pull request process, similar to the approach described by [The Turing Way](https://book.the-turing-way.org/community-handbook/contributing/#ch-contributing-pull-request).
 
-A pull request is not required for every issue. In particular, the Secretariat will normally implement straightforward PATCH corrections. For MINOR and MAJOR changes, the implementation route should be agreed through the relevant issue before substantial work begins.
+A pull request is not required for every issue.
+In particular, the Secretariat will normally implement straightforward PATCH corrections.
+For MINOR and MAJOR changes, the implementation route should be agreed through the relevant issue before substantial work begins.
 
 # How to contribute
 
 ## Step 1: Start with an issue
 
-Before starting any work, review the open issues to see whether the topic has already been raised. If a relevant issue already exists, add any further information or participate in the existing discussion rather than creating a duplicate.
+Before starting any work, review the open issues to see whether the topic has already been raised.
+If a relevant issue already exists, add any further information or participate in the existing discussion rather than creating a duplicate.
 
 If the topic has not been raised, create a new issue using the most appropriate template:
 
-* **Correction Request (PATCH)** for non substantive corrections;
-* **Content Enhancement (MINOR)** for additions or improvements to existing content;
-* **Handbook Change Proposal (MAJOR)** for substantial methodological, structural or governance changes; or
-* **Discussion / Guidance Request** if you would like feedback or are unsure how the idea should be classified.
+- **Correction Request (PATCH)** for non substantive corrections;
+- **Content Enhancement (MINOR)** for additions or improvements to existing content;
+- **Handbook Change Proposal (MAJOR)** for substantial methodological, structural or governance changes; or
+- **Discussion / Guidance Request** if you would like feedback or are unsure how the idea should be classified.
 
 In the issue, explain the change or question as clearly as possible and include relevant links, references, examples or supporting material.
 
@@ -103,7 +107,8 @@ The appropriate route will depend on the scope and complexity of the change.
 
 For an approved PATCH issue, the Technical Secretariat will make the correction.
 
-For an approved MINOR or MAJOR issue, the contributor, Technical Secretariat or an agreed Task Team workstream can take the proposal forward. Substantial work should not begin until the scope, contribution route and review requirements have been agreed through the issue.
+For an approved MINOR or MAJOR issue, the contributor, Technical Secretariat or an agreed Task Team workstream can take the proposal forward.
+Substantial work should not begin until the scope, contribution route and review requirements have been agreed through the issue.
 
 If the agreed route involves submitting a pull request, continue to Step 3.
 
@@ -113,20 +118,22 @@ If the Technical Secretariat will implement the change, no further GitHub action
 
 Create a branch in the repository or a fork under your own GitHub account, depending on your access permissions and the agreed contribution route.
 
-Draft the proposed changes in the branch. If you open a pull request before the work is complete, keep the pull request in draft status until it is ready for review.
+Draft the proposed changes in the branch.
+If you open a pull request before the work is complete, keep the pull request in draft status until it is ready for review.
 
 Where possible:
 
-* keep each pull request focused on the issue it is intended to address;
-* link the pull request to the relevant issue;
-* explain what has changed and why;
-* identify any sections that require particular attention from reviewers; and
-* avoid including unrelated changes in the same pull request.
+- keep each pull request focused on the issue it is intended to address;
+- link the pull request to the relevant issue;
+- explain what has changed and why;
+- identify any sections that require particular attention from reviewers; and
+- avoid including unrelated changes in the same pull request.
 
 ::: callout-tip
 ## Update the last updated date
 
-Many handbook pages contain a hard coded `date-modified` value. See the guidance on /about/style-guide.qmd#metadata.
+Many handbook pages contain a hard coded `date-modified` value.
+See the guidance on /about/style-guide.qmd#metadata.
 
 If you find a hard coded `date-modified` value, replace it with `last-modified`.
 
@@ -159,7 +166,7 @@ If reviewers do not regularly use GitHub, you can make the draft available in an
 
 For example, the page metadata can be configured to render both formats:
 
-```yaml
+``` yaml
 ---
 title: "Article title"
 date: "YYYY-MM-DD"
@@ -172,7 +179,8 @@ format:
 ---
 ```
 
-This allows an offline copy to be shared with reviewers. Any comments or edits made outside GitHub will need to be incorporated back into the relevant branch or fork before the pull request can be merged.
+This allows an offline copy to be shared with reviewers.
+Any comments or edits made outside GitHub will need to be incorporated back into the relevant branch or fork before the pull request can be merged.
 
 ## Step 5: Submit the pull request for review
 
@@ -180,14 +188,15 @@ When the proposed changes are ready for formal review, remove the draft status f
 
 In the pull request description:
 
-* link to the relevant issue;
-* summarise the changes made;
-* identify the semantic versioning level;
-* note any supporting evidence or consultation;
-* identify any outstanding questions; and
-* confirm the review or approval route agreed through the issue.
+- link to the relevant issue;
+- summarise the changes made;
+- identify the semantic versioning level;
+- note any supporting evidence or consultation;
+- identify any outstanding questions; and
+- confirm the review or approval route agreed through the issue.
 
-The Secretariat and relevant reviewers will support the contribution through the remainder of the process. Further revisions may be requested before the changes are approved and merged.
+The Secretariat and relevant reviewers will support the contribution through the remainder of the process.
+Further revisions may be requested before the changes are approved and merged.
 
 Once the relevant checks, reviews and approvals are complete, the pull request can be merged into the handbook.
 
