@@ -1,4 +1,9 @@
-
+---
+title: "Governance within the context of the broader community"
+date: 2026-11-01
+date-modified: last-modified
+draft: true
+---
 
 # What is governance to us?
 
