@@ -1,0 +1,81 @@
+---
+title: "How we work"
+date: 2026-11-01
+date-modified: last-modified
+draft: true 
+---
+
+# How we work
+
+## Principles
+
+::: callout-important
+**Open by default**
+
+Proposals, discussion, source files and contribution history are visible wherever licensing, confidentiality and accessibility permit.
+This way we are transparent and earn or retain the trust of the wider community (who can thus more readily use our content) and make it attractive for individuals to contribute.
+
+**Easy to contribute**
+
+We make the process of contributing simple, enabling everyone from beginners to experts to contribute to our content
+
+**Authority is explicit**
+
+Development content, the living handbook, formal releases and any endorsed edition is made clear.
+
+**Proportionate assurance**
+
+Review and approval effort should reflect the significance and risk of the change.
+
+**Inclusive evidence**
+
+Review should seek views and include the needs of countries at different stages of adopting new data sources.
+
+**Reproducible and maintainable**
+
+Content, code and publication processes should minimize single-person dependencies and retain an auditable history.
+
+**Coherent products**
+
+Handbook changes should trigger consideration of related code, training and catalogue content.
+:::
+
+## Roles and responsibilities
+
+### Overall RACI
+
+| Activity | Project Managers | Active Contributors | Steering committee | Col5 | Col6 |
+|----|----|----|----|----|----|
+| Maintaining contribution process and guardrails | Responsible | Consulted through PR process | Accountable for success |  |  |
+| Triage an issue or basic PR | Responsible |  |  |  |  |
+|  |  |  |  |  |  |
+
+: RACI matrix
+
+- *Responsible (R) —* Those who complete the task.
+
+- *Accountable* (A) (also *approver* or *approving authority*) — The one ultimately answerable for the correct completion of the deliverable or task, ensuring the prerequisites of the task are met, and delegating the work to those *responsible*.
+
+### Workstreams and groups
+
+There are several distinct workstreams, each with their own focus:
+
+- Workstream 1 - Handbook (workstream completed work and was closed)
+
+- Workstream 2 - Classification
+
+- Workstream 3 - Training
+
+- Workstream 4 - Systems
+
+- Workstream 5 - Reproducibility/FAIR
+
+There are also several distinct groups
+
+- Technical group - supports the material on the Task Team GitHub, such as by setting up advanced Quarto or GitHub actions processes to enable our products to work.
+
+### Project management meets GitHub
+
+All activity
+
+### Communication
