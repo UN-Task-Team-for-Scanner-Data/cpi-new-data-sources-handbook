@@ -188,11 +188,22 @@ website:
       collapse-level: 1
       align: left
       contents:
-        - about/index.qmd
-        - about/governance.qmd
-        - about/contributing.qmd
-        - about/how-we-work.qmd
-        - about/style-guide.qmd
+        - "---"
+        - "Overview"
+        - text: " - About"
+          href: about/index.qmd
+        - "---"
+        - "Governance and how to contribute"
+        - text: " - Governance and how to contribute"
+          href: about/governance.qmd
+        - text: " - How to contribute"
+          href: about/contributing.qmd
+        - text: " - How we work"
+          href: about/how-we-work.qmd
+        - "---"
+        - "Style guide"
+        - text: " - Style guide"
+          href: about/style-guide.qmd
 
 language:
   title-block-modified: "Last updated"
