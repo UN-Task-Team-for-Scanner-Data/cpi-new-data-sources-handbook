@@ -70,7 +70,7 @@ Unorganized requests are triaged and handled appropriately (see the [contributin
 
 @fig-org-bodies-timeline shows how these bodies co-exists.
 
-![Visual of various organization work bodies occuring within the same time](/handbook/images/about/timeline.drawio.png){#fig-org-bodies-timeline fig-align="center" width="70%"}
+![Visual of various organization work bodies occuring within the same time](/handbook/images/about/timeline.drawio.png){#fig-org-bodies-timeline fig-align="center" width="100%"}
 
 ## Project management meets GitHub
 
