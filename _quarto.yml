@@ -19,21 +19,9 @@ website:
     search: true
     title: "New data sources in consumer price statistics"
     right:
-      - text: "About us"
+      - text: "About and how to contribute"
         icon: person-raised-hand
-        menu:
-          - text: "About"
-            href: about/index.qmd
-            icon: people-fill
-          - text: "Governance and roles"
-            href: about/governance.qmd
-            icon: people
-          - text: "How to contribute"
-            href: about/contributing.qmd
-            icon: pencil-square
-          - text: "Style Guide"
-            href: about/style-guide.qmd
-            icon: text-left
+        href: about/index.qmd
       - text: "Related materials"
         icon: lightbulb
         menu:
@@ -182,6 +170,26 @@ website:
         - handbook/glossary.qmd
         - handbook/acknowledgements.qmd
 
+    - id: about
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - text: "About us"
+          href: about/index.qmd
+        - "---"
+        - section: "Contributing"
+          contents: 
+          - text: "How we see the community and how we are governed"
+            href: about/governance.qmd
+          - text: "How we work"
+            href: about/how-we-work.qmd
+          - text: "How to contribute"
+            href: about/contributing.qmd
+        - "---"
+        - text: "Style guide"
+          href: about/style-guide.qmd
+
 
 language:
   title-block-modified: "Last updated"
@@ -198,4 +206,4 @@ format:
     theme:
       light: flatly
       dark: cyborg
-    css: styles.css
+    css: custom.css

@@ -10,14 +10,23 @@ This project is maintained by the UN Task Team on Scanner data.
 
 # Who are we?
 
-## More about the Task Team
+## This open-source project is led by the UN Task Team on Scanner data
 
-The Task Team on Scanner data is one of the workstreams stood up and supported by the UN Committee of Experts on Big Data and Data Science for Official Statistics (UN-CEBD).
+The project is responsible for led by the United Nations Task Team on Scanner data – which was stood up by the UN Committee of Experts on Big Data and Data Science for Official Statistics (UN-CEBD).
 Read more about us [here](https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml).
 
-## Who is on the Task Team?
+The Task Team began like many other United Nations Task Teams – as a collaboration of eager contributors from statisticians and data scientists bringing their collective expertise to create standardized guidance for everyone.
+This began as a collaboration of folks formally supporting the broader Task Team as part of their work.
+We typically used internal tools we had at our disposal or we had through our work.
 
-Check out the acknowledgement section to see the full list of current and past participants
+Since 2025, the Task Team has been increasingly shifting our products and outputs to GitHub and other open platforms to make them reproducible, make it easier to contribute to, and leverage the power of tools like GitHub to automate various aspects.
+
+## Who are your contributors?
+
+The Task Team is made up of many contributors.
+There are contributors who used tools like the UN Wiki – you can check the names out in the acknowledgment section of the handbook.
+
+New contributors to this repository and our outputs on GitHub will be tracked using contribution.
 
 # Roster of experts
 
