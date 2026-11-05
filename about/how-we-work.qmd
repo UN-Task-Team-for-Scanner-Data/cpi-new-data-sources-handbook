@@ -40,9 +40,51 @@ Content, code and publication processes should minimize single-person dependenci
 Handbook changes should trigger consideration of related code, training and catalogue content.
 :::
 
-## Roles and responsibilities
+## How work is done
 
-### Overall RACI
+Work within the Task Team is either organized into groups each around a common theme or purpose, or is left unorganized.
+
+**Organized work** is typically time or scope bound activity aimed at achieving something specific.
+For instance:
+
+- **Workstreams** are formed and staffed with contributors to develop a set of products or outputs.
+  A workstream may persist over several years and may even expand scope.
+  The goals are clearly stated so that contributors know towards what they are focusing on each year.
+
+  > The **steering group** can be considered a long lasting group that sets the overall direction with regular goals.
+  >
+  > Another example is Workstream 5 (or the FAIR / Reproducibility) workstream.
+  > It launched in late 2024 and has gone through two annual cycles with specific scope and goals outlined each year.
+
+- **Work groups** are short lived groups that are brought together to achieve something.
+  Each group could be small (two Individual Contributors (ICs)) or larger (several ICs and several experts consulted on what is being developed).
+  In either case, their contributions are typically made as several [MINOR]{.highlight-minor} or [MAJOR]{.highlight-major} updates to the content.[^1]
+
+  > Every year following a Price Statistics conference, a project manager on the Task Team forms a work group to review and integrate new material into the existing products
+
+[^1]: See [contributing process](/about/contributing.qmd#semantic-versioning) for more detail on types of changes.
+
+Contributions to Task Team products by **submitting issues** or **Pull Requests** is left as **unorganized work**.
+These contributions can come from periodic or active contributors, or from any other group (even from Steering Group members) and are an avenue to improve our outputs!
+Unorganized requests are triaged and handled appropriately (see the [contributing process](/about/contributing.qmd) for more on this process).
+
+@fig-org-bodies-timeline shows how these bodies co-exists.
+
+![Visual of various organization work bodies occuring within the same time](/handbook/images/about/timeline.drawio.png){#fig-org-bodies-timeline fig-align="center" width="70%"}
+
+## Project management meets GitHub
+
+We use GitHub to track all work activity:
+
+- All activity is tracked on GitHub as issues and PRs.
+  See the [contributing process](/about/contributing.qmd) for more detail on the process.
+
+- GitHub projects are used to project manage specific workstreams or group.
+  A project charter that outlines the scope for the year (if its organized) is made to identify why something is in scope.
+
+# Roles and responsibilities
+
+To clarify the roles and responsibilities of the various groups, the following RACI matrix outlines the role of each group depending on action.
 
 | Activity | Project Managers | Active Contributors | Steering committee | Expert Roster | Casual contributors |
 |------------|------------|------------|------------|------------|------------|
@@ -56,38 +98,6 @@ Handbook changes should trigger consideration of related code, training and cata
 - *Accountable* (A) — The one ultimately answerable for the correct completion of the deliverable or task, ensuring the prerequisites of the task are met, and delegating the work to those *responsible*.
 - *Consulted* (C) — Those whose opinions are sought, such as subject-matter experts, and with whom there is two-way communication.
 - *Informed* (I) — Those who are kept up-to-date on progress, often only on completion of the task or deliverable, and with whom there is just one-way communication.
-
-### How we're organized
-
-We have workstreams for focused work, and groups for less structured tasks
-
-#### Workstreams
-
-There are several distinct workstreams, each with their own focus:
-
-- Workstream 1 - Handbook (workstream completed work and was closed)
-
-- Workstream 2 - Classification
-
-- Workstream 3 - Training
-
-- Workstream 4 - Systems
-
-- Workstream 5 - Reproducibility/FAIR
-
-There are also several distinct groups
-
-- Triage group – that facilitates the incorporation of contributions on an annual schedule (aligned to the once a year price statistics conference cadence) and throughout the year to incorporate direct contributions
-- Technical group - supports the material on the Task Team GitHub, such as by setting up advanced Quarto or GitHub actions processes to enable our products to work.
-
-### Project management meets GitHub
-
-We use GitHub to track all work activity:
-
-- All activity is tracked on GitHub as issues and PRs.
-
-- GitHub projects to project manage specific workstreams or group work.
-  A project charter that outlines the scope for the year (if its organized) is made to identify why something is in scope.
 
 ### Communication
 
