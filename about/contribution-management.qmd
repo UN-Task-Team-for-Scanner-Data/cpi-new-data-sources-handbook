@@ -1,5 +1,5 @@
 ---
-title: "How we work"
+title: "Project Managing contributions"
 date: 2026-11-01
 date-modified: last-modified
 draft: true 
@@ -84,7 +84,9 @@ We use GitHub to track all work activity:
 
 # Roles and responsibilities
 
-To clarify the roles and responsibilities of the various groups, the following RACI matrix outlines the role of each group depending on action.
+## RACI
+
+We outlined roles and responsibilities in RACI format to clarify who does what.
 
 | Activity | Project Managers | Active Contributors | Steering committee | Expert Roster | Casual contributors |
 |------------|------------|------------|------------|------------|------------|
@@ -99,10 +101,42 @@ To clarify the roles and responsibilities of the various groups, the following R
 - *Consulted* (C) — Those whose opinions are sought, such as subject-matter experts, and with whom there is two-way communication.
 - *Informed* (I) — Those who are kept up-to-date on progress, often only on completion of the task or deliverable, and with whom there is just one-way communication.
 
-### Communication
+### Collaboration within the community
 
 ::: callout-note
 ## Do we need a slack/related?
 
 TBC - for offline async conversations between the community
 :::
+
+## Archiving releases to Zenodo
+
+We archive selected releases of the repository in Zenodo.
+
+### How often do we make releases?
+
+We have two ways to organize releases:
+
+- If there has been a moderate to large amount of smaller fixes – once a year we will do a major release that will create a new Zenodo DOI and a new version of the handbook.
+  We will report the differences of the release at a price statistics conference (there is typically a conference every summer) to showcase transparently to the broader community what has changed.
+
+- If there are major changes that are made or a large amount of minor changes also accumulate – we may make several releases outside of the annual cycle.
+
+### How do we make a release?
+
+We [create a new GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) for the project, which [archives a copy of that release in Zenodo](https://help.zenodo.org/docs/github/archive-software/github-upload/).
+Zenodo mints a new DOI for that release (which is a child of the parent DOI), which we integrate into the repository.
+This is why you can site a specific version or the master record when you reference the handbook.
+
+::: callout-tip
+## Live site is leading the release DOI slightly
+
+The live handbook may therefore include changes made since the latest archived and citable version.
+Users who need a fixed version for citation should use the relevant archived release.
+:::
+
+You can view [previous handbook releases](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/releases).
+
+### Who makes a release?
+
+The steering committee coordinates all releases.

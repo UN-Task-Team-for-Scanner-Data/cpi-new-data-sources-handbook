@@ -63,18 +63,6 @@ You can contribute to the handbook without making changes directly in GitHub.
 When raising a MINOR or MAJOR issue, indicate whether you would like to develop the change yourself, work with others, or ask the Technical Secretariat to take the proposal forward.
 :::
 
-## Archiving releases to Zenodo
-
-We archive selected releases of the repository in Zenodo.
-
-When the handbook has accumulated sufficient consequential changes since the previous archived version, such as a major change or a collection of minor changes, we [create a new GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
-The GitHub and Zenodo integration then [archives a copy of that release in Zenodo](https://help.zenodo.org/docs/github/archive-software/github-upload/).
-
-The live handbook may therefore include changes made since the latest archived and citable version.
-Users who need a fixed version for citation should use the relevant archived release.
-
-You can view [previous handbook releases](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/releases).
-
 ## Git workflow
 
 Contributions that require changes to the repository generally follow a pull request process, similar to the approach described by [The Turing Way](https://book.the-turing-way.org/community-handbook/contributing/#ch-contributing-pull-request).

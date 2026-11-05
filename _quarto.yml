@@ -186,7 +186,7 @@ website:
             href: about/how-we-work.qmd
           - text: "How to contribute"
             href: about/contributing.qmd
-        - "---"
+          - "---"
         - text: "Style guide"
           href: about/style-guide.qmd
 
