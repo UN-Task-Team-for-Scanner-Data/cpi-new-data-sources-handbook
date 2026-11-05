@@ -182,10 +182,10 @@ website:
           contents: 
           - text: "How we see the community and how we are governed"
             href: about/governance.qmd
-          - text: "How to contribute"
-            href: about/contributing.qmd
           - text: "How we work"
             href: about/how-we-work.qmd
+          - text: "How to contribute"
+            href: about/contributing.qmd
         - "---"
         - text: "Style guide"
           href: about/style-guide.qmd
