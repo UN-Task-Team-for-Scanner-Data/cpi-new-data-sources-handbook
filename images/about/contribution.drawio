@@ -23,7 +23,7 @@
           <mxGeometry height="80" width="80" x="213.5" y="332" as="geometry" />
         </mxCell>
         <mxCell id="char_label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontFamily=Comic Sans MS;fontSize=15;fontColor=#333333;sketch=1;curveFitting=1;jiggle=2;" value="&lt;b&gt;Individual Cotributor &lt;br&gt;&lt;/b&gt;idea" vertex="1">
-          <mxGeometry height="60" width="150" x="196" y="455" as="geometry" />
+          <mxGeometry height="60" width="150" x="181" y="479" as="geometry" />
         </mxCell>
         <mxCell id="legend_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fa;strokeColor=#cccccc;strokeWidth=1;sketch=1;curveFitting=1;jiggle=2;" value="" vertex="1">
           <mxGeometry height="130" width="130" x="790" y="385" as="geometry" />
