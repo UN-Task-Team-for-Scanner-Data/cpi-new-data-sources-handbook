@@ -82,6 +82,8 @@ We use GitHub to track all work activity:
 - GitHub projects are used to project manage specific workstreams or group.
   A project charter that outlines the scope for the year (if its organized) is made to identify why something is in scope.
 
+- Depending on how each workstream / group wants to manage the release of their content, they may coordinate the work on a `development` branch before merging this into `main` branch.
+
 # Roles and responsibilities
 
 ## RACI
