@@ -1,0 +1,16 @@
+.highlight {
+    display: inline-block;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 8px;
+    border: 1px solid currentColor;
+    }
+    .highlight-patch {
+        color: #2c7a2c;
+    }
+    .highlight-minor {
+        color: #2d67a3;
+    }
+    .highlight-major {
+        color: #dc2fc0;
+    }
