@@ -175,17 +175,19 @@ We use [semantic versioning](https://semver.org/) to guide how changes to the ha
 | [**MINOR**](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues?q=state%3Aopen%20label%3AMINOR){.highlight-minor} | Case study, expanded example, factual clarification, evidence or code revision that does not change the overall scope | Issue on the topic followed by a pull request | Relevant peer review by other contributors with the same expertise and approval by maintainers / project managers. |
 | [**MAJOR**](https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues?q=state%3Aopen%20label%3APATCH){.highlight-major} | New chapter, substantial methodological change, new data source, major restructuring or new training module | Issue on the topic that may be followed by by a Task Team workstream or even steering committee participation. | Detailed review by other experts with the expertise. Likely collaboration with multiple other contributors is possible through a workstream. |
 
-Categories of contribution
+: Categories of contribution {#tbl-contribution-categories .striped .hover tbl-colwidths="[15,30,25,30]"}
 
 ## Issue templates
 
 There are several issue types we may use to classify the content.
 
-| Issue template | When to use it | Typical outcome |
-|:-----------------------|:-----------------------|:-----------------------|
-| **Correction Request ([PATCH]{.highlight-patch})** | Spelling mistakes, broken links, formatting problems, citation updates and other non substantive corrections | Only submit if you are not up for making the change yourself directly. If so, another contributor may take the issue on. |
-| **Content Enhancement ([MINOR]{.highlight-minor})** | Additional examples, case studies, explanations, evidence, resources or code that do not change the overall scope of the handbook | Contributor or Secretariat development, followed by relevant review and approval |
-| **Handbook Change Proposal ([MAJOR]{.highlight-major})** | New methodology, a new chapter, substantial restructuring, a new data source or changes to existing recommendations | Task Team discussion, documented peer review and formal approval |
-| **Discussion / Guidance Request** | Questions, early ideas or proposals that require discussion before the appropriate route can be determined | Guidance or discussion, potentially followed by raising a PATCH, MINOR or MAJOR issue |
+| Issue template | When to use it |
+|:-----------------------|:------------------------------------------|
+| **Correction Request ([PATCH]{.highlight-patch})** | Spelling mistakes, broken links, formatting problems, citation updates and other non substantive corrections |
+| **Content Enhancement ([MINOR]{.highlight-minor})** | Additional examples, case studies, explanations, evidence, resources or code that do not change the overall scope of the handbook |
+| **Handbook Change Proposal ([MAJOR]{.highlight-major})** | New methodology, a new chapter, substantial restructuring, a new data source or changes to existing recommendations |
+| **Discussion / Guidance Request** | Questions, early ideas or proposals that require discussion before the appropriate route can be determined |
 
-Issue templates
+
+: Issue templates {#tbl-issue-templates .striped .hover}
+
