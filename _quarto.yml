@@ -175,20 +175,15 @@ website:
       collapse-level: 2
       align: left
       contents:
-        - text: "About us"
-          href: about/index.qmd
+        - href: about/index.qmd
         - "---"
         - section: "Contributing"
           contents: 
-          - text: "How we see the community and how we are governed"
-            href: about/governance.qmd
-          - text: "How we work"
-            href: about/how-we-work.qmd
-          - text: "How to contribute"
-            href: about/contributing.qmd
-        - "---"
-        - text: "Style guide"
-          href: about/style-guide.qmd
+          - href: about/governance.qmd
+          - href: about/contributing.qmd
+          - href: about/contribution-management.qmd
+          - "---"
+        - href: about/style-guide.qmd
 
 
 language:
