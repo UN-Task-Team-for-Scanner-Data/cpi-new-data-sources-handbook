@@ -2,7 +2,7 @@
 name: Handbook Change Proposal (MAJOR)
 about: Propose a significant methodological, structural or governance change to the handbook.
 title: "[MAJOR]"
-labels: ''
+labels: '[to triage]'
 assignees: ''
 
 ---
