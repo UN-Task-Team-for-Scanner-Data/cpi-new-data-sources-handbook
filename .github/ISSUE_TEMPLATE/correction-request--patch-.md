@@ -3,7 +3,7 @@ name: Correction Request (PATCH)
 about: Report a minor correction that does not change the meaning, methodology, or
   recommendations of the handbook.
 title: "[PATCH]"
-labels: '[to triage]'
+labels: "to triage"
 assignees: ''
 
 ---
