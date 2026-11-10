@@ -2,7 +2,7 @@
 name: Discussion / Guidance Request
 about: Seek feedback, discuss an idea, or request guidance before raising a formal enhancement or change proposal.
 title: "[DISCUSSION]"
-labels: ''
+labels: '[to triage]'
 assignees: ''
 
 ---

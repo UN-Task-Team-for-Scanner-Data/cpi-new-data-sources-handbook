@@ -2,7 +2,7 @@
 name: Content Enhancement (MINOR)
 about: Propose new content or enhancements to existing guidance that do not constitute a major methodological or structural change.
 title: "[MINOR]"
-labels: ''
+labels: '[to triage]'
 assignees: ''
 
 ---
