@@ -1,0 +1,114 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="dIH_GwpuEARjQ6082yuG">
+    <mxGraphModel dx="999" dy="611" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2756" pageHeight="3937" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;---\nconfig:\n  sankey:\n    showValues: false\n    labelStyle: outlined\n    nodeAlignment: justify\n    nodePadding: 35\n    nodeWidth: 35\n    nodeColors:\n      Consumer Price Statistics Community: \&quot;#4e79a7\&quot;\n      Casual or observer community members: \&quot;#42c9cb\&quot;\n      Active or contributing community members (part of the Task Team): \&quot;#16d43f\&quot;\n      Steering committee: \&quot;#f329ba\&quot;\n      Observers: \&quot;#b2abb0\&quot;\n      Active contributors (Task Team members): \&quot;#048308\&quot;\n---\nsankey\n%% source,target,value\nConsumer Price Statistics Community,Casual or observer community members,70\nConsumer Price Statistics Community,Active or contributing community members (part of the Task Team),30\n\nCasual or observer community members,Observers,60\nCasual or observer community members,Periodic contributors,10\n\nActive or contributing community members (part of the Task Team),Project managers or coordinators,5\nActive or contributing community members (part of the Task Team),Active contributors,20\nActive or contributing community members (part of the Task Team),Steering committee,5&quot;,&#xa;  &quot;config&quot;: null,&#xa;  &quot;version&quot;: &quot;12&quot;&#xa;}" id="6g0-vCw-1n82S8Bk1YJt-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Consumer Price Statistics Community-&gt;Casual or observer community members#0" mermaidBaseStyle="shape=mermaidSankeyLink;width=182.00;fillColor=#4e79a7;gradientColor=#42c9cb;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.350000;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-2">
+          <mxCell edge="1" parent="6g0-vCw-1n82S8Bk1YJt-1" source="6g0-vCw-1n82S8Bk1YJt-9" style="shape=mermaidSankeyLink;width=182.00;fillColor=#4e79a7;gradientColor=#42c9cb;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.350000;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;rounded=0;" target="6g0-vCw-1n82S8Bk1YJt-10">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Consumer Price Statistics Community-&gt;Active or contributing community members (part of the Task Team)#0" mermaidBaseStyle="shape=mermaidSankeyLink;width=78.00;fillColor=#4e79a7;gradientColor=#16d43f;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.850000;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-3">
+          <mxCell edge="1" parent="6g0-vCw-1n82S8Bk1YJt-1" source="6g0-vCw-1n82S8Bk1YJt-9" style="shape=mermaidSankeyLink;width=78.00;fillColor=#4e79a7;gradientColor=#16d43f;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.850000;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;rounded=0;" target="6g0-vCw-1n82S8Bk1YJt-11">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Casual or observer community members-&gt;Observers#0" mermaidBaseStyle="shape=mermaidSankeyLink;width=156.00;fillColor=#42c9cb;gradientColor=#b2abb0;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.428571;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-4">
+          <mxCell edge="1" parent="6g0-vCw-1n82S8Bk1YJt-1" source="6g0-vCw-1n82S8Bk1YJt-10" style="shape=mermaidSankeyLink;width=156.00;fillColor=#42c9cb;gradientColor=#b2abb0;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.428571;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;rounded=0;" target="6g0-vCw-1n82S8Bk1YJt-12">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Casual or observer community members-&gt;Periodic contributors#0" mermaidBaseStyle="shape=mermaidSankeyLink;width=26.00;fillColor=#42c9cb;gradientColor=#4e79a7;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.928571;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-5">
+          <mxCell edge="1" parent="6g0-vCw-1n82S8Bk1YJt-1" source="6g0-vCw-1n82S8Bk1YJt-10" style="shape=mermaidSankeyLink;width=26.00;fillColor=#42c9cb;gradientColor=#4e79a7;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.928571;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;rounded=0;" target="6g0-vCw-1n82S8Bk1YJt-13">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Active or contributing community members (part of the Task Team)-&gt;Project managers or coordinators#0" mermaidBaseStyle="shape=mermaidSankeyLink;width=13.00;fillColor=#16d43f;gradientColor=#f28e2c;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.083333;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-6">
+          <mxCell edge="1" parent="6g0-vCw-1n82S8Bk1YJt-1" source="6g0-vCw-1n82S8Bk1YJt-11" style="shape=mermaidSankeyLink;width=13.00;fillColor=#16d43f;gradientColor=#f28e2c;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.083333;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;rounded=0;" target="6g0-vCw-1n82S8Bk1YJt-14">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Active or contributing community members (part of the Task Team)-&gt;Active contributors#0" mermaidBaseStyle="shape=mermaidSankeyLink;width=52.00;fillColor=#16d43f;gradientColor=#e15759;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.500000;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-7">
+          <mxCell edge="1" parent="6g0-vCw-1n82S8Bk1YJt-1" source="6g0-vCw-1n82S8Bk1YJt-11" style="shape=mermaidSankeyLink;width=52.00;fillColor=#16d43f;gradientColor=#e15759;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.500000;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;rounded=0;" target="6g0-vCw-1n82S8Bk1YJt-15">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Active or contributing community members (part of the Task Team)-&gt;Steering committee#0" mermaidBaseStyle="shape=mermaidSankeyLink;width=13.00;fillColor=#16d43f;gradientColor=#f329ba;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.916667;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-8">
+          <mxCell edge="1" parent="6g0-vCw-1n82S8Bk1YJt-1" source="6g0-vCw-1n82S8Bk1YJt-11" style="shape=mermaidSankeyLink;width=13.00;fillColor=#16d43f;gradientColor=#f329ba;gradientDirection=east;opacity=50;strokeColor=none;bendable=0;html=1;exitX=1;exitY=0.916667;exitPerimeter=0;entryX=0;entryY=0.500000;entryPerimeter=0;rounded=0;" target="6g0-vCw-1n82S8Bk1YJt-16">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:Consumer Price Statistics Community" mermaidBaseStyle="rounded=0;fillColor=#4e79a7;strokeColor=#4e79a7;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-9">
+          <mxCell parent="6g0-vCw-1n82S8Bk1YJt-1" style="rounded=0;fillColor=#4e79a7;strokeColor=#4e79a7;" vertex="1">
+            <mxGeometry height="259.99999999999994" width="35" x="30" y="49.74149761783273" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:Casual or observer community members" mermaidBaseStyle="rounded=0;fillColor=#42c9cb;strokeColor=#42c9cb;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-10">
+          <mxCell parent="6g0-vCw-1n82S8Bk1YJt-1" style="rounded=0;fillColor=#42c9cb;strokeColor=#42c9cb;" vertex="1">
+            <mxGeometry height="182.00000000000006" width="35" x="312.5" y="32.13164193143348" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:Active or contributing community members (part of the Task Team)" mermaidBaseStyle="rounded=0;fillColor=#16d43f;strokeColor=#16d43f;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-11">
+          <mxCell parent="6g0-vCw-1n82S8Bk1YJt-1" style="rounded=0;fillColor=#16d43f;strokeColor=#16d43f;" vertex="1">
+            <mxGeometry height="77.99999999999991" width="35" x="312.5" y="250.71123958953567" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:Observers" mermaidBaseStyle="rounded=0;fillColor=#b2abb0;strokeColor=#b2abb0;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-12">
+          <mxCell parent="6g0-vCw-1n82S8Bk1YJt-1" style="rounded=0;fillColor=#b2abb0;strokeColor=#b2abb0;" vertex="1">
+            <mxGeometry height="156.00000000000009" width="35" x="595" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:Periodic contributors" mermaidBaseStyle="rounded=0;fillColor=#4e79a7;strokeColor=#4e79a7;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-13">
+          <mxCell parent="6g0-vCw-1n82S8Bk1YJt-1" style="rounded=0;fillColor=#4e79a7;strokeColor=#4e79a7;" vertex="1">
+            <mxGeometry height="26" width="35" x="595" y="221.00000000000009" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:Project managers or coordinators" mermaidBaseStyle="rounded=0;fillColor=#f28e2c;strokeColor=#f28e2c;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-14">
+          <mxCell parent="6g0-vCw-1n82S8Bk1YJt-1" style="rounded=0;fillColor=#f28e2c;strokeColor=#f28e2c;" vertex="1">
+            <mxGeometry height="13.000000000000028" width="35" x="595" y="282.0000000000001" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:Active contributors" mermaidBaseStyle="rounded=0;fillColor=#e15759;strokeColor=#e15759;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-15">
+          <mxCell parent="6g0-vCw-1n82S8Bk1YJt-1" style="rounded=0;fillColor=#e15759;strokeColor=#e15759;" vertex="1">
+            <mxGeometry height="52.000000000000114" width="35" x="595" y="330.0000000000001" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:Steering committee" mermaidBaseStyle="rounded=0;fillColor=#f329ba;strokeColor=#f329ba;" mermaidBaseValue="" id="6g0-vCw-1n82S8Bk1YJt-16">
+          <mxCell parent="6g0-vCw-1n82S8Bk1YJt-1" style="rounded=0;fillColor=#f329ba;strokeColor=#f329ba;" vertex="1">
+            <mxGeometry height="13" width="35" x="595" y="417.0000000000002" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="6g0-vCw-1n82S8Bk1YJt-17" parent="6g0-vCw-1n82S8Bk1YJt-1" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=14;fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=middle;whiteSpace=wrap;" value="Consumer Price Statistics Community" vertex="1">
+          <mxGeometry height="95.76" width="65.5" x="69.5" y="116.24000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="6g0-vCw-1n82S8Bk1YJt-18" parent="6g0-vCw-1n82S8Bk1YJt-1" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=14;fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=middle;whiteSpace=wrap;" value="Casual or observer community members" vertex="1">
+          <mxGeometry height="72.11" width="98" x="351" y="91.63" as="geometry" />
+        </mxCell>
+        <mxCell id="6g0-vCw-1n82S8Bk1YJt-19" parent="6g0-vCw-1n82S8Bk1YJt-1" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=14;fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=middle;whiteSpace=wrap;" value="Active or contributing community members (part of the Task Team)" vertex="1">
+          <mxGeometry height="32" width="109" x="351" y="274.21" as="geometry" />
+        </mxCell>
+        <mxCell id="6g0-vCw-1n82S8Bk1YJt-20" parent="6g0-vCw-1n82S8Bk1YJt-1" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=14;fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=middle;" value="Observers" vertex="1">
+          <mxGeometry height="32" width="65.5" x="634.5" y="92.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6g0-vCw-1n82S8Bk1YJt-21" parent="6g0-vCw-1n82S8Bk1YJt-1" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=14;fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=middle;whiteSpace=wrap;" value="Periodic contributors" vertex="1">
+          <mxGeometry height="32" width="85.5" x="634.5" y="218.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6g0-vCw-1n82S8Bk1YJt-22" parent="6g0-vCw-1n82S8Bk1YJt-1" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=14;fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=middle;whiteSpace=wrap;" value="Project managers" vertex="1">
+          <mxGeometry height="32" width="85.5" x="634.5" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="6g0-vCw-1n82S8Bk1YJt-23" parent="6g0-vCw-1n82S8Bk1YJt-1" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=14;fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=middle;whiteSpace=wrap;" value="Active contributors" vertex="1">
+          <mxGeometry height="32" width="85.5" x="634.5" y="340.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6g0-vCw-1n82S8Bk1YJt-24" parent="6g0-vCw-1n82S8Bk1YJt-1" style="text;html=1;strokeColor=none;fillColor=none;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=14;fontColor=light-dark(#333333,#cccccc);align=left;verticalAlign=middle;whiteSpace=wrap;" value="Steering committee" vertex="1">
+          <mxGeometry height="32" width="98" x="634.5" y="408" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
