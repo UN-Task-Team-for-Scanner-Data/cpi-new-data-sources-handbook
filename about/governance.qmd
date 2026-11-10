@@ -41,12 +41,13 @@ We break down the overall consumer price statistics community into three broad l
 @fig-stakeholder-sankey showcases this breakdown visually.
 
 ::: {#fig-stakeholder-sankey fig-align="center"}
-![](/handbook/images/about/sankey-roles.drawio.png)
+![](/images/about/sankey-roles.drawio.png)
 
 <!-- NOTE - Mermaid diagram below is commented out as mermaid v11.15.0+ is needed to render it properly -->
 
 ````{=html}
-<!-- ```{mermaid}
+<!-- 
+```{mermaid}
 ---
 config:
   sankey:
@@ -57,24 +58,23 @@ config:
     nodeWidth: 35
     nodeColors:
       Consumer Price Statistics Community: "#4e79a7"
-      Casual and passive community members: "#42c9cb"
-      Active or contributing community members: "#16d43f"
+      Casual or observer community members: "#42c9cb"
+      Active or contributing community members (part of the Task Team): "#16d43f"
       Steering committee: "#f329ba"
-      Passive content consumers: "#b2abb0"
-      Active contributors: "#048308"
+      Observers: "#b2abb0"
+      Active contributors (Task Team members): "#048308"
 ---
 sankey
 %% source,target,value
-Consumer Price Statistics Community,Casual and passive community members,70
-Consumer Price Statistics Community,Active or contributing community members,25
+Consumer Price Statistics Community,Casual or observer community members,70
+Consumer Price Statistics Community,Active or contributing community members (part of the Task Team),30
 
-Casual and passive community members,Passive content consumers,60
-Casual and passive community members,Periodic contributors,10
+Casual or observer community members,Observers,60
+Casual or observer community members,Periodic contributors,10
 
-Active or contributing community members,Project managers or coordinators,5
-Active or contributing community members,Active contributors,20
-
-Consumer Price Statistics Community,Steering committee,5
+Active or contributing community members (part of the Task Team),Project managers or coordinators,5
+Active or contributing community members (part of the Task Team),Active contributors,20
+Active or contributing community members (part of the Task Team),Steering committee,5
 ``` -->
 ````
 
@@ -83,31 +83,32 @@ How the overall consumer price statistics community breaks out into various grou
 
 # Level-by-level deep dive
 
-## The casual and passive members
+## Casual or observer community members
 
 The broader community is made up of all members of the discipline, whether they work for the National Statistical Office producing consumer price statistics, a central bank that leverages these outputs, an academic or researcher, or anyone else.
 This community can be broken broken up into two sub-groups.
 
-### Passive community members
+### Observes
 
-Passive community members consume outputs created by the Task Team, but do not typically interact.
+Observers consume outputs created by the Task Team, but do not typically interact.
 They may not even be aware of the material – which is part of our advocacy efforts.
 
 For those who are aware, they may read and even use our content without interacting with us.
 We seek to interact with this group periodically (such as to survey them or engage them directly during price statistics conferences).
 
-### Casual (or one-off) contributors
+### Periodic contributors
 
-Passive community members who see issues and want to participate periodically, are encouraged to participate and contribute to our content directly.
+Some observers, who see issues, choose to participate directly.
 They may flag issues (whether trivial like spelling mistakes or more consequential such as missing content), and may participate in drafting content directly.
 The most experienced ones of this group we try to encourage to become regular contributors (either on their own or by becoming members of the Task Team).
 
 We periodically engage with experts in this community to validate nuanced or challenging aspects.
 For instance the most experienced price index experts may not actively contribute to our content directly, but we try to engage with them to ensure that our content provides grounded and trustworthy recommendations.
 
-## Active or contributing members
+## Active or contributing members (part of the Task Team)
 
-Those who seek to actively participate in our content tend to do so more regularly and are granted rights to our repositories to support the work.
+Those who actively participate in our content tend to do so more regularly and are granted rights to our repositories to support the work.
+We also consider them a part of the larger UN Task Team.
 
 ### Active contributors
 
@@ -128,19 +129,19 @@ Contributors to our content can be either:
 Depending on bandwidth and skill sets of IC volunteers, the Steering Group may coordinate the hiring of consultants as ICs for specific tasks.
 :::
 
-### Project Managers or coordinators
+### Project Managers
 
 Managing contributions and organizing workstreams is a key activity that ensures that community contribution are triaged and content is created in alignment with stated goals.
 There are two sub-types possible:
 
-- Maintainers – help triage various activities (such as Pull Requests or Issues – see [contributing process](/about/contributing.qmd) for more details).
+- Triage coordinators – help triage various activities (such as Pull Requests or Issues – see [contributing process](/about/contributing.qmd) for more details).
   This indispensable group helps make sure materials are sustained and enhanced lightly over time.
-
-  > Maintainers have rights to approve PRs or to assign issues or PRs to other ICs / Steering committee to weigh in.
 
 - Project Managers (i.e. Workstream leads) – help lead individual workstreams to ensure that the goals of that workstream stays on track.
 
-  > Workstream leads also have the right to approve PRs, and typically weight in on issues and discussions.
+> Project Managers have the role of `Maintainer` on our GitHub projects, which gives them rights to merge in Pull Requests and use other features to manage workflow.
+> The are responsible for encouraging and sustaining the motivation of Active Contributors.
+> Project Managers who are worksteram leads are responsible for focusing efforts towards the goals of the specific workstream they lead.
 
 ## Steering Committee
 

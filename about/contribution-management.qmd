@@ -70,7 +70,7 @@ Unorganized requests are triaged and handled appropriately (see the [contributin
 
 @fig-org-bodies-timeline shows how these bodies co-exists.
 
-![Visual of various organization work bodies occuring within the same time](/handbook/images/about/timeline.drawio.png){#fig-org-bodies-timeline fig-align="center" width="100%"}
+![Visual of various organization work bodies occurring within the same time](/images/about/timeline.drawio.png){#fig-org-bodies-timeline fig-align="center" width="100%"}
 
 ## Project management meets GitHub
 
@@ -89,6 +89,12 @@ We use GitHub to track all work activity:
 ## RACI
 
 We outlined roles and responsibilities in RACI format to clarify who does what.
+
+::: callout-note
+## WIP
+
+This RACI will be finalized shortly
+:::
 
 | Activity | Project Managers | Active Contributors | Steering committee | Expert Roster | Casual contributors |
 |------------|------------|------------|------------|------------|------------|
