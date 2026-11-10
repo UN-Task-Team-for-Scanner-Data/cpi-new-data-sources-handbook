@@ -3,6 +3,8 @@ title: "About us"
 date: 2026-09-29
 date-modified: last-modified
 draft: true
+execute:
+  echo: false
 ---
 
 Welcome!
@@ -33,8 +35,15 @@ New contributors to this repository and our outputs on GitHub will be tracked us
 ::: callout-note
 ## TBC
 
-A roster of experts by topic will be added here
+A roster of experts by topic will be finalized shortly
 :::
+
+| Name | Specialisation | Contact |
+|:---|:---|:---|
+| Tanya Flower | Alternative data generally, Task Team | [tanyaflower-ons](https://github.com/tanyaflower-ons) |
+| Serge Goussev | Alternative data generally, Classification, Reproducibility | [sergegoussev](https://github.com/sergegoussev) |
+
+: Roster of experts {#tbl-specialist-roster .striped .hover}
 
 # Our presentations
 
