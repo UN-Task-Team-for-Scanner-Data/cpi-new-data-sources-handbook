@@ -99,7 +99,7 @@ Where possible:
 Many handbook pages contain a hard coded `date-modified` value.
 See the guidance on /about/style-guide.qmd#metadata.
 
-If you find a hard coded `date-modified` value, replace it with `last-modified`.
+If you are suggesting an edit to a page and find a hard coded `date-modified` value, replace it with `last-modified`.
 
 For example:
 
