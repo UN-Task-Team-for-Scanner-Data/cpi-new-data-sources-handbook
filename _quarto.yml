@@ -5,6 +5,7 @@ website:
   title: "Handbook on utilising new data sources in the production of consumer price statistics"
   site-url: https://un-task-team-for-scanner-data.github.io/cpi-new-data-sources-handbook/
   repo-url: https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook
+  issue-url: https://github.com/UN-Task-Team-for-Scanner-Data/cpi-new-data-sources-handbook/issues/new/choose
   favicon: handbook\images\logo.png
   repo-branch: main
   draft-mode: visible
